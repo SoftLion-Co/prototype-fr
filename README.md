@@ -1,9 +1,14 @@
 <h1>SoftLion-Project</h1>
 Welcome to the official GitHub repository for the corporate website of SoftLion, a leading technology solutions provider. This repository houses the source code and related assets for the website, enabling collaboration among developers, designers, and content creators.
 
-<h2>Cтиль іменування комітів</h2>
+<h1>Прийняті патерни іменування в репозиторіях</h1>
 
+Git — надзвичайно гнучка система. Для спрощення навігації та код рев'ю ми вирішили сформулювати певні правила іменування сутностей в git. Також пізніше це дасть нам можливість генерувати список останніх змін повністю автоматично.
+
+За основу взято conventional commits.</br>
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
+<h2>Структура коміт-повідомлення</h2>
 
 Навіщо це взагалі потрібно? Щоб заощаджувати час та нерви, не більше і не менше. Це ми ще обговоримо трохи пізніше, а поки що розглянемо як взагалі називаються комміти.
 
@@ -11,10 +16,10 @@ Welcome to the official GitHub repository for the corporate website of SoftLion,
 
 Якщо пройтися тими самими коммітами з GitHub, можна побачити досить багато варіантів написання коммітів. Основні рекомендації щодо написання можна виділити такі:
 
-<b>Summary:<code>(type)[optional scope]: (description)</code>
+<b>Summary:<code>тип зміни(контекст): опис зміни</code>
 
 Description: 
-</br> <code>[optional body]</code></br>
+</br> <code>[optional додатковий текст]</code></br>
 <code>[optional footer(s)]</code></b>
 
 Намагайтеся знайти єдиний стиль для коммітів та дотримуватися його. У більшості випадків такого запису більш ніж достатньо. Якщо є ще якийсь пояснювальний напис, то його краще винести в окремий великий запис. Якщо запис маленький, але дуже потрібний, то можна дописати його прямо до комміту. Але краще ще раз задуматися, чи справді потрібний цей напис, чи він привертатиме непотрібну увагу.
@@ -115,3 +120,13 @@ Description: <code>BREAKING CHANGE: use JavaScript features not available in Nod
 <h3>Висновок</h3>
 
 Будь ласка, намагайтеся використати хороший стиль іменування коммітів у своїх проектах. Інші люди будуть вам за це дуже вдячні.
+
+<h2>Найменування гілок</h2>
+
+Найменування гілок повинно дублювати структуру коміт-повідомлення. Але вказувати повне повідомлення не потрібно, достатньо якось скороченого запису, який просто дозволяє однозначно зрозуміти, що це за зміна. З поправкою на відсутність пробілів, оскільки в середовищі терміналу з пробілами незручно працювати.
+
+<code>тип-зміни/скорочений-опис-зміни</code>
+
+Наприклад:</br>
+<code>feature/jsref-globals-map-index</code></br>
+<code>chore/port-web-index-page-to-md</code>
