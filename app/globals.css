@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley&family=Open+Sans&family=Roboto:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,4 +12,20 @@
 
 body {
   font-family: Inter;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
 }
