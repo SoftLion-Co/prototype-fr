@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: Inter;
+  font-family: Roboto;
 }
 
 blockquote,
@@ -28,4 +28,26 @@ figure,
 p,
 pre {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.flexCenter {
+  @apply flex justify-center items-center;
+}
+
+.flexBetween {
+  @apply flex justify-between items-center;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
 }
