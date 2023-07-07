@@ -130,6 +130,30 @@ textarea,
   @apply flex items-center justify-start;
 }
 
-.button{
-  @apply shadow-lg bg-button-blue-gradient rounded-15 text-15 px-12 py-19 leading-151 tracking-0.219 font-normal shadow-button-blue
+.button-blue{
+  @apply uppercase bg-button-blue-gradient rounded-15 text-15 px-12 py-19 leading-151 tracking-0.219 font-normal shadow-button-blue
+}
+
+.button-white{
+  @apply uppercase bg-buttonWhite rounded-15 text-15 px-10 py-19 leading-151 tracking-0.219 font-normal shadow-button-white
+}
+
+.button-login{
+  @apply bg-button-blue-gradient rounded-15 px-6 py-2.5 font-normal leading-5
+}
+
+.cookies{
+  @apply bg-cookies-gradient pt-11 pr-32 pb-7 pr-14 rounded-15
+}
+
+.hero-title{
+  @apply text-5xl font-semibold text-heroTitle
+}
+
+.hero-title-blue{
+  @apply text-5xl font-semibold text-heroTitleBlue
+}
+
+.hero-subtitle{
+  @apply text-lg font-roboto leading-3
 }
