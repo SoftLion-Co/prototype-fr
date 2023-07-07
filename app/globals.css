@@ -130,3 +130,6 @@ textarea,
   @apply flex items-center justify-start;
 }
 
+.button{
+  @apply shadow-lg bg-button-blue-gradient rounded-15 text-15 px-12 py-19 leading-151 tracking-0.219 font-normal shadow-button-blue
+}
