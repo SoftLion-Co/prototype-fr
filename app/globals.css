@@ -40,6 +40,84 @@ h6 {
   font-weight: inherit;
 }
 
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:focus {
+  outline: none;
+}
+
 .flexCenter {
   @apply flex justify-center items-center;
 }
@@ -51,3 +129,4 @@ h6 {
 .flexStart {
   @apply flex items-center justify-start;
 }
+
