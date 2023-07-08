@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Besley&family=Open+Sans&family=Roboto:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Besley&family=Open+Sans&family=Roboto:wght@300;400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -74,9 +74,9 @@ textarea {
   margin: 0; /* 2 */
 }
 
-
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -86,7 +86,6 @@ button,
 [type="submit"] {
   -webkit-appearance: button;
 }
-
 
 ::-moz-focus-inner {
   border-style: none;
@@ -130,30 +129,115 @@ textarea,
   @apply flex items-center justify-start;
 }
 
-.button-blue{
-  @apply uppercase bg-button-blue-gradient rounded-15 text-15 px-12 py-19 leading-151 tracking-0.219 font-normal shadow-button-blue
+/* Page components stylings*/
+
+.button-blue {
+  @apply 
+  uppercase 
+  bg-button-blue-gradient 
+  desktop:rounded-2xl 
+  tablet:rounded-lg 
+  rounded-md  
+  desktop:text-base 
+  tablet:text-xs 
+  text-7 
+
+  desktop:px-12 
+  desktop:py-5 
+  tablet:px-6 
+  tablet:py-2.5  
+  py-2.5 
+  px-5 
+
+  shadow-button-blue;
 }
 
-.button-white{
-  @apply uppercase bg-buttonWhite rounded-15 text-15 px-10 py-19 leading-151 tracking-0.219 font-normal shadow-button-white
+.button-white {
+  @apply 
+  uppercase 
+  bg-buttonWhite 
+  desktop:rounded-2xl 
+  tablet:rounded-lg 
+  rounded-md  
+  desktop:text-base 
+  tablet:text-xs 
+  text-7 
+
+  desktop:px-12 
+  desktop:py-5 
+  tablet:px-6 
+  tablet:py-2.5
+  px-5 
+  py-2.5 
+
+  shadow-button-white;
 }
 
-.button-login{
-  @apply bg-button-blue-gradient rounded-15 px-6 py-2.5 font-normal leading-5
+.button-login {
+  @apply 
+  bg-button-blue-gradient 
+  desktop:rounded-2xl 
+  tablet:rounded-lg 
+  rounded-md 
+  desktop:text-base 
+  tablet:text-xs 
+  text-7
+
+  desktop:px-7 
+  desktop:py-2.5 
+  tablet:px-3
+  tablet:py-1.5
+  px-3 
+  py-1.5;
 }
 
-.cookies{
-  @apply bg-cookies-gradient pt-11 pr-32 pb-7 pr-14 rounded-15
+.cookies {
+  @apply 
+  bg-cookies-gradient 
+  desktop:py-10 
+  desktop:pr-24 
+  desktop:pl-14 
+  tablet:py-5 
+  tablet:pr-10 
+  tablet:pl-6 
+  py-4 
+  pr-3 
+  pl-3 
+  desktop:text-2xl
+  tablet:text-xs 
+  text-10
+  desktop:rounded-2xl 
+  tablet:rounded-lg
+  rounded-md 
+  flex 
+  desktop:items-end 
+  tablet:items-center
+  desktop:gap-20 
+  tablet:gap-10
+  gap-1;
 }
 
-.hero-title{
-  @apply text-5xl font-semibold text-heroTitle
+.hero-title {
+  @apply text-xl desktop:text-5xl tablet:text-2xl font-semibold text-heroTitle tracking-wide;
 }
 
-.hero-title-blue{
-  @apply text-5xl font-semibold text-heroTitleBlue
+.hero-title-blue {
+  @apply text-xl desktop:text-5xl tablet:text-2xl font-semibold text-heroTitleBlue tracking-wide;
 }
 
-.hero-subtitle{
-  @apply text-lg font-roboto leading-3
+.hero-subtitle {
+  @apply text-7 desktop:text-lg tablet:text-10 font-roboto leading-3;
 }
+
+.heading {
+  @apply text-2xl desktop:text-6xl tablet:text-4xl text-headingBlue tracking-wide;
+}
+
+.technology-cards-container{
+  @apply flex flexCenter flex-wrap gap-5 tablet:gap-11 desktop:gap-10
+}
+
+.technology-card{
+  @apply bg-technology-card-gradient rounded-md shadow-technology-card w-120 h-115 desktop:h-80 desktop:w-307 tablet:h-52 tablet:w-56;
+}
+    

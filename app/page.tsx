@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <h1 className="flexCenter">Home</h1>
       <Link href="/blogs">
         <h2>Blog</h2>
@@ -19,11 +19,29 @@ const Home = () => {
         <button className="button-white">Our Projects</button>
       </div>
       <button className="button-login">Login</button>
-      <div className="cookies">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint est quos eos eveniet quia voluptatem quis et vero dicta facilis.</div>
-      <span className="hero-title">Embrace the Lion's Share Technological Advancements with <span className="hero-title-blue">SoftLion</span></span>
-      <div>
-              <span className="hero-subtitle">Our company provides an individual approach for each client to turn your ideas into reality.</span>
 
+      <div className="cookies items-end">
+        <p>We use cookies in this website to give you the best experience on our site and show you relevant ads. To find out more, read our privacy policy rules.</p>
+        <button className="button-blue">ACCEPT</button>
+      </div>
+
+      <span className="hero-title">
+        Embrace <span className="hero-title-blue">SoftLion</span>
+      </span>
+      <div>
+        <span className="hero-subtitle">
+          Our company provides an individual approach for each client to turn
+          your ideas into reality.
+        </span>
+      </div>
+      <div>
+        <span className="heading">Technologies</span>
+      </div>
+      <div className="technology-cards-container">
+        <div className="technology-card"></div>
+        <div className="technology-card"></div>
+        <div className="technology-card"></div>
+        <div className="technology-card"></div>
       </div>
     </div>
   );
