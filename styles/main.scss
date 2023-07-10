@@ -1,0 +1,28 @@
+// Змінні
+$primary-color: #ff0000;
+$secondary-color: #00ff00;
+
+// Міксин
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Стилі
+.my-component {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 20px;
+
+  // Вкладені селектори
+  &.highlighted {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+
+  // Псевдокласи
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

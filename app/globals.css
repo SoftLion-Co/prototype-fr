@@ -131,7 +131,7 @@ textarea,
 
 /* Page components stylings*/
 
-.button-blue {
+/* .button-blue {
   @apply 
   uppercase 
   bg-button-blue-gradient 
@@ -240,4 +240,4 @@ textarea,
 .technology-card{
   @apply bg-technology-card-gradient rounded-md shadow-technology-card w-120 h-115 desktop:h-80 desktop:w-307 tablet:h-52 tablet:w-56;
 }
-    
+     */
