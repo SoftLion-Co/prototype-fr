@@ -1,3 +1,5 @@
+import s from "./page.module.scss"
+
 const Blogs = () => {
     return (
         <div>

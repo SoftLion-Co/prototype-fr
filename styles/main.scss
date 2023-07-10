@@ -1,28 +1,52 @@
-// Змінні
-$primary-color: #ff0000;
-$secondary-color: #00ff00;
+@import-normalize;
 
-// Міксин
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Besley&family=Open+Sans&family=Roboto:wght@300;400;500&display=swap");
+
+// @import './assets/style/colors';
+// @import './assets/style/container'; 
+// @import './assets/style/mixin'; 
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-// Стилі
-.my-component {
-  background-color: $primary-color;
-  color: $secondary-color;
-  padding: 20px;
+code {
+  font-family:'Roboto';
+}
 
-  // Вкладені селектори
-  &.highlighted {
-    background-color: $secondary-color;
-    color: $primary-color;
-  }
+a {
+  text-decoration: none;
+}
 
-  // Псевдокласи
-  &:hover {
-    background-color: darken($primary-color, 10%);
-  }
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+li{
+  list-style: none;
 }
