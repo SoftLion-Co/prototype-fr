@@ -191,6 +191,26 @@ textarea,
   py-1.5;
 }
 
+/*======================================================*/
+.button-test {
+  @apply 
+  bg-button-blue-gradient 
+  desktop:rounded-2xl 
+  tablet:rounded-lg 
+  rounded-md 
+  desktop:text-base 
+  tablet:text-xs 
+  text-7
+
+  desktop:px-7 
+  desktop:py-2.5 
+  tablet:px-3
+  tablet:py-1.5
+  px-3 
+  py-1.5;
+}
+/*======================================================*/
+
 .cookies {
   @apply 
   bg-cookies-gradient 
