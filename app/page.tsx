@@ -1,5 +1,4 @@
-import Link from "next/link";
-import AppealingSection from "./sections/article_page/AppealingSection";
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
-      <AppealingSection />
     </div>
   );
 };
