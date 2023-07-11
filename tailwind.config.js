@@ -11,20 +11,20 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: '15px',
-          mobile: '15px',
-          tablet: '30px',
-          desktop: '100px',
+          'sm': '15px',
+          'md': '30px',
+          'lg': '30px',
+          'xl': '50px',
+          '2xl': '100px',
+          '3xl': '100px',
         },
       },
       screens: {
-        sm: "none",
-        md: "none",
-        lg: "none",
-        xl: "none",
-        '2xl': "none",
-        'mobile': '320px',
-        'tablet': '768px',
-        'desktop': '1600px',
+        sm: 'none',  // Додайте значення для малих екранів (розмір >= 640px)
+        md: 'none', 
+        lg: 'none', 
+        xl: 'none', 
+        '2xl': 'none' 
       },
       fontFamily: {
         besley: ['Besley', 'serif'],

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import s from "./BlogArticleComponent.module.scss";
 
 interface ArticleProps {
   article: {
@@ -10,9 +11,11 @@ interface ArticleProps {
 
 export const Article: FC<ArticleProps> = ({ article }) => {
   return (
-    <div>
-      <h3 id={article.id}>{article.title}</h3>
-      <p>{article.description}</p>
+    <div className={s.article}>
+      <h3 className={s.article_title} id={article.id}>
+        {article.title}
+      </h3>
+      <p className={s.article_descripcion}>{article.description}</p>
     </div>
   );
 };

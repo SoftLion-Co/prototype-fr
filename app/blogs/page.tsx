@@ -1,4 +1,5 @@
 import { ArticleSection } from "../sections/article_page/ArticleSection"
+import s from "./page.module.scss"
 
 const Blogs = () => {
     return (

@@ -1,0 +1,161 @@
+@import "./../../../styles/colors";
+@import "./../../../styles/mixin";
+@import "./../../../styles/container";
+
+.article_section {
+  display: flex;
+  @include for-size(tablet) {
+    gap: 30px;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    gap: 44px;
+  }
+}
+
+.article_container {
+  flex: 1;
+}
+
+.article_navigation {
+  display: none;
+  @include for-size(tablet) {
+    width: 130px;
+    display: initial;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    width: 320px;
+  }
+}
+
+.article_section_title {
+  color: $blog-card-text-color;
+  font-family: Roboto;
+  font-size: 12.435px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130.49%;
+  letter-spacing: 1.1px;
+  margin-bottom: 16px;
+
+  @include for-size(tablet) {
+    font-size: 21.813px;
+    letter-spacing: 1.9px;
+    margin-bottom: 20px;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    font-size: 40px;
+    letter-spacing: 2.6px;
+    margin-bottom: 32px;
+  }
+}
+
+.container_author {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: center;
+
+  @include for-size(tablet) {
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 18px;
+    align-items: normal;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  @include for-size(tablet) {
+    gap: 14px;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    gap: 20px;
+  }
+}
+
+.author_text {
+  color: $service-heading-color;
+  font-family: Roboto;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130.49%;
+  letter-spacing: 0.3px;
+
+  @include for-size(tablet) {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+}
+
+.author_img {
+  width: 16px;
+  height: 16px;
+  @include for-size(tablet) {
+    width: 28px;
+    height: 28px;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.article_section_img {
+  width: 290px;
+  height: 140px;
+  margin-bottom: 26px;
+  @include for-size(tablet) {
+    width: 460px;
+    height: 250px;
+    margin-bottom: 36px;
+  }
+
+  @include for-size(laptop) {
+  }
+
+  @include for-size(desktop) {
+    width: 740px;
+    height: 380px;
+    margin-bottom: 46px;
+  }
+}
