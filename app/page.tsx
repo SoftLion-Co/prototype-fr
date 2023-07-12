@@ -4,8 +4,7 @@ import AppealingSection from "./sections/article_page/AppealingSection";
 
 const Home = () => {
   return (
-    <div >
-      
+    <div className="container">
       <h1>Home</h1>
       <Link href="/blogs">
         <h2>Blog</h2>

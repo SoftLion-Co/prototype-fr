@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-      <body className="container">
+      <body >
       <HeaderComponent/>
         {children}
         <FooterComp />

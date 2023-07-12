@@ -2,8 +2,8 @@ import s from "./HeaderComponent.module.scss"
 
 const HeaderComponent = () => {
     return (
-        <div>
-            <p>HEDER</p>
+        <div className={s.container}>
+            <p>HEDER </p>
 
         </div>
     )
