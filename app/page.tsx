@@ -16,7 +16,6 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
-      <AppealingSection />
     </div>
   );
 };

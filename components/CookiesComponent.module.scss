@@ -1,0 +1,32 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+
+.cookies{
+    border-radius: 4.5px;
+    background: $cookies-background;
+    box-shadow: $cookies-shadow;
+    padding: 15px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+
+    @include for-size(tablet){
+        padding: 20px 37px 20px 25px;
+        font-size: 12px;
+        gap: 38px;
+    }
+
+    @include for-size(laptop){
+        font-size: 20px;
+        gap: 70px;
+    }
+
+    @include for-size(desktop){
+        font-size: 25px;
+        padding: 46px 130px 30px 52px;
+        gap: 79px;
+    }
+
+}
