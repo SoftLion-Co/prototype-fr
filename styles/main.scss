@@ -2,19 +2,19 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Besley&family=Open+Sans&family=Roboto:wght@300;400;500&display=swap");
 
-@import './colors';
-@import './container'; 
-@import './mixin'; 
+@import "./colors";
+@import "./container";
+@import "./mixin";
 
 body {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family:'Roboto';
+  font-family: "Roboto";
 }
 
 a {
@@ -47,6 +47,6 @@ img {
   height: auto;
 }
 
-li{
+li {
   list-style: none;
 }
