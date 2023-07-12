@@ -6,16 +6,16 @@ import { PiTelegramLogoDuotone } from "react-icons/pi";
 
 export const FooterComp = () => {
   return (
-    <footer className={s.footer__conteiner}>
+    <footer className={s.footer}>
       <div className={s.footer__mainWrap}>
         <div className={s.footer__firstBlock}>
           <div className={s.footer__logo}></div>
           <div className={s.footer__routeWrap2}>
             <Link href={"/services"} className={s.footer__routeName}>
-              Servise
+              Service
             </Link>
             <Link href={"/ourlink"} className={s.footer__routeName}>
-              Our Link
+              Our Projects
             </Link>
             <Link href={"/technologies"} className={s.footer__routeName}>
               Technologies
@@ -38,10 +38,10 @@ export const FooterComp = () => {
           <div>
             <div className={s.footer__routeWrap}>
               <Link href={"/services"} className={s.footer__routeName}>
-                Servise
+                Service
               </Link>
               <Link href={"/ourlink"} className={s.footer__routeName}>
-                Our Link
+                Our Projects
               </Link>
               <Link href={"/technologies"} className={s.footer__routeName}>
                 Technologies
