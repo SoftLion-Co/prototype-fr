@@ -1,3 +1,40 @@
 @import "../styles/colors";
 @import "../styles/container";
 @import "../styles/mixin";
+
+.header {
+  display: flex;
+  padding: 19px 0;
+
+  &__logo {
+    width: 74px;
+    height: 15px;
+    background-color: violet;
+    @include for-size(tablet) {
+      width: 62px;
+      height: 12px;
+    }
+  }
+
+  &__btnBurger {
+    align-items: center;
+    background-color: transparent;
+    margin-left: auto;
+    border: none;
+  }
+  &__btnHeader {
+    background-color: $button-blue-background;
+    width: 41px;
+    height: 18px;
+    border-radius: 6px;
+    border: none;
+    margin-left: 16px;
+  }
+  &__btnText {
+    font-size: 6px;
+    font-family: "Roboto";
+    letter-spacing: 0.4px;
+    color: $blog-card-text-color;
+    white-space: nowrap;
+  }
+}
