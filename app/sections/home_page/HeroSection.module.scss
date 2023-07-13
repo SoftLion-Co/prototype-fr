@@ -6,54 +6,78 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  padding-bottom: 22px;
+
   @include for-size(tablet) {
     flex-direction: row;
-    gap: 58px;
+    gap: 0px;
   }
   @include for-size(laptop) {
     flex-direction: row;
-    gap: 128px;
+    gap: 0px;
+    justify-content: space-between;
+    padding-bottom: 60px;
   }
   @include for-size(desktop) {
     flex-direction: row;
-    gap: 128px;
+    gap: 0px;
+    justify-content: space-between;
+    padding-bottom: 0px;
+  }
+
+  &__Logo{
+    
+    display: none;
+
+    &_small{
+      display: block;
+
+      @include for-size(tablet) {
+        display: none;
+      }
+      @include for-size(laptop) {
+        display: none;
+      }
+      @include for-size(desktop) {
+        display: none;
+      }
+    }
+    
+    @include for-size(tablet) {
+      display: block;
+      max-width: 380px;
+    }
+    @include for-size(laptop) {
+      display: block;
+      max-width: 700px;
+    }
+    @include for-size(desktop) {
+      display: block;
+      max-width: 800px;
+    }
   }
 
   &__name {
-    font-family: "Roboto", sans-serif;
     font-size: 22px;
     font-weight: 600;
     color: $button-dark-blue-background;
-    max-width: 210px;
-    text-align: left;
-    height: 76px;
-    margin-bottom: 38px;
+    max-width: 310px;
+    margin-bottom: 15px;
+
     @include for-size(tablet) {
-      font-family: "Roboto", sans-serif;
       font-size: 24px;
-      font-weight: 600;
-      color: $button-dark-blue-background;
       max-width: 321px;
-      height: 98px;
-      margin-bottom: 0;
+      margin-bottom: 15px;
     }
     @include for-size(laptop) {
-      font-family: "Roboto", sans-serif;
-      font-size: 45px;
-      font-weight: 600;
-      color: $button-dark-blue-background;
+      font-size: 35px;
       max-width: 613px;
-      height: 188px;
-      margin-bottom: 0;
+      margin-bottom: 25px;
     }
     @include for-size(desktop) {
-      font-family: "Roboto", sans-serif;
       font-size: 45px;
-      font-weight: 600;
-      color: $button-dark-blue-background;
       max-width: 613px;
-      height: 188px;
-      margin-bottom: 0;
+      margin-bottom: 35px;
     }
   }
   &__nameComp {
@@ -120,22 +144,22 @@
   }
   &__description {
     color: $button-dark-blue-background;
-    font-size: 6.974px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.279px;
-    width: 179px;
+    max-width: 279px;
     @include for-size(tablet) {
-      width: 287px;
+      max-width: 287px;
       font-size: 9px;
       letter-spacing: 0.377px;
     }
     @include for-size(laptop) {
-      width: 549px;
-      font-size: 18px;
+      max-width: 440px;
+      font-size: 14px;
       letter-spacing: 0.72px;
     }
     @include for-size(desktop) {
-      width: 549px;
+      max-width: 549px;
       font-size: 18px;
       letter-spacing: 0.72px;
     }
