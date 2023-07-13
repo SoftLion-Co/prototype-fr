@@ -1,0 +1,199 @@
+@import "/styles/colors";
+@import "/styles/container";
+@import "/styles/mixin";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include for-size(tablet) {
+    flex-direction: row;
+    gap: 58px;
+  }
+  @include for-size(laptop) {
+    flex-direction: row;
+    gap: 128px;
+  }
+  @include for-size(desktop) {
+    flex-direction: row;
+    gap: 128px;
+  }
+
+  &__name {
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: $button-dark-blue-background;
+    max-width: 210px;
+    text-align: left;
+    height: 76px;
+    margin-bottom: 38px;
+    @include for-size(tablet) {
+      font-family: "Roboto", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: $button-dark-blue-background;
+      max-width: 321px;
+      height: 98px;
+      margin-bottom: 0;
+    }
+    @include for-size(laptop) {
+      font-family: "Roboto", sans-serif;
+      font-size: 45px;
+      font-weight: 600;
+      color: $button-dark-blue-background;
+      max-width: 613px;
+      height: 188px;
+      margin-bottom: 0;
+    }
+    @include for-size(desktop) {
+      font-family: "Roboto", sans-serif;
+      font-size: 45px;
+      font-weight: 600;
+      color: $button-dark-blue-background;
+      max-width: 613px;
+      height: 188px;
+      margin-bottom: 0;
+    }
+  }
+  &__nameComp {
+    color: $hero-heading-blue-color;
+    margin-left: 0;
+    @include for-size(tablet) {
+      margin-left: 8px;
+    }
+    @include for-size(laptop) {
+      margin-left: 8px;
+    }
+    @include for-size(desktop) {
+      margin-left: 8px;
+    }
+  }
+
+  &__wrapperInf {
+    margin-bottom: 0;
+    @include for-size(tablet) {
+      margin-bottom: 54px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 104px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 104px;
+    }
+  }
+
+  &__warpperBtnMob {
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    margin-top: 41px;
+    @include for-size(tablet) {
+      gap: 39px;
+      display: none;
+    }
+    @include for-size(laptop) {
+      gap: 75px;
+      display: none;
+    }
+    @include for-size(desktop) {
+      gap: 75px;
+      display: none;
+    }
+  }
+
+  &__warpperBtn {
+    display: none;
+    gap: 36px;
+    @include for-size(tablet) {
+      display: flex;
+      gap: 39px;
+    }
+    @include for-size(laptop) {
+      display: flex;
+      gap: 75px;
+    }
+    @include for-size(desktop) {
+      display: flex;
+      gap: 75px;
+    }
+  }
+  &__description {
+    color: $button-dark-blue-background;
+    font-size: 6.974px;
+    font-weight: 400;
+    letter-spacing: 0.279px;
+    width: 179px;
+    @include for-size(tablet) {
+      width: 287px;
+      font-size: 9px;
+      letter-spacing: 0.377px;
+    }
+    @include for-size(laptop) {
+      width: 549px;
+      font-size: 18px;
+      letter-spacing: 0.72px;
+    }
+    @include for-size(desktop) {
+      width: 549px;
+      font-size: 18px;
+      letter-spacing: 0.72px;
+    }
+  }
+  &__btns {
+    background-color: $button-white-background;
+    border: none;
+    box-shadow: $button-white-shadow;
+    border-radius: 15px;
+    padding: 10px 20px;
+    @include for-size(tablet) {
+      padding: 13px 11px;
+    }
+    @include for-size(laptop) {
+      padding: 19px 40px;
+    }
+    @include for-size(desktop) {
+      padding: 19px 40px;
+    }
+  }
+  &__btnText {
+    font-family: "Roboto";
+    color: $blog-card-text-color;
+    font-size: 8px;
+    @include for-size(tablet) {
+      font-size: 8px;
+      letter-spacing: 0.3px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+      letter-spacing: 0.6px;
+    }
+    @include for-size(desktop) {
+      font-size: 15px;
+      letter-spacing: 0.6px;
+    }
+  }
+  &__foto {
+    width: 290px;
+    height: 150px;
+    background: red;
+
+    @include for-size(tablet) {
+      width: 336px;
+      height: 183px;
+    }
+    @include for-size(laptop) {
+      width: 500px;
+      height: 270px;
+    }
+    @include for-size(desktop) {
+      width: 646px;
+      height: 350px;
+    }
+  }
+  &__wrapperSecond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
