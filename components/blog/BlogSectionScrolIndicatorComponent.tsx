@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import s from "./BlogSectionScrolIndicatorComponent.module.scss";
+import s from "./../../app/sections/article_page/ArticleSection.module.scss";
 import classNames from "classnames";
 interface SectionScrolIndicator {
   items: any[];

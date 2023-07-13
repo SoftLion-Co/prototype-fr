@@ -1,68 +1,69 @@
 @import "./../../styles/colors";
 @import "./../../styles/mixin";
+@import"./../../app/sections/article_page/ArticleSection.module.scss";
 
 .article {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
+  gap: 16px;
+  margin-bottom: 20px;
 
   @include for-size(tablet) {
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: 30px;
+    margin-bottom: 38px;
   }
 
   @include for-size(laptop) {
   }
 
   @include for-size(desktop) {
-    gap: 18px;
-    margin-bottom: 48px;
+    gap: 58px;
+    margin-bottom: 73px;
   }
-}
 
-.article_title {
-  font-family: Roboto;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130.49%;
-  letter-spacing: 2.7px;
-  color: $blog-card-text-color;
-
-  @include for-size(tablet) {
-    font-size: 20px;
+  &_title {
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%;
     letter-spacing: 2.7px;
+    color: $blog-card-text-color;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+      letter-spacing: 2.7px;
+    }
+
+    @include for-size(laptop) {
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      letter-spacing: 2.7px;
+    }
   }
 
-  @include for-size(laptop) {
-  }
+  &_descripcion {
+    color: $blog-card-text-color;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.4px;
 
-  @include for-size(desktop) {
-    font-size: 30px;
-    letter-spacing: 2.7px;
-  }
-}
+    @include for-size(tablet) {
+      font-size: 16px;
+      letter-spacing: 0.6px;
+    }
 
-.article_descripcion {
-  color: $blog-card-text-color;
-  font-family: Roboto;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130.49%;
-  letter-spacing: 0.4px;
+    @include for-size(laptop) {
+    }
 
-  @include for-size(tablet) {
-    font-size: 16px;
-    letter-spacing: 0.6px;
-  }
-
-  @include for-size(laptop) {
-  }
-
-  @include for-size(desktop) {
-    font-size: 20px;
-    letter-spacing: 0.8px;
+    @include for-size(desktop) {
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
   }
 }
