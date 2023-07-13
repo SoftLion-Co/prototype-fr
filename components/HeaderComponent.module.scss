@@ -4,6 +4,7 @@
 
 .header {
   display: flex;
+  align-items: center;
   padding: 19px 0;
 
   &__logo {
@@ -11,30 +12,102 @@
     height: 15px;
     background-color: violet;
     @include for-size(tablet) {
+      width: 92px;
+      height: 19px;
+    }
+    @include for-size(laptop) {
       width: 62px;
       height: 12px;
     }
-  }
+    @include for-size(desktop) {
+      width: 119px;
+      height: 24px;
+    }
+    
 
+  }
+  &__navigation{
+    display: none;
+
+    @include for-size(tablet) {
+      display: flex;
+      gap: 23px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include for-size(laptop) {
+      gap: 41px;
+    }
+    @include for-size(desktop) {
+      gap: 53px;
+    }
+  }
+  &__link {
+    font-size: 20px;
+    font-family: "Roboto";
+    letter-spacing: 0.4px;
+    color: black;
+    line-height: 26px;
+  }
   &__btnBurger {
     align-items: center;
     background-color: transparent;
     margin-left: auto;
     border: none;
+    color: $burger-menu-color;
+    @include for-size(tablet) {
+      display: none;
+    }
   }
   &__btnHeader {
-    background-color: $button-blue-background;
     width: 41px;
     height: 18px;
+    padding: 0px; 
     border-radius: 6px;
     border: none;
     margin-left: 16px;
+
+    @include for-size(tablet) {
+      width: 47px;
+    height: 21px;
+      // padding: 6px 14px;
+      border-radius: 8px;
+      margin-left: 0px;
+    }
+
+    @include for-size(laptop) {
+      width: 69px;
+    height: 31px;
+      // padding: 8px 19px;
+      border-radius: 12px;
+    }
+    @include for-size(desktop) {
+      width: 90px;
+      height: 41px;
+      // padding: 0px 0px;
+      border-radius: 15px;
+    }
   }
   &__btnText {
     font-size: 6px;
     font-family: "Roboto";
     letter-spacing: 0.4px;
-    color: $blog-card-text-color;
-    white-space: nowrap;
+    color: $service-heading-color;
+    line-height: 7px;
+   
+
+    @include for-size(tablet) {
+    font-size: 8px;
+    line-height: 10px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 12px;
+      line-height: 15px;   
+    }
+    @include for-size(desktop) {
+      font-size: 15px;
+      line-height: 20px; 
+    }
   }
 }
