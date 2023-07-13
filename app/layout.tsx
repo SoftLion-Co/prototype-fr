@@ -1,4 +1,5 @@
 import "./../styles/main.scss";
+import { FooterComp } from "@/components/FooterComponent";
 
 export const metadata = {
   title: "SoftLion",
@@ -16,7 +17,10 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FooterComp />
+      </body>
     </html>
   );
 }
