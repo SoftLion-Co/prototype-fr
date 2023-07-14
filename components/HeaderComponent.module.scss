@@ -48,80 +48,88 @@
     letter-spacing: 0.4px;
     color: black;
     line-height: 26px;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+      
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+     
+    }
   }
-  @include for-size(tablet) {
-    font-size: 12px;
-    font-family: "Roboto";
-    letter-spacing: 0.4px;
-    color: black;
-    line-height: 26px;
-  }
-  @include for-size(laptop) {
-    font-size: 15px;
-  }
-  @include for-size(desktop) {
-    font-size: 20px;
-   
-  }
+  
 
 
   &__btnBurger {
-    align-items: center;
+    // width: 18px;
+    // height: 13px;
+    
+   
     background-color: transparent;
     margin-left: auto;
     border: none;
     color: $burger-menu-color;
+   
     @include for-size(tablet) {
       display: none;
     }
+  }
+
+  &__burger{
+   
+    font-size: 25px;
+    margin-top: 3px;
+
   }
   &__btnHeader {
     background: $button-blue-background;
     box-shadow: $button-blue-shadow;
     color: black;
-    
-    padding: 8.5px 18px;
+    padding: 5.5px 13px;
     border-radius: 6px;
     border: none;
     margin-left: 16px;
 
     @include for-size(tablet) {
-      padding: 12px 23.5px;  
+      padding: 5.5px 13px;  
       border-radius: 8px;
       margin-left: 0px;
     }
 
     @include for-size(laptop) {
-      padding: 19px 42px;
-   
+      padding: 8px 19px;
       border-radius: 12px;
     }
     @include for-size(desktop) {
-      padding: 18px 49px;
+      padding: 11px 25px;
      
       border-radius: 15px;
     }
   }
   &__btnText {
-    font-size: 8px;
+    font-size: 5.8px;
     font-family: "Roboto";
+    font-weight: 500;
     letter-spacing: 0.4px;
     color: black;
-    line-height: 7px;
-    margin-top: 3px;
-   
+     line-height: 7px;
   
     @include for-size(tablet) {
-    font-size: 12px;
+      font-weight: 400;
+    font-size: 7.8px;
     line-height: 10px;
     }
 
     @include for-size(laptop) {
-      font-size: 18px;
+      font-size: 11.5px;
       line-height: 15px;   
     }
     @include for-size(desktop) {
-      font-size: 20px;
+      font-size: 15px;
       line-height: 20px; 
     }
   }

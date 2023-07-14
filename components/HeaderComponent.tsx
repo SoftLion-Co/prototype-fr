@@ -1,6 +1,6 @@
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
-import { HiMenu } from 'react-icons/hi';
+import { IoIosMenu } from 'react-icons/io';
 
 import Logo from "images/logo.svg";
 import Image from "next/image";
@@ -31,12 +31,13 @@ const HeaderComponent = () => {
             Blog
           </Link>
           <Link href="/ContuctUs" className={s.header__link}>
-            Contuct Us
+            Contact Us
           </Link>
         </nav>
         
         <button className={s.header__btnBurger}>
-        <HiMenu />
+        <IoIosMenu className={s.header__burger}  width= "18px"  height= "13px"
+     / >
         </button>
         <button className={s.header__btnHeader}>
         <p className={s.header__btnText}>Login</p>
