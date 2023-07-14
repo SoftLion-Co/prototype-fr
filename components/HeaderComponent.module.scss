@@ -10,7 +10,6 @@
   &__logo {
     width: 74px;
     height: 15px;
-    background-color: violet;
     @include for-size(tablet) {
      
       width: 62px;

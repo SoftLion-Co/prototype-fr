@@ -2,13 +2,21 @@ import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
 import { HiMenu } from 'react-icons/hi';
 
+import Logo from "images/logo.svg";
+import Image from "next/image";
+
 
 const HeaderComponent = () => {
   return (
     <header className={s.container}>
       <div className={s.header}>
         {/* <div className={s.header__logo}></div> */}
-        <img src="images/logo.svg" alt="logo" className={s.header__logo} />
+        <Image
+                className={s.header__logo}
+                src={Logo}
+               
+              />
+        {/* <img src="images/logo.svg" alt="logo" className={s.header__logo} /> */}
         <nav  className={s.header__navigation}>
           <Link href="/Servise" className={s.header__link}>
             Servise
