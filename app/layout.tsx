@@ -1,8 +1,10 @@
-import './../styles/main.scss';
+import "./../styles/main.scss";
+import { FooterComp } from "@/components/FooterComponent";
 
 export const metadata = {
   title: "SoftLion",
-  description: "Embrace the Lion's Share Technological Advancements with SoftLion",
+  description:
+    "Embrace the Lion's Share Technological Advancements with SoftLion",
 };
 
 export default function RootLayout({
@@ -13,11 +15,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body>
         {children}
-        </body>
+        <FooterComp />
+      </body>
     </html>
   );
 }

@@ -1,11 +1,15 @@
-import s from "./HeadingComponent.module.scss"
+import s from "./HeadingComponent.module.scss";
 
-const HeadingComponent = () => {
-    return (
-        <div>
-
-        </div>
-    )
+interface HeadingComponentProps {
+  text: string;
 }
 
-export default HeadingComponent
+const HeadingComponent: FC<HeadingComponentProps> = ({ text }) => {
+  return (
+    <div className={s.heading_container}>
+      <h1 className={s.heading}>{text}</h1>;
+    </div>
+  );
+};
+
+export default HeadingComponent;
