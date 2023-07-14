@@ -1,12 +1,14 @@
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
-import MainButtonComponent from "./MainButtonComponent";
+import { HiMenu } from 'react-icons/hi';
+
 
 const HeaderComponent = () => {
   return (
     <header className={s.container}>
       <div className={s.header}>
-        <div className={s.header__logo}></div>
+        {/* <div className={s.header__logo}></div> */}
+        <img src="images/logo.svg" alt="logo" className={s.header__logo} />
         <nav  className={s.header__navigation}>
           <Link href="/Servise" className={s.header__link}>
             Servise
@@ -24,22 +26,13 @@ const HeaderComponent = () => {
             Contuct Us
           </Link>
         </nav>
+        
         <button className={s.header__btnBurger}>
-          <svg
-            width="17"
-            height="13"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 1H22" stroke="#858598"></path>
-            <path d="M0 8H22" stroke="#858598"></path>
-            <path d="M0 15H22" stroke="#858598"></path>
-          </svg>
+        <HiMenu />
         </button>
-        <MainButtonComponent loading={false} className={s.header__btnHeader}>
-          <p className={s.header__btnText}>Login</p>
-        </MainButtonComponent>
+        <button className={s.header__btnHeader}>
+        <p className={s.header__btnText}>Login</p>
+        </button>
        
       </div>
     </header>
