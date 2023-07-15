@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FormComponent from "@/components/FormComponent";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
+      <FormComponent />
     </div>
   );
 };
