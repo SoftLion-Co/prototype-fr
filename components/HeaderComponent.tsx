@@ -10,13 +10,13 @@ const HeaderComponent = () => {
   return (
     <header className={s.container}>
       <div className={s.header}>
-        {/* <div className={s.header__logo}></div> */}
+      <Link href="/" >
         <Image
                 className={s.header__logo}
                 src={Logo}
                
               />
-        {/* <img src="images/logo.svg" alt="logo" className={s.header__logo} /> */}
+       </Link>
         <nav  className={s.header__navigation}>
           <Link href="/Servise" className={s.header__link}>
             Servise
