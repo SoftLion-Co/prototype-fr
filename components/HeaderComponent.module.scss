@@ -140,5 +140,8 @@
     background-color:  #83ADDF; 
     height: 1px; 
     margin: 10px 0 0 0;
+    @include for-size(tablet) {
+      display: none;
+    }
   }
 }
