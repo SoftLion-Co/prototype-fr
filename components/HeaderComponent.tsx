@@ -44,6 +44,7 @@ const HeaderComponent = () => {
         </button>
        
       </div>
+      <hr className={s.header__line} ></hr>
     </header>
   );
 };

@@ -5,7 +5,7 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 19px 0;
+  padding-top: 19px;
 
   &__logo {
     width: 74px;
@@ -73,6 +73,8 @@
     margin-left: auto;
     border: none;
     color: $burger-menu-color;
+    padding: 0;
+    height: 25px;
    
     @include for-size(tablet) {
       display: none;
@@ -82,7 +84,7 @@
   &__burger{
    
     font-size: 25px;
-    margin-top: 3px;
+    // margin-top: 3px;
 
   }
   &__btnHeader {
@@ -132,5 +134,11 @@
       font-size: 15px;
       line-height: 20px; 
     }
+  }
+  &__line{
+    border: none; 
+    background-color:  #83ADDF; 
+    height: 1px; 
+    margin: 10px 0 0 0;
   }
 }
