@@ -1,0 +1,141 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 19px;
+
+  &__logo {
+    width: 74px;
+    height: 15px;
+
+    @include for-size(tablet) {
+      width: 62px;
+      height: 12px;
+    }
+    @include for-size(laptop) {
+      width: 92px;
+      height: 19px;
+    }
+    @include for-size(desktop) {
+      width: 119px;
+      height: 24px;
+    }
+  }
+
+  &__navigation{
+    display: none;
+
+    @include for-size(tablet) {
+      display: flex;
+      gap: 23px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include for-size(laptop) {
+      gap: 41px;
+    }
+    @include for-size(desktop) {
+      gap: 53px;
+    }
+  }
+  &__link {
+    font-size: 20px;
+    font-family: "Roboto";
+    letter-spacing: 0.4px;
+    color: black;
+    line-height: 26px;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+  }
+  
+
+
+  &__btnBurger {
+    // width: 18px;
+    // height: 13px;
+    
+   
+    background-color: transparent;
+    margin-left: auto;
+    border: none;
+    color: $burger-menu-color;
+    padding: 0;
+    height: 25px;
+   
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+
+  &__burger{
+    font-size: 25px;
+  }
+  
+  &__btnHeader {
+    background: $button-blue-background;
+    color: black;
+    padding: 5.5px 13px;
+    border-radius: 6px;
+    border: none;
+    margin-left: 16px;
+
+    @include for-size(tablet) {
+      padding: 5.5px 13px;  
+      border-radius: 8px;
+      margin-left: 0px;
+    }
+
+    @include for-size(laptop) {
+      padding: 8px 19px;
+      border-radius: 12px;
+    }
+    @include for-size(desktop) {
+      padding: 11px 25px;
+     
+      border-radius: 15px;
+    }
+  }
+  &__btnText {
+    font-size: 5.8px;
+    font-family: "Roboto";
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    color: black;
+     line-height: 7px;
+  
+    @include for-size(tablet) {
+      font-weight: 400;
+    font-size: 7.8px;
+    line-height: 10px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 11.5px;
+      line-height: 15px;   
+    }
+    @include for-size(desktop) {
+      font-size: 15px;
+      line-height: 20px; 
+    }
+  }
+  &__line{
+    border: none; 
+    background-color:  #83ADDF; 
+    height: 1px; 
+    margin: 10px 0 0 0;
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+}
