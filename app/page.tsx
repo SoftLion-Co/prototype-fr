@@ -1,6 +1,4 @@
 import Link from "next/link";
-import ContactUsSection from "./sections/contact_us_page/ContactUsSection";
-
 
 const Home = () => {
   return (
@@ -15,8 +13,6 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
-    <ContactUsSection/>
-
     </div>
   );
 };
