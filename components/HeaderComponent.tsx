@@ -14,7 +14,7 @@ const HeaderComponent = () => {
         <Image
                 className={s.header__logo}
                 src={Logo}
-               
+                alt="SoftLion"
               />
        </Link>
         <nav  className={s.header__navigation}>
