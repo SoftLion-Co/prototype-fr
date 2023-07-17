@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import AppealingSection from "./sections/article_page/AppealingSection";
-
 const Home = () => {
   return (
     <div className="container">

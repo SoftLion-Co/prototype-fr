@@ -10,8 +10,8 @@
   &__logo {
     width: 74px;
     height: 15px;
+
     @include for-size(tablet) {
-     
       width: 62px;
       height: 12px;
     }
@@ -23,9 +23,8 @@
       width: 119px;
       height: 24px;
     }
-    
-
   }
+
   &__navigation{
     display: none;
 
@@ -51,14 +50,12 @@
 
     @include for-size(tablet) {
       font-size: 12px;
-      
     }
     @include for-size(laptop) {
       font-size: 15px;
     }
     @include for-size(desktop) {
       font-size: 20px;
-     
     }
   }
   
@@ -82,11 +79,9 @@
   }
 
   &__burger{
-   
     font-size: 25px;
-    // margin-top: 3px;
-
   }
+  
   &__btnHeader {
     background: $button-blue-background;
     color: black;
