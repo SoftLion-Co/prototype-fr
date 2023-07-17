@@ -2,7 +2,6 @@
 import { useForm } from "react-hook-form";
 import { SubmitHandler } from "react-hook-form";
 import s from "./FormComponent.module.scss";
-import HeadingComponent from "./HeadingComponent";
 import Link from "next/link";
 
 interface FormData {
