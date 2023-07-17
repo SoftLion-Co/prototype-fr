@@ -1,0 +1,353 @@
+@import "../styles/mixin";
+@import "../styles/colors";
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @include for-size(tablet) {
+    margin-top: -39px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: -25px;
+  }
+
+  &__text {
+    max-width: 266px;
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.48px;
+    margin-top: 6px;
+
+    @include for-size(tablet) {
+      max-width: none;
+      width: 258px;
+      text-align: right;
+      font-size: 10px;
+      letter-spacing: 0.42px;
+      margin-top: 40px;
+    }
+
+    @include for-size(laptop) {
+      width: 380px;
+      text-align: right;
+      font-size: 15px;
+      letter-spacing: 0.611px;
+    }
+
+    @include for-size(desktop) {
+      width: 514px;
+      text-align: right;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+      margin-top: 52px;
+    }
+  }
+}
+
+.our_form {
+  @include for-size(tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.form {
+  max-width: 290px;
+  height: 100%;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $contact-us-form-background;
+  box-shadow: 12px 6px 12px 0px rgba(0, 0, 0, 0.15);
+
+  @include for-size(tablet) {
+    max-width: none;
+    width: 356px;
+    border-radius: 8px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include for-size(laptop) {
+    width: 518px;
+    border-radius: 11px;
+  }
+
+  @include for-size(desktop) {
+    width: 678px;
+    border-radius: 15px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    @include for-size(tablet) {
+      gap: 12px;
+    }
+
+    @include for-size(laptop) {
+      gap: 17px;
+    }
+
+    @include for-size(desktop) {
+      gap: 23px;
+    }
+  }
+
+  &__field {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    width: 147px;
+    color: #858585;
+    font-family: Open Sans;
+    font-size: 6px;
+    line-height: 154%;
+    letter-spacing: 0.19px;
+    height: 15px;
+
+    @include for-size(tablet) {
+      width: 195px;
+      height: 19px;
+      font-size: 8px;
+      letter-spacing: 0.252px;
+    }
+
+    @include for-size(laptop) {
+      height: 27px;
+      width: 284px;
+      font-size: 12px;
+      letter-spacing: 0.367px;
+    }
+
+    @include for-size(desktop) {
+      width: 372px;
+      height: 40px;
+      font-size: 16px;
+      letter-spacing: 0.48px;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #007bff;
+    }
+  }
+
+  &__input {
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 10px;
+      left: 0px;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      top: 6px;
+      color: #858585;
+      font-family: Open Sans;
+      font-size: 6px;
+      line-height: 154.5%;
+      letter-spacing: 0.19px;
+
+      @include for-size(tablet) {
+        top: 1px;
+        color: #858585;
+        font-size: 11px;
+        letter-spacing: 0.38px;
+      }
+
+      @include for-size(laptop) {
+        top: 5px;
+        font-size: 12px;
+        letter-spacing: 0.367px;
+      }
+
+      @include for-size(desktop) {
+        top: 10px;
+        font-size: 16px;
+        letter-spacing: 0.48px;
+      }
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
+      top: -4px;
+      left: 0px;
+      font-size: 7px;
+      color: #333;
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    line-height: 130.49%;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-top: 21px;
+    margin-bottom: 39px;
+
+    @include for-size(tablet) {
+      font-size: 16px;
+      letter-spacing: 1.417px;
+      margin-bottom: 40px;
+      margin-top: 28px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22.929px;
+      letter-spacing: 2.064px;
+      margin-bottom: 59px;
+      margin-top: 41px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 2.7px;
+      margin-bottom: 77px;
+    }
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    background-color: black;
+    width: 147px;
+    margin-bottom: 9px;
+
+    @include for-size(tablet) {
+      width: 195px;
+      margin-bottom: 12px;
+    }
+
+    @include for-size(laptop) {
+      width: 284px;
+      margin-bottom: 17px;
+    }
+
+    @include for-size(desktop) {
+      width: 374px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__button {
+    border-radius: 7px;
+    background: $button-blue-form;
+    border: none;
+    color: #fff;
+    padding: 7px 14px;
+    font-size: 8px;
+    line-height: 130.49%;
+    letter-spacing: 0.317px;
+    margin-top: 17px;
+    margin-bottom: 16px;
+
+    @include for-size(tablet) {
+      border-radius: 7px;
+      padding: 10px 18px;
+      font-size: 10px;
+      letter-spacing: 0.42px;
+      margin-bottom: 21px;
+      margin-top: 21px;
+    }
+
+    @include for-size(laptop) {
+      border-radius: 12px;
+      padding: 15px 27px;
+      font-size: 15px;
+      letter-spacing: 0.611px;
+      margin-bottom: 31px;
+      margin-top: 31px;
+    }
+
+    @include for-size(desktop) {
+      border-radius: 15px;
+      padding: 19px 35px;
+      margin-bottom: 41px;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+      margin-top: 41px;
+    }
+
+    &:hover {
+      background-color: #005fcc;
+    }
+  }
+
+  &__text {
+    color: var(--unnamed, #898989);
+    text-align: center;
+    font-family: Open Sans;
+    width: 111px;
+    font-size: 5px;
+    line-height: 140%;
+    letter-spacing: 0.155px;
+    margin-bottom: 24px;
+
+    @include for-size(tablet) {
+      width: 160px;
+      flex-shrink: 0;
+      font-size: 6.823px;
+      letter-spacing: 0.205px;
+      margin-bottom: 28px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 41px;
+      width: 243px;
+      font-size: 10px;
+      letter-spacing: 0.298px;
+    }
+
+    @include for-size(desktop) {
+      width: 324px;
+      font-size: 13px;
+      letter-spacing: 0.39px;
+      margin-bottom: 54px;
+    }
+
+    .pr {
+      background: var(--cta, linear-gradient(180deg, #2a95f8 0%, #167bd9 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      font-family: Open Sans;
+      font-size: 5.158px;
+      line-height: 140.182%;
+      letter-spacing: 0.155px;
+
+      @include for-size(tablet) {
+        font-size: 7px;
+        letter-spacing: 0.205px;
+      }
+
+      @include for-size(laptop) {
+        font-size: 10px;
+        letter-spacing: 0.298px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 13px;
+        letter-spacing: 0.39px;
+      }
+    }
+  }
+}
