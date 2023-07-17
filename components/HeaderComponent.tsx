@@ -18,26 +18,25 @@ const HeaderComponent = () => {
               />
        </Link>
         <nav  className={s.header__navigation}>
-          <Link href="/Servise" className={s.header__link}>
+          <Link href="/services" className={s.header__link}>
             Servise
           </Link>
-          <Link href="/OurProjects" className={s.header__link}>
+          <Link href="/projects" className={s.header__link}>
             Our Projects
           </Link>
-          <Link href="/Technologies" className={s.header__link}>
+          <Link href="/technologies" className={s.header__link}>
             Technologies
           </Link>
-          <Link href="/Blog" className={s.header__link}>
+          <Link href="/blogs" className={s.header__link}>
             Blog
           </Link>
-          <Link href="/ContuctUs" className={s.header__link}>
+          <Link href="/contact-us" className={s.header__link}>
             Contact Us
           </Link>
         </nav>
         
         <button className={s.header__btnBurger}>
-        <IoIosMenu className={s.header__burger}  width= "18px"  height= "13px"
-     / >
+        <IoIosMenu className={s.header__burger}  width= "18px"  height= "13px" / >
         </button>
         <button className={s.header__btnHeader}>
         <p className={s.header__btnText}>Login</p>
