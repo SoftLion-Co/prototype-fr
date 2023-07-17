@@ -1,6 +1,6 @@
 @import "./../../styles/colors";
 @import "./../../styles/mixin";
-@import"./../../app/sections/article_page/ArticleSection.module.scss";
+@import "./../../app/sections/article_page/ArticleSection.module.scss";
 
 .article {
   display: flex;
@@ -14,6 +14,8 @@
   }
 
   @include for-size(laptop) {
+    gap: 38px;
+    margin-bottom: 55px;
   }
 
   @include for-size(desktop) {
@@ -32,15 +34,10 @@
 
     @include for-size(tablet) {
       font-size: 20px;
-      letter-spacing: 2.7px;
     }
 
     @include for-size(laptop) {
-    }
-
-    @include for-size(desktop) {
       font-size: 30px;
-      letter-spacing: 2.7px;
     }
   }
 
@@ -59,9 +56,6 @@
     }
 
     @include for-size(laptop) {
-    }
-
-    @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
     }
