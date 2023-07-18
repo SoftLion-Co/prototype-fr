@@ -64,12 +64,8 @@
 }
 
 .rating {
-  width: 100%;
+  flex: 1;
   margin-bottom: 19px;
-
-  @include for-size(tablet) {
-    width: 40%;
-  }
 
   &_text {
     color: $blog-card-text-color;
@@ -95,11 +91,7 @@
 }
 
 .feedback {
-  width: 100%;
-
-  @include for-size(tablet) {
-    width: 60%;
-  }
+  flex: 1;
 
   &_title {
     width: 210px;
@@ -134,50 +126,56 @@
   }
 
   &_images_container {
-    width: 172px;
-    height: 200px;
-    margin-top: -54px;
-    margin-left: -15px;
-    margin-right: -40px;
+    width: 110px;
+    margin-top: -48px;
 
     @include for-size(tablet) {
-      width: 200px;
-      height: 240px;
-      margin-top: -60px;
-      margin-left: 0;
+      width: 125px;
+      margin-top: -55px;
     }
 
     @include for-size(laptop) {
-      width: 285px;
-      height: 360px;
-      margin-top: -110px;
+      width: 176px;
+      margin-top: -89px;
     }
 
     @include for-size(desktop) {
-      width: 340px;
-      height: 450px;
+      width: 220px;
       margin-top: -130px;
     }
   }
 
   &_container {
     display: flex;
+    gap: 28px;
+
+    @include for-size(tablet) {
+     gap: 34px;
+    }
+
+    @include for-size(laptop) {
+      gap: 52px;
+    }
+
+    @include for-size(desktop) {
+      gap: 64px;
+    }
   }
 
   &_form {
     flex: 1;
-    max-width: 230px;
+    max-width: 200px;
 
     @include for-size(tablet) {
-      max-width: 250px;
+      max-width: 200px;
     }
 
     @include for-size(laptop) {
-      max-width: 350px;
+      max-width: 250px;
     }
 
     @include for-size(desktop) {
-      max-width: 450px;
+      max-width: 300px;
     }
 
     &_input {

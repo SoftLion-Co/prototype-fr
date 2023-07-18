@@ -6,7 +6,7 @@ import { Input, Textarea } from "@mantine/core";
 import MainButtonComponent from "@/components/MainButtonComponent";
 import Image from "next/image";
 import classNames from "classnames";
-import BlogImpressionIllustration from "./../../../images/BlogImpressionIllustration.svg";
+import BlogImpression from "./../../../images/BlogImpression.svg";
 
 const ImpressionSection = () => {
   const [value, setValue] = useState(0);
@@ -38,7 +38,7 @@ const ImpressionSection = () => {
               <MainButtonComponent type="submit">SEND</MainButtonComponent>
             </form>
             <div className={s.feedback_images_container}>
-              <Image className={s.feedback_images} width={340} height={450} src={BlogImpressionIllustration} alt="" />
+              <Image className={s.feedback_images} width={340} height={450} src={BlogImpression} alt="" />
             </div>
           </div>
         </div>
