@@ -1,11 +1,13 @@
-import s from "./OurProjectsSection.module.scss"
+import s from "./OurProjectsSection.module.scss";
 
-const OurProjectsSection = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
 
-export default OurProjectsSection
+  const OurProjectsSetcion  = () => {
+      return (
+          <div>
+              
+          </div>
+      )
+  }
+  
+  export default OurProjectsSetcion 
+  
