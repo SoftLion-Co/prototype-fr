@@ -1,11 +1,11 @@
 import Link from "next/link";
-import OurProjectsSection from "./sections/home_page/OurProjectsSection";
+import OurServicesSection from "./sections/home_page/OurServicesSection";
 
 const Home = () => {
   return (
     <div className="container">
       <h1>Home</h1>
-      <OurProjectsSection/>
+      <OurServicesSection/>
 
       <Link href="/blogs">
         <h2>Blog</h2>
