@@ -1,0 +1,21 @@
+@import "../styles/mixin";
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+
+    &__mobileSlider{
+        display: block;
+        @include for-size(tablet){
+            display: none;
+        }
+    }
+    &__desktopSlider{
+        display: none;
+        @include for-size(tablet){
+            display: block;
+        }
+    }
+}

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import BlogDesktopComponent from "./BlogDesktopComponent";
 import BlogMobileComponent from "./BlogMobileComponent";
+import s from "./HomeBlog.module.scss";
 
 const cardsData = [
   {
@@ -71,33 +72,14 @@ const cardsData = [
 ];
 
 const HomeBlog: React.FC = () => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        overflowX: "hidden",
-      }}>
-      {viewportWidth > 767 ? (
+    <div className={s.container}>
+      <div className={s.container__desktopSlider}>
         <BlogDesktopComponent cardsData={cardsData} />
-      ) : (
+      </div>
+      <div className={s.container__mobileSlider}>
         <BlogMobileComponent cardsData={cardsData} />
-      )}
+      </div>
     </div>
   );
 };
