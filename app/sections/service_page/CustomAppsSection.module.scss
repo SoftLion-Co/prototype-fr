@@ -1,0 +1,73 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.customapps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 19px;
+
+  &__num {
+    font-size: 200px;
+    letter-spacing: 0.5px;
+    color: black;
+    line-height: 195px;
+    color: $heading-purple-color;
+
+    @include for-size(tablet) {
+      width: 62px;
+      height: 12px;
+    }
+    @include for-size(laptop) {
+      width: 92px;
+      height: 19px;
+    }
+    @include for-size(desktop) {
+      width: 119px;
+      height: 24px;
+    }
+  }
+  
+
+}
+
+
+.heading {
+    color: $heading-blue-color;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 130.49%;
+  
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+  
+    &_container{
+      text-align:left;
+    }
+  
+    @include for-size(tablet) {
+      font-size: 38px;
+      letter-spacing: 2.634px; 
+      padding-right: 15px; 
+      padding-left: 15px;
+    }
+  
+    @include for-size(laptop) {
+      font-size: 42px;
+      letter-spacing: 2.634px; 
+      padding-right: 15px; 
+      padding-left: 15px;
+    }
+  
+    @include for-size(desktop) {
+      font-size: 150px;
+      letter-spacing: 3.84px;
+      padding-right: 20px; 
+      padding-left: 20px;
+    }
+  }
+  
