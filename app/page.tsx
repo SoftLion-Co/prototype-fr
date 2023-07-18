@@ -1,5 +1,5 @@
 import Link from "next/link";
-import OurProjectsSection from "./sections/projects_page/OurProjectsSetcion";
+import OurProjectsSection from "./sections/home_page/OurProjectsSection";
 
 const Home = () => {
   return (
