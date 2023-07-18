@@ -91,6 +91,7 @@ const HomeBlog: React.FC = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        overflowX: "hidden",
       }}>
       {viewportWidth > 767 ? (
         <BlogDesktopComponent cardsData={cardsData} />
