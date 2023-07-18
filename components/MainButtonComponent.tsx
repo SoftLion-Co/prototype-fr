@@ -1,7 +1,6 @@
 import React, { FC, ReactNode, ComponentProps } from "react";
 import classNames from "classnames";
 import s from "./MainButtonComponent.module.scss";
-import PropTypes from "prop-types";
 import Link from "next/link";
 
 interface MainButtonComponentProps extends ComponentProps<"button"> {
