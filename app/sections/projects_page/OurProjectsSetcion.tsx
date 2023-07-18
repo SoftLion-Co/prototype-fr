@@ -1,6 +1,6 @@
-import s from "./OurProjectsSetcion.module.scss"
+import s from "./OurProjectsSection.module.scss"
 
-const OurProjectsSetcion = () => {
+const OurProjectsSection = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const OurProjectsSetcion = () => {
     )
 }
 
-export default OurProjectsSetcion
+export default OurProjectsSection
