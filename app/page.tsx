@@ -1,11 +1,13 @@
 import Link from "next/link";
 import CustomAppsSection from "./sections/service_page/CustomAppsSection";
+import TitleServicesComponent from "@/components/services/TitleServicesComponent";
 
 const Home = () => {
   return (
     <div className="container">
       <h1>Home</h1>
-      <CustomAppsSection />
+      <TitleServicesComponent num="02" text ="Custum Apps"/>
+      {/* <CustomAppsSection /> */}
       <Link href="/blogs">
         <h2>Blog</h2>
       </Link>
