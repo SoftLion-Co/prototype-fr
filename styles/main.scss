@@ -6,6 +6,10 @@
 @import "./container";
 @import "./mixin";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Roboto";
