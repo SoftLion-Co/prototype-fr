@@ -1,11 +1,8 @@
-
-
 import s from "./OurServicesSection.module.scss";
 import HeadingComponent from "@/components/HeadingComponent";
 
 const OurServicesSection = () => {
   return (
-    // <div className={s.services}>
       <div className={s.services}>
         <div className={s.services__title}>
         <HeadingComponent text="Our Services" />
@@ -19,7 +16,6 @@ const OurServicesSection = () => {
           and requirements of our clients.
         </p>
       </div>
-    // </div>
   );
 };
 
