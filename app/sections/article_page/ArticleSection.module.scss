@@ -30,19 +30,17 @@
     @include for-size(laptop) {
       width: 740px;
       height: 380px;
-      margin-bottom: 60px;
+      margin-bottom: 46px;
     }
 
     @include for-size(desktop) {
-      margin-bottom: 46px;
+      margin-bottom: 60px;
     }
   }
 
   &_title {
     color: $blog-card-text-color;
-    font-family: Roboto;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: 130.49%;
     letter-spacing: 1.1px;
@@ -119,11 +117,11 @@
       color: $service-heading-color;
       padding-left: 20px;
       font-size: 12px;
-      font-style: normal;
       font-weight: 400;
       line-height: 130.49%;
       letter-spacing: 1.8px;
       position: relative;
+      transition: color 200ms ease-in-out;
     }
     @include for-size(laptop) {
       font-size: 14px;
@@ -138,7 +136,7 @@
     }
     &:hover {
       color: $blog-card-text-color;
-    }
+    }  
   }
 }
 
@@ -147,13 +145,13 @@
 
   &::before {
     content: "";
-    border-radius: 5px;
-    height: 100%;
-    width: 10px;
-    background-color: $scrollbar-color;
-    display: inline-block;
-    position: absolute;
-    left: 0;
+        border-radius: 5px;
+        height: 100%;
+        width: 10px;
+        background-color: $scrollbar-color;
+        display: inline-block;
+        position: absolute;
+        left: 0;
   }
 }
 
@@ -194,9 +192,7 @@
 
   &_text {
     color: $service-heading-color;
-    font-family: Roboto;
     font-size: 12px;
-    font-style: normal;
     font-weight: 400;
     line-height: 130.49%;
     letter-spacing: 0.3px;
