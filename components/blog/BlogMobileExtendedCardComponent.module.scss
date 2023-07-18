@@ -1,0 +1,83 @@
+
+$aspectRatio:269/290;
+$currentW: 90vw;
+$fontSize: calc($currentW*0.07);
+$borderR: calc($currentW*12/290);
+
+.articleCard {
+    margin: 5vw;
+    width: $currentW;
+    height: calc($currentW*$aspectRatio);
+    border-radius: $borderR;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: calc($currentW*16/680) calc($currentW*40/680) calc($currentW*25/680) 0px #00000026;
+    background: linear-gradient(115.15deg, rgba(247, 205, 245, 0.23) -20.67%, rgba(242, 212, 239, 0.23) 48.71%, rgba(168, 225, 250, 0.0322) 99.46%);
+
+    font-size: $fontSize;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+
+    
+    &__content {
+
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: start;
+        
+        &__image {
+          width: 45%;
+          height: 100%;
+          background-color: #f2f2f2;
+          border-radius: $borderR 0 0 0;
+        }
+
+        &__info{
+          width: 50%;
+          height: 100%;
+
+          text-align: left;
+
+          display: flex;
+          flex-direction: column;
+
+            &__title {
+                font-size: 1.05em;
+                font-weight: 400;
+                letter-spacing: 0.09em;  
+                height: 35%;     
+                margin: 3%;
+                padding: 3%;      
+                padding-top: 5%;
+                padding-left: 5%;
+            }
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 0.5%;
+        background-color: gray;
+        margin-bottom: 2%;
+      }    
+
+    &__text {
+        position: relative;
+        height: 55%;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        text-align: center;
+        padding: 3%;
+        width: 94%;
+
+        &__arrow{
+          position: absolute; 
+          bottom: 0; 
+          right: 0; 
+          margin: 5%;
+          font-size: 0.5em;
+        }
+      }
+}

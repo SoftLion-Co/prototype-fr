@@ -1,11 +1,25 @@
-import s from "./BlogRolledCardComponent.module.scss"
+import React from "react";
+import s from "./BlogRolledCardComponent.module.scss";
 
-const BlogRolledCardComponent = () => {
-    return (
-        <div>
-
-        </div>
-    )
+interface BlogRolledCardProps {
+  imageUrl: string;
+  title: string;
 }
 
-export default BlogRolledCardComponent
+const BlogRolledCardComponent: React.FC<BlogRolledCardProps> = ({
+  imageUrl,
+  title,
+}) => {
+  return (
+    <div className={s.blogCard}>
+      <div
+        className={s.blogCard__image}
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      />
+      <div className={s.blogCard__line}></div>
+      <p className={s.blogCard__paragraph}>{title}</p>
+    </div>
+  );
+};
+
+export default BlogRolledCardComponent;

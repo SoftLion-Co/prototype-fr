@@ -1,0 +1,25 @@
+
+
+
+.blogDesktop{
+    width: clamp(500px,100vw,1900px);
+    height: calc(clamp(500px,90vw,1900px)*0.5);
+}
+
+.centeredSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+.containerR{
+display: flex;
+justify-content: right;
+}
+
+.containerL{
+display: flex;
+justify-content: left;
+}
+  
