@@ -5,11 +5,11 @@
 .technologies {
   &__imageWrapper {
     box-shadow: $technologies-card-shadow;
-    background-color: transparent;
+    background-color: $technologies-card-backbround;
     border-radius: 15px;
 
-    max-width: 120px;
-    max-height: 114px;
+    max-width: 224px;
+    max-height: 210px;
 
     @include for-size(tablet) {
       max-width: 216px;
@@ -30,15 +30,15 @@
   &__iconOpen {
     display: flex;
     fill: rgba(0, 0, 0, 0.6);
-    width: 12px;
-    height: 12px;
+    max-width: 19px;
+    max-height: 19px;
 
     padding-top: 7px;
     padding-right: 7px;
 
     @include for-size(tablet) {
-      width: 22px;
-      height: 22px;
+      max-width: 22px;
+      max-height: 22px;
       display: flex;
     }
 
@@ -58,14 +58,13 @@
   }
 
   &__imageUIUX {
-    padding-top: 0px;
-    padding-left: 26px;
-    padding-right: 26px;
+    margin-top: 16px;
 
-    margin-bottom: 12px;
-    margin-top: 8px;
+    padding-left: 45px;
+    padding-right: 45px;
+    margin-bottom: 26px;
 
-    max-width: 68px;
+    max-width: 134px;
 
     @include for-size(tablet) {
       max-width: 119px;
@@ -74,7 +73,7 @@
       padding-right: 48.5px;
 
       margin-top: 16px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     @include for-size(laptop) {
@@ -101,11 +100,14 @@
   }
 
   &__imageEcommerce {
-    max-width: 73px;
+    max-width: 134px;
 
-    padding-top: 0px;
-    padding-left: 24px;
-    padding-right: 24px;
+    margin-top: 5px;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    margin-bottom: 8px;
+
     @include for-size(tablet) {
       max-width: 119px;
 
@@ -131,13 +133,13 @@
   }
 
   &__imageSEO {
-    max-width: 68px;
+    max-width: 125px;
 
-    padding-top: 0px;
-    padding-left: 26px;
-    padding-right: 26px;
+    margin-top: 0px;
+    padding-left: 49px;
+    padding-right: 50px;
 
-    margin-bottom: 4px;
+    margin-bottom: 18px;
 
     @include for-size(tablet) {
       max-width: 119px;
@@ -170,13 +172,14 @@
   }
 
   &__imageAPI {
-    padding-top: 0px;
-    padding-left: 27px;
-    padding-right: 27px;
+    margin-top: 0px;
 
-    margin-bottom: 7px;
+    padding-left: 46px;
+    padding-right: 46px;
 
-    max-width: 66px;
+    margin-bottom: 9px;
+
+    max-width: 132px;
 
     @include for-size(tablet) {
       max-width: 119px;
@@ -217,19 +220,19 @@
   &__textEcommerce {
     text-align: center;
 
-    width: 113px;
+    max-width: 100%;
 
-    font-size: 9px;
-    line-height: 9px;
+    font-size: 15px;
+    line-height: 17px;
     letter-spacing: 0.6px;
 
-    padding-top: 16px;
-    padding-right: 4px;
-    padding-left: 3px;
+    padding-top: 31px;
+    padding-right: 15px;
+    padding-left: 15px;
     padding-bottom: 26px;
 
     @include for-size(tablet) {
-      width: 186px;
+      max-width: 186px;
 
       font-size: 16px;
       line-height: 16px;
@@ -288,27 +291,31 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    gap: 25px;
+    gap: 32px;
     margin-bottom: 0px;
 
-    width: calc((100% + 280px) / 2);
+    width: 100%;
 
     @include for-size(tablet) {
       flex-wrap: wrap;
-      gap: 46px;
       justify-content: center;
-      width: calc((100% + 250px) / 2);
+
+      gap: 46px;
       margin-bottom: 0px;
+
+      width: calc((100% + 250px) / 2);
     }
 
     @include for-size(laptop) {
       flex-wrap: nowrap;
+
       gap: 41px;
       margin-bottom: 0px;
     }
 
     @include for-size(desktop) {
       flex-wrap: nowrap;
+
       gap: 40px;
       margin-bottom: 27px;
     }
@@ -317,13 +324,13 @@
   &__descriptionFotoUIUX {
     color: $heading-blue-color;
 
-    font-size: 11px;
-    line-height: 15px;
+    font-size: 20px;
+    line-height: 22px;
     letter-spacing: 1px;
 
     text-align: center;
 
-    margin-bottom: 27px;
+    margin-bottom: 36px;
     @include for-size(tablet) {
       font-size: 20px;
       line-height: 27px;
@@ -352,10 +359,10 @@
   &__descriptionFotoSeo {
     color: $heading-blue-color;
 
-    margin-bottom: 17px;
+    margin-bottom: 23px;
 
-    font-size: 11px;
-    line-height: 15px;
+    font-size: 20px;
+    line-height: 22px;
     letter-spacing: 1px;
     text-align: center;
 
@@ -389,10 +396,10 @@
 
     text-align: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    font-size: 11px;
-    line-height: 15px;
+    font-size: 20px;
+    line-height: 22px;
     letter-spacing: 1px;
 
     @include for-size(tablet) {
