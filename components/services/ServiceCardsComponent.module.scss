@@ -34,7 +34,7 @@
     margin-left: 15px;
 
     @include for-size(tablet) {
-      width: 347px;
+      width: 245px;
       margin-left: 45px;
     
      
@@ -59,10 +59,13 @@
       width: 75px;
       height: 74px;
       margin-top: 64px;
+      position: relative;
+      left: -12px;
     }
     @include for-size(laptop) {
       width: 92px;
       height: 19px;
+      margin-top: 64px;
     }
     @include for-size(desktop) {
       width: 119px;
@@ -78,16 +81,13 @@
     margin-top: 17px;
 
     @include for-size(tablet) {
-      width: 62px;
-      height: 12px;
+      
     }
     @include for-size(laptop) {
-      width: 92px;
-      height: 19px;
+  
     }
     @include for-size(desktop) {
-      width: 119px;
-      height: 24px;
+      
     }
   }
   &__text {
@@ -99,18 +99,17 @@
     margin-top: 13px;
 
     @include for-size(tablet) {
-      font-size: 10px;
+      font-size: 10.23px;
       width: 245px;
       height: 226px;
+      letter-spacing: 0.04px;
       margin-top: 17px;
     }
     @include for-size(laptop) {
-      width: 92px;
-      height: 19px;
+     
     }
     @include for-size(desktop) {
-      width: 119px;
-      height: 24px;
+     
     }
   }
 
@@ -122,11 +121,24 @@
     height: 28px;
 
     @include for-size(tablet) {
-      display: none;
+      position: relative;
+      left: 46px;
+      bottom: 16px;
     }
   }
 
   &__arrow {
     font-size: 28px;
+  
+  @include for-size(tablet) {
+    font-size: 32px;
+    
   }
+  @include for-size(laptop) {
+   
+  }
+  @include for-size(desktop) {
+   
+  }
+}
 }
