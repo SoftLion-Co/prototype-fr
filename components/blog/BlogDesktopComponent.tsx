@@ -27,9 +27,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
           setCurrentSlide(index);
         }}
         height="clamp(0px,40vw,600px)"
-        slideSize="21%"
-        loop
         skipSnaps
+        loop
         styles={{
           control: {
             backgroundColor: "transparent",
@@ -50,23 +49,40 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         {cardsData.map((x, index) => (
           <>
             {currentSlide === index ? (
-              <Carousel.Slide key={index}>
-                <BlogExtendedCardComponent
-                  text={x.text}
-                  author={x.author}
-                  imageSrc={x.imageSrc}
-                  authorIconSrc={x.authorIconSrc}
-                  title={x.title}
-                  readingTime={x.readingTime}
-                />
-              </Carousel.Slide>
+              <div
+                style={{
+                  overflow: "visible",
+                  width: "30.11vw",
+                  display: "flex",
+                  justifyContent: "center",
+                }}>
+                <Carousel.Slide key={index}>
+                  <BlogExtendedCardComponent
+                    text={x.text}
+                    author={x.author}
+                    imageSrc={x.imageSrc}
+                    authorIconSrc={x.authorIconSrc}
+                    title={x.title}
+                    readingTime={x.readingTime}
+                  />
+                </Carousel.Slide>
+              </div>
             ) : (
-              <Carousel.Slide key={index}>
-                <BlogRolledCardComponent
-                  title={x.title}
-                  imageUrl={x.imageSrc}
-                />
-              </Carousel.Slide>
+              <div
+                style={
+                  (index < currentSlide &&
+                    index > currentSlide - cardsData.length / 2) ||
+                  currentSlide + cardsData.length / 2 < index
+                    ? { width: "30.11vw", paddingRight: "9vw" }
+                    : { width: "30.11vw", paddingLeft: "9vw" }
+                }>
+                <Carousel.Slide key={index}>
+                  <BlogRolledCardComponent
+                    title={x.title}
+                    imageUrl={x.imageSrc}
+                  />
+                </Carousel.Slide>
+              </div>
             )}
           </>
         ))}

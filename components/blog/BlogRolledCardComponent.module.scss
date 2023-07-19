@@ -8,8 +8,6 @@ $borderR: calc($currentW*12/319);;
 
 
 .blogCard {
-  margin-left: calc($currentW*0.1);
-  margin-right: calc($currentW*0.1);
   width: $currentW;
   height: calc($currentW*$aspectRatio);
   border-radius: $borderR;
