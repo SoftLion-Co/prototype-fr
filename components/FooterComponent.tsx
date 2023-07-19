@@ -14,6 +14,7 @@ export const FooterComp = () => {
         <div className={s.footer__mainWrap}>
           <div className={s.footer__firstBlock}>
               <Image
+              alt="SoftLion"
                 className={s.footer__logo}
                 src={Logo}
                 width={800}

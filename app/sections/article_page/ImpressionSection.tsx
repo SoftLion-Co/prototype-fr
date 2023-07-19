@@ -38,7 +38,7 @@ const ImpressionSection = () => {
               <MainButtonComponent type="submit">SEND</MainButtonComponent>
             </form>
             <div className={s.feedback_images_container}>
-              <Image className={s.feedback_images} width={340} height={450} src={BlogImpression} alt="" />
+              <Image className={s.feedback_images} width={340} height={450} src={BlogImpression} alt="person" />
             </div>
           </div>
         </div>
