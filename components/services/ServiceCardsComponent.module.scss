@@ -3,14 +3,79 @@
 @import "../styles/mixin";
 
 .servicecard {
+  width: 290px;
+  height: 395px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 80px;
+ 
+  background: $cookies-background;
+  box-shadow: 1px 6px 8px 0px rgba(0, 0, 0, 0.25);
+
+  @include for-size(tablet) {
+    width: 348px;
+    height: 460px;
+    align-items: left;
+    
+  }
+  @include for-size(laptop) {
+    width: 92px;
+    height: 19px;
+  }
+  @include for-size(desktop) {
+    width: 119px;
+    height: 24px;
+  }
+
+  &__wrap {
+    width: 245px;
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+    margin-left: 15px;
+
+    @include for-size(tablet) {
+      width: 347px;
+      margin-left: 45px;
+    
+     
+      
+    }
+    @include for-size(laptop) {
+      width: 92px;
+      height: 19px;
+    }
+    @include for-size(desktop) {
+      width: 119px;
+      height: 24px;
+    }
+  }
 
   &__pic {
-    width: 74px;
-    height: 15px;
+    width: 57px;
+    height: 56px;
+    margin-top: 26px;
+
+    @include for-size(tablet) {
+      width: 75px;
+      height: 74px;
+      margin-top: 64px;
+    }
+    @include for-size(laptop) {
+      width: 92px;
+      height: 19px;
+    }
+    @include for-size(desktop) {
+      width: 119px;
+      height: 24px;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    color: black;
+    line-height: 26px;
+    margin-top: 17px;
 
     @include for-size(tablet) {
       width: 62px;
@@ -25,106 +90,43 @@
       height: 24px;
     }
   }
-
-  &__navigation{
-    display: none;
-
-    @include for-size(tablet) {
-      display: flex;
-      gap: 23px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @include for-size(laptop) {
-      gap: 41px;
-    }
-    @include for-size(desktop) {
-      gap: 53px;
-    }
-  }
-  &__link {
-    font-size: 20px;
-    font-family: "Roboto";
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
     letter-spacing: 0.4px;
     color: black;
-    line-height: 26px;
+    line-height: 15.66px;
+    margin-top: 13px;
 
     @include for-size(tablet) {
-      font-size: 12px;
+      font-size: 10px;
+      width: 245px;
+      height: 226px;
+      margin-top: 17px;
     }
     @include for-size(laptop) {
-      font-size: 15px;
+      width: 92px;
+      height: 19px;
     }
     @include for-size(desktop) {
-      font-size: 20px;
+      width: 119px;
+      height: 24px;
     }
   }
-  
-
 
   &__btnArrow {
     background-color: transparent;
     margin-left: auto;
     border: none;
-    color: $burger-menu-color;
-    padding: 0;
-    height: 25px;
-   
+    padding: 0px;
+    height: 28px;
+
     @include for-size(tablet) {
       display: none;
     }
   }
 
-  &__arrow{
-    font-size: 2px;
+  &__arrow {
+    font-size: 28px;
   }
-  
-  &__btnHeader {
-    background: $button-blue-background;
-    color: black;
-    padding: 5.5px 13px;
-    border-radius: 6px;
-    border: none;
-    margin-left: 16px;
-
-    @include for-size(tablet) {
-      padding: 5.5px 13px;  
-      border-radius: 8px;
-      margin-left: 0px;
-    }
-
-    @include for-size(laptop) {
-      padding: 8px 19px;
-      border-radius: 12px;
-    }
-    @include for-size(desktop) {
-      padding: 11px 25px;
-     
-      border-radius: 15px;
-    }
-  }
-  &__btnText {
-    font-size: 5.8px;
-    font-family: "Roboto";
-    font-weight: 500;
-    letter-spacing: 0.4px;
-    color: black;
-     line-height: 7px;
-  
-    @include for-size(tablet) {
-      font-weight: 400;
-    font-size: 7.8px;
-    line-height: 10px;
-    }
-
-    @include for-size(laptop) {
-      font-size: 11.5px;
-      line-height: 15px;   
-    }
-    @include for-size(desktop) {
-      font-size: 15px;
-      line-height: 20px; 
-    }
-  }
- 
 }

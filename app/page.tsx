@@ -14,7 +14,7 @@ const Home = () => {
         path={pic}
         text="App development is the creation of software for devices like smartphones, tablets, and computers. It involves building tools that perform tasks and provide users with capabilities. Apps are developed for platforms like iOS, Android, and Windows. This process includes UI design, programming, testing, debugging, and post-release support. App development is crucial for technology, enabling innovative solutions to meet user needs.
 "
-arrow={true}
+arrow="true"
       />
       {/* <CustomAppsSection /> */}
       <Link href="/blogs">

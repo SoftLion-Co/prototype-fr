@@ -19,20 +19,20 @@ const ServiceCardsComponent: FC<ServiceCardsComponentProps> = ({
 }) => {
   return (
     <div className={s.servicecard}>
-      <Image className={s.servicecard__pic} src={path} alt="phone"  />
+      <div className={s.servicecard__wrap}>
+      <Image className={s.servicecard__pic} src={path} alt="phone" />
       <h2 className={s.servicecard__title}>{title}</h2>
-      <p className={s.servicecard__text}>
-    {text}
-      </p>
-      {arrow?
-      <button className={s.servicecard__btnArrow}>
-        <PiArrowRightThin
-          className={s.servicecard__arrow}
-          width="51px"
-          height="49px"
-        />
-      </button>
-      :null }
+      <p className={s.servicecard__text}>{text}</p>
+      {arrow ? (
+        <button className={s.servicecard__btnArrow}>
+          <PiArrowRightThin
+            className={s.servicecard__arrow}
+            width="51px"
+            height="49px"
+          />
+        </button>
+      ) : ""}
+      </div>
     </div>
   );
 };
