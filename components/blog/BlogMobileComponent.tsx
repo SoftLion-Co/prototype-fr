@@ -24,17 +24,16 @@ const BlogMobileComponent: React.FC<BlogMobileProps> = ({ cardsData }) => {
         setCurrentSlide(index);
       }}
       withIndicators
-      withControls
-      loop
-      height="90vw"
-      slideSize="90wv"
+      withControls={false}
+      loop={true}
+      slideSize="clamp(250px,90vw,480px)"
       styles={{
         viewport: {
-          height: "95vw",
+          height: "clamp(270px,95vw,500px)",
         },
         indicators: {
           alignItems: "center",
-          paddingTop: "clamp(10px,5vw,20px)",
+          paddingTop: "clamp(5px,5vw,15px)",
           position: "relative",
           gap: 0,
         },
@@ -46,16 +45,16 @@ const BlogMobileComponent: React.FC<BlogMobileProps> = ({ cardsData }) => {
           ":first-child": {
             borderRadius: "100px 0 0 100px",
           },
-          height: "calc(90vw*0.02)",
-          width: `calc(80vw/${cardsData.length})`,
+          height: "calc(clamp(220px,90vw,450px)*0.02)",
+          width: `calc(clamp(220px,90vw,450px)/${cardsData.length})`,
           backgroundColor: "gray",
           [`:nth-child(${currentSlide + 1})`]: {
             margin: "-0.2vw",
             zIndex: 1,
             backgroundColor: "#A7CAF0",
             borderRadius: "100px",
-            height: "calc(90vw*0.02*1.5)",
-            width: `calc(80vw/${cardsData.length}*1.3)`,
+            height: "calc(clamp(220px,90vw,450px)*0.02*1.5)",
+            width: `calc(clamp(220px,90vw,450px)/${cardsData.length}*1.3)`,
           },
         },
       }}>

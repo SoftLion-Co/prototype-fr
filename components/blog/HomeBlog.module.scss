@@ -1,6 +1,7 @@
 @import "../styles/mixin";
 
 .container{
+    min-width: 270px;
     display: flex;
     justify-content: center;
     align-items: center;

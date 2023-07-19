@@ -1,11 +1,11 @@
 
 $aspectRatio:269/290;
-$currentW: 90vw;
+$currentW: clamp(250px,90vw,480px);
 $fontSize: calc($currentW*0.07);
 $borderR: calc($currentW*12/290);
 
 .articleCard {
-    margin: 5vw;
+    margin: 0 11vw 0 11vw;
     width: $currentW;
     height: calc($currentW*$aspectRatio);
     border-radius: $borderR;

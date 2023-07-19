@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import BlogDesktopComponent from "./BlogDesktopComponent";
 import BlogMobileComponent from "./BlogMobileComponent";
 import s from "./HomeBlog.module.scss";

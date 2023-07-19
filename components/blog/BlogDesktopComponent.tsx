@@ -29,7 +29,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         height="clamp(0px,40vw,600px)"
         slideSize="clamp(0px,45vw,680px)"
         loop
-        controlsOffset={"100"}
+        skipSnaps
         styles={{
           control: {
             backgroundColor: "transparent",
