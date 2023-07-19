@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProjectHeadingComponent from "./sections/home_page/OurProjectsSection"
+import OurProjectsSection from "./sections/home_page/OurProjectsSection"
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
-      <ProjectHeadingComponent />
+      <OurProjectsSection />
     </div>
   );
 };

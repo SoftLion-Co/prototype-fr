@@ -46,9 +46,10 @@ const OurProjectsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div>
+    <div className={s.projects}>
       <ProjectHeadingComponent />
       <Carousel
+        className={s.projects__mobile}
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
@@ -59,7 +60,7 @@ const OurProjectsSection = () => {
         styles={{
           viewport: {
             height: "70%",
-            paddingBottom: "30px"
+            paddingBottom: "37px",
           },
           indicators: {
             alignItems: "center",
@@ -68,7 +69,7 @@ const OurProjectsSection = () => {
             marginRight: "20px",
             position: "relative",
             gap: 0,
-          },            
+          },
           indicator: {
             borderRadius: 0,
             ":last-child": {
@@ -102,5 +103,3 @@ const OurProjectsSection = () => {
 };
 
 export default OurProjectsSection;
-
-
