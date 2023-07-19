@@ -3,7 +3,7 @@ import ProjectHeadingComponent from "./sections/home_page/OurProjectsSection"
 
 const Home = () => {
   return (
-    <div className="container">
+    <div>
       <h1>Home</h1>
       <Link href="/blogs">
         <h2>Blog</h2>
