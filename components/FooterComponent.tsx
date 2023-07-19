@@ -13,12 +13,12 @@ export const FooterComp = () => {
       <div className={s.container}>
         <div className={s.footer__mainWrap}>
           <div className={s.footer__firstBlock}>
-              <Image
-                className={s.footer__logo}
-                src={Logo}
-                width={800}
-                height={554}
-              />
+            <Image
+              className={s.footer__logo}
+              src={Logo}
+              width={800}
+              height={554}
+            />
             <div className={s.footer__routeWrap2}>
               <Link href={"/services"} className={s.footer__routeName}>
                 Service

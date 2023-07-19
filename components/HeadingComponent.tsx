@@ -7,7 +7,7 @@ interface HeadingComponentProps {
 const HeadingComponent: FC<HeadingComponentProps> = ({ text }) => {
   return (
     <div className={s.heading_container}>
-      <h1 className={s.heading}>{text}</h1>;
+      <h1 className={s.heading}>{text}</h1>
     </div>
   );
 };
