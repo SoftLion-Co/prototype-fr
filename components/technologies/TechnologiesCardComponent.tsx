@@ -28,10 +28,9 @@ const TechnologiesCardComponent = () => {
       })
     );
   }
-  console.log(elements.map((el) => el.id));
 
   return (
-    <div className={s.container}>
+    <div className={`${s.container} ${s.technologies}`}>
       <div className={s.technologies}>
         <div className={s.technologies__nameHeader}>
           <HeadingComponent text="Technologies" />
