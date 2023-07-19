@@ -51,25 +51,21 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
           <>
             {currentSlide === index ? (
               <Carousel.Slide key={index}>
-                <div className={s.centeredSlide}>
-                  <BlogExtendedCardComponent
-                    text={x.text}
-                    author={x.author}
-                    imageSrc={x.imageSrc}
-                    authorIconSrc={x.authorIconSrc}
-                    title={x.title}
-                    readingTime={x.readingTime}
-                  />
-                </div>
+                <BlogExtendedCardComponent
+                  text={x.text}
+                  author={x.author}
+                  imageSrc={x.imageSrc}
+                  authorIconSrc={x.authorIconSrc}
+                  title={x.title}
+                  readingTime={x.readingTime}
+                />
               </Carousel.Slide>
             ) : (
               <Carousel.Slide key={index}>
-                <div>
-                  <BlogRolledCardComponent
-                    title={x.title}
-                    imageUrl={x.imageSrc}
-                  />
-                </div>
+                <BlogRolledCardComponent
+                  title={x.title}
+                  imageUrl={x.imageSrc}
+                />
               </Carousel.Slide>
             )}
           </>
