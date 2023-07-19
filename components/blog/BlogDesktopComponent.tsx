@@ -27,7 +27,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
           setCurrentSlide(index);
         }}
         height="clamp(0px,40vw,600px)"
-        slideSize="clamp(0px,45vw,680px)"
+        slideSize="21%"
         loop
         skipSnaps
         styles={{
@@ -48,36 +48,31 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         controlSize={40}
         align="center">
         {cardsData.map((x, index) => (
-          <Carousel.Slide key={index}>
+          <>
             {currentSlide === index ? (
-              <div className={s.centeredSlide}>
-                <BlogExtendedCardComponent
-                  text={x.text}
-                  author={x.author}
-                  imageSrc={x.imageSrc}
-                  authorIconSrc={x.authorIconSrc}
-                  title={x.title}
-                  readingTime={x.readingTime}
-                />
-              </div>
-            ) : (index < currentSlide &&
-                index > currentSlide - cardsData.length / 2) ||
-              currentSlide + cardsData.length / 2 < index ? (
-              <div className={s.containerR}>
-                <BlogRolledCardComponent
-                  title={x.title}
-                  imageUrl={x.imageSrc}
-                />
-              </div>
+              <Carousel.Slide key={index}>
+                <div className={s.centeredSlide}>
+                  <BlogExtendedCardComponent
+                    text={x.text}
+                    author={x.author}
+                    imageSrc={x.imageSrc}
+                    authorIconSrc={x.authorIconSrc}
+                    title={x.title}
+                    readingTime={x.readingTime}
+                  />
+                </div>
+              </Carousel.Slide>
             ) : (
-              <div className={s.containerL}>
-                <BlogRolledCardComponent
-                  title={x.title}
-                  imageUrl={x.imageSrc}
-                />
-              </div>
+              <Carousel.Slide key={index}>
+                <div>
+                  <BlogRolledCardComponent
+                    title={x.title}
+                    imageUrl={x.imageSrc}
+                  />
+                </div>
+              </Carousel.Slide>
             )}
-          </Carousel.Slide>
+          </>
         ))}
       </Carousel>
     </div>
