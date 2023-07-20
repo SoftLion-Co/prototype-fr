@@ -12,6 +12,8 @@ const Home = () => {
       <ServiceCardsComponent
         title="Apps"
         path={pic}
+        text_mob="App development is the creation of software for devices like smartphones, tablets, and computers. It involves building tools that perform tasks and provide users with capabilities. Apps are developed for platforms like iOS, Android, and Windows. This process includes UI design, programming, testing, debugging, and post-release support. App development is crucial for technology, enabling innovative solutions to meet user needs.
+        "
         text="App development is the process of creating software for various devices, such as smartphones, tablets, computers, and others. This development involves building functional tools that perform specific tasks or provide users with certain capabilities. Apps can be developed for different platforms, such as iOS, Android, Windows, and many others. This process includes user interface design, functionality programming, testing, debugging, and post-release support of the software product. App development is an essential component of the modern technology world, enabling the creation of innovative solutions to address various tasks and meet user needs.
         "
 arrow="true"

@@ -9,19 +9,22 @@ interface ServiceCardsComponentProps {
   path?: any;
   title?: string;
   text?: string;
+  text_mob?: string;
 }
 
 const ServiceCardsComponent: FC<ServiceCardsComponentProps> = ({
   arrow = false,
   path,
   title,
-  text,
+  text_mob,
+  text
 }) => {
   return (
     <div className={s.servicecard}>
       <div className={s.servicecard__wrap}>
       <Image className={s.servicecard__pic} src={path} alt="phone" />
       <h2 className={s.servicecard__title}>{title}</h2>
+      <p className={s.servicecard__text_mob}>{text_mob}</p>
       <p className={s.servicecard__text}>{text}</p>
       {arrow ? (
         <button className={s.servicecard__btnArrow}>
