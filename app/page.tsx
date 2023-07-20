@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import OurServicesSection from "./sections/home_page/OurServicesSection";
 
+
 const Home = () => {
   return (
     <div className="container">
@@ -16,6 +17,7 @@ const Home = () => {
       </Link>
       <Link href="/services">
         <h2>Services</h2>
+        
       </Link>
     </div>
   );
