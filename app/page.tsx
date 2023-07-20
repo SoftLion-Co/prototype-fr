@@ -1,4 +1,6 @@
+import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCardComponent";
 import Link from "next/link";
+
 
 const Home = () => {
   return (
@@ -13,6 +15,7 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
+      <ServiceSecurityCardComponent/>
     </div>
   );
 };
