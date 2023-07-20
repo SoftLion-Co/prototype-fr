@@ -11,21 +11,26 @@
  
   background: $cookies-background;
   box-shadow: 11px 12px 5.8px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
  
 
   @include for-size(tablet) {
     width: 348px;
     height: 460px;
+    border-radius: 8px;
     align-items: left;
+
     
   }
   @include for-size(laptop) {
     width: 519px;
     height: 692px;
+    border-radius: 12px;
   }
   @include for-size(desktop) {
     width: 683px;
     height: 899px;
+    border-radius: 15px;
   }
 
   &__wrap {
