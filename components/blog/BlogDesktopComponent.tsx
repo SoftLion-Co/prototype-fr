@@ -70,11 +70,13 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             ) : (
               <div
                 style={
-                  (index < currentSlide &&
-                    index > currentSlide - cardsData.length / 2) ||
-                  currentSlide + cardsData.length / 2 < index
-                    ? { width: "30.11vw", paddingRight: "9vw" }
-                    : { width: "30.11vw", paddingLeft: "9vw" }
+                  currentSlide - 1 === index ||
+                  (currentSlide === 0 && index === cardsData.length - 1)
+                    ? { padding: "0 9vw 0 0" }
+                    : currentSlide + 1 === index ||
+                      (currentSlide === cardsData.length - 1 && index === 0)
+                    ? { padding: "0 0 0 9vw" }
+                    : { padding: "0 4.5vw 0 4.5vw" }
                 }>
                 <Carousel.Slide key={index}>
                   <BlogRolledCardComponent
