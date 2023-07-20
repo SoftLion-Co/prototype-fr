@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
-import s from "./MainButtonComponent.module.scss";
+import s from "./MobileSliderComponent.module.scss";
 
 interface MobileSliderComponentProps {
   data: Array<{
