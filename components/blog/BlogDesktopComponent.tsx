@@ -52,7 +52,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
               <div
                 style={{
                   overflow: "visible",
-                  width: "30.11vw",
+                  width: "clamp(0px,31.11vw,470px)",
                   display: "flex",
                   justifyContent: "center",
                 }}>
@@ -72,11 +72,11 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                 style={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)
-                    ? { padding: "0 9vw 0 0" }
+                    ? { padding: "0 clamp(0px,10vw,150px) 0 0" }
                     : currentSlide + 1 === index ||
                       (currentSlide === cardsData.length - 1 && index === 0)
-                    ? { padding: "0 0 0 9vw" }
-                    : { padding: "0 4.5vw 0 4.5vw" }
+                    ? { padding: "0 0 0 clamp(0px,10vw,150px)" }
+                    : { padding: "0 clamp(0px,5vw,75px) 0 clamp(0px,5vw,75px)" }
                 }>
                 <Carousel.Slide key={index}>
                   <BlogRolledCardComponent

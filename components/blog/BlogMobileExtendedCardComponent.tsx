@@ -9,23 +9,21 @@ interface BlogMobileExtendedCardComponentProps {
   imageSrc: string;
 }
 
-const BlogMobileExtendedCardComponent: React.FC<
-  BlogMobileExtendedCardComponentProps
-> = ({ title, text, imageSrc }) => {
+const BlogMobileExtendedCardComponent: React.FC<any> = ({ data }) => {
   return (
     <div className={s.articleCard}>
       <div className={s.articleCard__content}>
         <div
           className={s.articleCard__content__image}
-          style={{ backgroundImage: `url(${imageSrc})` }}
+          style={{ backgroundImage: `url(${data.imageSrc})` }}
         />
         <div className={s.articleCard__content__info}>
-          <h2 className={s.articleCard__content__info__title}>{title}</h2>
+          <h2 className={s.articleCard__content__info__title}>{data.title}</h2>
         </div>
       </div>
       <div className={s.articleCard__line}></div>
       <p className={s.articleCard__text}>
-        {text}
+        {data.text}
         <svg
           className={s.articleCard__text__arrow}
           xmlns="http://www.w3.org/2000/svg"

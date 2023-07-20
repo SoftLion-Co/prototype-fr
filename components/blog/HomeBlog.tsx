@@ -1,7 +1,9 @@
 "use client";
 
+import MobileSliderComponent from "../MobileSliderComponent";
 import BlogDesktopComponent from "./BlogDesktopComponent";
 import BlogMobileComponent from "./BlogMobileComponent";
+import BlogMobileExtendedCardComponent from "./BlogMobileExtendedCardComponent";
 import s from "./HomeBlog.module.scss";
 
 const cardsData = [
@@ -77,7 +79,11 @@ const HomeBlog: React.FC = () => {
         <BlogDesktopComponent cardsData={cardsData} />
       </div>
       <div className={s.container__mobileSlider}>
-        <BlogMobileComponent cardsData={cardsData} />
+        <MobileSliderComponent
+          data={cardsData}
+          SlideComponent={
+            BlogMobileExtendedCardComponent
+          }></MobileSliderComponent>
       </div>
     </div>
   );

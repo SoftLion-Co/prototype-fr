@@ -1,3 +1,4 @@
+import HomeBlog from "@/components/blog/HomeBlog";
 import Link from "next/link";
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
+      <HomeBlog></HomeBlog>
     </div>
   );
 };
