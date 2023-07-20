@@ -74,12 +74,16 @@ $services-custom-apps-card-background: radial-gradient(
   rgba(133, 0, 127, 0.05) 100%
 );
 
+$our-projects-card-mobile-background: linear-gradient(133deg, rgba(246, 205, 245, 0.23) 0%, rgba(242, 212, 239, 0.23) 57.50%, rgba(168, 225, 250, 0.03) 99.55%);
+$our-projects-card-mobile-shadow: 6.466665744781494px 16.16666603088379px 10.104165077209473px 0px rgba(0, 0, 0, 0.15);
+
+
 $project-card-background: radial-gradient(
   897.97% 128.57% at 4.17% 6.52%,
   rgba(175, 218, 237, 0.14) 0%,
   rgba(190, 244, 205, 0.34) 45.3%,
   rgba(243, 182, 241, 0.07) 100%
-);
+); 
 $project-card-shadow: 2px 17px 18px -2px rgba(0, 0, 0, 0.15);
 
 $blog-card-background: linear-gradient(
