@@ -81,9 +81,8 @@ const HomeBlog: React.FC = () => {
       <div className={s.container__mobileSlider}>
         <MobileSliderComponent
           data={cardsData}
-          SlideComponent={
-            BlogMobileExtendedCardComponent
-          }></MobileSliderComponent>
+          SlideComponent={BlogMobileExtendedCardComponent}
+        />
       </div>
     </div>
   );
