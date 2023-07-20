@@ -20,8 +20,12 @@ const HeroSection = () => {
           </p>
         </div>
         <div className={s.hero__warpperBtn}>
-          <MainButtonComponent color="white" path="services">OUR SERVICES</MainButtonComponent>
-          <MainButtonComponent color="white" path="projects">OUR PROJECTS</MainButtonComponent>
+          <MainButtonComponent color="white" path="services">
+            OUR SERVICES
+          </MainButtonComponent>
+          <MainButtonComponent color="white" path="projects">
+            OUR PROJECTS
+          </MainButtonComponent>
         </div>
       </div>
       <div className={s.hero__wrapperSecond}>
@@ -33,8 +37,12 @@ const HeroSection = () => {
         />
         <Image className={s.hero__Logo_small} src={heroLogoMobile} />
         <div className={s.hero__warpperBtnMob}>
-        <MainButtonComponent color="white" path="services">OUR SERVICES</MainButtonComponent>
-          <MainButtonComponent color="white" path="projects">OUR PROJECTS</MainButtonComponent>
+          <MainButtonComponent color="white" path="services">
+            OUR SERVICES
+          </MainButtonComponent>
+          <MainButtonComponent color="white" path="projects">
+            OUR PROJECTS
+          </MainButtonComponent>
         </div>
       </div>
     </div>
