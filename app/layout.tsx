@@ -1,3 +1,5 @@
+import './../styles/main.scss';
+import HeaderComponent from '../components/HeaderComponent'
 import "./../styles/main.scss";
 import { FooterComp } from "@/components/FooterComponent";
 
@@ -17,7 +19,8 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-      <body>
+      <body >
+      <HeaderComponent/>
         {children}
         <FooterComp />
       </body>
