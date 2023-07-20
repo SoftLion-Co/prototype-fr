@@ -1,24 +1,13 @@
 import Link from "next/link";
-import CustomAppsSection from "./sections/service_page/CustomAppsSection";
-import TitleServicesComponent from "@/components/services/TitleServicesComponent";
-import ServiceCardsComponent from "@/components/services/ServiceCardsComponent";
-import pic from "../images/services/custom-apps/Apps.svg"
+
+import OurServicesSection from "./sections/home_page/OurServicesSection";
 
 const Home = () => {
   return (
     <div className="container">
       <h1>Home</h1>
-      <TitleServicesComponent num="02" text={"Custum Apps"} className="TitleServicesComponent" />
-      <ServiceCardsComponent
-        title="Apps"
-        path={pic}
-        text_mob="App development is the creation of software for devices like smartphones, tablets, and computers. It involves building tools that perform tasks and provide users with capabilities. Apps are developed for platforms like iOS, Android, and Windows. This process includes UI design, programming, testing, debugging, and post-release support. App development is crucial for technology, enabling innovative solutions to meet user needs.
-        "
-        text="App development is the process of creating software for various devices, such as smartphones, tablets, computers, and others. This development involves building functional tools that perform specific tasks or provide users with certain capabilities. Apps can be developed for different platforms, such as iOS, Android, Windows, and many others. This process includes user interface design, functionality programming, testing, debugging, and post-release support of the software product. App development is an essential component of the modern technology world, enabling the creation of innovative solutions to address various tasks and meet user needs.
-        "
-arrow="true"
-      />
-      {/* <CustomAppsSection /> */}
+    <OurServicesSection/>
+    
       <Link href="/blogs">
         <h2>Blog</h2>
       </Link>

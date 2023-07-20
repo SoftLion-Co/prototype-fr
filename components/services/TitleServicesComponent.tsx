@@ -2,7 +2,7 @@ import s from "./TitleServicesComponent.module.scss";
 import React, { FC } from "react";
 
 interface TitleServicesComponentProps {
-  num: number;
+  num: number | string;
   text: string;
 }
 
