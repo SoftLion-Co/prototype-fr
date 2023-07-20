@@ -5,6 +5,7 @@ import ProjectHeadingComponent from "./../../../components/projects/ProjectHeadi
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
 import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
+import classNames from "classnames";
 
 const sampleData = [
   {
@@ -44,7 +45,7 @@ const sampleData = [
 
 const OurProjectsSection = () => {
   return (
-    <div className={s.projects}>
+    <div className={classNames(s.container, s.projects)}>
       <ProjectHeadingComponent />
       <div className={s.projects__slider}>
         <MobileSliderComponent
