@@ -2,7 +2,17 @@ import React from "react";
 import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
 
-const ProjectCardComponent = ({ data }) => {
+interface ProjectData {
+  id: number;
+  image: string;
+  title: string;
+  customer: string;
+  year: string;
+  author: string;
+  description: string;
+}
+
+const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__main}>

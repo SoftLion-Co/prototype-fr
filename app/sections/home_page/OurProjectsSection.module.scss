@@ -6,7 +6,7 @@
     flex-direction: column;
     gap: 40px;
 
-    &__mobile{
+    &__slider{
         @include for-size(tablet){
             display: none;
         }

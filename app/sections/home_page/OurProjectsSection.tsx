@@ -3,8 +3,8 @@
 import s from "./OurProjectsSection.module.scss";
 import ProjectHeadingComponent from "./../../../components/projects/ProjectHeadingComponent";
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
-import { Carousel } from "@mantine/carousel";
-import React, { useState } from "react";
+import React from "react";
+import MobileSliderComponent from "@/components/MobileSliderComponent";
 
 const sampleData = [
   {
@@ -43,61 +43,15 @@ const sampleData = [
 ];
 
 const OurProjectsSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   return (
     <div className={s.projects}>
       <ProjectHeadingComponent />
-      <Carousel
-        className={s.projects__mobile}
-        onSlideChange={(index) => {
-          setCurrentSlide(index);
-        }}
-        withIndicators
-        withControls={false}
-        loop={true}
-        slideSize="clamp(250px,90vw,480px)"
-        styles={{
-          viewport: {
-            height: "70%",
-            paddingBottom: "37px",
-          },
-          indicators: {
-            alignItems: "center",
-            paddingTop: "clamp(5px,5vw,15px)",
-            marginLeft: "20px",
-            marginRight: "20px",
-            position: "relative",
-            gap: 0,
-          },
-          indicator: {
-            borderRadius: 0,
-            ":last-child": {
-              borderRadius: "0 100px 100px 0",
-            },
-            ":first-child": {
-              borderRadius: "100px 0 0 100px",
-            },
-            height: "calc(clamp(220px,90vw,400px)*0.02)",
-            width: `calc(clamp(220px,90vw,400px)/${sampleData.length})`,
-            backgroundColor: "gray",
-            [`:nth-child(${currentSlide + 1})`]: {
-              margin: "-0.2vw",
-              zIndex: 1,
-              backgroundColor: "#A7CAF0",
-              borderRadius: "100px",
-              height: "calc(clamp(220px,90vw,450px)*0.02*1.5)",
-              width: `calc(clamp(220px,90vw,450px)/${sampleData.length}*1.3)`,
-            },
-          },
-        }}
-      >
-        {sampleData.map((data, index) => (
-          <Carousel.Slide key={index} style={{ marginRight: "40px" }}>
-            <ProjectCardComponent key={data.id} data={data} />
-          </Carousel.Slide>
-        ))}
-      </Carousel>
+      <div className={s.projects__slider}>
+        <MobileSliderComponent
+          data={sampleData}
+          SlideComponent={ProjectCardComponent}
+        />
+      </div>
     </div>
   );
 };
