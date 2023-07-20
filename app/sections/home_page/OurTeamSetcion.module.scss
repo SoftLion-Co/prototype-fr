@@ -62,3 +62,16 @@
     }
   }
 }
+
+.mobile_slider {
+  @include for-size(tablet) {
+   display: none;
+  }
+}
+
+.desctop_slider {
+  display: none;
+  @include for-size(tablet) {
+   display: initial;
+  }
+}

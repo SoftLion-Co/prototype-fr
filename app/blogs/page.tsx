@@ -10,7 +10,6 @@ const Blogs = () => {
             <h1>Blogs</h1>
             <ArticleSection/>
             <ImpressionSection/>
-            <OurTeamSetcion/>
         </div>
     )
 }

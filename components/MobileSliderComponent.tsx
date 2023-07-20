@@ -2,15 +2,20 @@ import React, { FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
 
+
 interface MobileSliderComponentProps {
   data: Array<{
-    id: number;
-    image: string;
-    title: string;
-    customer: string;
-    year: string;
-    author: string;
-    description: string;
+    id?: number | string;
+    image?: string;
+    title?: string;
+    customer?: string;
+    year?: string;
+    author?: string;
+    description?: string;
+    name?: string;
+    avatar?: string;
+    position?: string;
+
   }>;
   SlideComponent: React.ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
 }
@@ -42,16 +47,16 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComp
         },
         indicator: {
           borderRadius: 0,
-          ":last-child": {
+          ":last-of-type": {
             borderRadius: "0 100px 100px 0",
           },
-          ":first-child": {
+          ":first-of-type": {
             borderRadius: "100px 0 0 100px",
           },
           height: "calc(clamp(220px,90vw,400px)*0.02)",
           width: `calc(clamp(220px,90vw,400px)/${data.length})`,
           backgroundColor: "gray",
-          [`:nth-child(${currentSlide + 1})`]: {
+          [`:nth-of-type(${currentSlide + 1})`]: {
             margin: "-0.2vw",
             zIndex: 1,
             backgroundColor: "#A7CAF0",

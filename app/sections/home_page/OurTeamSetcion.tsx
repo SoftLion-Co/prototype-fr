@@ -6,6 +6,7 @@ import classNames from "classnames";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 import { Carousel } from "@mantine/carousel";
 import { useState } from "react";
+import MobileSliderComponent from "@/components/MobileSliderComponent";
 
 const OurTeamSetcion = () => {
   const [currentSlide, setCurrentSlide] = useState(2);
@@ -64,24 +65,29 @@ const OurTeamSetcion = () => {
   return (
     <div className={classNames(s.container, s.team_section)}>
       <HeadingComponent customClass={s.team_section_title} text="Our team" />
-      <Carousel
-        classNames={{ container: s.custom, control: s.custom_control }}
-        onSlideChange={(index) => {
-          const slideIndex = index + 2 < response.length ? index + 2 : index + 2 - response.length;
-          setCurrentSlide(slideIndex);
-        }}
-        slideSize="20%"
-        align="start"
-        loop
-        slidesToScroll={1}
-        speed={3}
-      >
-        {response.map((member, index) => (
-          <Carousel.Slide key={member.id}>
-            <OurTeamCard isActive={currentSlide === index} member={member} />
-          </Carousel.Slide>
-        ))}
-      </Carousel>
+      <div className={s.mobile_slider}>
+        <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
+      </div>
+      <div className={s.desctop_slider}>
+        <Carousel
+          classNames={{ container: s.custom, control: s.custom_control }}
+          onSlideChange={(index) => {
+            const slideIndex = index + 2 < response.length ? index + 2 : index + 2 - response.length;
+            setCurrentSlide(slideIndex);
+          }}
+          slideSize="20%"
+          align="start"
+          loop
+          slidesToScroll={1}
+          speed={3}
+        >
+          {response.map((member, index) => (
+            <Carousel.Slide key={member.id}>
+              <OurTeamCard data={member} isActive={currentSlide === index}/>
+            </Carousel.Slide>
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 };
