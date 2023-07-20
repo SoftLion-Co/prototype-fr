@@ -1,5 +1,5 @@
-import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCardComponent";
 import Link from "next/link";
+import SecuritySection from "./sections/service_page/SecuritySection";
 
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
       <Link href="/services">
         <h2>Services</h2>
       </Link>
-      <ServiceSecurityCardComponent/>
+      <SecuritySection/>
     </div>
   );
 };
