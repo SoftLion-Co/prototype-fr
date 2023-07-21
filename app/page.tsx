@@ -1,23 +1,18 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import ServiceCardsComponent from "./../components/services/ServiceCardsComponent";
+import HeroSection from "./sections/home_page/HeroSection";
+import CookiesComponent from "@/components/CookiesComponent";
+import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
+import OurProjectsSection from "./sections/home_page/OurProjectsSection";
 
 const Home = () => {
   return (
-    <div className="container">
-      <h1>Home</h1>
-      <ServiceCardsComponent  />
-
-      <Link href="/blogs">
-        <h2>Blog</h2>
-      </Link>
-      <Link href="/projects">
-        <h2>Projects</h2>
-      </Link>
-      <Link href="/services">
-        <h2>Services</h2>
-      </Link>
+    <div>
+      <HeroSection />
+      <CookiesComponent />
+      <SeeMoreButtonComponent path="blogs"/>
+      <OurProjectsSection />
     </div>
   );
 };

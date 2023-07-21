@@ -1,0 +1,61 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 11px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  @include for-size(tablet) {
+    max-width: 497px;
+    padding-bottom: 29px;
+  }
+  @include for-size(laptop) {
+    max-width: 513px;
+    padding-bottom: 31px;
+  }
+  
+  @include for-size(desktop) {
+    max-width: 672px;
+    padding-bottom: 25px;
+  }
+
+  &__title {
+    @include for-size(tablet) {
+    }
+    @include for-size(laptop) {
+      margin-left: auto;
+    }
+    @include for-size(desktop) {
+    }
+  }
+
+  &__text {
+    margin-top: 13px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15.6px;
+    letter-spacing: 0.4px;
+
+    @include for-size(tablet) {
+      margin-top: 22px;
+      font-size: 14.83px;
+      line-height: 19.36px;
+      text-align: left;
+    }
+    @include for-size(laptop) {
+      margin-top: 30px;
+      font-size: 15.37px;
+      line-height: 19.93px;
+    }
+    @include for-size(desktop) {
+      margin-top: 40px;
+      font-size: 20px;
+      line-height: 26.1px;
+    }
+  }
+}
