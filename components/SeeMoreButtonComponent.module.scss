@@ -1,0 +1,60 @@
+// SeeMoreButtonComponent.module.scss
+@import "./../styles/mixin";
+@import "./../styles/container";
+
+.see_more {
+  display: flex;
+  flex-direction: row-reverse;
+
+  &__text {
+    color: black;
+    font-family: Basley;
+    font-size: 19px;
+    letter-spacing: 0.463px;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+      letter-spacing: 0.597px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 27px;
+      letter-spacing: 0.823px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 36px;
+      letter-spacing: 1.08px;
+    }
+  }
+  &__background {
+    width: 134px;
+    height: 121px;
+    background-image: url("./../images/see-more-button/blur-mobile.svg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include for-size(tablet) {
+      width: 158px;
+      height: 143px;
+      background-image: url("./../images/see-more-button/blur-tablet.svg");
+      background-size: cover;
+    }
+
+    @include for-size(laptop) {
+      width: 218px;
+      height: 197px;
+      background-image: url("./../images/see-more-button/blur-laptop.svg");
+      background-size: cover;
+    }
+
+    @include for-size(desktop) {
+      width: 286px;
+      height: 258px;
+      background-image: url("./../images/see-more-button/blur-desktop.svg");
+      background-size: cover;
+    }
+  }
+}
