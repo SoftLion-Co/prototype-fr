@@ -4,10 +4,11 @@ import heroLogo from "./../../../images/hero-logo.svg";
 import heroLogoMobile from "./../../../images/hero-mobile.svg";
 import MainButtonComponent from "./../../../components/MainButtonComponent";
 import Link from "next/link";
+import classNames from "classnames";
 
 const HeroSection = () => {
   return (
-    <div className={s.hero}>
+    <div className={classNames(s.container, s.hero)}>
       <div>
         <div className={s.hero__wrapperInf}>
           <h1 className={s.hero__name}>
@@ -30,8 +31,9 @@ const HeroSection = () => {
           src={heroLogo}
           width={800}
           height={554}
+          alt="SoftLion"
         />
-        <Image className={s.hero__Logo_small} src={heroLogoMobile} />
+        <Image className={s.hero__Logo_small} src={heroLogoMobile}  alt="SoftLion"/>
         <div className={s.hero__warpperBtnMob}>
         <MainButtonComponent color="white" path="services">OUR SERVICES</MainButtonComponent>
           <MainButtonComponent color="white" path="projects">OUR PROJECTS</MainButtonComponent>
