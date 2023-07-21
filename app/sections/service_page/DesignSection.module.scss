@@ -51,20 +51,23 @@
   &__list {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+
     gap: 36px;
     @include for-size(tablet) {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
 
-      padding-left: 37px;
-      padding-right: 37px;
+      justify-content: flex-start;
     }
     @include for-size(laptop) {
-      gap: 59px;
+      gap: 59px 100px;
+      justify-content: flex-start;
     }
     @include for-size(desktop) {
-      gap: 76px;
+      gap: 76px 150px;
+      justify-content: flex-start;
     }
   }
 
