@@ -22,7 +22,6 @@ export const FooterComp = () => {
                 alt="SoftLion"
               />
             </Link>
-
             <div className={s.footer__routeWrap2}>
               <Link href={"/services"} className={s.footer__routeName}>
                 Service
