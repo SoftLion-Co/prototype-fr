@@ -57,7 +57,8 @@ const BlogMobileComponent: React.FC<BlogMobileProps> = ({ cardsData }) => {
             width: `calc(clamp(220px,90vw,450px)/${cardsData.length}*1.3)`,
           },
         },
-      }}>
+      }}
+    >
       {cardsData.map((x, index) => (
         <Carousel.Slide key={index}>
           <BlogMobileExtendedCardComponent
