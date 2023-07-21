@@ -4,6 +4,7 @@ import s from "./SecuritySection.module.scss";
 import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCardComponent";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
+import classNames from "classnames";
 
 const securityCardsData = [
   {
@@ -36,11 +37,12 @@ const securityCardsData = [
     description:
       "We collaborate with trusted server and hosting providers that ensure a high level of data protection and system reliability. This helps minimize the risk of data loss or damage.",
   },
+  
 ];
 
 const SecuritySection = () => {
   return (
-    <div className={s.container}>
+    <div>
       <ServiceHeadingComponent headingText="Security" />
       <div className={s.security__slider}>
         <MobileSliderComponent
@@ -49,7 +51,7 @@ const SecuritySection = () => {
         />
       </div>
 
-      <div className={s.security__container}>
+      <div className={classNames(s.container, s.security__container)}>
         {securityCardsData.map((card) => (
           <ServiceSecurityCardComponent
             key={card.id}
