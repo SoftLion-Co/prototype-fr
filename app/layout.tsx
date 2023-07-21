@@ -1,5 +1,5 @@
-import './../styles/main.scss';
-import HeaderComponent from '../components/HeaderComponent'
+import "./../styles/main.scss";
+import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import { FooterComp } from "@/components/FooterComponent";
 import TechnologiesCardComponent from "../components/technologies/TechnologiesCardComponent";
@@ -20,10 +20,10 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-      <body >
-      <HeaderComponent/>
+      <body>
+        <HeaderComponent />
         {children}
-        <TechnologiesCardComponent />
+        {/* <TechnologiesCardComponent /> */}
         <FooterComp />
       </body>
     </html>
