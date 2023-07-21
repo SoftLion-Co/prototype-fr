@@ -1,0 +1,37 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+
+.security__slider {
+  margin-top: 54px;
+
+  @include for-size(tablet) {
+    display: none;
+  }
+}
+
+.security__container {
+  display: none;
+
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 18.5px;
+    row-gap: 55px;
+    margin-top: 84px;
+    
+  }
+
+  @include for-size(laptop) {
+    column-gap: 27px;
+    row-gap: 82px;
+    margin-top: 67px;
+  }
+
+  @include for-size(desktop) {
+    column-gap: 40px;
+    row-gap: 107px;
+    margin-top: 87px;
+  }
+}

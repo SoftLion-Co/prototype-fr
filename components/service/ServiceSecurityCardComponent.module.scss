@@ -3,25 +3,22 @@
 
 .security {
   display: flex;
-  max-width: 274px;
+  min-width: 274px;
   padding-right: 0px;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  border-radius: 5px;
   padding: 33px 16px 33px 17px;
-  background: var(
-    --custom-apps,
-    radial-gradient(
-      114.26% 136.2% at 100% 100%,
-      rgba(160, 24, 155, 0) 0%,
-      rgba(160, 24, 155, 0.11) 50%,
-      rgba(133, 0, 127, 0.05) 100%
-    )
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 25%),
+    rgba(118, 228, 215, 25%)
   );
 
   @include for-size(tablet) {
-    width: 254px;
-    padding: 56px 48px 57px;
+    width: 234px;
+    padding: 56px 35px 57px;
     justify-content: center;
     border-radius: 7.728px;
   }
@@ -53,8 +50,10 @@
   }
 
   &__head {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 26px;
     margin-top: 11px;
 

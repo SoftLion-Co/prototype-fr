@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^6.0.16",
-    "@mantine/ds": "^6.0.16",
+    "@mantine/carousel": "6.0.16",
+    "@mantine/core": "6.0.16",
+    "@mantine/ds": "6.0.16",
     "@tabler/icons-react": "^2.24.0",
     "@types/node": "20.4.0",
     "@types/react": "18.2.14",
@@ -28,6 +29,7 @@
     "react-hook-form": "^7.45.1",
     "react-icons": "^4.10.1",
     "react-query": "^3.39.3",
+    "react-responsive": "^9.0.2",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "tailwindcss": "3.3.2",
