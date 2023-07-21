@@ -1,0 +1,49 @@
+@import "./../styles/mixin";
+
+.heading {
+    @include for-size(tablet) {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        max-width: 358px;
+    }
+
+    @include for-size(laptop) {
+       max-width: 419px;
+    }
+
+    @include for-size(desktop) {
+        max-width: 600px;
+    }
+
+
+  &__text {
+    margin: 0 auto;
+    max-width: 223px;
+    padding-top: 12px;
+    font-size: 12px;
+    align-self: flex-start;
+
+    line-height: 130.49%; /* 15.659px */
+    letter-spacing: 0.48px;
+
+    @include for-size(tablet) {
+        margin: 0;
+      max-width: 281px;
+      padding-top: 50px;
+    }
+
+    @include for-size(laptop) {
+        margin: 0;
+    font-size: 15px;
+      max-width: 420px;
+    }
+
+    @include for-size(desktop) {
+        margin: 0;
+        font-size: 20px;
+      max-width: 541px;
+    }
+  }
+}

@@ -1,4 +1,3 @@
-"use client";
 import s from "./ArticleSection.module.scss";
 import { Article } from "@/components/blog/BlogArticleComponent";
 import { SectionScrolIndicator } from "@/components/blog/BlogSectionScrolIndicatorComponent";
@@ -56,7 +55,8 @@ export const ArticleSection = () => {
     ],
   };
 
-  const { articleName, authorImg, articleimg, readTime, author, articles } = response;
+  const { articleName, authorImg, articleimg, readTime, author, articles } =
+    response;
 
   return (
     <section className={classNames(s.container, s.article_section)}>
@@ -65,18 +65,30 @@ export const ArticleSection = () => {
         <div className={s.container_author}>
           <div className={s.author}>
             <div className={s.author_img_container}>
-            <Image className={s.image} width={44} height={44} src={authorImg} alt={author} />
+              <Image
+                className={s.image}
+                width={44}
+                height={44}
+                src={authorImg}
+                alt={author}
+              />
             </div>
             <span className={s.author_text}>{author}</span>
           </div>
           <span className={s.author_text}>Reading time:{readTime}</span>
         </div>
         <div className={s.article_section_img_container}>
-        <Image width={800} height={600} className={s.image}  src={articleimg} alt={articleName} />
+          <Image
+            width={800}
+            height={600}
+            className={s.image}
+            src={articleimg}
+            alt={articleName}
+          />
         </div>
-        
+
         {articles.map((article) => (
-          <Article key={article.id} article={article} />
+          <Article key={article.id} {...article} />
         ))}
       </div>
       <div className={s.article_navigation}>
