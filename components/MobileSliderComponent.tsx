@@ -1,9 +1,8 @@
-import React, { FC, useState } from "react";
+import React, { ComponentType, FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
 
-interface MobileSliderComponentProps {
-  data: Array<{
+interface SliderCard {
     id: number;
     image: string;
     title: string;
@@ -11,8 +10,11 @@ interface MobileSliderComponentProps {
     year: string;
     author: string;
     description: string;
-  }>;
-  SlideComponent: React.ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
+}
+
+interface MobileSliderComponentProps {
+  data: SliderCard[];
+  SlideComponent: ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
 }
 
 const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComponent }) => {
