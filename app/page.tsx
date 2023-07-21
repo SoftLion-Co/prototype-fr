@@ -1,9 +1,14 @@
+"use client";
+import React from "react";
 import Link from "next/link";
+import ServiceCardsComponent from "./../components/services/ServiceCardsComponent";
 
 const Home = () => {
   return (
     <div className="container">
       <h1>Home</h1>
+      <ServiceCardsComponent  />
+
       <Link href="/blogs">
         <h2>Blog</h2>
       </Link>
@@ -16,5 +21,4 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;

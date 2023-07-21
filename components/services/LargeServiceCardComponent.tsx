@@ -1,49 +1,44 @@
+// LargeServiceCardComponent.tsx
 import React from "react";
 import s from "./LargeServiceCardComponent.module.scss";
+import Image from "next/image";
 
-interface CardComponent {
+interface LargeServiceCardComponentProps {
   title: string;
   paragraph: string;
+  image: string;
+  isActive: boolean;
 }
 
-export const LargeServiceCardComponent = ({ cardComponent }: { cardComponent: CardComponent[] }) => {
+const LargeServiceCardComponent: React.FC<LargeServiceCardComponentProps> = ({
+  title,
+  paragraph,
+  image,
+  isActive,
+}) => {
   return (
     <div className={s.service}>
-      {cardComponent.map((card, index) => (
-        <div className={s.service__container} key={index} hidden={index > 0}>
-          <div className={s.service__img}>
-            <img src="" alt="" />
-          </div>
-          <h1 className={s.service__heading}>{card.title}</h1>
-          <p className={s.service__paragraph}>{card.paragraph}</p>
-        </div>
-      ))}
+      <div className={s.service__container}>
+        <Image
+          className={s.service__image}
+          src={image}
+          alt={title}
+          width={100}
+          height={100}
+        />
+
+        {isActive ? (
+          <>
+            <h1 className={s.service__heading}>{title}</h1>
+            <p className={s.service__paragraph}>{paragraph}</p>
+          </>
+        ) : (
+          <>
+            <h1 className={s.service__heading}>{title}</h1>
+          </>
+        )}
+      </div>
     </div>
   );
 };
-
-
-// Функція на премикання карточок, НЕ ВИДАЛИ ВИПАДКОВО ІДІОТІНА!!!!
-
-// const CardComponent: React.FC = () => {
-//   const [cards, setCards] = useState<string[]>(['Card 1', 'Card 2', 'Card 3']);
-
-//   const changeCardContent = (index: number) => {
-//     const newCards = [...cards];
-//     newCards[index] = `New Content ${index + 1}`;
-//     setCards(newCards);
-//   };
-
-//   return (
-//     <div>
-//       {cards.map((content, index) => (
-//         <div key={index}>
-//           <div>{content}</div>
-//           <button onClick={() => changeCardContent(index)}>icon</button>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
 export default LargeServiceCardComponent;
