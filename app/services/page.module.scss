@@ -1,54 +1,46 @@
-
 @import "../styles/colors";
 @import "../styles/container";
 @import "../styles/mixin";
 
-.CustumApps{
-
-
-  &__title{
+.custom {
+  &__title {
     margin-top: 34px;
+    margin-left: 34px;
     font-size: 23px;
     font-weight: 400;
     text-align: left;
-    color: service-heading-color;
+    color: $service-heading-color;
     @include for-size(tablet) {
-        
-        font-size: 30px;
-      }
-      @include for-size(laptop) {
-        font-size: 49px;
-        
-        
-      }
-      @include for-size(desktop) {
-        font-size: 62px;
-      }
+      font-weight: 400;
+      font-size: 30px;
+    }
+    @include for-size(laptop) {
+      font-size: 49px;
+      font-weight: 400;
+    }
+    @include for-size(desktop) {
+      font-weight: 400;
+      font-size: 62px;
+    }
   }
 
-  &__cards{
-    
+  &__cards {
     @include for-size(tablet) {
       position: relative;
       display: flex;
       justify-content: center;
-      
     }
     @include for-size(laptop) {
-      
     }
     @include for-size(desktop) {
-     
     }
-
   }
 
-  &__card{
+  &__card {
     margin-top: 78px;
     @include for-size(tablet) {
       margin-top: 140px;
       margin-right: 20px;
-      
     }
     @include for-size(laptop) {
       margin-top: 130px;
@@ -59,42 +51,40 @@
       margin-right: 41px;
     }
   }
-  &__card2{
+  &__card2 {
     margin-top: 37px;
     @include for-size(tablet) {
       margin-top: 140px;
-      
     }
     @include for-size(laptop) {
       margin-top: 130px;
     }
     @include for-size(desktop) {
-       margin-top: 169px;
+      margin-top: 169px;
     }
   }
-  &__btn{
+  &__btn {
     display: none;
-      @include for-size(tablet) {
-        display: block;
-        font-size: 20px;
-        background-color: transparent;
-        border: none;
-        padding: 0px;
-        
-        position: absolute;
-        right: 22px;
-        bottom: -56px;
-      }
-      @include for-size(laptop) {
-        font-size: 28px;
-        right: 93px;
-        bottom: -50px;
-      }
-      @include for-size(desktop) {
-        font-size: 36px;
-        right: 123px;
-        bottom: -60px;
-       
-      }
+    @include for-size(tablet) {
+      display: block;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+
+      position: absolute;
+      right: 22px;
+      bottom: -56px;
+    }
+    @include for-size(laptop) {
+      font-size: 28px;
+      right: 93px;
+      bottom: -50px;
+    }
+    @include for-size(desktop) {
+      font-size: 36px;
+      right: 123px;
+      bottom: -60px;
+    }
   }
 }

@@ -4,20 +4,21 @@ import ServiceCardsComponent from "@/components/services/ServiceCardsComponent";
 import pic from "../../images/services/custom-apps/Apps.svg";
 import pic2 from "../../images/services/custom-apps/CustomAppDevelopment.svg";
 import HeadingComponent from "@/components/HeadingComponent";
+import CustomAppsCardComponent from "@/components/services/CustomAppsCardComponent";
 
 const Services = () => {
   return (
     <div className="container">
       <p>Services</p>
-      <div className={s.CustumApps}>
+      <div className={s.custom}>
     
        
-        <div className={s.CustumApps__title}>
-          <h2>Custum Apps</h2>
+        <div className={s.custom__title}>
+          <p>Custom Apps</p>
         </div>
-        <div className={s.CustumApps__cards}>
-          <div className={s.CustumApps__card}>
-            <ServiceCardsComponent
+        <div className={s.custom__cards}>
+          <div className={s.custom__card}>
+            <CustomAppsCardComponent
               title="Apps"
               path={pic}
               text_mob="App development is the creation of software for devices like smartphones, tablets, and computers. It involves building tools that perform tasks and provide users with capabilities. Apps are developed for platforms like iOS, Android, and Windows. This process includes UI design, programming, testing, debugging, and post-release support. App development is crucial for technology, enabling innovative solutions to meet user needs.
@@ -28,8 +29,8 @@ const Services = () => {
             />
           </div>
 
-          <div className={s.CustumApps__card2}>
-            <ServiceCardsComponent
+          <div className={s.custom__card2}>
+            <CustomAppsCardComponent
               title="Custom App Development"
               path={pic2}
               text_mob="App development begins with gathering requirements and analyzing user needs. Developers create the UI design and software architecture. They program using various languages and frameworks. Testing ensures functionality and identifies errors. After testing, the app is released through stores or direct installation. Developers provide support and updates to improve functionality and fix bugs post-release."
