@@ -1,4 +1,5 @@
 import s from "./HeadingComponent.module.scss";
+import React, { FC } from "react";
 
 interface HeadingComponentProps {
   text: string;
