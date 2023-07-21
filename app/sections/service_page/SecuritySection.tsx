@@ -5,6 +5,7 @@ import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCa
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
+import MainButtonComponent from "@/components/MainButtonComponent";
 
 const securityCardsData = [
   {
@@ -59,6 +60,9 @@ const SecuritySection = () => {
             description={card.description}
           />
         ))}
+      </div>
+      <div className={classNames(s.container, s.security__button)}>
+        <button className={s.button}>Book Consultation</button>
       </div>
     </div>
   );
