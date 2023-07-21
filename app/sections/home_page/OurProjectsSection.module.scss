@@ -1,0 +1,15 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+@import "./../styles/container";
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__slider{
+        @include for-size(tablet){
+            display: none;
+        }
+    }
+}

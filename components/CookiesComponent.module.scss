@@ -1,7 +1,9 @@
 @import "./../styles/colors";
 @import "./../styles/mixin";
+@import "./../styles/container";
 
 .cookies{
+    box-sizing: border-box;
     border-radius: 4.5px;
     background: $cookies-background;
     box-shadow: $cookies-shadow;
