@@ -1,12 +1,12 @@
 import s from "./ContactUsSection.module.scss";
 import FormComponent from "../../../components/FormComponent";
 import HeadingComponent from "../../../components/HeadingComponent";
-
+import classNames from "classnames"
 
 const ContactUsSection = () => {
-  return(
-  <div className={s.our_form}>
- <div className={s.title}>
+  return (
+    <div className={classNames(s.container, s.our_form)}>
+      <div className={s.title}>
         <HeadingComponent text="Contact Us" />
         <p className={s.title__text}>
           Submit your request now, and we will get in touch with you to discuss
@@ -15,9 +15,9 @@ const ContactUsSection = () => {
           online world.
         </p>
       </div>
-      <FormComponent/>
-  </div>
-  )
+      <FormComponent />
+    </div>
+  );
 };
 
 export default ContactUsSection;
