@@ -3,20 +3,28 @@ import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
 
 interface ProjectData {
-  id: number;
-  image: string;
-  title: string;
-  customer: string;
-  year: string;
-  author: string;
-  description: string;
+  data: {
+    id: number;
+    image: string;
+    title: string;
+    customer: string;
+    year: string;
+    author: string;
+    description: string;
+  };
 }
 
-const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({ data }) => {
+const ProjectCardComponent: React.FC<ProjectData> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__main}>
-        <Image className={s.card__image} src={data.image} alt="Project Image" width={16000} height={19000} />
+        <Image
+          className={s.card__image}
+          src={data.image}
+          alt="Project Image"
+          width={16000}
+          height={19000}
+        />
         <h4 className={s.card__title}>{data.title}</h4>
       </div>
       <div className={s.card__submain}>
