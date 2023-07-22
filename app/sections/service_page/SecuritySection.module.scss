@@ -1,79 +1,59 @@
 @import "../../../styles/mixin";
 @import "../../../styles/container";
 
-.security__slider {
-  margin-top: 54px;
-  margin-bottom: 36px;
 
-  @include for-size(tablet) {
+.security{
+
+  &__slider {
+    margin-top: 54px;
+    margin-bottom: 36px;
+  
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+
+  &__container {
     display: none;
+  
+    @include for-size(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 18.5px;
+      row-gap: 55px;
+      margin-top: 84px;
+      margin-bottom: 29px;
+    }
+  
+    @include for-size(laptop) {
+      column-gap: 27px;
+      row-gap: 82px;
+      margin-top: 67px;
+      margin-bottom: 53px;
+    }
+  
+    @include for-size(desktop) {
+      column-gap: 40px;
+      row-gap: 107px;
+      margin-top: 87px;
+      margin-bottom: 63px;
+    }
   }
-}
 
-.security__container {
-  display: none;
-
-  @include for-size(tablet) {
+  &__button {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    column-gap: 18.5px;
-    row-gap: 55px;
-    margin-top: 84px;
-    margin-bottom: 29px;
-  }
-
-  @include for-size(laptop) {
-    column-gap: 27px;
-    row-gap: 82px;
-    margin-top: 67px;
-    margin-bottom: 53px;
-  }
-
-  @include for-size(desktop) {
-    column-gap: 40px;
-    row-gap: 107px;
-    margin-top: 87px;
-    margin-bottom: 63px;
+  
+    @include for-size(tablet) {
+      justify-content: flex-end;
+    }
   }
 }
 
-.security__button {
-  display: flex;
-  justify-content: center;
 
-  @include for-size(tablet) {
-    justify-content: flex-end;
-  }
-}
 
-.button {
-  width: 169px;
-  padding: 18px 20px 17px 22px;
-  border-radius: 10px;
-  background: var(--cta, linear-gradient(139deg, #afdaed 0%, #84c6e2 100%));
-  border: none;
 
-  font-family: Roboto;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130.49%;
-  letter-spacing: 0.8px;
 
-  @include for-size(laptop) {
-    width: 209px;
-    padding: 22px 25px 22px 28px;
-    border-radius: 13.172px;
-    font-size: 17px;
-    letter-spacing: 0.703px;
-  }
 
-  @include for-size(desktop) {
-    width: 238px;
-    padding: 26px 29px 26px 32px;
-    border-radius: 15px;
-    font-size: 20px;
-    letter-spacing: 0.8px;
-  }
-}
+

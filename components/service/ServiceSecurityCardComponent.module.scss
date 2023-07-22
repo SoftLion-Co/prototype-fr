@@ -3,7 +3,6 @@
 
 .security {
   display: flex;
-  min-width: 274px;
   padding-right: 0px;
   flex-direction: column;
   justify-content: flex-end;
@@ -20,17 +19,19 @@
     width: 234px;
     padding: 56px 35px 57px;
     justify-content: center;
-    border-radius: 7.728px;
+    border-radius: 8px;
   }
 
   @include for-size(laptop) {
     min-width: 378px;
     padding: 84px 72px 85px 72px;
+    border-radius: 12px;
   }
 
   @include for-size(desktop) {
     min-width: 492px;
     padding: 110px 94px 111px 94px;
+    border-radius: 15px;
   }
 
   &__img {

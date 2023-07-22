@@ -6,6 +6,7 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 import MainButtonComponent from "@/components/MainButtonComponent";
+import BigButtonComponent from "../../../components/BigButtonComponent";
 
 const securityCardsData = [
   {
@@ -43,7 +44,7 @@ const securityCardsData = [
 
 const SecuritySection = () => {
   return (
-    <div>
+    <section className={s.security}>
       <ServiceHeadingComponent headingText="Security" />
       <div className={s.security__slider}>
         <MobileSliderComponent
@@ -62,9 +63,9 @@ const SecuritySection = () => {
         ))}
       </div>
       <div className={classNames(s.container, s.security__button)}>
-        <button className={s.button}>Book Consultation</button>
+        <BigButtonComponent/>
       </div>
-    </div>
+      </section>
   );
 };
 
