@@ -5,7 +5,7 @@ $fontSize: calc($currentW*0.07);
 $borderR: calc($currentW*12/290);
 
 .articleCard {
-    width: $currentW;
+    width: 100%;
     height: calc($currentW*$aspectRatio);
     border-radius: $borderR;
     display: flex;
