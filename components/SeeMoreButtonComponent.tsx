@@ -9,7 +9,7 @@ interface SeeMoreButtonComponentProps extends ComponentProps<"button"> {
 
 const SeeMoreButtonComponent: FC<SeeMoreButtonComponentProps> = ({ path }) => {
   return (
-    <div className={classNames(s.container, s.see_more)}>
+    <div className={s.see_more}>
       <div className={s.see_more__background}>
         <Link href={path}>
           <span className={s.see_more__text}>see more</span>
