@@ -20,14 +20,14 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      column-gap: 18.5px;
+      column-gap: 37px;
       row-gap: 55px;
       margin-top: 84px;
       margin-bottom: 29px;
     }
   
     @include for-size(laptop) {
-      column-gap: 27px;
+      column-gap: 35px;
       row-gap: 82px;
       margin-top: 67px;
       margin-bottom: 53px;
