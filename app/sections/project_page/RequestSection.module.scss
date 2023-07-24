@@ -1,0 +1,19 @@
+.request {
+
+    display: flex;
+    justify-content: center;
+  &__text {
+    width: 680px;
+    height: 226px;
+    flex-shrink: 0;
+    color: #000;
+
+    /* текст1 */
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%; /* 26.098px */
+    letter-spacing: 0.8px;
+  }
+}
