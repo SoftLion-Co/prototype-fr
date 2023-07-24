@@ -23,6 +23,8 @@
     flex-direction: column;
     gap: 32px;
 
+    width: 100%;
+
     @include for-size(tablet) {
       gap: 46px;
     }
@@ -39,7 +41,6 @@
     font-size: 10px;
     line-height: 13px;
     letter-spacing: 0.4px;
-    width: 100%;
 
     @include for-size(tablet) {
       font-size: 11px;
@@ -93,8 +94,8 @@
   }
 
   &__listSecond {
-    margin-left: auto;
     @include for-size(tablet) {
+      margin-left: auto;
       max-width: 219px;
     }
     @include for-size(laptop) {
