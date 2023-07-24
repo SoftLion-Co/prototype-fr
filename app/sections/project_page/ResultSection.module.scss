@@ -1,0 +1,119 @@
+@import "/styles/colors";
+@import "/styles/container";
+@import "/styles/mixin";
+
+.design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 30px;
+  @include for-size(tablet) {
+    flex-direction: row;
+    gap: 85px;
+  }
+  @include for-size(laptop) {
+    gap: 135px;
+  }
+  @include for-size(desktop) {
+    gap: 160px;
+  }
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include for-size(tablet) {
+      gap: 46px;
+    }
+    @include for-size(laptop) {
+      gap: 66px;
+    }
+
+    @include for-size(desktop) {
+      gap: 83px;
+    }
+  }
+
+  &__text {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.4px;
+    width: 100%;
+
+    @include for-size(tablet) {
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: 0.5px;
+    }
+    @include for-size(laptop) {
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: 0.7px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__photo {
+    background-color: black;
+
+    min-width: 185px;
+    height: 153px;
+
+    @include for-size(tablet) {
+      min-width: 216px;
+      height: 178px;
+    }
+    @include for-size(laptop) {
+      min-width: 320px;
+      height: 274px;
+    }
+
+    @include for-size(desktop) {
+      min-width: 385px;
+      height: 313px;
+    }
+  }
+
+  &__listFirst {
+    @include for-size(tablet) {
+      max-width: 297px;
+    }
+    @include for-size(laptop) {
+      max-width: 452px;
+    }
+    @include for-size(desktop) {
+      max-width: 547px;
+    }
+  }
+
+  &__listSecond {
+    margin-left: auto;
+    @include for-size(tablet) {
+      max-width: 219px;
+    }
+    @include for-size(laptop) {
+      max-width: 333px;
+    }
+    @include for-size(desktop) {
+      max-width: 403px;
+    }
+  }
+
+  &__listThird {
+    @include for-size(tablet) {
+      max-width: 295px;
+    }
+    @include for-size(laptop) {
+      max-width: 449px;
+    }
+    @include for-size(desktop) {
+      max-width: 543px;
+    }
+  }
+}
