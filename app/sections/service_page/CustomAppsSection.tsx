@@ -12,7 +12,6 @@ const CustomAppsSection = () => {
       <div className={s.custom_title}>
       <ServiceHeadingComponent headingText={"Custom Apps"}/>
       </div>
-        
         <div className={s.custom__cards}>
           <div className={s.custom__card}>
             <CustomAppsCardComponent

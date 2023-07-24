@@ -5,10 +5,32 @@
 
 
 .custom{
+   width: max-content;
 
+   @include for-size(tablet) {
+    height: 891px;
+  }
+  @include for-size(laptop) {
+    height: 1363px;
+  }
+  @include for-size(desktop) {
+    height: 1772px;
+   
+  }
 
     &__title{
-      margin-top: 34px;
+      width: none;
+      margin-top: 76px;
+      @include for-size(tablet) {
+        margin-top: 76px;
+      }
+      @include for-size(laptop) {
+        margin-top: 71px;
+      }
+      @include for-size(desktop) {
+        margin-top: 98px;
+      }
+
     }
   
     &__cards{
@@ -16,10 +38,11 @@
       @include for-size(tablet) {
         position: relative;
         display: flex;
+        gap: 41px;
         
       }
       @include for-size(laptop) {
-        
+        gap: 39px;
       }
       @include for-size(desktop) {
        
@@ -31,12 +54,12 @@
       margin-top: 78px;
       @include for-size(tablet) {
         margin-top: 135px;
-        margin-right: 41px;
+        
         
       }
       @include for-size(laptop) {
         margin-top: 333px;
-        margin-right: 39px;
+       
       }
       @include for-size(desktop) {
         margin-top: 429px;
