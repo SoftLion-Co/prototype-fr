@@ -17,7 +17,10 @@ interface MobileSliderComponentProps {
   SlideComponent: ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
 }
 
-const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComponent }) => {
+const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
+  data,
+  SlideComponent,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
@@ -66,7 +69,8 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComp
     >
       {data.map((item) => (
         <Carousel.Slide key={item.id} style={{ marginRight: "40px" }}>
-          <SlideComponent data={item} /> {/* Відображення переданої компоненти */}
+          <SlideComponent data={item} />{" "}
+          {/* Відображення переданої компоненти */}
         </Carousel.Slide>
       ))}
     </Carousel>
