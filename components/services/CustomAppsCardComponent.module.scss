@@ -3,8 +3,9 @@
 @import "../styles/mixin";
 
 .servicecard {
-  max-width: 480px;
+  width: 90vw;
   height: 395px;
+  align-items: center;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -34,7 +35,7 @@
   }
 
   &__wrap {
-    max-width: 480px;
+    width: 245px;
     display: flex;
     flex-direction: column;
      align-items: center;
