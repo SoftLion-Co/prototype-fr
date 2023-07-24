@@ -1,0 +1,59 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+
+.security{
+
+  &__slider {
+    margin-top: 54px;
+    margin-bottom: 36px;
+  
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: none;
+  
+    @include for-size(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 21px;
+      row-gap: 55px;
+      margin-top: 84px;
+      margin-bottom: 29px;
+    }
+  
+    @include for-size(laptop) {
+      column-gap: 19px;
+      row-gap: 82px;
+      margin-top: 67px;
+      margin-bottom: 53px;
+    }
+  
+    @include for-size(desktop) {
+      column-gap: 40px;
+      row-gap: 107px;
+      margin-top: 87px;
+      margin-bottom: 63px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  
+    @include for-size(tablet) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+
+
+
+
+
