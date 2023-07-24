@@ -9,8 +9,8 @@ import CustomAppsCardComponent from "@/components/services/CustomAppsCardCompone
 
 const OurServicesSection = () => {
   return (
+    <div className={s.container}>
     <div className={s.services}>
-      
       <div className={s.services__title}>
         <HeadingComponent text="Our Services" />
       </div>
@@ -23,7 +23,7 @@ const OurServicesSection = () => {
         requirements of our clients.
       </p>
       <CustomAppsSection/>
-      
+      </div>
     </div>
   );
 };
