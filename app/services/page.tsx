@@ -6,7 +6,7 @@ import CustomAppsCardComponent from "@/components/services/CustomAppsCardCompone
 
 const Services = () => {
   return (
-    <div className="container">
+    <div>
       <p>Services</p>
      <CustomAppsSection/>
     </div>

@@ -5,9 +5,10 @@
 
 
 .custom{
-   width: max-content;
+   width: 100%;
 
    @include for-size(tablet) {
+    width: max-content;
     height: 891px;
   }
   @include for-size(laptop) {

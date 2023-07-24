@@ -3,11 +3,12 @@
 @import "../styles/mixin";
 
 .servicecard {
-  width: max-content;
+  width: 100%;
   height: 395px;
   align-items: center;
   display: flex;
   flex-direction: column;
+ 
   position: relative;
  
   background: $cookies-background;

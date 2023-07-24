@@ -4,11 +4,12 @@ import ServiceCardsComponent from "@/components/services/ServiceCardsComponent";
 import pic from "../../../images/services/custom-apps/Apps.svg";
 import pic2 from "../../../images/services/custom-apps/CustomAppDevelopment.svg";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
+import classNames from "classnames";
 
 
 const CustomAppsSection = () => {
   return (
-    <div className={s.custom}>
+    <div className={classNames(s.container,s.custom)}>
       <div className={s.custom_title}>
       <ServiceHeadingComponent headingText={"Custom Apps"}/>
       </div>

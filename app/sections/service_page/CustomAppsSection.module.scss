@@ -1,5 +1,5 @@
 @import "../styles/colors";
-@import "../styles/container";
+@import "/styles/container";
 @import "../styles/mixin";
 
 .custom {
@@ -27,8 +27,8 @@
 
   &__cards {
     display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: stretch;
       
     @include for-size(tablet) {
       position: relative;
