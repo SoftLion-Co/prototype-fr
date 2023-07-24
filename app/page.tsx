@@ -5,6 +5,7 @@ import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import OurProjectsSection from "./sections/home_page/OurProjectsSection";
 import ContactUsSection from "./sections/contact_us_page/ContactUsSection"
 import OurServicesSection from "./sections/home_page/OurServicesSection";
+import TechnologiesSection from "./sections/home_page/TechnologiesSection";
 
 const Home = () => {
   return (
@@ -12,9 +13,9 @@ const Home = () => {
       <HeroSection />
       <CookiesComponent />
       <OurServicesSection/>
-      <SeeMoreButtonComponent path="blogs"/>
-      <OurProjectsSection />
       <ContactUsSection />
+      <OurProjectsSection />
+      <TechnologiesSection />
     </div>
   );
 };
