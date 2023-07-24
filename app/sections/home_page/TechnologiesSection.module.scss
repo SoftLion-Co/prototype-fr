@@ -221,15 +221,13 @@
     text-align: center;
 
     max-width: 100%;
-
     font-size: 15px;
     line-height: 17px;
     letter-spacing: 0.6px;
-
-    padding-top: 31px;
+    padding-top: 36px;
     padding-right: 15px;
     padding-left: 15px;
-    padding-bottom: 26px;
+    padding-bottom: 38px;
 
     @include for-size(tablet) {
       max-width: 186px;
@@ -258,16 +256,16 @@
     }
 
     @include for-size(desktop) {
-      width: 237px;
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
 
-      font-size: 18px;
-      line-height: 23px;
-      letter-spacing: 0.7px;
+      padding-top: 56px;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 43px;
 
-      padding-top: 45px;
-      padding-right: 41.5px;
-      padding-left: 41.5px;
-      padding-bottom: 55px;
+      min-width: 290px;
     }
   }
 
