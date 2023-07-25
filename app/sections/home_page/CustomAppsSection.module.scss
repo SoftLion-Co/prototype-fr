@@ -1,0 +1,109 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+
+
+.custom{
+   width: 100%;
+
+   @include for-size(tablet) {
+    width: max-content;
+    height: 891px;
+  }
+  @include for-size(laptop) {
+    height: 1363px;
+  }
+  @include for-size(desktop) {
+    height: 1772px;
+   
+  }
+
+    &__title{
+      width: none;
+      margin-top: 76px;
+      @include for-size(tablet) {
+        margin-top: 76px;
+      }
+      @include for-size(laptop) {
+        margin-top: 71px;
+      }
+      @include for-size(desktop) {
+        margin-top: 98px;
+      }
+
+    }
+  
+    &__cards{
+      
+      @include for-size(tablet) {
+        position: relative;
+        display: flex;
+        gap: 41px;
+        
+      }
+      @include for-size(laptop) {
+        gap: 39px;
+      }
+      @include for-size(desktop) {
+       
+      }
+  
+    }
+  
+    &__card{
+      margin-top: 78px;
+      @include for-size(tablet) {
+        margin-top: 135px;
+        
+        
+      }
+      @include for-size(laptop) {
+        margin-top: 333px;
+       
+      }
+      @include for-size(desktop) {
+        margin-top: 429px;
+      }
+    }
+    &__card2{
+      margin-top: 37px;
+      @include for-size(tablet) {
+        margin-top: 18px;
+        
+      }
+      @include for-size(laptop) {
+        margin-top: 157px;
+      }
+      @include for-size(desktop) {
+        margin-top: 203px;
+      }
+    }
+    &__more{
+      display: none;
+     
+        @include for-size(tablet) {
+          display: block;
+          font-size: 20px;
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+          
+          position: absolute;
+          right: 22px;
+          bottom: -80px;
+        }
+        @include for-size(laptop) {
+          font-size: 28px;
+          right: 0px;
+          bottom: -90px;
+        }
+        @include for-size(desktop) {
+          font-size: 36px;
+          right: 0px;
+          bottom: -130px;
+         
+        }
+    }
+  }
+  
