@@ -1,4 +1,7 @@
-import s from "./ServiceCardsComponent.module.scss"
+
+
+
+import s from "./CustomAppsCardComponent.module.scss"
 
 const ServiceCardsComponent = () => {
     return (

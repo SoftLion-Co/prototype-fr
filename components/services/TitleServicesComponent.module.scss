@@ -1,0 +1,110 @@
+@import "./../styles/colors";
+@import "../../styles/mixin";
+
+.title {
+  display: inline-flex;
+  flex-direction: column;
+
+  &__num {
+    color: $heading-purple-color;
+    font-size: 50px;
+    letter-spacing: 0.05px;
+    font-weight: 400;
+    line-height: 42px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+    @include for-size(tablet) {
+      font-size: 67px;
+      letter-spacing: 0.5px;
+      line-height: 62px;
+
+      padding-right: 32px;
+      padding-left: 186px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 115px;
+      letter-spacing: 0.5px;
+      line-height: 110px;
+
+      padding-right: 60px;
+      padding-left: 300px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    }
+
+    @include for-size(desktop) {
+      font-size: 150px;
+      letter-spacing: 3.84px;
+      line-height: 140px;
+
+      padding-right: 70px;
+      padding-left: 390px;
+    }
+  }
+
+  &__text {
+    color: $heading-purple-color;
+    font-size: 22px;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    line-height: 32px;
+
+    @include for-size(tablet) {
+      font-size: 29px;
+      line-height: 32px;
+      margin-left: 6px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 49px;
+      line-height: 54px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 64px;
+      line-height: 68px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.right {
+  padding-right: 168px;
+  padding-left: 1px;
+
+  @include for-size(tablet) {
+    padding-right: 32px;
+    padding-left: 186px;
+  }
+
+  @include for-size(laptop) {
+    padding-right: 60px;
+    padding-left: 300px;
+  }
+
+  @include for-size(desktop) {
+    padding-right: 70px;
+    padding-left: 390px;
+  }
+}
+
+.left {
+  padding-right: 168px;
+  padding-left: 1px;
+
+  @include for-size(tablet) {
+    padding-right: 186px;
+    padding-left: 1px;
+  }
+
+  @include for-size(laptop) {
+    padding-right: 300px;
+    padding-left: 30px;
+  }
+
+  @include for-size(desktop) {
+    padding-right: 390px;
+    padding-left: 60px;
+  }
+}

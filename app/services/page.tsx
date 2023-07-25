@@ -1,11 +1,16 @@
-import s from "./page.module.scss"
+import s from "./page.module.scss";
+import CustomAppsSection from "../sections/service_page/CustomAppsSection";
+
+import CustomAppsCardComponent from "@/components/services/CustomAppsCardComponent";
+
 
 const Services = () => {
-    return (
-        <div>
-            <h1>Services</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <p>Services</p>
+     <CustomAppsSection/>
+    </div>
+  );
+};
 
-export default Services
+export default Services;
