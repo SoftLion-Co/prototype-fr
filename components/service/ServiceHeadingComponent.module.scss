@@ -3,7 +3,6 @@
 
 .heading {
   &__title {
-    width: 141px;
     color: rgba(0, 0, 0, 0.7);
     font-size: 23px;
     font-style: normal;
@@ -13,21 +12,18 @@
     margin-left: 71px;
 
     @include for-size(tablet) {
-      width: 203px;
       font-size: 33px;
       letter-spacing: 1.978px;
       margin-left: 83px;
     }
 
     @include for-size(laptop) {
-      width: 303px;
       font-size: 49px;
       letter-spacing: 2.957px;
       margin-left: 125px;
     }
 
     @include for-size(desktop) {
-      width: 394px;
       font-size: 64px;
       letter-spacing: 3.84px;
       margin-left: 162px;
