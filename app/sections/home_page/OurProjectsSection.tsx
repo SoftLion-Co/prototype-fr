@@ -6,8 +6,8 @@ import ProjectMobileCardComponent from "./../../../components/projects/ProjectMo
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
 import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-import classNames from "classNames"
-import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent"
+import classNames from "classNames";
+import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 
 const sampleData = [
   {
@@ -59,11 +59,10 @@ const OurProjectsSection = () => {
         {sampleData.map((project) => (
           <ProjectCardComponent key={project.id} data={project} />
         ))}
-        <SeeMoreButtonComponent path="projects"/>
+        <SeeMoreButtonComponent path="projects" />
       </div>
     </div>
   );
 };
 
 export default OurProjectsSection;
-

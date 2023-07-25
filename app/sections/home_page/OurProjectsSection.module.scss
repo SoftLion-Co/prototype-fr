@@ -29,7 +29,7 @@
     @include for-size(phone) {
       display: none;
     }
-    
+
     @include for-size(tablet) {
       display: flex;
       flex-direction: column;
@@ -37,7 +37,7 @@
     }
 
     @include for-size(desktop) {
-        gap: 65px;
+      gap: 65px;
     }
   }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
 import { PiArrowRightThin } from "react-icons/pi";
+import Link from "next/link";
 
 interface ProjectData {
   id: number;
@@ -37,7 +38,9 @@ const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
           <h4 className={s.card__title}>{data.title}</h4>
           <p className={s.card__desc}>{data.description}</p>
         </div>
-        <PiArrowRightThin className={s.card__arrowIcon} />
+        <Link href="/">
+          <PiArrowRightThin className={s.card__arrowIcon} />
+        </Link>
       </div>
     </div>
   );
