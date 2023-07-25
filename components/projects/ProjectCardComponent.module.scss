@@ -156,7 +156,7 @@
       letter-spacing: 0.621px;
     }
 
-    @include for-size(laptop) {
+    @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
     }
