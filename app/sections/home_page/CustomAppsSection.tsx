@@ -9,7 +9,7 @@ const CustomAppsSection = () => {
   return (
     <div className={s.custom}>
       <div className={s.custom__title}>
-        <TitleServicesComponent num="02" text={"Custom Apps"} position="right" />
+        <TitleServicesComponent num="02" text={"Custom Apps"} position="right" color="purple"/>
       </div>
       <div className={s.custom__cards}>
         <div className={s.custom__card}>
