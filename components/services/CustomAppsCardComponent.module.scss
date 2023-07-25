@@ -3,25 +3,24 @@
 @import "../styles/mixin";
 
 .servicecard {
-  width: 90vw;
+  width: 100%;
   height: 395px;
   align-items: center;
   display: flex;
   flex-direction: column;
+ 
   position: relative;
  
   background: $cookies-background;
   box-shadow: 11px 12px 5.8px 0px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
- 
+  overflow: hidden;
 
   @include for-size(tablet) {
     width: 348px;
     height: 460px;
     border-radius: 8px;
     align-items: left;
-
-    
   }
   @include for-size(laptop) {
     width: 519px;
@@ -29,32 +28,33 @@
     border-radius: 12px;
   }
   @include for-size(desktop) {
-    width: 683px;
+    width: 680px;
     height: 899px;
     border-radius: 15px;
   }
 
   &__wrap {
-    width: 245px;
+    max-width: 245px;
     display: flex;
     flex-direction: column;
      align-items: center;
-    margin-left: 15px;
+    // margin-left: 15px;
+    padding: 0 21px 0 15px;
     overflow: hidden;
 
     @include for-size(tablet) {
       width: 245px;
-      margin-left: 45px;
+      padding: 0 57px 0 45px;
       
     }
     @include for-size(laptop) {
       width: 368px;
-      margin-left: 78px;
+      padding: 0 78px 0 72px;
       
     }
     @include for-size(desktop) {
       width: 479px;
-      margin-left: 102px;
+      padding: 0 142px 0 142px;
     
     }
   }
@@ -98,11 +98,13 @@
     @include for-size(laptop) {
       font-size: 30px;
       margin-top: 26px;
+      line-height: 36px;
   
     }
     @include for-size(desktop) {
       font-size: 40px;
       margin-top: 40px;
+      line-height: 52px;
     }
   }
   &__text {

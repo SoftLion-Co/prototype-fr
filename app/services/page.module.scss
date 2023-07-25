@@ -25,6 +25,7 @@
   }
 
   &__cards {
+ 
     @include for-size(tablet) {
       position: relative;
       display: flex;
