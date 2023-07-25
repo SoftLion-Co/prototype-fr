@@ -26,6 +26,38 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
+        previousControlIcon={
+          <svg
+            transform="scale(1,1.5)"
+            xmlns="http://www.w3.org/2000/svg"
+            width="5em"
+            height="5em"
+            viewBox="0 0 100 100"
+            fill="none"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="10" y1="50" x2="70" y2="10" />
+            <line x1="10" y1="50" x2="70" y2="90" />
+          </svg>
+        }
+        nextControlIcon={
+          <svg
+            transform="scale(1,1.5)"
+            xmlns="http://www.w3.org/2000/svg"
+            width="5em"
+            height="5em"
+            viewBox="0 0 100 100"
+            fill="none"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="30" y1="10" x2="90" y2="50" />
+            <line x1="30" y1="90" x2="90" y2="50" />
+          </svg>
+        }
         skipSnaps
         controlsOffset="xl"
         loop
@@ -35,6 +67,10 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             paddingBottom: "5%",
           },
           controls: {
+            bottom: 0,
+            top: 0,
+            width: "106%",
+            left: "-3%",
             gap: 0,
             padding: 0,
           },

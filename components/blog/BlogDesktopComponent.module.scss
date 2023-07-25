@@ -1,7 +1,6 @@
 @import "./../styles/mixin";
 
 .blogDesktop{
-    
     width: 738px;
     button{
         display: none;
@@ -10,14 +9,14 @@
     @include for-size(laptop){
         width: 1080px;
         button{
-            transform: scale(3,3.5);
+            font-size: 8px;
             display: flex;
         }
     }
     @include for-size(desktop){
         width: 1400px;
         button{
-            transform: scale(4,4.5);
+            font-size: 10px;
             display: flex;
         }
     }
