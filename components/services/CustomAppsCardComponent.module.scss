@@ -8,6 +8,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 26px 21px 15px 15px;
  
   position: relative;
  
@@ -19,6 +21,7 @@
   @include for-size(tablet) {
     width: 348px;
     height: 460px;
+    padding: 64px 45px 15px 45px;
     border-radius: 8px;
     align-items: left;
   }
@@ -26,61 +29,56 @@
     width: 519px;
     height: 692px;
     border-radius: 12px;
+    padding: 76px 75px 15px 75px;
   }
   @include for-size(desktop) {
     width: 680px;
     height: 899px;
     border-radius: 15px;
+    padding: 100px 142px 15px 142px;
   }
 
   &__wrap {
-    max-width: 245px;
+    width: 100%;
     display: flex;
     flex-direction: column;
      align-items: center;
     // margin-left: 15px;
-    padding: 0 21px 0 15px;
+    // padding: 0 21px 0 15px;
     overflow: hidden;
 
     @include for-size(tablet) {
-      width: 245px;
-      padding: 0 57px 0 45px;
+      width: 100%;
       
     }
     @include for-size(laptop) {
-      width: 368px;
-      padding: 0 78px 0 72px;
+      width: 100%;
       
     }
     @include for-size(desktop) {
-      width: 479px;
-      padding: 0 142px 0 142px;
-    
+      width: 100%;
     }
   }
 
   &__pic {
     width: 57px;
     height: 56px;
-    margin-top: 26px;
+   
 
     @include for-size(tablet) {
       width: 75px;
       height: 74px;
-      margin-top: 64px;
       position: relative;
       left: -12px;
     }
     @include for-size(laptop) {
       width: 113px;
       height: 111px;
-      margin-top: 76px;
       position: static;
     }
     @include for-size(desktop) {
       width: 148px;
       height: 145px;
-      margin-top: 100px;
     }
   }
   &__title {
