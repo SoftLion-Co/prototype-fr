@@ -1,19 +1,104 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
 .request {
-
+  &__content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-  &__text {
-    width: 680px;
-    height: 226px;
-    flex-shrink: 0;
-    color: #000;
+  }
 
-    /* текст1 */
-    font-family: Roboto;
-    font-size: 20px;
+  &__text {
+    max-width: 290px;
+    color: #000;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130.49%; /* 26.098px */
-    letter-spacing: 0.8px;
+    line-height: 130.49%;
+    letter-spacing: 0.48px;
+    margin-top: 9px;
+    margin-bottom: 36px;
+
+    @include for-size(tablet) {
+      max-width: 443px;
+      font-size: 13px;
+      letter-spacing: 0.521px;
+      margin-bottom: 16px;
+      margin-bottom: 68px;
+    }
+
+    @include for-size(laptop) {
+      min-width: 591px;
+      font-size: 18px;
+      letter-spacing: 0.72px;
+      margin-bottom: 95px;
+    }
+
+    @include for-size(desktop) {
+      min-width: 680px;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+      margin-bottom: 110px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__list_text {
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    display: flex;
+    align-items: center;
+    width: 203px;
+    color: #000;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.4px;
+    margin-bottom: 8px;
+
+    @include for-size(tablet) {
+      width: 349px;
+      font-size: 13px;
+      letter-spacing: 0.521px;
+      margin-bottom: 15px;
+    }
+
+    @include for-size(laptop) {
+      width: 466px;
+      font-size: 18px;
+      letter-spacing: 0.72px;
+      margin-bottom: 19px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 22px;
+      width: 536px;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__svg {
+    margin-right: 8px;
+
+    @include for-size(tablet){
+        margin-right: 14px;
+    }
+
+    @include for-size(laptop){
+        margin-right: 19px;
+    }
+
+    @include for-size(desktop) {
+      margin-right: 22px;
+      width: 20px;
+    }
   }
 }
