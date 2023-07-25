@@ -1,22 +1,44 @@
-$minW:0px;
-$mediumW:45vw;
-$maxW:680px;
-$aspectRatio:48/68;
-$currentW: clamp($minW,$mediumW,$maxW);
-$fontSize: calc($currentW*0.034);
-$borderR: calc($currentW*12/680);
+@import "../styles/mixin";
 
 
 .articleCard {
-    width: $currentW;
-    height: calc($currentW*$aspectRatio);
-    border-radius: $borderR;
+
+    @include for-size(tablet){
+        width: 352px;
+        height: 249px;
+        border-radius: 8px;
+
+        font-size: 10px;
+        line-height: 13px;
+        box-shadow: 8.4px 21.0px 13.1px 0px #00000026;
+      }
+
+      @include for-size(laptop){
+        width: 500px;
+        height: 355px;
+        border-radius: 12px;
+        
+        font-size: 15px;
+        line-height: 20px;
+
+        box-shadow: 12.3px 30.7px 19.2px 0px #00000026;
+      }
+
+      @include for-size(desktop){
+        width: 650px;
+        height: 460px;
+        border-radius: 15px;
+
+        font-size: 20px;
+        line-height: 26px;
+
+        box-shadow: 16px 40px 25px 0px #00000026;
+      }
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: calc($currentW*16/680) calc($currentW*40/680) calc($currentW*25/680) 0px #00000026;
     background-image: linear-gradient(115.15deg, rgba(247, 205, 245, 0.23) -20.67%, rgba(242, 212, 239, 0.23) 48.71%, rgba(168, 225, 250, 0.0322) 99.46%);
-    font-size: $fontSize;
     font-weight: 400;
     letter-spacing: 0.04em;
     
@@ -31,7 +53,7 @@ $borderR: calc($currentW*12/680);
           width: 45%;
           height: 100%;
           background-color: #f2f2f2;
-          border-radius: $borderR 0 0 0;
+          border-radius: 15px 0 0 0;
         }
 
         &__info{
@@ -44,6 +66,7 @@ $borderR: calc($currentW*12/680);
           flex-direction: column;
 
             &__title {
+                line-height: 1.4em;
                 font-size: 1.2em;
                 font-weight: 400;
                 letter-spacing: 0.09em;  
@@ -106,14 +129,16 @@ $borderR: calc($currentW*12/680);
             transition: margin-right 0.3s ease-in-out;
           }
         }
-    &:hover{
-        .articleCard{
-            &__text{
-                &__arrow{
-                    margin-right: 1%;
-                    margin-left: 9%;
-                }
-            }
-        }
+    @include for-size(laptop){
+      &:hover{
+          .articleCard{
+              &__text{
+                  &__arrow{
+                      margin-right: 1%;
+                      margin-left: 9%;
+                  }
+              }
+          }
+      }
     }
 }

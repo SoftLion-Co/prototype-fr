@@ -26,15 +26,22 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
-        height="clamp(0px,40vw,600px)"
         skipSnaps
+        controlsOffset="xl"
         loop
         styles={{
+          viewport: {
+            paddingTop: "5%",
+            paddingBottom: "5%",
+          },
+          controls: {
+            gap: 0,
+            padding: 0,
+          },
           control: {
             backgroundColor: "transparent",
             boxShadow: "none",
             border: "0",
-            transform: "scale(1.4)",
             color: "rgb(86, 86, 86)",
           },
           container: {
@@ -49,13 +56,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         {cardsData.map((x, index) => (
           <>
             {currentSlide === index ? (
-              <div
-                style={{
-                  overflow: "visible",
-                  width: "clamp(0px,31.11vw,470px)",
-                  display: "flex",
-                  justifyContent: "center",
-                }}>
+              <div className={s.blogDesktop__extendedCard}>
                 <Carousel.Slide key={index}>
                   <BlogExtendedCardComponent
                     text={x.text}
@@ -69,14 +70,14 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
               </div>
             ) : (
               <div
-                style={
+                className={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)
-                    ? { padding: "0 clamp(0px,10vw,150px) 0 0" }
+                    ? s.blogDesktop__rolledCardLeft
                     : currentSlide + 1 === index ||
                       (currentSlide === cardsData.length - 1 && index === 0)
-                    ? { padding: "0 0 0 clamp(0px,10vw,150px)" }
-                    : { padding: "0 clamp(0px,5vw,75px) 0 clamp(0px,5vw,75px)" }
+                    ? s.blogDesktop__rolledCardRight
+                    : s.blogDesktop__rolledCardDefault
                 }>
                 <Carousel.Slide key={index}>
                   <BlogRolledCardComponent

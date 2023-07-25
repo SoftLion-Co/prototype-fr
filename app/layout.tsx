@@ -2,7 +2,6 @@ import "./../styles/main.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import { FooterComp } from "@/components/FooterComponent";
-import HomeBlog from "@/components/blog/HomeBlog";
 
 export const metadata = {
   title: "SoftLion",
