@@ -11,7 +11,7 @@ const CustomAppsSection = () => {
   return (
     <div className={classNames(s.container,s.custom)}>
       <div className={s.custom_title}>
-      <ServiceHeadingComponent headingText={"Custom Apps"}/>
+      <ServiceHeadingComponent headingText={"Custom Apps"} container="false"/>
       </div>
         <div className={s.custom__cards}>
           <div className={s.custom__card}>
