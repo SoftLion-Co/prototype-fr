@@ -8,6 +8,8 @@
     background: $technologies-card-backbround;
     border-radius: 15px;
 
+    cursor: pointer;
+
     max-width: 224px;
     max-height: 210px;
 
@@ -73,7 +75,7 @@
       padding-right: 48.5px;
 
       margin-top: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 26px;
     }
 
     @include for-size(laptop) {
@@ -84,7 +86,7 @@
       padding-right: 52px;
 
       margin-top: 0px;
-      margin-bottom: 11px;
+      margin-bottom: 32px;
     }
 
     @include for-size(desktop) {
@@ -95,7 +97,7 @@
       padding-right: 70px;
 
       margin-top: 0px;
-      margin-bottom: 15px;
+      margin-bottom: 40px;
     }
   }
 
@@ -121,6 +123,8 @@
       padding-right: 47px;
 
       max-width: 145px;
+
+      margin-bottom: 0;
     }
 
     @include for-size(desktop) {
@@ -129,6 +133,8 @@
       padding-right: 63px;
 
       max-width: 194px;
+
+      margin-bottom: 0;
     }
   }
 
@@ -155,7 +161,7 @@
       padding-left: 54px;
       padding-right: 54px;
 
-      margin-bottom: 14px;
+      margin-bottom: 20px;
 
       max-width: 131px;
     }
@@ -165,7 +171,7 @@
       padding-left: 72px;
       padding-right: 72px;
 
-      margin-bottom: 19px;
+      margin-bottom: 26px;
 
       max-width: 176px;
     }
@@ -187,7 +193,7 @@
       padding-left: 49px;
       padding-right: 49px;
 
-      margin-bottom: 13px;
+      margin-bottom: 12px;
     }
 
     @include for-size(laptop) {
@@ -205,7 +211,7 @@
       padding-left: 72px;
       padding-right: 72px;
 
-      margin-bottom: 19px;
+      margin-bottom: 22px;
 
       max-width: 176px;
     }
