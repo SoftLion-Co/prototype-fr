@@ -7,6 +7,7 @@ interface TitleServicesComponentProps {
   text: string;
   position?: "left" | "right";
   className:string;
+  color?: "blue" | "purple" | "green";
 }
 
 const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
@@ -14,6 +15,7 @@ const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
   text,
   position="left",
   className,
+  color="blue",
 }) => {
 
   const buttonClass = classNames(s.title__num, className, {
@@ -21,9 +23,14 @@ const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
     [s.right]: position === "right",
   });
 
+  const headingClass = classNames(s.title, className, {
+    [s.title__blue]: color === "blue",
+    [s.title__purple]: color === "purple",
+    [s.title__green]: color === "green",
+  })
 
   return (
-    <div className={s.title}>
+    <div className={headingClass}>
       <h1 className={buttonClass}>{num}</h1>
       <h2 className={s.title__text}>{text}</h2>
     </div>
