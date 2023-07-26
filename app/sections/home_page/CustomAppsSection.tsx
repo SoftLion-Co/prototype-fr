@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 const CustomAppsSection = () => {
   return (
-    <div className={classNames(s.container, s.custom)}>
+    <section className={classNames(s.container, s.custom)}>
       <div className={s.custom__title}>
         <TitleServicesComponent
           num="02"
@@ -36,7 +36,7 @@ const CustomAppsSection = () => {
       <div className={s.custom__more}>
         <SeeMoreButtonComponent path="services" />
       </div>
-    </div>
+    </section>
   );
 };
 
