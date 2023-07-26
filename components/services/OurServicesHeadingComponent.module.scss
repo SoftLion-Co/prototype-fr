@@ -2,6 +2,8 @@
 
 .heading {
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-bottom: 35px;
   @include for-size(tablet) {
     max-width: 497px;
