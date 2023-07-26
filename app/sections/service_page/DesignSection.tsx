@@ -10,7 +10,15 @@ import MainButtonComponent from "../../../components/MainButtonComponent";
 import ServiceDesignCardComponent from "../../../components/service/ServiceDesignCardComponent";
 
 const DesignSection = () => {
-  const DesignInfo = [
+  interface DesignInfoItem {
+    alt: string;
+    title: string;
+    imageSrc: StaticImageData; // Assuming it's the appropriate type for Next.js Image component.
+    description: string;
+    id: number;
+  }
+
+  const DesignInfo: DesignInfoItem[] = [
     {
       alt: "Visual Design",
       title:
@@ -65,13 +73,7 @@ const DesignSection = () => {
     <div className={`${s.container} ${s.design}`}>
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
-          <ServiceDesignCardComponent
-            key={info.id}
-            alt={info.alt}
-            title={info.title}
-            imageSrc={info.imageSrc}
-            description={info.description}
-          />
+          <ServiceDesignCardComponent key={info.id} {...info} />
         ))}
       </ul>
       <MainButtonComponent className={s.design__btn}>

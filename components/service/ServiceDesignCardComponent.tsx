@@ -1,4 +1,5 @@
 import s from "./ServiceDesignCardComponent.module.scss";
+import React, {FC} from "react"
 import Image from "next/image";
 
 interface DesignCardProps {
@@ -8,7 +9,7 @@ interface DesignCardProps {
   alt: string;
 }
 
-const ServiceDesignCardComponent: React.FC<DesignCardProps> = ({
+const ServiceDesignCardComponent: FC<DesignCardProps> = ({
   title,
   description,
   imageSrc,
