@@ -13,7 +13,6 @@ const OurServicesSection = () => {
     <div className={s.services}>
       <OurServicesHeadingComponent />
       <CustomAppsSection />
-      <CustomAppsSection />
     </div>
   );
 };
