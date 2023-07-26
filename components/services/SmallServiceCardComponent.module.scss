@@ -84,6 +84,7 @@
   &__vector {
     @include for-size(tablet) {
       position: absolute;
+      cursor: pointer;
       top: 180px;
       left: 135px;
       width: 20px;
