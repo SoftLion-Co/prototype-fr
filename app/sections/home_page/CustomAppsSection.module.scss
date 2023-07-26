@@ -17,22 +17,6 @@
     padding-bottom: 0;
   }
 
-  &__title {
-    padding-bottom: 70px;
-
-    @include for-size(tablet) {
-      padding-bottom: 10px;
-    }
-
-    @include for-size(tablet) {
-      padding-bottom: 144px;
-    }
-
-    @include for-size(desktop) {
-      padding-bottom: 176px;
-    }
-  }
-
   &__cards {
     display: flex;
     flex-direction: column;
