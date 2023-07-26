@@ -15,8 +15,8 @@
     flex-direction: column;
     border-radius: 8px;
     margin-bottom: 39px;
-    height: 315px;
-    padding: 40px 15px 40px 15px;
+    min-height: 325px;
+    padding: 40px 20px 40px 20px;
 
     @include for-size(tablet) {
       box-shadow: $services-slider-center-card-shadow;
@@ -65,6 +65,7 @@
   }
 
   &__heading {
+    text-align: center;
     font-weight: 400;
     font-size: 20px;
     letter-spacing: 2px;
