@@ -1,0 +1,56 @@
+@import "./../../styles/mixin";
+@import "./../../styles/colors";
+
+.service {
+  display: flex;
+  justify-content: center;
+  // align-items: flex-start;
+  @include for-size(tablet) {
+    gap: 21px;
+  }
+  @include for-size(laptop) {
+    gap: 40px;
+  }
+  @include for-size(desktop) {
+    gap: 40px;
+  }
+
+  &__card_left {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  &__card_large {
+    align-self: center;
+    @include for-size(phone) {
+      display: none;
+    }
+  }
+
+  &__card_right {
+    align-self: flex-end;
+    margin-bottom: auto;
+  }
+
+  &__card_left {
+    --left-card-bg: linear-gradient(
+      134deg,
+      rgba(243, 223, 183, 0.58) 0%,
+      rgba(246, 243, 170, 0.11) 100%
+    );
+  }
+  &__card_right {
+    --right-card-bg: linear-gradient(
+      135deg,
+      rgba(242, 212, 239, 0.39) 0%,
+      rgba(242, 213, 241, 0.26) 100%
+    );
+  }
+}
+
+.service__mobile {
+  width: 100%;
+  @include for-size(tablet) {
+    display: none;
+  }
+}

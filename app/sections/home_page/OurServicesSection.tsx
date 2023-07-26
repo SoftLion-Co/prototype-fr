@@ -1,6 +1,8 @@
 import s from "./OurServicesSection.module.scss";
 import HeadingComponent from "@/components/HeadingComponent";
+import EcommerceSection from "./EcommerceSection";
 import CustomAppsSection from "./CustomAppsSection";
+import WorkWithCustomersSection from "./WorkWithCustomersSection";
 import TitleServicesComponent from "@/components/services/TitleServicesComponent";
 import ServiceCardsComponent from "@/components/services/ServiceCardsComponent";
 import pic from "../../../images/services/custom-apps/Apps.svg";
@@ -12,7 +14,9 @@ const OurServicesSection = () => {
   return (
     <div className={s.services}>
       <OurServicesHeadingComponent />
+      <EcommerceSection />
       <CustomAppsSection />
+      <WorkWithCustomersSection />
     </div>
   );
 };
