@@ -16,10 +16,10 @@ const Home = () => {
     <div>
       <HeroSection />
       <CookiesComponent />
-      <ContactUsSection />
       <TechnologiesSection />
       <OurServicesSection />
       <OurProjectsSection />
+      <ContactUsSection />
     </div>
   );
 };
