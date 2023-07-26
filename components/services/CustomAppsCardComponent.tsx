@@ -18,24 +18,26 @@ const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
   path,
   title,
   text_mob,
-  text
+  text,
 }) => {
   return (
     <div className={s.servicecard}>
       <div className={s.servicecard__wrap}>
-      <Image className={s.servicecard__pic} src={path} alt="phone" />
-      <h2 className={s.servicecard__title}>{title}</h2>
-      <p className={s.servicecard__text_mob}>{text_mob}</p>
-      <p className={s.servicecard__text}>{text}</p>
-      {arrow ? (
-        <Link href="/services" className={s.servicecard__link}>
-        <PiArrowRightThin
-            className={s.servicecard__arrow}
-            width="51px"
-            height="49px"
-          />
-      </Link>
-      ) : ""}
+        <Image className={s.servicecard__pic} src={path} alt="phone" />
+        <h2 className={s.servicecard__title}>{title}</h2>
+        <p className={s.servicecard__text_mob}>{text_mob}</p>
+        <p className={s.servicecard__text}>{text}</p>
+        {arrow ? (
+          <Link href="/services" className={s.servicecard__link}>
+            <PiArrowRightThin
+              className={s.servicecard__arrow}
+              width="51px"
+              height="49px"
+            />
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
