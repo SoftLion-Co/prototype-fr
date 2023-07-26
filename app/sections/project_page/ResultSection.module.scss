@@ -21,19 +21,28 @@
   &__texts {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 45px;
 
     width: 100%;
+    height: 505px;
 
     @include for-size(tablet) {
-      gap: 46px;
+      gap: 38px;
+
+      width: 400px;
+      height: 286px;
     }
     @include for-size(laptop) {
-      gap: 66px;
+      gap: 67px;
+      width: 628px;
+      height: 435px;
     }
 
     @include for-size(desktop) {
       gap: 83px;
+
+      width: 767px;
+      height: 580px;
     }
   }
 
@@ -61,23 +70,37 @@
   }
 
   &__photo {
-    background-color: black;
+    position: absolute;
 
-    min-width: 185px;
-    height: 153px;
+    max-width: 388px;
+    max-height: 276px;
+
+    z-index: -1;
+
+    margin-top: 224px;
+    margin-right: 19px;
 
     @include for-size(tablet) {
-      min-width: 216px;
-      height: 178px;
+      max-width: 410px;
+      max-height: 298px;
+
+      margin-top: -93px;
+      margin-left: 342px;
     }
     @include for-size(laptop) {
-      min-width: 320px;
-      height: 274px;
+      max-width: 675px;
+      max-height: 489px;
+
+      margin-top: -117px;
+      margin-left: 565px;
     }
 
     @include for-size(desktop) {
-      min-width: 385px;
-      height: 313px;
+      max-width: 817px;
+      max-height: 580px;
+
+      margin-top: -194px;
+      margin-left: 686px;
     }
   }
 

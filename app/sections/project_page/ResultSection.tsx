@@ -1,5 +1,6 @@
 import s from "./ResultSection.module.scss";
 import Image from "next/image";
+import Photo from "../../../images/project/Vectary-texture.svg";
 
 const ResultSection = () => {
   return (
@@ -29,8 +30,8 @@ const ResultSection = () => {
           </p>
         </li>
       </ul>
-      <div className={s.design__photo}></div>
-      {/* <Image src={foto} alt="" /> */}
+      {/* <div className={s.design__photo}></div> */}
+      <Image src={Photo} alt="" className={s.design__photo} />
     </div>
   );
 };
