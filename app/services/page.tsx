@@ -1,11 +1,15 @@
 import s from "./page.module.scss";
 import DesignSection from "../sections/service_page/DesignSection";
+import CustomAppsSection from "../sections/service_page/CustomAppsSection";
+
+import CustomAppsCardComponent from "@/components/services/CustomAppsCardComponent";
+
 
 const Services = () => {
   return (
     <div>
-      <h1>Services</h1>
       <DesignSection />
+     <CustomAppsSection/>
     </div>
   );
 };
