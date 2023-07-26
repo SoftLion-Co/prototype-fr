@@ -1,0 +1,95 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.develop {
+  &__title {
+    @include for-size(tablet) {
+      font-size: 15.4px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 1.386px;
+
+      margin-bottom: 31px;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+
+  &__box {
+    @include for-size(tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+  &__pic {
+    @include for-size(tablet) {
+      width: 109px;
+      height: 109px;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+  &__list {
+    @include for-size(tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 298px;
+      height: 119px;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+  &__item {
+    @include for-size(tablet) {
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 13.4px;
+      letter-spacing: 0.4px;
+
+      padding-left: 20px;
+      background-image: url("../../images/services/development/point.svg");
+      background-size: 12px 12px;
+      background-color: rgba(255, 255, 255, 0.7);
+      background-position: 0 2px;
+      background-repeat: no-repeat;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+
+  &__num {
+    @include for-size(tablet) {
+      font-size: 77px;
+      font-weight: 400;
+      line-height: 90.25px;
+      letter-spacing: 2.31px;
+      color: $placeholder-color;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+
+  @include for-size(tablet) {
+  }
+  @include for-size(laptop) {
+  }
+  @include for-size(desktop) {
+  }
+}

@@ -4,26 +4,7 @@
 
 .custom {
   
-  &__title {
-    margin-top: 80px;
-    margin-left: 34px;
-    font-size: 23px;
-    font-weight: 400;
-    text-align: left;
-    color: $service-heading-color;
-    @include for-size(tablet) {
-      font-weight: 400;
-      font-size: 30px;
-    }
-    @include for-size(laptop) {
-      font-size: 49px;
-      font-weight: 400;
-    }
-    @include for-size(desktop) {
-      font-weight: 400;
-      font-size: 62px;
-    }
-  }
+
 
   &__cards {
     display: flex;
