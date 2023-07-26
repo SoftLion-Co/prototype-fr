@@ -5,47 +5,12 @@
 .design {
   display: flex;
   flex-direction: column;
-
   gap: 36px;
+  align-items: center;
 
   @include for-size(tablet) {
     justify-content: center;
-  }
-  @include for-size(laptop) {
-  }
-  @include for-size(desktop) {
-  }
-
-  &__btn {
-    background-color: $button-blue-background;
-    width: 169px;
-    height: 55px;
-    margin-left: auto;
-    margin-right: auto;
-
-    font-size: 13px;
-
-    white-space: nowrap;
-
-    padding: 18px 21px;
-
-    @include for-size(tablet) {
-      width: 169px;
-      height: 55px;
-      margin-right: 0;
-    }
-    @include for-size(laptop) {
-      width: 209px;
-      height: 69px;
-      margin-right: 0;
-
-      font-size: 19px;
-    }
-    @include for-size(desktop) {
-      width: 238px;
-      height: 78px;
-      margin-right: 0;
-    }
+    align-items: flex-end;
   }
 
   &__list {

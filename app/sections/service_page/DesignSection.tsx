@@ -6,7 +6,7 @@ import Responsive from "../../../images/services/design/responsive-design.svg";
 import UX from "../../../images/services/design/ux-design.svg";
 import Visual from "../../../images/services/design/visual-design.svg";
 import Wireframing from "../../../images/services/design/wireframing.svg";
-import MainButtonComponent from "../../../components/MainButtonComponent";
+import BigButtonComponent from "../../../components/BigButtonComponent";
 import ServiceDesignCardComponent from "../../../components/service/ServiceDesignCardComponent";
 
 const DesignSection = () => {
@@ -76,9 +76,9 @@ const DesignSection = () => {
           <ServiceDesignCardComponent key={info.id} {...info} />
         ))}
       </ul>
-      <MainButtonComponent className={s.design__btn}>
+      <BigButtonComponent className={s.design__btn}>
         Book Consultation
-      </MainButtonComponent>
+      </BigButtonComponent>
     </div>
   );
 };
