@@ -21,7 +21,7 @@
     @include for-size(tablet) {
       box-shadow: $services-slider-center-card-shadow;
       margin-bottom: 0;
-      padding: 22px 49px 30px 49px;
+      padding: 22px 42px 30px 42px;
       height: 328px;
     }
     @include for-size(laptop) {
