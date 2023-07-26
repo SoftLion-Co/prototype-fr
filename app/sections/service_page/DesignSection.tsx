@@ -70,7 +70,7 @@ const DesignSection = () => {
   ];
 
   return (
-    <div className={`${s.container} ${s.design}`}>
+    <section className={`${s.container} ${s.design}`}>
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
           <ServiceDesignCardComponent key={info.id} {...info} />
@@ -79,7 +79,7 @@ const DesignSection = () => {
       <BigButtonComponent className={s.design__btn}>
         Book Consultation
       </BigButtonComponent>
-    </div>
+    </section>
   );
 };
 
