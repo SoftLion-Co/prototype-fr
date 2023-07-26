@@ -118,7 +118,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                 <Carousel.Slide key={index}>
                   <BlogRolledCardComponent
                     title={x.title}
-                    imageUrl={x.imageSrc}
+                    imageSrc={x.imageSrc}
                   />
                 </Carousel.Slide>
               </div>

@@ -8,7 +8,7 @@
         height: 249px;
         border-radius: 8px;
 
-        font-size: 10px;
+        font-size: 11px;
         line-height: 13px;
         box-shadow: 8.4px 21.0px 13.1px 0px #00000026;
       }
@@ -45,14 +45,13 @@
     &__content{
 
         width: 100%;
-        height: 58%;
+        height: 50%;
         display: flex;
         justify-content: start;
         
         &__image {
           width: 45%;
           height: 100%;
-          background-color: #f2f2f2;
           border-radius: 15px 0 0 0;
         }
 
@@ -113,31 +112,31 @@
 
     &__text {
         position: relative;
-        height: 37%;
+        align-self: start;
+        height: 40%;
         overflow: hidden;
         text-overflow: ellipsis;
-        text-align: center;
+        text-align: left;
         padding: 3%;
-        width: 94%;
-
-        &__arrow{
-            position: absolute; 
-            bottom: 0; 
-            right: 0; 
-            margin: 5%;
-            font-size: 0.5em;
-            transition: margin-right 0.3s ease-in-out;
-          }
-        }
+        padding-left: 5%;
+        width: 80%;
+      }
+    &__arrow{
+        position: absolute; 
+        bottom: 0; 
+        right: 0; 
+        margin: 3%;
+        font-size: 0.5em;
+        transition: margin-right 0.3s ease-in-out;
+      }
+        
     @include for-size(laptop){
       &:hover{
           .articleCard{
-              &__text{
                   &__arrow{
                       margin-right: 1%;
-                      margin-left: 9%;
+                      margin-left: 5%;
                   }
-              }
           }
       }
     }

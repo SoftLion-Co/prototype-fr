@@ -8,67 +8,67 @@ import classNames from "classnames";
 
 const cardsData = [
   {
-    title: "Card 1",
-    imageUrl: "url1",
+    title: "How to delegate work correctly 1",
     author: "Author 1",
     authorIconSrc: "author1.png",
     readingTime: "5 mins",
-    imageSrc: "image1.png",
-    text: "Text 1",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 1",
   },
   {
-    title: "Card 2",
-    imageUrl: "url2",
+    title: "How to delegate work correctly 2",
     author: "Author 2",
     authorIconSrc: "author2.png",
     readingTime: "10 mins",
-    imageSrc: "image2.png",
-    text: "Text 2",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 2",
   },
   {
-    title: "Card 3",
-    imageUrl: "url3",
+    title: "How to delegate work correctly 3",
     author: "Author 3",
     authorIconSrc: "author3.png",
     readingTime: "5 mins",
-    imageSrc: "image3.png",
-    text: "Text 3",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 3",
   },
   {
-    title: "Card 4",
-    imageUrl: "url4",
+    title: "How to delegate work correctly 4",
     author: "Author 4",
     authorIconSrc: "author4.png",
     readingTime: "10 mins",
-    imageSrc: "image4.png",
-    text: "Text 4",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 4",
   },
   {
-    title: "Card 5",
-    imageUrl: "url5",
+    title: "How to delegate work correctly 5",
     author: "Author 5",
     authorIconSrc: "author5.png",
     readingTime: "5 mins",
-    imageSrc: "image5.png",
-    text: "Text 5fffffffffffff fffffffffffffffffffff fffffffffffffffffffffffffffff fffffffffffffffff",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 5",
   },
   {
-    title: "Card 6",
-    imageUrl: "url6",
+    title: "How to delegate work correctly 6",
     author: "Author 6",
     authorIconSrc: "author6.png",
     readingTime: "10 mins",
-    imageSrc: "image6.png",
-    text: "Text 6",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 6",
   },
   {
-    title: "Card 7",
-    imageUrl: "url7",
+    title: "How to delegate work correctly 7",
     author: "Author 7",
     authorIconSrc: "author7.png",
     readingTime: "10 mins",
-    imageSrc: "image7.png",
-    text: "Text 7",
+    imageSrc:
+      "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 7",
   },
 ];
 

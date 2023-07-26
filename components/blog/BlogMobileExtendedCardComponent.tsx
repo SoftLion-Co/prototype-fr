@@ -13,9 +13,10 @@ const BlogMobileExtendedCardComponent: React.FC<any> = ({ data }) => {
   return (
     <div className={s.articleCard}>
       <div className={s.articleCard__content}>
-        <div
+        <img
           className={s.articleCard__content__image}
-          style={{ backgroundImage: `url(${data.imageSrc})` }}
+          src={data.imageSrc}
+          alt="Softlion image"
         />
         <div className={s.articleCard__content__info}>
           <h2 className={s.articleCard__content__info__title}>{data.title}</h2>

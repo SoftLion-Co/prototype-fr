@@ -1,7 +1,7 @@
 
 $aspectRatio:269/290;
 $currentW: clamp(250px,90vw,480px);
-$fontSize: calc($currentW*0.07);
+$fontSize: calc($currentW*0.042);
 $borderR: calc($currentW*12/290);
 
 .articleCard {
@@ -29,7 +29,6 @@ $borderR: calc($currentW*12/290);
         &__image {
           width: 45%;
           height: 100%;
-          background-color: #f2f2f2;
           border-radius: $borderR 0 0 0;
         }
 
@@ -66,7 +65,7 @@ $borderR: calc($currentW*12/290);
         position: relative;
         height: 55%;
         overflow: hidden;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
         text-align: center;
         padding: 3%;
         width: 94%;
@@ -76,7 +75,7 @@ $borderR: calc($currentW*12/290);
           bottom: 0; 
           right: 0; 
           margin: 5%;
-          font-size: 0.5em;
+          font-size: 0.9em;
         }
       }
 }
