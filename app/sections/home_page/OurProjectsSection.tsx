@@ -2,9 +2,12 @@
 
 import s from "./OurProjectsSection.module.scss";
 import ProjectHeadingComponent from "./../../../components/projects/ProjectHeadingComponent";
+import ProjectMobileCardComponent from "./../../../components/projects/ProjectMobileCardComponent";
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
 import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
+import classNames from "classNames";
+import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 
 const sampleData = [
   {
@@ -46,15 +49,20 @@ const OurProjectsSection = () => {
   return (
     <div className={s.projects}>
       <ProjectHeadingComponent />
-      <div className={s.projects__slider}>
+      <div className={s.projects__mobile_slider}>
         <MobileSliderComponent
           data={sampleData}
-          SlideComponent={ProjectCardComponent}
+          SlideComponent={ProjectMobileCardComponent}
         />
+      </div>
+      <div className={classNames(s.container, s.projects__desktop_wrapper)}>
+        {sampleData.map((project) => (
+          <ProjectCardComponent key={project.id} data={project} />
+        ))}
+        <SeeMoreButtonComponent path="projects" />
       </div>
     </div>
   );
 };
 
 export default OurProjectsSection;
-
