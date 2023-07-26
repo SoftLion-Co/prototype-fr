@@ -30,7 +30,7 @@ const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
   })
 
   return (
-    <div className={headingClass}>
+    <div className={classNames(headingClass, s.title__container) }>
       <h1 className={buttonClass}>{num}</h1>
       <h2 className={s.title__text}>{text}</h2>
     </div>

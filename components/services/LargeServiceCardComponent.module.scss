@@ -3,30 +3,36 @@
 
 .service {
   &__container {
+    box-shadow: 6px 15px 10px 0px rgba(0, 0, 0, 0.15);
     background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 25%),
       rgba(118, 228, 215, 25%)
     );
-    box-shadow: $services-slider-center-card-shadow;
 
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    margin-left: auto;
-    margin-right: auto;
-
+    border-radius: 8px;
     margin-bottom: 39px;
-
-    border-radius: 6px;
-    height: 395px;
+    height: 315px;
+    padding: 40px 15px 40px 15px;
 
     @include for-size(tablet) {
-      border-radius: 8px;
-      height: 380px;
-      width: 358px;
+      box-shadow: $services-slider-center-card-shadow;
       margin-bottom: 0;
+      padding: 22px 49px 30px 49px;
+      height: 328px;
+    }
+    @include for-size(laptop) {
+      border-radius: 12px;
+      padding: 44px 75px 44px 75px;
+      height: 462px;
+    }
+    @include for-size(desktop) {
+      border-radius: 15px;
+      padding: 84px 100px 60px 100px;
+      height: 576px;
     }
 
     @media (min-width: 768px) {
@@ -34,21 +40,9 @@
         display: none;
       }
     }
-
-    @include for-size(laptop) {
-      border-radius: 12px;
-      height: 550px;
-      width: 519px;
-    }
-    @include for-size(desktop) {
-      border-radius: 15px;
-      height: 720px;
-      width: 680px;
-    }
   }
 
   &__image {
-    margin-top: 36px;
     margin-bottom: 16px;
     width: 56px;
     height: 55px;
@@ -59,13 +53,11 @@
       height: 74px;
     }
     @include for-size(laptop) {
-      margin-top: 46px;
       margin-bottom: 32px;
       width: 109px;
       height: 107px;
     }
     @include for-size(desktop) {
-      margin-top: 83px;
       margin-bottom: 22px;
       width: 143px;
       height: 141px;
@@ -74,9 +66,9 @@
 
   &__heading {
     font-weight: 400;
-    font-size: 18px;
-    letter-spacing: 2.2px;
-    line-height: 130.49%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 130%;
     margin-bottom: 30px;
     @include for-size(tablet) {
       margin-bottom: 20px;
@@ -92,29 +84,14 @@
   }
 
   &__paragraph {
-    padding-left: 15px;
-    padding-right: 15px;
     text-align: center;
     font-size: 12px;
     font-weight: 400;
-
-    @include for-size(phone) {
-      max-width: 380px;
-    }
-    @include for-size(tablet) {
-      font-size: 11px;
-      padding-left: 57px;
-      padding-right: 57px;
-    }
     @include for-size(laptop) {
       font-size: 16px;
-      padding-left: 82px;
-      padding-right: 82px;
     }
     @include for-size(desktop) {
       font-size: 20px;
-      padding-left: 110px;
-      padding-right: 107px;
     }
   }
 }

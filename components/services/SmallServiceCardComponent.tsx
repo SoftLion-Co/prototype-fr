@@ -28,14 +28,17 @@ const SmallServiceCardComponent: React.FC<SmallServiceCardComponentProps> = ({
       style={{ background }}
       onClick={() => onClick(title, paragraph, image)}
     >
-      <Image
-        className={s.service__image}
-        src={image}
-        alt={title}
-        width={100}
-        height={100}
-      />
-      <h2 className={s.service__heading}>{title}</h2>
+      <div className={s.service__container}>
+        <Image
+          className={s.service__image}
+          src={image}
+          alt={title}
+          width={100}
+          height={100}
+        />
+        <h2 className={s.service__heading}>{title}</h2>
+      </div>
+      
       <Image
         className={s.service__vector}
         src={vector}

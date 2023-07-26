@@ -6,13 +6,13 @@
   justify-content: center;
   // align-items: flex-start;
   @include for-size(tablet) {
-    gap: 18px;
+    gap: 21px;
   }
   @include for-size(laptop) {
     gap: 40px;
   }
   @include for-size(desktop) {
-    gap: 45px;
+    gap: 40px;
   }
 
   &__card_left {
@@ -31,9 +31,6 @@
     align-self: flex-end;
     margin-bottom: auto;
   }
-
-  margin-top: 150px;
-  margin-bottom: 400px;
 
   &__card_left {
     --left-card-bg: linear-gradient(

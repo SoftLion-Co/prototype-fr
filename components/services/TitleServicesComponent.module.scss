@@ -5,16 +5,28 @@
   display: inline-flex;
   flex-direction: column;
 
-  &__blue{
+  &__blue {
     color: $heading-blue-color;
   }
 
-  &__purple{
+  &__purple {
     color: $main-purple-color;
   }
 
-  &__green{
+  &__green {
     color: $main-green-color;
+  }
+  &__container {
+    margin-bottom: 68px;
+    @include for-size(tablet) {
+      margin-bottom: 45px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 145px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 190px;
+    }
   }
 
   &__num {
@@ -55,6 +67,7 @@
   }
 
   &__text {
+    text-align: center;
     font-size: 22px;
     letter-spacing: 0.6px;
     font-weight: 400;
@@ -82,7 +95,7 @@
   padding-left: 1px;
 
   @include for-size(tablet) {
-   padding-right: 0px;
+    padding-right: 0px;
     padding-left: 196px;
   }
 
@@ -116,4 +129,3 @@
     padding-left: 0px;
   }
 }
-
