@@ -45,7 +45,6 @@ const EcommerceSection = () => {
       />
 
       <ServiceCardsComponent cardData={cardComponent} />
-      <SeeMoreButtonComponent path="services" />
     </div>
   );
 };
