@@ -13,7 +13,6 @@
   background: $cookies-background;
   box-shadow: 11px 12px 5.8px 0px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
-  overflow: hidden;
 
   @include for-size(tablet) {
     width: 348px;
@@ -33,12 +32,11 @@
   }
 
   &__wrap {
-    max-width: 245px;
     display: flex;
     flex-direction: column;
     align-items: center;
     // margin-left: 15px;
-    padding: 0 21px 0 15px;
+    padding: 0 20px 0 20px;
     overflow: hidden;
 
     @include for-size(tablet) {
@@ -88,8 +86,6 @@
     margin-top: 17px;
     text-align: center;
 
-    @include for-size(tablet) {
-    }
     @include for-size(laptop) {
       font-size: 30px;
       margin-top: 26px;
@@ -110,38 +106,36 @@
       width: 245px;
       height: 226px;
       letter-spacing: 0.04px;
-      margin-top: 17px;
+      margin-top: 18px;
     }
     @include for-size(laptop) {
       font-size: 15.38px;
       width: 368px;
       height: 340px;
-      margin-top: 26px;
+      margin-top: 32px;
       line-height: 130%;
     }
     @include for-size(desktop) {
       font-size: 20px;
       width: 479px;
       height: 443px;
-      margin-top: 34px;
+      margin-top: 40px;
       line-height: 130%;
     }
   }
+
   &__text_mob {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.2px;
     color: black;
     line-height: 15.66px;
-    margin-top: 13px;
+    margin-top: 28px;
 
     @include for-size(tablet) {
       display: none;
     }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
-    }
+
   }
   &__link {
     color: black;
