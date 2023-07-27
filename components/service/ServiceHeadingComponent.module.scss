@@ -1,0 +1,55 @@
+@import "../../styles/mixin";
+@import "../../styles/container";
+
+.heading {
+  &__title {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 1.383px;
+    margin-left: 71px;
+
+    @include for-size(tablet) {
+      font-size: 33px;
+      letter-spacing: 1.978px;
+      margin-left: 83px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 49px;
+      letter-spacing: 2.957px;
+      margin-left: 125px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 64px;
+      letter-spacing: 3.84px;
+      margin-left: 162px;
+    }
+  }
+
+  &__svg {
+    width: 211.674px;
+    flex-shrink: 0;
+    stroke-width: 0.938px;
+    stroke: rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    @include for-size(tablet) {
+      stroke-width: 1.546px;
+      width: 348.81px;
+    }
+
+    @include for-size(laptop) {
+      width: 521.264px;
+      stroke-width: 2.31px;
+    }
+
+    @include for-size(desktop) {
+      width: 677px;
+      stroke-width: 3px;
+    }
+  }
+}

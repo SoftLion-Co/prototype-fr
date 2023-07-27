@@ -2,6 +2,7 @@ import "./../styles/main.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import { FooterComp } from "@/components/FooterComponent";
+import TechnologiesCardComponent from "../components/technologies/TechnologiesCardComponent";
 
 export const metadata = {
   title: "SoftLion",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         <HeaderComponent />
         {children}
+        {/* <TechnologiesCardComponent /> */}
         <FooterComp />
       </body>
     </html>
