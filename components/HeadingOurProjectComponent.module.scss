@@ -53,7 +53,6 @@
   }
 
   &__text {
-    max-width: 117px;
     color: rgba(0, 0, 0, 0.7);
     font-size: 17px;
     font-style: normal;
@@ -63,21 +62,18 @@
     margin-left: 40px;
 
     @include for-size(tablet) {
-      max-width: 256px;
       font-size: 37px;
       letter-spacing: 2.22px;
       margin-left: 70px;
     }
 
     @include for-size(laptop) {
-      max-width: 343x;
       font-size: 55px;
       letter-spacing: 3.338px;
       margin-left: 90px;
     }
 
     @include for-size(desktop) {
-      max-width: 394px;
       font-size: 64px;
       letter-spacing: 3.84px;
     }
