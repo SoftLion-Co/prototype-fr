@@ -1,0 +1,75 @@
+@import "./../styles/mixin";
+
+.blogDesktop{
+    width: 738px;
+    button{
+        display: none;
+    }
+
+    @include for-size(laptop){
+        width: 1080px;
+        button{
+            font-size: 8px;
+            display: flex;
+        }
+    }
+    @include for-size(desktop){
+        width: 1400px;
+        button{
+            font-size: 10px;
+            display: flex;
+        }
+    }
+    &__extendedCard{
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+        @include for-size(tablet){
+            width: 241.2px;
+        }
+        @include for-size(laptop){
+            width: 336px;
+        }
+        @include for-size(desktop){
+            width: 440px;
+        }
+    }
+
+    &__rolledCardLeft{
+        
+        @include for-size(tablet){
+            padding: 0 77.2px 0 0;
+        }
+        @include for-size(laptop){
+            padding: 0 106px 0 0;
+        }
+        @include for-size(desktop){
+            padding: 0 135px 0 0;
+        }
+    }
+    &__rolledCardRight{
+        @include for-size(tablet){
+            padding: 0 0 0 77.2px;
+        }
+        @include for-size(laptop){
+            padding:  0 0 0 106px;
+        }
+        @include for-size(desktop){
+            padding: 0 0 0 135px;
+        }
+
+    }
+    &__rolledCardDefault{
+        @include for-size(tablet){
+            padding: 0 38.6px 0 38.6px;
+        }
+        @include for-size(laptop){
+            padding:  0 53px 0 53px;
+        }
+        @include for-size(desktop){
+            padding: 0 67.5px 0 67.5px;
+        }
+    }
+}   
+
+
