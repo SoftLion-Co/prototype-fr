@@ -47,7 +47,7 @@ const sampleData = [
 
 const OurProjectsSection = () => {
   return (
-    <div className={s.projects}>
+    <section className={s.projects}>
       <ProjectHeadingComponent />
       <div className={s.projects__mobile_slider}>
         <MobileSliderComponent
@@ -61,7 +61,7 @@ const OurProjectsSection = () => {
         ))}
         <SeeMoreButtonComponent path="projects" />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -12,12 +12,12 @@ import OurServicesHeadingComponent from "@/components/services/OurServicesHeadin
 
 const OurServicesSection = () => {
   return (
-    <div className={s.services}>
+    <section className={s.services}>
       <OurServicesHeadingComponent />
       <EcommerceSection />
       <CustomAppsSection />
       <WorkWithCustomersSection />
-    </div>
+    </section>
   );
 };
 

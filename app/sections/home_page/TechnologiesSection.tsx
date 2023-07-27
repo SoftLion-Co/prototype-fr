@@ -31,7 +31,7 @@ const TechnologiesSection = () => {
   }
 
   return (
-    <div className={`${s.container} ${s.technologies}`}>
+    <section className={`${s.container} ${s.technologies}`}>
       <div className={s.technologies}>
         <div className={s.technologies__nameHeader}>
           <HeadingComponent text="Technologies" />
@@ -115,7 +115,7 @@ const TechnologiesSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

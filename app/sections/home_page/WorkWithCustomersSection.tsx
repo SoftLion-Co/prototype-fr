@@ -35,7 +35,7 @@ const EcommerceSection = () => {
   ];
 
   return (
-    <div className={s.container}>
+    <section className={s.container}>
       <TitleServicesComponent
         position="left"
         num={"03"}
@@ -45,7 +45,7 @@ const EcommerceSection = () => {
       />
 
       <ServiceCardsComponent cardData={cardComponent} />
-    </div>
+    </section>
   );
 };
 
