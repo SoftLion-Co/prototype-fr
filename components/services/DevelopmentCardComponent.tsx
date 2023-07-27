@@ -1,9 +1,7 @@
 import s from "./DevelopmentCardComponent.module.scss";
 import React, { FC, ReactNode, ComponentProps } from "react";
-// import { PiArrowRightThin } from "react-icons/pi";
 import Image from "next/image";
-import Link from "next/link";
-import point from "../../images/services/development/point.svg";
+
 
 interface DevelopmentCardComponentProps {
   path?: any;
