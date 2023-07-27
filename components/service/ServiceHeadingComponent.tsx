@@ -19,7 +19,7 @@ const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({
   return (
     <div className={headingClass}>
       <div className={s.heading__component}>
-        <h3 className={s.heading__title}>{headingText}</h3>
+        <h2 className={s.heading__title}>{headingText}</h2>
         <Image src={Line} alt="Security line" className={s.heading__svg} />
       </div>
     </div>
