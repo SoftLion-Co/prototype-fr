@@ -12,6 +12,7 @@
     &__mobileSlider{
         display: block;
         overflow-x: hidden;
+        padding-top: 4%;
         @include for-size(tablet){
             display: none;
         }

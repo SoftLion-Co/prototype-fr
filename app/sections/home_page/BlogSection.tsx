@@ -5,6 +5,9 @@ import BlogDesktopComponent from "@/components/blog/BlogDesktopComponent";
 import BlogMobileExtendedCardComponent from "@/components/blog/BlogMobileExtendedCardComponent";
 import s from "./BlogSection.module.scss";
 import classNames from "classnames";
+import HeaderComponent from "@/components/HeaderComponent";
+import HeadingComponent from "@/components/HeadingComponent";
+import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 
 const cardsData = [
   {
@@ -74,18 +77,25 @@ const cardsData = [
 
 const HomeBlog: React.FC = () => {
   return (
-    <section className={s.blogContainer}>
-      <div
-        className={classNames(s.blogContainer, s.blogContainer__desktopSlider)}>
-        <BlogDesktopComponent cardsData={cardsData} />
-      </div>
-      <div className={s.blogContainer__mobileSlider}>
-        <MobileSliderComponent
-          data={cardsData}
-          SlideComponent={BlogMobileExtendedCardComponent}
-        />
-      </div>
-    </section>
+    <>
+      <HeadingComponent text="Blog"></HeadingComponent>
+      <section className={s.blogContainer}>
+        <div
+          className={classNames(
+            s.blogContainer,
+            s.blogContainer__desktopSlider
+          )}>
+          <BlogDesktopComponent cardsData={cardsData} />
+        </div>
+        <div className={s.blogContainer__mobileSlider}>
+          <MobileSliderComponent
+            data={cardsData}
+            SlideComponent={BlogMobileExtendedCardComponent}
+          />
+        </div>
+      </section>
+      <SeeMoreButtonComponent path="blogs" />
+    </>
   );
 };
 

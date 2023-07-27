@@ -11,7 +11,6 @@ const Home = () => {
     <div>
       <HeroSection />
       <CookiesComponent />
-      <SeeMoreButtonComponent path="blogs" />
       <BlogSection></BlogSection>
       <OurProjectsSection />
       <ContactUsSection />

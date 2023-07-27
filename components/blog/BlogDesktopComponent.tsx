@@ -64,7 +64,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         styles={{
           viewport: {
             paddingTop: "5%",
-            paddingBottom: "5%",
+            paddingBottom: "4.5%",
           },
           controls: {
             bottom: 0,
