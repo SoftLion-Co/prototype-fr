@@ -1,14 +1,12 @@
-import ImpressionSection from "../sections/article_page/ImpressionSection"
-import { ArticleSection } from "../sections/article_page/ArticleSection"
-import s from "./page.module.scss"
+"use client";
+import s from "./page.module.scss";
+import BlogsSection from "@/app/sections/blog_page/BlogsSection";
 
 const Blogs = () => {
 
     return (
         <div>
-            <h1>Blogs</h1>
-            <ArticleSection/>
-            <ImpressionSection/>
+            <BlogsSection />
         </div>
     )
 }
