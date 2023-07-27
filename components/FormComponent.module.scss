@@ -61,11 +61,12 @@
 }
 
 .form {
-  max-width: 290px;
   height: 100%;
   border-radius: 6px;
   margin-left: auto;
   margin-right: auto;
+  padding: 24px 29px;
+
 
   display: flex;
   flex-direction: column;
@@ -75,26 +76,28 @@
 
   @include for-size(tablet) {
     max-width: none;
-    width: 356px;
     border-radius: 8px;
     margin-left: 0;
     margin-right: 0;
+    padding: 28px 80px;
+
   }
 
   @include for-size(laptop) {
-    width: 518px;
     border-radius: 11px;
+    padding: 40px 117px;
   }
 
   @include for-size(desktop) {
-    width: 678px;
     border-radius: 15px;
+    padding: 54px 154px 54px 152px;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    width: 100%;
 
     @include for-size(tablet) {
       gap: 12px;
@@ -114,18 +117,19 @@
     border-bottom: 1px solid #ccc;
     border-radius: 0;
     background-color: transparent;
-    width: 147px;
+    min-width: 100%;
     color: #858585;
     font-family: Open Sans;
-    font-size: 6px;
+    font-size: 9px;
     line-height: 154%;
     letter-spacing: 0.19px;
     height: 15px;
 
+
     @include for-size(tablet) {
       width: 195px;
       height: 19px;
-      font-size: 8px;
+      font-size: 10px;
       letter-spacing: 0.252px;
     }
 
@@ -161,7 +165,7 @@
       top: 6px;
       color: #858585;
       font-family: Open Sans;
-      font-size: 6px;
+      font-size: 10px;
       line-height: 154.5%;
       letter-spacing: 0.19px;
 
@@ -195,25 +199,22 @@
   }
 
   &__title {
-    font-size: 12px;
+    font-size: 18px;
     line-height: 130.49%;
     letter-spacing: 1px;
     font-weight: 400;
-    margin-top: 21px;
     margin-bottom: 39px;
 
     @include for-size(tablet) {
       font-size: 16px;
       letter-spacing: 1.417px;
       margin-bottom: 40px;
-      margin-top: 28px;
     }
 
     @include for-size(laptop) {
       font-size: 22.929px;
       letter-spacing: 2.064px;
       margin-bottom: 59px;
-      margin-top: 41px;
     }
 
     @include for-size(desktop) {
@@ -228,7 +229,7 @@
     display: block;
     height: 1px;
     background-color: black;
-    width: 147px;
+    width: 70%;
     margin-bottom: 9px;
 
     @include for-size(tablet) {
@@ -295,22 +296,19 @@
     color: var(--unnamed, #898989);
     text-align: center;
     font-family: Open Sans;
-    width: 111px;
-    font-size: 5px;
+    max-width: 200px;
+    font-size: 12px;
     line-height: 140%;
     letter-spacing: 0.155px;
-    margin-bottom: 24px;
 
     @include for-size(tablet) {
       width: 160px;
       flex-shrink: 0;
       font-size: 6.823px;
       letter-spacing: 0.205px;
-      margin-bottom: 28px;
     }
 
     @include for-size(laptop) {
-      margin-bottom: 41px;
       width: 243px;
       font-size: 10px;
       letter-spacing: 0.298px;
@@ -320,7 +318,6 @@
       width: 324px;
       font-size: 13px;
       letter-spacing: 0.39px;
-      margin-bottom: 54px;
     }
 
     .pr {
@@ -330,7 +327,7 @@
       -webkit-text-fill-color: transparent;
 
       font-family: Open Sans;
-      font-size: 5.158px;
+      font-size: 12px;
       line-height: 140.182%;
       letter-spacing: 0.155px;
 
@@ -350,4 +347,8 @@
       }
     }
   }
+}
+.error {
+  font-size: 10px; /* Set the desired font size for the error messages */
+  color: red; /* You can also set the color of the error messages if needed */
 }
