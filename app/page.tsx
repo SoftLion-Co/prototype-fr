@@ -10,7 +10,6 @@ import OurProjectsSection from "./sections/home_page/OurProjectsSection";
 import ContactUsSection from "./sections/contact_us_page/ContactUsSection";
 import OurServicesSection from "./sections/home_page/OurServicesSection";
 import TechnologiesSection from "./sections/home_page/TechnologiesSection";
-import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 
 const Home = () => {
   return (
@@ -21,7 +20,6 @@ const Home = () => {
       <OurServicesSection />
       <OurProjectsSection />
       <ContactUsSection />
-      <ServiceHeadingComponent headingText="Custom Apps"/>
     </div>
   );
 };
