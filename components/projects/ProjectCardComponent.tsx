@@ -14,7 +14,7 @@ interface ProjectData {
   description: string;
 }
 
-const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
+const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({
   data,
 }) => {
   return (
@@ -46,4 +46,4 @@ const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
   );
 };
 
-export default ProjectMobileCardComponent;
+export default ProjectCardComponent;
