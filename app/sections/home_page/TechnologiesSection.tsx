@@ -99,7 +99,7 @@ const TechnologiesSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

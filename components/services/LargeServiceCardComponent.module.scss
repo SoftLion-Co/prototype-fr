@@ -1,0 +1,98 @@
+@import "./../../styles/mixin";
+@import "./../../styles/colors";
+
+.service {
+  &__container {
+    box-shadow: 6px 15px 10px 0px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 25%),
+      rgba(118, 228, 215, 25%)
+    );
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-bottom: 39px;
+    min-height: 325px;
+    padding: 40px 20px 40px 20px;
+
+    @include for-size(tablet) {
+      box-shadow: $services-slider-center-card-shadow;
+      margin-bottom: 0;
+      padding: 22px 42px 30px 42px;
+      height: 328px;
+    }
+    @include for-size(laptop) {
+      border-radius: 12px;
+      padding: 44px 75px 44px 75px;
+      height: 462px;
+    }
+    @include for-size(desktop) {
+      border-radius: 15px;
+      padding: 84px 100px 60px 100px;
+      height: 576px;
+    }
+
+    @media (min-width: 768px) {
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: 16px;
+    width: 56px;
+    height: 55px;
+
+    @include for-size(tablet) {
+      margin-bottom: 23px;
+      width: 75px;
+      height: 74px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 32px;
+      width: 109px;
+      height: 107px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 22px;
+      width: 143px;
+      height: 141px;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 130%;
+    margin-bottom: 30px;
+    @include for-size(tablet) {
+      margin-bottom: 20px;
+    }
+    @include for-size(laptop) {
+      font-size: 24px;
+      margin-bottom: 29px;
+    }
+    @include for-size(desktop) {
+      font-size: 28px;
+      margin-bottom: 38px;
+    }
+  }
+
+  &__paragraph {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    @include for-size(laptop) {
+      font-size: 16px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+  }
+}
