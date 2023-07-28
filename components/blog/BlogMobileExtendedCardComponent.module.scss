@@ -1,0 +1,81 @@
+
+$aspectRatio:269/290;
+$currentW: clamp(250px,90vw,480px);
+$fontSize: calc($currentW*0.042);
+$borderR: calc($currentW*12/290);
+
+.articleCard {
+    width: 100%;
+    height: calc($currentW*$aspectRatio);
+    border-radius: $borderR;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: calc($currentW*16/680) calc($currentW*40/680) calc($currentW*25/680) 0px #00000026;
+    background: linear-gradient(115.15deg, rgba(247, 205, 245, 0.23) -20.67%, rgba(242, 212, 239, 0.23) 48.71%, rgba(168, 225, 250, 0.0322) 99.46%);
+
+    font-size: $fontSize;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+
+    
+    &__content {
+
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: start;
+        
+        &__image {
+          width: 45%;
+          height: 100%;
+          border-radius: $borderR 0 0 0;
+        }
+
+        &__info{
+          width: 50%;
+          height: 100%;
+
+          text-align: left;
+
+          display: flex;
+          flex-direction: column;
+
+            &__title {
+                font-size: 1.05em;
+                font-weight: 400;
+                letter-spacing: 0.09em;  
+                height: 35%;     
+                padding: 6%;      
+                padding-top: 8%;
+                padding-left: 8%;
+            }
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 0.5%;
+        background-color: gray;
+      }    
+
+    &__text {
+        position: relative;
+        height: 55%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        padding: 4%;
+        width: 90%;
+        
+
+        &__arrow{
+          cursor: pointer;
+          position: absolute; 
+          bottom: 0; 
+          right: 0; 
+          padding: 5%;
+          font-size: 0.9em;
+        }
+      }
+}

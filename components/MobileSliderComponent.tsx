@@ -1,20 +1,18 @@
-import React, { ComponentType, FC, useState } from "react";
+import React, { FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
 
-interface SliderCard {
-    id: number;
-    image: string;
-    title: string;
-    customer: string;
-    year: string;
-    author: string;
-    description: string;
-}
-
 interface MobileSliderComponentProps {
-  data: SliderCard[];
-  SlideComponent: ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
+  data: Array<{
+    id?: number;
+    image?: string;
+    title?: string;
+    customer?: string;
+    year?: string;
+    author?: string;
+    description?: string;
+  }>;
+  SlideComponent: React.ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
 }
 
 const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
@@ -65,8 +63,7 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
             width: `calc(clamp(220px,90vw,450px)/${data.length}*1.3)`,
           },
         },
-      }}
-    >
+      }}>
       {data.map((item) => (
         <Carousel.Slide key={item.id} style={{ marginRight: "40px" }}>
           <SlideComponent data={item} />{" "}
