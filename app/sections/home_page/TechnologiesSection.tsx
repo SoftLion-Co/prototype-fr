@@ -11,7 +11,7 @@ import HeadingComponent from "../../../components/HeadingComponent";
 
 const TechnologiesSection = () => {
   return (
-    <div className={`${s.container} ${s.technologies}`}>
+    <section className={`${s.container} ${s.technologies}`}>
       <div className={s.technologies__wrapper}>
         <div className={s.technologies__nameHeader}>
           <HeadingComponent text="Technologies" />
