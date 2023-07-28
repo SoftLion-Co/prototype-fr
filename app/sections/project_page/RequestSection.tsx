@@ -61,7 +61,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import HeadingOurProjectComponent from "@/components/HeadingOurProjectComponent";
 import s from "./RequestSection.module.scss";
-import svg from "../../../images/request-List.svg";
+import svg from "../../../images/project/request-list.svg";
 
 const arrayList = [
   {
