@@ -2,6 +2,7 @@ import { useState } from "react";
 import s from "./BlogsSection.module.scss";
 import classNames from "classnames";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
+import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 
 interface Blog {
   id: number;
@@ -500,6 +501,10 @@ const BlogsSection = () => {
             }
           />
         ))}
+      </div>
+
+      <div>
+        <BlogExtendedCardComponent />
       </div>
 
       <div className={s.blog__cards}>
