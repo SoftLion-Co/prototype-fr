@@ -36,7 +36,7 @@
     }
 
     &__rolledCardLeft{
-        
+        cursor: pointer;
         @include for-size(tablet){
             padding: 0 77.2px 0 0;
         }
@@ -48,6 +48,7 @@
         }
     }
     &__rolledCardRight{
+        cursor: pointer;
         @include for-size(tablet){
             padding: 0 0 0 77.2px;
         }
