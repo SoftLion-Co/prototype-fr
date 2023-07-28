@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@mantine/carousel": "6.0.16",
-    "@mantine/core": "^6.0.16",
-    "@mantine/ds": "^6.0.16",
+    "@mantine/core": "6.0.16",
+    "@mantine/ds": "6.0.16",
     "@tabler/icons-react": "^2.24.0",
     "@types/node": "20.4.0",
     "@types/react": "18.2.14",
