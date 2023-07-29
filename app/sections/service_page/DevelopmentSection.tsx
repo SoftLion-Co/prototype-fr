@@ -2,21 +2,87 @@ import s from "./DevelopmentSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 import Image from "next/image";
-import pic1 from "../../../images/services/development/analytics-and-planning.svg"
+import pic1 from "../../../images/services/development/analytics-and-planning.svg";
+import pic2 from "../../../images/services/development/design-and-development.svg";
+import pic3 from "../../../images/services/development/testing-and-debuging.svg";
+import pic4 from "../../../images/services/development/deployment-and-maintenance.svg";
 import DevelopmentCardComponent from "@/components/services/DevelopmentCardComponent";
-import DevelopmentCardMobileComponent from "@/components/services/DevelopmentCardMobileComponent"
-const DevelopmentSection = () => {
+import DevelopmentCardMobileComponent from "@/components/services/DevelopmentCardMobileComponent";
 
-  const cardItems = ['Defining project goals, studying requirements, and understanding user needs.', 'Defining project goals, studying requirements, and understanding user needs.', 'Defining project goals, studying requirements, and understanding user needs.'];
+
+const cardsData = [
+  {
+    num: 1,
+    title: "Analysis and Planning",
+    items: [
+      "Defining project goals, studying requirements, and understanding user needs.",
+      "Some other point related to card 1",
+      "Another point for card 1",
+    ],
+    path: pic1,
+    variant: "variant1",
+  },
+  {
+    num: 2,
+    title: "Design and Development",
+    items: [
+      "Creating sketches, defining the visual style, and designing the user interface.",
+      "Developing functionality, programming, and creating a database.",
+      "Implementing testing and bug fixing.",
+    ],
+    path: pic2,
+    variant: "variant2",
+  },
+  {
+    num: 3,
+    title: "Testing and Debugging",
+    items: [
+      "Conducting functional and requirements-based testing.",
+      "Identifying and resolving errors, optimizing the product.",
+      "Performing compatibility testing, security testing, and load testing.",
+    ],
+    path: pic3,
+    variant: "variant1",
+  },
+  {
+    num: 4,
+    title: "Design and Development",
+    items: [
+      "Releasing the product, launching the website or application.",
+      "Monitoring, ensuring stability and security.",
+      "Providing user support, updating functionality, and product development.",
+    ],
+    path: pic4,
+    variant: "variant2",
+  },
+  
+];
+
+const DevelopmentSection = () => {
   return (
     <div className={classNames(s.container, s.develop)}>
- <DevelopmentCardComponent num={1}  path={pic1} title="Analysis and Planning" items={cardItems}/>
-<DevelopmentCardMobileComponent/>
-
-
-
-    </div>
-  );
+       <ServiceHeadingComponent headingText={" Development"} container="false"/>
+    {cardsData.map((data) => (
+      <DevelopmentCardMobileComponent
+        key={data.num}
+        num={data.num}
+        title={data.title}
+        items={data.items}
+        path={data.path}
+      />
+    ))}
+     {cardsData.map((data) => (
+        <DevelopmentCardComponent
+          key={data.num}
+          num={data.num}
+          title={data.title}
+          items={data.items}
+          path={data.path}
+          variant={data.variant}
+        />
+      ))}
+  </div>
+);
 };
 
 export default DevelopmentSection;

@@ -3,7 +3,9 @@
 @import "../styles/mixin";
 
 .develop {
+  // display: none;
   &__title {
+ 
     @include for-size(tablet) {
       font-size: 15.4px;
       font-weight: 400;
@@ -19,6 +21,7 @@
   }
 
   &__box {
+   
     @include for-size(tablet) {
       display: flex;
       justify-content: space-between;
@@ -45,7 +48,6 @@
       flex-direction: column;
       gap: 12px;
       width: 298px;
-      height: 119px;
     }
     @include for-size(laptop) {
     }

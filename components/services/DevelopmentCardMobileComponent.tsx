@@ -1,4 +1,4 @@
-import s from "./DevelopmentCardComponent.module.scss";
+import s from "./DevelopmentCardMobileComponent.module.scss";
 import React, { FC, ReactNode, ComponentProps } from "react";
 import Image from "next/image";
 
@@ -8,7 +8,6 @@ interface DevelopmentCardMobileComponentProps {
   title?: string;
   items: string[];
   num?: number;
-  variant: "variant1" | "variant2";
 }
 
 const DevelopmentCardMobileComponent: FC<DevelopmentCardMobileComponentProps> = ({
@@ -19,7 +18,7 @@ const DevelopmentCardMobileComponent: FC<DevelopmentCardMobileComponentProps> = 
 }) => {
   return (
     
-    <div className={s.develop__card}>
+    <div className={s.develop}>
       <div className={s.develop__upsection}>
         <div className={s.develop__wrap}>
         <p className={s.develop__num}>{num}</p>
