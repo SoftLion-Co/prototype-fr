@@ -24,8 +24,6 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
   return (
     <div className={s.blogDesktop}>
       <Carousel
-        onAnimationStart={() => console.log("A start")}
-        onAnimationIteration={() => console.log("A end")}
         getEmblaApi={setEmbla}
         loop
         onSlideChange={(index) => {

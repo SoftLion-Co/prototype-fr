@@ -17,7 +17,7 @@ const cardsData = [
     readingTime: "5 mins",
     imageSrc:
       "https://images.ctfassets.net/gkyt4bl1j2fs/1X1mWWuc4mqhDouFMopGHC/d2849ac89d767e117aa180c052c6aec6/Homepage_Desktop_UI_Comp_01__3_.png?w=1584&h=1751&q=50&fm=png&bg=transparent",
-    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 1",
+    text: "Sed ut perspiciatis, unde ossssssssssss sssssssssssssss ssssssssssss  ssssssssmnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 1",
   },
   {
     title: "How to delegate work correctly 2",
@@ -77,9 +77,9 @@ const cardsData = [
 
 const HomeBlog: React.FC = () => {
   return (
-    <>
+    <section>
       <HeadingComponent text="Blog"></HeadingComponent>
-      <section className={s.blogContainer}>
+      <div className={s.blogContainer}>
         <div
           className={classNames(
             s.blogContainer,
@@ -93,9 +93,11 @@ const HomeBlog: React.FC = () => {
             SlideComponent={BlogMobileExtendedCardComponent}
           />
         </div>
-      </section>
-      <SeeMoreButtonComponent path="blogs" />
-    </>
+      </div>
+      <div className={s.container}>
+        <SeeMoreButtonComponent path="blogs" />
+      </div>
+    </section>
   );
 };
 

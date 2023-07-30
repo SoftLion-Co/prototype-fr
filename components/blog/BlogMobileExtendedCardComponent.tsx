@@ -1,14 +1,5 @@
 import s from "./BlogMobileExtendedCardComponent.module.scss";
 
-interface BlogMobileExtendedCardComponentProps {
-  title: string;
-  text: string;
-  author?: string;
-  authorIconSrc?: string;
-  readingTime?: string;
-  imageSrc: string;
-}
-
 const BlogMobileExtendedCardComponent: React.FC<any> = ({ data }) => {
   return (
     <div className={s.articleCard}>
@@ -18,15 +9,13 @@ const BlogMobileExtendedCardComponent: React.FC<any> = ({ data }) => {
           src={data.imageSrc}
           alt="Softlion image"
         />
-        <div className={s.articleCard__content__info}>
-          <h2 className={s.articleCard__content__info__title}>{data.title}</h2>
-        </div>
+        <h2 className={s.articleCard__content__title}>{data.title}</h2>
       </div>
       <div className={s.articleCard__line}></div>
-      <p className={s.articleCard__text}>
-        {data.text}
+      <div className={s.articleCard__article}>
+        <p className={s.articleCard__article__text}>{data.text}</p>
         <svg
-          className={s.articleCard__text__arrow}
+          className={s.articleCard__article__arrow}
           xmlns="http://www.w3.org/2000/svg"
           width="3em"
           height="3em"
@@ -40,7 +29,7 @@ const BlogMobileExtendedCardComponent: React.FC<any> = ({ data }) => {
             strokeLinejoin="round"
           />
         </svg>
-      </p>
+      </div>
     </div>
   );
 };
