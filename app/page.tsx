@@ -11,12 +11,14 @@ import ContactUsSection from "./sections/contact_us_page/ContactUsSection";
 import BlogSection from "./sections/home_page/BlogSection";
 import OurServicesSection from "./sections/home_page/OurServicesSection";
 import TechnologiesSection from "./sections/home_page/TechnologiesSection";
+import EnterCodeSection from "./sections/enter_code_page/EnterCodeSection";
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
       <CookiesComponent />
+      <EnterCodeSection />
       <BlogSection />
       <TechnologiesSection />
       <OurServicesSection />
