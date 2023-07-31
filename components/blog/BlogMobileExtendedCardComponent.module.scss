@@ -3,7 +3,7 @@ $currentW: clamp(250px, 90vw, 480px);
 $fontSize: calc($currentW * 0.039);
 $borderR: calc($currentW * 12 / 290);
 
-.articleCard {
+.card {
   width: 100%;
   height: calc($currentW * $aspectRatio);
   border-radius: $borderR;
@@ -34,16 +34,6 @@ $borderR: calc($currentW * 12 / 290);
       height: 100%;
       border-radius: $borderR 0 0 0;
     }
-
-    &__title {
-      text-wrap: balance;
-      width: 50%;
-      text-align: left;
-      font-size: 1.05em;
-      font-weight: 400;
-      letter-spacing: 0.09em;
-      padding: 3% 2% 3% 2%;
-    }
   }
 
   &__line {
@@ -71,5 +61,39 @@ $borderR: calc($currentW * 12 / 290);
       cursor: pointer;
       font-size: 0.9em;
     }
+  }
+}
+
+.info {
+  padding: 3%;
+  width: 50%;
+
+  &__title {
+    text-wrap: balance;
+    width: 100%;
+    text-align: left;
+    font-size: 1.05em;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    margin-bottom: 15%;
+  }
+  &__author {
+    color: #000000b2;
+    font-size: 0.85em;
+    letter-spacing: 0.09em;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    margin-bottom: 5%;
+    &__icon {
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+    }
+  }
+  &__time {
+    color: #000000b2;
+    font-size: 0.85em;
+    letter-spacing: 0.09em;
   }
 }
