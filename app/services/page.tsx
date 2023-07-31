@@ -2,13 +2,14 @@ import s from "./page.module.scss";
 import CustomAppsSection from "../sections/service_page/CustomAppsSection";
 
 import CustomAppsCardComponent from "@/components/services/CustomAppsCardComponent";
+import SecuritySection from "../sections/service_page/SecuritySection";
 
 
 const Services = () => {
   return (
     <div>
-      <p>Services</p>
      <CustomAppsSection/>
+     <SecuritySection />
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogRolledCardComponent from "./BlogRolledCardComponent";
 import BlogExtendedCardComponent from "./BlogExtendedCardComponent";
 import s from "./BlogDesktopComponent.module.scss";
-import { Carousel } from "@mantine/carousel";
+import { Carousel, Embla } from "@mantine/carousel";
 
 interface BlogExtendedCardComponentProps {
   title: string;
@@ -18,11 +18,14 @@ interface BlogDesktopProps {
 }
 
 const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
+  const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
     <div className={s.blogDesktop}>
       <Carousel
+        getEmblaApi={setEmbla}
+        loop
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
@@ -60,7 +63,6 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         }
         skipSnaps
         controlsOffset="xl"
-        loop
         styles={{
           viewport: {
             paddingTop: "5%",
@@ -106,6 +108,19 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
               </div>
             ) : (
               <div
+                onClick={
+                  currentSlide - 1 === index ||
+                  (currentSlide === 0 && index === cardsData.length - 1)
+                    ? () => {
+                        embla?.scrollPrev();
+                      }
+                    : currentSlide + 1 === index ||
+                      (currentSlide === cardsData.length - 1 && index === 0)
+                    ? () => {
+                        embla?.scrollNext();
+                      }
+                    : undefined
+                }
                 className={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)

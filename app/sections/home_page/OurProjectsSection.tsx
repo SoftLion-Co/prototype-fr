@@ -6,7 +6,7 @@ import ProjectMobileCardComponent from "./../../../components/projects/ProjectMo
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
 import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-import classNames from "classNames";
+import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 
 const sampleData = [
