@@ -20,15 +20,21 @@ $button-blue-shadow: 0px 3px 32px 0px rgba(36, 141, 238, 0.33);
 
 $button-white-background: rgba(242, 212, 239, 0.07);
 $button-white-shadow: 5px 6px 12px 0px rgba(0, 0, 0, 0.15);
-$button-blue-form: linear-gradient( 180deg, #308bb7 0%, rgba(48, 139, 183, 0.57) 100%
-  );
+$button-blue-form: linear-gradient(
+  180deg,
+  #308bb7 0%,
+  rgba(48, 139, 183, 0.57) 100%
+);
 
+$button-dark-blue-background: linear-gradient(
+  136deg,
+  #308bb7 0%,
+  rgba(48, 139, 183, 0.79) 100%
+);
 
-$button-dark-blue-background: linear-gradient(136deg, #308BB7 0%, rgba(48, 139, 183, 0.79) 100%);
-
-$scrollbar-color: #A7CAF0;
-$burger-menu-color: #83ADDF;
-$scrollbar-background: #E8E8E8;
+$scrollbar-color: #a7caf0;
+$burger-menu-color: #83addf;
+$scrollbar-background: #e8e8e8;
 
 $scrollbar-color: #a7caf0;
 $burger-menu-color: #83addf;
@@ -75,16 +81,21 @@ $services-custom-apps-card-background: radial-gradient(
   rgba(133, 0, 127, 0.05) 100%
 );
 
-$our-projects-card-mobile-background: linear-gradient(133deg, rgba(246, 205, 245, 0.23) 0%, rgba(242, 212, 239, 0.23) 57.50%, rgba(168, 225, 250, 0.03) 99.55%);
-$our-projects-card-mobile-shadow: 6.466665744781494px 16.16666603088379px 10.104165077209473px 0px rgba(0, 0, 0, 0.15);
+$our-projects-card-mobile-background: linear-gradient(
+  133deg,
+  rgba(246, 205, 245, 0.23) 0%,
+  rgba(242, 212, 239, 0.23) 57.5%,
+  rgba(168, 225, 250, 0.03) 99.55%
+);
+$our-projects-card-mobile-shadow: 6.466665744781494px 16.16666603088379px
+  10.104165077209473px 0px rgba(0, 0, 0, 0.15);
 
-
-$project-card-background: radial-gradient(
-  897.97% 128.57% at 4.17% 6.52%,
+$project-card-background: linear-gradient(
+  90deg,
   rgba(175, 218, 237, 0.14) 0%,
-  rgba(190, 244, 205, 0.34) 45.3%,
-  rgba(243, 182, 241, 0.07) 100%
-); 
+  rgba(190, 244, 205, 0.34) 35.3%,
+  rgba(243, 182, 241, 0.1) 100%
+);
 $project-card-shadow: 2px 17px 18px -2px rgba(0, 0, 0, 0.15);
 
 $blog-card-background: linear-gradient(
@@ -121,3 +132,6 @@ $main-blue: radial-gradient(
 
 //Rating stars color
 $rating-stars-color: #fcc71f;
+
+$main-green-color: rgba(59, 141, 97, 0.87);
+$main-purple-color: rgba(160, 24, 155, 0.70);

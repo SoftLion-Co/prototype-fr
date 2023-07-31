@@ -5,8 +5,31 @@
   display: inline-flex;
   flex-direction: column;
 
+  &__blue {
+    color: $heading-blue-color;
+  }
+
+  &__purple {
+    color: $main-purple-color;
+  }
+
+  &__green {
+    color: $main-green-color;
+  }
+  &__container {
+    margin-bottom: 68px;
+    @include for-size(tablet) {
+      margin-bottom: 45px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 145px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 190px;
+    }
+  }
+
   &__num {
-    color: $heading-purple-color;
     font-size: 50px;
     letter-spacing: 0.05px;
     font-weight: 400;
@@ -44,7 +67,7 @@
   }
 
   &__text {
-    color: $heading-purple-color;
+    text-align: center;
     font-size: 22px;
     letter-spacing: 0.6px;
     font-weight: 400;
@@ -53,7 +76,6 @@
     @include for-size(tablet) {
       font-size: 29px;
       line-height: 32px;
-      margin-left: 6px;
     }
 
     @include for-size(laptop) {
@@ -64,7 +86,6 @@
     @include for-size(desktop) {
       font-size: 64px;
       line-height: 68px;
-      margin-left: 10px;
     }
   }
 }
@@ -74,18 +95,18 @@
   padding-left: 1px;
 
   @include for-size(tablet) {
-    padding-right: 32px;
-    padding-left: 186px;
+    padding-right: 0px;
+    padding-left: 196px;
   }
 
   @include for-size(laptop) {
-    padding-right: 60px;
-    padding-left: 300px;
+    padding-right: 0px;
+    padding-left: 388px;
   }
 
   @include for-size(desktop) {
-    padding-right: 70px;
-    padding-left: 390px;
+    padding-right: 0px;
+    padding-left: 500px;
   }
 }
 
@@ -94,17 +115,17 @@
   padding-left: 1px;
 
   @include for-size(tablet) {
-    padding-right: 186px;
+    padding-right: 196px;
     padding-left: 1px;
   }
 
   @include for-size(laptop) {
-    padding-right: 300px;
-    padding-left: 30px;
+    padding-right: 388px;
+    padding-left: 0px;
   }
 
   @include for-size(desktop) {
-    padding-right: 390px;
-    padding-left: 60px;
+    padding-right: 500px;
+    padding-left: 0px;
   }
 }

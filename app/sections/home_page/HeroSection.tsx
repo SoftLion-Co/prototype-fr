@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 const HeroSection = () => {
   return (
-    <div className={classNames(s.container, s.hero)}>
+    <section className={classNames(s.container, s.hero)}>
       <div>
         <div className={s.hero__wrapperInf}>
           <h1 className={s.hero__name}>
@@ -39,7 +39,7 @@ const HeroSection = () => {
           <MainButtonComponent color="white" path="projects">OUR PROJECTS</MainButtonComponent>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

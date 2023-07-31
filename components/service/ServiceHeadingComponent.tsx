@@ -8,16 +8,20 @@ interface ServiceHeadingComponentProps {
   container?: boolean;
 }
 
-const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({ headingText, container = true }) => {
-
+const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({
+  headingText,
+  container = true,
+}) => {
   const headingClass = classNames(s.heading, {
     [s.container]: container === true, // Додаємо s.container, якщо container === true
   });
 
   return (
     <div className={headingClass}>
-      <h3 className={s.heading__title}>{headingText}</h3>
-      <Image src={Line} alt="Security line" className={s.heading__svg} />
+      <div className={s.heading__component}>
+        <h2 className={s.heading__title}>{headingText}</h2>
+        <Image src={Line} alt="Security line" className={s.heading__svg} />
+      </div>
     </div>
   );
 };
