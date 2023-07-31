@@ -16,8 +16,8 @@ const cardsData = [
     title: "Analysis and Planning",
     items: [
       "Defining project goals, studying requirements, and understanding user needs.",
-      "Some other point related to card 1",
-      "Another point for card 1",
+      "Defining project goals, studying requirements, and understanding user needs.",
+      "Defining project goals, studying requirements, and understanding user needs.",
     ],
     path: pic1,
     variant: "variant1",

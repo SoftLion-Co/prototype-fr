@@ -3,25 +3,30 @@
 @import "../styles/mixin";
 
 .develop {
-  // display: none;
+  display: none;
+  @include for-size(tablet) {
+   display: block;
+  }
   &__title {
- 
     @include for-size(tablet) {
-      font-size: 15.4px;
+      font-size: 16px;
       font-weight: 400;
       line-height: 20px;
-      letter-spacing: 1.386px;
-
+      letter-spacing: 1.4px;
       margin-bottom: 31px;
     }
     @include for-size(laptop) {
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
     }
     @include for-size(desktop) {
     }
   }
 
   &__box {
-   
     @include for-size(tablet) {
       display: flex;
       justify-content: space-between;
@@ -38,6 +43,8 @@
       height: 109px;
     }
     @include for-size(laptop) {
+      width: 164px;
+      height: 164px;
     }
     @include for-size(desktop) {
     }
@@ -47,9 +54,10 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      width: 298px;
+      max-width: 255px;
     }
     @include for-size(laptop) {
+      max-width: 420px;
     }
     @include for-size(desktop) {
     }
@@ -58,7 +66,7 @@
     @include for-size(tablet) {
       font-size: 10px;
       font-weight: 400;
-      line-height: 13.4px;
+      line-height: 13px;
       letter-spacing: 0.4px;
 
       padding-left: 20px;
@@ -69,6 +77,12 @@
       background-repeat: no-repeat;
     }
     @include for-size(laptop) {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.7px;
+      padding-left: 28px;
+      background-size: 18px 18px;
     }
     @include for-size(desktop) {
     }
@@ -83,6 +97,10 @@
       color: $placeholder-color;
     }
     @include for-size(laptop) {
+      font-size: 115px;
+      line-height: 140px;
+      letter-spacing: 3.5px;
+      
     }
     @include for-size(desktop) {
     }

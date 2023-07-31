@@ -5,7 +5,7 @@ import ProjectHeadingComponent from "./../../../components/projects/ProjectHeadi
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
 import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-
+f
 const sampleData = [
   {
     id: 1,
