@@ -4,19 +4,16 @@
 
 .servicecard {
   width: 100%;
-  height: 395px;
+  min-height: 395px;
   align-items: center;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 26px 21px 15px 15px;
- 
+  padding: 26px 21px 60px 15px;
   position: relative;
- 
   background: $cookies-background;
   box-shadow: 11px 12px 5.8px 0px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
-  overflow: hidden;
 
   @include for-size(tablet) {
     width: 348px;
@@ -42,18 +39,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-     align-items: center;
-    // margin-left: 15px;
-    // padding: 0 21px 0 15px;
-    overflow: hidden;
+    align-items: center;
 
     @include for-size(tablet) {
       width: 100%;
-      
     }
     @include for-size(laptop) {
       width: 100%;
-      
     }
     @include for-size(desktop) {
       width: 100%;
@@ -63,7 +55,6 @@
   &__pic {
     width: 57px;
     height: 56px;
-   
 
     @include for-size(tablet) {
       width: 75px;
@@ -91,13 +82,11 @@
     text-align: center;
 
     @include for-size(tablet) {
-      
     }
     @include for-size(laptop) {
       font-size: 30px;
       margin-top: 26px;
       line-height: 36px;
-  
     }
     @include for-size(desktop) {
       font-size: 40px;
@@ -107,7 +96,6 @@
   }
   &__text {
     display: none;
-   
 
     @include for-size(tablet) {
       display: block;
@@ -141,21 +129,19 @@
     margin-top: 13px;
 
     @include for-size(tablet) {
-     display: none;
+      display: none;
     }
     @include for-size(laptop) {
-    
     }
     @include for-size(desktop) {
-     
     }
   }
   &__link {
-   color: black;
+    color: black;
     height: 32px;
     position: absolute;
-      right: 20px;
-      bottom: 27px;
+    right: 20px;
+    bottom: 27px;
 
     @include for-size(tablet) {
       position: absolute;
@@ -176,16 +162,15 @@
 
   &__arrow {
     font-size: 32px;
-  
-  @include for-size(tablet) {
-    font-size: 32px;
-    
+
+    @include for-size(tablet) {
+      font-size: 32px;
+    }
+    @include for-size(laptop) {
+      font-size: 68px;
+    }
+    @include for-size(desktop) {
+      font-size: 88px;
+    }
   }
-  @include for-size(laptop) {
-    font-size: 68px;
-  }
-  @include for-size(desktop) {
-    font-size: 88px;
-  }
-}
 }
