@@ -1,7 +1,7 @@
 import s from "./HeadingOurProjectComponent.module.scss";
 import classNames from "classnames";
 import Image from "next/image";
-import Line from "../images/line-component.svg";
+import Line from "../../images/project/line-component.svg";
 
 interface HeadingOurProjectComponentProps {
   title: string;

@@ -59,7 +59,7 @@
 import React from "react";
 import classNames from "classnames";
 import Image from "next/image";
-import HeadingOurProjectComponent from "@/components/HeadingOurProjectComponent";
+import HeadingOurProjectComponent from "@/components/project/HeadingOurProjectComponent";
 import s from "./RequestSection.module.scss";
 import svg from "../../../images/project/request-list.svg";
 
