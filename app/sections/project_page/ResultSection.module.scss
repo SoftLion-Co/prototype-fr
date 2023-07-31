@@ -104,7 +104,7 @@
     }
   }
 
-  &__listFirst {
+  &__list {
     @include for-size(tablet) {
       max-width: 297px;
     }
@@ -114,30 +114,18 @@
     @include for-size(desktop) {
       max-width: 547px;
     }
-  }
 
-  &__listSecond {
-    @include for-size(tablet) {
-      margin-left: auto;
-      max-width: 219px;
-    }
-    @include for-size(laptop) {
-      max-width: 333px;
-    }
-    @include for-size(desktop) {
-      max-width: 403px;
-    }
-  }
-
-  &__listThird {
-    @include for-size(tablet) {
-      max-width: 295px;
-    }
-    @include for-size(laptop) {
-      max-width: 449px;
-    }
-    @include for-size(desktop) {
-      max-width: 543px;
+    &:nth-child(2) {
+      @include for-size(tablet) {
+        margin-left: auto;
+        max-width: 219px;
+      }
+      @include for-size(laptop) {
+        max-width: 333px;
+      }
+      @include for-size(desktop) {
+        max-width: 403px;
+      }
     }
   }
 }
