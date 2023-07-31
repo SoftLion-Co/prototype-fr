@@ -1,11 +1,11 @@
 @import "./../styles/mixin";
 
 .arrow {
-  height: 50px;
+  height: 42px;
   width: auto;
 
   @include for-size(desktop) {
-    height: 65px;
+    height: 55px;
   }
 }
 
@@ -16,14 +16,14 @@
   }
 
   @include for-size(laptop) {
-    width: 1150px;
+    width: 1110px;
     button {
       font-size: 8px;
       display: flex;
     }
   }
   @include for-size(desktop) {
-    width: 1500px;
+    width: 1440px;
     button {
       font-size: 10px;
       display: flex;

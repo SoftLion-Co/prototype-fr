@@ -49,7 +49,6 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             alt="45"></Image>
         }
         skipSnaps
-        controlsOffset="xl"
         styles={{
           viewport: {
             paddingTop: "5%",
@@ -58,25 +57,19 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
           controls: {
             bottom: 0,
             top: 0,
-            width: "108%",
-            left: "-4%",
-            gap: 0,
             padding: 0,
+            width: "106%",
+            left: "-3%",
           },
           control: {
             backgroundColor: "transparent",
             boxShadow: "none",
             border: "0",
-            color: "rgb(86, 86, 86)",
           },
           container: {
             alignItems: "center",
           },
-          indicator: {
-            backgroundColor: "gray",
-          },
         }}
-        controlSize={40}
         align="center">
         {cardsData.map((x, index) => (
           <>
