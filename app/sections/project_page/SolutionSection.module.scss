@@ -1,0 +1,138 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.solution {
+  display: flex;
+  flex-direction: column;
+
+  gap: 31px;
+  @include for-size(tablet) {
+    gap: 87px;
+  }
+
+  @include for-size(laptop) {
+    gap: 201px;
+  }
+
+  @include for-size(desktop) {
+    gap: 187px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+    @include for-size(tablet) {
+      gap: 0;
+    }
+
+    @include for-size(laptop) {
+    }
+
+    @include for-size(desktop) {
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    @include for-size(tablet) {
+      gap: 0;
+    }
+
+    @include for-size(laptop) {
+    }
+
+    @include for-size(desktop) {
+    }
+  }
+
+  &__heading {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.9px;
+    font-weight: 400;
+
+    max-width: 152px;
+    @include for-size(tablet) {
+      font-size: 17px;
+      line-height: 23px;
+      letter-spacing: 1.6px;
+
+      max-width: 153px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 27px;
+      line-height: 35px;
+      letter-spacing: 2.4px;
+
+      max-width: 235px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 2.7px;
+
+      max-width: 262px;
+    }
+  }
+
+  &__text {
+    margin-left: 39px;
+
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.4px;
+
+    max-width: 250px;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.5px;
+
+      max-width: 349px;
+
+      margin-left: 189px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: 0.7px;
+
+      max-width: 592px;
+
+      margin-left: 281px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+      max-width: 599px;
+
+      margin-left: 324px;
+    }
+    :first-child {
+      @include for-size(tablet) {
+        margin-bottom: 48px;
+      }
+
+      @include for-size(laptop) {
+        margin-bottom: 50px;
+      }
+
+      @include for-size(desktop) {
+        margin-bottom: 37px;
+      }
+    }
+  }
+}
