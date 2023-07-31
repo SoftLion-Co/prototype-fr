@@ -5,16 +5,25 @@ import classNames from "classnames";
 
 interface ServiceHeadingComponentProps {
   headingText: string;
+  container?: boolean;
 }
 
-const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({ headingText }) => {
+const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({
+  headingText,
+  container = true,
+}) => {
+  const headingClass = classNames(s.heading, {
+    [s.container]: container === true, // Додаємо s.container, якщо container === true
+  });
+
   return (
-    <div className={classNames(s.container, s.heading)}>
-      <h3 className={s.heading__title}>{headingText}</h3>
-      <Image src={Line} alt="Security line" className={s.heading__svg} />
+    <div className={headingClass}>
+      <div className={s.heading__component}>
+        <h2 className={s.heading__title}>{headingText}</h2>
+        <Image src={Line} alt="Security line" className={s.heading__svg} />
+      </div>
     </div>
   );
 };
 
 export default ServiceHeadingComponent;
-

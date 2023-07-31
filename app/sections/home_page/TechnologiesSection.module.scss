@@ -1,0 +1,406 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+@import "../styles/container";
+
+.technologies {
+  &__imageWrapper {
+    /* ... */
+    transition: display 1s ease; /* Добавляем переход для свойства display */
+  }
+
+  &__imageWrapper:hover &__textEcommerce {
+    display: block;
+  }
+  &__imageWrapper:hover &__imageUIUX,
+  &__imageWrapper:hover &__imageEcommerce,
+  &__imageWrapper:hover &__imageSEO,
+  &__imageWrapper:hover &__imageAPI,
+  &__imageWrapper:hover &__descriptionFotoUIUX,
+  &__imageWrapper:hover &__descriptionFoto,
+  &__imageWrapper:hover &__descriptionFoto,
+  &__imageWrapper:hover &__descriptionFotoSeo {
+    display: none;
+  }
+
+  &__textEcommerce {
+    display: none;
+  }
+  &__imageWrapper {
+    box-shadow: $technologies-card-shadow;
+    background: $technologies-card-backbround;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    max-width: 224px;
+    max-height: 210px;
+
+    @include for-size(tablet) {
+      max-width: 216px;
+      max-height: 208px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 239px;
+      max-height: 229px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 320px;
+      max-height: 307px;
+    }
+  }
+
+  &__iconOpen {
+    display: flex;
+    fill: rgba(0, 0, 0, 0.6);
+    max-width: 19px;
+    max-height: 19px;
+
+    padding-top: 7px;
+    padding-right: 7px;
+
+    @include for-size(tablet) {
+      max-width: 22px;
+      max-height: 22px;
+      display: flex;
+    }
+
+    @include for-size(laptop) {
+      display: none;
+    }
+
+    @include for-size(desktop) {
+      display: none;
+    }
+  }
+
+  &__iconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+
+  &__imageUIUX {
+    margin-bottom: 8px;
+
+    width: 125px;
+    height: 118px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 110px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(laptop) {
+      width: 136px;
+      height: 129px;
+
+      margin-bottom: 18px;
+    }
+
+    @include for-size(desktop) {
+      width: 181px;
+      height: 165px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__imageEcommerce {
+    width: 125px;
+    height: 118px;
+
+    margin-bottom: 8px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 110px;
+    }
+
+    @include for-size(laptop) {
+      width: 136px;
+      height: 129px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(desktop) {
+      width: 181px;
+      height: 165px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__imageSEO {
+    width: 125px;
+    height: 118px;
+
+    margin-top: 0px;
+    margin-bottom: 14px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 114px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 18px;
+
+      height: 129px;
+      width: 136px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 20px;
+
+      width: 181px;
+      height: 165px;
+    }
+  }
+
+  &__imageAPI {
+    margin-top: 0px;
+
+    margin-bottom: 9px;
+
+    width: 125px;
+    height: 118px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 110px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 18px;
+      height: 129px;
+      width: 136px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 20px;
+
+      width: 181px;
+      height: 165px;
+    }
+  }
+
+  &__headerWrapperImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__textEcommerce {
+    text-align: center;
+
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 17px;
+    letter-spacing: 0.6px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include for-size(tablet) {
+      max-width: 186px;
+
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.6px;
+
+      padding-right: 18px;
+      padding-left: 18px;
+    }
+
+    @include for-size(laptop) {
+      width: 190px;
+
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.7px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+
+      min-width: 290px;
+    }
+  }
+
+  &__nameHeader {
+    margin-bottom: 47px;
+    @include for-size(tablet) {
+      margin-bottom: 118px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 135px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 172px;
+    }
+  }
+
+  &__cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 224px;
+    height: 210px;
+
+    @include for-size(tablet) {
+      width: 216px;
+      height: 208px;
+
+      justify-content: flex-start;
+    }
+
+    @include for-size(laptop) {
+      width: 239px;
+      height: 229px;
+
+      justify-content: center;
+    }
+
+    @include for-size(desktop) {
+      width: 320px;
+      height: 307px;
+
+      justify-content: center;
+    }
+  }
+
+  &__imagesWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 32px;
+    margin-bottom: 0px;
+
+    width: 100%;
+
+    @include for-size(tablet) {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      gap: 46px;
+      margin-bottom: 0px;
+
+      width: calc((100% + 250px) / 2);
+    }
+
+    @include for-size(laptop) {
+      flex-wrap: nowrap;
+
+      gap: 41px;
+      margin-bottom: 0px;
+      width: 100%;
+    }
+
+    @include for-size(desktop) {
+      flex-wrap: nowrap;
+
+      gap: 40px;
+      margin-bottom: 27px;
+      width: 100%;
+    }
+  }
+
+  &__descriptionFotoUIUX {
+    color: $heading-blue-color;
+
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 2px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22px;
+      line-height: 29px;
+      letter-spacing: 2px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 3px;
+    }
+  }
+
+  &__descriptionFotoSeo {
+    color: $heading-blue-color;
+
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 1.8px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22px;
+      line-height: 29px;
+      letter-spacing: 2px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 2.7px;
+    }
+  }
+
+  &__descriptionFoto {
+    color: $heading-blue-color;
+
+    text-align: center;
+
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1px;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 2px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22px;
+      line-height: 29px;
+      letter-spacing: 2px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 2.7px;
+    }
+  }
+}

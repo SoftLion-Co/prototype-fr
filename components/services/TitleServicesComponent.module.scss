@@ -1,0 +1,131 @@
+@import "./../styles/colors";
+@import "../../styles/mixin";
+
+.title {
+  display: inline-flex;
+  flex-direction: column;
+
+  &__blue {
+    color: $heading-blue-color;
+  }
+
+  &__purple {
+    color: $main-purple-color;
+  }
+
+  &__green {
+    color: $main-green-color;
+  }
+  &__container {
+    margin-bottom: 68px;
+    @include for-size(tablet) {
+      margin-bottom: 45px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 145px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 190px;
+    }
+  }
+
+  &__num {
+    font-size: 50px;
+    letter-spacing: 0.05px;
+    font-weight: 400;
+    line-height: 42px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+    @include for-size(tablet) {
+      font-size: 67px;
+      letter-spacing: 0.5px;
+      line-height: 62px;
+
+      padding-right: 32px;
+      padding-left: 186px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 115px;
+      letter-spacing: 0.5px;
+      line-height: 110px;
+
+      padding-right: 60px;
+      padding-left: 300px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    }
+
+    @include for-size(desktop) {
+      font-size: 150px;
+      letter-spacing: 3.84px;
+      line-height: 140px;
+
+      padding-right: 70px;
+      padding-left: 390px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    line-height: 32px;
+
+    @include for-size(tablet) {
+      font-size: 29px;
+      line-height: 32px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 49px;
+      line-height: 54px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 64px;
+      line-height: 68px;
+    }
+  }
+}
+
+.right {
+  padding-right: 168px;
+  padding-left: 1px;
+
+  @include for-size(tablet) {
+    padding-right: 0px;
+    padding-left: 196px;
+  }
+
+  @include for-size(laptop) {
+    padding-right: 0px;
+    padding-left: 388px;
+  }
+
+  @include for-size(desktop) {
+    padding-right: 0px;
+    padding-left: 500px;
+  }
+}
+
+.left {
+  padding-right: 168px;
+  padding-left: 1px;
+
+  @include for-size(tablet) {
+    padding-right: 196px;
+    padding-left: 1px;
+  }
+
+  @include for-size(laptop) {
+    padding-right: 388px;
+    padding-left: 0px;
+  }
+
+  @include for-size(desktop) {
+    padding-right: 500px;
+    padding-left: 0px;
+  }
+}
