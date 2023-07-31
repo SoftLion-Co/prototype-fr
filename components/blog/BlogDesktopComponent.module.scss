@@ -1,5 +1,14 @@
 @import "./../styles/mixin";
 
+.arrow {
+  height: 50px;
+  width: auto;
+
+  @include for-size(desktop) {
+    height: 65px;
+  }
+}
+
 .blogDesktop {
   width: 780px;
   button {
