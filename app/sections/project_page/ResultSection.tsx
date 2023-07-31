@@ -27,7 +27,7 @@ const ResultSection = () => {
           </li>
         ))}
       </ul>
-      <Image src={Photo} alt="" className={s.design__photo} />
+      <Image src={Photo} alt="Project Design Photo" className={s.design__photo} />
     </div>
   );
 };
