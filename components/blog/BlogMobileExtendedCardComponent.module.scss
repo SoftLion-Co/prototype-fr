@@ -30,6 +30,7 @@ $borderR: calc($currentW * 12 / 290);
     justify-content: start;
 
     &__image {
+      object-fit: cover;
       width: 45%;
       height: 100%;
       border-radius: $borderR 0 0 0;

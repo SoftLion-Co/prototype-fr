@@ -1,3 +1,4 @@
+import Image from "next/image";
 import s from "./BlogMobileExtendedCardComponent.module.scss";
 
 const BlogMobileExtendedCardComponent: React.FC<any> = ({ data }) => {
