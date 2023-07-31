@@ -4,6 +4,28 @@
 
 .technologies {
   &__imageWrapper {
+    /* ... */
+    transition: display 1s ease; /* Добавляем переход для свойства display */
+  }
+
+  &__imageWrapper:hover &__textEcommerce {
+    display: block;
+  }
+  &__imageWrapper:hover &__imageUIUX,
+  &__imageWrapper:hover &__imageEcommerce,
+  &__imageWrapper:hover &__imageSEO,
+  &__imageWrapper:hover &__imageAPI,
+  &__imageWrapper:hover &__descriptionFotoUIUX,
+  &__imageWrapper:hover &__descriptionFoto,
+  &__imageWrapper:hover &__descriptionFoto,
+  &__imageWrapper:hover &__descriptionFotoSeo {
+    display: none;
+  }
+
+  &__textEcommerce {
+    display: none;
+  }
+  &__imageWrapper {
     box-shadow: $technologies-card-shadow;
     background: $technologies-card-backbround;
     border-radius: 15px;
@@ -57,163 +79,118 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-left: auto;
   }
 
   &__imageUIUX {
-    margin-top: 16px;
+    margin-bottom: 8px;
 
-    padding-left: 45px;
-    padding-right: 45px;
-    margin-bottom: 26px;
-
-    max-width: 134px;
+    width: 125px;
+    height: 118px;
 
     @include for-size(tablet) {
-      max-width: 119px;
+      width: 119px;
+      height: 110px;
 
-      padding-left: 48.5px;
-      padding-right: 48.5px;
-
-      margin-top: 16px;
-      margin-bottom: 26px;
+      margin-bottom: 10px;
     }
 
     @include for-size(laptop) {
-      max-width: 135px;
+      width: 136px;
+      height: 129px;
 
-      padding-top: 45px;
-      padding-left: 52px;
-      padding-right: 52px;
-
-      margin-top: 0px;
-      margin-bottom: 32px;
+      margin-bottom: 18px;
     }
 
     @include for-size(desktop) {
-      max-width: 181px;
+      width: 181px;
+      height: 165px;
 
-      padding-top: 60px;
-      padding-left: 70px;
-      padding-right: 70px;
-
-      margin-top: 0px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
   }
 
   &__imageEcommerce {
-    max-width: 134px;
-
-    margin-top: 5px;
-    padding-left: 45px;
-    padding-right: 45px;
+    width: 125px;
+    height: 118px;
 
     margin-bottom: 8px;
 
     @include for-size(tablet) {
-      max-width: 119px;
-
-      padding-left: 49px;
-      padding-right: 49px;
+      width: 119px;
+      height: 110px;
     }
 
     @include for-size(laptop) {
-      padding-top: 29px;
-      padding-left: 47px;
-      padding-right: 47px;
+      width: 136px;
+      height: 129px;
 
-      max-width: 145px;
-
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
 
     @include for-size(desktop) {
-      padding-top: 39px;
-      padding-left: 63px;
-      padding-right: 63px;
+      width: 181px;
+      height: 165px;
 
-      max-width: 194px;
-
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
   }
 
   &__imageSEO {
-    max-width: 125px;
+    width: 125px;
+    height: 118px;
 
     margin-top: 0px;
-    padding-left: 49px;
-    padding-right: 50px;
-
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 
     @include for-size(tablet) {
-      max-width: 119px;
+      width: 119px;
+      height: 114px;
 
-      padding-left: 49px;
-      padding-right: 49px;
-
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     @include for-size(laptop) {
-      padding-top: 22px;
-      padding-left: 54px;
-      padding-right: 54px;
+      margin-bottom: 18px;
 
-      margin-bottom: 20px;
-
-      max-width: 131px;
+      height: 129px;
+      width: 136px;
     }
 
     @include for-size(desktop) {
-      padding-top: 29px;
-      padding-left: 72px;
-      padding-right: 72px;
+      margin-bottom: 20px;
 
-      margin-bottom: 26px;
-
-      max-width: 176px;
+      width: 181px;
+      height: 165px;
     }
   }
 
   &__imageAPI {
     margin-top: 0px;
 
-    padding-left: 46px;
-    padding-right: 46px;
-
     margin-bottom: 9px;
 
-    max-width: 132px;
+    width: 125px;
+    height: 118px;
 
     @include for-size(tablet) {
-      max-width: 119px;
+      width: 119px;
+      height: 110px;
 
-      padding-left: 49px;
-      padding-right: 49px;
-
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     @include for-size(laptop) {
-      padding-top: 22px;
-      padding-left: 54px;
-      padding-right: 54px;
-
-      margin-bottom: 14px;
-
-      max-width: 132px;
+      margin-bottom: 18px;
+      height: 129px;
+      width: 136px;
     }
 
     @include for-size(desktop) {
-      padding-top: 29px;
-      padding-left: 72px;
-      padding-right: 72px;
+      margin-bottom: 20px;
 
-      margin-bottom: 22px;
-
-      max-width: 176px;
+      width: 181px;
+      height: 165px;
     }
   }
 
@@ -230,10 +207,8 @@
     font-size: 15px;
     line-height: 17px;
     letter-spacing: 0.6px;
-    padding-top: 36px;
     padding-right: 15px;
     padding-left: 15px;
-    padding-bottom: 38px;
 
     @include for-size(tablet) {
       max-width: 186px;
@@ -242,10 +217,8 @@
       line-height: 16px;
       letter-spacing: 0.6px;
 
-      padding-top: 26px;
       padding-right: 18px;
       padding-left: 18px;
-      padding-bottom: 26px;
     }
 
     @include for-size(laptop) {
@@ -254,22 +227,12 @@
       font-size: 14px;
       line-height: 18px;
       letter-spacing: 0.7px;
-
-      padding-top: 34px;
-      padding-right: 26.5px;
-      padding-left: 26.5px;
-      padding-bottom: 34px;
     }
 
     @include for-size(desktop) {
       font-size: 20px;
       line-height: 26px;
       letter-spacing: 0.8px;
-
-      padding-top: 56px;
-      padding-right: 15px;
-      padding-left: 15px;
-      padding-bottom: 43px;
 
       min-width: 290px;
     }
@@ -287,6 +250,37 @@
 
     @include for-size(desktop) {
       margin-bottom: 172px;
+    }
+  }
+
+  &__cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 224px;
+    height: 210px;
+
+    @include for-size(tablet) {
+      width: 216px;
+      height: 208px;
+
+      justify-content: flex-start;
+    }
+
+    @include for-size(laptop) {
+      width: 239px;
+      height: 229px;
+
+      justify-content: center;
+    }
+
+    @include for-size(desktop) {
+      width: 320px;
+      height: 307px;
+
+      justify-content: center;
     }
   }
 
@@ -315,6 +309,7 @@
 
       gap: 41px;
       margin-bottom: 0px;
+      width: 100%;
     }
 
     @include for-size(desktop) {
@@ -322,6 +317,7 @@
 
       gap: 40px;
       margin-bottom: 27px;
+      width: 100%;
     }
   }
 
@@ -334,18 +330,13 @@
 
     text-align: center;
 
-    margin-bottom: 36px;
     @include for-size(tablet) {
       font-size: 20px;
       line-height: 27px;
       letter-spacing: 2px;
-
-      margin-bottom: 50px;
     }
 
     @include for-size(laptop) {
-      margin-bottom: 55px;
-
       font-size: 22px;
       line-height: 29px;
       letter-spacing: 2px;
@@ -355,15 +346,11 @@
       font-size: 30px;
       line-height: 39px;
       letter-spacing: 3px;
-
-      margin-bottom: 74px;
     }
   }
 
   &__descriptionFotoSeo {
     color: $heading-blue-color;
-
-    margin-bottom: 23px;
 
     font-size: 20px;
     line-height: 22px;
@@ -374,21 +361,15 @@
       font-size: 20px;
       line-height: 27px;
       letter-spacing: 1.8px;
-
-      margin-bottom: 34px;
     }
 
     @include for-size(laptop) {
-      margin-bottom: 40px;
-
       font-size: 22px;
       line-height: 29px;
       letter-spacing: 2px;
     }
 
     @include for-size(desktop) {
-      margin-bottom: 54px;
-
       font-size: 30px;
       line-height: 39px;
       letter-spacing: 2.7px;
@@ -400,31 +381,23 @@
 
     text-align: center;
 
-    margin-bottom: 25px;
-
     font-size: 20px;
     line-height: 22px;
     letter-spacing: 1px;
 
     @include for-size(tablet) {
-      margin-bottom: 47px;
-
       font-size: 20px;
       line-height: 27px;
       letter-spacing: 2px;
     }
 
     @include for-size(laptop) {
-      margin-bottom: 40px;
-
       font-size: 22px;
       line-height: 29px;
       letter-spacing: 2px;
     }
 
     @include for-size(desktop) {
-      margin-bottom: 54px;
-
       font-size: 30px;
       line-height: 39px;
       letter-spacing: 2.7px;
