@@ -5,7 +5,7 @@
 .develop {
   display: none;
   @include for-size(tablet) {
-   display: block;
+    display: block;
   }
   &__title {
     @include for-size(tablet) {
@@ -17,12 +17,15 @@
     }
     @include for-size(laptop) {
       font-size: 23px;
-      font-weight: 400;
       line-height: 30px;
       letter-spacing: 2px;
       margin-bottom: 50px;
     }
     @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 2.7px;
+      margin-bottom: 70px;
     }
   }
 
@@ -31,10 +34,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
     }
   }
   &__pic {
@@ -47,6 +46,8 @@
       height: 164px;
     }
     @include for-size(desktop) {
+      width: 214px;
+      height: 214px;
     }
   }
   &__list {
@@ -60,6 +61,7 @@
       max-width: 420px;
     }
     @include for-size(desktop) {
+      max-width: 536px;
     }
   }
   &__item {
@@ -68,7 +70,6 @@
       font-weight: 400;
       line-height: 13px;
       letter-spacing: 0.4px;
-
       padding-left: 20px;
       background-image: url("../../images/services/development/point.svg");
       background-size: 12px 12px;
@@ -85,6 +86,11 @@
       background-size: 18px 18px;
     }
     @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+      padding-left: 34px;
+      background-size: 23px 23px;
     }
   }
 
@@ -92,24 +98,19 @@
     @include for-size(tablet) {
       font-size: 77px;
       font-weight: 400;
-      line-height: 90.25px;
-      letter-spacing: 2.31px;
+      line-height: 90px;
+      letter-spacing: 2.3px;
       color: $placeholder-color;
     }
     @include for-size(laptop) {
       font-size: 115px;
       line-height: 140px;
       letter-spacing: 3.5px;
-      
     }
     @include for-size(desktop) {
+      font-size: 150px;
+      line-height: 140px;
+      letter-spacing: 4.5px;
     }
-  }
-
-  @include for-size(tablet) {
-  }
-  @include for-size(laptop) {
-  }
-  @include for-size(desktop) {
   }
 }

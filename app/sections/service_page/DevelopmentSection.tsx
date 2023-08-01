@@ -1,7 +1,6 @@
 import s from "./DevelopmentSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
-import Image from "next/image";
 import pic1 from "../../../images/services/development/analytics-and-planning.svg";
 import pic2 from "../../../images/services/development/design-and-development.svg";
 import pic3 from "../../../images/services/development/testing-and-debuging.svg";
@@ -55,13 +54,15 @@ const cardsData = [
     path: pic4,
     variant: "variant2",
   },
-  
 ];
 
 const DevelopmentSection = () => {
   return (
     <div className={classNames(s.container, s.develop)}>
+       <div className={s.develop__heading}>
        <ServiceHeadingComponent headingText={" Development"} container="false"/>
+       </div>
+       <div className={s.develop__mob}>
     {cardsData.map((data) => (
       <DevelopmentCardMobileComponent
         key={data.num}
@@ -71,6 +72,8 @@ const DevelopmentSection = () => {
         path={data.path}
       />
     ))}
+    </div>
+    <div className={s.develop__desktop}>
      {cardsData.map((data) => (
         <DevelopmentCardComponent
           key={data.num}
@@ -79,8 +82,9 @@ const DevelopmentSection = () => {
           items={data.items}
           path={data.path}
           variant={data.variant}
-        />
+        /> 
       ))}
+       </div>
   </div>
 );
 };

@@ -12,12 +12,6 @@
     @include for-size(tablet) {
       display: none;
     }
-    @include for-size(laptop) {
-      display: none;
-    }
-    @include for-size(desktop) {
-      display: none;
-    }
   }
 
   &__wrap {
@@ -30,10 +24,6 @@
     @include for-size(tablet) {
       display: none;
     }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
-    }
   }
   &__num {
     font-size: 77px;
@@ -44,20 +34,12 @@
     @include for-size(tablet) {
       display: none;
     }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
-    }
   }
   &__pic1 {
     width: 109px;
     height: 109px;
     @include for-size(tablet) {
       display: none;
-    }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
     }
   }
   &__title {
@@ -67,10 +49,6 @@
     letter-spacing: 1.386px;
     @include for-size(tablet) {
       display: none;
-    }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
     }
   }
   &__list {
@@ -82,27 +60,18 @@
     @include for-size(tablet) {
       display: none;
     }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
-    }
   }
   &__item {
     font-size: 12px;
     font-weight: 400;
     line-height: 13.4px;
     letter-spacing: 0.4px;
-
     padding-left: 20px;
     background-image: url("../../images/services/development/point.svg");
     background-size: 12px 12px;
     background-color: rgba(255, 255, 255, 0.7);
     background-repeat: no-repeat;
     @include for-size(tablet) {
-    }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
     }
   }
 }

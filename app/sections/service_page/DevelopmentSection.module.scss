@@ -2,34 +2,54 @@
 @import "/styles/container";
 @import "../styles/mixin";
 
-.develop{
+.develop {
+   
+    &__heading{
 
-    &__upsection{
+        margin-bottom: 44px;
+        @include for-size(tablet) {
+            margin-bottom: 85px;
+        }
+    
+        @include for-size(laptop) {
+            margin-bottom: 201px;
+        }
+    
+        @include for-size(desktop) {
+            margin-bottom: 262px;
+        }
+      }
+    
+  &__desktop {
+    
+    @include for-size(tablet) {
         display: flex;
-        flex-direction: column;
-        padding: 0 52px 37px;
-        align-items: center;
+    flex-direction: column;
+    gap: 68px;
     }
 
-  &__wrap{
+    @include for-size(laptop) {
+        gap: 111px;
+    }
+
+    @include for-size(desktop) {
+        gap: 145px;
+    }
+  }
+
+  &__mob {
     display: flex;
-    margin-bottom: 18px;
-  }  
+    flex-direction: column;
+    gap: 51px;
 
-&__pic1{
-    width: 89px;
-    height: 79px;
-}
-&__num{
-    font-size: 77px;
-    color: $placeholder-color;
-}
-&__title{
-    width: 186px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-}
+    @include for-size(tablet) {
+        display:none;
+    }
 
+    @include for-size(laptop) {
+    }
 
+    @include for-size(desktop) {
+    }
+}
 }

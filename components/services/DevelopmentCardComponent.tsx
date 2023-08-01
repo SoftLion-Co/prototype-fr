@@ -2,7 +2,6 @@ import s from "./DevelopmentCardComponent.module.scss";
 import React, { FC, ReactNode, ComponentProps } from "react";
 import Image from "next/image";
 
-
 interface DevelopmentCardComponentProps {
   path?: any;
   title?: string;
@@ -17,6 +16,7 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
   items,
   num,
   variant,
+  
 }) => {
   return (
     <div className={s.develop}>
@@ -36,18 +36,15 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
           </>
         ) : (
           <>
-              <p className={s.develop__num}>{num}</p>
-              <Image className={s.develop__pic} src={path} alt="development" />
-          <ul className={s.develop__list}>
+            <p className={s.develop__num}>{num}</p>
+            <Image className={s.develop__pic} src={path} alt="development" />
+            <ul className={s.develop__list}>
               {items.map((item, index) => (
                 <li className={s.develop__item} key={index}>
                   {item}
                 </li>
               ))}
             </ul>
-            
-            
-        
           </>
         )}
       </div>
