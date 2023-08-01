@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import s from "./FormComponent.module.scss";
-/* import "react-phone-input-2/lib/style.css";
-import PhoneInput from "react-phone-input-2"; */
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
 import axios from "axios";
 
 interface FormData {
@@ -74,7 +74,7 @@ const FormComponent = () => {
           {errors.email && <p className={s.error}>{errors.email.message}</p>}
         </div>
         <div className={s.form__input}>
-          {/* <PhoneInput
+          <PhoneInput
             inputProps={{
               required: true,
               name: "phone",
@@ -84,7 +84,7 @@ const FormComponent = () => {
             country={"ua"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
-          /> */}
+          />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>
         <div className={s.form__input}>
