@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from "react";
 import classNames from "classnames";
 import s from "./BlogsSection.module.scss";
@@ -421,6 +422,12 @@ const BlogsSection = () => {
       </div>
     </section>
   );
+=======
+import s from "./BlogsSection.module.scss";
+
+const BlogsSection = () => {
+  return <div></div>;
+>>>>>>> Stashed changes
 };
 
 export default BlogsSection;
