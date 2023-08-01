@@ -1,34 +1,40 @@
 import { useState } from "react";
-import useBlogPagination, { Blog, PaginationProps } from "./useBlogPagination";
 
-type HandleCategoryChangeFn = (category: string | null) => void;
-
-export interface FilteredPaginationProps extends PaginationProps {
-  selectedCategory: string | null;
-  handleCategoryChange: HandleCategoryChangeFn;
-  filteredBlogs: Blog[];
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  category: string;
 }
 
-const useBlogFilter = (blogsData: Blog[]) => {
+interface UseBlogFilterProps {
+  blogsData: Blog[];
+  blogsPerPage: number;
+  setCurrentPage: (page: number) => void;
+}
+
+const useBlogFilter = (props: UseBlogFilterProps) => {
+  const { blogsData, blogsPerPage, setCurrentPage } = props;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const handleCategoryChange: HandleCategoryChangeFn = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const blogsPerPage = 6;
-
-  const filteredBlogs: Blog[] = selectedCategory
+  const filteredBlogsData = selectedCategory
     ? blogsData.filter((blog) => blog.category === selectedCategory)
     : blogsData;
 
-  const paginationProps = useBlogPagination(filteredBlogs, blogsPerPage);
+  const totalPagesForSelectedCategory = Math.ceil(
+    filteredBlogsData.length / blogsPerPage
+  );
+
+  const handleCategoryChange = (category: string | null): void => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
 
   return {
-    ...paginationProps,
     selectedCategory,
     handleCategoryChange,
-    filteredBlogs,
+    filteredBlogsData,
+    totalPagesForSelectedCategory,
   };
 };
 

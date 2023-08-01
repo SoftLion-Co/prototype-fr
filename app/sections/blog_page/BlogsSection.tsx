@@ -1,12 +1,18 @@
-<<<<<<< Updated upstream
 import React from "react";
-import classNames from "classnames";
 import s from "./BlogsSection.module.scss";
+import classNames from "classnames";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
-import useBlogPagination, { Blog } from "@/hooks/useBlogPagination";
-import useBlogFilter, { FilteredPaginationProps } from "@/hooks/useBlogFilter";
-import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
 import BlogFilterButton from "@/components/blog/BlogFilterButton";
+import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
+import useBlogPagination from "@/hooks/useBlogPagination";
+import useBlogFilter from "@/hooks/useBlogFilter";
+
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  category: string;
+}
 
 const BlogsSection = () => {
   // TEST OBJECT
@@ -315,23 +321,39 @@ const BlogsSection = () => {
 
   const blogsPerPage = 6;
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   const {
     selectedCategory,
     handleCategoryChange,
-    filteredBlogs,
-  }: FilteredPaginationProps = useBlogFilter(blogsData);
+    filteredBlogsData,
+    totalPagesForSelectedCategory,
+  } = useBlogFilter({
+    blogsData: blogsData,
+    blogsPerPage: blogsPerPage,
+    setCurrentPage: handlePageChange,
+  });
 
   const {
     currentPage,
     totalPages,
-    currentBlogs,
     getPageNumbersToShow,
-    handlePageChange,
     handleFirstPage,
     handleLastPage,
-    handlePreviousPage,
-    handleNextPage,
-  } = useBlogPagination(filteredBlogs, blogsPerPage);
+    showPreviousButton,
+    showNextButton,
+    setCurrentPage,
+  } = useBlogPagination({
+    totalItems: filteredBlogsData?.length || 0,
+    itemsPerPage: blogsPerPage,
+  });
+
+  const currentBlogs = filteredBlogsData?.slice(
+    (currentPage - 1) * blogsPerPage,
+    currentPage * blogsPerPage
+  );
 
   return (
     <section className={classNames(s.blog, s.container)}>
@@ -339,6 +361,7 @@ const BlogsSection = () => {
         <div className={s.blog__title}>
           <ServiceHeadingComponent headingText="Blog" container={true} />
         </div>
+
         <p className={s.blog__paragraph}>
           Our blog is a valuable resource that we provide to our clients and
           anyone interested in the field of technology. In our blog, you will
@@ -357,12 +380,13 @@ const BlogsSection = () => {
           "Design",
           "E-learning",
           "Finance",
-          // "Supply chain",
-          // "Healthcare",
           // "Startups",
           // "Angular",
-          // "Java",
           // "React",
+          // "Node.js",
+          // "Java",
+          // ".Net",
+          // "Blockchain",
         ].map((category) => (
           <BlogFilterButton
             key={category}
@@ -383,7 +407,7 @@ const BlogsSection = () => {
       <div className={s.blog__cards}>
         {currentBlogs.map((blog) => (
           <div key={blog.id} className={s.blog__card}>
-            <h2>{blog.title}</h2>
+            <h3>{blog.title}</h3>
             <p>{blog.content}</p>
             <p>Category: {blog.category}</p>
           </div>
@@ -392,15 +416,22 @@ const BlogsSection = () => {
 
       <div className={s.pagination}>
         <BlogPaginationButton
+          key={"first"}
           text={"First"}
-          active={currentPage !== 1}
-          onClick={handleFirstPage}
+          active={false}
+          onClick={() => handlePageChange(1)}
         />
-        <BlogPaginationButton
-          text={"◁"}
-          active={currentPage > 1}
-          onClick={handlePreviousPage}
-        />
+
+        {showPreviousButton() && (
+          <BlogPaginationButton
+            key={"previous"}
+            text={"◁"}
+            active={false}
+            onClick={() => handlePageChange(currentPage - 1)}
+          />
+        )}
+
+        {/* Render the page numbers */}
         {getPageNumbersToShow().map((pageNumber) => (
           <BlogPaginationButton
             key={pageNumber}
@@ -409,25 +440,25 @@ const BlogsSection = () => {
             onClick={() => handlePageChange(pageNumber)}
           />
         ))}
+
+        {showNextButton() && (
+          <BlogPaginationButton
+            key={"next"}
+            text={"▷"}
+            active={false}
+            onClick={() => handlePageChange(currentPage + 1)}
+          />
+        )}
+
         <BlogPaginationButton
-          text={"▷"}
-          active={currentPage < totalPages}
-          onClick={handleNextPage}
-        />
-        <BlogPaginationButton
+          key={"last"}
           text={"Last"}
-          active={currentPage !== totalPages}
-          onClick={handleLastPage}
+          active={false}
+          onClick={() => handlePageChange(totalPages)}
         />
       </div>
     </section>
   );
-=======
-import s from "./BlogsSection.module.scss";
-
-const BlogsSection = () => {
-  return <div></div>;
->>>>>>> Stashed changes
 };
 
 export default BlogsSection;
