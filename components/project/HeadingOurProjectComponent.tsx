@@ -7,7 +7,7 @@ interface HeadingOurProjectComponentProps {
   title: string;
   text: string;
 }
-// props
+
 const HeadingOurProjectComponent: React.FC<HeadingOurProjectComponentProps> = ({
   title,
   text,
