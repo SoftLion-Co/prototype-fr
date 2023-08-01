@@ -1,7 +1,27 @@
+@import "../styles/mixin";
+
 .home_page{
     display: flex;
     flex-direction: column;
     gap: 50px;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+
+    @include for-size(tablet){
+        gap: 80px;
+        margin-top: 60px;
+        margin-bottom: 150px;
+    }
+
+    @include for-size(tablet){
+        gap: 120px;
+        margin-top: 100px;
+        margin-bottom: 200px;
+    }
+
+    @include for-size(tablet){
+        gap: 150px;
+        margin-top: 120px;
+        margin-bottom: 200px;
+    }
 }
