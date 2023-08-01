@@ -60,7 +60,7 @@ const DevelopmentSection = () => {
   return (
     <div className={classNames(s.container, s.develop)}>
        <div className={s.develop__heading}>
-       <ServiceHeadingComponent headingText={" Development"} container="false"/>
+       <ServiceHeadingComponent headingText={" Development"} container={false}/>
        </div>
        <div className={s.develop__mob}>
     {cardsData.map((data) => (

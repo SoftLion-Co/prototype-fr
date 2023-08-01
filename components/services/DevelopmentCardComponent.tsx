@@ -7,7 +7,7 @@ interface DevelopmentCardComponentProps {
   title?: string;
   items: string[];
   num?: number;
-  variant?: "variant1" | "variant2";
+  variant?: "variant1" | "variant2" | string | undefined;
 }
 
 const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
@@ -15,7 +15,7 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
   title,
   items,
   num,
-  variant,
+  variant=null,
   
 }) => {
   return (
