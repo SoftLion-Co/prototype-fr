@@ -1,45 +1,11 @@
-import { useState } from "react";
-import s from "./BlogsSection.module.scss";
+import React from "react";
 import classNames from "classnames";
+import s from "./BlogsSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
-import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
-
-interface Blog {
-  id: number;
-  title: string;
-  content: string;
-  category: string;
-}
-
-const FilterButton: React.FC<{
-  text: string;
-  active: boolean;
-  onClick: () => void;
-}> = ({ text, active, onClick }) => {
-  return (
-    <button
-      className={classNames(s.filter__button, { [s.active]: active })}
-      onClick={onClick}
-    >
-      {text}
-    </button>
-  );
-};
-
-const PaginationButton: React.FC<{
-  text: string;
-  active: boolean;
-  onClick: () => void;
-}> = ({ text, active, onClick }) => {
-  return (
-    <button
-      className={classNames(s.pagination__button, { [s.active]: active })}
-      onClick={onClick}
-    >
-      {text}
-    </button>
-  );
-};
+import useBlogPagination, { Blog } from "@/hooks/useBlogPagination";
+import useBlogFilter, { FilteredPaginationProps } from "@/hooks/useBlogFilter";
+import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
+import BlogFilterButton from "@/components/blog/BlogFilterButton";
 
 const BlogsSection = () => {
   // TEST OBJECT
@@ -56,12 +22,17 @@ const BlogsSection = () => {
       content: "2 Development: Dev Tips",
       category: "Development",
     },
-    { id: 3, title: "Blog 3", content: "3 Guides: How-To", category: "Guides" },
+    {
+      id: 3,
+      title: "Blog 3",
+      content: "3 Guides: How-To",
+      category: "Guides",
+    },
     {
       id: 4,
       title: "Blog 4",
       content: "4 Design: Creative Ideas",
-      category: "Designe",
+      category: "Design",
     },
     {
       id: 5,
@@ -78,33 +49,38 @@ const BlogsSection = () => {
     {
       id: 7,
       title: "Blog 7",
-      content: "1 Technology: Tech News",
-      category: "Technology",
+      content: "7 Supply chain: Supply chain News",
+      category: "Supply chain",
     },
     {
       id: 8,
       title: "Blog 8",
-      content: "2 Development: Dev Tips",
-      category: "Development",
+      content: "8 Healthcare: Healthcare Tips",
+      category: "Healthcare",
     },
-    { id: 9, title: "Blog 9", content: "3 Guides: How-To", category: "Guides" },
+    {
+      id: 9,
+      title: "Blog 9",
+      content: "9 Startups: How-To",
+      category: "Startups",
+    },
     {
       id: 10,
       title: "Blog 10",
-      content: "4 Design: Creative Ideas",
-      category: "Designe",
+      content: "10 Angular: Creative Ideas",
+      category: "Angular",
     },
     {
       id: 11,
       title: "Blog 11",
-      content: "5 E-learning: Online Courses",
-      category: "E-learning",
+      content: "11 Java: Online Courses",
+      category: "Java",
     },
     {
       id: 12,
       title: "Blog 12",
-      content: "6 Finance: Money Management",
-      category: "Finance",
+      content: "12 React: Money Management",
+      category: "React",
     },
     {
       id: 13,
@@ -128,7 +104,7 @@ const BlogsSection = () => {
       id: 16,
       title: "Blog 16",
       content: "4 Design: Creative Ideas",
-      category: "Designe",
+      category: "Design",
     },
     {
       id: 17,
@@ -145,38 +121,38 @@ const BlogsSection = () => {
     {
       id: 19,
       title: "Blog 19",
-      content: "1 Technology: Tech News",
-      category: "Technology",
+      content: "7 Supply chain: Supply chain News",
+      category: "Supply chain",
     },
     {
       id: 20,
       title: "Blog 20",
-      content: "2 Development: Dev Tips",
-      category: "Development",
+      content: "8 Healthcare: Healthcare Tips",
+      category: "Healthcare",
     },
     {
       id: 21,
       title: "Blog 21",
-      content: "3 Guides: How-To",
-      category: "Guides",
+      content: "9 Startups: How-To",
+      category: "Startups",
     },
     {
       id: 22,
       title: "Blog 22",
-      content: "4 Design: Creative Ideas",
-      category: "Designe",
+      content: "10 Angular: Creative Ideas",
+      category: "Angular",
     },
     {
       id: 23,
       title: "Blog 23",
-      content: "5 E-learning: Online Courses",
-      category: "E-learning",
+      content: "11 Java: Online Courses",
+      category: "Java",
     },
     {
       id: 24,
       title: "Blog 24",
-      content: "6 Finance: Money Management",
-      category: "Finance",
+      content: "12 React: Money Management",
+      category: "React",
     },
     {
       id: 25,
@@ -200,7 +176,7 @@ const BlogsSection = () => {
       id: 28,
       title: "Blog 28",
       content: "4 Design: Creative Ideas",
-      category: "Designe",
+      category: "Design",
     },
     {
       id: 29,
@@ -217,38 +193,38 @@ const BlogsSection = () => {
     {
       id: 31,
       title: "Blog 31",
-      content: "1 Technology: Tech News",
-      category: "Technology",
+      content: "7 Supply chain: Supply chain News",
+      category: "Supply chain",
     },
     {
       id: 32,
       title: "Blog 32",
-      content: "2 Development: Dev Tips",
-      category: "Development",
+      content: "8 Healthcare: Healthcare Tips",
+      category: "Healthcare",
     },
     {
       id: 33,
       title: "Blog 33",
-      content: "3 Guides: How-To",
-      category: "Guides",
+      content: "9 Startups: How-To",
+      category: "Startups",
     },
     {
       id: 34,
       title: "Blog 34",
-      content: "4 Design: Creative Ideas",
-      category: "Designe",
+      content: "10 Angular: Creative Ideas",
+      category: "Angular",
     },
     {
       id: 35,
       title: "Blog 35",
-      content: "5 E-learning: Online Courses",
-      category: "E-learning",
+      content: "11 Java: Online Courses",
+      category: "Java",
     },
     {
       id: 36,
       title: "Blog 36",
-      content: "6 Finance: Money Management",
-      category: "Finance",
+      content: "12 React: Money Management",
+      category: "React",
     },
     {
       id: 37,
@@ -272,7 +248,7 @@ const BlogsSection = () => {
       id: 40,
       title: "Blog 40",
       content: "4 Design: Creative Ideas",
-      category: "Designe",
+      category: "Design",
     },
     {
       id: 41,
@@ -289,177 +265,72 @@ const BlogsSection = () => {
     {
       id: 43,
       title: "Blog 43",
-      content: "1 Technology: Tech News",
-      category: "Technology",
+      content: "7 Supply chain: Supply chain News",
+      category: "Supply chain",
     },
     {
       id: 44,
       title: "Blog 44",
-      content: "2 Development: Dev Tips",
-      category: "Development",
+      content: "8 Healthcare: Healthcare Tips",
+      category: "Healthcare",
     },
     {
       id: 45,
       title: "Blog 45",
-      content: "3 Guides: How-To",
-      category: "Guides",
+      content: "9 Startups: How-To",
+      category: "Startups",
     },
     {
       id: 46,
       title: "Blog 46",
-      content: "4 Design: Creative Ideas",
-      category: "Designe",
+      content: "10 Angular: Creative Ideas",
+      category: "Angular",
     },
     {
       id: 47,
       title: "Blog 47",
-      content: "5 E-learning: Online Courses",
-      category: "E-learning",
+      content: "11 Java: Online Courses",
+      category: "Java",
     },
     {
       id: 48,
       title: "Blog 48",
-      content: "6 Finance: Money Management",
-      category: "Finance",
+      content: "12 React: Money Management",
+      category: "React",
     },
     {
       id: 49,
       title: "Blog 49",
-      content: "6 Finance: Money Management",
-      category: "Finance",
+      content: "1 Technology: Tech News",
+      category: "Technology",
     },
     {
       id: 50,
       title: "Blog 50",
-      content: "1 Technology: Tech News",
-      category: "Technology",
-    },
-    {
-      id: 51,
-      title: "Blog 51",
       content: "2 Development: Dev Tips",
       category: "Development",
-    },
-    {
-      id: 52,
-      title: "Blog 52",
-      content: "3 Guides: How-To",
-      category: "Guides",
-    },
-    {
-      id: 53,
-      title: "Blog 53",
-      content: "4 Design: Creative Ideas",
-      category: "Designe",
-    },
-    {
-      id: 54,
-      title: "Blog 54",
-      content: "5 E-learning: Online Courses",
-      category: "E-learning",
-    },
-    {
-      id: 55,
-      title: "Blog 55",
-      content: "6 Finance: Money Management",
-      category: "Finance",
-    },
-    {
-      id: 56,
-      title: "Blog 56",
-      content: "1 Technology: Tech News",
-      category: "Technology",
-    },
-    {
-      id: 57,
-      title: "Blog 57",
-      content: "2 Development: Dev Tips",
-      category: "Development",
-    },
-    {
-      id: 58,
-      title: "Blog 58",
-      content: "3 Guides: How-To",
-      category: "Guides",
-    },
-    {
-      id: 59,
-      title: "Blog 59",
-      content: "4 Design: Creative Ideas",
-      category: "Designe",
-    },
-    {
-      id: 60,
-      title: "Blog 60",
-      content: "5 E-learning: Online Courses",
-      category: "E-learning",
-    },
-    {
-      id: 61,
-      title: "Blog 61",
-      content: "6 Finance: Money Management",
-      category: "Finance",
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState<number>(1);
   const blogsPerPage = 6;
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
+  const {
+    selectedCategory,
+    handleCategoryChange,
+    filteredBlogs,
+  }: FilteredPaginationProps = useBlogFilter(blogsData);
 
-  const handleCategoryChange = (category: string | null) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
-  const filteredBlogs = selectedCategory
-    ? blogsData.filter((blog) => blog.category === selectedCategory)
-    : blogsData;
-
-  const totalPages = Math.ceil(filteredBlogs.length / blogsPerPage);
-  const currentBlogs = filteredBlogs.slice(
-    (currentPage - 1) * blogsPerPage,
-    currentPage * blogsPerPage
-  );
-
-  const getPageNumbersToShow = () => {
-    const totalPagesToShow = 5;
-
-    if (totalPages <= totalPagesToShow) {
-      return Array.from({ length: totalPages }).map((_, index) => index + 1);
-    }
-
-    const currentPageIndex = currentPage - 1;
-    const middlePageIndex = Math.floor(totalPagesToShow / 2);
-    let startPageIndex = currentPageIndex - middlePageIndex;
-    let endPageIndex = currentPageIndex + middlePageIndex;
-
-    if (currentPageIndex < middlePageIndex) {
-      startPageIndex = 0;
-      endPageIndex = totalPagesToShow - 1;
-    } else if (currentPageIndex > totalPages - middlePageIndex - 1) {
-      startPageIndex = totalPages - totalPagesToShow;
-      endPageIndex = totalPages - 1;
-    } else {
-      startPageIndex = currentPageIndex - middlePageIndex + 1;
-      endPageIndex = currentPageIndex + middlePageIndex;
-    }
-
-    return Array.from({ length: endPageIndex - startPageIndex + 1 }).map(
-      (_, index) => startPageIndex + index + 1
-    );
-  };
-
-  const handleFirstPage = () => {
-    handlePageChange(1);
-  };
-
-  const handleLastPage = () => {
-    handlePageChange(totalPages);
-  };
+  const {
+    currentPage,
+    totalPages,
+    currentBlogs,
+    getPageNumbersToShow,
+    handlePageChange,
+    handleFirstPage,
+    handleLastPage,
+    handlePreviousPage,
+    handleNextPage,
+  } = useBlogPagination(filteredBlogs, blogsPerPage);
 
   return (
     <section className={classNames(s.blog, s.container)}>
@@ -467,7 +338,6 @@ const BlogsSection = () => {
         <div className={s.blog__title}>
           <ServiceHeadingComponent headingText="Blog" container={true} />
         </div>
-
         <p className={s.blog__paragraph}>
           Our blog is a valuable resource that we provide to our clients and
           anyone interested in the field of technology. In our blog, you will
@@ -483,11 +353,17 @@ const BlogsSection = () => {
           "Technology",
           "Development",
           "Guides",
-          "Designe",
+          "Design",
           "E-learning",
           "Finance",
+          // "Supply chain",
+          // "Healthcare",
+          // "Startups",
+          // "Angular",
+          // "Java",
+          // "React",
         ].map((category) => (
-          <FilterButton
+          <BlogFilterButton
             key={category}
             text={category}
             active={
@@ -503,14 +379,10 @@ const BlogsSection = () => {
         ))}
       </div>
 
-      <div>
-        <BlogExtendedCardComponent />
-      </div>
-
       <div className={s.blog__cards}>
         {currentBlogs.map((blog) => (
           <div key={blog.id} className={s.blog__card}>
-            <h3>{blog.title}</h3>
+            <h2>{blog.title}</h2>
             <p>{blog.content}</p>
             <p>Category: {blog.category}</p>
           </div>
@@ -518,52 +390,32 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.pagination}>
-        <PaginationButton
-          key={"first"}
+        <BlogPaginationButton
           text={"First"}
-          active={false}
+          active={currentPage !== 1}
           onClick={handleFirstPage}
         />
-
-        {currentPage > 2 && (
-          <>
-            <PaginationButton
-              key={1}
-              text={"1"}
-              active={currentPage === 1}
-              onClick={() => handlePageChange(1)}
-            />
-            {currentPage > 3 && <span className={s.pagination__dot}>...</span>}
-          </>
-        )}
-
+        <BlogPaginationButton
+          text={"◁"}
+          active={currentPage > 1}
+          onClick={handlePreviousPage}
+        />
         {getPageNumbersToShow().map((pageNumber) => (
-          <PaginationButton
+          <BlogPaginationButton
             key={pageNumber}
             text={String(pageNumber)}
             active={pageNumber === currentPage}
             onClick={() => handlePageChange(pageNumber)}
           />
         ))}
-
-        {currentPage < totalPages - 2 && (
-          <>
-            {currentPage < totalPages - 3 && (
-              <span className={s.pagination__dot}>...</span>
-            )}
-            <PaginationButton
-              key={totalPages}
-              text={String(totalPages)}
-              active={currentPage === totalPages}
-              onClick={() => handlePageChange(totalPages)}
-            />
-          </>
-        )}
-
-        <PaginationButton
-          key={"last"}
+        <BlogPaginationButton
+          text={"▷"}
+          active={currentPage < totalPages}
+          onClick={handleNextPage}
+        />
+        <BlogPaginationButton
           text={"Last"}
-          active={false}
+          active={currentPage !== totalPages}
           onClick={handleLastPage}
         />
       </div>
