@@ -88,19 +88,6 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
               </div>
             ) : (
               <div
-                onClick={
-                  currentSlide - 1 === index ||
-                  (currentSlide === 0 && index === cardsData.length - 1)
-                    ? () => {
-                        embla?.scrollPrev();
-                      }
-                    : currentSlide + 1 === index ||
-                      (currentSlide === cardsData.length - 1 && index === 0)
-                    ? () => {
-                        embla?.scrollNext();
-                      }
-                    : undefined
-                }
                 className={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)
@@ -110,7 +97,21 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                     ? s.blogDesktop__rolledCardRight
                     : s.blogDesktop__rolledCardDefault
                 }>
-                <Carousel.Slide key={index}>
+                <Carousel.Slide
+                  onClick={
+                    currentSlide - 1 === index ||
+                    (currentSlide === 0 && index === cardsData.length - 1)
+                      ? () => {
+                          embla?.scrollPrev();
+                        }
+                      : currentSlide + 1 === index ||
+                        (currentSlide === cardsData.length - 1 && index === 0)
+                      ? () => {
+                          embla?.scrollNext();
+                        }
+                      : undefined
+                  }
+                  key={index}>
                   <BlogRolledCardComponent
                     title={x.title}
                     imageSrc={x.imageSrc}
