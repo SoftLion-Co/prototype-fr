@@ -1,14 +1,43 @@
 @import "./../styles/colors";
 @import "./../styles/mixin";
+@import "./../styles/container";
 
-.projects{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
-    &__slider{
-        @include for-size(tablet){
-            display: none;
-        }
+  @include for-size(tablet) {
+    gap: 100px;
+  }
+
+  @include for-size(laptop) {
+    gap: 147px;
+  }
+
+  @include for-size(desktop) {
+    gap: 160px;
+  }
+
+  &__mobile_slider {
+    @include for-size(tablet) {
+      display: none;
     }
+  }
+
+  &__desktop_wrapper {
+    @include for-size(phone) {
+      display: none;
+    }
+
+    @include for-size(tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    @include for-size(desktop) {
+      gap: 65px;
+    }
+  }
 }

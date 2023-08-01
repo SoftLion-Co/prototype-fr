@@ -24,17 +24,20 @@ const BlogMobileComponent: React.FC<BlogMobileProps> = ({ cardsData }) => {
         setCurrentSlide(index);
       }}
       withIndicators
+      skipSnaps
       withControls={false}
       loop={true}
       slideSize="clamp(250px,90vw,480px)"
+      slideGap="40px"
       styles={{
         viewport: {
-          height: "clamp(270px,95vw,500px)",
+          height: "100%",
+          paddingBottom: "40px",
         },
         indicators: {
-          alignItems: "center",
           paddingTop: "clamp(5px,5vw,15px)",
           position: "relative",
+          alignItems: "center",
           gap: 0,
         },
         indicator: {
@@ -57,7 +60,8 @@ const BlogMobileComponent: React.FC<BlogMobileProps> = ({ cardsData }) => {
             width: `calc(clamp(220px,90vw,450px)/${cardsData.length}*1.3)`,
           },
         },
-      }}>
+      }}
+    >
       {cardsData.map((x, index) => (
         <Carousel.Slide key={index}>
           <BlogMobileExtendedCardComponent

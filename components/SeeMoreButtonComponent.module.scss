@@ -1,13 +1,9 @@
-// SeeMoreButtonComponent.module.scss
 @import "./../styles/mixin";
 
 .see_more {
   display: flex;
   flex-direction: row-reverse;
 
-  @include for-size(desktop) {
-    padding-right: 41px;
-  }
   &__text {
     color: black;
     font-family: Basley;

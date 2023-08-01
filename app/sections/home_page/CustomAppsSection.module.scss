@@ -1,0 +1,55 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.custom {
+  @include for-size(tablet) {
+    padding-top: 50px; //Якщо будемо класти gap у OurServicesSection то ці падінги зверху від сеції треба забрати
+    padding-bottom: 30px;
+  }
+
+  @include for-size(tablet) {
+    padding-top: 90px; //Якщо будемо класти gap у OurServicesSection то ці падінги зверху від сеції треба забрати
+  }
+
+  @include for-size(tablet) {
+    padding-top: 125px; //Якщо будемо класти gap у OurServicesSection то ці падінги зверху від сеції треба забрати
+    padding-bottom: 0;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > :first-child {
+        margin-top: 111px;
+      }
+    }
+    @include for-size(laptop) {
+      gap: 39px;
+
+      & > :first-child {
+        margin-top: 170px;
+      }
+    }
+
+    @include for-size(desktop) {
+      & > :first-child {
+        margin-top: 225px;
+      }
+    }
+  }
+
+  &__more {
+    padding-top: 11px;
+
+    @include for-size(tablet) {
+      padding-top: 0;
+    }
+  }
+}

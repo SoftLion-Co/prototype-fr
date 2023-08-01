@@ -1,6 +1,7 @@
 import React, { FC, ComponentProps } from "react";
 import s from "./SeeMoreButtonComponent.module.scss";
 import Link from "next/link";
+import classNames from "classnames";
 
 interface SeeMoreButtonComponentProps extends ComponentProps<"button"> {
   path: "services" | "projects" | "blogs";
