@@ -8,12 +8,13 @@ import Visual from "../../../images/services/design/visual-design.svg";
 import Wireframing from "../../../images/services/design/wireframing.svg";
 import BigButtonComponent from "../../../components/BigButtonComponent";
 import ServiceDesignCardComponent from "../../../components/service/ServiceDesignCardComponent";
+import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 
 const DesignSection = () => {
   interface DesignInfoItem {
     alt: string;
     title: string;
-    imageSrc: StaticImageData; // Assuming it's the appropriate type for Next.js Image component.
+    imageSrc: string;
     description: string;
     id: number;
   }
@@ -71,14 +72,15 @@ const DesignSection = () => {
 
   return (
     <section className={`${s.container} ${s.design}`}>
+      <ServiceHeadingComponent headingText={"Desing"} container="false" />
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
           <ServiceDesignCardComponent key={info.id} {...info} />
         ))}
       </ul>
-      <BigButtonComponent className={s.design__btn}>
-        Book Consultation
-      </BigButtonComponent>
+      <div className={s.design__wrapperBtn}>
+        <BigButtonComponent />
+      </div>
     </section>
   );
 };

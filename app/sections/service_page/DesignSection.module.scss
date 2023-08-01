@@ -10,7 +10,17 @@
 
   @include for-size(tablet) {
     justify-content: center;
-    align-items: flex-end;
+    align-items: start;
+  }
+
+  &__wrapperBtn {
+    @include for-size(tablet) {
+      margin-left: auto;
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
   }
 
   &__list {
