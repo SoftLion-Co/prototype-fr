@@ -54,6 +54,7 @@ const OurProjectsSection = () => {
           data={sampleData}
           SlideComponent={ProjectMobileCardComponent}
         />
+        <SeeMoreButtonComponent path="projects" />
       </div>
       <div className={classNames(s.container, s.projects__desktop_wrapper)}>
         {sampleData.map((project) => (

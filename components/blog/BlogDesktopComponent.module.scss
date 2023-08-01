@@ -1,5 +1,14 @@
 @import "./../styles/mixin";
 
+.arrow {
+  height: 42px;
+  width: auto;
+
+  @include for-size(desktop) {
+    height: 55px;
+  }
+}
+
 .blogDesktop {
   width: 780px;
   button {
@@ -7,14 +16,14 @@
   }
 
   @include for-size(laptop) {
-    width: 1150px;
+    width: 1110px;
     button {
       font-size: 8px;
       display: flex;
     }
   }
   @include for-size(desktop) {
-    width: 1500px;
+    width: 1440px;
     button {
       font-size: 10px;
       display: flex;
@@ -38,36 +47,36 @@
   &__rolledCardLeft {
     cursor: pointer;
     @include for-size(tablet) {
-      padding: 0 78px 0 0;
+      margin: 0 78px 0 0;
     }
     @include for-size(laptop) {
-      padding: 0 120px 0 0;
+      margin: 0 120px 0 0;
     }
     @include for-size(desktop) {
-      padding: 0 147px 0 0;
+      margin: 0 147px 0 0;
     }
   }
   &__rolledCardRight {
     cursor: pointer;
     @include for-size(tablet) {
-      padding: 0 0 0 78px;
+      margin: 0 0 0 78px;
     }
     @include for-size(laptop) {
-      padding: 0 0 0 120px;
+      margin: 0 0 0 120px;
     }
     @include for-size(desktop) {
-      padding: 0 0 0 147px;
+      margin: 0 0 0 147px;
     }
   }
   &__rolledCardDefault {
     @include for-size(tablet) {
-      padding: 0 39px 0 39px;
+      margin: 0 39px 0 39px;
     }
     @include for-size(laptop) {
-      padding: 0 60px 0 60px;
+      margin: 0 60px 0 60px;
     }
     @include for-size(desktop) {
-      padding: 0 73.5px 0 73.5px;
+      margin: 0 73.5px 0 73.5px;
     }
   }
 }
