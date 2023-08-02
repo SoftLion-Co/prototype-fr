@@ -11,7 +11,7 @@ import SecuritySection from "../sections/service_page/SecuritySection";
 const Services = () => {
   return (
     <div>
-
+     <DevelopmentSection/>
      <CustomAppsSection/>
      <SecuritySection />
 
