@@ -45,38 +45,36 @@
   }
 
   &__rolledCardLeft {
-    cursor: pointer;
     @include for-size(tablet) {
-      margin: 0 78px 0 0;
+      padding: 0 78px 0 0;
     }
     @include for-size(laptop) {
-      margin: 0 120px 0 0;
+      padding: 0 120px 0 0;
     }
     @include for-size(desktop) {
-      margin: 0 147px 0 0;
+      padding: 0 147px 0 0;
     }
   }
   &__rolledCardRight {
-    cursor: pointer;
     @include for-size(tablet) {
-      margin: 0 0 0 78px;
+      padding: 0 0 0 78px;
     }
     @include for-size(laptop) {
-      margin: 0 0 0 120px;
+      padding: 0 0 0 120px;
     }
     @include for-size(desktop) {
-      margin: 0 0 0 147px;
+      padding: 0 0 0 147px;
     }
   }
   &__rolledCardDefault {
     @include for-size(tablet) {
-      margin: 0 39px 0 39px;
+      padding: 0 39px 0 39px;
     }
     @include for-size(laptop) {
-      margin: 0 60px 0 60px;
+      padding: 0 60px 0 60px;
     }
     @include for-size(desktop) {
-      margin: 0 73.5px 0 73.5px;
+      padding: 0 73.5px 0 73.5px;
     }
   }
 }
