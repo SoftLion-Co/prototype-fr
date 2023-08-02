@@ -3,37 +3,34 @@
 @import "../styles/mixin";
 
 .develop {
-   
-    &__heading{
-
-        margin-bottom: 44px;
-        @include for-size(tablet) {
-            margin-bottom: 85px;
-        }
-    
-        @include for-size(laptop) {
-            margin-bottom: 201px;
-        }
-    
-        @include for-size(desktop) {
-            margin-bottom: 262px;
-        }
-      }
-    
-  &__desktop {
-    
+  &__heading {
+    margin-bottom: 44px;
     @include for-size(tablet) {
-        display: flex;
-    flex-direction: column;
-    gap: 68px;
+      margin-bottom: 85px;
     }
 
     @include for-size(laptop) {
-        gap: 111px;
+      margin-bottom: 201px;
     }
 
     @include for-size(desktop) {
-        gap: 145px;
+      margin-bottom: 262px;
+    }
+  }
+
+  &__desktop {
+    @include for-size(tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: 68px;
+    }
+
+    @include for-size(laptop) {
+      gap: 111px;
+    }
+
+    @include for-size(desktop) {
+      gap: 145px;
     }
   }
 
@@ -43,13 +40,7 @@
     gap: 51px;
 
     @include for-size(tablet) {
-        display:none;
+      display: none;
     }
-
-    @include for-size(laptop) {
-    }
-
-    @include for-size(desktop) {
-    }
-}
+  }
 }

@@ -13,7 +13,7 @@ const DevelopmentCardMobileComponent: FC<
   DevelopmentCardMobileComponentProps
 > = ({ path, title, items, num }) => {
   return (
-    <div className={s.develop}>
+    <section className={s.develop}>
       <div className={s.develop__upsection}>
         <div className={s.develop__wrap}>
           <p className={s.develop__num}>{num}</p>
@@ -28,7 +28,7 @@ const DevelopmentCardMobileComponent: FC<
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

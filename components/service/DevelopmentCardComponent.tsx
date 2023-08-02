@@ -19,7 +19,7 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
   
 }) => {
   return (
-    <div className={s.develop}>
+    <section className={s.develop}>
       <div className={s.develop__title}>{title}</div>
       <div className={s.develop__box}>
         {variant === "variant1" ? (
@@ -48,7 +48,7 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
           </>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,8 +5,8 @@ import pic1 from "../../../images/services/development/analytics-and-planning.sv
 import pic2 from "../../../images/services/development/design-and-development.svg";
 import pic3 from "../../../images/services/development/testing-and-debuging.svg";
 import pic4 from "../../../images/services/development/deployment-and-maintenance.svg";
-import DevelopmentCardComponent from "@/components/services/DevelopmentCardComponent";
-import DevelopmentCardMobileComponent from "@/components/services/DevelopmentCardMobileComponent";
+import DevelopmentCardComponent from "@/components/service/DevelopmentCardComponent";
+import DevelopmentCardMobileComponent from "@/components/service/DevelopmentCardMobileComponent";
 
 
 const cardsData = [
