@@ -58,7 +58,7 @@ const cardsData = [
 
 const DevelopmentSection = () => {
   return (
-    <div className={classNames(s.container, s.develop)}>
+    <section className={classNames(s.container, s.develop)}>
        <div className={s.develop__heading}>
        <ServiceHeadingComponent headingText={" Development"} container={false}/>
        </div>
@@ -85,7 +85,7 @@ const DevelopmentSection = () => {
         /> 
       ))}
        </div>
-  </div>
+  </section>
 );
 };
 

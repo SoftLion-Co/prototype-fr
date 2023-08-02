@@ -3,21 +3,15 @@
 @import "../styles/mixin";
 
 .custom {
-  
-
-
   &__cards {
     display: flex;
-  flex-direction: column;
-  align-items: stretch;
-      
+    flex-direction: column;
+    align-items: stretch;
+
     @include for-size(tablet) {
       position: relative;
-      
       flex-direction: row;
       justify-content: space-between;
-      
-      
     }
     @include for-size(laptop) {
       gap: 40px;
@@ -25,22 +19,18 @@
     @include for-size(desktop) {
       gap: 41px;
     }
-
   }
 
   &__card {
     margin-top: 78px;
     @include for-size(tablet) {
       margin-top: 140px;
-      
     }
     @include for-size(laptop) {
       margin-top: 130px;
-   
     }
     @include for-size(desktop) {
       margin-top: 169px;
-    
     }
   }
   &__card2 {
@@ -63,7 +53,6 @@
       background-color: transparent;
       border: none;
       padding: 0px;
-
       position: absolute;
       right: 22px;
       bottom: -56px;
