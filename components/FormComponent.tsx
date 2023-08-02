@@ -89,7 +89,9 @@ const FormComponent = () => {
             type="text"
             className={s.form__field}
             placeholder=" "
-            {...register("description", { required: "Description is required" })}
+            {...register("description", {
+              required: "Description is required",
+            })}
           />
           <label className={s.form__label} htmlFor="description">
             Short describe ur idea
