@@ -35,7 +35,11 @@ const FormComponent = () => {
       };
 
       // Replace "https://example.com/api/submit" with your actual backend endpoint
-      const response = await axios.post("https://example.com/api/submit", formData);
+
+      const response = await axios.post(
+        "https://example.com/api/submit",
+        formData
+      );
 
       console.log("Форма успішно надіслана:", response.data);
 
@@ -89,7 +93,9 @@ const FormComponent = () => {
             type="text"
             className={s.form__field}
             placeholder=" "
-            {...register("description", { required: "Description is required" })}
+            {...register("description", {
+              required: "Description is required",
+            })}
           />
           <label className={s.form__label} htmlFor="description">
             Short describe ur idea
