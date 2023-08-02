@@ -15,25 +15,30 @@ const FormComponent = () => {
   const [phone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-  const { handleSubmit, register, formState: { errors }, reset } = useForm<FormData>();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>();
 
   const handleFormSubmit = async (data: FormData) => {
     try {
       console.log("email:", data.email);
       console.log("phone:", phone);
       console.log("description:", data.description);
-  
+
       const formData = {
         email: data.email,
         phone: phone,
         description: data.description,
       };
-  
+
       // Replace "https://example.com/api/submit" with your actual backend endpoint
       const response = await axios.post("https://example.com/api/submit", formData);
-  
+
       console.log("Форма успішно надіслана:", response.data);
-  
+
       setIsFormSubmitted(true);
       reset();
       setPhone("");
@@ -63,9 +68,7 @@ const FormComponent = () => {
           <label className={s.form__label} htmlFor="email">
             E-mail
           </label>
-          {errors.email && (
-            <p className={s.error}>{errors.email.message}</p>
-          )}
+          {errors.email && <p className={s.error}>{errors.email.message}</p>}
         </div>
         <div className={s.form__input}>
           <PhoneInput
@@ -79,9 +82,7 @@ const FormComponent = () => {
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
           />
-          {errors.phone && (
-            <p className={s.error}>{errors.phone.message}</p>
-          )}
+          {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>
         <div className={s.form__input}>
           <input
@@ -93,26 +94,17 @@ const FormComponent = () => {
           <label className={s.form__label} htmlFor="description">
             Short describe ur idea
           </label>
-          {errors.description && (
-            <p className={s.error}>{errors.description.message}</p>
-          )}
+          {errors.description && <p className={s.error}>{errors.description.message}</p>}
         </div>
       </div>
       <button type="submit" className={s.form__button}>
         Book Consultation
       </button>
       <p className={s.form__text}>
-        By clicking on this button I agree to the{" "}
-        <span className={s.pr}>processing of personal data</span>
+        By clicking on this button I agree to the <span className={s.pr}>processing of personal data</span>
       </p>
     </form>
   );
 };
 
 export default FormComponent;
-
-
-
-
-
-

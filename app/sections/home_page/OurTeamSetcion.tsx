@@ -4,11 +4,15 @@ import HeadingComponent from "@/components/HeadingComponent";
 import s from "./OurTeamSetcion.module.scss";
 import classNames from "classnames";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
-import { Carousel } from "@mantine/carousel";
+import { Carousel, Embla } from "@mantine/carousel";
 import { useState } from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
+import Image from "next/image";
+import ArrowLeft from "../../../images/navigation/arrow-left.svg";
+import ArrowRight from "../../../images/navigation/arrow-right.svg";
 
 const OurTeamSetcion = () => {
+  const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(2);
 
   const response = [
@@ -62,6 +66,11 @@ const OurTeamSetcion = () => {
     },
   ];
 
+  const setActiveCard = (index: number): void => {
+    const slideIndex = index - 2 > 0 ? index - 2 : index - 2 + response.length;
+    embla?.scrollTo(slideIndex);
+  };
+
   return (
     <div className={classNames(s.container, s.team_section)}>
       <HeadingComponent customClass={s.team_section_title} text="Our team" />
@@ -70,20 +79,36 @@ const OurTeamSetcion = () => {
       </div>
       <div className={s.desctop_slider}>
         <Carousel
+          getEmblaApi={setEmbla}
           classNames={{ container: s.custom, control: s.custom_control }}
           onSlideChange={(index) => {
             const slideIndex = index + 2 < response.length ? index + 2 : index + 2 - response.length;
             setCurrentSlide(slideIndex);
           }}
+          previousControlIcon={
+            <Image
+              className={classNames(s.arrow, s.arrow_left)}
+              height={30}
+              width={30}
+              src={ArrowLeft}
+              alt="45"></Image>
+          }
+          nextControlIcon={
+            <Image
+              className={classNames(s.arrow, s.arrow_right)}
+              height={30}
+              width={30}
+              src={ArrowRight}
+              alt="45"></Image>
+          }
           slideSize="20%"
           align="start"
           loop
           slidesToScroll={1}
-          speed={3}
         >
           {response.map((member, index) => (
-            <Carousel.Slide key={member.id}>
-              <OurTeamCard data={member} isActive={currentSlide === index}/>
+            <Carousel.Slide onClick={() => setActiveCard(index)} key={member.id}>
+              <OurTeamCard data={member} isActive={currentSlide === index} />
             </Carousel.Slide>
           ))}
         </Carousel>

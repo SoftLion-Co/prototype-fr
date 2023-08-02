@@ -2,6 +2,7 @@
 @import "../../styles/mixin";
 
 .member {
+  cursor: pointer;
   display: flex;
   gap: 29px;
   align-items: center;
@@ -128,7 +129,6 @@
         color: $heading-blue-color;
         font-size: 12px;
         letter-spacing: 0.7px;
-        transition: color 300ms linear;
       }
 
       @include for-size(laptop) {

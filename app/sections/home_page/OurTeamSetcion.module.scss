@@ -4,6 +4,7 @@
 
 .team_section {
   .team_section_title {
+    box-sizing: border-box;
     margin-bottom: 25px;
 
     @include for-size(tablet) {
@@ -20,6 +21,7 @@
     }
 
     h1 {
+      box-sizing: border-box;
       width: 100%;
 
       @include for-size(tablet) {
@@ -35,43 +37,69 @@
       }
     }
   }
+
   .custom {
     align-items: center;
   }
+
   .custom_control {
     border: none;
     box-shadow: none;
     background-color: transparent;
-
-    svg {
-  
-      @include for-size(tablet) {
-        width: 26px !important;
-        height: 26px !important;
-      }
-
-      @include for-size(laptop) {
-        width: 42px !important;
-        height: 42px !important;
-      }
-
-      @include for-size(desktop) {
-        width: 55px !important;
-        height: 55px !important;
-      }
-    }
   }
 }
-
 .mobile_slider {
   @include for-size(tablet) {
-   display: none;
+    display: none;
   }
 }
 
 .desctop_slider {
   display: none;
   @include for-size(tablet) {
-   display: initial;
+    display: initial;
+  }
+}
+
+.arrow {
+  @include for-size(tablet) {
+    height: 26px;
+    width: auto;
+  }
+
+  @include for-size(laptop) {
+    height: 42px;
+  }
+
+  @include for-size(desktop) {
+    height: 55px;
+  }
+}
+
+.arrow_left {
+  @include for-size(tablet) {
+    margin-left: -74px;
+  }
+
+  @include for-size(laptop) {
+    margin-left: -92px;
+  }
+
+  @include for-size(desktop) {
+    margin-left: -112px;
+  }
+}
+
+.arrow_right {
+  @include for-size(tablet) {
+    margin-right: -74px;
+  }
+
+  @include for-size(laptop) {
+    margin-right: -92px;
+  }
+
+  @include for-size(desktop) {
+    margin-right: -112px;
   }
 }
