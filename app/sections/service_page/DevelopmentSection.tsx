@@ -1,3 +1,4 @@
+"use client"
 import s from "./DevelopmentSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
@@ -7,6 +8,7 @@ import pic3 from "../../../images/services/development/testing-and-debuging.svg"
 import pic4 from "../../../images/services/development/deployment-and-maintenance.svg";
 import DevelopmentCardComponent from "@/components/service/DevelopmentCardComponent";
 import DevelopmentCardMobileComponent from "@/components/service/DevelopmentCardMobileComponent";
+
 
 
 const cardsData = [
@@ -19,7 +21,7 @@ const cardsData = [
       "Defining project goals, studying requirements, and understanding user needs.",
     ],
     path: pic1,
-    variant: "variant1",
+    leftAligned: true,
   },
   {
     num: 2,
@@ -30,7 +32,7 @@ const cardsData = [
       "Implementing testing and bug fixing.",
     ],
     path: pic2,
-    variant: "variant2",
+    
   },
   {
     num: 3,
@@ -41,7 +43,7 @@ const cardsData = [
       "Performing compatibility testing, security testing, and load testing.",
     ],
     path: pic3,
-    variant: "variant1",
+    leftAligned: true,
   },
   {
     num: 4,
@@ -52,13 +54,13 @@ const cardsData = [
       "Providing user support, updating functionality, and product development.",
     ],
     path: pic4,
-    variant: "variant2",
+
   },
 ];
 
 const DevelopmentSection = () => {
   return (
-    <section className={classNames(s.container, s.develop)}>
+    <div className={classNames(s.container, s.develop)}>
        <div className={s.develop__heading}>
        <ServiceHeadingComponent headingText={" Development"} container={false}/>
        </div>
@@ -74,6 +76,7 @@ const DevelopmentSection = () => {
     ))}
     </div>
     <div className={s.develop__desktop}>
+  
      {cardsData.map((data) => (
         <DevelopmentCardComponent
           key={data.num}
@@ -81,12 +84,13 @@ const DevelopmentSection = () => {
           title={data.title}
           items={data.items}
           path={data.path}
-          variant={data.variant}
+          leftAligned={data.leftAligned}
         /> 
       ))}
        </div>
-  </section>
+  </div>
 );
 };
 
 export default DevelopmentSection;
+

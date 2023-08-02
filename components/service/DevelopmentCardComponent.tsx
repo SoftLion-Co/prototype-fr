@@ -7,7 +7,7 @@ interface DevelopmentCardComponentProps {
   title?: string;
   items: string[];
   num?: number;
-  variant?: "variant1" | "variant2" | string | undefined;
+  leftAligned?: boolean;
 }
 
 const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
@@ -15,14 +15,14 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
   title,
   items,
   num,
-  variant=null,
+leftAligned,
   
 }) => {
   return (
-    <section className={s.develop}>
+    <div className={s.develop}>
       <div className={s.develop__title}>{title}</div>
       <div className={s.develop__box}>
-        {variant === "variant1" ? (
+        {leftAligned? (
           <>
             <Image className={s.develop__pic} src={path} alt="development" />
             <ul className={s.develop__list}>
@@ -48,7 +48,7 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
           </>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

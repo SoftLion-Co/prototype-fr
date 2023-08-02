@@ -8,8 +8,8 @@ import classNames from "classnames";
 
 const CustomAppsSection = () => {
   return (
-    <div className={classNames(s.container, s.custom)}>
-      <div className={s.custom_title}>
+    <section  className={classNames(s.container, s.custom)}>
+      <div className={s.custom__title}>
         <ServiceHeadingComponent
           headingText={"Custom Apps"}
           container={false}
@@ -38,7 +38,7 @@ const CustomAppsSection = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
