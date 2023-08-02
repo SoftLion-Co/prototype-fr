@@ -4,18 +4,18 @@
 
 .footer {
   @include for-size(tablet) {
-    padding-top: 32px;
-    padding-bottom: 50px;
+    margin-top: 32px;
+    margin-bottom: 50px;
   }
 
   @include for-size(laptop) {
-    padding-top: 61px;
-    padding-bottom: 94px;
+    margin-top: 61px;
+    margin-bottom: 94px;
   }
 
   @include for-size(desktop) {
-    padding-top: 61px;
-    padding-bottom: 94px;
+    margin-top: 61px;
+    margin-bottom: 94px;
   }
   &__mainWrap {
     display: flex;

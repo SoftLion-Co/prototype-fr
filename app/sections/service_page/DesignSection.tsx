@@ -1,11 +1,7 @@
-import s from "./DesignSection.module.scss"
+import s from "./DesignSection.module.scss";
 
 const DesignSection = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default DesignSection
+export default DesignSection;
