@@ -2,22 +2,27 @@ import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 
 interface BlogExtendedCardComponentProps {
+  id: number;
   title: string;
   author: string;
   authorIconSrc: string;
   readingTime: string;
   text: string;
   imageSrc: string;
+  tags: string[];
 }
 
 const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
+  id,
   title,
   author,
   authorIconSrc,
   readingTime,
   text,
   imageSrc,
+  tags,
 }) => {
+  console.log(tags);
   return (
     <div className={s.card}>
       <div className={s.card__container}>
@@ -33,6 +38,13 @@ const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
             <p className={s.info__author__name}>{author}</p>
           </div>
           <p className={s.info__readingTime}>Reading Time: {readingTime}</p>
+          <div className={s.tags}>
+            {tags?.map((tag, index) => (
+              <p className={s.tags__item} key={index}>
+                {tag}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
       <div className={s.card__line}></div>

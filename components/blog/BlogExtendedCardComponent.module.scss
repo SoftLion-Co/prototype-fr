@@ -85,34 +85,34 @@
 .image {
   object-fit: cover;
   width: 150px;
-  height: 110px;
+  height: 120px;
   margin-right: 10px;
 
   @include for-size(laptop) {
     width: 220px;
-    height: 160px;
+    height: 180px;
     margin-right: 15px;
   }
 
   @include for-size(desktop) {
     width: 300px;
-    height: 220px;
+    height: 240px;
     margin-right: 20px;
   }
 }
 
 .info {
   width: 175px;
-  height: 110px;
+  height: 120px;
 
   @include for-size(laptop) {
     width: 250px;
-    height: 160px;
+    height: 180px;
   }
 
   @include for-size(desktop) {
     width: 320px;
-    height: 220px;
+    height: 240px;
   }
 
   text-align: left;
@@ -120,14 +120,14 @@
   flex-direction: column;
 
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 
     @include for-size(laptop) {
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
     @include for-size(desktop) {
-      margin-bottom: 35px;
+      margin-bottom: 15px;
     }
 
     line-height: 1.4em;
@@ -137,28 +137,18 @@
   }
 
   &__author {
-    margin-bottom: 5px;
-
-    @include for-size(laptop) {
-      margin-bottom: 8px;
-    }
-
-    @include for-size(desktop) {
-      margin-bottom: 10px;
-    }
-
     display: flex;
     align-items: center;
 
     &__icon {
-      margin: 5px 5px 5px 0;
+      margin: 0px 5px 0px 0;
 
       @include for-size(laptop) {
-        margin: 8px 8px 8px 0;
+        margin: 0px 8px 0px 0;
       }
 
       @include for-size(desktop) {
-        margin: 10px 10px 10px 0;
+        margin: 0px 10px 0px 0;
       }
 
       border-radius: 50%;
@@ -173,10 +163,39 @@
 
   &__readingTime {
     color: #000000b2;
+    margin: 3px 0 3px 0;
+
+    @include for-size(laptop) {
+      margin: 6px 0 6px 0;
+    }
+    @include for-size(desktop) {
+      margin: 9px 0 9px 0;
+    }
   }
 }
 
 .article {
   display: flex;
   align-items: end;
+}
+
+.tags {
+  gap: 3px;
+
+  @include for-size(laptop) {
+    gap: 6px;
+  }
+  @include for-size(desktop) {
+    gap: 9px;
+  }
+
+  font-size: 0.8em;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    padding: 1px 5px 0px 5px;
+    border: 1px solid #bcbcbc;
+    background-color: #e5e1e158;
+    border-radius: 100px;
+  }
 }
