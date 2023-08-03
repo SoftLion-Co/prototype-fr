@@ -4,15 +4,15 @@
 
 .custom {
   &__title{
-    margin-bottom: 68px;
+    margin-bottom: 40px;
     @include for-size(tablet) {
-      margin-bottom: 81px;
+      margin-bottom: 40px;
     }
     @include for-size(laptop) {
-      margin-bottom: 131px;
+      margin-bottom: 60px;
     }
     @include for-size(desktop) {
-      margin-bottom: 171px;
+      margin-bottom: 80px;
     }
 
   }
