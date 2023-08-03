@@ -180,21 +180,23 @@
 }
 
 .tags {
+  font-size: 8px;
   gap: 3px;
 
   @include for-size(laptop) {
+    font-size: 12px;
     gap: 6px;
   }
   @include for-size(desktop) {
+    font-size: 16px;
     gap: 9px;
   }
 
-  font-size: 0.8em;
   display: flex;
   flex-wrap: wrap;
   &__item {
-    padding: 1px 5px 0px 5px;
-    border: 1px solid #bcbcbc;
+    padding: 0px 5px 0px 5px;
+    border: 1px solid #bcbcbc50;
     background-color: #e5e1e158;
     border-radius: 100px;
   }
