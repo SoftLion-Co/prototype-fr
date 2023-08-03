@@ -18,7 +18,7 @@
   @include for-size(tablet) {
     width: 348px;
     height: 460px;
-    padding: 64px 45px 15px 45px;
+    padding: 64px 30px 15px 30px;
     border-radius: 8px;
     align-items: left;
   }
@@ -26,13 +26,13 @@
     width: 519px;
     height: 692px;
     border-radius: 12px;
-    padding: 76px 75px 15px 75px;
+    padding: 40px 75px 40px 75px;
   }
   @include for-size(desktop) {
     width: 680px;
     height: 899px;
     border-radius: 15px;
-    padding: 100px 142px 15px 142px;
+    padding: 90px 64px 80px 64px;
   }
 
   &__wrap {
@@ -40,21 +40,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @include for-size(tablet) {
-      width: 100%;
-    }
-    @include for-size(laptop) {
-      width: 100%;
-    }
-    @include for-size(desktop) {
-      width: 100%;
-    }
   }
 
   &__pic {
     width: 57px;
     height: 56px;
+    margin-bottom: 17px;
 
     @include for-size(tablet) {
       width: 75px;
@@ -66,10 +57,12 @@
       width: 113px;
       height: 111px;
       position: static;
+      margin-bottom: 26px;
     }
     @include for-size(desktop) {
       width: 148px;
       height: 145px;
+      margin-bottom: 40px;
     }
   }
   &__title {
@@ -78,18 +71,20 @@
     letter-spacing: 0.6px;
     color: black;
     line-height: 26px;
-    margin-top: 17px;
     text-align: center;
 
+    @include for-size(tablet) {
+      margin-bottom: 18px;
+    }
     @include for-size(laptop) {
+      margin-bottom: 32px;
       font-size: 30px;
-      margin-top: 26px;
       line-height: 36px;
     }
     @include for-size(desktop) {
       font-size: 40px;
-      margin-top: 40px;
       line-height: 52px;
+      margin-bottom: 40px;
     }
   }
   &__text {
@@ -101,20 +96,17 @@
       width: 245px;
       height: 226px;
       letter-spacing: 0.04px;
-      margin-top: 18px;
     }
     @include for-size(laptop) {
       font-size: 15.38px;
       width: 368px;
       height: 340px;
-      margin-top: 32px;
       line-height: 130%;
     }
     @include for-size(desktop) {
       font-size: 20px;
       width: 479px;
       height: 443px;
-      margin-top: 40px;
       line-height: 130%;
     }
   }
@@ -130,7 +122,6 @@
     @include for-size(tablet) {
       display: none;
     }
-
   }
   &__link {
     color: black;
@@ -158,10 +149,6 @@
 
   &__arrow {
     font-size: 32px;
-
-    @include for-size(tablet) {
-      font-size: 32px;
-    }
     @include for-size(laptop) {
       font-size: 68px;
     }
