@@ -2,27 +2,39 @@ import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 
 interface BlogExtendedCardComponentProps {
+  id: number;
   title: string;
   author: string;
   authorIconSrc: string;
   readingTime: string;
   text: string;
   imageSrc: string;
+  tags: string[];
 }
 
 const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
+  id,
   title,
   author,
   authorIconSrc,
   readingTime,
   text,
   imageSrc,
+  tags,
 }) => {
+  console.log(tags);
   return (
     <div className={s.card}>
       <div className={s.card__container}>
         <img alt="Softlion image" className={s.image} src={imageSrc} />
         <div className={s.info}>
+          <div className={s.tags}>
+            {tags?.map((tag, index) => (
+              <p className={s.tags__item} key={index}>
+                {tag}
+              </p>
+            ))}
+          </div>
           <h2 className={s.info__title}>{title}</h2>
           <div className={s.info__author}>
             <img
