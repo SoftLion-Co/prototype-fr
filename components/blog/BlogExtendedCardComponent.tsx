@@ -28,6 +28,13 @@ const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
       <div className={s.card__container}>
         <img alt="Softlion image" className={s.image} src={imageSrc} />
         <div className={s.info}>
+          <div className={s.tags}>
+            {tags?.map((tag, index) => (
+              <p className={s.tags__item} key={index}>
+                {tag}
+              </p>
+            ))}
+          </div>
           <h2 className={s.info__title}>{title}</h2>
           <div className={s.info__author}>
             <img
@@ -38,13 +45,6 @@ const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
             <p className={s.info__author__name}>{author}</p>
           </div>
           <p className={s.info__readingTime}>Reading Time: {readingTime}</p>
-          <div className={s.tags}>
-            {tags?.map((tag, index) => (
-              <p className={s.tags__item} key={index}>
-                {tag}
-              </p>
-            ))}
-          </div>
         </div>
       </div>
       <div className={s.card__line}></div>

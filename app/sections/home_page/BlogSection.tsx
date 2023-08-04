@@ -19,7 +19,7 @@ const cardsData = [
     readingTime: "5 mins",
     imageSrc:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMFwxR9K8bBDPDKyX4YO9TQ6wf5wf4pAZsbA&usqp=CAU",
-    tags: ["Tag1", "Medium tag", "Looooong tag", "Tag2"],
+    tags: ["Tag1", "AI", "Education", "Development"],
     text: "Sed ut perspiciatis, unde ossssssssssss sssssssssssssss ssssssssssss  ssssssssmnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 1",
   },
   {
