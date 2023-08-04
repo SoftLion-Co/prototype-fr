@@ -1,0 +1,64 @@
+@import "@/styles/colors";
+@import "@/styles/container";
+@import "@/styles/mixin";
+
+.custom_breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 130.49%;
+  letter-spacing: 0.26px;
+
+  @include for-size(tablet) {
+    font-size: 10px;
+    letter-spacing: 0.52px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 13px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  &__home {
+    height: 10px;
+    width: 10px;
+    @include for-size(tablet) {
+      width: 15px;
+      height: 15px;
+    }
+
+    @include for-size(laptop) {
+        width: 20px;
+        height: 20px;
+      }
+  }
+
+  &__link {
+    color: $navigation-light;
+    text-decoration: none;
+
+    &:hover {
+      color: $navigation-dark;
+    }
+  }
+
+  &__active {
+    color: $navigation-dark;
+  }
+
+  &__separator {
+    color: $navigation-light;
+    margin: 0 4px;
+    font-weight: normal;
+
+    @include for-size(tablet) {
+      margin: 0 8px;
+    }
+  }
+}
