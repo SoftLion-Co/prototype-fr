@@ -1,5 +1,5 @@
 "use client";
-import s from "./page.module.scss"
+import s from "./page.module.scss";
 import React from "react";
 import HeroSection from "./sections/home_page/HeroSection";
 import CookiesComponent from "@/components/CookiesComponent";
