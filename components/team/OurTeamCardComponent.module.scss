@@ -43,29 +43,21 @@
   }
 
   &_information {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
     @include for-size(tablet) {
+      align-items: center;
+      gap: 5px;
     }
 
     @include for-size(laptop) {
+      gap: 8px;
     }
 
     @include for-size(desktop) {
-    }
-
-    .member_name {
-      margin-bottom: 6px;
-
-      @include for-size(tablet) {
-        margin-bottom: 5px;
-      }
-
-      @include for-size(laptop) {
-        margin-bottom: 8px;
-      }
-
-      @include for-size(desktop) {
-        margin-bottom: 10px;
-      }
+      gap: 10px;
     }
 
     .member_name,
@@ -141,5 +133,37 @@
         letter-spacing: 1.5px;
       }
     }
+  }
+
+  &:not(.active) {
+    @include for-size(tablet) {
+      margin-top: 19px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: 35px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: 44px;
+    }
+  }
+}
+
+.member_linkedin {
+  color: $blog-card-text-color;
+  font-size: 14px;
+
+  @include for-size(tablet) {
+    color: $heading-blue-color;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 20px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 25px;
   }
 }

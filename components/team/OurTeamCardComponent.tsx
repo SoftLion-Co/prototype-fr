@@ -2,18 +2,20 @@ import Image from "next/image";
 import s from "./OurTeamCardComponent.module.scss";
 import { FC } from "react";
 import classNames from "classnames";
+import { FiLinkedin } from "react-icons/fi";
 
 interface TeamsProps {
- data: {
+  data: {
     name: string;
     position: string;
     avatar: string;
     id: string;
-  }
+    linkedinUrl: string;
+  };
   isActive?: boolean;
 }
 
-const OurTeamCard: FC<TeamsProps> = ({data, isActive}) => {
+const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
   const memberClassName = isActive ? classNames(s.member, s.active) : s.member;
 
   return (
@@ -23,7 +25,14 @@ const OurTeamCard: FC<TeamsProps> = ({data, isActive}) => {
       </div>
       <div className={s.member_information}>
         <p className={s.member_name}>{data.name}</p>
-        <p className={s.member_position}>{data.position}</p>
+        {isActive && (
+          <>
+            <p className={s.member_position}>{data.position}</p>
+            <a className={s.member_linkedin} href={data.linkedinUrl}>
+              <FiLinkedin className={s.linkedin_icon} />
+            </a>
+          </>
+        )}
       </div>
     </div>
   );

@@ -21,48 +21,56 @@ const OurTeamSetcion = () => {
       name: "Gregory Rackham",
       position: "Project Manager",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "2",
       name: "Michael Jackson",
       position: "CEO",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "3",
       name: "Jon Statham",
       position: "Frontend Developer",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "4",
       name: "Rob Stand",
       position: "Backend Developer",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "5",
       name: "Tom Cruz",
       position: "Frontend Developer",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "6",
       name: "Jacky Chan",
       position: "QA Engineer",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "7",
       name: "Marry Jain",
       position: "CTO",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
     {
       id: "8",
       name: "Mary Popins",
       position: "Data Analist",
       avatar: "https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg",
+      linkedinUrl: "",
     },
   ];
 
@@ -80,27 +88,15 @@ const OurTeamSetcion = () => {
       <div className={s.desctop_slider}>
         <Carousel
           getEmblaApi={setEmbla}
-          classNames={{ container: s.custom, control: s.custom_control }}
+          classNames={{ control: s.custom_control }}
           onSlideChange={(index) => {
             const slideIndex = index + 2 < response.length ? index + 2 : index + 2 - response.length;
             setCurrentSlide(slideIndex);
           }}
           previousControlIcon={
-            <Image
-              className={classNames(s.arrow, s.arrow_left)}
-              height={30}
-              width={30}
-              src={ArrowLeft}
-              alt="45"></Image>
+            <Image className={classNames(s.arrow, s.arrow_left)} height={30} width={30} src={ArrowLeft} alt="45"></Image>
           }
-          nextControlIcon={
-            <Image
-              className={classNames(s.arrow, s.arrow_right)}
-              height={30}
-              width={30}
-              src={ArrowRight}
-              alt="45"></Image>
-          }
+          nextControlIcon={<Image className={classNames(s.arrow, s.arrow_right)} height={30} width={30} src={ArrowRight} alt="45"></Image>}
           slideSize="20%"
           align="start"
           loop

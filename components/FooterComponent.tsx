@@ -20,7 +20,6 @@ const FooterComponent = () => {
                 src={Logo}
                 width={800}
                 height={554}
-                alt="SoftLion"
               />
             </Link>
             <div className={s.footer__routeWrap2}>

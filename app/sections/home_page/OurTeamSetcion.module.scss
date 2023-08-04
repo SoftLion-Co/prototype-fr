@@ -38,10 +38,6 @@
     }
   }
 
-  .custom {
-    align-items: center;
-  }
-
   .custom_control {
     border: none;
     box-shadow: none;
@@ -65,14 +61,17 @@
   @include for-size(tablet) {
     height: 26px;
     width: auto;
+    margin-top: -66px;
   }
 
   @include for-size(laptop) {
     height: 42px;
+    margin-top: -110px;
   }
 
   @include for-size(desktop) {
     height: 55px;
+    margin-top: -140px;
   }
 }
 

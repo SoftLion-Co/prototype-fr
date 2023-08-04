@@ -16,11 +16,17 @@ interface FormData {
 
 const ImpressionSection = () => {
   const [value, setValue] = useState(0);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm<FormData>();
+
+  watch(({ name, email, comment }) => {
+    setSubmitDisabled(!name || !email || !comment);
+  });
 
   const onSubmit = (data: FormData): void => {
     const { name, email, comment } = data;
@@ -42,28 +48,23 @@ const ImpressionSection = () => {
           <div className={s.feedback_container}>
             <form className={s.feedback_form} onSubmit={handleSubmit(onSubmit)}>
               <div className={classNames(s.feedback_form_input, { [s.error_input]: errors.name })}>
-                <input
-                  placeholder="Name"
-                  {...register("name", {required: "Name is required"})}
-                />
-                {errors.name && <p className={s.error}>{errors.name.message}</p>}
+                <input placeholder="Name" {...register("name")} />
               </div>
-              <div className={classNames(s.feedback_form_input, { [s.error_input]: errors.email })}>
+              <div className={classNames(s.feedback_form_input, { [s.error_input]: !submitDisabled && errors.email })}>
                 <input
                   placeholder="Email"
-                  {...register("email", { required: "Email is required", pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Please enter a valid email address",}} )}
+                  {...register("email", {
+                    pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Please enter a valid email address" },
+                  })}
                 />
-                {errors.email && <p className={s.error}>{errors.email.message}</p>}
+                {!submitDisabled && errors.email && <p className={s.error}>{errors.email.message}</p>}
               </div>
               <div className={classNames(s.feedback_form_textarea, { [s.error_input]: errors.comment })}>
-                <textarea
-                  placeholder="Your comment"
-                  {...register("comment", { required: "Comment is required"})}
-                />
-                {errors.comment && <p className={s.error}>{errors.comment.message}</p>}
+                <textarea placeholder="Your comment" {...register("comment")} />
               </div>
-              <MainButtonComponent type="submit">SEND</MainButtonComponent>
+              <MainButtonComponent disabled={submitDisabled} type="submit">
+                SEND
+              </MainButtonComponent>
             </form>
             <div className={s.feedback_images_container}>
               <Image className={s.feedback_images} width={340} height={450} src={BlogImpression} alt="person" />

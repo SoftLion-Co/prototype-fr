@@ -218,6 +218,7 @@
         }
 
         &::placeholder {
+          font-family: Roboto;
           color: $placeholder-color;
           font-size: 10px;
           font-weight: 400;
@@ -254,6 +255,7 @@
         outline: transparent;
         border: 1px solid $navigation-light;
         color: $navigation-dark;
+        font-family: Roboto;
         font-size: 10px;
         font-weight: 400;
         line-height: 130.49%;
@@ -275,6 +277,7 @@
         }
 
         &::placeholder {
+          font-family: Roboto;
           color: $placeholder-color;
           font-size: 10px;
           font-weight: 400;
