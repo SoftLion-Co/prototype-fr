@@ -2,9 +2,7 @@ import Link from "next/link";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
 const Blogs = () => {
-  const links = [
-    { title: "Blog", href: "#" },
-  ];
+  const links = [{ title: "Blog", href: "#" }];
 
   return (
     <div>

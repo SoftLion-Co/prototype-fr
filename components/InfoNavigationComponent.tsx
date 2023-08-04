@@ -1,9 +1,9 @@
-"use client"
-import React from 'react';
-import { Anchor } from '@mantine/core';
+"use client";
+import React from "react";
+import { Anchor } from "@mantine/core";
 import s from "./InfoNavigationComponent.module.scss";
-import { BsHouseDoor } from 'react-icons/bs';
-import classNames from 'classnames';
+import { BsHouseDoor } from "react-icons/bs";
+import classNames from "classnames";
 
 interface InfoNavigationComponentProps {
   links: { title: string; href: string }[];
@@ -11,7 +11,10 @@ interface InfoNavigationComponentProps {
 
 const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
   const allLinks = [
-    { title: <BsHouseDoor className={s.custom_breadcrumbs__home}/>, href: "/" },
+    {
+      title: <BsHouseDoor className={s.custom_breadcrumbs__home} />,
+      href: "/",
+    },
     ...links,
   ];
 
@@ -19,7 +22,11 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
     <Anchor
       href={item.href}
       key={index}
-      className={index === allLinks.length - 1 ? `${s.custom_breadcrumbs__link} ${s.custom_breadcrumbs__active}` : s.custom_breadcrumbs__link}
+      className={
+        index === allLinks.length - 1
+          ? `${s.custom_breadcrumbs__link} ${s.custom_breadcrumbs__active}`
+          : s.custom_breadcrumbs__link
+      }
     >
       {item.title}
     </Anchor>
