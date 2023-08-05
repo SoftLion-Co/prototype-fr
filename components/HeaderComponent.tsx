@@ -28,7 +28,6 @@ const HeaderComponent = () => {
             Contact Us
           </Link>
         </nav>
-
         <button className={s.header__btnBurger}>
           <IoIosMenu className={s.header__burger} width="18px" height="13px" />
         </button>
