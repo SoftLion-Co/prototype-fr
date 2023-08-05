@@ -7,7 +7,7 @@ import MainButtonComponent from "./MainButtonComponent";
 import Logo from "./../images/logo.svg";
 import Image from "next/image";
 
-export const FooterComp = () => {
+const FooterComponent = () => {
   return (
     <footer className={s.footer}>
       <div className={s.container}>
@@ -119,3 +119,5 @@ export const FooterComp = () => {
     </footer>
   );
 };
+
+export default FooterComponent

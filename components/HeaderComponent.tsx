@@ -13,7 +13,7 @@ const HeaderComponent = () => {
         </Link>
         <nav className={s.header__navigation}>
           <Link href="/services" className={s.header__link}>
-            Servise
+            Services
           </Link>
           <Link href="/projects" className={s.header__link}>
             Our Projects
