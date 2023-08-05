@@ -6,7 +6,7 @@ import ProjectMobileCardComponent from "./../../../components/projects/ProjectMo
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
 import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-import classNames from "classNames";
+import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 
 const sampleData = [
@@ -47,13 +47,14 @@ const sampleData = [
 
 const OurProjectsSection = () => {
   return (
-    <div className={s.projects}>
+    <section className={s.projects}>
       <ProjectHeadingComponent />
       <div className={s.projects__mobile_slider}>
         <MobileSliderComponent
           data={sampleData}
           SlideComponent={ProjectMobileCardComponent}
         />
+        <SeeMoreButtonComponent path="projects" />
       </div>
       <div className={classNames(s.container, s.projects__desktop_wrapper)}>
         {sampleData.map((project) => (
@@ -61,7 +62,7 @@ const OurProjectsSection = () => {
         ))}
         <SeeMoreButtonComponent path="projects" />
       </div>
-    </div>
+    </section>
   );
 };
 

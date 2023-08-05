@@ -26,15 +26,18 @@
   &__image {
     width: 357px;
     height: 200px;
+    border-radius: 8px;
 
     @include for-size(laptop) {
       width: 528px;
       height: 296px;
+      border-radius: 12px;
     }
 
     @include for-size(desktop) {
       width: 681px;
       height: 381px;
+      border-radius: 15px;
     }
   }
 
@@ -99,19 +102,19 @@
   }
 
   &__text {
-    height: 181px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: end;
 
     @include for-size(laptop) {
-      height: 268px;
+      height: 295px;
       gap: 30px;
     }
 
     @include for-size(desktop) {
-      height: 346px;
+      height: 381px;
       gap: 39px;
     }
   }
@@ -131,17 +134,20 @@
   }
 
   &__title {
+    margin-top: 19px;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 1.415px;
     line-height: 130.49%;
 
     @include for-size(laptop) {
+      margin-top: 20px;
       font-size: 23px;
       letter-spacing: 2.094px;
     }
 
     @include for-size(desktop) {
+      margin-top: 30px;
       font-size: 30px;
       letter-spacing: 2.7px;
     }

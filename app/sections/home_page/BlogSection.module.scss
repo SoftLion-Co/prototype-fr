@@ -1,0 +1,25 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.blogContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  text-overflow: ellipsis;
+
+  &__mobileSlider {
+    display: block;
+    overflow-x: hidden;
+    padding-top: 4%;
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+  &__desktopSlider {
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+    }
+  }
+}

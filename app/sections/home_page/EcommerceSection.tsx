@@ -35,11 +35,11 @@ const EcommerceSection = () => {
   ];
 
   return (
-    <div className={s.container}>
+    <section className={s.container}>
       <TitleServicesComponent position="left" num={"01"} text={"Ecommerce"} className={s.heading}/>
       <ServiceCardsComponent cardData={cardComponent} />
       <SeeMoreButtonComponent path="services" />
-    </div>
+    </section>
   );
 };
 
