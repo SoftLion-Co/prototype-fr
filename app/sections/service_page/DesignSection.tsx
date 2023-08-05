@@ -72,7 +72,7 @@ const DesignSection = () => {
 
   return (
     <section className={`${s.container} ${s.design}`}>
-      <ServiceHeadingComponent headingText={"Desing"} container="false" />
+      <ServiceHeadingComponent headingText={"Desing"} container={false} />
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
           <ServiceDesignCardComponent key={info.id} {...info} />
