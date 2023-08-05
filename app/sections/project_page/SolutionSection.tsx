@@ -1,4 +1,8 @@
 import s from "./SolutionSection.module.scss";
+import Image from "next/image";
+import Discover from "../../../images/solution/main page 2.svg";
+import AboutUs from "../../../images/solution/image 2.svg";
+import Trevel from "../../../images/solution/image 21.svg";
 
 const info = [
   {
@@ -33,7 +37,19 @@ const SolutionSection = () => {
           </li>
         ))}
       </ul>
-      <ul></ul>
+      <ul>
+        <Image
+          className={s.solution__photoDiscover}
+          alt="Discover"
+          src={Discover}
+        />
+        <Image
+          className={s.solution__photoAboutUs}
+          alt="About us"
+          src={AboutUs}
+        />
+        <Image className={s.solution__photoTrevel} alt="Trevel" src={Trevel} />
+      </ul>
     </section>
   );
 };
