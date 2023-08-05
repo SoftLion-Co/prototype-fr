@@ -1,0 +1,38 @@
+@import "../styles/colors";
+@import "/styles/container";
+@import "../styles/mixin";
+
+.develop {
+  &__heading {
+    margin-bottom: 40px;
+    @include for-size(tablet) {
+      margin-bottom: 40px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__desktop {
+    @include for-size(tablet) {
+      display: flex;
+      flex-direction: column;
+      gap: 68px;
+    }
+    @include for-size(laptop) {
+      gap: 111px;
+    }
+    @include for-size(desktop) {
+      gap: 145px;
+    }
+  }
+
+  &__mob {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+  }
+}

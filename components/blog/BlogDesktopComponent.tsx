@@ -8,12 +8,14 @@ import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
 
 interface BlogExtendedCardComponentProps {
+  id: number;
   title: string;
   author: string;
   authorIconSrc: string;
   readingTime: string;
   text: string;
   imageSrc: string;
+  tags: string[];
 }
 
 interface BlogDesktopProps {
@@ -77,30 +79,19 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
               <div className={s.blogDesktop__extendedCard}>
                 <Carousel.Slide key={index}>
                   <BlogExtendedCardComponent
+                    id={x.id}
                     text={x.text}
                     author={x.author}
                     imageSrc={x.imageSrc}
                     authorIconSrc={x.authorIconSrc}
                     title={x.title}
                     readingTime={x.readingTime}
+                    tags={x.tags}
                   />
                 </Carousel.Slide>
               </div>
             ) : (
               <div
-                onClick={
-                  currentSlide - 1 === index ||
-                  (currentSlide === 0 && index === cardsData.length - 1)
-                    ? () => {
-                        embla?.scrollPrev();
-                      }
-                    : currentSlide + 1 === index ||
-                      (currentSlide === cardsData.length - 1 && index === 0)
-                    ? () => {
-                        embla?.scrollNext();
-                      }
-                    : undefined
-                }
                 className={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)
@@ -110,7 +101,21 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                     ? s.blogDesktop__rolledCardRight
                     : s.blogDesktop__rolledCardDefault
                 }>
-                <Carousel.Slide key={index}>
+                <Carousel.Slide
+                  onClick={
+                    currentSlide - 1 === index ||
+                    (currentSlide === 0 && index === cardsData.length - 1)
+                      ? () => {
+                          embla?.scrollPrev();
+                        }
+                      : currentSlide + 1 === index ||
+                        (currentSlide === cardsData.length - 1 && index === 0)
+                      ? () => {
+                          embla?.scrollNext();
+                        }
+                      : undefined
+                  }
+                  key={index}>
                   <BlogRolledCardComponent
                     title={x.title}
                     imageSrc={x.imageSrc}

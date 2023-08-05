@@ -1,6 +1,6 @@
 import s from "./ServiceHeadingComponent.module.scss";
 import Image from "next/image";
-import Line from "../../images/line-component.svg";
+import Line from "../../images/project/line-component.svg";
 import classNames from "classnames";
 
 interface ServiceHeadingComponentProps {
