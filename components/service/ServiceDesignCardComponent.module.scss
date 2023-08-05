@@ -33,8 +33,6 @@
     align-items: center;
     margin-bottom: 20px;
 
-    @include for-size(tablet) {
-    }
     @include for-size(laptop) {
       margin-bottom: 27px;
     }
