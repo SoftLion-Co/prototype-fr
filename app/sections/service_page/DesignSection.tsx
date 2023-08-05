@@ -1,5 +1,4 @@
 import s from "./DesignSection.module.scss";
-import Image from "next/image";
 import Interactive from "../../../images/services/design/interactive-refinement.svg";
 import Reserch from "../../../images/services/design/research-and-planning.svg";
 import Responsive from "../../../images/services/design/responsive-design.svg";
