@@ -1,0 +1,84 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  @include for-size(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 9px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+  color: #000000b2;
+
+  @include for-size(tablet) {
+    gap: 0;
+    width: 315px;
+    min-height: 200px;
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  &__title {
+    color: black;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0em;
+    @include for-size(tablet) {
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  &__description {
+    color: black;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+    @include for-size(tablet) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__time {
+    @include for-size(tablet) {
+      margin-bottom: 16px;
+    }
+  }
+  &__year {
+    @include for-size(tablet) {
+      margin-bottom: 8px;
+    }
+  }
+  &__location {
+    @include for-size(tablet) {
+    }
+  }
+
+  &__image {
+    align-self: center;
+    width: 240px;
+    height: 125px;
+    margin: 5px 0 10px 0;
+    border-radius: 5px;
+    box-shadow: 3.7px 2px 4px 0px #00000040;
+    align-self: center;
+    object-fit: cover;
+
+    @include for-size(tablet) {
+      width: 370px;
+      height: 190px;
+      border-radius: 8px;
+      box-shadow: 5.7px 3.1px 6.3px 0px #00000040;
+      margin: 0px 7px 0 0;
+    }
+  }
+}
