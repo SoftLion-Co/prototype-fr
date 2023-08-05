@@ -1,7 +1,7 @@
 "use client";
 
 import HeadingComponent from "@/components/HeadingComponent";
-import s from "./OurTeamSetcion.module.scss";
+import s from "./OurTeamSection.module.scss";
 import classNames from "classnames";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 import { Carousel, Embla } from "@mantine/carousel";
