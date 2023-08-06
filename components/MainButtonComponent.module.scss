@@ -33,6 +33,7 @@
 
     &:disabled {
       background: $button-blue-disabled;
+      cursor: not-allowed;
     }
   }
 
