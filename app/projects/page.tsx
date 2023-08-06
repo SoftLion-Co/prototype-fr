@@ -1,6 +1,6 @@
 import s from "./page.module.scss";
 import ResultSection from "../sections/project_page/ResultSection";
-import ProjectDescriptionSection from "../sections/project_page/ProjectDescriptionSection";
+import RequestSection from "../sections/project_page/RequestSection";
 
 const Projects = () => {
   return (
@@ -8,6 +8,7 @@ const Projects = () => {
       <h1>Projects</h1>
       <ProjectDescriptionSection />
       <ResultSection />
+      <RequestSection />
     </div>
   );
 };
