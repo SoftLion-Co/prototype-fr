@@ -6,7 +6,7 @@ interface TitleServicesComponentProps {
   num: string;
   text: string;
   position?: "left" | "right";
-  className:string;
+  className?:string;
   color?: "blue" | "purple" | "green";
 }
 

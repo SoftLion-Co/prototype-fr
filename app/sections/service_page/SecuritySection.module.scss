@@ -3,6 +3,19 @@
 
 
 .security{
+  margin-bottom: 60px;
+
+  @include for-size(tablet) {
+    margin-bottom: 70px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 200px;
+  }
 
   &__slider {
     margin-top: 54px;
