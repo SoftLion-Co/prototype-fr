@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import s from "./ProjectDescriptionSection.module.scss";
+import React, { FC } from "react";
 
-const ProjectDescriptionSection: React.FC = () => {
+const ProjectDescriptionSection: FC = () => {
   const response = {
     title: "Travel company MOVE",
     description:
@@ -9,8 +10,7 @@ const ProjectDescriptionSection: React.FC = () => {
     time: "3 month",
     year: 2023,
     location: "Europe",
-    imgSrc:
-      "https://png.pngtree.com/png-clipart/20190120/ourmid/pngtree-hand-painted-blue-city-building-png-image_497737.jpg",
+    imgSrc: "https://i.ibb.co/CwYTtPR/photo-2023-08-07-14-08-48.jpg",
   };
 
   const { title, description, time, year, location, imgSrc } = response;
