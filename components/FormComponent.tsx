@@ -78,7 +78,7 @@ const FormComponent = () => {
               className: s.form__field,
               placeholder: " ",
             }}
-            country={"ua"}
+            country={"us"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
           />

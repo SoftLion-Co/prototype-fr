@@ -93,10 +93,11 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    width: 100%;
+    width: 80%;
 
     @include for-size(tablet) {
       gap: 12px;
+      width: 100%;
     }
 
     @include for-size(laptop) {
@@ -224,7 +225,7 @@
     display: block;
     height: 1px;
     background-color: black;
-    width: 70%;
+    width: 60%;
     margin-bottom: 9px;
 
     @include for-size(tablet) {
@@ -253,7 +254,7 @@
     border: none;
     color: #fff;
     padding: 7px 14px;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 130.49%;
     letter-spacing: 0.317px;
     margin-top: 17px;
@@ -296,7 +297,7 @@
     text-align: center;
     font-family: Open Sans;
     max-width: 200px;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 140%;
     letter-spacing: 0.155px;
 
@@ -314,6 +315,7 @@
     }
 
     @include for-size(desktop) {
+      max-width: none;
       width: 324px;
       font-size: 13px;
       letter-spacing: 0.39px;
@@ -326,7 +328,7 @@
       -webkit-text-fill-color: transparent;
 
       font-family: Open Sans;
-      font-size: 12px;
+      font-size: 11px;
       line-height: 140.182%;
       letter-spacing: 0.155px;
 
