@@ -54,18 +54,11 @@
 }
 
 .our_form {
-  // max-width: 480px;
-  // padding-left: 15px;
-  // padding-right: 15px;
-  // margin-left: auto;
-  // margin-right: auto;
   width: calc(100% - 40px);
   @include for-size(tablet) {
-    // max-width: 738px;
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    // padding-left: 15px;
-    // padding-right: 15px;
   }
 }
