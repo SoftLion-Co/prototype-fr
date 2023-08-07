@@ -22,7 +22,14 @@ const ImpressionSection = () => {
     handleSubmit,
     formState: { errors },
     watch,
-  } = useForm<FormData>();
+    reset
+  } = useForm<FormData>({
+    defaultValues: {
+      name: '',
+      email: '',
+      comment: ''
+    }
+  });
 
   watch(({ name, email, comment }) => {
     setSubmitDisabled(!name || !email || !comment);
@@ -32,25 +39,26 @@ const ImpressionSection = () => {
     const { name, email, comment } = data;
 
     console.log("Name: ", name, "Email: ", email, "Comment: ", comment);
+    reset();
   };
 
   return (
     <section className={classNames(s.container, s.impression)}>
-      <h2 className={s.impression_title}>Hope it was interesting for you</h2>
-      <div className={s.impression_container}>
+      <h2 className={s.impression__title}>Hope it was interesting for you</h2>
+      <div className={s.impression__container}>
         <div className={s.rating}>
-          <p className={s.rating_text}>We are happy to know your opinion.</p>
+          <p className={s.rating__text}>We are happy to know your opinion.</p>
           <Rating size="lg" value={value} onChange={setValue} />
         </div>
 
         <div className={s.feedback}>
-          <h3 className={s.feedback_title}>If u have any ideas this is a place where you can share with us.</h3>
-          <div className={s.feedback_container}>
-            <form className={s.feedback_form} onSubmit={handleSubmit(onSubmit)}>
-              <div className={classNames(s.feedback_form_input, { [s.error_input]: errors.name })}>
+          <h3 className={s.feedback__title}>If u have any ideas this is a place where you can share with us.</h3>
+          <div className={s.feedback__container}>
+            <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+              <div className={classNames(s.form__input, { [s.error__input]: errors.name })}>
                 <input placeholder="Name" {...register("name")} />
               </div>
-              <div className={classNames(s.feedback_form_input, { [s.error_input]: !submitDisabled && errors.email })}>
+              <div className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.email })}>
                 <input
                   placeholder="Email"
                   {...register("email", {
@@ -59,15 +67,15 @@ const ImpressionSection = () => {
                 />
                 {!submitDisabled && errors.email && <p className={s.error}>{errors.email.message}</p>}
               </div>
-              <div className={classNames(s.feedback_form_textarea, { [s.error_input]: errors.comment })}>
+              <div className={classNames(s.form__textarea, { [s.error__input]: errors.comment })}>
                 <textarea placeholder="Your comment" {...register("comment")} />
               </div>
               <MainButtonComponent disabled={submitDisabled} type="submit">
                 SEND
               </MainButtonComponent>
             </form>
-            <div className={s.feedback_images_container}>
-              <Image className={s.feedback_images} width={340} height={450} src={BlogImpression} alt="person" />
+            <div className={s.image__container}>
+              <Image width={340} height={450} src={BlogImpression} alt="person" />
             </div>
           </div>
         </div>

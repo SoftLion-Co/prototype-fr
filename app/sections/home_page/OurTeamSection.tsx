@@ -80,23 +80,23 @@ const OurTeamSetcion = () => {
   };
 
   return (
-    <div className={classNames(s.container, s.team_section)}>
-      <HeadingComponent customClass={s.team_section_title} text="Our team" />
-      <div className={s.mobile_slider}>
+    <div className={classNames(s.container, s.team)}>
+      <HeadingComponent customClass={s.team__title} text="Our team" />
+      <div className={s.mobile__slider}>
         <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
       </div>
-      <div className={s.desctop_slider}>
+      <div className={s.desctop__slider}>
         <Carousel
           getEmblaApi={setEmbla}
-          classNames={{ control: s.custom_control }}
+          classNames={{ control: s.custom__control }}
           onSlideChange={(index) => {
             const slideIndex = index + 2 < response.length ? index + 2 : index + 2 - response.length;
             setCurrentSlide(slideIndex);
           }}
           previousControlIcon={
-            <Image className={classNames(s.arrow, s.arrow_left)} height={30} width={30} src={ArrowLeft} alt="45"></Image>
+            <Image className={classNames(s.arrow, s.arrow__left)} height={30} width={30} src={ArrowLeft} alt="45"></Image>
           }
-          nextControlIcon={<Image className={classNames(s.arrow, s.arrow_right)} height={30} width={30} src={ArrowRight} alt="45"></Image>}
+          nextControlIcon={<Image className={classNames(s.arrow, s.arrow__right)} height={30} width={30} src={ArrowRight} alt="45"></Image>}
           slideSize="20%"
           align="start"
           loop

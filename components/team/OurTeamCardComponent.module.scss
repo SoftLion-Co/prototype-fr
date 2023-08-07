@@ -20,7 +20,7 @@
     gap: 20px;
   }
 
-  &_avatar {
+  &__avatar {
     width: 125px;
     height: 125px;
     overflow: hidden;
@@ -42,7 +42,7 @@
     }
   }
 
-  &_information {
+  &__information {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -60,8 +60,8 @@
       gap: 10px;
     }
 
-    .member_name,
-    .member_position {
+    .member__name,
+    .member__position {
       color: $blog-card-text-color;
       font-size: 14px;
       font-weight: 400;
@@ -99,7 +99,7 @@
       gap: 23px;
     }
 
-    .member_avatar {
+    .member__avatar {
       @include for-size(tablet) {
         width: 135px;
         height: 131px;
@@ -115,8 +115,8 @@
         height: 285px;
       }
     }
-    .member_name,
-    .member_position {
+    .member__name,
+    .member__position {
       @include for-size(tablet) {
         color: $heading-blue-color;
         font-size: 12px;
@@ -150,7 +150,7 @@
   }
 }
 
-.member_linkedin {
+.member__linkedin {
   color: $blog-card-text-color;
   font-size: 14px;
 

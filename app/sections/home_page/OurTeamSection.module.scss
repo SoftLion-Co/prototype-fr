@@ -2,8 +2,8 @@
 @import "./../../../styles/container";
 @import "./../../../styles/mixin";
 
-.team_section {
-  .team_section_title {
+.team {
+  &__title {
     box-sizing: border-box;
     margin-bottom: 25px;
 
@@ -38,19 +38,19 @@
     }
   }
 
-  .custom_control {
+  .custom__control {
     border: none;
     box-shadow: none;
     background-color: transparent;
   }
 }
-.mobile_slider {
+.mobile__slider {
   @include for-size(tablet) {
     display: none;
   }
 }
 
-.desctop_slider {
+.desctop__slider {
   display: none;
   @include for-size(tablet) {
     display: initial;
@@ -73,32 +73,32 @@
     height: 55px;
     margin-top: -140px;
   }
-}
 
-.arrow_left {
-  @include for-size(tablet) {
-    margin-left: -74px;
+  &__left {
+    @include for-size(tablet) {
+      margin-left: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-left: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-left: -112px;
+    }
   }
 
-  @include for-size(laptop) {
-    margin-left: -92px;
-  }
+  &__right {
+    @include for-size(tablet) {
+      margin-right: -74px;
+    }
 
-  @include for-size(desktop) {
-    margin-left: -112px;
-  }
-}
+    @include for-size(laptop) {
+      margin-right: -92px;
+    }
 
-.arrow_right {
-  @include for-size(tablet) {
-    margin-right: -74px;
-  }
-
-  @include for-size(laptop) {
-    margin-right: -92px;
-  }
-
-  @include for-size(desktop) {
-    margin-right: -112px;
+    @include for-size(desktop) {
+      margin-right: -112px;
+    }
   }
 }

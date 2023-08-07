@@ -20,16 +20,16 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
 
   return (
     <div className={memberClassName}>
-      <div className={s.member_avatar}>
+      <div className={s.member__avatar}>
         <Image className={s.member_avatar_img} width={800} height={600} src={data.avatar} alt={data.name + data.id} />
       </div>
-      <div className={s.member_information}>
-        <p className={s.member_name}>{data.name}</p>
+      <div className={s.member__information}>
+        <p className={s.member__name}>{data.name}</p>
         {isActive && (
           <>
-            <p className={s.member_position}>{data.position}</p>
-            <a className={s.member_linkedin} href={data.linkedinUrl}>
-              <FiLinkedin className={s.linkedin_icon} />
+            <p className={s.member__position}>{data.position}</p>
+            <a className={s.member__linkedin} href={data.linkedinUrl}>
+              <FiLinkedin className={s.linkedin__icon} />
             </a>
           </>
         )}
