@@ -1,11 +1,14 @@
 import s from "./SolutionSection.module.scss";
-import Image from "next/image";
-import Discover from "../../../images/solution/main page 2.svg";
-import AboutUs from "../../../images/solution/image 2.svg";
-import Trevel from "../../../images/solution/image 21.svg";
+import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 
-const info = [
+interface DesignInfoItem {
+  title: string;
+  description: string;
+}
+
+const Silutioninfo: DesignInfoItem[] = [
   {
+    title: "",
     description:
       "Upon receiving your request, we proceed to review and analyze all the details. Our experts study your requirements and expectations, conducting additional research if necessary, to ensure successful project implementation.",
   },
@@ -29,26 +32,27 @@ const info = [
 const SolutionSection = () => {
   return (
     <section className={`${s.container} ${s.solution}`}>
+      <div className={s.solution__heading}>
+        <ServiceHeadingComponent headingText={"Solution"} container={false} />
+      </div>
       <ul className={s.solution__list}>
-        {info.map((item, index) => (
-          <li key={index} className={s.solution__item}>
-            <h3 className={s.solution__heading}>{item.title}</h3>
-            <p className={s.solution__text}>{item.description}</p>
+        {Silutioninfo.map((item, index) => (
+          <li key={index} className={s.solution__list___item}>
+            <h3 className={s.solution__list___item___heading}>{item.title}</h3>
+            <p className={s.solution__list___item___text}>{item.description}</p>
           </li>
         ))}
       </ul>
-      <ul>
-        <Image
-          className={s.solution__photoDiscover}
-          alt="Discover"
-          src={Discover}
-        />
-        <Image
-          className={s.solution__photoAboutUs}
-          alt="About us"
-          src={AboutUs}
-        />
-        <Image className={s.solution__photoTrevel} alt="Trevel" src={Trevel} />
+      <ul className={s.solution__photoList}>
+        <li className={s.solution__photoList___item}>
+          <div className={s.solution__photoList___item___photoDiscover}></div>
+        </li>
+        <li className={s.solution__photoList___item}>
+          <div className={s.solution__photoList___item___photoAboutUs}></div>
+        </li>
+        <li className={s.solution__photoList___item}>
+          <div className={s.solution__photoList___item___photoTrevel}></div>
+        </li>
       </ul>
     </section>
   );
