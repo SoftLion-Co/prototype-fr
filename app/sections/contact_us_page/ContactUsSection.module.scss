@@ -54,7 +54,9 @@
 }
 
 .our_form {
+  width: calc(100% - 40px);
   @include for-size(tablet) {
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
