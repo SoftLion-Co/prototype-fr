@@ -1,15 +1,59 @@
+import classNames from "classnames";
 import s from "./page.module.scss";
-import ResultSection from "../sections/project_page/ResultSection";
-import RequestSection from "../sections/project_page/RequestSection";
-import ProjectDescriptionSection from "../sections/project_page/ProjectDescriptionSection";
+import ProjectHeadingComponent from "@/components/projects/ProjectHeadingComponent";
+import ProjectCardComponent from "@/components/projects/ProjectCardComponent";
+import ProjectMobileCardComponent from "@/components/projects/ProjectMobileCardComponent";
+
+const sampleData = [
+  {
+    id: 1,
+    image:
+      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+    title: "Landing page of traveling company",
+    customer: "customer: Move",
+    year: "year: 2022",
+    author: "author: SoftLion",
+    description:
+      "In this project, we developed the design, implemented it, and provide further support",
+  },
+  {
+    id: 2,
+    image:
+      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+    title: "Landing page of traveling company",
+    customer: "customer: Move",
+    year: "year: 2022",
+    author: "author: SoftLion",
+    description:
+      "In this project, we developed the design, implemented it, and provide further support",
+  },
+  {
+    id: 3,
+    image:
+      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+    title: "Landing page of traveling company",
+    customer: "customer: Move",
+    year: "year: 2022",
+    author: "author: SoftLion",
+    description:
+      "In this project, we developed the design, implemented it, and provide further support",
+  },
+];
 
 const Projects = () => {
   return (
-    <div>
-      <h1>Projects</h1>
-      <ProjectDescriptionSection />
-      <ResultSection />
-      <RequestSection />
+    <div className={classNames(s.container, s.projects)}>
+      <ProjectHeadingComponent centered={true} />
+      <div className={s.projects__cards_mobile}>
+        {sampleData.map((project) => (
+          <ProjectMobileCardComponent key={project.id} data={project} />
+        ))}
+      </div>
+      <div className={s.projects__cards_desktop}>
+        {sampleData.map((project) => (
+          <ProjectCardComponent key={project.id} data={project} />
+        ))}
+      </div>
     </div>
   );
 };
