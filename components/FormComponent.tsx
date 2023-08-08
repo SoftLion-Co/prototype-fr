@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
-import s from "./FormComponent.module.scss";
 import "react-phone-input-2/lib/style.css";
+import s from "./FormComponent.module.scss";
 import axios from "axios";
 
 interface FormData {
@@ -86,16 +86,10 @@ const FormComponent = () => {
             country={"us"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
-            containerStyle={{
-              minWidth: "100%",
-              backgroundColor: "transparent",
-            }}
-            buttonStyle={{
-              backgroundColor: "transparent",
-              border: "none",
-              left: "-8px",
-              bottom: "2px",
-            }}
+            buttonClass={s['buttonC']}
+            searchStyle={{border: "none", borderBottom: "1px solid #ccc", fontSize: "14px", padding: "0", marginLeft: "0", backgroundColor: "#ffffff80", backdropFilter: "blur(30px)"}}
+            dropdownStyle={{backgroundColor: "#ffffff80", backdropFilter: "blur(30px)"}}
+            containerClass={s['container']}
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>

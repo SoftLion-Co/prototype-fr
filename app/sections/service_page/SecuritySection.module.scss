@@ -29,10 +29,11 @@
   &__container {
     display: none;
   
-    @include for-size(tablet) {
+    @include for-size(tablet){
+
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       column-gap: 21px;
       row-gap: 55px;
       margin-top: 84px;
@@ -62,11 +63,12 @@
       justify-content: flex-end;
     }
   }
+
+
 }
 
 
-
-
-
-
-
+.centre{
+margin-right: auto;
+margin-left: auto;
+}
