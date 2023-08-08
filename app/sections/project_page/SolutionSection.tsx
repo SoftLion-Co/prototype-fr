@@ -1,5 +1,6 @@
 import s from "./SolutionSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
+import HeadingOurProjectComponent from "../../../components/project/HeadingOurProjectComponent";
 
 interface DesignInfoItem {
   title: string;
@@ -33,7 +34,7 @@ const SolutionSection = () => {
   return (
     <section className={`${s.container} ${s.solution}`}>
       <div className={s.solution__heading}>
-        <ServiceHeadingComponent headingText={"Solution"} container={false} />
+        <HeadingOurProjectComponent title="02" text="Solution" />
       </div>
       <ul className={s.solution__list}>
         {Silutioninfo.map((item, index) => (

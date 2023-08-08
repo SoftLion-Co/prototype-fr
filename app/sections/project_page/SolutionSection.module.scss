@@ -7,6 +7,18 @@
   flex-direction: column;
 
   &__heading {
+    margin-bottom: 9px;
+    @include for-size(tablet) {
+      margin-bottom: 13px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 45px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 69px;
+    }
   }
 
   &__photoList {
