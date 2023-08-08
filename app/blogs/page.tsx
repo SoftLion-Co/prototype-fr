@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+import RegistrationSection from "../sections/registration_page/RegistrationSection";
 
 const Blogs = () => {
   const links = [{ title: "Blog", href: "#" }];
@@ -9,6 +10,7 @@ const Blogs = () => {
       <InfoNavigationComponent links={links} />
       <Link href="/blogs/1">1</Link>
       <h1>Blogs</h1>
+      <RegistrationSection/>
     </div>
   );
 };

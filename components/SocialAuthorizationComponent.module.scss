@@ -29,6 +29,20 @@
 }
 
 .social {
+  @include for-size(tablet) {
+    padding-top: 51px;
+  }
+
+  @include for-size(laptop) {
+    padding-top: 61px;
+  }
+
+  @include for-size(desktop) {
+    padding-top: 68px;
+  }
+}
+
+.social__container {
   display: flex;
   gap: 35px;
 

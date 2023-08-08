@@ -1,0 +1,225 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+
+.registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 65px;
+
+  @include for-size(tablet) {
+    flex-direction: row;
+    align-items: inherit;
+    gap: 102px;
+  }
+
+  @include for-size(laptop) {
+    gap: 20px;
+  }
+
+  @include for-size(desktop) {
+    gap: 38px;
+  }
+}
+
+.title {
+    text-align: center;
+    color: $blog-card-text-color;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 2.25px;
+    margin-bottom: 25px;
+
+  
+    @include for-size(tablet) {
+        text-align: start;
+      font-size: 26px;
+      letter-spacing: 2.4px;
+      margin-bottom: 45px;
+    }
+  
+    @include for-size(laptop) {
+      font-size: 28px;
+      letter-spacing: 2.5px;
+      margin-bottom: 32px;
+    }
+  
+    @include for-size(desktop) {
+      font-size: 30px;
+      letter-spacing: 2.7px;
+      margin-bottom: 34px;
+    }
+  }
+
+.wrapper {
+  max-width: 290px;
+
+  @include for-size(tablet) {
+    max-width: 268px;
+  }
+
+  @include for-size(laptop) {
+    max-width: 300px;
+  }
+
+  @include for-size(desktop) {
+    max-width: 320px;
+  }
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0 13px 19px;
+  background: $registration-info-card-background;
+  border-radius: 5px;
+  margin-bottom: 27px;
+
+  @include for-size(tablet) {
+    gap: 11px;
+    padding: 12px 0 12px 18px;
+    margin-bottom: 25px;
+  }
+
+  @include for-size(laptop) {
+    gap: 12px;
+    padding: 13px 2px 13px 20px;
+    margin-bottom: 28px;
+  }
+
+  @include for-size(desktop) {
+    gap: 13px;
+    padding: 14px 4px 14px 21px;
+    margin-bottom: 30px;
+  }
+}
+
+.information__icon {
+  width: 20px;
+  height: 20px;
+  @include for-size(tablet) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @include for-size(laptop) {
+    width: 22px;
+    height: 22px;
+  }
+
+  @include for-size(desktop) {
+  }
+}
+
+.information__text {
+  color: $navigation-dark;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130.49%; /* 15.422px */
+  letter-spacing: 0.47px;
+
+  @include for-size(tablet) {
+    font-size: 11px;
+    letter-spacing: 0.44px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 13px;
+    letter-spacing: 0.52px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  gap: 10px;
+
+  @include for-size(tablet) {
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  @include for-size(laptop) {
+    gap: 10px;
+  }
+
+  @include for-size(desktop) {
+    gap: 11px;
+  }
+}
+
+.form__input {
+  width: 100%;
+  padding: 17px 27px;
+  border: 1px solid $navigation-light;
+  outline: transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: $navigation-dark;
+  font-size: 15px;
+  line-height: 130.49%;
+  letter-spacing: 0.6px;
+
+  @include for-size(tablet) {
+    padding: 16px 25px;
+  }
+
+  @include for-size(laptop) {
+    padding: 18px 28px;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+  }
+
+  @include for-size(desktop) {
+    padding: 19px 30px;
+  }
+
+  &::placeholder {
+    font-family: Roboto;
+    color: $placeholder-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.5px;
+
+    @include for-size(tablet) {
+      font-size: 15px;
+      letter-spacing: 0.6px;
+    }
+  }
+}
+
+.form__button {
+  padding: 17px 39px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 130.49%;
+  letter-spacing: 0.6px;
+  margin-top: 27px;
+
+  @include for-size(tablet) {
+    padding: 15px 33px;
+    margin-top: 25px;
+  }
+
+  @include for-size(laptop) {
+    padding: 17px 36px;
+    margin-top: 28px;
+  }
+
+  @include for-size(desktop) {
+    padding: 18px 40px;
+    margin-top: 30px;
+  }
+}

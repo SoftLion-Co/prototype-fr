@@ -12,9 +12,9 @@ interface SocialAuthorizationProps {
 
 const SocialAuthorization: FC<SocialAuthorizationProps> = ({ text }) => {
   return (
-    <>
+    <div className={s.social}>
       <h3 className={s.title}>{text}</h3>
-      <div className={s.social}>
+      <div className={s.social__container}>
         <Link href="/">
           <Image className={s.social__icon} width={72} height={72} src={LinkedIn} alt="LinkedIn" />
         </Link>
@@ -25,7 +25,7 @@ const SocialAuthorization: FC<SocialAuthorizationProps> = ({ text }) => {
           <Image className={s.social__icon} width={72} height={72} src={Facebook} alt="Facebook" />
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
