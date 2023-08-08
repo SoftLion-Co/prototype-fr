@@ -31,7 +31,7 @@
     padding: 19px 27px 25px 9px;
     font-size: 10px;
     display: flex;
-    gap: 39px;
+    gap: 20px;
     align-items: center;
   }
 
@@ -39,11 +39,23 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 30%;
+    width: 35%;
+  }
+
+  &__desc{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
   }
 
   &__subdesc{
-    max-width: 46.5%;
+    width: 85%;
+  }
+
+  &__arrow_icon{
+    width: 20px;
+    height: 20px;
   }
 }
  
