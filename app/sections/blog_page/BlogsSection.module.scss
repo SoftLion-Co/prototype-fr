@@ -111,7 +111,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: calc(19.6 / 16);
-  letter-spacing: 0;
+  // letter-spacing: 0;
   transition: letter-spacing 0.3s ease-in-out;
   @include for-size(tablet) {
     font-size: 20px;
@@ -121,12 +121,13 @@
   }
   @include for-size(desktop) {
     font-size: 30px;
+    min-width: 165px;
   }
 
   &:hover,
   &:focus,
   &:active {
-    letter-spacing: 2px;
+    // letter-spacing: 2px;
     color: #308bb7;
   }
 
@@ -204,4 +205,56 @@
   @include for-size(desktop) {
     gap: 10px;
   }
+}
+
+//carousel
+.blog__filter {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: height 5s ease;
+  // width: 1400px;
+}
+
+.blog__filter__container {
+  overflow: hidden; /* Keep the overflow hidden */
+  display: flex;
+  justify-content: center;
+}
+
+.blog__filter__carousel {
+  @include for-size (phone) {
+    gap: 10px;
+  }
+  gap: 30px;
+  margin-bottom: 100px;
+
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+.blog__filter__controls {
+  position: absolute;
+  display: flex;
+  gap: 40px;
+}
+
+.blog__filter__indicator {
+  cursor: pointer;
+  border: 1px solid #3a3a3a;
+  border-radius: 50%;
+  transition: background-color 5s ease;
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+
+.blog__filter__indicator:hover {
+  background-color: #f1f1f1;
+}
+
+.blog__filter__indicator.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
