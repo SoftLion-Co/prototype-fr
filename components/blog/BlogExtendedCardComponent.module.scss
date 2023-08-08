@@ -1,136 +1,204 @@
 @import "../styles/mixin";
 
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(
+    115.15deg,
+    rgba(247, 205, 245, 0.23) -20.67%,
+    rgba(242, 212, 239, 0.23) 48.71%,
+    rgba(168, 225, 250, 0.0322) 99.46%
+  );
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 13px;
+  box-shadow: 8.4px 21px 13.1px 0px #00000026;
 
-.articleCard {
+  padding: 10px;
 
-    @include for-size(tablet){
-        width: 352px;
-        height: 249px;
-        border-radius: 8px;
+  @include for-size(laptop) {
+    border-radius: 12px;
+    font-size: 15px;
+    line-height: 20px;
+    box-shadow: 12.3px 30.7px 19.2px 0px #00000026;
 
-        font-size: 11px;
-        line-height: 13px;
-        box-shadow: 8.4px 21.0px 13.1px 0px #00000026;
-      }
+    padding: 15px;
+  }
 
-      @include for-size(laptop){
-        width: 500px;
-        height: 355px;
-        border-radius: 12px;
-        
-        font-size: 15px;
-        line-height: 20px;
+  @include for-size(desktop) {
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 26px;
+    box-shadow: 16px 40px 25px 0px #00000026;
 
-        box-shadow: 12.3px 30.7px 19.2px 0px #00000026;
-      }
+    padding: 20px;
+  }
 
-      @include for-size(desktop){
-        width: 650px;
-        height: 460px;
-        border-radius: 15px;
-
-        font-size: 20px;
-        line-height: 26px;
-
-        box-shadow: 16px 40px 25px 0px #00000026;
-      }
-    
+  &__container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: linear-gradient(115.15deg, rgba(247, 205, 245, 0.23) -20.67%, rgba(242, 212, 239, 0.23) 48.71%, rgba(168, 225, 250, 0.0322) 99.46%);
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    
-    &__content{
+    justify-content: start;
+  }
 
-        width: 100%;
-        height: 50%;
-        display: flex;
-        justify-content: start;
-        
-        &__image {
-          width: 45%;
-          height: 100%;
-          border-radius: 15px 0 0 0;
-        }
+  &__line {
+    height: 1px;
+    @include for-size(laptop) {
+      height: 1.5px;
+    }
+    @include for-size(desktop) {
+      height: 2px;
+    }
+    width: 100%;
+    background-color: gray;
+  }
 
-        &__info{
-          width: 50%;
-          height: 100%;
+  &__text {
+    width: 300px;
+    height: 110px;
+    margin: 10px 5px 0 5px;
 
-          text-align: left;
-
-          display: flex;
-          flex-direction: column;
-
-            &__title {
-                line-height: 1.4em;
-                font-size: 1.2em;
-                font-weight: 400;
-                letter-spacing: 0.09em;  
-                height: 35%;     
-                padding: 6%;      
-                padding-top: 8%;
-                padding-left: 8%;
-            }
-        
-            &__author {
-                display: flex;
-                align-items: center;
-                padding: 1%;
-                padding-left: 8%;
-                
-                &__icon{
-                    border-radius: 50%;
-                    background-color: grey;
-                    width: 2em;
-                    height: 2em;
-                }
-                &__name{
-                  padding-left: 3%;
-                    color: #000000B2;
-                }
-            }
-        
-            &__readingTime {
-                padding: 3%;
-                padding-left: 8%;
-                color: #000000B2;
-            }
-        }
-
+    @include for-size(laptop) {
+      width: 435px;
+      height: 160px;
+      margin: 16px 8px 0 8px;
     }
 
-    &__line {
-        width: 100%;
-        height: 0.5%;
-        background-color: gray;
-      }    
+    @include for-size(desktop) {
+      width: 570px;
+      height: 200px;
+      margin: 20px 10px 0 10px;
+    }
 
-    &__text {
-        position: relative;
-        align-self: start;
-        height: 40%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: left;
-        padding: 3%;
-        padding-left: 5%;
-        width: 80%;
+    overflow: hidden;
+    align-self: start;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+  &__arrow {
+    font-size: 0.5em;
+    cursor: pointer;
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 150px;
+  height: 120px;
+  margin-right: 10px;
+
+  @include for-size(laptop) {
+    width: 220px;
+    height: 180px;
+    margin-right: 15px;
+  }
+
+  @include for-size(desktop) {
+    width: 300px;
+    height: 240px;
+    margin-right: 20px;
+  }
+}
+
+.info {
+  width: 175px;
+  height: 120px;
+
+  @include for-size(laptop) {
+    width: 250px;
+    height: 180px;
+  }
+
+  @include for-size(desktop) {
+    width: 320px;
+    height: 240px;
+  }
+
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 5px;
+
+    @include for-size(laptop) {
+      margin-bottom: 10px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 15px;
+    }
+
+    line-height: 1.4em;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      margin: 0px 5px 0px 0;
+
+      @include for-size(laptop) {
+        margin: 0px 8px 0px 0;
       }
-    &__arrow{
-        cursor: pointer;
-        position: absolute; 
-        bottom: 0; 
-        right: 0; 
-        padding: 3%;
-        font-size: 0.5em;
-        transition: padding 0.3s ease-in-out;
-        @include for-size(laptop){
-        &:hover{
-            padding-right: 1%;
-            padding-left: 5%;
-        }}
+
+      @include for-size(desktop) {
+        margin: 0px 10px 0px 0;
       }
+
+      border-radius: 50%;
+      background-color: grey;
+      width: 2em;
+      height: 2em;
+    }
+    &__name {
+      color: #000000b2;
+    }
+  }
+
+  &__readingTime {
+    color: #000000b2;
+    margin: 3px 0 3px 0;
+
+    @include for-size(laptop) {
+      margin: 6px 0 6px 0;
+    }
+    @include for-size(desktop) {
+      margin: 9px 0 9px 0;
+    }
+  }
+}
+
+.article {
+  display: flex;
+  align-items: end;
+}
+
+.tags {
+  font-size: 8px;
+  gap: 3px;
+
+  @include for-size(laptop) {
+    font-size: 12px;
+    gap: 6px;
+  }
+  @include for-size(desktop) {
+    font-size: 16px;
+    gap: 9px;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    padding: 0px 5px 0px 5px;
+    border: 1px solid #bcbcbc50;
+    background-color: #e5e1e158;
+    border-radius: 100px;
+  }
 }
