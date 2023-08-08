@@ -1,6 +1,7 @@
 import s from "./ResultSection.module.scss";
 import Image from "next/image";
 import Photo from "../../../images/project/Vectary-texture.svg";
+import HeadingOurProjectComponent from "../../../components/project/HeadingOurProjectComponent";
 
 const info = [
   {
@@ -19,16 +20,25 @@ const info = [
 
 const ResultSection = () => {
   return (
-    <div className={`${s.container} ${s.design}`}>
-      <ul className={s.design__texts}>
-        {info.map((item, index) => (
-          <li className={s.design__list} key={index}>
-            <p className={s.design__text}>{item.title}</p>
-          </li>
-        ))}
-      </ul>
-      <Image src={Photo} alt="Project Design Photo" className={s.design__photo} />
-    </div>
+    <section className={`${s.container} ${s.design}`}>
+      <div className={s.design__heading}>
+        <HeadingOurProjectComponent title="03" text="The Result" />
+      </div>
+      <div className={s.design__wrapper}>
+        <ul className={s.design__wrapper___texts}>
+          {info.map((item, index) => (
+            <li className={s.design__wrapper___list} key={index}>
+              <p className={s.design__wrapper___text}>{item.title}</p>
+            </li>
+          ))}
+        </ul>
+        <Image
+          src={Photo}
+          alt="Project Design Photo"
+          className={s.design__wrapper___photo}
+        />
+      </div>
+    </section>
   );
 };
 
