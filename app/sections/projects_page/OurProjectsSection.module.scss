@@ -85,13 +85,25 @@
   }
 
   &__technology {
+    // background: linear-gradient(139deg, #d8eff9 0%, #addbef 100%);
+    // box-shadow: $button-blue-shadow;
+    // border-radius: 10px;
+    // padding: 20px;
+    // width: 100%;
+    // box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
   }
 
   &__country {
-    max-width: 214px;
+    // background: linear-gradient(139deg, #d8eff9 0%, #addbef 100%);
+    // box-shadow: $button-blue-shadow;
+    // border-radius: 10px;
+    // padding: 20px;
+    // width: 100%;
+    // box-sizing: border-box;
+    max-width: 232px;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -110,15 +122,18 @@
   }
 
   &__button_country{
+    display: flex;
+    align-items: center;
+    gap: 5px;
     padding: 0;
   text-align: left;
   border: none;
   background-color: transparent;
   color: black;
   font-size: 11px;
-  line-height: 130.49%;
+  line-height: 100%;
   letter-spacing: 0.414px;
-    width: 100px;
+    width: 110px;
   }
 }
 

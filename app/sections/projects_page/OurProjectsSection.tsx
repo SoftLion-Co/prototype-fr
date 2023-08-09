@@ -247,7 +247,6 @@ const OurProjectsSection = () => {
     setSelectedTechnologies([]);
     setSelectedCountries([]);
   };
-  debugger;
   return (
     <section className={classNames(s.container, s.projects)}>
       <ProjectHeadingComponent centered={true} />
@@ -302,12 +301,13 @@ const OurProjectsSection = () => {
                   <CountryFlag
                     countryCode={project.countryCode} // Використовуємо countryCode з об'єкта проекту
                     svg
-                    className={s.filter__country_flag}
-                    cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
-                    cdnSuffix="svg"
-                    title={project.countryCode} // Тут також можна використовувати назву країни, якщо потрібно
+                style={{
+                    width: '12px',
+                    height: '10px',
+                    borderRadius: '2px',
+                }}
                   />
-                  {country}
+                  <span>{country}</span>
                 </button>
               );
             })}
