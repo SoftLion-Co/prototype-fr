@@ -180,9 +180,6 @@
       align-items: normal;
     }
 
-    @include for-size(laptop) {
-    }
-
     @include for-size(desktop) {
       gap: 10px;
       margin-bottom: 22px;
