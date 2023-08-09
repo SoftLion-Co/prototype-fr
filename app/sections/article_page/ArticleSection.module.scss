@@ -2,7 +2,7 @@
 @import "./../../../styles/mixin";
 @import "./../../../styles/container";
 
-.article_section {
+.article {
   display: flex;
   @include for-size(tablet) {
     gap: 30px;
@@ -16,7 +16,7 @@
     gap: 44px;
   }
 
-  &_img_container {
+  &__image {
     width: 290px;
     height: 140px;
     margin-bottom: 26px;
@@ -38,7 +38,7 @@
     }
   }
 
-  &_title {
+  &__title {
     color: $blog-card-text-color;
     font-size: 20px;
     font-weight: 400;
@@ -63,13 +63,12 @@
       margin-bottom: 32px;
     }
   }
+  &__container {
+    flex: 1;
+  }
 }
 
-.article_container {
-  flex: 1;
-}
-
-.article_navigation {
+.navigation {
   display: none;
   @include for-size(tablet) {
     width: 130px;
@@ -84,7 +83,7 @@
     width: 320px;
   }
 
-  &_list {
+  &__list {
     @include for-size(tablet) {
       position: sticky;
       top: 200px;
@@ -110,7 +109,7 @@
     }
   }
 
-  &_link {
+  &__link {
     @include for-size(tablet) {
       display: inline-block;
       width: 100%;
@@ -136,7 +135,7 @@
     }
     &:hover {
       color: $blog-card-text-color;
-    }  
+    }
   }
 }
 
@@ -145,36 +144,13 @@
 
   &::before {
     content: "";
-        border-radius: 5px;
-        height: 100%;
-        width: 10px;
-        background-color: $scrollbar-color;
-        display: inline-block;
-        position: absolute;
-        left: 0;
-  }
-}
-
-.container_author {
-  display: flex;
-  flex-direction: row;
-  gap: 14px;
-  margin-bottom: 14px;
-  align-items: center;
-
-  @include for-size(tablet) {
-    flex-direction: column;
-    gap: 7px;
-    margin-bottom: 18px;
-    align-items: normal;
-  }
-
-  @include for-size(laptop) {
-  }
-
-  @include for-size(desktop) {
-    gap: 10px;
-    margin-bottom: 22px;
+    border-radius: 5px;
+    height: 100%;
+    width: 10px;
+    background-color: $scrollbar-color;
+    display: inline-block;
+    position: absolute;
+    left: 0;
   }
 }
 
@@ -190,7 +166,27 @@
     gap: 20px;
   }
 
-  &_text {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: center;
+
+    @include for-size(tablet) {
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+      align-items: normal;
+    }
+
+    @include for-size(desktop) {
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__text {
     color: $service-heading-color;
     font-size: 12px;
     font-weight: 400;
@@ -208,7 +204,7 @@
     }
   }
 
-  &_img_container {
+  &__image {
     overflow: hidden;
     border: 1px solid grey; //видалити при підключенні беку
     border-radius: 50%;
