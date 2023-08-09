@@ -32,11 +32,12 @@ const ResultSection = () => {
             </li>
           ))}
         </ul>
-        <Image
+        <div className={s.design__wrapper___photo}></div>
+        {/* <Image
           src={Photo}
           alt="Project Design Photo"
           className={s.design__wrapper___photo}
-        />
+        /> */}
       </div>
     </section>
   );

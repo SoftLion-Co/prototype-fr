@@ -110,10 +110,11 @@
     }
 
     &___photo {
+      background: url("../../../images/project/Vectary-texture.svg");
       position: absolute;
 
-      max-width: 388px;
-      max-height: 276px;
+      width: 388px;
+      height: 276px;
 
       z-index: -1;
 
@@ -121,23 +122,23 @@
       margin-right: 19px;
 
       @include for-size(tablet) {
-        max-width: 410px;
-        max-height: 298px;
+        width: 410px;
+        height: 298px;
 
         margin-top: -93px;
         margin-left: 342px;
       }
       @include for-size(laptop) {
-        max-width: 675px;
-        max-height: 489px;
+        width: 675px;
+        height: 489px;
 
         margin-top: -117px;
         margin-left: 565px;
       }
 
       @include for-size(desktop) {
-        max-width: 817px;
-        max-height: 580px;
+        width: 817px;
+        height: 580px;
 
         margin-top: -194px;
         margin-left: 686px;
