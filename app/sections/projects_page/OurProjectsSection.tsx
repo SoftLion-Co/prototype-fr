@@ -250,7 +250,6 @@ const OurProjectsSection = () => {
   return (
     <section className={classNames(s.container, s.projects)}>
       <ProjectHeadingComponent centered={true} />
-
       <div className={s.filter}>
         <button onClick={toggleFilter} className={s.filter__main_button}>
           Filter{" "}
@@ -263,56 +262,77 @@ const OurProjectsSection = () => {
       </div>
       {isFilterOpened && (
         <div className={s.filter__opened}>
-          <p className={s.filter__title}>
-            <Image className={s.filter__title_icon} src={DotImg} alt={"●"} />{" "}
-            <span>Technology</span>
-          </p>
-          <div className={s.filter__technology}>
-            {filterTechnologiesOptions.map((technology: any, index: any) => (
-              <button
-                className={classNames(s.filter__button, {
-                  [s.buttonActive]: selectedTechnologies.includes(technology),
-                })}
-                key={index}
-                onClick={() => handleTechnologyClick(technology)}
+          <div className={s.filter__filters}>
+            <div>
+              <p className={s.filter__title}>
+                <Image
+                  className={s.filter__title_icon}
+                  src={DotImg}
+                  alt={"●"}
+                />{" "}
+                <span>Technology</span>
+              </p>
+              <div className={s.filter__wrapper}>
+                {filterTechnologiesOptions.map(
+                  (technology: any, index: any) => (
+                    <button
+                      className={classNames(s.filter__button, {
+                        [s.buttonActive]:
+                          selectedTechnologies.includes(technology),
+                      })}
+                      key={index}
+                      onClick={() => handleTechnologyClick(technology)}
+                    >
+                      {technology}
+                    </button>
+                  )
+                )}
+              </div>
+            </div>
+            <div>
+              <div className={s.filter__title}>
+                <Image
+                  className={s.filter__title_icon}
+                  src={DotImg}
+                  alt={"●"}
+                />{" "}
+                Country
+              </div>
+              <div
+                className={classNames(
+                  s.filter__wrapper,
+                  s.filter__wrapper___country
+                )}
               >
-                {technology}
-              </button>
-            ))}
+                {filterCountriesOptions.map((country: any, index: any) => {
+                  const project = sampleData.find(
+                    (proj) => proj.country === country
+                  );
+                  if (!project) return null;
+                  return (
+                    <button
+                      className={classNames(s.filter__button_country, {
+                        [s.buttonActive]: selectedCountries.includes(country),
+                      })}
+                      key={index}
+                      onClick={() => handleCountryClick(country)}
+                    >
+                      <CountryFlag
+                        countryCode={project.countryCode}
+                        svg
+                        style={{
+                          width: "1.5em",
+                          height: "1em",
+                          borderRadius: "0.3em",
+                        }}
+                      />
+                      <span>{country}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-          <div className={s.filter__title}>
-            <Image className={s.filter__title_icon} src={DotImg} alt={"●"} />{" "}
-            Country
-          </div>
-          <div className={s.filter__country}>
-            {filterCountriesOptions.map((country: any, index: any) => {
-              const project = sampleData.find(
-                (proj) => proj.country === country
-              );
-              if (!project) return null; // Якщо немає проекту з такою країною, пропустити
-              return (
-                <button
-                  className={classNames(s.filter__button_country, {
-                    [s.buttonActive]: selectedCountries.includes(country),
-                  })}
-                  key={index}
-                  onClick={() => handleCountryClick(country)}
-                >
-                  <CountryFlag
-                    countryCode={project.countryCode} // Використовуємо countryCode з об'єкта проекту
-                    svg
-                style={{
-                    width: '12px',
-                    height: '10px',
-                    borderRadius: '2px',
-                }}
-                  />
-                  <span>{country}</span>
-                </button>
-              );
-            })}
-          </div>
-
           <div className={s.filter__clear}>
             <MainButtonComponent onClick={handleFilterClear}>
               Clear Filter
