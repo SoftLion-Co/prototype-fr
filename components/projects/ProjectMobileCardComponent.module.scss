@@ -28,22 +28,22 @@
     }
 
   &__submain{
-    padding: 19px 27px 25px 9px;
+    padding: 19px 9px 25px 9px;
     font-size: 10px;
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 10px;
+    align-items: start;
   }
 
   &__subinfo{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 35%;
+    width: 46%;
   }
 
   &__desc{
-    width: 65%;
+    width: 54%;
     display: flex;
     justify-content: space-between;
     align-items:flex-end;

@@ -6,8 +6,23 @@ import classNames from "classnames";
 import ProjectCardComponent from "@/components/projects/ProjectCardComponent";
 import { FiChevronDown } from "react-icons/fi";
 import { useState } from "react";
+import MainButtonComponent from "@/components/MainButtonComponent";
+import DotImg from "@/images/project/request-list.svg";
+import Image from "next/image";
+import CountryFlag from "react-country-flag";
 
-const sampleData = [
+const sampleData: Array<{
+  id: number;
+  image: string;
+  title: string;
+  customer: string;
+  year: string;
+  author: string;
+  description: string;
+  technology: string;
+  country: string;
+  countryCode: string;
+}> = [
   {
     id: 1,
     image:
@@ -15,10 +30,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Java",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Belgium",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Java",
+    country: "Belgium",
+    countryCode: "BE",
   },
   {
     id: 2,
@@ -27,10 +44,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: React.js",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Germany",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "React.js",
+    country: "Germany",
+    countryCode: "DE",
   },
   {
     id: 3,
@@ -39,10 +58,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Angular",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Canada",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Angular",
+    country: "Canada",
+    countryCode: "CA",
   },
   {
     id: 4,
@@ -51,10 +72,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Vue.js",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Ukraine",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
   },
   {
     id: 5,
@@ -63,10 +86,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Node.js",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Sweden",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Node.js",
+    country: "Sweden",
+    countryCode: "SE",
   },
   {
     id: 6,
@@ -75,10 +100,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: .NET",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: United Kingdom",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: ".NET",
+    country: "United Kingdom",
+    countryCode: "GB",
   },
   {
     id: 7,
@@ -87,10 +114,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Java2",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Israel",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Java",
+    country: "Israel",
+    countryCode: "IL",
   },
   {
     id: 8,
@@ -99,10 +128,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: React.js2",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Ireland",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "React.js",
+    country: "Ireland",
+    countryCode: "IE",
   },
   {
     id: 9,
@@ -111,10 +142,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Angular2",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Germany",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Angular",
+    country: "Germany",
+    countryCode: "DE",
   },
   {
     id: 10,
@@ -123,10 +156,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Vue.js2",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Germany",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: "Vue.js",
+    country: "Germany",
+    countryCode: "DE",
   },
   {
     id: 11,
@@ -135,10 +170,12 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: Node.js2",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: Germany",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Node.js",
+    technology: "Next",
+    country: "Germany",
+    countryCode: "DE",
   },
   {
     id: 12,
@@ -147,35 +184,70 @@ const sampleData = [
     title: "Landing page of traveling company",
     customer: "customer: .NET2",
     year: "year: 2022",
-    author: "author: SoftLion",
+    author: "author: USA",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: ".NET",
+    country: "USA",
+    countryCode: "US",
   },
 ];
 
-const filterTechnologiesOptions = [
-  "Java",
-  "React.js",
-  "Angular",
-  "Vue.js",
-  "Node.js",
-  ".NET",
-];
+const getUniqueFieldValues = (data: any, field: any) => {
+  return data.reduce((accumulator: any, project: any) => {
+    if (!accumulator.includes(project[field])) {
+      accumulator.push(project[field]);
+    }
+    return accumulator;
+  }, []);
+};
+
+const filterTechnologiesOptions = getUniqueFieldValues(
+  sampleData,
+  "technology"
+);
+const filterCountriesOptions = getUniqueFieldValues(sampleData, "country");
 
 const OurProjectsSection = () => {
   const [isFilterOpened, setIsFilterOpened] = useState(false);
-  const [selectedTechnology, setSelectedTechnology] = useState(null);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>(
+    []
+  );
+  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
 
   const toggleFilter = () => {
     setIsFilterOpened(!isFilterOpened);
-    setSelectedTechnology(null);
   };
 
-  const handleTechnologyClick = (technology) => {
-    setSelectedTechnology(technology);
+  const handleFilterClick = (
+    item: any,
+    selectedItemArray: any,
+    setSelectedItemArray: any
+  ) => {
+    if (selectedItemArray.includes(item)) {
+      setSelectedItemArray(selectedItemArray.filter((t: any) => t !== item));
+    } else {
+      setSelectedItemArray([...selectedItemArray, item]);
+    }
   };
 
+  const handleTechnologyClick = (technology: string) => {
+    handleFilterClick(
+      technology,
+      selectedTechnologies,
+      setSelectedTechnologies
+    );
+  };
+
+  const handleCountryClick = (country: string) => {
+    handleFilterClick(country, selectedCountries, setSelectedCountries);
+  };
+
+  const handleFilterClear = () => {
+    setSelectedTechnologies([]);
+    setSelectedCountries([]);
+  };
+  debugger;
   return (
     <section className={classNames(s.container, s.projects)}>
       <ProjectHeadingComponent centered={true} />
@@ -192,12 +264,60 @@ const OurProjectsSection = () => {
       </div>
       {isFilterOpened && (
         <div className={s.filter__opened}>
+          <p className={s.filter__title}>
+            <Image className={s.filter__title_icon} src={DotImg} alt={"●"} />{" "}
+            <span>Technology</span>
+          </p>
           <div className={s.filter__technology}>
-            {filterTechnologiesOptions.map((technology, index) => (
-              <button key={index} onClick={() => handleTechnologyClick(technology)}>{technology}</button>
+            {filterTechnologiesOptions.map((technology: any, index: any) => (
+              <button
+                className={classNames(s.filter__button, {
+                  [s.buttonActive]: selectedTechnologies.includes(technology),
+                })}
+                key={index}
+                onClick={() => handleTechnologyClick(technology)}
+              >
+                {technology}
+              </button>
             ))}
           </div>
-          <div className={s.filter__country}></div>
+          <div className={s.filter__title}>
+            <Image className={s.filter__title_icon} src={DotImg} alt={"●"} />{" "}
+            Country
+          </div>
+          <div className={s.filter__country}>
+            {filterCountriesOptions.map((country: any, index: any) => {
+              const project = sampleData.find(
+                (proj) => proj.country === country
+              );
+              if (!project) return null; // Якщо немає проекту з такою країною, пропустити
+              return (
+                <button
+                  className={classNames(s.filter__button_country, {
+                    [s.buttonActive]: selectedCountries.includes(country),
+                  })}
+                  key={index}
+                  onClick={() => handleCountryClick(country)}
+                >
+                  <CountryFlag
+                    countryCode={project.countryCode} // Використовуємо countryCode з об'єкта проекту
+                    svg
+                    className={s.filter__country_flag}
+                    cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
+                    cdnSuffix="svg"
+                    title={project.countryCode} // Тут також можна використовувати назву країни, якщо потрібно
+                  />
+                  {country}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className={s.filter__clear}>
+            <MainButtonComponent onClick={handleFilterClear}>
+              Clear Filter
+            </MainButtonComponent>
+          </div>
         </div>
       )}
 
@@ -205,8 +325,11 @@ const OurProjectsSection = () => {
         {sampleData
           .filter(
             (project) =>
-              !selectedTechnology || project.technology === selectedTechnology
-          ) // Фільтруємо проекти
+              (selectedTechnologies.length === 0 ||
+                selectedTechnologies.includes(project.technology)) &&
+              (selectedCountries.length === 0 ||
+                selectedCountries.includes(project.country))
+          )
           .map((project) => (
             <ProjectMobileCardComponent key={project.id} data={project} />
           ))}
@@ -215,8 +338,11 @@ const OurProjectsSection = () => {
         {sampleData
           .filter(
             (project) =>
-              !selectedTechnology || project.technology === selectedTechnology
-          ) // Фільтруємо проекти
+              (selectedTechnologies.length === 0 ||
+                selectedTechnologies.includes(project.technology)) &&
+              (selectedCountries.length === 0 ||
+                selectedCountries.includes(project.country))
+          )
           .map((project) => (
             <ProjectCardComponent key={project.id} data={project} />
           ))}
