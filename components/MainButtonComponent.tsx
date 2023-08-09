@@ -10,14 +10,7 @@ interface MainButtonComponentProps extends ComponentProps<"button"> {
   path?: "services" | "projects";
 }
 
-const MainButtonComponent: FC<MainButtonComponentProps> = ({
-  loading = false,
-  color = "blue",
-  path,
-  className,
-  children,
-  ...rest
-}) => {
+const MainButtonComponent: FC<MainButtonComponentProps> = ({ loading = false, color = "blue", path, className, children, ...rest }) => {
   const buttonClass = classNames(s.button, className, {
     [s.blueButton]: color === "blue",
     [s.whiteButton]: color === "white",
@@ -28,20 +21,12 @@ const MainButtonComponent: FC<MainButtonComponentProps> = ({
     <>
       {path ? (
         <Link href={`/${path}`}>
-          <button
-            disabled={loading || rest.disabled}
-            className={buttonClass}
-            {...rest}
-          >
+          <button disabled={loading || rest.disabled} className={buttonClass} {...rest}>
             <>{children}</>
           </button>
         </Link>
       ) : (
-        <button
-          disabled={loading || rest.disabled}
-          className={buttonClass}
-          {...rest}
-        >
+        <button disabled={loading || rest.disabled} className={buttonClass} {...rest}>
           <>{children}</>
         </button>
       )}

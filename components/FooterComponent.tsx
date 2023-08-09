@@ -15,11 +15,11 @@ const FooterComponent = () => {
           <div className={s.footer__firstBlock}>
             <Link href="/">
               <Image
+              alt="SoftLion"
                 className={s.footer__logo}
                 src={Logo}
                 width={800}
                 height={554}
-                alt="SoftLion"
               />
             </Link>
             <div className={s.footer__routeWrap2}>

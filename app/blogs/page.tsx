@@ -1,3 +1,4 @@
+import s from "./page.module.scss";
 import Link from "next/link";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
