@@ -142,6 +142,12 @@
     }
   }
 
+  &__technology{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
   &__wrapper {
     background: linear-gradient(139deg, #d8eff9 0%, #addbef 100%);
     box-shadow: $button-blue-shadow;
@@ -151,6 +157,7 @@
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
     gap: 12px;
 
     &___country {
@@ -165,7 +172,7 @@
 
       &___country {
         gap: 0;
-        row-gap: 22px;
+        row-gap: 20px;
       }
     }
     @include for-size(laptop) {
@@ -235,6 +242,7 @@
     width: 48%;
 
     @include for-size(tablet) {
+      width:33.3%;
       gap: 7px;
       font-size: 12px;
       letter-spacing: 0.49px;

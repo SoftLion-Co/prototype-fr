@@ -100,11 +100,11 @@ const sampleData: Array<{
     title: "Landing page of traveling company",
     customer: "customer: .NET",
     year: "year: 2022",
-    author: "author: United Kingdom",
+    author: "author: UK",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
     technology: ".NET",
-    country: "United Kingdom",
+    country: "UK",
     countryCode: "GB",
   },
   {
@@ -263,7 +263,7 @@ const OurProjectsSection = () => {
       {isFilterOpened && (
         <div className={s.filter__opened}>
           <div className={s.filter__filters}>
-            <div>
+            <div className={s.filter__technology}>
               <p className={s.filter__title}>
                 <Image
                   className={s.filter__title_icon}
