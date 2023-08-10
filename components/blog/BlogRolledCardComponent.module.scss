@@ -1,6 +1,7 @@
 @import "../styles/mixin";
 
 .blogCard {
+  cursor: pointer;
   @include for-size(tablet) {
     width: 168px;
     height: 207px;
