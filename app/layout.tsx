@@ -1,7 +1,10 @@
+'use client';
 import "./../styles/main.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";
+import { SessionProvider } from "next-auth/react";
+import { Session } from "next-auth";
 
 export const metadata = {
   title: "SoftLion",
@@ -11,7 +14,9 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  session
 }: {
+  session: Session;
   children: React.ReactNode;
 }) {
   return (
@@ -20,9 +25,11 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body>
-        <HeaderComponent />
-        {children}
-        <FooterComponent />
+        <SessionProvider session={session}>
+          <HeaderComponent />
+          {children}
+          <FooterComponent />
+        </SessionProvider>
       </body>
     </html>
   );

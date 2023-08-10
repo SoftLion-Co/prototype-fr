@@ -5,12 +5,17 @@ import Facebook from "../images/Facebook.svg";
 import LinkedIn from "../images/LinkedIn.svg";
 import { FC } from "react";
 import Link from "next/link";
+import { signIn, useSession } from "next-auth/react"
 
 interface SocialAuthorizationProps {
   text: string;
 }
 
 const SocialAuthorization: FC<SocialAuthorizationProps> = ({ text }) => {
+  const {data: session} = useSession();
+
+  console.log('loggedIn, session: ', session); 
+
   return (
     <div className={s.social}>
       <h3 className={s.title}>{text}</h3>
@@ -18,9 +23,9 @@ const SocialAuthorization: FC<SocialAuthorizationProps> = ({ text }) => {
         <Link href="/">
           <Image className={s.social__icon} width={72} height={72} src={LinkedIn} alt="LinkedIn" />
         </Link>
-        <Link href="/">
-          <Image className={s.social__icon} width={72} height={72} src={Google} alt="Google" />
-        </Link>
+       <button type="button" onClick={() => signIn("google")}>
+       <Image className={s.social__icon} width={72} height={72} src={Google} alt="Google" />
+       </button>
         <Link href="/">
           <Image className={s.social__icon} width={72} height={72} src={Facebook} alt="Facebook" />
         </Link>
