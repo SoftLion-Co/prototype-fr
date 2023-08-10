@@ -87,6 +87,18 @@
     flex-direction: column;
     gap: 22px;
     margin-bottom: 34px;
+
+    @include for-size(tablet) {
+      margin-bottom: 50px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 70px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 100px;
+    }
   }
 
   &__filters {
@@ -96,6 +108,17 @@
 
     @include for-size(tablet) {
       flex-direction: row;
+      gap: 30px;
+    }
+
+    @include for-size(laptop) {
+      flex-direction: row;
+      gap: 35px;
+    }
+
+    @include for-size(desktop) {
+      flex-direction: row;
+      gap: 40px;
     }
   }
 
@@ -142,14 +165,14 @@
     }
   }
 
-  &__technology{
+  &__filters_block{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
 
   &__wrapper {
-    background: linear-gradient(139deg, #d8eff9 0%, #addbef 100%);
+    background: linear-gradient(139deg, #dff6ff 0%, #c3edff 100%);
     box-shadow: $button-blue-shadow;
     border-radius: 6px;
     padding: 18px;
@@ -161,6 +184,7 @@
     gap: 12px;
 
     &___country {
+      width: 100%;
       gap: 0;
       row-gap: 18px;
     }
@@ -242,7 +266,7 @@
     width: 48%;
 
     @include for-size(tablet) {
-      width:25%;
+      width:33.3%;
       gap: 7px;
       font-size: 12px;
       letter-spacing: 0.49px;

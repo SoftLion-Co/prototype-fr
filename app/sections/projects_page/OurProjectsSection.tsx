@@ -24,20 +24,6 @@ const sampleData: Array<{
   countryCode: string;
 }> = [
   {
-    id: 1,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Java",
-    year: "year: 2022",
-    author: "author: Belgium",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Java",
-    country: "Belgium",
-    countryCode: "BE",
-  },
-  {
     id: 2,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
@@ -177,6 +163,20 @@ const sampleData: Array<{
     country: "Germany",
     countryCode: "DE",
   },
+  {
+    id: 12,
+    image:
+      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+    title: "Landing page of traveling company",
+    customer: "customer: Node.js2",
+    year: "year: 2022",
+    author: "author: Germany",
+    description:
+      "In this project, we developed the design, implemented it, and provide further support",
+    technology: "Next",
+    country: "USA",
+    countryCode: "US",
+  },
 ];
 
 const getUniqueFieldValues = (data: any, field: any) => {
@@ -249,7 +249,7 @@ const OurProjectsSection = () => {
       {isFilterOpened && (
         <div className={s.filter__opened}>
           <div className={s.filter__filters}>
-            <div className={s.filter__technology}>
+            <div className={s.filter__filters_block}>
               <p className={s.filter__title}>
                 <Image
                   className={s.filter__title_icon}
@@ -275,7 +275,7 @@ const OurProjectsSection = () => {
                 )}
               </div>
             </div>
-            <div>
+            <div className={s.filter__filters_block}>
               <div className={s.filter__title}>
                 <Image
                   className={s.filter__title_icon}
