@@ -3,77 +3,47 @@
 @import "../styles/mixin";
 
 .custom {
-  
-  &__title {
-    margin-top: 80px;
-    margin-left: 34px;
-    font-size: 23px;
-    font-weight: 400;
-    text-align: left;
-    color: $service-heading-color;
-    @include for-size(tablet) {
-      font-weight: 400;
-      font-size: 30px;
-    }
-    @include for-size(laptop) {
-      font-size: 49px;
-      font-weight: 400;
-    }
-    @include for-size(desktop) {
-      font-weight: 400;
-      font-size: 62px;
-    }
+  margin-bottom: 60px;
+
+  @include for-size(tablet) {
+    margin-bottom: 70px;
   }
 
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 200px;
+  }
+
+  &__title{
+    margin-bottom: 40px;
+    @include for-size(tablet) {
+      margin-bottom: 40px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
+
+  }
   &__cards {
     display: flex;
-  flex-direction: column;
-  align-items: stretch;
-      
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+
     @include for-size(tablet) {
       position: relative;
-      
       flex-direction: row;
       justify-content: space-between;
-      
-      
     }
-    @include for-size(laptop) {
-      gap: 40px;
-    }
-    @include for-size(desktop) {
-      gap: 41px;
-    }
-
-  }
-
-  &__card {
-    margin-top: 78px;
-    @include for-size(tablet) {
-      margin-top: 140px;
-      
-    }
-    @include for-size(laptop) {
-      margin-top: 130px;
    
-    }
-    @include for-size(desktop) {
-      margin-top: 169px;
-    
-    }
   }
-  &__card2 {
-    margin-top: 37px;
-    @include for-size(tablet) {
-      margin-top: 140px;
-    }
-    @include for-size(laptop) {
-      margin-top: 130px;
-    }
-    @include for-size(desktop) {
-      margin-top: 169px;
-    }
-  }
+
   &__btn {
     display: none;
     @include for-size(tablet) {
@@ -82,7 +52,6 @@
       background-color: transparent;
       border: none;
       padding: 0px;
-
       position: absolute;
       right: 22px;
       bottom: -56px;

@@ -7,7 +7,7 @@ import MainButtonComponent from "./MainButtonComponent";
 import Logo from "./../images/logo.svg";
 import Image from "next/image";
 
-export const FooterComp = () => {
+const FooterComponent = () => {
   return (
     <footer className={s.footer}>
       <div className={s.container}>
@@ -15,11 +15,11 @@ export const FooterComp = () => {
           <div className={s.footer__firstBlock}>
             <Link href="/">
               <Image
+              alt="SoftLion"
                 className={s.footer__logo}
                 src={Logo}
                 width={800}
                 height={554}
-                alt="SoftLion"
               />
             </Link>
             <div className={s.footer__routeWrap2}>
@@ -119,3 +119,5 @@ export const FooterComp = () => {
     </footer>
   );
 };
+
+export default FooterComponent
