@@ -142,6 +142,7 @@
     align-items: center;
 
     &__icon {
+      cursor: pointer;
       margin: 0px 5px 0px 0;
 
       @include for-size(laptop) {
