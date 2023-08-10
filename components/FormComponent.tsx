@@ -78,18 +78,27 @@ const FormComponent = () => {
             inputProps={{
               required: true,
               name: "phone",
-              className: s.form__field,
+              className: `${s.form__field} ${s.phoneInput}`,
               placeholder: " ",
             }}
+            inputClass={s.phoneInput}
+            dropdownClass={s.phoneDropdown}
             enableSearch
             disableSearchIcon
             country={"us"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
-            buttonClass={s['buttonC']}
-            searchStyle={{border: "none", borderBottom: "1px solid #ccc", fontSize: "14px", padding: "0", marginLeft: "0", backgroundColor: "#ffffff80", backdropFilter: "blur(30px)"}}
-            dropdownStyle={{backgroundColor: "#ffffff80", backdropFilter: "blur(30px)"}}
-            containerClass={s['container']}
+            buttonClass={s["buttonC"]}
+            searchClass={s["search"]}
+            searchStyle={{
+              border: "none",
+              borderBottom: "1px solid #ccc",
+              fontSize: "14px",
+              padding: "0",
+              marginLeft: "0",
+              width: "70%",
+            }}
+            containerClass={s["container"]}
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>

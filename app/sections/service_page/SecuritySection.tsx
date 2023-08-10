@@ -5,8 +5,7 @@ import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCa
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
-import MainButtonComponent from "@/components/MainButtonComponent";
-import BigButtonComponent from "../../../components/BigButtonComponent";
+import BigButtonComponent from "../../../components/service/BigButtonComponent";
 
 const securityCardsData = [
   {
@@ -58,7 +57,9 @@ const SecuritySection = () => {
         {securityCardsData.map((card, index) => (
           <div
             key={card.id}
-            className={classNames(s.security__card, { [s.centre]: !isEven && index === securityCardsData.length - 1 })}
+            className={classNames(s.security__card, {
+              [s.centre]: !isEven && index === securityCardsData.length - 1,
+            })}
           >
             <ServiceSecurityCardComponent
               title={card.title}
@@ -68,9 +69,9 @@ const SecuritySection = () => {
         ))}
       </div>
       <div className={classNames(s.container, s.security__button)}>
-        <BigButtonComponent/>
+        <BigButtonComponent />
       </div>
-      </section>
+    </section>
   );
 };
 
