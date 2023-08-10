@@ -35,10 +35,7 @@ const FormComponent = () => {
       };
 
       // Replace "https://example.com/api/submit" with your actual backend endpoint
-      const response = await axios.post(
-        "https://example.com/api/submit",
-        formData
-      );
+      const response = await axios.post("https://example.com/api/submit", formData);
 
       console.log("Форма успішно надіслана:", response.data);
 
@@ -81,7 +78,7 @@ const FormComponent = () => {
               className: s.form__field,
               placeholder: " ",
             }}
-            country={"ua"}
+            country={"us"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
           />
@@ -99,17 +96,14 @@ const FormComponent = () => {
           <label className={s.form__label} htmlFor="description">
             Short describe ur idea
           </label>
-          {errors.description && (
-            <p className={s.error}>{errors.description.message}</p>
-          )}
+          {errors.description && <p className={s.error}>{errors.description.message}</p>}
         </div>
       </div>
       <button type="submit" className={s.form__button}>
         Book Consultation
       </button>
       <p className={s.form__text}>
-        By clicking on this button I agree to the{" "}
-        <span className={s.pr}>processing of personal data</span>
+        By clicking on this button I agree to the <span className={s.pr}>processing of personal data</span>
       </p>
     </form>
   );
