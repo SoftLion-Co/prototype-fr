@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-interface Blog {
-  id: number;
-  title: string;
-  content: string;
-  category: string;
-}
+// interface Blog {
+//   id: number;
+//   title: string;
+//   content: string;
+//   category: string;
+// }
 
 interface UseBlogPaginationProps {
   totalItems: number;
@@ -68,11 +68,11 @@ const useBlogPagination = ({
   };
 
   const showPreviousButton = () => {
-    return currentPage > 1;
+    return true;
   };
 
   const showNextButton = () => {
-    return currentPage < totalPages;
+    return true;
   };
 
   return {

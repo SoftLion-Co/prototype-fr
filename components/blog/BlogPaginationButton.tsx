@@ -4,15 +4,26 @@ import classNames from "classnames";
 
 interface Props {
   text: string;
-  active: boolean;
+  activePagination: boolean;
   onClick: () => void;
+  disabled?: boolean;
+  className?: string;
 }
 
-const BlogPaginationButton: React.FC<Props> = ({ text, active, onClick }) => {
+const BlogPaginationButton: React.FC<Props> = ({
+  text,
+  activePagination,
+  onClick,
+  disabled,
+}) => {
   return (
     <button
-      className={classNames(s.pagination__button, { [s.active]: active })}
+      className={classNames(s.pagination__button, {
+        [s.activePagination]: activePagination,
+        [s.disabled]: disabled,
+      })}
       onClick={onClick}
+      disabled={disabled} 
     >
       {text}
     </button>

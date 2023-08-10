@@ -21,9 +21,9 @@ const useBlogFilter = (props: UseBlogFilterProps) => {
     ? blogsData.filter((blog) => blog.category === selectedCategory)
     : blogsData;
 
-  const totalPagesForSelectedCategory = Math.ceil(
-    filteredBlogsData.length / blogsPerPage
-  );
+  const totalPagesForSelectedCategory = selectedCategory
+  ? Math.max(1, Math.ceil(filteredBlogsData.length / blogsPerPage))
+  : Math.ceil(blogsData.length / blogsPerPage);
 
   const handleCategoryChange = (category: string | null): void => {
     setSelectedCategory(category);

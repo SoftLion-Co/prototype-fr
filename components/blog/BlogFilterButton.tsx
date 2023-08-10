@@ -4,15 +4,27 @@ import classNames from "classnames";
 
 interface Props {
   text: string;
-  active: boolean;
+  activeFilter: boolean;
   onClick: () => void;
+  disabled?: boolean;
+  className?: string;
 }
 
-const BlogFilterButton: React.FC<Props> = ({ text, active, onClick }) => {
+const BlogFilterButton: React.FC<Props> = ({
+  text,
+  activeFilter,
+  onClick,
+  disabled,
+  className,
+}) => {
   return (
     <button
-      className={classNames(s.filter__button, { [s.active]: active })}
+      className={classNames(s.filter__button, className, {
+        [s.activeFilter]: activeFilter,
+        [s.disabled]: disabled,
+      })}
       onClick={onClick}
+      disabled={disabled}
     >
       {text}
     </button>

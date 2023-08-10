@@ -97,54 +97,46 @@
     margin-bottom: 140px;
   }
 }
-// .blog__button {
-//   background: none;
-//   border: none;
-//   font-size: 26px;
-// }
 
 .filter__button {
   background: none;
   border: none;
   position: relative;
-  color: black;
-  font-size: 14px;
+  // color: rgb(0, 0, 0, 75%);
+  font-size: 12px;
   font-weight: 400;
   line-height: calc(19.6 / 16);
-  // letter-spacing: 0;
-  transition: letter-spacing 0.3s ease-in-out;
   @include for-size(tablet) {
-    font-size: 20px;
+    font-size: 14px;
   }
   @include for-size(laptop) {
-    font-size: 26px;
+    font-size: 17px;
   }
   @include for-size(desktop) {
-    font-size: 30px;
+    font-size: 22px;
     min-width: 165px;
   }
+}
 
-  &:hover,
-  &:focus,
-  &:active {
-    // letter-spacing: 2px;
-    color: #308bb7;
+.activeFilter {
+  background: $button-blue-form;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+// .animated {
+//   animation: fadeIn 0.5s ease;
+// }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  &:after {
-    backface-visibility: hidden;
-    border-bottom: 2px solid #308bb7;
-    content: " ";
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    transition: width 350ms ease-in-out;
-    width: 0;
-  }
-
-  &:hover:after,
-  &:focus:after {
-    width: 100%;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -157,7 +149,7 @@
     background: none;
     border: none;
     position: relative;
-    color: black;
+    color: rgb(0, 0, 0, 75%);
     font-weight: 400;
     line-height: calc(19.6 / 16);
     @include for-size(tablet) {
@@ -168,26 +160,6 @@
     }
     @include for-size(desktop) {
       font-size: 22px;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: #308bb7;
-    }
-
-    &:after {
-      backface-visibility: hidden;
-      content: " ";
-      display: block;
-      margin: 0 auto;
-      position: relative;
-      width: 0;
-    }
-
-    &:hover:after,
-    &:focus:after {
-      width: 100%;
     }
   }
   @include for-size(phone) {
@@ -206,55 +178,83 @@
     gap: 10px;
   }
 }
+.activePagination {
+  background: $button-blue-form;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
 
-//carousel
+// ==================================================//
+// =====================CAROUSEL=====================//
+// ==================================================//
 .blog__filter {
   overflow: hidden;
   display: flex;
   align-items: center;
-  transition: height 5s ease;
-  // width: 1400px;
-}
 
-.blog__filter__container {
-  overflow: hidden; /* Keep the overflow hidden */
-  display: flex;
-  justify-content: center;
-}
-
-.blog__filter__carousel {
-  @include for-size (phone) {
+  &_carousel {
+    display: flex;
+    align-items: center;
+    opacity: 1;
     gap: 10px;
+    margin-bottom: 10%;
+
+    @include for-size(tablet) {
+      gap: 15px;
+    }
+    @include for-size(laptop) {
+      gap: 20px;
+    }
+    @include for-size(tablet) {
+      gap: 25px;
+    }
   }
-  gap: 30px;
-  margin-bottom: 100px;
+  &_controls {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    @include for-size(tablet) {
+      gap: 15px;
+    }
+    @include for-size(laptop) {
+      gap: 20px;
+    }
+    @include for-size(tablet) {
+      gap: 25px;
+    }
+  }
 
-  display: flex;
-  align-items: center;
-  opacity: 1;
-  transition: opacity 0.9s ease;
+  &_indicator {
+    cursor: pointer;
+    border: none;
+    color: #c7c7c7;
+    background-color: transparent;
+    transition: background-color 5s ease;
+    opacity: 0.3;
+    font-size: 16px;
+
+    @include for-size(tablet) {
+      font-size: 20px;
+    }
+    @include for-size(laptop) {
+      font-size: 24px;
+    }
+    @include for-size(desktop) {
+      font-size: 30px;
+    }
+
+    &:hover {
+      color: #c7c7c7;
+    }
+  }
+  .visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .animated {
+    transition: opacity 0.5s ease;
+  }
 }
 
-.blog__filter__controls {
-  position: absolute;
-  display: flex;
-  gap: 40px;
-}
-
-.blog__filter__indicator {
-  cursor: pointer;
-  border: 1px solid #3a3a3a;
-  border-radius: 50%;
-  transition: background-color 5s ease;
-  opacity: 0.5;
-  font-size: 1.2rem;
-}
-
-.blog__filter__indicator:hover {
-  background-color: #f1f1f1;
-}
-
-.blog__filter__indicator.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
