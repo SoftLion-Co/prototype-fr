@@ -10,6 +10,7 @@ import Image from "next/image";
 interface BlogExtendedCardComponentProps {
   id: number;
   title: string;
+  authorId: string;
   author: string;
   authorIconSrc: string;
   readingTime: string;
@@ -40,7 +41,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowLeft}
-            alt="45"></Image>
+            alt="45"
+          ></Image>
         }
         nextControlIcon={
           <Image
@@ -48,7 +50,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowRight}
-            alt="45"></Image>
+            alt="45"
+          ></Image>
         }
         skipSnaps
         styles={{
@@ -72,7 +75,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             alignItems: "center",
           },
         }}
-        align="center">
+        align="center"
+      >
         {cardsData.map((x, index) => (
           <>
             {currentSlide === index ? (
@@ -81,6 +85,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                   <BlogExtendedCardComponent
                     id={x.id}
                     text={x.text}
+                    authorId={x.authorId}
                     author={x.author}
                     imageSrc={x.imageSrc}
                     authorIconSrc={x.authorIconSrc}
@@ -100,7 +105,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                       (currentSlide === cardsData.length - 1 && index === 0)
                     ? s.blogDesktop__rolledCardRight
                     : s.blogDesktop__rolledCardDefault
-                }>
+                }
+              >
                 <Carousel.Slide
                   onClick={
                     currentSlide - 1 === index ||
@@ -115,7 +121,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                         }
                       : undefined
                   }
-                  key={index}>
+                  key={index}
+                >
                   <BlogRolledCardComponent
                     title={x.title}
                     imageSrc={x.imageSrc}
