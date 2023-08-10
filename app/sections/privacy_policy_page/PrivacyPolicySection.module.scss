@@ -33,16 +33,17 @@
   }
 
   &__list {
-    margin-left: 21px;
     font-size: 14px;
     padding-bottom: 31px;
-    list-style-position: inside;
+
+    &___tab {
+      margin-left: 21px;
+    }
   }
   &__item {
-    //  list-style: initial;
-
-    &___num {
-      list-style: decimal;
-    }
+    list-style: disc;
+  }
+  &___no_italic {
+    font-style: normal;
   }
 }
