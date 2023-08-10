@@ -3,6 +3,7 @@ import Line from "../../images/project/line-component.svg";
 import React, { FC } from "react";
 import Image from "next/image";
 import classNames from "classnames";
+import InfoNavigationComponent from "../InfoNavigationComponent";
 
 const AuthorPage: FC = () => {
   const response = {
@@ -14,19 +15,27 @@ const AuthorPage: FC = () => {
   };
 
   const { name, occupation, description, imgSrc } = response;
+  const links = [
+    { title: "Blog", href: "blogs" },
+    { title: "Authors", href: "blogs/authors" },
+  ];
+
   return (
-    <div className={classNames(s.page, s.container)}>
-      <div className={s.info}>
-        <div className={s.profile}>
-          <img className={s.profile__img} src={imgSrc} alt="" />
-          <p className={s.profile__name}>{name}</p>
+    <section>
+      <InfoNavigationComponent links={links} />
+      <div className={classNames(s.page, s.container)}>
+        <div className={s.info}>
+          <div className={s.profile}>
+            <img className={s.profile__img} src={imgSrc} alt="" />
+            <p className={s.profile__name}>{name}</p>
+          </div>
+          <p className={s.info__occupation}>{occupation}</p>
         </div>
-        <p className={s.info__occupation}>{occupation}</p>
+        <p className={s.page__about}>About me</p>
+        <Image src={Line} alt="" className={s.page__line} />
+        <p className={s.page__description}>{description}</p>
       </div>
-      <p className={s.page__about}>About me</p>
-      <Image src={Line} alt="" className={s.page__line} />
-      <p className={s.page__description}>{description}</p>
-    </div>
+    </section>
   );
 };
 
