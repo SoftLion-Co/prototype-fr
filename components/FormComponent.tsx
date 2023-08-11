@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -14,23 +14,39 @@ interface FormData {
 const FormComponent = () => {
   const [phone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
 
   const {
     handleSubmit,
     register,
     formState: { errors },
     reset,
-  } = useForm<FormData>();
+    watch,
+  } = useForm<FormData>({
+    defaultValues: {
+      email: "",
+      phone: "",
+      description: "",
+    },
+  });
+
+  const watchEmail = watch("email");
+  const watchDescription = watch("description");
 
   const handleFormSubmit = async (data: FormData) => {
     try {
+      if (!data.email || !phone || !data.description) {
+        console.log("Please fill in all required fields");
+        return;
+      }
+
       console.log("email:", data.email);
       console.log("phone:", phone);
       console.log("description:", data.description);
 
       const formData = {
         email: data.email,
-        phone: phone,
+        phone: "+" + phone,
         description: data.description,
       };
 
@@ -40,25 +56,33 @@ const FormComponent = () => {
         formData
       );
 
-      console.log("Форма успішно надіслана:", response.data);
+      console.log("Form successfully submitted:", response.data);
 
       setIsFormSubmitted(true);
       reset();
       setPhone("");
     } catch (error) {
-      console.error("Помилка надсилання форми:", error);
+      console.error("Error submitting form:", error);
     }
   };
 
+  useEffect(() => {
+    setSubmitDisabled(!watchEmail || !phone || !watchDescription);
+  }, [watchEmail, phone, watchDescription]);
+
   return (
-    <form className={s.form} onSubmit={handleSubmit(handleFormSubmit)}>
+    <form
+      className={s.form}
+      onSubmit={handleSubmit(handleFormSubmit)}
+      noValidate
+    >
       <h2 className={s.form__title}>Book consultation</h2>
       <span className={s.form__line}></span>
       <div className={s.form__container}>
         <div className={s.form__input}>
           <input
             type="email"
-            className={s.form__field}
+            className={`${s.form__field} ${errors.email ? s.invalidField : ""}`}
             placeholder=" "
             {...register("email", {
               required: "Email is required",
@@ -78,13 +102,12 @@ const FormComponent = () => {
             inputProps={{
               required: true,
               name: "phone",
-              className: `${s.form__field} ${s.phoneInput}`,
-              placeholder: " ",
+              className: `${s.form__field} ${s.phoneInput} ${
+                errors.phone ? s.invalidField : ""
+              }`,
+              placeholder: "",
             }}
             inputClass={s.phoneInput}
-            dropdownClass={s.phoneDropdown}
-            enableSearch
-            disableSearchIcon
             country={"us"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
@@ -119,7 +142,13 @@ const FormComponent = () => {
           )}
         </div>
       </div>
-      <button type="submit" className={s.form__button}>
+      <button
+        type="submit"
+        className={`${s.form__button} ${
+          submitDisabled ? s.disabledButton : ""
+        }`}
+        disabled={submitDisabled}
+      >
         Book Consultation
       </button>
       <p className={s.form__text}>

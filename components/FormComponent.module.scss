@@ -355,7 +355,6 @@
   color: red;
 }
 
-
 .container {
   min-width: 100%;
   background-color: transparent;
@@ -366,4 +365,25 @@
   left: -8px;
   bottom: 2px;
   background-color: transparent !important;
+}
+
+.disabledButton {
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(125, 166, 185, 0.44) 22.4%,
+      rgba(48, 139, 183, 0.57) 100%
+    );
+  }
+
+  background: linear-gradient(
+    180deg,
+    rgba(125, 166, 185, 0.44) 22.4%,
+    rgba(48, 139, 183, 0.57) 100%
+  );
+  cursor: not-allowed;
+}
+
+.invalidField {
+  border-bottom: 1px solid red;
 }
