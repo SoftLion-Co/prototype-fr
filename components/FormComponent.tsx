@@ -5,13 +5,17 @@ import "react-phone-input-2/lib/style.css";
 import s from "./FormComponent.module.scss";
 import axios from "axios";
 
+interface FormProps {
+  title: string;
+}
+
 interface FormData {
   email: string;
   phone: string;
   description: string;
 }
 
-const FormComponent = () => {
+const FormComponent: React.FC<FormProps> = ({ title }) => {
   const [phone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
@@ -76,7 +80,7 @@ const FormComponent = () => {
       onSubmit={handleSubmit(handleFormSubmit)}
       noValidate
     >
-      <h2 className={s.form__title}>Book consultation</h2>
+      <h2 className={s.form__title}>{title}</h2>
       <span className={s.form__line}></span>
       <div className={s.form__container}>
         <div className={s.form__input}>
