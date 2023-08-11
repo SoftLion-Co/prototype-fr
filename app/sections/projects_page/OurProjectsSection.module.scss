@@ -165,7 +165,7 @@
     }
   }
 
-  &__filters_block{
+  &__filters_block {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -266,7 +266,7 @@
     width: 48%;
 
     @include for-size(tablet) {
-      width:33.3%;
+      width: 33.3%;
       gap: 7px;
       font-size: 12px;
       letter-spacing: 0.49px;
@@ -288,4 +288,21 @@
 
 .buttonActive {
   color: $heading-blue-color;
+}
+
+.pagination {
+  margin-top: 30px;
+  justify-content: center;
+
+  @include for-size(tablet) {
+    margin-top: 60px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: 80px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 100px;
+  }
 }

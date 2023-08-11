@@ -11,7 +11,7 @@ import BlogImpression from "./../../../images/BlogImpression.svg";
 const ImpressionSection = () => {
   const [value, setValue] = useState(0);
 
-  const handleSubmit = (event): void => {
+  const handleSubmit = (event: any): void => {
     event.preventDefault();
 
     const {name, email, comment } = event.target.elements;

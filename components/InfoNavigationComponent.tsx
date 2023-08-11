@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Anchor } from "@mantine/core";
 import s from "./InfoNavigationComponent.module.scss";
 import { BsHouseDoor } from "react-icons/bs";
 import classNames from "classnames";
+import Link from "next/link";
 
 interface InfoNavigationComponentProps {
   links: { title: string; href: string }[];
@@ -19,7 +19,7 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
   ];
 
   const items = allLinks.map((item, index) => (
-    <Anchor
+    <Link
       href={item.href}
       key={index}
       className={
@@ -29,7 +29,7 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
       }
     >
       {item.title}
-    </Anchor>
+    </Link>
   ));
 
   return (
@@ -37,7 +37,7 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
       {items.map((item, index) => (
         <React.Fragment key={index}>
           {index > 0 && (
-            <span className={s.custom_breadcrumbs__separator}>—</span>
+            <span key={index} className={s.custom_breadcrumbs__separator}>—</span>
           )}
           {item}
         </React.Fragment>
