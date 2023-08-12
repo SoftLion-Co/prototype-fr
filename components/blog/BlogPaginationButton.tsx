@@ -22,8 +22,11 @@ const BlogPaginationButton: React.FC<Props> = ({
         [s.activePagination]: activePagination,
         [s.disabled]: disabled,
       })}
-      onClick={onClick}
-      disabled={disabled} 
+      onClick={() => {
+        onClick(); // Виклик функції при кліку
+        window.scrollTo(0, 0); // Прокрутка нагору
+      }}
+      disabled={disabled}
     >
       {text}
     </button>

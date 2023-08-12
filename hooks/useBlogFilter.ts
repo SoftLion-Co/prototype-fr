@@ -3,8 +3,13 @@ import { useState } from "react";
 interface Blog {
   id: number;
   title: string;
-  content: string;
   category: string;
+  readingTime: string; 
+  author: string;
+  authorIconSrc: string;
+  text: string; 
+  imageSrc: string;
+  tags: string[];
 }
 
 interface UseBlogFilterProps {
