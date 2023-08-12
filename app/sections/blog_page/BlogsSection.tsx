@@ -6,9 +6,11 @@ import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponen
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import BlogFilterButton from "@/components/blog/BlogFilterButton";
 import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
+import ButtonUploadBlogs from "@/components/blog/ButtonUploadBlogs";
 import useBlogPagination from "@/hooks/useBlogPagination";
 import useBlogFilter from "@/hooks/useBlogFilter";
 import useResponsiveItemsToShow from "@/hooks/useResponsiveItemsToShow";
+import useButtonUploadBlogs from "@/hooks/useButtonUploadBlogs";
 
 interface Blog {
   id: number;
@@ -201,8 +203,6 @@ const BlogsSection = () => {
   ];
 
   const blogsPerPage = 6;
-  const itemsToShowResponsive = useResponsiveItemsToShow();
-
   const [scrollToTop, setScrollToTop] = useState(false);
 
   const handleFirstPageClick = () => {
@@ -218,11 +218,6 @@ const BlogsSection = () => {
     setCurrentPage(newPage);
     setScrollToTop(true);
     window.scrollTo(0, 0);
-  };
-
-  const handlePageNumberChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-    setScrollToTop(true);
   };
 
   useEffect(() => {
@@ -260,20 +255,32 @@ const BlogsSection = () => {
     currentPage * blogsPerPage
   );
 
+  //useButtonUploadBlogs
+  const [visibleBlogs, setVisibleBlogs] = useState<Blog[]>([]);
+
+  const { shouldRenderButton, handleUpload } = useButtonUploadBlogs(
+    filteredBlogsData.length,
+    blogsPerPage,
+    visibleBlogs,
+    setVisibleBlogs,
+    filteredBlogsData
+  );
+
   // Carousel state and handlers
   const [sliderPosition, setSliderPosition] = useState(0);
   const [startX, setStartX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const itemsToShow = useResponsiveItemsToShow();
-  const totalItems = filteredBlogsData.length;
   const [slideLeft, setSlideLeft] = useState(false);
   const [slideRight, setSlideRight] = useState(false);
   const [currentSliderPosition, setCurrentSliderPosition] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const itemsToShow = useResponsiveItemsToShow();
+  const totalItems = filteredBlogsData.length;
 
   const [slideDirection, setSlideDirection] = useState<"left" | "right" | null>(
     null
   );
+
   const [animateCarousel, setAnimateCarousel] = useState(false);
 
   const categoriesPerPage = itemsToShow;
@@ -294,19 +301,6 @@ const BlogsSection = () => {
     setCurrentSliderPosition(newPosition);
   };
 
-  // const handleSliderNext = () => {
-  //   const maxPosition = Math.max(0, categories.length - itemsToShow);
-  //   const newPosition = Math.min(sliderPosition + 7, maxPosition);
-  //   setSliderPosition(newPosition);
-  //   scrollToPosition(newPosition);
-  // };
-
-  // const handleSliderPrev = () => {
-  //   const newPosition = Math.max(0, sliderPosition - 7);
-  //   setSliderPosition(newPosition);
-  //   scrollToPosition(newPosition);
-  // };
-
   const scrollToPosition = (position: number) => {
     const sliderElement = sliderRef.current;
     if (sliderElement) {
@@ -314,11 +308,6 @@ const BlogsSection = () => {
       const scrollPosition = -position * (width + 30);
       sliderElement.scrollTo({ left: scrollPosition, behavior: "smooth" });
     }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.clientX);
   };
 
   const handleMouseUp = () => {
@@ -356,11 +345,6 @@ const BlogsSection = () => {
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging, handleMouseMove, handleMouseUp]);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].clientX);
-  };
 
   const handleTouchEnd = () => {
     setIsDragging(false);
@@ -499,10 +483,10 @@ const BlogsSection = () => {
             ))}
           </div>
         </div>
-
         <div className={s.blog__cards}>
           {currentBlogs.map((blog) => (
             <BlogExtendedCardComponent
+              key={blog.id}
               id={blog.id}
               category={blog.category}
               title={blog.title}
@@ -514,6 +498,10 @@ const BlogsSection = () => {
               tags={blog.tags}
             />
           ))}
+        </div>
+
+        <div>
+          {shouldRenderButton && <ButtonUploadBlogs onClick={handleUpload} />}
         </div>
 
         <div className={s.pagination}>
@@ -529,12 +517,24 @@ const BlogsSection = () => {
               )}
 
               {currentPage > 1 && (
-                <BlogPaginationButton
-                  key="first"
-                  text="1"
-                  activePagination={false}
-                  onClick={handleFirstPageClick}
-                />
+                <>
+                  {currentPage > Math.ceil(itemsToShow / 2) && (
+                    <BlogPaginationButton
+                      key="first"
+                      text="1"
+                      activePagination={false}
+                      onClick={handleFirstPageClick}
+                    />
+                  )}
+                  {currentPage > 3 && (
+                    <BlogPaginationButton
+                      key="ellipsis-start"
+                      text="…"
+                      activePagination={false}
+                      onClick={() => handlePageChange(currentPage - 2)}
+                    />
+                  )}
+                </>
               )}
 
               {getPageNumbersToShow().map((pageNumber) => (
@@ -547,15 +547,26 @@ const BlogsSection = () => {
                 />
               ))}
 
-              {currentPage < totalPages && (
-                <BlogPaginationButton
-                  key="last"
-                  text={String(totalPages)}
-                  activePagination={false}
-                  onClick={handleLastPageClick}
-                />
+              {currentPage < totalPages - 1 && (
+                <>
+                  {currentPage < totalPages - Math.ceil(totalPages / 4) && (
+                    <BlogPaginationButton
+                      key="ellipsis-end"
+                      text="…"
+                      activePagination={false}
+                      onClick={() => handlePageChange(currentPage + 2)}
+                    />
+                  )}
+                  {currentPage < totalPages - Math.ceil(totalPages / 4) && (
+                    <BlogPaginationButton
+                      key="last"
+                      text={String(totalPages)}
+                      activePagination={false}
+                      onClick={handleLastPageClick}
+                    />
+                  )}
+                </>
               )}
-
               {showNextButton() && currentPage < totalPages && (
                 <BlogPaginationButton
                   key="next"

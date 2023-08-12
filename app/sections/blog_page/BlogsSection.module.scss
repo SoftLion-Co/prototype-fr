@@ -64,6 +64,9 @@
   flex-direction: column;
   gap: 20px;
 
+  @include for-size(phone) {
+    margin-bottom: 95px;
+  }
   @include for-size(tablet) {
     display: flex;
     justify-content: space-between;
