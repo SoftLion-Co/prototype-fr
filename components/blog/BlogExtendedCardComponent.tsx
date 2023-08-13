@@ -4,6 +4,7 @@ import Link from "next/link";
 
 interface BlogExtendedCardComponentProps {
   id: number;
+  category: string;
   title: string;
   authorId: string;
   author: string;
@@ -16,6 +17,7 @@ interface BlogExtendedCardComponentProps {
 
 const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
   id,
+  category,
   title,
   authorId,
   author,
