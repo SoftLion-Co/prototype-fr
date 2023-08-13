@@ -4,6 +4,9 @@ import classNames from "classnames";
 const PrivacyPolicySection = () => {
   return (
     <section className={classNames(s.container, s.privacy)}>
+      <p className={classNames(s.privacy___bold, s.privacy___date)}>
+        This version of Privacy Policy was published __/__/____
+      </p>
       <h1 className={s.privacy__title}>SUMMARY OF THE KEY POINTS</h1>
       <p className={s.privacy__text}>
         <span className={s.privacy___bold}>In Short:</span> This summary
@@ -93,7 +96,6 @@ const PrivacyPolicySection = () => {
         </li>
         <li className={s.privacy__item}>
           <a href="#item6">
-            {" "}
             WHAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
             INFORMATION?
           </a>
@@ -112,12 +114,10 @@ const PrivacyPolicySection = () => {
         </li>
         <li className={s.privacy__item}>
           <a href="#item11">
-            {" "}
             WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?
           </a>
         </li>
       </ul>
-
       {/* =========== 1 ========== */}
       <ol className={s.privacy__list}>
         <li id="item1">
@@ -192,7 +192,6 @@ const PrivacyPolicySection = () => {
             </li>
           </ul>
         </li>
-
         {/* =========== 2 ========== */}
         <li id="item2" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
@@ -248,6 +247,7 @@ const PrivacyPolicySection = () => {
             </li>
           </ul>
         </li>
+        {/* =========== 3 ========== */}
         <li id="item3" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             {" "}
@@ -287,7 +287,7 @@ const PrivacyPolicySection = () => {
             </li>
           </ul>
         </li>
-
+        {/* =========== 4 ========== */}
         <li id="item4" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             4. IS THE USAGE OF COOKIES AND OTHER TRACKING TECHNOLOGIES
@@ -302,6 +302,7 @@ const PrivacyPolicySection = () => {
             see our Cookie Notice.
           </p>
         </li>
+        {/* =========== 5 ========== */}
         <li id="item5" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             5. WHAT IS THE DURATION OF INFORMATION RETENTION?
@@ -323,6 +324,7 @@ const PrivacyPolicySection = () => {
             be deleted.
           </p>
         </li>
+        {/* =========== 6 ========== */}
         <li id="item6" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             6. HAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
@@ -347,6 +349,7 @@ const PrivacyPolicySection = () => {
             you only access the Services within a secure environment.
           </p>
         </li>
+        {/* =========== 7 ========== */}
         <li id="item7" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             7. IS INFORMATION COLLECTED FROM MINORS?
@@ -366,6 +369,7 @@ const PrivacyPolicySection = () => {
             contact us at office.softlion@gmail.com.
           </p>
         </li>
+        {/* =========== 8 ========== */}
         <li id="item8" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             8. WHAT ARE YOUR RIGHTS REGARDING PRIVACY?
@@ -394,6 +398,7 @@ const PrivacyPolicySection = () => {
             office.softlion@gmail.com.
           </p>
         </li>
+        {/* =========== 9 ========== */}
         <li id="item9" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             9. CONTROLS REGARDING “DO-NOT-TRACK FEATURES”
@@ -410,6 +415,7 @@ const PrivacyPolicySection = () => {
             office.softlion@gmail.com.
           </p>
         </li>
+        {/* =========== 10 ========== */}
         <li id="item10" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             10. ARE UPDATES MADE TO THIS NOTICE?
@@ -427,6 +433,7 @@ const PrivacyPolicySection = () => {
             SoftLion is protecting your information.
           </p>
         </li>
+        {/* =========== 11 ========== */}
         <li id="item11" className={s.privacy__item___num}>
           <h2 className={s.privacy__title}>
             11. WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?

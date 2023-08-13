@@ -3,17 +3,26 @@
 @import "../styles/mixin";
 
 .privacy {
+  &___date {
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+      margin-bottom: 62px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 111px;
+    }
+  }
   &__title {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
     color: black;
-    margin-bottom: 14px;
-    @include for-size(tablet) {
-    }
-    @include for-size(laptop) {
-    }
+    margin-bottom: 26px;
     @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+      margin-bottom: 84px;
     }
   }
 
@@ -23,6 +32,11 @@
     line-height: 18px;
     color: black;
     margin-bottom: 14px;
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+      margin-bottom: 56px;
+    }
   }
 
   &___bold {
@@ -30,14 +44,26 @@
     font-weight: 500;
     line-height: 18px;
     color: black;
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+    }
   }
 
   &__list {
     font-size: 14px;
-    padding-bottom: 31px;
-
+    line-height: 18px;
+    margin-bottom: 44px;
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+      margin-bottom: 84px;
+    }
     &___tab {
       margin-left: 21px;
+      @include for-size(desktop) {
+        margin-left: 40px;
+      }
     }
   }
   &__item {
