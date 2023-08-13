@@ -1,5 +1,7 @@
 import React from "react";
-import s from "@/app/sections/blog_page/BlogsSection.module.scss";
+import s from "@/components/blog/BlogFilterButton.module.scss";
+
+
 import classNames from "classnames";
 
 interface Props {

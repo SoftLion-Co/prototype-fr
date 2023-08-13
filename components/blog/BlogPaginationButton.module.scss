@@ -1,0 +1,29 @@
+@import "./../../styles/mixin";
+@import "./../../styles/colors";
+@import "./../../styles/container";
+
+.pagination__button {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0, 75%);
+  font-weight: 400;
+  line-height: calc(19.6 / 16);
+  font-size: 14px;
+
+  @include for-size(tablet) {
+    font-size: 14px;
+  }
+  @include for-size(laptop) {
+    font-size: 18px;
+  }
+  @include for-size(desktop) {
+    font-size: 22px;
+  }
+}
+
+.activePagination {
+  background: $button-blue-form;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}

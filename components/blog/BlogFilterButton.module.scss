@@ -1,0 +1,30 @@
+@import "./../../styles/mixin";
+@import "./../../styles/colors";
+@import "./../../styles/container";
+
+.filter__button {
+  background: none;
+  border: none;
+  position: relative;
+  color: rgb(0, 0, 0, 75%);
+  font-size: 12px;
+  font-weight: 400; 
+  line-height: calc(19.6 / 16);
+
+  @include for-size(tablet) {
+    font-size: 14px;
+  }
+  @include for-size(laptop) {
+    font-size: 17px;
+  }
+  @include for-size(desktop) {
+    font-size: 22px;
+    min-width: 165px;
+  }
+}
+
+.activeFilter {
+  background: $button-blue-form;
+  color: #ffffff;
+  border-radius: 5px;
+}

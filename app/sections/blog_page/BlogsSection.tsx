@@ -6,11 +6,9 @@ import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponen
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import BlogFilterButton from "@/components/blog/BlogFilterButton";
 import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
-import ButtonUploadBlogs from "@/components/blog/ButtonUploadBlogs";
 import useBlogPagination from "@/hooks/useBlogPagination";
 import useBlogFilter from "@/hooks/useBlogFilter";
 import useResponsiveItemsToShow from "@/hooks/useResponsiveItemsToShow";
-import useButtonUploadBlogs from "@/hooks/useButtonUploadBlogs";
 
 interface Blog {
   id: number;
@@ -255,17 +253,6 @@ const BlogsSection = () => {
     currentPage * blogsPerPage
   );
 
-  //useButtonUploadBlogs
-  const [visibleBlogs, setVisibleBlogs] = useState<Blog[]>([]);
-
-  const { shouldRenderButton, handleUpload } = useButtonUploadBlogs(
-    filteredBlogsData.length,
-    blogsPerPage,
-    visibleBlogs,
-    setVisibleBlogs,
-    filteredBlogsData
-  );
-
   // Carousel state and handlers
   const [sliderPosition, setSliderPosition] = useState(0);
   const [startX, setStartX] = useState(0);
@@ -483,6 +470,7 @@ const BlogsSection = () => {
             ))}
           </div>
         </div>
+
         <div className={s.blog__cards}>
           {currentBlogs.map((blog) => (
             <BlogExtendedCardComponent
@@ -500,10 +488,6 @@ const BlogsSection = () => {
           ))}
         </div>
 
-        <div>
-          {shouldRenderButton && <ButtonUploadBlogs onClick={handleUpload} />}
-        </div>
-
         <div className={s.pagination}>
           {totalPages > 5 && (
             <>
@@ -518,12 +502,13 @@ const BlogsSection = () => {
 
               {currentPage > 1 && (
                 <>
-                  {currentPage > Math.ceil(itemsToShow / 2) && (
+                  {currentPage >= 4 && (
                     <BlogPaginationButton
-                      key="first"
+                      key={1}
                       text="1"
-                      activePagination={false}
-                      onClick={handleFirstPageClick}
+                      activePagination={1 === currentPage}
+                      onClick={() => handlePageChange(1)}
+                      className={classNames(s.activePagination)}
                     />
                   )}
                   {currentPage > 3 && (
@@ -531,7 +516,7 @@ const BlogsSection = () => {
                       key="ellipsis-start"
                       text="…"
                       activePagination={false}
-                      onClick={() => handlePageChange(currentPage - 2)}
+                      onClick={() => handlePageChange(currentPage - 7)}
                     />
                   )}
                 </>
@@ -549,7 +534,7 @@ const BlogsSection = () => {
 
               {currentPage < totalPages - 1 && (
                 <>
-                  {currentPage < totalPages - Math.ceil(totalPages / 4) && (
+                  {currentPage <= totalPages - 4 && (
                     <BlogPaginationButton
                       key="ellipsis-end"
                       text="…"
@@ -557,12 +542,13 @@ const BlogsSection = () => {
                       onClick={() => handlePageChange(currentPage + 2)}
                     />
                   )}
-                  {currentPage < totalPages - Math.ceil(totalPages / 4) && (
+                  {currentPage <= totalPages - 3 && (
                     <BlogPaginationButton
-                      key="last"
+                      key={totalPages}
                       text={String(totalPages)}
-                      activePagination={false}
-                      onClick={handleLastPageClick}
+                      activePagination={totalPages === currentPage}
+                      onClick={() => handlePageChange(totalPages)}
+                      className={classNames(s.activePagination)}
                     />
                   )}
                 </>

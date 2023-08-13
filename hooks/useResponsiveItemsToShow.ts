@@ -6,7 +6,7 @@ const useResponsiveItemsToShow = () => {
   useEffect(() => {
     const updateItemsToShow = () => {
       if (window.innerWidth <= 767.98) {
-        setItemsToShow(4);
+        setItemsToShow(5);
       } else {
         setItemsToShow(7);
       }
