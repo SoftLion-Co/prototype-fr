@@ -67,61 +67,79 @@ const PrivacyPolicySection = () => {
         </li>
       </ul>
       <h2 className={s.privacy__title}>TABLE OF CONTENTS:</h2>
-      <ul className={classNames(s.privacy__list, s.privacy__list___tab)}>
+      <ul className={classNames(s.privacy__list, s.privacy__list___tab, s.privacy__list___color )}>
         <li className={s.privacy__item}>
-          <a href="#item1">
+          <a href="#item1" className={s.privacy__title___color}>
             {" "}
             WHAT TYPE OF INFORMATION IS COLLECTED BY SOFTLION?{" "}
           </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item2">
+          <a href="#item2" className={s.privacy__title___color}>
             WHAT IS THE METHOD OF PROCESSING YOUR INFORMATION?
           </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item3">
+          <a href="#item3" className={s.privacy__title___color}>
             {" "}
             WHEN AND TO WITH IS YOUR PERSONAL INFORMATION SHARED?
           </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item4">
+          <a href="#item4" className={s.privacy__title___color}>
             {" "}
             IS THE USAGE OF COOKIES AND OTHER TRACKING TECHNOLOGIES IMPLEMENTED?
           </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item5"> WHAT IS THE DURATION OF INFORMATION RETENTION?</a>
+          <a href="#item5" className={s.privacy__title___color}>
+            {" "}
+            WHAT IS THE DURATION OF INFORMATION RETENTION?
+          </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item6">
+          <a href="#item6" className={s.privacy__title___color}>
             WHAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
             INFORMATION?
           </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item7"> IS INFORMATION COLLECTED FROM MINORS?</a>
+          <a href="#item7" className={s.privacy__title___color}>
+            {" "}
+            IS INFORMATION COLLECTED FROM MINORS?
+          </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item8"> WHAT ARE YOUR RIGHTS REGARDING PRIVACY?</a>
+          <a href="#item8" className={s.privacy__title___color}>
+            {" "}
+            WHAT ARE YOUR RIGHTS REGARDING PRIVACY?
+          </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item9"> CONTROLS REGARDING “DO-NOT-TRACK FEATURES”</a>
+          <a href="#item9" className={s.privacy__title___color}>
+            {" "}
+            CONTROLS REGARDING “DO-NOT-TRACK FEATURES”
+          </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item10"> ARE UPDATES MADE TO THIS NOTICE?</a>
+          <a href="#item10" className={s.privacy__title___color}>
+            {" "}
+            ARE UPDATES MADE TO THIS NOTICE?
+          </a>
         </li>
         <li className={s.privacy__item}>
-          <a href="#item11">
+          <a href="#item11" className={s.privacy__title___color}>
             WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?
           </a>
         </li>
       </ul>
       {/* =========== 1 ========== */}
       <ol className={s.privacy__list}>
-        <li id="item1">
-          <h2 className={s.privacy__title}>
+        <li>
+          <h2
+            id="item1"
+            className={s.privacy__title}
+          >
             1. WHAT TYPE OF INFORMATION IS COLLECTED BY SOFTLION?
           </h2>
           <h3 className={s.privacy__title}>
@@ -193,8 +211,11 @@ const PrivacyPolicySection = () => {
           </ul>
         </li>
         {/* =========== 2 ========== */}
-        <li id="item2" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item2"
+            className={s.privacy__title}
+          >
             2. WHAT IS THE METHOD OF PROCESSING YOUR INFORMATION?
           </h2>
           <p className={s.privacy__text}>
@@ -248,8 +269,11 @@ const PrivacyPolicySection = () => {
           </ul>
         </li>
         {/* =========== 3 ========== */}
-        <li id="item3" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item3"
+            className={s.privacy__title}
+          >
             {" "}
             3. WHEN AND TO WITH IS YOUR PERSONAL INFORMATION SHARED?
           </h2>
@@ -288,8 +312,11 @@ const PrivacyPolicySection = () => {
           </ul>
         </li>
         {/* =========== 4 ========== */}
-        <li id="item4" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item4"
+            className={s.privacy__title}
+          >
             4. IS THE USAGE OF COOKIES AND OTHER TRACKING TECHNOLOGIES
             IMPLEMENTED?
           </h2>
@@ -303,8 +330,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 5 ========== */}
-        <li id="item5" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item5"
+            className={s.privacy__title}
+          >
             5. WHAT IS THE DURATION OF INFORMATION RETENTION?
           </h2>
           <p className={s.privacy__text}>
@@ -325,8 +355,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 6 ========== */}
-        <li id="item6" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item6"
+            className={s.privacy__title}
+          >
             6. HAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
             INFORMATION?
           </h2>
@@ -350,8 +383,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 7 ========== */}
-        <li id="item7" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item7"
+            className={s.privacy__title}
+          >
             7. IS INFORMATION COLLECTED FROM MINORS?
           </h2>
           <p className={s.privacy__text}>
@@ -370,8 +406,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 8 ========== */}
-        <li id="item8" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item8"
+            className={s.privacy__title}
+          >
             8. WHAT ARE YOUR RIGHTS REGARDING PRIVACY?
           </h2>
           <p className={s.privacy__text}>
@@ -399,8 +438,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 9 ========== */}
-        <li id="item9" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item9"
+            className={s.privacy__title}
+          >
             9. CONTROLS REGARDING “DO-NOT-TRACK FEATURES”
           </h2>
           <p className={s.privacy__text}>
@@ -416,8 +458,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 10 ========== */}
-        <li id="item10" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item10"
+            className={s.privacy__title}
+          >
             10. ARE UPDATES MADE TO THIS NOTICE?
           </h2>
           <p className={s.privacy__text}>
@@ -434,8 +479,11 @@ const PrivacyPolicySection = () => {
           </p>
         </li>
         {/* =========== 11 ========== */}
-        <li id="item11" className={s.privacy__item___num}>
-          <h2 className={s.privacy__title}>
+        <li className={s.privacy__item___num}>
+          <h2
+            id="item11"
+            className={s.privacy__title}
+          >
             11. WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?
           </h2>
           <p className={s.privacy__text}>
