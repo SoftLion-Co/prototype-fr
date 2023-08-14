@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";

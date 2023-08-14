@@ -1,0 +1,33 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.container {
+    background-color: transparent;
+
+}
+
+.form__container {
+  gap: 14px;
+  width: 80%;
+
+  @include for-size(tablet) {
+    gap: 12px;
+    width: 100%;
+  }
+
+  @include for-size(laptop) {
+    gap: 17px;  
+  }
+
+  @include for-size(desktop) {
+    gap: 23px;
+  }
+}
+
+.our_form {
+    width: calc(100% - 40px);
+     @include for-size(tablet) {
+      display: flex;
+      justify-content: center;
+    }
+  }
