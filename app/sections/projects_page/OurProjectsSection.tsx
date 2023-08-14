@@ -25,6 +25,20 @@ const sampleData: Array<{
   countryCode: string;
 }> = [
   {
+    id: 1,
+    image:
+      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+    title: "Landing page of traveling company",
+    customer: "customer: Go",
+    year: "year: 2022",
+    author: "author: Germany",
+    description:
+      "In this project, we developed the design, implemented it, and provide further support",
+    technology: "Go",
+    country: "Germany",
+    countryCode: "DE",
+  },
+  {
     id: 2,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
@@ -99,7 +113,7 @@ const sampleData: Array<{
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
-    customer: "customer: Java2",
+    customer: "customer: Java",
     year: "year: 2022",
     author: "author: Israel",
     description:
@@ -179,7 +193,7 @@ const sampleData: Array<{
     countryCode: "US",
   },
   {
-    id: 2,
+    id: 13,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -193,7 +207,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 3,
+    id: 14,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -207,7 +221,7 @@ const sampleData: Array<{
     countryCode: "CA",
   },
   {
-    id: 4,
+    id: 15,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -221,7 +235,7 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-    id: 5,
+    id: 16,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -235,7 +249,7 @@ const sampleData: Array<{
     countryCode: "SE",
   },
   {
-    id: 6,
+    id: 17,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -249,7 +263,7 @@ const sampleData: Array<{
     countryCode: "GB",
   },
   {
-    id: 7,
+    id: 18,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -263,7 +277,7 @@ const sampleData: Array<{
     countryCode: "IL",
   },
   {
-    id: 8,
+    id: 19,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -277,7 +291,7 @@ const sampleData: Array<{
     countryCode: "IE",
   },
   {
-    id: 9,
+    id: 20,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -291,7 +305,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 10,
+    id: 21,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -305,7 +319,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 11,
+    id: 22,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -319,7 +333,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 12,
+    id: 23,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -333,7 +347,7 @@ const sampleData: Array<{
     countryCode: "US",
   },
   {
-    id: 2,
+    id: 24,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -347,7 +361,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 3,
+    id: 25,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -361,7 +375,7 @@ const sampleData: Array<{
     countryCode: "CA",
   },
   {
-    id: 4,
+    id: 26,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -375,7 +389,7 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-    id: 5,
+    id: 27,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -389,7 +403,7 @@ const sampleData: Array<{
     countryCode: "SE",
   },
   {
-    id: 6,
+    id: 28,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -403,7 +417,7 @@ const sampleData: Array<{
     countryCode: "GB",
   },
   {
-    id: 7,
+    id: 29,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -417,7 +431,7 @@ const sampleData: Array<{
     countryCode: "IL",
   },
   {
-    id: 8,
+    id: 30,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -431,7 +445,7 @@ const sampleData: Array<{
     countryCode: "IE",
   },
   {
-    id: 9,
+    id: 31,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -445,7 +459,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 10,
+    id: 32,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -459,7 +473,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 11,
+    id: 33,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -473,7 +487,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 12,
+    id: 34,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -487,7 +501,7 @@ const sampleData: Array<{
     countryCode: "US",
   },
   {
-    id: 2,
+    id: 35,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -501,7 +515,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 3,
+    id: 36,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -515,7 +529,7 @@ const sampleData: Array<{
     countryCode: "CA",
   },
   {
-    id: 4,
+    id: 37,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -529,7 +543,7 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-    id: 5,
+    id: 38,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -543,7 +557,7 @@ const sampleData: Array<{
     countryCode: "SE",
   },
   {
-    id: 6,
+    id: 39,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -557,7 +571,7 @@ const sampleData: Array<{
     countryCode: "GB",
   },
   {
-    id: 7,
+    id: 40,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -571,7 +585,7 @@ const sampleData: Array<{
     countryCode: "IL",
   },
   {
-    id: 8,
+    id: 41,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -585,7 +599,7 @@ const sampleData: Array<{
     countryCode: "IE",
   },
   {
-    id: 9,
+    id: 42,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -599,7 +613,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 10,
+    id: 43,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -613,7 +627,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 11,
+    id: 44,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -627,7 +641,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 12,
+    id: 45,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -641,7 +655,7 @@ const sampleData: Array<{
     countryCode: "US",
   },
   {
-    id: 2,
+    id: 46,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -655,7 +669,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 3,
+    id: 47,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -669,7 +683,7 @@ const sampleData: Array<{
     countryCode: "CA",
   },
   {
-    id: 4,
+    id: 48,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -683,7 +697,7 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-    id: 5,
+    id: 49,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -697,7 +711,7 @@ const sampleData: Array<{
     countryCode: "SE",
   },
   {
-    id: 6,
+    id: 50,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -711,7 +725,7 @@ const sampleData: Array<{
     countryCode: "GB",
   },
   {
-    id: 7,
+    id: 51,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -725,7 +739,7 @@ const sampleData: Array<{
     countryCode: "IL",
   },
   {
-    id: 8,
+    id: 52,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -739,7 +753,7 @@ const sampleData: Array<{
     countryCode: "IE",
   },
   {
-    id: 9,
+    id: 53,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -753,7 +767,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 10,
+    id: 54,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -767,7 +781,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 11,
+    id: 55,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -781,7 +795,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 12,
+    id: 56,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -795,7 +809,7 @@ const sampleData: Array<{
     countryCode: "US",
   },
   {
-    id: 2,
+    id: 57,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -809,7 +823,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 3,
+    id: 58,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -823,7 +837,7 @@ const sampleData: Array<{
     countryCode: "CA",
   },
   {
-    id: 4,
+    id: 59,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -837,7 +851,7 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-    id: 5,
+    id: 60,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -851,7 +865,7 @@ const sampleData: Array<{
     countryCode: "SE",
   },
   {
-    id: 6,
+    id: 61,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -865,7 +879,7 @@ const sampleData: Array<{
     countryCode: "GB",
   },
   {
-    id: 7,
+    id: 62,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -879,7 +893,7 @@ const sampleData: Array<{
     countryCode: "IL",
   },
   {
-    id: 8,
+    id: 63,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -893,7 +907,7 @@ const sampleData: Array<{
     countryCode: "IE",
   },
   {
-    id: 9,
+    id: 64,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -907,7 +921,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 10,
+    id: 65,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -921,7 +935,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 11,
+    id: 66,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -935,7 +949,7 @@ const sampleData: Array<{
     countryCode: "DE",
   },
   {
-    id: 12,
+    id: 67,
     image:
       "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
     title: "Landing page of traveling company",
@@ -1013,6 +1027,7 @@ const OurProjectsSection = () => {
     } else {
       setSelectedItemArray([...selectedItemArray, item]);
     }
+    setCurrentPage(1);
   };
 
   const handleTechnologyClick = (technology: string) => {

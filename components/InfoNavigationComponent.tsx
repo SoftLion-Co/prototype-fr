@@ -18,29 +18,28 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
     ...links,
   ];
 
-  const items = allLinks.map((item, index) => (
+  const separator = "—";
+  const totalLinks = allLinks.length;
+
+  const items = allLinks.map(({ title, href }, index) => (
     <Link
-      href={item.href}
+      href={href}
       key={index}
-      className={
-        index === allLinks.length - 1
-          ? `${s.custom_breadcrumbs__link} ${s.custom_breadcrumbs__active}`
-          : s.custom_breadcrumbs__link
-      }
+      className={classNames(s.custom_breadcrumbs__link, {
+        [s.custom_breadcrumbs__active]: index === totalLinks - 1,
+      })}
     >
-      {item.title}
+      {title}
     </Link>
   ));
 
   return (
     <div className={classNames(s.container, s.custom_breadcrumbs)}>
       {items.map((item, index) => (
-        <React.Fragment key={index}>
-          {index > 0 && (
-            <span key={index} className={s.custom_breadcrumbs__separator}>—</span>
-          )}
+        <>
+          {index > 0 && <span key={index} className={s.custom_breadcrumbs__separator}>{separator}</span>}
           {item}
-        </React.Fragment>
+        </>
       ))}
     </div>
   );
