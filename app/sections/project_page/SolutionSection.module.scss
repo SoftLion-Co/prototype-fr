@@ -21,139 +21,180 @@
     }
   }
 
-  &__photoList {
-    &___item {
-      display: flex;
-      flex-direction: column;
+  &__wrapperPhoto {
+    display: flex;
+    flex-direction: column;
 
-      gap: 12px;
+    gap: 30px;
+    @include for-size(tablet) {
+      gap: 0px;
+    }
+  }
 
-      @include for-size(tablet) {
-        gap: 0;
-      }
+  &__image {
+    border-radius: 22px;
+  }
 
-      &___photoAboutUs {
-        background: url("../../../images/solution/image-21.svg");
-        position: relative;
-        z-index: 1;
+  &__photoAboutUs {
+    position: relative;
+    z-index: 1;
 
-        box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
 
-        border-radius: 22px;
+    border-radius: 22px;
 
-        width: 276px;
-        height: 207px;
+    width: 100%;
+    height: 60%;
+    padding-bottom: 60%;
 
-        margin-right: auto;
-        @include for-size(tablet) {
-          box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
-
-          width: 495px;
-          height: 365px;
-
-          margin-bottom: -99px;
-        }
-
-        @include for-size(laptop) {
-          box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
-
-          width: 760px;
-          height: 561px;
-
-          margin-bottom: -151px;
-        }
-
-        @include for-size(desktop) {
-          width: 961px;
-          height: 709px;
-
-          margin-bottom: -191px;
-
-          box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
-        }
-      }
-
-      &___photoDiscover {
-        background: url("../../../images/solution/main-page-2.svg");
-        position: relative;
-        z-index: 1;
-        border-radius: 22px;
-
-        box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
-
-        width: 283px;
-        height: 146px;
-
-        margin-left: auto;
-        @include for-size(tablet) {
-          box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
-
-          width: 527px;
-          height: 272px;
-
-          margin-left: 105px;
-          margin-bottom: -26px;
-        }
-
-        @include for-size(laptop) {
-          box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
-
-          width: 810px;
-          height: 418px;
-
-          margin-left: 161px;
-          margin-bottom: -40px;
-        }
-
-        @include for-size(desktop) {
-          width: 1024px;
-          height: 528px;
-
-          margin-left: 204px;
-          margin-bottom: -51px;
-
-          box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
-        }
-      }
-
-      &___photoTrevel {
-        background: url("../../../images/solution/image-2.svg");
-        position: relative;
-        z-index: 1;
-        border-radius: 22px;
-        box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
-
-        width: 247px;
-        height: 115px;
-
-        margin-left: auto;
-        @include for-size(tablet) {
-          box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
-
-          width: 400px;
-          height: 204px;
-        }
-
-        @include for-size(laptop) {
-          box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
-
-          width: 614px;
-          height: 313px;
-        }
-
-        @include for-size(desktop) {
-          width: 775px;
-          height: 396px;
-
-          box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
-        }
-      }
+    &:hover {
+      z-index: 2;
     }
 
-    &___item {
-      :hover {
-        z-index: 2;
-      }
+    @include for-size(tablet) {
+      box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
+
+      width: 495px;
+      height: 365px;
+
+      margin-bottom: -99px;
+      padding-bottom: 0;
+      margin-right: auto;
+    }
+
+    @include for-size(laptop) {
+      box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
+
+      width: 760px;
+      height: 561px;
+
+      margin-bottom: -151px;
+    }
+
+    @include for-size(desktop) {
+      width: 961px;
+      height: 709px;
+
+      margin-bottom: -191px;
+
+      box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__photoDiscover {
+    position: relative;
+    z-index: 1;
+    border-radius: 22px;
+
+    box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+    width: 100%;
+    height: 60%;
+    padding-bottom: 60%;
+
+    &:hover {
+      z-index: 2;
+    }
+    @include for-size(tablet) {
+      box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
+
+      width: 527px;
+      height: 272px;
+
+      margin-left: 105px;
+      margin-bottom: -26px;
+
+      padding-bottom: 0;
+    }
+
+    @include for-size(laptop) {
+      box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
+
+      width: 810px;
+      height: 418px;
+
+      margin-left: 161px;
+      margin-bottom: -40px;
+    }
+
+    @include for-size(desktop) {
+      width: 1024px;
+      height: 528px;
+
+      margin-left: 204px;
+      margin-bottom: -51px;
+
+      box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__photoTrevel {
+    position: relative;
+    z-index: 1;
+    border-radius: 22px;
+    box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+    width: 100%;
+    height: 60%;
+    padding-bottom: 60%;
+
+    &:hover {
+      z-index: 2;
+    }
+    @include for-size(tablet) {
+      box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
+
+      width: 400px;
+      height: 204px;
+
+      padding-bottom: 0;
+      margin-left: auto;
+    }
+
+    @include for-size(laptop) {
+      box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
+
+      width: 614px;
+      height: 313px;
+    }
+
+    @include for-size(desktop) {
+      width: 775px;
+      height: 396px;
+
+      box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__headingText {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.9px;
+    font-weight: 400;
+
+    max-width: 152px;
+    @include for-size(tablet) {
+      font-size: 17px;
+      line-height: 23px;
+      letter-spacing: 1.6px;
+
+      max-width: 153px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 27px;
+      line-height: 35px;
+      letter-spacing: 2.4px;
+
+      max-width: 235px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 2.7px;
+
+      max-width: 262px;
     }
   }
 
@@ -177,91 +218,136 @@
     @include for-size(desktop) {
       margin-bottom: 187px;
     }
+  }
 
-    &___item {
-      &___heading {
-        font-size: 10px;
-        line-height: 13px;
-        letter-spacing: 0.9px;
-        font-weight: 400;
-
-        max-width: 152px;
-        @include for-size(tablet) {
-          font-size: 17px;
-          line-height: 23px;
-          letter-spacing: 1.6px;
-
-          max-width: 153px;
-        }
-
-        @include for-size(laptop) {
-          font-size: 27px;
-          line-height: 35px;
-          letter-spacing: 2.4px;
-
-          max-width: 235px;
-        }
-
-        @include for-size(desktop) {
-          font-size: 30px;
-          line-height: 39px;
-          letter-spacing: 2.7px;
-
-          max-width: 262px;
-        }
+  &__item {
+    &:nth-child(1) {
+      @include for-size(tablet) {
+        margin-bottom: 48px;
       }
 
-      &___text {
-        margin-left: 39px;
+      @include for-size(laptop) {
+        margin-bottom: 50px;
+      }
 
-        font-size: 10px;
-        line-height: 13px;
-        letter-spacing: 0.4px;
-
-        max-width: 250px;
-
-        @include for-size(tablet) {
-          font-size: 12px;
-          line-height: 15px;
-          letter-spacing: 0.5px;
-
-          max-width: 349px;
-
-          margin-left: 189px;
-        }
-
-        @include for-size(laptop) {
-          font-size: 18px;
-          line-height: 23px;
-          letter-spacing: 0.7px;
-
-          max-width: 592px;
-
-          margin-left: 281px;
-        }
-
-        @include for-size(desktop) {
-          font-size: 20px;
-          line-height: 26px;
-          letter-spacing: 0.8px;
-          max-width: 599px;
-
-          margin-left: 324px;
-        }
-        :first-child {
-          @include for-size(tablet) {
-            margin-bottom: 48px;
-          }
-
-          @include for-size(laptop) {
-            margin-bottom: 50px;
-          }
-
-          @include for-size(desktop) {
-            margin-bottom: 37px;
-          }
-        }
+      @include for-size(desktop) {
+        margin-bottom: 37px;
       }
     }
+  }
+  &__text_1 {
+    max-width: 250px;
+    @include for-size(tablet) {
+      max-width: 319px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 592px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 660px;
+    }
+  }
+  &__text_2 {
+    max-width: 250px;
+    @include for-size(tablet) {
+      max-width: 349px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 538px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 599px;
+    }
+  }
+
+  &__text_3 {
+    max-width: 250px;
+    @include for-size(tablet) {
+      max-width: 389px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 600px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 669px;
+    }
+  }
+
+  &__text_4 {
+    max-width: 250px;
+    @include for-size(tablet) {
+      max-width: 384px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 592px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 660px;
+    }
+  }
+
+  &__headingText_1 {
+    margin-bottom: 15px;
+    @include for-size(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__headingText_2 {
+    margin-bottom: 7px;
+    @include for-size(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__headingText_3 {
+    margin-bottom: 13px;
+    @include for-size(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-left: 39px;
+
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.4px;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.5px;
+
+      margin-left: 189px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: 0.7px;
+
+      margin-left: 281px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+
+      margin-left: 324px;
+    }
+  }
+
+  &__wrapperLists {
+    width: 100%;
   }
 }
