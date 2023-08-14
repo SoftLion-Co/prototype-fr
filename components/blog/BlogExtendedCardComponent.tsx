@@ -3,6 +3,7 @@ import s from "./BlogExtendedCardComponent.module.scss";
 
 interface BlogExtendedCardComponentProps {
   id: number;
+  category: string;
   title: string;
   author: string;
   authorIconSrc: string;
@@ -14,6 +15,7 @@ interface BlogExtendedCardComponentProps {
 
 const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
   id,
+  category,
   title,
   author,
   authorIconSrc,
