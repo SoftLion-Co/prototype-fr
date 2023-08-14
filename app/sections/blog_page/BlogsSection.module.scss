@@ -108,6 +108,7 @@
     gap: 10px;
     margin-bottom: 3%;
     transition: transform 0.3s ease-in-out;
+    scroll-behavior: smooth;
 
     @include for-size(tablet) {
       gap: 25px;
@@ -116,7 +117,7 @@
       gap: 50px;
     }
     @include for-size(desktop) {
-      gap: 30px;
+      gap: 50px;
     }
 
     &.animate.slideLeft {
@@ -133,6 +134,28 @@
   .blogFilterButton.animate {
     animation: slideInLeft 0.5s ease-in-out;
     transition: none;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
   &_controls {
@@ -182,28 +205,6 @@
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
 // ==================================================//
 // ====================PAGINATION====================//
 // ==================================================//
@@ -215,4 +216,8 @@
   align-items: flex-end;
   gap: 1%;
   margin-bottom: 65px;
+}
+
+.blog__filter_carousel {
+  transition: transform 0.3s ease; /* Add transition property */
 }

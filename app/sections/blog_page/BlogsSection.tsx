@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import s from "./BlogsSection.module.scss";
 import classNames from "classnames";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
@@ -7,8 +7,11 @@ import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardCompone
 import BlogFilterButton from "@/components/blog/BlogFilterButton";
 import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
 import useBlogPagination from "@/hooks/useBlogPagination";
+import useScrollToTop from "@/hooks/useScrollToTop";
 import useBlogFilter from "@/hooks/useBlogFilter";
 import useResponsiveItemsToShow from "@/hooks/useResponsiveItemsToShow";
+import { useSwipeForFilter } from "@/hooks/useSwipeForFilter";
+import useSwitchingCategoriesCarousel from "@/hooks/useSwitchingCategoriesCarousel";
 
 interface Blog {
   id: number;
@@ -201,35 +204,21 @@ const BlogsSection = () => {
   ];
 
   const blogsPerPage = 6;
-  const [scrollToTop, setScrollToTop] = useState(false);
 
-  const handleFirstPageClick = () => {
-    handlePageChange(1);
-  };
-
-  const handleLastPageClick = () => {
-    handlePageChange(totalPages);
-  };
+  const { setScrollToTop } = useScrollToTop();
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const handlePageChange = (page: number) => {
     const newPage = Math.max(1, Math.min(page, totalPages));
     setCurrentPage(newPage);
     setScrollToTop(true);
-    window.scrollTo(0, 0);
   };
 
-  useEffect(() => {
-    if (scrollToTop) {
-      window.scrollTo(0, 0);
-      setScrollToTop(false);
-    }
-  }, [scrollToTop]);
-
   const {
-    selectedCategory,
-    handleCategoryChange,
     filteredBlogsData,
     totalPagesForSelectedCategory,
+    handleCategoryChange,
+    selectedCategory,
   } = useBlogFilter({
     blogsData: blogsData,
     blogsPerPage: blogsPerPage,
@@ -248,160 +237,34 @@ const BlogsSection = () => {
     itemsPerPage: blogsPerPage,
   });
 
-  const currentBlogs = filteredBlogsData?.slice(
+  const itemsToShow = useResponsiveItemsToShow();
+
+  const {
+    // sliderRef,
+    visibleCategories,
+    animateCarousel,
+    slideDirection,
+    setAnimateCarousel,
+    setSlideDirection,
+    sliderPosition,
+    setSliderPosition,
+    handleCategoryIndicatorClick,
+  } = useSwitchingCategoriesCarousel(
+    categories.map((category) => ({ name: category })),
+    itemsToShow
+  );
+
+  const { sliderRef, handleTouchStart, handleTouchEndX } = useSwipeForFilter(
+    categories.length,
+    itemsToShow,
+    sliderPosition,
+    setSliderPosition
+  );
+
+  const currentBlogs = filteredBlogsData.slice(
     (currentPage - 1) * blogsPerPage,
     currentPage * blogsPerPage
   );
-
-  // Carousel state and handlers
-  const [sliderPosition, setSliderPosition] = useState(0);
-  const [startX, setStartX] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [slideLeft, setSlideLeft] = useState(false);
-  const [slideRight, setSlideRight] = useState(false);
-  const [currentSliderPosition, setCurrentSliderPosition] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const itemsToShow = useResponsiveItemsToShow();
-  const totalItems = filteredBlogsData.length;
-
-  const [slideDirection, setSlideDirection] = useState<"left" | "right" | null>(
-    null
-  );
-
-  const [animateCarousel, setAnimateCarousel] = useState(false);
-
-  const categoriesPerPage = itemsToShow;
-  const totalCategoryPages = Math.ceil(categories.length / categoriesPerPage);
-  const categoryPages = Array.from({ length: totalCategoryPages }, (_, index) =>
-    categories.slice(index * categoriesPerPage, (index + 1) * categoriesPerPage)
-  );
-
-  const handleCategoryIndicatorClick = (pageIndex: number) => {
-    const newPosition = pageIndex * categoriesPerPage;
-
-    const slideDirection =
-      newPosition > currentSliderPosition ? "right" : "left";
-    setSlideDirection(slideDirection);
-    setAnimateCarousel(true);
-    setSliderPosition(newPosition);
-    scrollToPosition(newPosition);
-    setCurrentSliderPosition(newPosition);
-  };
-
-  const scrollToPosition = (position: number) => {
-    const sliderElement = sliderRef.current;
-    if (sliderElement) {
-      const width = sliderElement.getBoundingClientRect().width;
-      const scrollPosition = -position * (width + 30);
-      sliderElement.scrollTo({ left: scrollPosition, behavior: "smooth" });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e: MouseEvent) => {
-    if (!isDragging) return;
-    const x = e.clientX;
-    const moveX = startX - x;
-    const sliderElement = sliderRef.current;
-
-    if (sliderElement) {
-      const width = sliderElement.getBoundingClientRect().width;
-      const maxPosition = Math.max(0, totalItems - itemsToShow);
-      const newPosition = sliderPosition + (moveX / width) * itemsToShow;
-
-      if (newPosition >= 0 && newPosition <= maxPosition) {
-        setSliderPosition(Math.round(newPosition));
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("mouseup", handleMouseUp);
-    } else {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
-    }
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isDragging, handleMouseMove, handleMouseUp]);
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (!isDragging) return;
-
-    const x = e.touches[0].clientX;
-    const moveX = startX - x;
-    setStartX(x);
-
-    const sliderElement = sliderRef.current;
-    if (sliderElement) {
-      const width = sliderElement.getBoundingClientRect().width;
-      const newPosition = sliderPosition + (moveX / width) * totalItems;
-
-      if (newPosition >= 0 && newPosition <= totalItems - itemsToShow) {
-        setSliderPosition(newPosition);
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (isDragging) {
-      window.addEventListener("touchmove", handleTouchMove);
-      window.addEventListener("touchend", handleTouchEnd);
-    } else {
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
-    }
-
-    return () => {
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, [isDragging, handleTouchMove, handleTouchEnd]);
-
-  const visibleCategories = categories.slice(
-    sliderPosition,
-    Math.min(sliderPosition + itemsToShow, categories.length)
-  );
-
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-
-  const handleCategoryChangeInternal = (category: string | null) => {
-    if (category === null) {
-      setActiveCategory(null);
-      setCurrentPage(1);
-      handleCategoryChange(null);
-    } else {
-      setActiveCategory(category);
-      setCurrentPage(1);
-      handleCategoryChange(category);
-
-      const categoryIndex = categories.indexOf(category);
-      if (categoryIndex > -1 && categoryIndex >= sliderPosition + itemsToShow) {
-        setSliderPosition(categoryIndex - itemsToShow + 1);
-        setSlideRight(true);
-        setSlideLeft(false);
-      } else if (categoryIndex > -1 && categoryIndex < sliderPosition) {
-        setSliderPosition(categoryIndex);
-        setSlideLeft(true);
-        setSlideRight(false);
-      } else {
-        setSlideLeft(false);
-        setSlideRight(false);
-      }
-    }
-  };
 
   const links = [{ title: "Blog", href: "/blogs" }];
 
@@ -425,6 +288,8 @@ const BlogsSection = () => {
               slideDirection === "right" && s.slideRight
             )}
             ref={sliderRef}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEndX}
             onAnimationEnd={() => {
               setAnimateCarousel(false);
               setSlideDirection(null);
@@ -433,41 +298,61 @@ const BlogsSection = () => {
             {visibleCategories.map((category, index) => (
               <BlogFilterButton
                 key={index}
-                text={category}
+                text={category.name}
                 activeFilter={
-                  activeCategory === category ||
-                  (category === "All articles" && activeCategory === null)
+                  activeCategory === category.name ||
+                  (category.name === "All articles" && activeCategory === null)
                 }
-                onClick={() =>
-                  handleCategoryChangeInternal(
-                    category === "All articles" ? null : category
-                  )
-                }
+                onClick={() => {
+                  setActiveCategory(
+                    category.name === "All articles" ? null : category.name
+                  );
+                  handleCategoryChange(
+                    category.name === "All articles" ? null : category.name
+                  );
+                }}
                 className={classNames(
                   s.blogFilterButton,
-                  activeCategory === category ? s.activeFilter : "",
-                  slideLeft && activeCategory !== category ? s.slideLeft : "",
-                  slideRight && activeCategory !== category ? s.slideRight : "",
-                  animateCarousel ? s.animate : ""
+                  activeCategory === category.name ? s.activeFilter : "",
+                  animateCarousel && activeCategory !== category.name
+                    ? s.animate
+                    : "",
+                  slideDirection === "left" && activeCategory !== category.name
+                    ? s.slideLeft
+                    : "",
+                  slideDirection === "right" && activeCategory !== category.name
+                    ? s.slideRight
+                    : ""
                 )}
               />
             ))}
           </div>
 
           <div className={s.blog__filter_controls}>
-            {categoryPages.map((pageCategories, pageIndex) => (
-              <button
-                key={pageIndex}
-                className={classNames(s.blog__filter_indicator, {
-                  [s.visible]:
-                    pageIndex === Math.floor(sliderPosition / itemsToShow),
-                  [s.animated]: activeCategory !== null,
-                })}
-                onClick={() => handleCategoryIndicatorClick(pageIndex)}
-              >
-                ●
-              </button>
-            ))}
+            {categories
+              .slice(0, Math.ceil(categories.length / itemsToShow))
+              .map((_, pageIndex) => (
+                <button
+                  key={pageIndex}
+                  className={classNames(s.blog__filter_indicator, {
+                    [s.visible]:
+                      pageIndex === Math.floor(sliderPosition / itemsToShow),
+                    [s.animated]: activeCategory !== null,
+                    [s.active]:
+                      pageIndex === Math.floor(sliderPosition / itemsToShow) &&
+                      activeCategory !== null,
+                  })}
+                  onClick={() => {
+                    if (
+                      pageIndex !== Math.floor(sliderPosition / itemsToShow)
+                    ) {
+                      handleCategoryIndicatorClick(pageIndex);
+                    }
+                  }}
+                >
+                  ●
+                </button>
+              ))}
           </div>
         </div>
 

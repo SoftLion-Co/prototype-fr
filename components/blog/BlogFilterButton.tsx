@@ -1,7 +1,5 @@
 import React from "react";
 import s from "@/components/blog/BlogFilterButton.module.scss";
-
-
 import classNames from "classnames";
 
 interface Props {

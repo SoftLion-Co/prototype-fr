@@ -4,10 +4,10 @@ interface Blog {
   id: number;
   title: string;
   category: string;
-  readingTime: string; 
+  readingTime: string;
   author: string;
   authorIconSrc: string;
-  text: string; 
+  text: string;
   imageSrc: string;
   tags: string[];
 }
@@ -27,8 +27,8 @@ const useBlogFilter = (props: UseBlogFilterProps) => {
     : blogsData;
 
   const totalPagesForSelectedCategory = selectedCategory
-  ? Math.max(1, Math.ceil(filteredBlogsData.length / blogsPerPage))
-  : Math.ceil(blogsData.length / blogsPerPage);
+    ? Math.max(1, Math.ceil(filteredBlogsData.length / blogsPerPage))
+    : Math.ceil(blogsData.length / blogsPerPage);
 
   const handleCategoryChange = (category: string | null): void => {
     setSelectedCategory(category);
