@@ -100,6 +100,7 @@
 .information__icon {
   width: 20px;
   height: 20px;
+
   @include for-size(tablet) {
     width: 18px;
     height: 18px;
@@ -109,16 +110,13 @@
     width: 22px;
     height: 22px;
   }
-
-  @include for-size(desktop) {
-  }
 }
 
 .information__text {
   color: $navigation-dark;
   font-size: 12px;
   font-weight: 400;
-  line-height: 130.49%; /* 15.422px */
+  line-height: 130.49%;
   letter-spacing: 0.47px;
 
   @include for-size(tablet) {
@@ -154,6 +152,10 @@
 
   @include for-size(desktop) {
     gap: 11px;
+  }
+
+  .mantine-Stack-root {
+    width: 100%;
   }
 }
 
@@ -194,6 +196,44 @@
     @include for-size(tablet) {
       font-size: 15px;
       letter-spacing: 0.6px;
+    }
+  }
+
+  &.input__root {
+    width: 100%;
+    padding: 0;
+    border: 1px solid $navigation-light;
+
+    &.error__input {
+      border: 1px solid red;
+    }
+
+    .input__wrapper {
+      border: none;
+
+      .input {
+        height: 55px;
+        border: none;
+
+        @include for-size(tablet) {
+          height: 53px;
+        }
+
+        @include for-size(laptop) {
+          height: 61px;
+        }
+
+        @include for-size(desktop) {
+          height: 63px;
+        }
+
+        .input__inner {
+          width: 100%;
+          padding: 18px 28px;
+          height: 100%;
+          font-size: 18px;
+        }
+      }
     }
   }
 }

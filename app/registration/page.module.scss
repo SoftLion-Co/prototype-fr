@@ -1,0 +1,17 @@
+@import "../../styles/mixin";
+
+.registration_page {
+  margin-top: 60px;
+
+  @include for-size(tablet) {
+    margin-top: 140px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: 112px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 96px;
+  }
+}
