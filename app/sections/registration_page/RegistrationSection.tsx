@@ -4,8 +4,10 @@ import s from "./RegistrationSection.module.scss";
 import { LuUnlock } from "react-icons/lu";
 import classNames from "classnames";
 import MainButtonComponent from "@/components/MainButtonComponent";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import React, { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 interface FormData {
   name: string;
@@ -24,6 +26,7 @@ const RegistrationSection = () => {
     watch,
     reset,
     setError,
+    control,
   } = useForm<FormData>({
     defaultValues: {
       name: "",
@@ -61,19 +64,23 @@ const RegistrationSection = () => {
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           {!submitDisabled && errors.passwordConfirm && <p className={s.error__password}>{errors.passwordConfirm.message}</p>}
           <input className={s.form__input} type="text" placeholder="Name" {...register("name")} />
-
           <input
             className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.email })}
-            // type="email"
             placeholder="E-mail"
             {...register("email", {
               pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Please enter a valid email address" },
             })}
           />
           {!submitDisabled && errors.email && <p className={s.error}>{errors.email.message}</p>}
-
-          <input className={s.form__input} type="tel" placeholder="Phone" {...register("phone")} />
-        
+          <Controller
+        name="phone"
+        control={control}
+        rules={{  required: 'Phone number is required',
+        minLength: { value: 11, message: " Please enter a valid number " },
+       }}
+        render={({ field }) => <PhoneInput country={} inputClass={s.phone__input} buttonClass={s.phone__dropdown} {...field}/>}
+      />
+          
 
           <input
             className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.password })}

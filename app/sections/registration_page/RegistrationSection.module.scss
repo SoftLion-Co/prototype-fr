@@ -263,6 +263,33 @@
   }
 
   @include for-size(desktop) {
-
   }
+}
+.phone__input {
+  height: 55px !important;
+  padding: 17px 27px 17px 42px !important;
+  width: 100% !important;
+  font-size: 15px !important;
+  border: 1px solid $navigation-light !important;
+
+  @include for-size(tablet) {
+    padding: 16px 25px 16px 42px !important;
+    height: 53px !important;
+  }
+
+  @include for-size(laptop) {
+    padding: 18px 28px 18px 42px !important;
+    height: 61px !important;
+    font-size: 18px !important;
+  }
+
+  @include for-size(desktop) {
+    padding: 19px 30px 19px 42px !important;
+    height: 63px !important;
+  }
+}
+
+.phone__dropdown {
+  border-color: $navigation-light !important;
+  border-radius: 5px 0 0 5px !important;
 }
