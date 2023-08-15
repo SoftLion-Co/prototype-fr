@@ -10,6 +10,8 @@ export const useSwipeForFilter = (
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
 
+  const itemsPerSwipe = 5; // Number of items to swipe at a time
+
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStartX(e.touches[0].clientX);
   };
@@ -38,7 +40,11 @@ export const useSwipeForFilter = (
       const sliderElement = sliderRef.current;
       if (sliderElement) {
         const width = sliderElement.getBoundingClientRect().width;
-        const newPosition = sliderPosition + (moveX / width) * totalItems;
+        const itemsToSwipe = Math.floor(
+          Math.abs(moveX) / (width / itemsPerSwipe)
+        );
+        const direction = moveX > 0 ? 1 : -1;
+        const newPosition = sliderPosition + direction * itemsToSwipe;
 
         setSliderPosition(
           Math.max(0, Math.min(newPosition, totalItems - itemsToShow))

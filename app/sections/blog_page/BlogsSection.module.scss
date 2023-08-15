@@ -107,8 +107,6 @@
     opacity: 1;
     gap: 10px;
     margin-bottom: 3%;
-    transition: transform 0.3s ease-in-out;
-    scroll-behavior: smooth;
 
     @include for-size(tablet) {
       gap: 25px;
@@ -146,7 +144,6 @@
       opacity: 1;
     }
   }
-
   @keyframes slideInRight {
     from {
       transform: translateX(-100%);
@@ -218,6 +215,3 @@
   margin-bottom: 65px;
 }
 
-.blog__filter_carousel {
-  transition: transform 0.3s ease; /* Add transition property */
-}
