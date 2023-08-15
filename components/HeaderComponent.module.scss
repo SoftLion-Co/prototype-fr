@@ -2,13 +2,13 @@
 @import "../styles/container";
 @import "../styles/mixin";
 
-.header__link:hover + .header__subMenu {
-  opacity: 1; 
+.header__item:hover > .header__sub_menu {
+  display: block;
   position: absolute;
 }
 .header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   padding-top: 19px;
 
   &__logo {
@@ -35,39 +35,14 @@
     gap: 23px;
   }
 
-  &__subMenu {
+  &__sub_menu {
     @include for-size(tablet) {
       position: absolute;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      &:hover {
-        opacity: 1;
-      }
+      display: none;
     }
     @include for-size(laptop) {
     }
     @include for-size(desktop) {
-    }
-  }
-  &__subLink {
-    font-family: "Roboto";
-    letter-spacing: 0.4px;
-    color: black;
-    line-height: 26px;
-    transition: box-shadow 0.3s ease;
-    padding: 4px;
-
-    @include for-size(tablet) {
-      font-size: 12px;
-    }
-    @include for-size(laptop) {
-      font-size: 15px;
-    }
-    @include for-size(desktop) {
-      font-size: 20px;
-    }
-    &:hover {
-      color: (rgb(48, 139, 183));
     }
   }
 
@@ -104,13 +79,12 @@
       font-size: 20px;
     }
     transition: box-shadow 0.3s ease;
-    padding: 4px;
     &:hover {
       color: (rgb(48, 139, 183));
     }
   }
 
-  &__btnBurger {
+  &__btn_burger {
     background-color: transparent;
     margin-left: auto;
     border: none;
@@ -126,7 +100,7 @@
     font-size: 25px;
   }
 
-  &__btnHeader {
+  &__btn_header {
     background: $button-blue-background;
     color: black;
     padding: 5.5px 13px;
@@ -147,7 +121,7 @@
       border-radius: 15px;
     }
   }
-  &__btnText {
+  &__btn_text {
     font-size: 5.8px;
     font-family: "Roboto";
     font-weight: 500;
