@@ -30,6 +30,11 @@
     background: $button-blue-background;
     box-shadow: $button-blue-shadow;
     color: black;
+
+    &:disabled {
+      background: $button-blue-disabled;
+      cursor: not-allowed;
+    }
   }
 
   &.whiteButton {

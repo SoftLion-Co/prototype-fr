@@ -19,7 +19,7 @@
     margin-bottom: 242px;
   }
 
-  &_container {
+  &__container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -29,7 +29,7 @@
     }
   }
 
-  &_title {
+  &__title {
     color: $heading-blue-color;
     font-size: 18px;
     font-weight: 400;
@@ -67,7 +67,7 @@
   flex: 1;
   margin-bottom: 19px;
 
-  &_text {
+  &__text {
     color: $blog-card-text-color;
     font-size: 10px;
     font-weight: 700;
@@ -93,7 +93,7 @@
 .feedback {
   flex: 1;
 
-  &_title {
+  &__title {
     width: 210px;
     color: $blog-card-text-color;
     font-size: 12px;
@@ -125,32 +125,12 @@
     }
   }
 
-  &_images_container {
-    width: 110px;
-    margin-top: -48px;
-
-    @include for-size(tablet) {
-      width: 125px;
-      margin-top: -55px;
-    }
-
-    @include for-size(laptop) {
-      width: 176px;
-      margin-top: -89px;
-    }
-
-    @include for-size(desktop) {
-      width: 220px;
-      margin-top: -130px;
-    }
-  }
-
-  &_container {
+  &__container {
     display: flex;
     gap: 28px;
 
     @include for-size(tablet) {
-     gap: 34px;
+      gap: 34px;
     }
 
     @include for-size(laptop) {
@@ -161,121 +141,175 @@
       gap: 64px;
     }
   }
+}
 
-  &_form {
-    flex: 1;
+.form {
+  flex: 1;
+  max-width: 200px;
+
+  @include for-size(tablet) {
     max-width: 200px;
+  }
 
-    @include for-size(tablet) {
-      max-width: 200px;
-    }
+  @include for-size(laptop) {
+    max-width: 250px;
+  }
+
+  @include for-size(desktop) {
+    max-width: 300px;
+  }
+
+  &__input {
+    margin-bottom: 6px;
 
     @include for-size(laptop) {
-      max-width: 250px;
+      margin-bottom: 9px;
     }
 
     @include for-size(desktop) {
-      max-width: 300px;
+      margin-bottom: 11px;
     }
 
-    &_input {
-      margin-bottom: 6px;
+    & input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid $navigation-light;
+      outline: transparent;
+      border-radius: 4px;
+      color: $navigation-dark;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.4px;
+      padding: 10px 15px;
 
-      @include for-size(laptop) {
-        margin-bottom: 9px;
-      }
-
-      @include for-size(desktop) {
-        margin-bottom: 11px;
-      }
-
-      & Input {
-        color: $navigation-dark;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130.49%;
-        letter-spacing: 0.4px;
-        padding: 10px 15px;
-
-        @include for-size(tablet) {
-          font-size: 15px;
-          letter-spacing: 0.6px;
-          padding: 10px 16px;
-        }
-
-        @include for-size(laptop) {
-          padding: 15px 25px;
-        }
-
-        @include for-size(desktop) {
-          padding: 19px 30px;
-        }
-
-        &::placeholder {
-          color: $placeholder-color;
-          font-size: 10px;
-          font-weight: 400;
-          line-height: 130.49%;
-          letter-spacing: 0.4px;
-
-          @include for-size(tablet) {
-            font-size: 15px;
-            letter-spacing: 0.6px;
-          }
-        }
-      }
-    }
-
-    &_textarea {
-      margin-bottom: 8px;
       @include for-size(tablet) {
-        margin-bottom: 20px;
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        padding: 10px 16px;
       }
 
       @include for-size(laptop) {
-        margin-bottom: 30px;
+        padding: 15px 25px;
       }
 
       @include for-size(desktop) {
-        margin-bottom: 37px;
+        padding: 19px 30px;
       }
 
-      & Textarea {
-        color: $navigation-dark;
+      &::placeholder {
+        font-family: Roboto;
+        color: $placeholder-color;
         font-size: 10px;
         font-weight: 400;
         line-height: 130.49%;
         letter-spacing: 0.4px;
-        padding: 10px 15px;
 
         @include for-size(tablet) {
           font-size: 15px;
           letter-spacing: 0.6px;
-          padding: 10px 16px;
-        }
-
-        @include for-size(laptop) {
-          padding: 15px 25px;
-        }
-
-        @include for-size(desktop) {
-          padding: 19px 30px;
-        }
-
-        &::placeholder {
-          color: $placeholder-color;
-          font-size: 10px;
-          font-weight: 400;
-          line-height: 130.49%;
-          letter-spacing: 0.4px;
-
-          @include for-size(tablet) {
-            font-size: 15px;
-            letter-spacing: 0.6px;
-          }
         }
       }
     }
+  }
+
+  &__textarea {
+    margin-bottom: 8px;
+    @include for-size(tablet) {
+      margin-bottom: 20px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 30px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 37px;
+    }
+
+    & textarea {
+      border-radius: 4px;
+      resize: none;
+      width: 100%;
+      box-sizing: border-box;
+      outline: transparent;
+      border: 1px solid $navigation-light;
+      color: $navigation-dark;
+      font-family: Roboto;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.4px;
+      padding: 10px 15px;
+
+      @include for-size(tablet) {
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        padding: 10px 16px;
+      }
+
+      @include for-size(laptop) {
+        padding: 15px 25px;
+      }
+
+      @include for-size(desktop) {
+        padding: 19px 30px;
+      }
+
+      &::placeholder {
+        font-family: Roboto;
+        color: $placeholder-color;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 130.49%;
+        letter-spacing: 0.4px;
+
+        @include for-size(tablet) {
+          font-size: 15px;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+  }
+}
+
+.error {
+  font-size: 10px;
+  color: red;
+  border-radius: 4px;
+  @include for-size(tablet) {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 15px;
+  }
+}
+
+.error__input {
+  & input,
+  & textarea {
+    border: 1px solid red;
+  }
+}
+.image__container {
+  width: 110px;
+  margin-top: -48px;
+
+  @include for-size(tablet) {
+    width: 125px;
+    margin-top: -55px;
+  }
+
+  @include for-size(laptop) {
+    width: 176px;
+    margin-top: -89px;
+  }
+
+  @include for-size(desktop) {
+    width: 220px;
+    margin-top: -130px;
   }
 }

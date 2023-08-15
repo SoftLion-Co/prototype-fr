@@ -1,0 +1,34 @@
+@import "../styles/mixin";
+@import "../styles/colors";
+
+.big__button {
+  width: 170px;
+  padding: 18px 20px 17px 22px;
+  border-radius: 10px;
+  color: #000;
+  background: $button-blue-background;
+  border: none;
+  box-shadow: $button-white-shadow;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130.49%;
+  letter-spacing: 0.8px;
+
+  @include for-size(laptop) {
+    width: 210px;
+    padding: 22px 25px 22px 28px;
+    border-radius: 13.172px;
+    font-size: 17px;
+    letter-spacing: 0.703px;
+  }
+
+  @include for-size(desktop) {
+    width: 240px;
+    padding: 26px 29px 26px 32px;
+    border-radius: 15px;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+}
