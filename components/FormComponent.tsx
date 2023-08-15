@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -57,7 +57,10 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
       };
 
       // Replace "https://example.com/api/submit" with your actual backend endpoint
-      const response = await axios.post("https://example.com/api/submit", formData);
+      const response = await axios.post(
+        "https://example.com/api/submit",
+        formData
+      );
 
       console.log("Form successfully submitted:", response.data);
 
@@ -142,7 +145,9 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
           <label className={s.form__label} htmlFor="description">
             Short describe ur idea
           </label>
-          {errors.description && <p className={s.error}>{errors.description.message}</p>}
+          {errors.description && (
+            <p className={s.error}>{errors.description.message}</p>
+          )}
         </div>
       </div>
       <button
@@ -155,7 +160,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         Book Consultation
       </button>
       <p className={s.form__text}>
-        By clicking on this button I agree to the <span className={s.pr}>processing of personal data</span>
+        By clicking on this button I agree to the{" "}
+        <span className={s.pr}>processing of personal data</span>
       </p>
     </form>
   );
