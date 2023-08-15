@@ -1,0 +1,133 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  @include for-size(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom:15px;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+  color: #000000b2;
+
+  @include for-size(tablet) {
+    margin-bottom: 0;
+    gap: 0;
+    width: 315px;
+    min-height: 220px;
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  @include for-size(laptop) {
+    width: 490px;
+    min-height: 345px;
+    font-size: 17px;
+    line-height: 21px;
+  }
+  @include for-size(desktop) {
+    width: 600px;
+    min-height: 415px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &__title {
+    color: black;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0em;
+    @include for-size(tablet) {
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @include for-size(laptop) {
+      font-size: 38px;
+      line-height: 44px;
+      margin-bottom: 12px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 15px;
+
+      font-size: 45px;
+      line-height: 53px;
+    }
+  }
+  &__description {
+    color: black;
+    @include for-size(tablet) {
+      margin-bottom: 35px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__time {
+    @include for-size(tablet) {
+      margin-bottom: 16px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 27px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 33px;
+    }
+  }
+  &__year {
+    @include for-size(tablet) {
+      margin-bottom: 12px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 20px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 24px;
+    }
+  }
+  &__image {
+    align-self: center;
+    object-fit: cover;
+    width: 240px;
+    height: 125px;
+    border-radius: 5px;
+    box-shadow: 3.7px 2px 4px 0px #00000040;
+
+    @include for-size(tablet) {
+      align-self: flex-end;
+      width: 370px;
+      height: 190px;
+      border-radius: 8px;
+      box-shadow: 5.7px 3.1px 6.3px 0px #00000040;
+    }
+    @include for-size(laptop) {
+      box-shadow: 8.7px 4.7px 9.5px 0px #00000040;
+      width: 540px;
+      height: 290px;
+      border-radius: 12px;
+    }
+    @include for-size(desktop) {
+      width: 708px;
+      height: 365px;
+
+      border-radius: 15px;
+      box-shadow: 11px 6px 12px 0px #00000040;
+    }
+  }
+}

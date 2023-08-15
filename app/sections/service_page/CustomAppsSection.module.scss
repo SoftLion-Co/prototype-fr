@@ -1,0 +1,70 @@
+@import "../styles/colors";
+@import "/styles/container";
+@import "../styles/mixin";
+
+.custom {
+  margin-bottom: 60px;
+
+  @include for-size(tablet) {
+    margin-bottom: 70px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 200px;
+  }
+
+  &__title{
+    margin-bottom: 40px;
+    @include for-size(tablet) {
+      margin-bottom: 40px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
+
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+
+    @include for-size(tablet) {
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+   
+  }
+
+  &__btn {
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      position: absolute;
+      right: 22px;
+      bottom: -56px;
+    }
+    @include for-size(laptop) {
+      font-size: 28px;
+      right: 93px;
+      bottom: -50px;
+    }
+    @include for-size(desktop) {
+      font-size: 36px;
+      right: 123px;
+      bottom: -60px;
+    }
+  }
+}

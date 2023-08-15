@@ -1,20 +1,24 @@
-import Link from "next/link";
+"use client";
+import s from "./page.module.scss";
+import React from "react";
+import HeroSection from "./sections/home_page/HeroSection";
+import CookiesComponent from "@/components/CookiesComponent";
+import OurProjectsSection from "./sections/home_page/OurProjectsSection";
+import ContactUsSection from "./sections/contact_us_page/ContactUsSection";
+import BlogSection from "./sections/home_page/BlogSection";
+import OurServicesSection from "./sections/home_page/OurServicesSection";
+import TechnologiesSection from "./sections/home_page/TechnologiesSection";
 
 const Home = () => {
   return (
-    <div className="container">
-      <h1>Home</h1>
-      <Link href="/blogs">
-        <h2>Blog</h2>
-      </Link>
-      <Link href="/projects">
-        <h2>Projects</h2>
-      </Link>
-      <Link href="/services">
-        <h2>Services</h2>
-      </Link>
+    <div className={s.home_page}>
+      <HeroSection />
+      <TechnologiesSection />
+      <OurServicesSection />
+      <OurProjectsSection />
+      <BlogSection />
+      <ContactUsSection />
     </div>
   );
 };
-
 export default Home;

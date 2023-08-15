@@ -11,7 +11,7 @@
   display: inline-block;
   padding-right: 10px;
   padding-left: 10px;
-  border-bottom: 2px solid $heading-blue-color;
+  border-bottom: 1px solid $heading-blue-color;
 
   &_container{
     text-align: center;
@@ -22,10 +22,11 @@
     letter-spacing: 2.634px; 
     padding-right: 15px; 
     padding-left: 15px;
+    border-bottom: 2px solid $heading-blue-color;
   }
 
   @include for-size(laptop) {
-    font-size: 42px;
+    font-size: 48px;
     letter-spacing: 2.634px; 
     padding-right: 15px; 
     padding-left: 15px;
@@ -36,5 +37,6 @@
     letter-spacing: 3.84px;
     padding-right: 20px; 
     padding-left: 20px;
+    border-bottom: 3px solid $heading-blue-color;
   }
 }

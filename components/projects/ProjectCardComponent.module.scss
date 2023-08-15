@@ -1,0 +1,170 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+@import "./../styles/container";
+
+.card {
+  background: $project-card-background;
+  box-shadow: $project-card-shadow;
+  display: flex;
+  padding: 16px 12px;
+  border-radius: 8px;
+  gap: 30px;
+  align-items: center;
+
+  @include for-size(laptop) {
+    padding: 21px 15px;
+    gap: 56px;
+    border-radius: 12px;
+  }
+
+  @include for-size(desktop) {
+    padding: 28px 21px;
+    gap: 73px;
+    border-radius: 15px;
+  }
+
+  &__image {
+    width: 357px;
+    height: 200px;
+    border-radius: 8px;
+
+    @include for-size(laptop) {
+      width: 528px;
+      height: 296px;
+      border-radius: 12px;
+    }
+
+    @include for-size(desktop) {
+      width: 681px;
+      height: 381px;
+      border-radius: 15px;
+    }
+  }
+
+  &__arrowIcon {
+    width: 50px;
+    height: 50px;
+    color: black;
+
+    @include for-size(laptop) {
+      width: 72px;
+      height: 72px;
+    }
+
+    @include for-size(desktop) {
+      width: 94px;
+      height: 94px;
+    }
+  }
+
+  &__info {
+    height: 171px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include for-size(laptop) {
+      font-size: 15px;
+      height: 254px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      height: 328px;
+    }
+  }
+
+  &__subinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    @include for-size(laptop) {
+      gap: 18px;
+    }
+
+    @include for-size(desktop) {
+      gap: 24px;
+    }
+  }
+
+  &__customer {
+    width: 123px;
+
+    @include for-size(laptop) {
+      width: 171px;
+    }
+
+    @include for-size(desktop) {
+      width: 221px;
+    }
+  }
+
+  &__text {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: end;
+
+    @include for-size(laptop) {
+      height: 295px;
+      gap: 30px;
+    }
+
+    @include for-size(desktop) {
+      height: 381px;
+      gap: 39px;
+    }
+  }
+
+  &__subtext {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include for-size(laptop) {
+      gap: 60px;
+    }
+
+    @include for-size(desktop) {
+      gap: 78px;
+    }
+  }
+
+  &__title {
+    margin-top: 19px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1.415px;
+    line-height: 130.49%;
+
+    @include for-size(laptop) {
+      margin-top: 20px;
+      font-size: 23px;
+      letter-spacing: 2.094px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: 30px;
+      font-size: 30px;
+      letter-spacing: 2.7px;
+    }
+  }
+
+  &__desc {
+    font-size: 12px;
+    letter-spacing: 0.419px;
+
+    @include for-size(laptop) {
+      font-size: 15px;
+      letter-spacing: 0.621px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
+  }
+}

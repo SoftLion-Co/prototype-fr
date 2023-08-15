@@ -1,11 +1,17 @@
-import s from "./page.module.scss"
+import s from "./page.module.scss";
+import Link from "next/link";
+import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
 const Blogs = () => {
-    return (
-        <div>
-            <h1>Blogs</h1>
-        </div>
-    )
-}
+  const links = [{ title: "Blog", href: "#" }];
 
-export default Blogs
+  return (
+    <div>
+      <InfoNavigationComponent links={links} />
+      <Link href="/blogs/1">1</Link>
+      <h1>Blogs</h1>
+    </div>
+  );
+};
+
+export default Blogs;

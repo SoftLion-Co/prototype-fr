@@ -1,0 +1,60 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.develop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include for-size(tablet) {
+    display: none;
+  }
+
+  &__upsection {
+    margin-bottom: 31px;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  &__num {
+    font-size: 77px;
+    font-weight: 400;
+    line-height: 90.25px;
+    letter-spacing: 2.31px;
+    color: $placeholder-color;
+  }
+  &__pic1 {
+    width: 109px;
+    height: 109px;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1.386px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 291px;
+  }
+  &__item {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13.4px;
+    letter-spacing: 0.4px;
+    padding-left: 20px;
+    background-image: url("../../images/project/request-list.svg");
+    background-size: 12px 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-repeat: no-repeat;
+    @include for-size(tablet) {
+    }
+  }
+}

@@ -1,11 +1,7 @@
-import s from "./BlogsSection.module.scss"
+import s from "./BlogsSection.module.scss";
 
 const BlogsSection = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default BlogsSection
+export default BlogsSection;

@@ -1,8 +1,14 @@
 import s from "./HeroSection.module.scss";
+import Image from "next/image";
+import heroLogo from "./../../../images/hero-logo.svg";
+import heroLogoMobile from "./../../../images/hero-mobile.svg";
+import MainButtonComponent from "./../../../components/MainButtonComponent";
+import Link from "next/link";
+import classNames from "classnames";
 
 const HeroSection = () => {
   return (
-    <div className={s.hero}>
+    <section className={classNames(s.container, s.hero)}>
       <div>
         <div className={s.hero__wrapperInf}>
           <h1 className={s.hero__name}>
@@ -15,26 +21,33 @@ const HeroSection = () => {
           </p>
         </div>
         <div className={s.hero__warpperBtn}>
-          <button className={s.hero__btns}>
-            <p className={s.hero__btnText}>OUR SERVICES</p>
-          </button>
-          <button className={s.hero__btns}>
-            <p className={s.hero__btnText}>OUR PROJECTS</p>
-          </button>
+          <MainButtonComponent color="white" path="services">
+            OUR SERVICES
+          </MainButtonComponent>
+          <MainButtonComponent color="white" path="projects">
+            OUR PROJECTS
+          </MainButtonComponent>
         </div>
       </div>
       <div className={s.hero__wrapperSecond}>
-        <div className={s.hero__foto}></div>
+        <Image
+          className={s.hero__Logo}
+          src={heroLogo}
+          width={800}
+          height={554}
+          alt="SoftLion"
+        />
+        <Image className={s.hero__Logo_small} src={heroLogoMobile}  alt="SoftLion"/>
         <div className={s.hero__warpperBtnMob}>
-          <button className={s.hero__btns}>
-            <p className={s.hero__btnText}>OUR SERVICES</p>
-          </button>
-          <button className={s.hero__btns}>
-            <p className={s.hero__btnText}>OUR PROJECTS</p>
-          </button>
+          <MainButtonComponent color="white" path="services">
+            OUR SERVICES
+          </MainButtonComponent>
+          <MainButtonComponent color="white" path="projects">
+            OUR PROJECTS
+          </MainButtonComponent>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
