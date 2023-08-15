@@ -18,11 +18,11 @@ const info = [
 
 const ResultSection = () => {
   return (
-    <section className={`${s.container} ${s.design}`}>
+    <section className={s.desig}>
       <div className={s.design__heading}>
         <HeadingOurProjectComponent title="03" text="The Result" />
       </div>
-      <div className={s.design__wrapper}>
+      <div className={`${s.container} ${s.design__wrapper}`}>
         <ul className={s.design__wrapper_texts}>
           {info.map((item, index) => (
             <li className={s.design__wrapper_list} key={index}>
