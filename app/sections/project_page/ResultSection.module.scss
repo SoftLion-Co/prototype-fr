@@ -33,7 +33,7 @@
       gap: 160px;
     }
 
-    &___texts {
+    &_texts {
       display: flex;
       flex-direction: column;
       gap: 45px;
@@ -61,7 +61,7 @@
       }
     }
 
-    &___list {
+    &_list {
       @include for-size(tablet) {
         max-width: 297px;
       }
@@ -86,7 +86,7 @@
       }
     }
 
-    &___text {
+    &_text {
       font-size: 10px;
       line-height: 13px;
       letter-spacing: 0.4px;
@@ -109,7 +109,7 @@
       }
     }
 
-    &___photo {
+    &_photo {
       background: url("../../../images/project/Vectary-texture.svg");
       background-size: contain;
       position: absolute;

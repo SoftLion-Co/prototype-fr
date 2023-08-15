@@ -25,14 +25,14 @@ const ResultSection = () => {
         <HeadingOurProjectComponent title="03" text="The Result" />
       </div>
       <div className={s.design__wrapper}>
-        <ul className={s.design__wrapper___texts}>
+        <ul className={s.design__wrapper_texts}>
           {info.map((item, index) => (
-            <li className={s.design__wrapper___list} key={index}>
-              <p className={s.design__wrapper___text}>{item.title}</p>
+            <li className={s.design__wrapper_list} key={index}>
+              <p className={s.design__wrapper_text}>{item.title}</p>
             </li>
           ))}
         </ul>
-        <div className={s.design__wrapper___photo}></div>
+        <div className={s.design__wrapper_photo}></div>
         {/* <Image
           src={Photo}
           alt="Project Design Photo"
