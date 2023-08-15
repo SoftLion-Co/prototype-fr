@@ -49,7 +49,7 @@ const FooterComponent = () => {
             </Link>
           </div>
         </div>
-        <div className={s.footer__block_third}>
+        <div className={s.footer__block_second}>
           <div className={s.footer__content}>
             <div className={s.footer__icons}>
               <a

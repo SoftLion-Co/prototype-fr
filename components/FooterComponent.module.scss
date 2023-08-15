@@ -42,12 +42,11 @@
       gap: 13px;
 
       @include for-size(tablet) {
-        margin-right: 0;
         width: 65%;
         gap: 0;
       }
     }
-    &_third {
+    &_second {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
