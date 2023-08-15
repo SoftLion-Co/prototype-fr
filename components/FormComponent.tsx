@@ -110,6 +110,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
               }`,
               placeholder: "",
             }}
+            enableSearch
+            disableSearchIcon
             inputClass={s.phoneInput}
             country={"us"}
             value={phone}
