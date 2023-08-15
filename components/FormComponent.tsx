@@ -123,13 +123,19 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
             searchClass={s["search"]}
             searchStyle={{
               border: "none",
+              borderRadius: "0px",
               borderBottom: "1px solid #ccc",
               fontSize: "14px",
-              padding: "0",
+              paddingLeft: "5px",
               marginLeft: "0",
-              width: "70%",
+              width: "100%",
+              paddingBottom: "6px",
+              paddingTop: "6px",
+
             }}
+            dropdownClass={s["drop"]}
             containerClass={s["container"]}
+
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>

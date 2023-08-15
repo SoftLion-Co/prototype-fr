@@ -111,7 +111,7 @@
 
   &__field {
     &:nth-child(2) {
-      padding-left: 32px;
+      padding-left: 42px;
     }
     padding: 0;
     border: none;
@@ -359,11 +359,20 @@
   background-color: transparent;
 }
 
+.search{
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .buttonC {
+  width: 0 !important; 
+  padding: 0 !important;
+  padding-right: 0;
   border: none !important;
-  left: -8px;
   bottom: 2px;
   background-color: transparent !important;
+
 }
 
 .disabledButton {
@@ -385,4 +394,16 @@
 
 .invalidField {
   border-bottom: 1px solid red;
+} 
+
+.drop{
+  font-size: 12px;
+  width: 220px !important;
+
+  
+  @include for-size(tablet){
+    width: 300px !important;
+
+  }
+
 }
