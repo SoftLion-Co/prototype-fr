@@ -8,8 +8,7 @@ import { useForm, Controller } from "react-hook-form";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { useDisclosure } from "@mantine/hooks";
-import { PasswordInput } from "@mantine/core";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 
 interface FormData {
   name: string;
@@ -20,7 +19,7 @@ interface FormData {
 }
 
 const RegistrationSection = () => {
-  const [visible, { toggle }] = useDisclosure(false);
+  const [isShown, setIsSHown] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const {
     register,
@@ -56,6 +55,10 @@ const RegistrationSection = () => {
     reset();
   };
 
+  const togglePassword = () => {
+    setIsSHown((isShown) => !isShown);
+  };
+
   return (
     <div className={classNames(s.container, s.registration)}>
       <div className={s.wrapper}>
@@ -80,42 +83,44 @@ const RegistrationSection = () => {
             control={control}
             rules={{ required: "Phone number is required", minLength: { value: 11, message: " Please enter a valid number " } }}
             render={({ field: { ref, ...field } }) => (
-              <PhoneInput {...field} inputClass={s.phone__input} buttonClass={s.phone__dropdown} country={"us"} />
+              <PhoneInput {...field} inputClass={s.phone__input} buttonClass={s.phone__dropdown} country={"us"} enableSearch={true} />
             )}
           />
-          <PasswordInput
-            visible={visible}
-            onVisibilityChange={toggle}
-            className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.password })}
-            placeholder="Create your password"
-            {...register("password", {
-              minLength: { value: 8, message: "Password should be at least 8 characters long" },
-              pattern: {
-                value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                message: "Password should include at least one lowercase letter, one uppercase letter, and one digit",
-              },
-            })}
-            classNames={{
-              root: s.input__root,
-              wrapper: s.input__wrapper,
-              input: s.input,
-              innerInput: s.input__inner,
-            }}
-          />
+          <div className={s.password}>
+            <input
+              type={isShown ? "text" : "password"}
+              className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.password })}
+              placeholder="Create your password"
+              {...register("password", {
+                minLength: { value: 8, message: "Password should be at least 8 characters long" },
+                pattern: {
+                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                  message: "Password should include at least one lowercase letter, one uppercase letter, and one digit",
+                },
+              })}
+            />
+            {isShown ? (
+              <BsEyeSlash className={s.password__icon} onClick={togglePassword} />
+            ) : (
+              <BsEye className={s.password__icon} onClick={togglePassword} />
+            )}
+          </div>
           {!submitDisabled && errors.password && <p className={s.error}>{errors.password.message}</p>}
-          <PasswordInput
-            visible={visible}
-            onVisibilityChange={toggle}
-            className={s.form__input}
-            placeholder="Confirm your password"
-            {...register("passwordConfirm")}
-            classNames={{
-              root: s.input__root,
-              wrapper: s.input__wrapper,
-              input: s.input,
-              innerInput: s.input__inner,
-            }}
-          />
+
+          <div className={s.password}>
+            <input
+              type={isShown ? "text" : "password"}
+              className={s.form__input}
+              placeholder="Confirm your password"
+              {...register("passwordConfirm")}
+            />
+            {isShown ? (
+              <BsEyeSlash className={s.password__icon} onClick={togglePassword} />
+            ) : (
+              <BsEye className={s.password__icon} onClick={togglePassword} />
+            )}
+          </div>
+
           <MainButtonComponent disabled={submitDisabled} className={s.form__button} type="submit">
             Continue
           </MainButtonComponent>

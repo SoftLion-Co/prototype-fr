@@ -276,7 +276,7 @@
 
 .error {
   font-size: 10px;
-  color: red;
+  color: $error-color;
   border-radius: 4px;
   @include for-size(tablet) {
     padding-bottom: 5px;
@@ -291,7 +291,7 @@
 .error__input {
   & input,
   & textarea {
-    border: 1px solid red;
+    border: 1px solid $error-color;
   }
 }
 .image__container {

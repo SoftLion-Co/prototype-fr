@@ -9,6 +9,13 @@ const authOptions = {
     GoogleProvider({
       clientId: <string>process.env.GOOGLE_CLIENT_ID,
       clientSecret: <string>process.env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
     }),
     LinkedInProvider({
       clientId: <string>process.env.LINKEDIN_CLIENT_ID,
@@ -24,7 +31,7 @@ const authOptions = {
   ],
   secret: process.env.JWT_SECRET,
   callbacks: {
-    async signIn(user, account, profile) {
+    async signIn(user: any, account: any, profile: any) {
       console.log("user", user);
       console.log("account", account);
       console.log("profile", profile);

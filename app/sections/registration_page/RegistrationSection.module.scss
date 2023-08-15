@@ -205,7 +205,7 @@
     border: 1px solid $navigation-light;
 
     &.error__input {
-      border: 1px solid red;
+      border: 1px solid $error-color;
     }
 
     .input__wrapper {
@@ -264,7 +264,7 @@
 
 .error {
   font-size: 10px;
-  color: red;
+  color: $error-color;
   border-radius: 4px;
   @include for-size(tablet) {
     padding-bottom: 5px;
@@ -277,11 +277,11 @@
 }
 
 .error__input {
-  border: 1px solid red;
+  border: 1px solid $error-color;
 }
 
 .error__password {
-  color: #f00;
+  color: $error-color;
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
@@ -332,4 +332,34 @@
 .phone__dropdown {
   border-color: $navigation-light !important;
   border-radius: 5px 0 0 5px !important;
+}
+
+.password {
+  position: relative;
+  width: 100%;
+}
+
+.password__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #373a24;
+  cursor: pointer;
+
+  @include for-size(tablet) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @include for-size(laptop) {
+    width: 22px;
+    height: 22px;
+  }
+  @include for-size(desktop) {
+    width: 24px;
+    height: 24px;
+  }
 }
