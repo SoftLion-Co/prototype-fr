@@ -2,9 +2,13 @@
 @import "../styles/container";
 @import "../styles/mixin";
 
+.header__link:hover + .header__subMenu {
+  opacity: 1; 
+  position: absolute;
+}
 .header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding-top: 19px;
 
   &__logo {
@@ -25,12 +29,53 @@
     }
   }
 
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+  }
+
+  &__subMenu {
+    @include for-size(tablet) {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @include for-size(laptop) {
+    }
+    @include for-size(desktop) {
+    }
+  }
+  &__subLink {
+    font-family: "Roboto";
+    letter-spacing: 0.4px;
+    color: black;
+    line-height: 26px;
+    transition: box-shadow 0.3s ease;
+    padding: 4px;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+    &:hover {
+      color: (rgb(48, 139, 183));
+    }
+  }
+
   &__navigation {
     display: none;
 
     @include for-size(tablet) {
       display: flex;
-      gap: 23px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -47,6 +92,7 @@
     letter-spacing: 0.4px;
     color: black;
     line-height: 26px;
+    position: relative;
 
     @include for-size(tablet) {
       font-size: 12px;
@@ -56,6 +102,11 @@
     }
     @include for-size(desktop) {
       font-size: 20px;
+    }
+    transition: box-shadow 0.3s ease;
+    padding: 4px;
+    &:hover {
+      color: (rgb(48, 139, 183));
     }
   }
 
