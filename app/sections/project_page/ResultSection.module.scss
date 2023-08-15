@@ -111,6 +111,7 @@
 
     &___photo {
       background: url("../../../images/project/Vectary-texture.svg");
+      background-size: contain;
       position: absolute;
 
       width: 388px;
@@ -119,7 +120,6 @@
       z-index: -1;
 
       margin-top: 224px;
-      margin-right: 19px;
 
       @include for-size(tablet) {
         width: 410px;
