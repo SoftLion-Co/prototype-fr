@@ -8,6 +8,33 @@ import Logo from "./../images/logo.svg";
 import Image from "next/image";
 
 const FooterComponent = () => {
+  const routes = [
+    { path: "/", label: "Service" },
+    { path: "/projects", label: "Our Projects" },
+    { path: "/technologies", label: "Technologies" },
+    { path: "/blogs", label: "Blog" },
+    { path: "/contact", label: "Contact Us" },
+  ];
+
+  const socialLinks = [
+    {
+      url: "https://www.linkedin.com/company/softlion/",
+      icon: <FiLinkedin className={s.footer__icon} />,
+    },
+    {
+      url: "https://instagram.com/softlion_co/",
+      icon: <AiOutlineInstagram className={s.footer__icon} />,
+    },
+    {
+      url: "https://www.facebook.com/people/SoftLion/100093384261914/",
+      icon: <FiFacebook className={s.footer__icon} />,
+    },
+    {
+      url: "#",
+      icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
+    },
+  ];
+
   return (
     <footer className={`${s.footer} ${s.container}`}>
       <div className={s.footer__block}>
@@ -23,28 +50,22 @@ const FooterComponent = () => {
               />
             </Link>
             <div className={s.footer__routs}>
-              <Link href={"/services"} className={s.footer__routs_name}>
-                Service
-              </Link>
-              <Link href={"/projects"} className={s.footer__routs_name}>
-                Our Projects
-              </Link>
-              <Link href={"/technologies"} className={s.footer__routs_name}>
-                Technologies
-              </Link>
-              <Link href={"/blogs"} className={s.footer__routs_name}>
-                Blog
-              </Link>
-              <Link href={"/contact"} className={s.footer__routs_name}>
-                Contact Us
-              </Link>
+              {routes.map((route, index) => (
+                <Link
+                  key={index}
+                  href={route.path}
+                  className={s.footer__routs_name}
+                >
+                  {route.label}
+                </Link>
+              ))}
             </div>
           </div>
           <div className={s.footer__colum_copy}>
             <p className={s.footer__copyright}>
               ©2023 Copyright SoftLion. All rights reserved.
             </p>
-            <Link href={"/privacy-policy"} className={s.footer__routs_name}>
+            <Link href="/privacy-policy" className={s.footer__routs_name}>
               Privacy policy
             </Link>
           </div>
@@ -52,27 +73,11 @@ const FooterComponent = () => {
         <div className={s.footer__block_second}>
           <div className={s.footer__content}>
             <div className={s.footer__icons}>
-              <a
-                className={s.footer__link}
-                href="https://www.linkedin.com/company/softlion/"
-              >
-                <FiLinkedin className={s.footer__icon} />
-              </a>
-              <a
-                className={s.footer__link}
-                href="https://instagram.com/softlion_co/"
-              >
-                <AiOutlineInstagram className={s.footer__icon} />
-              </a>
-              <a
-                className={s.footer__link}
-                href="https://www.facebook.com/people/SoftLion/100093384261914/"
-              >
-                <FiFacebook className={s.footer__icon} />
-              </a>
-              <a className={s.footer__link} href="#">
-                <PiTelegramLogoDuotone className={s.footer__icon} />
-              </a>
+              {socialLinks.map((link, index) => (
+                <a key={index} className={s.footer__link} href={link.url}>
+                  {link.icon}
+                </a>
+              ))}
             </div>
             <a
               href="mailto:office.softlion@gmail.com"
