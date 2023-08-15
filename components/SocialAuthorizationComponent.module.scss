@@ -29,7 +29,10 @@
 }
 
 .social {
+  text-align: center;
+
   @include for-size(tablet) {
+    text-align: left;
     padding-top: 51px;
   }
 
@@ -40,46 +43,47 @@
   @include for-size(desktop) {
     padding-top: 68px;
   }
-}
 
-.social__container {
-  display: flex;
-  gap: 35px;
+  &__container {
+    display: flex;
+    gap: 35px;
 
-  @include for-size(tablet) {
-    gap: 40px;
+    @include for-size(tablet) {
+      gap: 40px;
+    }
+
+    @include for-size(laptop) {
+      gap: 42px;
+    }
+
+    @include for-size(desktop) {
+      gap: 48px;
+    }
   }
 
-  @include for-size(laptop) {
-    gap: 42px;
+  &__icon {
+    width: 52px;
+    height: 52px;
+
+    @include for-size(tablet) {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include for-size(laptop) {
+      width: 62px;
+      height: 62px;
+    }
+
+    @include for-size(desktop) {
+      width: 72px;
+      height: 72px;
+    }
   }
 
-  @include for-size(desktop) {
-    gap: 48px;
+  &__button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
   }
-}
-
-.social__icon {
-  width: 52px;
-  height: 52px;
-
-  @include for-size(tablet) {
-    width: 50px;
-    height: 50px;
-  }
-
-  @include for-size(laptop) {
-    width: 62px;
-    height: 62px;
-  }
-
-  @include for-size(desktop) {
-    width: 72px;
-    height: 72px;
-  }
-}
-
-.social__button {
-  border: none;
-  background-color: transparent;
 }

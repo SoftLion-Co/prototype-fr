@@ -1,0 +1,21 @@
+@import "../styles/colors";
+@import "../styles/mixin";
+
+.error__message {
+  font-size: 10px;
+  color: $error-color;
+  border-radius: 4px;
+
+  @include for-size(tablet) {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 15px;
+  }
+}
+
+.error__input {
+  border-color: $error-color !important;
+}

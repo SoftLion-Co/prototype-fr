@@ -31,9 +31,11 @@ const HeaderComponent = () => {
         <button className={s.header__btnBurger}>
           <IoIosMenu className={s.header__burger} width="18px" height="13px" />
         </button>
-        <button className={s.header__btnHeader}>
-          <p className={s.header__btnText}>Login</p>
-        </button>
+        <Link href="/login">
+          <button className={s.header__btnHeader}>
+            <p className={s.header__btnText}>Login</p>
+          </button>
+        </Link>
       </div>
       <hr className={s.header__line}></hr>
     </header>

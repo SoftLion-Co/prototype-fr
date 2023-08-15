@@ -8,7 +8,8 @@ import { useForm, Controller } from "react-hook-form";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { EmailInput } from "@/components/EmailInput";
+import PasswordInput from "@/components/PasswordInput";
 
 interface FormData {
   name: string;
@@ -19,7 +20,6 @@ interface FormData {
 }
 
 const RegistrationSection = () => {
-  const [isShown, setIsSHown] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const {
     register,
@@ -55,10 +55,6 @@ const RegistrationSection = () => {
     reset();
   };
 
-  const togglePassword = () => {
-    setIsSHown((isShown) => !isShown);
-  };
-
   return (
     <div className={classNames(s.container, s.registration)}>
       <div className={s.wrapper}>
@@ -70,14 +66,7 @@ const RegistrationSection = () => {
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           {!submitDisabled && errors.passwordConfirm && <p className={s.error__password}>{errors.passwordConfirm.message}</p>}
           <input className={s.form__input} type="text" placeholder="Name" {...register("name")} />
-          <input
-            className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.email })}
-            placeholder="E-mail"
-            {...register("email", {
-              pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Please enter a valid email address" },
-            })}
-          />
-          {!submitDisabled && errors.email && <p className={s.error}>{errors.email.message}</p>}
+          <EmailInput error={errors.email} inputClass={s.form__input} register={register} showError={!submitDisabled} />
           <Controller
             name="phone"
             control={control}
@@ -86,47 +75,27 @@ const RegistrationSection = () => {
               <PhoneInput {...field} inputClass={s.phone__input} buttonClass={s.phone__dropdown} country={"us"} enableSearch={true} />
             )}
           />
-          <div className={s.password}>
-            <input
-              type={isShown ? "text" : "password"}
-              className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.password })}
-              placeholder="Create your password"
-              {...register("password", {
-                minLength: { value: 8, message: "Password should be at least 8 characters long" },
-                pattern: {
-                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
-                  message: "Password should include at least one lowercase letter, one uppercase letter, and one digit",
-                },
-              })}
-            />
-            {isShown ? (
-              <BsEyeSlash className={s.password__icon} onClick={togglePassword} />
-            ) : (
-              <BsEye className={s.password__icon} onClick={togglePassword} />
-            )}
-          </div>
-          {!submitDisabled && errors.password && <p className={s.error}>{errors.password.message}</p>}
-
-          <div className={s.password}>
-            <input
-              type={isShown ? "text" : "password"}
-              className={s.form__input}
-              placeholder="Confirm your password"
-              {...register("passwordConfirm")}
-            />
-            {isShown ? (
-              <BsEyeSlash className={s.password__icon} onClick={togglePassword} />
-            ) : (
-              <BsEye className={s.password__icon} onClick={togglePassword} />
-            )}
-          </div>
-
+          <PasswordInput
+            inputClass={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.passwordConfirm })}
+            error={errors.password}
+            showError={!submitDisabled}
+            register={register}
+            registerName="password"
+            placeholder="Create your password"
+          />
+          <PasswordInput
+            inputClass={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.passwordConfirm })}
+            showError={!submitDisabled}
+            register={register}
+            registerName="passwordConfirm"
+            applyValidation={false}
+            placeholder="Confirm your password"
+          />
           <MainButtonComponent disabled={submitDisabled} className={s.form__button} type="submit">
             Continue
           </MainButtonComponent>
         </form>
       </div>
-
       <SocialAuthorization text="You can register with" />
     </div>
   );

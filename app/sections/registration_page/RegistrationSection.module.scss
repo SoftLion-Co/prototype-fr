@@ -95,43 +95,43 @@
     padding: 14px 4px 14px 21px;
     margin-bottom: 30px;
   }
-}
 
-.information__icon {
-  width: 20px;
-  height: 20px;
+  &__icon {
+    width: 20px;
+    height: 20px;
 
-  @include for-size(tablet) {
-    width: 18px;
-    height: 18px;
+    @include for-size(tablet) {
+      width: 18px;
+      height: 18px;
+    }
+
+    @include for-size(laptop) {
+      width: 22px;
+      height: 22px;
+    }
   }
 
-  @include for-size(laptop) {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-.information__text {
-  color: $navigation-dark;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 130.49%;
-  letter-spacing: 0.47px;
-
-  @include for-size(tablet) {
-    font-size: 11px;
-    letter-spacing: 0.44px;
-  }
-
-  @include for-size(laptop) {
+  &__text {
+    color: $navigation-dark;
     font-size: 12px;
-    letter-spacing: 0.5px;
-  }
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.47px;
 
-  @include for-size(desktop) {
-    font-size: 13px;
-    letter-spacing: 0.52px;
+    @include for-size(tablet) {
+      font-size: 11px;
+      letter-spacing: 0.44px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 13px;
+      letter-spacing: 0.52px;
+    }
   }
 }
 
@@ -156,6 +156,30 @@
 
   .mantine-Stack-root {
     width: 100%;
+  }
+
+  &__button {
+    padding: 17px 39px;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 130.49%;
+    letter-spacing: 0.6px;
+    margin-top: 27px;
+
+    @include for-size(tablet) {
+      padding: 15px 33px;
+      margin-top: 25px;
+    }
+
+    @include for-size(laptop) {
+      padding: 17px 36px;
+      margin-top: 28px;
+    }
+
+    @include for-size(desktop) {
+      padding: 18px 40px;
+      margin-top: 30px;
+    }
   }
 }
 
@@ -238,30 +262,6 @@
   }
 }
 
-.form__button {
-  padding: 17px 39px;
-  border-radius: 5px;
-  font-size: 15px;
-  line-height: 130.49%;
-  letter-spacing: 0.6px;
-  margin-top: 27px;
-
-  @include for-size(tablet) {
-    padding: 15px 33px;
-    margin-top: 25px;
-  }
-
-  @include for-size(laptop) {
-    padding: 17px 36px;
-    margin-top: 28px;
-  }
-
-  @include for-size(desktop) {
-    padding: 18px 40px;
-    margin-top: 30px;
-  }
-}
-
 .error {
   font-size: 10px;
   color: $error-color;
@@ -274,37 +274,38 @@
   @include for-size(laptop) {
     font-size: 15px;
   }
-}
 
-.error__input {
-  border: 1px solid $error-color;
-}
-
-.error__password {
-  color: $error-color;
-  font-family: Roboto;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130.49%;
-  letter-spacing: 0.48px;
-  margin-bottom: 27px;
-
-  @include for-size(tablet) {
-    width: 228px;
-    font-size: 15px;
-    letter-spacing: 0.6px;
-    margin-bottom: 25px;
+  &__input {
+    border: 1px solid $error-color;
   }
 
-  @include for-size(laptop) {
-    width: 260px;
-    margin-bottom: 30px;
-  }
+  &__password {
+    color: $error-color;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.48px;
+    margin-bottom: 27px;
 
-  @include for-size(desktop) {
+    @include for-size(tablet) {
+      width: 228px;
+      font-size: 15px;
+      letter-spacing: 0.6px;
+      margin-bottom: 25px;
+    }
+
+    @include for-size(laptop) {
+      width: 260px;
+      margin-bottom: 30px;
+    }
+
+    @include for-size(desktop) {
+    }
   }
 }
+
 .phone__input {
   height: 55px !important;
   padding: 17px 27px 17px 42px !important;
@@ -332,34 +333,4 @@
 .phone__dropdown {
   border-color: $navigation-light !important;
   border-radius: 5px 0 0 5px !important;
-}
-
-.password {
-  position: relative;
-  width: 100%;
-}
-
-.password__icon {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #373a24;
-  cursor: pointer;
-
-  @include for-size(tablet) {
-    width: 18px;
-    height: 18px;
-  }
-
-  @include for-size(laptop) {
-    width: 22px;
-    height: 22px;
-  }
-  @include for-size(desktop) {
-    width: 24px;
-    height: 24px;
-  }
 }
