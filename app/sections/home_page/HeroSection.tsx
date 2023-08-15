@@ -3,7 +3,6 @@ import Image from "next/image";
 import heroLogo from "./../../../images/hero-logo.svg";
 import heroLogoMobile from "./../../../images/hero-mobile.svg";
 import MainButtonComponent from "./../../../components/MainButtonComponent";
-import Link from "next/link";
 import classNames from "classnames";
 
 const HeroSection = () => {
