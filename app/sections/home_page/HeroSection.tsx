@@ -10,17 +10,17 @@ const HeroSection = () => {
   return (
     <section className={classNames(s.container, s.hero)}>
       <div>
-        <div className={s.hero__wrapperinf}>
+        <div className={s.hero__wrapper_inf}>
           <h1 className={s.hero__name}>
             Embrace the Lion's Share Technological Advancements with{" "}
-            <span className={s.hero__namecomp}>SoftLion</span>
+            <span className={s.hero__name_comp}>SoftLion</span>
           </h1>
           <p className={s.hero__description}>
             Our company provides an individual approach for each client to turn
             your ideas into reality.
           </p>
         </div>
-        <div className={s.hero__warpperbtn}>
+        <div className={s.hero__warpper_btn}>
           <MainButtonComponent color="white" path="services">
             OUR SERVICES
           </MainButtonComponent>
@@ -29,7 +29,7 @@ const HeroSection = () => {
           </MainButtonComponent>
         </div>
       </div>
-      <div className={s.hero__wrappersecond}>
+      <div className={s.hero__wrapper_second}>
         <Image
           className={s.hero__logo}
           src={heroLogo}
@@ -42,7 +42,7 @@ const HeroSection = () => {
           src={heroLogoMobile}
           alt="SoftLion"
         />
-        <div className={s.hero__warpperbtnmob}>
+        <div className={s.hero__warpper_btn_mob}>
           <MainButtonComponent color="white" path="services">
             OUR SERVICES
           </MainButtonComponent>
