@@ -45,19 +45,19 @@ const silutionPhoto: DesignInfoItem[] = [
     title: "Discover",
     description: "",
     imageSrc: "https://i.ibb.co/Pz2QWmc/main-page-2.png",
-    class: "photoDiscover",
+    class: "photo_discover",
   },
   {
     title: "About Us",
     description: "",
     imageSrc: "https://i.ibb.co/bHFC4n7/image-21.png",
-    class: "photoAboutUs",
+    class: "photo_about",
   },
   {
     title: "Trevel",
     description: "",
     imageSrc: "https://i.ibb.co/19t1wHh/image-2.png",
-    class: "photoTrevel",
+    class: "photo_trevel",
   },
 ];
 
@@ -67,20 +67,20 @@ const SolutionSection = () => {
       <div className={s.solution__heading}>
         <HeadingOurProjectComponent title="02" text="Solution" />
       </div>
-      <div className={`${s.container} ${s.solution__wrapperLists}`}>
+      <div className={`${s.container} ${s.solution__lists}`}>
         <ul className={s.solution__list}>
           {silutionInfo.map((item, index) => (
             <li key={index} className={s.solution__item}>
               <h3
-                className={`${s.solution__headingText} ${
-                  s[`solution__headingText_${index + 1}`]
+                className={`${s.solution__heading_text} ${
+                  s[`solution__heading_${index + 1}`]
                 }`}
               >
                 {item.title}
               </h3>
               <p
                 className={`${s.solution__text} ${
-                  s[`solution__text_${index + 1}`]
+                  s[`solution__description_${index + 1}`]
                 }`}
               >
                 {item.description}
@@ -88,7 +88,7 @@ const SolutionSection = () => {
             </li>
           ))}
         </ul>
-        <ul className={s.solution__wrapperPhoto}>
+        <ul className={s.solution__photos}>
           {silutionPhoto.map((photo) => (
             <li className={s[`solution__${photo.class}`]}>
               <Image
