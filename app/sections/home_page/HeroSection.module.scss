@@ -6,53 +6,36 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding-bottom: 22px;
 
   @include for-size(tablet) {
+    justify-content: space-between;
     flex-direction: row;
-    gap: 0px;
+    gap: 37px;
   }
   @include for-size(laptop) {
-    flex-direction: row;
-    gap: 0px;
-    justify-content: space-between;
     padding-bottom: 0px;
-  }
-  @include for-size(desktop) {
-    flex-direction: row;
     gap: 0px;
-    justify-content: space-between;
-    padding-bottom: 0px;
   }
 
-  &__Logo{
-    
+  &__logo {
     display: none;
 
-    &_small{
+    &_small {
       display: block;
 
       @include for-size(tablet) {
         display: none;
       }
-      @include for-size(laptop) {
-        display: none;
-      }
-      @include for-size(desktop) {
-        display: none;
-      }
     }
-    
+
     @include for-size(tablet) {
       display: block;
       max-width: 380px;
     }
     @include for-size(laptop) {
-      display: block;
       max-width: 700px;
     }
     @include for-size(desktop) {
-      display: block;
       max-width: 800px;
     }
   }
@@ -80,21 +63,11 @@
       margin-bottom: 35px;
     }
   }
-  &__nameComp {
+  &__namecomp {
     color: $hero-heading-blue-color;
-    margin-left: 0;
-    @include for-size(tablet) {
-      margin-left: 8px;
-    }
-    @include for-size(laptop) {
-      margin-left: 8px;
-    }
-    @include for-size(desktop) {
-      margin-left: 8px;
-    }
   }
 
-  &__wrapperInf {
+  &__wrapperinf {
     margin-bottom: 0;
     @include for-size(tablet) {
       margin-bottom: 54px;
@@ -107,7 +80,7 @@
     }
   }
 
-  &__warpperBtnMob {
+  &__warpperbtnmob {
     display: flex;
     gap: 36px;
     justify-content: center;
@@ -118,15 +91,10 @@
     }
     @include for-size(laptop) {
       gap: 75px;
-      display: none;
-    }
-    @include for-size(desktop) {
-      gap: 75px;
-      display: none;
     }
   }
 
-  &__warpperBtn {
+  &__warpperbtn {
     display: none;
     gap: 36px;
     @include for-size(tablet) {
@@ -134,11 +102,9 @@
       gap: 39px;
     }
     @include for-size(laptop) {
-      display: flex;
       gap: 58px;
     }
     @include for-size(desktop) {
-      display: flex;
       gap: 75px;
     }
   }
@@ -161,7 +127,6 @@
     @include for-size(desktop) {
       max-width: 549px;
       font-size: 18px;
-      letter-spacing: 0.72px;
     }
   }
   &__btns {
@@ -185,14 +150,9 @@
     color: $blog-card-text-color;
     font-size: 8px;
     @include for-size(tablet) {
-      font-size: 8px;
       letter-spacing: 0.3px;
     }
     @include for-size(laptop) {
-      font-size: 15px;
-      letter-spacing: 0.6px;
-    }
-    @include for-size(desktop) {
       font-size: 15px;
       letter-spacing: 0.6px;
     }
@@ -215,7 +175,7 @@
       height: 350px;
     }
   }
-  &__wrapperSecond {
+  &__wrappersecond {
     display: flex;
     flex-direction: column;
     align-items: center;
