@@ -51,27 +51,27 @@ const FooterComponent = () => {
         </div>
         <div className={s.footer__block_third}>
           <div className={s.footer__content}>
-            <div className={s.footer__icons_wrap}>
+            <div className={s.footer__icons}>
               <a
                 className={s.footer__link}
                 href="https://www.linkedin.com/company/softlion/"
               >
-                <FiLinkedin className={s.footer__icons} />
+                <FiLinkedin className={s.footer__icon} />
               </a>
               <a
                 className={s.footer__link}
                 href="https://instagram.com/softlion_co/"
               >
-                <AiOutlineInstagram className={s.footer__icons} />
+                <AiOutlineInstagram className={s.footer__icon} />
               </a>
               <a
                 className={s.footer__link}
                 href="https://www.facebook.com/people/SoftLion/100093384261914/"
               >
-                <FiFacebook className={s.footer__icons} />
+                <FiFacebook className={s.footer__icon} />
               </a>
               <a className={s.footer__link} href="#">
-                <PiTelegramLogoDuotone className={s.footer__icons} />
+                <PiTelegramLogoDuotone className={s.footer__icon} />
               </a>
             </div>
             <a

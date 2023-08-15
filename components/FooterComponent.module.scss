@@ -117,7 +117,7 @@
     }
   }
 
-  &__icons {
+  &__icon {
     width: 16px;
     height: 16px;
     @include for-size(tablet) {
@@ -133,25 +133,24 @@
       width: 24px;
       height: 24px;
     }
-
-    &_wrap {
-      display: flex;
-      justify-content: flex-end;
-
-      gap: 9px;
-      @include for-size(tablet) {
-        gap: 7px;
-      }
-      @include for-size(laptop) {
-        gap: 11px;
-      }
-
-      @include for-size(desktop) {
-        gap: 14px;
-      }
-    }
   }
 
+  &__icons {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 9px;
+    @include for-size(tablet) {
+      gap: 7px;
+    }
+    @include for-size(laptop) {
+      gap: 11px;
+    }
+
+    @include for-size(desktop) {
+      gap: 14px;
+    }
+  }
   &__content {
     display: flex;
     flex-direction: column;
