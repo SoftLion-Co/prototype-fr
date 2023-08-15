@@ -1,6 +1,4 @@
 import s from "./ResultSection.module.scss";
-import Image from "next/image";
-import Photo from "../../../images/project/Vectary-texture.svg";
 import HeadingOurProjectComponent from "../../../components/project/HeadingOurProjectComponent";
 
 const info = [
@@ -33,11 +31,6 @@ const ResultSection = () => {
           ))}
         </ul>
         <div className={s.design__wrapper_photo}></div>
-        {/* <Image
-          src={Photo}
-          alt="Project Design Photo"
-          className={s.design__wrapper___photo}
-        /> */}
       </div>
     </section>
   );
