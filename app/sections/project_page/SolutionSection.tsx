@@ -99,27 +99,6 @@ const SolutionSection = () => {
               />
             </li>
           ))}
-          {/* <li className={s.solution__photoDiscover}>
-            <Image
-              src="https://i.ibb.co/Pz2QWmc/main-page-2.png"
-              alt="Discover"
-              layout="fill"
-            />
-          </li>
-          <li className={s.solution__photoAboutUs}>
-            <Image
-              src="https://i.ibb.co/bHFC4n7/image-21.png"
-              alt="AboutUs"
-              layout="fill"
-            />
-          </li>
-          <li className={s.solution__photoTrevel}>
-            <Image
-              src="https://i.ibb.co/19t1wHh/image-2.png"
-              alt="Trevel"
-              layout="fill"
-            />
-          </li> */}
         </ul>
       </div>
     </section>
