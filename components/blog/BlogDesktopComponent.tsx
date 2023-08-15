@@ -41,7 +41,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowLeft}
-            alt="45"
+            alt="🢐"
           ></Image>
         }
         nextControlIcon={
@@ -50,7 +50,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowRight}
-            alt="45"
+            alt="🢒"
           ></Image>
         }
         skipSnaps
@@ -63,6 +63,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             bottom: 0,
             top: 0,
             padding: 0,
+            maxWidth: "100vw",
             width: "106%",
             left: "-3%",
           },
