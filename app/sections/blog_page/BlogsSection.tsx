@@ -240,7 +240,6 @@ const BlogsSection = () => {
   const itemsToShow = useResponsiveItemsToShow();
 
   const {
-    // sliderRef,
     visibleCategories,
     animateCarousel,
     slideDirection,
