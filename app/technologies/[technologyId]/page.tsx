@@ -29,7 +29,6 @@ const Technology = () => {
     //створити інтерфейс за json'oм для data ()
     return (
         <div>
-            {/* <h1>Technologies</h1> */}
             <HeroSection />
         </div>
     )
