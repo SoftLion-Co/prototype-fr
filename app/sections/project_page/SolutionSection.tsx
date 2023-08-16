@@ -67,8 +67,8 @@ const SolutionSection = () => {
       <div className={s.solution__heading}>
         <HeadingOurProjectComponent title="02" text="Solution" />
       </div>
-      <div className={`${s.container} ${s.solution__lists}`}>
-        <ul className={s.solution__list}>
+      <div className={s.solution__lists}>
+        <ul className={`${s.solution__list} ${s.container}`}>
           {silutionInfo.map((item, index) => (
             <li key={index} className={s.solution__item}>
               <h3
@@ -88,7 +88,7 @@ const SolutionSection = () => {
             </li>
           ))}
         </ul>
-        <ul className={s.solution__photos}>
+        <ul className={`${s.solution__photos} ${s.container}`}>
           {silutionPhoto.map((photo) => (
             <li className={s[`solution__${photo.class}`]}>
               <Image
