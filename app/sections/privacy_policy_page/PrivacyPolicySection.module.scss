@@ -1,0 +1,91 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.privacy {
+  &___date {
+    margin-bottom: 62px;
+    @include for-size(desktop) {
+      margin-bottom: 111px;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: black;
+    margin-bottom: 20px;
+    @include for-size(tablet) {
+      margin-bottom: 30px;
+    }
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+      margin-bottom: 40px;
+    }
+    &___color {
+      color: rgb(48, 139, 183);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: black;
+    margin-bottom: 30px;
+    @include for-size(tablet) {
+      display: block;
+      margin-bottom: 45px;
+    }
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &___bold {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: black;
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+    }
+  }
+
+  &__list {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 40px;
+    @include for-size(tablet) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 33px;
+      margin-bottom: 90px;
+      
+    }
+    &___color {
+      color: rgb(48, 139, 183);
+    }
+    &___tab {
+      margin-left: 21px;
+      @include for-size(tablet) {
+        margin-left: 28px;
+      }
+      @include for-size(desktop) {
+        margin-left: 40px;
+      }
+    }
+  }
+  &__item {
+    list-style: disc;
+  }
+  &___no_italic {
+    font-style: normal;
+  }
+}

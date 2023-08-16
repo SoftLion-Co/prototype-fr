@@ -1,11 +1,15 @@
-import s from "./page.module.scss"
+import PrivacyPolicySection from "../sections/privacy_policy_page/PrivacyPolicySection";
+import InfoNavigationComponent from "../../components/InfoNavigationComponent";
+import s from "./page.module.scss";
 
 const PrivacyPolicy = () => {
-    return (
-        <div>
-            <h1>Privacy-policy</h1>
-        </div>
-    )
-}
+  const links = [{ title: " Privacy Policy", href: "#" }];
+  return (
+    <div>
+      <InfoNavigationComponent links={links} />
+      <PrivacyPolicySection />
+    </div>
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;
