@@ -3,6 +3,7 @@ import s from "./page.module.scss"
 //import all jsons
 import data_java from "@/data/technologies/data_java.json"
 import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSection"
+import DevelopmentSection from "@/app/sections/technologies_page/DevelopmentSection";
 
 const Technology = () => {
 
@@ -30,6 +31,7 @@ const Technology = () => {
     return (
         <div>
             <AdvantagesSection />
+            <DevelopmentSection />
         </div>
     )
 }
