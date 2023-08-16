@@ -21,16 +21,8 @@
     flex-direction: column;
     align-items: center;
 
-    gap: 30px;
     @include for-size(tablet) {
       flex-direction: row;
-      gap: 85px;
-    }
-    @include for-size(laptop) {
-      gap: 135px;
-    }
-    @include for-size(desktop) {
-      gap: 160px;
     }
 
     &_texts {
@@ -39,7 +31,6 @@
       gap: 45px;
 
       width: 100%;
-      height: 505px;
 
       @include for-size(tablet) {
         gap: 38px;
@@ -110,41 +101,50 @@
     }
 
     &_photo {
-      background: url("https://i.ibb.co/bbXrmNK/Vectary-texture.png");
-      background-size: contain;
       position: absolute;
+      object-fit: cover;
 
-      width: 388px;
-      height: 276px;
+      width: 100%;
+      height: 320px;
 
       z-index: -1;
-
-      margin-top: 224px;
-      margin-right: 20px;
 
       @include for-size(tablet) {
         width: 410px;
         height: 298px;
-
-        margin-top: -93px;
-        margin-left: 342px;
-        margin-right: 0;
       }
       @include for-size(laptop) {
         width: 675px;
         height: 489px;
-
-        margin-top: -117px;
-        margin-left: 565px;
       }
 
       @include for-size(desktop) {
         width: 817px;
         height: 580px;
-
-        margin-top: -194px;
-        margin-left: 686px;
       }
+    }
+  }
+  &__sadasd {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 250px;
+    @include for-size(tablet) {
+      width: 40%;
+      margin-left: 43px;
+
+      height: 315px;
+    }
+    @include for-size(laptop) {
+      margin-left: 19px;
+      height: 480px;
+    }
+
+    @include for-size(desktop) {
+      margin-left: 72px;
+      height: 580px;
     }
   }
 }

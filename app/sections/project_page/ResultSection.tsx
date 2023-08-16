@@ -1,5 +1,6 @@
 import s from "./ResultSection.module.scss";
 import HeadingOurProjectComponent from "../../../components/project/HeadingOurProjectComponent";
+import Image from "next/image";
 
 const info = [
   {
@@ -30,7 +31,15 @@ const ResultSection = () => {
             </li>
           ))}
         </ul>
-        <div className={s.design__wrapper_photo}></div>
+        <div className={s.design__sadasd}>
+          <Image
+            alt="Vectary-texture"
+            className={s.design__wrapper_photo}
+            src={"https://i.ibb.co/bbXrmNK/Vectary-texture.png"}
+            width={800}
+            height={200}
+          />
+        </div>
       </div>
     </section>
   );
