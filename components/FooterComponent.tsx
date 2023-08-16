@@ -8,95 +8,76 @@ import Logo from "./../images/logo.svg";
 import Image from "next/image";
 
 const FooterComponent = () => {
+  const routes = [
+    { path: "/", label: "Service" },
+    { path: "/projects", label: "Our Projects" },
+    { path: "/technologies", label: "Technologies" },
+    { path: "/blogs", label: "Blog" },
+    { path: "/contact", label: "Contact Us" },
+  ];
+
+  const socialLinks = [
+    {
+      url: "https://www.linkedin.com/company/softlion/",
+      icon: <FiLinkedin className={s.footer__icon} />,
+    },
+    {
+      url: "https://instagram.com/softlion_co/",
+      icon: <AiOutlineInstagram className={s.footer__icon} />,
+    },
+    {
+      url: "https://www.facebook.com/people/SoftLion/100093384261914/",
+      icon: <FiFacebook className={s.footer__icon} />,
+    },
+    {
+      url: "#",
+      icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
+    },
+  ];
+
   return (
-    <footer className={s.footer}>
-      <div className={s.container}>
-        <div className={s.footer__mainWrap}>
-          <div className={s.footer__firstBlock}>
+    <footer className={`${s.footer} ${s.container}`}>
+      <div className={s.footer__block}>
+        <div className={s.footer__block_first}>
+          <div className={s.footer__colum_link}>
             <Link href="/">
               <Image
+                alt="SoftLion"
                 className={s.footer__logo}
                 src={Logo}
                 width={800}
                 height={554}
-                alt="SoftLion"
               />
             </Link>
-            <div className={s.footer__routeWrap2}>
-              <Link href={"/services"} className={s.footer__routeName}>
-                Service
-              </Link>
-              <Link href={"/projects"} className={s.footer__routeName}>
-                Our Projects
-              </Link>
-              <Link href={"/technologies"} className={s.footer__routeName}>
-                Technologies
-              </Link>
-              <Link href={"/blogs"} className={s.footer__routeName}>
-                Blog
-              </Link>
-              <Link href={"/contact"} className={s.footer__routeName}>
-                Contact Us
-              </Link>
+            <div className={s.footer__routs}>
+              {routes.map((route, index) => (
+                <Link
+                  key={index}
+                  href={route.path}
+                  className={s.footer__routs_name}
+                >
+                  {route.label}
+                </Link>
+              ))}
             </div>
-            <div className={s.footer__routeNamePriv}>
-              <Link href={"/privacy-policy"} className={s.footer__routeName}>
-                Privacy policy
-              </Link>
-            </div>
-            <p className={s.footer__logoText}>
+          </div>
+          <div className={s.footer__colum_copy}>
+            <p className={s.footer__copyright}>
               ©2023 Copyright SoftLion. All rights reserved.
             </p>
+            <Link href="/privacy-policy" className={s.footer__colum_name}>
+              Privacy policy
+            </Link>
           </div>
-          <div className={s.footer__secondBlock}>
-            <div>
-              <div className={s.footer__routeWrap}>
-                <Link href={"/services"} className={s.footer__routeName}>
-                  Service
-                </Link>
-                <Link href={"/projects"} className={s.footer__routeName}>
-                  Our Projects
-                </Link>
-                <Link href={"/technologies"} className={s.footer__routeName}>
-                  Technologies
-                </Link>
-                <Link href={"/blogs"} className={s.footer__routeName}>
-                  Blog
-                </Link>
-                <Link href={"/contact"} className={s.footer__routeName}>
-                  Contact Us
-                </Link>
-              </div>
-              <div>
-                <Link href={"/privacy-policy"} className={s.footer__routeName}>
-                  Privacy policy
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className={s.footer__thirdBlock}>
-            <div className={s.footer__iconsWrap}>
-              <a
-                className={s.footer__thirdBlockLink}
-                href="https://www.linkedin.com/company/softlion/"
-              >
-                <FiLinkedin className={s.footer__icons} />
-              </a>
-              <a
-                className={s.footer__thirdBlockLink}
-                href="https://instagram.com/softlion_co/"
-              >
-                <AiOutlineInstagram className={s.footer__icons} />
-              </a>
-              <a
-                className={s.footer__thirdBlockLink}
-                href="https://www.facebook.com/people/SoftLion/100093384261914/"
-              >
-                <FiFacebook className={s.footer__icons} />
-              </a>
-              <a className={s.footer__thirdBlockLink} href="#">
-                <PiTelegramLogoDuotone className={s.footer__icons} />
-              </a>
+        </div>
+        <div className={s.footer__block_second}>
+          <div className={s.footer__content}>
+            <div className={s.footer__icons}>
+              {socialLinks.map((link, index) => (
+                <a key={index} className={s.footer__link} href={link.url}>
+                  {link.icon}
+                </a>
+              ))}
             </div>
             <a
               href="mailto:office.softlion@gmail.com"
@@ -104,15 +85,15 @@ const FooterComponent = () => {
             >
               office.softlion@gmail.com
             </a>
-            <div className={s.footer__btnFooter}>
-              <MainButtonComponent
-                color="dark-blue"
-                path="services"
-                className={s.footer__btnFooter_text}
-              >
-                Book Consultation
-              </MainButtonComponent>
-            </div>
+          </div>
+          <div className={s.footer__btn}>
+            <MainButtonComponent
+              color="dark-blue"
+              path="services"
+              className={s.footer__btn_text}
+            >
+              Book Consultation
+            </MainButtonComponent>
           </div>
         </div>
       </div>
@@ -120,4 +101,4 @@ const FooterComponent = () => {
   );
 };
 
-export default FooterComponent
+export default FooterComponent;
