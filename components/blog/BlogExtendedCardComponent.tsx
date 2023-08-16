@@ -57,7 +57,7 @@ const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
       <div className={s.article}>
         <p className={s.card__text}>{text}</p>
         <Link href={`blogs/${id}`}>
-          <PiArrowRightThin size="2.5em" />
+          <PiArrowRightThin color="black" size="2.5em" />
         </Link>
       </div>
     </div>
