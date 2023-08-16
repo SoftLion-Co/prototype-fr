@@ -2,9 +2,9 @@ import s from "./StagesSection.module.scss"
 
 const StagesSection = () => {
     return (
-        <div>
+        <section>
             
-        </div>
+        </section>
     )
 }
 

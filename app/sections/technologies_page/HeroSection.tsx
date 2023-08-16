@@ -2,9 +2,9 @@ import s from "./HeroSection.module.scss"
 
 const HeroSection = () => {
     return (
-        <div>
+        <section>
             
-        </div>
+        </section>
     )
 }
 

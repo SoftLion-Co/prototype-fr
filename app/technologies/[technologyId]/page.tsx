@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import s from "./page.module.scss"
 //import all jsons
 import data_java from "@/data/technologies/data_java.json"
+import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSection"
 
 const Technology = () => {
 
@@ -28,7 +29,7 @@ const Technology = () => {
     //створити інтерфейс за json'oм для data ()
     return (
         <div>
-            <h1>Technologies</h1>
+            <AdvantagesSection />
         </div>
     )
 }

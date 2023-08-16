@@ -2,9 +2,9 @@ import s from "./ChooseUsSection.module.scss"
 
 const ChooseUsSection = () => {
     return (
-        <div>
+        <section>
             
-        </div>
+        </section>
     )
 }
 
