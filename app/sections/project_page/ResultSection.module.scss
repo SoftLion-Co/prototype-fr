@@ -107,8 +107,6 @@
       width: 100%;
       height: 320px;
 
-      z-index: -1;
-
       @include for-size(tablet) {
         width: 410px;
         height: 314px;
@@ -133,17 +131,14 @@
     height: 250px;
     @include for-size(tablet) {
       width: 40%;
-      // margin-left: 43px;
 
       height: 315px;
     }
     @include for-size(laptop) {
-      // margin-left: 19px;
       height: 480px;
     }
 
     @include for-size(desktop) {
-      // margin-left: 72px;
       height: 580px;
     }
   }
