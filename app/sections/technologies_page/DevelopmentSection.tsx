@@ -2,9 +2,9 @@ import s from "./DevelopmentSection.module.scss"
 
 const DevelopmentSection = () => {
     return (
-        <div>
+        <section>
             
-        </div>
+        </section>
     )
 }
 

@@ -2,9 +2,9 @@ import s from "./AdvantagesSection.module.scss"
 
 const AdvantagesSection = () => {
     return (
-        <div>
+        <section>
             
-        </div>
+        </section>
     )
 }
 

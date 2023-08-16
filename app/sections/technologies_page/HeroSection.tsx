@@ -13,9 +13,7 @@ const HeroSection = () => {
         <div className={s.hero__technologies}>
           <HeadingComponent text="Technologies" />
         </div>
-
         <h2 className={s.hero__heading}>{heroData.titleTech}</h2>
-
         <p className={s.hero__paragraph}>{heroData.paragraph}</p>
       </div>
     </section>
