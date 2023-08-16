@@ -111,7 +111,7 @@
 
   &__field {
     &:nth-child(2) {
-      padding-left: 42px;
+      padding-left: 39px;
     }
     padding: 0;
     border: none;
@@ -169,13 +169,13 @@
       @include for-size(tablet) {
         top: 1px;
         color: #858585;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.38px;
       }
 
       @include for-size(laptop) {
         top: 5px;
-        font-size: 12px;
+        font-size: 14px;
         letter-spacing: 0.367px;
       }
 
@@ -404,6 +404,14 @@
   @include for-size(tablet){
     width: 300px !important;
 
+  }
+
+  @include for-size(laptop){
+    font-size: 14px;
+  }
+
+  @include for-size(desktop){
+    font-size: 16px;
   }
 
 }
