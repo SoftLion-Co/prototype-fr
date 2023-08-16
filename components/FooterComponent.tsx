@@ -65,7 +65,7 @@ const FooterComponent = () => {
             <p className={s.footer__copyright}>
               ©2023 Copyright SoftLion. All rights reserved.
             </p>
-            <Link href="/privacy-policy" className={s.footer__routs_name}>
+            <Link href="/privacy-policy" className={s.footer__colum_name}>
               Privacy policy
             </Link>
           </div>
