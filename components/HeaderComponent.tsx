@@ -6,6 +6,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import React, { useState } from "react";
+import classNames from "classnames";
 
 const HeaderComponent = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -16,7 +17,7 @@ const HeaderComponent = () => {
     setBurgerOpen(!isBurgerOpen);
   };
   return (
-    <header className={s.container}>
+    <header className={s.container} onClick={toggleModal}>
       <div className={s.header}>
         <Link href="/">
           <Image className={s.header__logo} src={Logo} alt="SoftLion" />
@@ -128,16 +129,16 @@ const HeaderComponent = () => {
                   <p>Services</p>
                   <MdKeyboardArrowDown
                     className={s.header_modal__icon}
-                    width="18px"
-                    height="18px"
+                    width="22px"
+                    height="22px"
                   />
                 </Link>
-                <ul className={s.header_modal__sub_menu}>git add . 
+                <ul className={s.header_modal__sub_menu}>
                   <li>
                     {" "}
                     <Link
                       href="/services/design"
-                      className={s.header_modal__sublink}
+                      className={s.header_modal__link}
                     >
                       Design
                     </Link>
@@ -169,43 +170,54 @@ const HeaderComponent = () => {
               </li>
               <li className={s.header_modal__item}>
                 {" "}
-                <Link href="/technologies" className={s.header_modal__link}>
-                  Technologies
+                <Link
+                  href="/technologies"
+                  className={classNames(
+                    s.header_modal__link,
+                    s.header_modal__link_technologies
+                  )}
+                >
+                  <p>Technologies</p>
+                  <MdKeyboardArrowDown
+                    className={s.header_modal__icon}
+                    width="22px"
+                    height="22px"
+                  />
                 </Link>
-                {/* <ul className={s.header__sub_menu}>
-                <li>
-                  {" "}
-                  <Link href="/services/java" className={s.header__link}>
-                    Java
-                  </Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link href="/services/react" className={s.header__link}>
-                    React.js
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/angular" className={s.header__link}>
-                    Angular
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/vue" className={s.header__link}>
-                    Vue.js
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/node" className={s.header__link}>
-                    Node.js
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/net" className={s.header__link}>
-                    .NET
-                  </Link>
-                </li>
-              </ul> */}
+                <ul className={s.header_modal__sub_menu}>
+                  <li>
+                    {" "}
+                    <Link href="/services/java" className={s.header_modal__link}>
+                      Java
+                    </Link>
+                  </li>
+                  <li>
+                    {" "}
+                    <Link href="/services/react" className={s.header_modal__link}>
+                      React.js
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/angular" className={s.header_modal__link}>
+                      Angular
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/vue" className={s.header_modal__link}>
+                      Vue.js
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/node" className={s.header_modal__link}>
+                      Node.js
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/net" className={s.header_modal__link}>
+                      .NET
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className={s.header_modal__item}>
                 {" "}

@@ -185,20 +185,32 @@
     transition: box-shadow 0.3s ease;
     display: flex;
     flex-direction: row;
-    gap: 116px;
     align-items: center;
+    justify-content: space-between;
     &:hover {
       color: (rgb(48, 139, 183));
     }
   }
   &__icon {
+    margin-right: 30px;
     opacity: 0.3;
   }
-  &__sub_menu {
-    display: none;
+  &__sub_menu {  
+  display: none; 
+  padding: 10px;
+  z-index: 1;    
   }
+  // &__sub_menu2 {  
+  //   display: none; 
+  //   padding: 10px;
+  //   z-index: 1;    
+  //   }
 }
 .header_modal__item:hover > .header_modal__sub_menu {
-  display: block;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+
+
