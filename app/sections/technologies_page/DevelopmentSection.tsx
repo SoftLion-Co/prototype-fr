@@ -1,16 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./DevelopmentSection.module.scss";
 import HeadingComponent from "@/components/technologies/HeadingComponent";
 
-const DevelopmentSection = () => {
+interface Props {
+  titleTech: string;
+}
+
+const DevelopmentSection: FC<Props> = ({ titleTech }) => {
   return (
     <section className={s.container}>
-      <h2>
-        <HeadingComponent
-          color="orange"
-          text="Our development services for Java include"
-        />
-      </h2>
+      <HeadingComponent
+        color="orange"
+        text={`Our development services for ${titleTech} include`}
+      />
     </section>
   );
 };

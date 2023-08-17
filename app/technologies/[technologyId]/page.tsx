@@ -31,7 +31,8 @@ const Technology = () => {
     return (
         <div>
             <AdvantagesSection />
-            <DevelopmentSection />
+            
+            <DevelopmentSection titleTech={data_java[0].heroSection.titleTech}/>
         </div>
     )
 }

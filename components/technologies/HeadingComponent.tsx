@@ -1,8 +1,8 @@
-import React, { FC, ComponentProps } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import s from "./HeadingComponent.module.scss";
 
-interface HeadingComponentProps extends ComponentProps<"div"> {
+interface HeadingComponentProps {
   color?:
     | "yellow"
     | "purple"
@@ -17,28 +17,16 @@ interface HeadingComponentProps extends ComponentProps<"div"> {
 const HeadingComponent: FC<HeadingComponentProps> = ({
   color = "blue",
   text,
-  className,
-  ...rest
 }) => {
-  const headingClass = classNames(s.heading, className, {
-    [s.yellowText]: color === "yellow",
-    [s.purpleText]: color === "purple",
-    [s.blueText]: color === "blue",
-    [s.orangeText]: color === "orange",
-    [s.greenText]: color === "green",
-    [s.turquoiseText]: color === "turquoise",
-    [s.pinkText]: color === "pink",
+  const headingColor = classNames(s.heading, {
+    [s[color + "Text"]]: color !== "blue",
   });
 
-  const headingStyle = {
-    marginLeft: "1.5%",
-  };
+  const headingTitle = classNames(s.heading__title);
 
   return (
-    <div className={headingClass} {...rest}>
-      <h2 className={s.heading} style={headingStyle}>
-        {text}
-      </h2>
+    <div className={headingColor}>
+      <h2 className={headingTitle}>{text}</h2>
       <div className={s.heading__border}></div>
     </div>
   );
