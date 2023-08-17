@@ -240,7 +240,6 @@ const BlogsSection = () => {
   const itemsToShow = useResponsiveItemsToShow();
 
   const {
-    // sliderRef,
     visibleCategories,
     animateCarousel,
     slideDirection,
@@ -369,6 +368,7 @@ const BlogsSection = () => {
               text={blog.text}
               imageSrc={blog.imageSrc}
               tags={blog.tags}
+              authorId={""}
             />
           ))}
         </div>
