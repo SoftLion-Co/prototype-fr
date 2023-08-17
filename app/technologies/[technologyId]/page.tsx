@@ -4,6 +4,7 @@ import s from "./page.module.scss"
 import data_java from "@/data/technologies/data_java.json"
 import HeroSection from "@/app/sections/technologies_page/HeroSection"
 import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSection"
+import DevelopmentSection from "@/app/sections/technologies_page/DevelopmentSection";
 
 const Technology = () => {
 
@@ -32,6 +33,8 @@ const Technology = () => {
         <div>
             <HeroSection />
             <AdvantagesSection />
+            
+            <DevelopmentSection titleTech={data_java[0].heroSection.titleTech}/>
         </div>
     )
 }
