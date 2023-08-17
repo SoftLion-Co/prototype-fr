@@ -39,7 +39,7 @@ const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
           <div className={s.card__subdesc}>
             <p>{data.description}</p>
           </div>
-          <Link href="/" className={s.card__arrow_link}>
+          <Link href={`/project/${data.id}`} className={s.card__arrow_link}>
             <PiArrowRightThin className={s.card__arrow_icon} />
           </Link>
         </div>
