@@ -30,9 +30,15 @@ const HeadingComponent: FC<HeadingComponentProps> = ({
     [s.pinkText]: color === "pink",
   });
 
+  const headingStyle = {
+    marginLeft: "1.5%",
+  };
+
   return (
     <div className={headingClass} {...rest}>
-      <h2 className={s.heading}>{text}</h2>
+      <h2 className={s.heading} style={headingStyle}>
+        {text}
+      </h2>
       <div className={s.heading__border}></div>
     </div>
   );
