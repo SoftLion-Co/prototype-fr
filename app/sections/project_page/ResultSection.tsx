@@ -19,7 +19,7 @@ const info = [
 
 const ResultSection = () => {
   return (
-    <section className={s.desig}>
+    <section className={s.design}>
       <div className={s.design__heading}>
         <HeadingOurProjectComponent title="03" text="The Result" />
       </div>
@@ -31,7 +31,7 @@ const ResultSection = () => {
             </li>
           ))}
         </ul>
-        <div className={s.design__sadasd}>
+        <div className={s.design__container}>
           <Image
             alt="Vectary-texture"
             className={s.design__wrapper_photo}

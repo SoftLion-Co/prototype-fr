@@ -23,12 +23,13 @@
 
     @include for-size(tablet) {
       flex-direction: row;
+      justify-content: space-between;
     }
 
     &_texts {
       display: flex;
       flex-direction: column;
-      gap: 45px;
+      gap: 32px;
 
       width: 100%;
 
@@ -36,19 +37,17 @@
         gap: 38px;
 
         width: 400px;
-        height: 286px;
       }
       @include for-size(laptop) {
         gap: 67px;
+
         width: 628px;
-        height: 435px;
       }
 
       @include for-size(desktop) {
         gap: 83px;
 
         width: 767px;
-        height: 580px;
       }
     }
 
@@ -103,9 +102,11 @@
     &_photo {
       position: absolute;
       object-fit: cover;
+      object-position: 50% 0%;
+      scale: 1.11;
 
-      width: 100%;
-      height: 320px;
+      width: 388px;
+      height: 276px;
 
       @include for-size(tablet) {
         width: 410px;
@@ -122,24 +123,17 @@
       }
     }
   }
-  &__sadasd {
+  &__container {
     position: relative;
     display: flex;
     align-items: center;
+    flex-direction: column;
 
     width: 100%;
     height: 250px;
     @include for-size(tablet) {
+      flex-direction: row;
       width: 40%;
-
-      height: 315px;
-    }
-    @include for-size(laptop) {
-      height: 480px;
-    }
-
-    @include for-size(desktop) {
-      height: 580px;
     }
   }
 }
