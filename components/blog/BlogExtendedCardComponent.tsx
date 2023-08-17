@@ -1,6 +1,7 @@
 import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
+import { PiArrowRightThin } from "react-icons/pi";
 
 interface BlogExtendedCardComponentProps {
   id: number;
@@ -58,22 +59,7 @@ const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
       <div className={s.article}>
         <p className={s.card__text}>{text}</p>
         <Link href={`blogs/${id}`}>
-          <svg
-            className={s.card__arrow}
-            xmlns="http://www.w3.org/2000/svg"
-            width="5em"
-            height="5em"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="4%"
-          >
-            <path
-              d="M5 10h9m0 0l-4-4m4 4l-4 4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <PiArrowRightThin color="black" size="2.5em" />
         </Link>
       </div>
     </div>
