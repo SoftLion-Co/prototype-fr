@@ -26,10 +26,10 @@ const Technology = () => {
     //     )
     // }
 
-    //створити інтерфейс за json'oм для data ()
+    //створити інтерфейс за json'oм для data (через спеціальні срервіси)
     return (
         <div>
-            <AdvantagesSection />
+            <AdvantagesSection paragraphs={data_java[0].advantagesSection}/>
         </div>
     )
 }
