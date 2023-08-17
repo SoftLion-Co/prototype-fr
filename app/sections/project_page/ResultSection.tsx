@@ -38,7 +38,7 @@ const ResultSection = () => {
         <div className={s.design__container}>
           <Image
             alt="Vectary-texture"
-            className={s.design__wrapper_photo}
+            className={s.design__container_photo}
             src={"https://i.ibb.co/bbXrmNK/Vectary-texture.png"}
             width={800}
             height={200}
