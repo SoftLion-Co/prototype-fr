@@ -11,6 +11,10 @@
     max-width: none;
   }
 
+  &__heading{
+    margin-bottom: 5%;
+  }
+
   &__cards_mobile {
     @include for-size(tablet) {
       display: none;
@@ -82,5 +86,11 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.container{
+  @include for-size(tablet){
+    padding: 0;
+  }
 }
 

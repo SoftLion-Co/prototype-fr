@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { FC, useState } from "react";
 import s from "./AdvantagesSection.module.scss";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
@@ -12,10 +12,13 @@ import HeadingComponent from "@/components/technologies/HeadingComponent";
 
 interface AdvantagesSectionProps {
   paragraphs: string[];
-  titleTech: string,
+  titleTech: string;
 }
 
-const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs, titleTech }) => {
+const AdvantagesSection: FC<AdvantagesSectionProps> = ({
+  paragraphs,
+  titleTech,
+}) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
 
@@ -33,12 +36,14 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs, titleTech }
   return (
     <section className={s.advantages}>
       <div className={s.container}>
-        <HeadingComponent
-        color="purple"
-        text={`Our development services for ${titleTech} include`}
-      />
+        <div className={s.advantages__heading}>
+          <HeadingComponent
+            color="purple"
+            text={`Advantages of using ${titleTech}`}
+          />
+        </div>
       </div>
-      
+
       <div className={s.advantages__cards_mobile}>
         <MobileSliderComponent
           data={slideData}
@@ -51,10 +56,18 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs, titleTech }
           classNames={{ control: s.custom__control }}
           onSlideChange={(index) => setCurrentSlide(index)}
           previousControlIcon={
-            <Image className={classNames(s.arrow, s.arrow__left)} src={ArrowLeft} alt="45" />
+            <Image
+              className={classNames(s.arrow, s.arrow__left)}
+              src={ArrowLeft}
+              alt="45"
+            />
           }
           nextControlIcon={
-            <Image className={classNames(s.arrow, s.arrow__right)} src={ArrowRight} alt="45" />
+            <Image
+              className={classNames(s.arrow, s.arrow__right)}
+              src={ArrowRight}
+              alt="45"
+            />
           }
           slideSize="33.333%"
           align="center"
@@ -62,9 +75,12 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs, titleTech }
           slidesToScroll={1}
         >
           {slideData.map((slide, index) => (
-            <Carousel.Slide key={slide.id} onClick={() => setActiveSlide(index)}>
+            <Carousel.Slide
+              key={slide.id}
+              onClick={() => setActiveSlide(index)}
+            >
               <div className={s.slide}>
-              <AdvantagesCardComponent data={slide} />
+                <AdvantagesCardComponent data={slide} />
               </div>
             </Carousel.Slide>
           ))}
