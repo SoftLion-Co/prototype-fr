@@ -45,32 +45,44 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
         </div>
 
         <div className={s.development__container}>
-          {developmentSection.map((item, index) => (
-            <div className={s.development__content} key={item.number}>
-              {isLargeScreen ? (
-                index % 2 === 0 ? (
-                  <>
-                    <p
-                      className={classNames(
-                        s.development__number,
-                        s[numberColors[index % 4]]
-                      )}
-                    >
-                      {item.number}
-                    </p>
+          {developmentSection.map((item, index) => {
+            const developmentItem = (
+              <div className={s.development__item}>
+                <h2 className={s.development__title}>{item.title}</h2>
+                <p className={s.development__text}>{item.paragraph}</p>
+              </div>
+            );
 
-                    <div className={s.development__item}>
-                      <h2 className={s.development__title}>{item.title}</h2>
-                      <p className={s.development__text}>{item.paragraph}</p>
-                    </div>
-                  </>
+            return (
+              <div className={s.development__content} key={item.number}>
+                {isLargeScreen ? (
+                  index % 2 === 0 ? (
+                    <>
+                      <p
+                        className={classNames(
+                          s.development__number,
+                          s[numberColors[index % 4]]
+                        )}
+                      >
+                        {item.number}
+                      </p>
+                      {developmentItem}
+                    </>
+                  ) : (
+                    <>
+                      {developmentItem}
+                      <p
+                        className={classNames(
+                          s.development__number,
+                          s[numberColors[index % 4]]
+                        )}
+                      >
+                        {item.number}
+                      </p>
+                    </>
+                  )
                 ) : (
                   <>
-                    <div className={s.development__item}>
-                      <h2 className={s.development__title}>{item.title}</h2>
-                      <p className={s.development__text}>{item.paragraph}</p>
-                    </div>
-
                     <p
                       className={classNames(
                         s.development__number,
@@ -79,27 +91,12 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
                     >
                       {item.number}
                     </p>
+                    {developmentItem}
                   </>
-                )
-              ) : (
-                <>
-                  <p
-                    className={classNames(
-                      s.development__number,
-                      s[numberColors[index % 4]]
-                    )}
-                  >
-                    {item.number}
-                  </p>
-
-                  <div className={s.development__item}>
-                    <h2 className={s.development__title}>{item.title}</h2>
-                    <p className={s.development__text}>{item.paragraph}</p>
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            );
+          })}
         </div>
 
         <div className={s.development__button}>
