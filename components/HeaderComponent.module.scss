@@ -99,14 +99,19 @@
   &__burger {
     font-size: 25px;
   }
+  &__close_icon {
+    &:hover {
+      color: (rgb(48, 139, 183));
+    }
+  }
 
-  &__btn_header {
+  &__btn_login {
     background: $button-blue-background;
     color: black;
     padding: 5.5px 13px;
     border-radius: 6px;
     border: none;
-    margin-left: 16px;
+    margin-left: 21px;
     @include for-size(tablet) {
       padding: 5.5px 13px;
       border-radius: 8px;
@@ -164,7 +169,7 @@
   z-index: 2;
 
   &__list {
-    padding: 15px;
+    padding: 35px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -173,10 +178,9 @@
     right: 0;
     min-width: 270px;
   }
-  &__item {
-  }
+
   &__link {
-    font-size: 20px;
+    font-size: 14px;
     font-family: "Roboto";
     letter-spacing: 0.4px;
     color: black;
@@ -195,16 +199,11 @@
     margin-right: 30px;
     opacity: 0.3;
   }
-  &__sub_menu {  
-  display: none; 
-  padding: 10px;
-  z-index: 1;    
+  &__sub_menu {
+    display: none;
+    padding: 10px;
+    z-index: 1;
   }
-  // &__sub_menu2 {  
-  //   display: none; 
-  //   padding: 10px;
-  //   z-index: 1;    
-  //   }
 }
 .header_modal__item:hover > .header_modal__sub_menu {
   display: flex;
@@ -212,5 +211,54 @@
   gap: 10px;
 }
 
+.icon {
+  width: 17px;
+  height: 16px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 
+  &__span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: $burger-menu-color;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  &__span:nth-child(1) {
+    top: 0px;
+  }
+  &__span:nth-child(2),
+  &__span:nth-child(3) {
+    top: 6px;
+  }
+  &__span:nth-child(4) {
+    top: 12px;
+  }
+  &.open &__span:nth-child(1) {
+    top: 12px;
+    width: 0;
+    left: 50%;
+  }
+  &.open &__span:nth-child(2) {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+  &.open &__span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 6px;
+  }
+  &.open &__span:nth-child(4) {
+    top: 6px;
+    width: 0;
+    left: 50%;
+  }
+}
 

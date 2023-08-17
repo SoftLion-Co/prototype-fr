@@ -1,24 +1,31 @@
-/* use client */
+"use client";
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
-import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import React, { useState } from "react";
 import classNames from "classnames";
 
+
 const HeaderComponent = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isBurgerOpen, setBurgerOpen] = useState(false);
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
-    setBurgerOpen(!isBurgerOpen);
   };
+
+  const closeMenu = () => {
+    setModalOpen(false);
+  };
+
+  function handleButtonClick(e) {
+    toggleModal();
+    e.stopPropagation()
+  }
   return (
-    <header className={s.container} onClick={toggleModal}>
-      <div className={s.header}>
+    <header className={s.container}>
+      <div className={s.header} onClick={closeMenu} >
         <Link href="/">
           <Image className={s.header__logo} src={Logo} alt="SoftLion" />
         </Link>
@@ -109,20 +116,20 @@ const HeaderComponent = () => {
             </li>
           </ul>
         </nav>
-        <button className={s.header__btn_burger} onClick={toggleModal}>
-          {isBurgerOpen ? (
-            <span>X</span>
-          ) : (
-            <IoIosMenu
-              className={s.header__burger}
-              width="18px"
-              height="13px"
-            />
-          )}
+        <button className={s.header__btn_burger} onClick={handleButtonClick}  >
+          <div className={`${s.icon} ${isModalOpen ? s.open : ""}`}  >
+            <span className={s.icon__span}></span>
+            <span className={s.icon__span}></span>
+            <span className={s.icon__span}></span>
+            <span className={s.icon__span}></span>
+          </div>
         </button>
         {isModalOpen && (
-          <div className={s.header_modal}>
-            <ul className={s.header_modal__list}>
+          <div className={s.header_modal} onClick={closeMenu}>
+            <ul
+              className={s.header_modal__list}
+              onClick={(e) => e.stopPropagation()}
+            >
               <li className={s.header_modal__item}>
                 {" "}
                 <Link href="/services" className={s.header_modal__link}>
@@ -187,18 +194,27 @@ const HeaderComponent = () => {
                 <ul className={s.header_modal__sub_menu}>
                   <li>
                     {" "}
-                    <Link href="/services/java" className={s.header_modal__link}>
+                    <Link
+                      href="/services/java"
+                      className={s.header_modal__link}
+                    >
                       Java
                     </Link>
                   </li>
                   <li>
                     {" "}
-                    <Link href="/services/react" className={s.header_modal__link}>
+                    <Link
+                      href="/services/react"
+                      className={s.header_modal__link}
+                    >
                       React.js
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/angular" className={s.header_modal__link}>
+                    <Link
+                      href="/services/angular"
+                      className={s.header_modal__link}
+                    >
                       Angular
                     </Link>
                   </li>
@@ -208,7 +224,10 @@ const HeaderComponent = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/node" className={s.header_modal__link}>
+                    <Link
+                      href="/services/node"
+                      className={s.header_modal__link}
+                    >
                       Node.js
                     </Link>
                   </li>
@@ -234,7 +253,7 @@ const HeaderComponent = () => {
             </ul>
           </div>
         )}
-        <button className={s.header__btn_header}>
+        <button className={s.header__btn_login}>
           <p className={s.header__btn_text}>Login</p>
         </button>
       </div>
