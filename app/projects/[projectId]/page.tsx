@@ -6,7 +6,6 @@ import ProjectDescriptionSection from "@/app/sections/project_page/ProjectDescri
 const Project = () => {
   return (
     <div>
-      <h1>Projects</h1>
       <ProjectDescriptionSection />
       <ResultSection />
       <RequestSection />
