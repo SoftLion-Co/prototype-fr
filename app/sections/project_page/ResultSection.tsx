@@ -2,7 +2,11 @@ import s from "./ResultSection.module.scss";
 import HeadingOurProjectComponent from "../../../components/project/HeadingOurProjectComponent";
 import Image from "next/image";
 
-const info = [
+interface resultInfoItem {
+  title: string;
+}
+
+const info: resultInfoItem[] = [
   {
     title:
       "Attractive and modern design: We have developed an aesthetically appealing design that reflects the unique style of your company and captures the attention of visitors. The website has a clean and organized layout that ensures easy navigation and user-friendliness.",
