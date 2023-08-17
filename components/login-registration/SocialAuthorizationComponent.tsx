@@ -1,8 +1,8 @@
 import s from "./SocialAuthorizationComponent.module.scss";
 import Image from "next/image";
-import Google from "../images/Google.svg";
-import Facebook from "../images/Facebook.svg";
-import LinkedIn from "../images/LinkedIn.svg";
+import Google from "../../images/Google.svg";
+import Facebook from "../../images/Facebook.svg";
+import LinkedIn from "../../images/LinkedIn.svg";
 import { FC } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
@@ -11,9 +11,9 @@ interface SocialAuthorizationProps {
 }
 
 const SocialAuthorization: FC<SocialAuthorizationProps> = ({ text }) => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
-  console.log("loggedIn, session: ", session);
+  console.log("loggedIn, session: ", session, status);
 
   return (
     <div className={s.social}>

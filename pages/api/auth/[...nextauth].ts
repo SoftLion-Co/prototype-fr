@@ -1,10 +1,9 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import LinkedInProvider from "next-auth/providers/linkedin";
-import { signIn } from "next-auth/react";
 
-const authOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: <string>process.env.GOOGLE_CLIENT_ID,
@@ -18,10 +17,13 @@ const authOptions = {
       }
     }),
     LinkedInProvider({
-      clientId: <string>process.env.LINKEDIN_CLIENT_ID,
+      clientId: process.env.LINKEDIN_CLIENT_ID as string,
       clientSecret: <string>process.env.LINKEDIN_CLIENT_SECRET,
+      wellKnown: 'https://www.linkedin.com/oauth/.well-known/openid-configuration',
       authorization: {
-        params: { scope: "openid profile email" },
+        params: {
+          scope: "openid profile email",
+        }
       },
     }),
     FacebookProvider({
@@ -30,14 +32,12 @@ const authOptions = {
     }),
   ],
   secret: process.env.JWT_SECRET,
-  callbacks: {
-    async signIn(user: any, account: any, profile: any) {
-      console.log("user", user);
-      console.log("account", account);
-      console.log("profile", profile);
-      return true;
-    },
+  theme: {
+    colorScheme: "light",
   },
+  // pages: {
+  //   signIn: '/login',
+  // }
 };
 
 export default NextAuth(authOptions);

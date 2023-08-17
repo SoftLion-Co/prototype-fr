@@ -1,5 +1,5 @@
 "use client";
-import SocialAuthorization from "@/components/SocialAuthorizationComponent";
+import SocialAuthorization from "@/components/login-registration/SocialAuthorizationComponent";
 import s from "./RegistrationSection.module.scss";
 import { LuUnlock } from "react-icons/lu";
 import classNames from "classnames";

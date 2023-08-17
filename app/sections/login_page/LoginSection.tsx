@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { EmailInput } from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
-import SocialAuthorization from "@/components/SocialAuthorizationComponent";
+import SocialAuthorization from "@/components/login-registration/SocialAuthorizationComponent";
 import Link from "next/link";
 
 interface FormData {
