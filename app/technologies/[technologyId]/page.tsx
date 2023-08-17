@@ -32,7 +32,7 @@ const Technology = () => {
     return (
         <div>
             <HeroSection />
-            <AdvantagesSection paragraphs={data_java[0].advantagesSection}/>
+            <AdvantagesSection paragraphs={data_java[0].advantagesSection} titleTech={data_java[0].heroSection.titleTech}/>
             <DevelopmentSection titleTech={data_java[0].heroSection.titleTech}/>
         </div>
     )

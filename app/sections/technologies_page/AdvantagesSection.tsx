@@ -8,12 +8,14 @@ import Image from "next/image";
 import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
 import classNames from "classnames";
+import HeadingComponent from "@/components/technologies/HeadingComponent";
 
 interface AdvantagesSectionProps {
   paragraphs: string[];
+  titleTech: string,
 }
 
-const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs }) => {
+const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs, titleTech }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
 
@@ -30,6 +32,13 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({ paragraphs }) => {
 
   return (
     <section className={s.advantages}>
+      <div className={s.container}>
+        <HeadingComponent
+        color="purple"
+        text={`Our development services for ${titleTech} include`}
+      />
+      </div>
+      
       <div className={s.advantages__cards_mobile}>
         <MobileSliderComponent
           data={slideData}
