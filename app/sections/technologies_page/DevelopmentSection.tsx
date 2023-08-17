@@ -36,7 +36,6 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
 
   return (
     <section className={s.container}>
-      <div className={s.test}>
         <div className={s.development__heading}>
           <HeadingComponent
             color="orange"
@@ -102,7 +101,6 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
         <div className={s.development__button}>
           <BigButtonComponent />
         </div>
-      </div>
     </section>
   );
 };
