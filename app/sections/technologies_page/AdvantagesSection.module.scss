@@ -2,16 +2,16 @@
 @import "./../styles/container";
 
 .advantages {
-  @include for-size(tablet){
+  @include for-size(tablet) {
     max-width: 738px;
     margin: 0 auto;
   }
 
-  @include for-size(laptop){
+  @include for-size(laptop) {
     max-width: none;
   }
 
-  &__heading{
+  &__heading {
     margin-bottom: 5%;
   }
 
@@ -39,17 +39,14 @@
   @include for-size(tablet) {
     height: 26px;
     width: auto;
-    
   }
 
   @include for-size(laptop) {
     height: 42px;
-    
   }
 
   @include for-size(desktop) {
     height: 55px;
-   
   }
 
   &__left {
@@ -81,16 +78,15 @@
   }
 }
 
-.slide{
+.slide {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-.container{
-  @include for-size(tablet){
+.container {
+  @include for-size(tablet) {
     padding: 0;
   }
 }
-
