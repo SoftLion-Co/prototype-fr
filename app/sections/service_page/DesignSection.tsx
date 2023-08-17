@@ -5,7 +5,7 @@ import Responsive from "../../../images/services/design/responsive-design.svg";
 import UX from "../../../images/services/design/ux-design.svg";
 import Visual from "../../../images/services/design/visual-design.svg";
 import Wireframing from "../../../images/services/design/wireframing.svg";
-import BigButtonComponent from "../../../components/BigButtonComponent";
+import BigButtonComponent from "../../../components/service/BigButtonComponent";
 import ServiceDesignCardComponent from "../../../components/service/ServiceDesignCardComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 
