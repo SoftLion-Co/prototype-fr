@@ -43,7 +43,7 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
         />
       </div>
 
-      <div className={classNames(s.development__containers, s.container)}>
+      <div className={classNames(s.development__cards, s.container)}>
         {developmentSection.map((item, index) => {
           const developmentItem = (
             <div className={s.development__item}>
