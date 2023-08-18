@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { BlogInterface } from "../blog/BlogInteface";
+import React, { FC, useEffect, useState } from "react";
+import { BlogInterface } from "@/components/blog/BlogInteface";
 import { Pagination } from "@mantine/core";
-import BlogExtendedCardComponent from "../blog/BlogExtendedCardComponent";
+import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import s from "./AuthorBlogs.module.scss";
 
 interface ArticleListProps {
   articles: BlogInterface[];
 }
 
-const AuthorBlogs: React.FC<ArticleListProps> = ({ articles }) => {
+const AuthorBlogs: FC<ArticleListProps> = ({ articles }) => {
   const perPage = 6;
   const pages = Math.ceil(articles.length / perPage);
   const [activePage, setPage] = useState(1);

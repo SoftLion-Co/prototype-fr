@@ -1,8 +1,8 @@
 "use client";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import AuthorBlogs from "@/components/author/AuthorBlogs";
-import AuthorPage from "@/components/author/AuthorPage";
+import AuthorBlogs from "@/app/sections/author_page/AuthorBlogs";
+import AuthorSection from "@/app/sections/author_page/AuthorSection";
 import { usePathname, redirect } from "next/navigation";
 import { BlogInterface } from "@/components/blog/BlogInteface";
 
@@ -870,7 +870,7 @@ const Author = () => {
   return (
     <div>
       <InfoNavigationComponent links={links} />
-      <AuthorPage
+      <AuthorSection
         name={data.name}
         imgSrc={data.imgSrc}
         occupation={data.occupation}
