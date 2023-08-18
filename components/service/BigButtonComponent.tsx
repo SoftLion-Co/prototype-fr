@@ -5,7 +5,7 @@ import s from "./BigButtonComponent.module.scss";
 const BigButtonComponent = () => {
   return (
     <div>
-      <Link href={"/privacy-policy"} className={s.big__button}>
+      <Link href={"/contact-us"} className={s.big__button}>
         Book Consultation
       </Link>
     </div>
