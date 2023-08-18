@@ -6,13 +6,12 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: -webkit-fill-available;
 
   @include for-size(tablet) {
     flex-direction: row;
-    gap: 45px;
-  }
-  @include for-size(laptop) {
-    gap: 0px;
+    justify-content: space-between;
+    gap: 0;
   }
 
   &__logo {
