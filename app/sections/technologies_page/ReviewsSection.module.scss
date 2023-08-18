@@ -1,0 +1,106 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.review {
+  &__heading {
+    margin-bottom: 5%;
+  }
+
+  &__content {
+    gap: 120px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s;
+
+    border-radius: 15px;
+    // width: 495px;
+    min-height: 365px;
+    padding: 26px 25px 40px 25px;
+
+    &:hover {
+      transform: translateY(-0.7rem);
+    }
+  }
+
+  &__about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__author___img {
+    margin-right: 30px;
+    border-radius: 50%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 30px;
+    line-height: 130%;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    width: 310px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.8px;
+  }
+}
+
+.arrow {
+  @include for-size(tablet) {
+    height: 26px;
+    width: auto;
+  }
+
+  @include for-size(laptop) {
+    height: 42px;
+  }
+
+  @include for-size(desktop) {
+    height: 55px;
+  }
+
+  &__left {
+    @include for-size(tablet) {
+      margin-left: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-left: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-left: -112px;
+    }
+  }
+
+  &__right {
+    @include for-size(tablet) {
+      margin-right: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-right: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-right: -112px;
+    }
+  }
+}

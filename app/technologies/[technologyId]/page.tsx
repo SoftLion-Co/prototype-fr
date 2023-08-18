@@ -7,6 +7,7 @@ import HeroSection from "@/app/sections/technologies_page/HeroSection";
 import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSection";
 import DevelopmentSection from "@/app/sections/technologies_page/DevelopmentSection";
 import StagesSection from "@/app/sections/technologies_page/StagesSection";
+import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 
 const Technology = () => {
   // const router = useRouter()
@@ -42,6 +43,8 @@ const Technology = () => {
         developmentSection={data_java[0].developmentSection}
       />
       <StagesSection stagesSection={data_java[0].stagesSection} />
+
+      <ReviewsSection reviewsSection={data_java[0].reviewsSection} />
     </div>
   );
 };
