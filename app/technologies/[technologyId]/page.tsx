@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/router";
 import s from "./page.module.scss";
 //import all jsons
@@ -32,8 +33,14 @@ const Technology = () => {
   return (
     <div>
       <HeroSection />
-      <AdvantagesSection />
-      {/* <DevelopmentSection titleTech={data_java[0].heroSection.titleTech}/> */}
+      <AdvantagesSection
+        paragraphs={data_java[0].advantagesSection}
+        titleTech={data_java[0].heroSection.titleTech}
+      />
+      <DevelopmentSection
+        titleTech={data_java[0].heroSection.titleTech}
+        developmentSection={data_java[0].developmentSection}
+      />
       <StagesSection stagesSection={data_java[0].stagesSection} />
     </div>
   );
