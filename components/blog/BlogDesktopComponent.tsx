@@ -6,21 +6,10 @@ import { Carousel, Embla } from "@mantine/carousel";
 import ArrowLeft from "../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
-
-interface BlogExtendedCardComponentProps {
-  id: number;
-  title: string;
-  authorId: string;
-  author: string;
-  authorIconSrc: string;
-  readingTime: string;
-  text: string;
-  imageSrc: string;
-  tags: string[];
-}
+import { BlogInterface } from "./BlogInteface";
 
 interface BlogDesktopProps {
-  cardsData: BlogExtendedCardComponentProps[];
+  cardsData: BlogInterface[];
 }
 
 const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {

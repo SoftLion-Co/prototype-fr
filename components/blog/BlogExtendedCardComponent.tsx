@@ -2,21 +2,9 @@ import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
+import { BlogInterface } from "./BlogInteface";
 
-interface BlogExtendedCardComponentProps {
-  id: number;
-  category: string;
-  title: string;
-  authorId: string;
-  author: string;
-  authorIconSrc: string;
-  readingTime: string;
-  text: string;
-  imageSrc: string;
-  tags: string[];
-}
-
-const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
+const BlogExtendedCardComponent: React.FC<BlogInterface> = ({
   id,
   category,
   title,
