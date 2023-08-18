@@ -35,13 +35,11 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
 
   return (
     <section className={s.advantages}>
-      <div className={s.container}>
-        <div className={s.advantages__heading}>
-          <HeadingComponent
-            color="purple"
-            text={`Advantages of using ${titleTech}`}
-          />
-        </div>
+      <div className={s.advantages__heading}>
+        <HeadingComponent
+          color="purple"
+          text={`Advantages of using ${titleTech}`}
+        />
       </div>
 
       <div className={s.advantages__cards_mobile}>
