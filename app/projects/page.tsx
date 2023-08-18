@@ -1,11 +1,10 @@
 import s from "./page.module.scss";
-import SolutionSection from "../sections/project_page/SolutionSection";
+import OurProjectsSection from "../sections/projects_page/OurProjectsSection";
 
 const Projects = () => {
   return (
     <div>
-      <h1>Projects</h1>
-      <SolutionSection />
+      <OurProjectsSection />
     </div>
   );
 };

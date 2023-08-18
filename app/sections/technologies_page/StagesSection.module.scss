@@ -1,0 +1,112 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.stages {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 25%;
+
+  @include for-size(tablet) {
+    margin-bottom: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @include for-size(laptop) {
+    gap: 80px;
+    column-gap: 40px;
+  }
+  @include for-size(desktop) {
+    justify-content: space-around;
+  }
+
+  &__heading {
+    margin-bottom: 10%;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(
+      897.97% 128.57% at 4.17% 6.52%,
+      rgba(175, 218, 237, 0.14) 0%,
+      rgba(190, 244, 205, 0.34) 45.3%,
+      rgba(243, 182, 241, 0.07) 100%
+    );
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s;
+    border-radius: 6px;
+    padding: 40px 20px;
+
+    @include for-size(tablet) {
+      border-radius: 8px;
+      padding: 35px 25px;
+    }
+    @include for-size(laptop) {
+      border-radius: 12px;
+      padding: 45px 30px;
+    }
+    @include for-size(desktop) {
+      border-radius: 15px;
+      padding: 45px 30px;
+    }
+
+    &:hover {
+      transform: translateY(-0.7rem);
+    }
+  }
+
+  &__img {
+    margin-bottom: 3%;
+  }
+
+  &__title {
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 5%;
+    font-size: 30px;
+    font-size: 19px;
+    letter-spacing: 0.6px;
+
+    @include for-size(laptop) {
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
+    @include for-size(desktop) {
+      font-size: 30px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.5px;
+
+    @include for-size(tablet) {
+      width: 280px;
+      min-height: 190px;
+    }
+    @include for-size(laptop) {
+      width: 440px;
+      font-size: 20px;
+      min-height: 190px;
+      letter-spacing: 0.7px;
+    }
+    @include for-size(desktop) {
+      width: 500px;
+      font-size: 20px;
+      min-height: 190px;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

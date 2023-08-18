@@ -22,7 +22,7 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.48px;
     margin-top: 6px;
 
@@ -38,7 +38,7 @@
     @include for-size(laptop) {
       width: 380px;
       font-size: 15px;
-      letter-spacing: 0.611px;
+      letter-spacing: 0.6px;
     }
 
     @include for-size(desktop) {
@@ -111,7 +111,7 @@
 
   &__field {
     &:nth-child(2) {
-      padding-left: 32px;
+      padding-left: 39px;
     }
     padding: 0;
     border: none;
@@ -129,15 +129,15 @@
     @include for-size(tablet) {
       width: 195px;
       height: 19px;
-      font-size: 10px;
-      letter-spacing: 0.252px;
+      font-size: 12px;
+      letter-spacing: 0.25px;
     }
 
     @include for-size(laptop) {
       height: 27px;
       width: 284px;
       font-size: 12px;
-      letter-spacing: 0.367px;
+      letter-spacing: 0.36px;
     }
 
     @include for-size(desktop) {
@@ -149,7 +149,6 @@
 
     &:focus {
       outline: none;
-      border-bottom-color: #007bff;
     }
   }
 
@@ -170,14 +169,14 @@
       @include for-size(tablet) {
         top: 1px;
         color: #858585;
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.38px;
       }
 
       @include for-size(laptop) {
         top: 5px;
-        font-size: 12px;
-        letter-spacing: 0.367px;
+        font-size: 14px;
+        letter-spacing: 0.36px;
       }
 
       @include for-size(desktop) {
@@ -195,20 +194,20 @@
 
   &__title {
     font-size: 18px;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 1px;
     font-weight: 400;
     margin-bottom: 39px;
 
     @include for-size(tablet) {
       font-size: 16px;
-      letter-spacing: 1.417px;
+      letter-spacing: 1.42px;
       margin-bottom: 40px;
     }
 
     @include for-size(laptop) {
-      font-size: 22.929px;
-      letter-spacing: 2.064px;
+      font-size: 23px;
+      letter-spacing: 2.1px;
       margin-bottom: 59px;
     }
 
@@ -256,8 +255,8 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 0.391px;
+    line-height: 130%;
+    letter-spacing: 0.39px;
     margin-top: 17px;
     margin-bottom: 16px;
 
@@ -274,7 +273,7 @@
       border-radius: 12px;
       padding: 15px 27px;
       font-size: 15px;
-      letter-spacing: 0.611px;
+      letter-spacing: 0.6px;
       margin-bottom: 31px;
       margin-top: 31px;
     }
@@ -305,14 +304,14 @@
     @include for-size(tablet) {
       width: 160px;
       flex-shrink: 0;
-      font-size: 6.823px;
-      letter-spacing: 0.205px;
+      font-size: 7px;
+      letter-spacing: 0.20px;
     }
 
     @include for-size(laptop) {
       width: 243px;
       font-size: 10px;
-      letter-spacing: 0.298px;
+      letter-spacing: 0.3px;
     }
 
     @include for-size(desktop) {
@@ -330,17 +329,17 @@
 
       font-family: Open Sans;
       font-size: 11px;
-      line-height: 140.182%;
+      line-height: 140%;
       letter-spacing: 0.155px;
 
       @include for-size(tablet) {
         font-size: 7px;
-        letter-spacing: 0.205px;
+        letter-spacing: 0.20px;
       }
 
       @include for-size(laptop) {
         font-size: 10px;
-        letter-spacing: 0.298px;
+        letter-spacing: 0.3px;
       }
 
       @include for-size(desktop) {
@@ -360,11 +359,20 @@
   background-color: transparent;
 }
 
+.search{
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .buttonC {
+  width: 0 !important; 
+  padding: 0 !important;
+  padding-right: 0;
   border: none !important;
-  left: -8px;
   bottom: 2px;
   background-color: transparent !important;
+
 }
 
 .disabledButton {
@@ -386,4 +394,24 @@
 
 .invalidField {
   border-bottom: 1px solid red;
+} 
+
+.drop{
+  font-size: 12px;
+  width: 220px !important;
+
+  
+  @include for-size(tablet){
+    width: 300px !important;
+
+  }
+
+  @include for-size(laptop){
+    font-size: 14px;
+  }
+
+  @include for-size(desktop){
+    font-size: 16px;
+  }
+
 }
