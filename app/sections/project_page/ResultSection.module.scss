@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
     @include for-size(tablet) {
       flex-direction: row;
