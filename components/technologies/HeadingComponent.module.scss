@@ -1,0 +1,52 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+@import "./../styles/container";
+
+.heading {
+  &__title {
+    font-size: 19px;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 1.5%;
+    margin-left: 1.5%;
+    @include for-size(tablet) {
+      font-size: 30px;
+      letter-spacing: 0.9px;
+    }
+    @include for-size(laptop) {
+      font-size: 44px;
+      letter-spacing: 1.3px;
+    }
+    @include for-size(desktop) {
+      font-size: 50px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__border {
+    border-bottom: 1px solid;
+  }
+
+  &.yellowText {
+    color: #f7ad2b;
+  }
+  &.purpleText {
+    color: #c336da;
+  }
+  &.blueText {
+    color: #84c6e2;
+  }
+  &.orangeText {
+    color: #ef8a66;
+  }
+  &.greenText {
+    color: #2c953d;
+  }
+  &.turquoiseText {
+    color: #4bbac2;
+  }
+  &.pinkText {
+    color: #ff79a0;
+  }
+}
