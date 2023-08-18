@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./StagesSection.module.scss";
 import HeadingComponent from "@/components/technologies/HeadingComponent";
+import classNames from "classnames";
 import Image from "next/image";
 
 import Development1 from "@/images/technologies/development/Development1.svg";
@@ -35,7 +36,7 @@ const getImageForStage = (index: number) => {
 
 const StagesSection = (props: Props) => {
   return (
-    <section className={s.container}>
+    <section>
       <div className={s.stages__heading}>
         <HeadingComponent
           color="green"
@@ -43,7 +44,7 @@ const StagesSection = (props: Props) => {
         />
       </div>
 
-      <div className={s.stages}>
+      <div className={classNames(s.stages, s.container)}>
         {props.stagesSection.map((item, index) => (
           <div key={index} className={s.stages__card}>
             <Image
