@@ -35,9 +35,8 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
   }, []);
 
   return (
-    <section className={s.container}>
-      <div className={s.test}>
-        <div className={s.development__heading}>
+    <section>
+        <div className={classNames(s.development__heading, s.container)}>
           <HeadingComponent
             color="orange"
             text={`Our development services for ${titleTech} include`}
@@ -102,7 +101,6 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
         <div className={s.development__button}>
           <BigButtonComponent />
         </div>
-      </div>
     </section>
   );
 };
