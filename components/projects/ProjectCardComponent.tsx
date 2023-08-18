@@ -14,9 +14,7 @@ interface ProjectData {
   description: string;
 }
 
-const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({
-  data,
-}) => {
+const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__info}>
@@ -38,7 +36,7 @@ const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({
           <h4 className={s.card__title}>{data.title}</h4>
           <p className={s.card__desc}>{data.description}</p>
         </div>
-        <Link href="/">
+        <Link href={`/projects/${data.id}`}>
           <PiArrowRightThin className={s.card__arrowIcon} />
         </Link>
       </div>
