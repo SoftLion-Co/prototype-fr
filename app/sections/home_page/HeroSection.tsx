@@ -19,7 +19,7 @@ const HeroSection = () => {
             your ideas into reality.
           </p>
         </div>
-        <div className={s.hero__warpper_btn}>
+        <div className={s.hero__wrapper_btn}>
           <MainButtonComponent color="white" path="services">
             OUR SERVICES
           </MainButtonComponent>
@@ -41,7 +41,7 @@ const HeroSection = () => {
           src={heroLogoMobile}
           alt="SoftLion"
         />
-        <div className={s.hero__warpper_btn_mob}>
+        <div className={s.hero__wrapper_btn_mob}>
           <MainButtonComponent color="white" path="services">
             OUR SERVICES
           </MainButtonComponent>
