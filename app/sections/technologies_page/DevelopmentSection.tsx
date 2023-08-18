@@ -36,51 +36,26 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
 
   return (
     <section>
-        <div className={classNames(s.development__heading, s.container)}>
-          <HeadingComponent
-            color="orange"
-            text={`Our development services for ${titleTech} include`}
-          />
-        </div>
+      <div className={s.development__heading}>
+        <HeadingComponent
+          color="orange"
+          text={`Our development services for ${titleTech} include`}
+        />
+      </div>
 
-        <div className={s.development__container}>
-          {developmentSection.map((item, index) => {
-            const developmentItem = (
-              <div className={s.development__item}>
-                <h2 className={s.development__title}>{item.title}</h2>
-                <p className={s.development__text}>{item.paragraph}</p>
-              </div>
-            );
+      <div className={classNames(s.development__containers, s.container)}>
+        {developmentSection.map((item, index) => {
+          const developmentItem = (
+            <div className={s.development__item}>
+              <h2 className={s.development__title}>{item.title}</h2>
+              <p className={s.development__text}>{item.paragraph}</p>
+            </div>
+          );
 
-            return (
-              <div className={s.development__content} key={item.number}>
-                {isLargeScreen ? (
-                  index % 2 === 0 ? (
-                    <>
-                      <p
-                        className={classNames(
-                          s.development__number,
-                          s[numberColors[index % 4]]
-                        )}
-                      >
-                        {item.number}
-                      </p>
-                      {developmentItem}
-                    </>
-                  ) : (
-                    <>
-                      {developmentItem}
-                      <p
-                        className={classNames(
-                          s.development__number,
-                          s[numberColors[index % 4]]
-                        )}
-                      >
-                        {item.number}
-                      </p>
-                    </>
-                  )
-                ) : (
+          return (
+            <div className={s.development__content} key={item.number}>
+              {isLargeScreen ? (
+                index % 2 === 0 ? (
                   <>
                     <p
                       className={classNames(
@@ -92,15 +67,40 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
                     </p>
                     {developmentItem}
                   </>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                ) : (
+                  <>
+                    {developmentItem}
+                    <p
+                      className={classNames(
+                        s.development__number,
+                        s[numberColors[index % 4]]
+                      )}
+                    >
+                      {item.number}
+                    </p>
+                  </>
+                )
+              ) : (
+                <>
+                  <p
+                    className={classNames(
+                      s.development__number,
+                      s[numberColors[index % 4]]
+                    )}
+                  >
+                    {item.number}
+                  </p>
+                  {developmentItem}
+                </>
+              )}
+            </div>
+          );
+        })}
+      </div>
 
-        <div className={s.development__button}>
-          <BigButtonComponent />
-        </div>
+      <div className={s.development__button}>
+        <BigButtonComponent />
+      </div>
     </section>
   );
 };
