@@ -23,7 +23,6 @@
 
     @include for-size(tablet) {
       flex-direction: row;
-      justify-content: space-between;
     }
 
     &_texts {
@@ -34,12 +33,12 @@
       width: 100%;
 
       @include for-size(tablet) {
-        gap: 38px;
+        gap: 46px;
 
         width: 400px;
       }
       @include for-size(laptop) {
-        gap: 67px;
+        gap: 66px;
 
         width: 628px;
       }
@@ -100,29 +99,25 @@
     }
   }
   &__container {
-    position: relative;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
 
-    width: 100%;
     height: 250px;
     @include for-size(tablet) {
-      flex-direction: row;
-      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &_photo {
       position: absolute;
       object-fit: cover;
-      object-position: 50% 0%;
-      scale: 1.11;
 
       width: 388px;
       height: 276px;
 
       @include for-size(tablet) {
-        width: 410px;
+        width: 443px;
         height: 314px;
       }
       @include for-size(laptop) {

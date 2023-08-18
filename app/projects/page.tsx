@@ -8,8 +8,8 @@ const Projects = () => {
     <div>
       <h1>Projects</h1>
       <ProjectDescriptionSection />
-      <ResultSection />
       <RequestSection />
+      <ResultSection />
     </div>
   );
 };
