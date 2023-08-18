@@ -97,7 +97,6 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
           );
         })}
       </div>
-
       <div className={s.development__button}>
         <BigButtonComponent />
       </div>
