@@ -1,0 +1,50 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.container {
+  background-color: transparent;
+}
+
+.form__container {
+  gap: 14px;
+  width: 80%;
+
+  @include for-size(tablet) {
+    gap: 12px;
+    width: 100%;
+  }
+
+  @include for-size(laptop) {
+    gap: 17px;
+  }
+
+  @include for-size(desktop) {
+    gap: 23px;
+  }
+}
+
+.our_form {
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  @include for-size(tablet) {
+    justify-content: flex-start;
+    margin-bottom: 60px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 150px;
+  }
+}
