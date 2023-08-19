@@ -12,24 +12,19 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
 
-interface reviewsItem {
+interface ReviewData {
   name: string;
   rating: number;
   paragraph: string;
 }
 
 interface Props {
-  reviewsSection: reviewsItem[];
+  reviewsSection: ReviewData[];
 }
 
 const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slideData = reviewsSection.map((review, index) => ({
-    id: index.toString(),
-    isActive: currentSlide === index,
-  }));
 
   const setActiveSlide = (index: number): void => {
     embla?.scrollTo(index);
@@ -44,7 +39,7 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
 
       <div className={s.review__cards_mobile}>
         <MobileSliderComponent
-          data={slideData}
+          data={reviewsSection}
           SlideComponent={ReviewsCardComponent}
         />
       </div>
@@ -73,13 +68,10 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
           loop
           slidesToScroll={1}
         >
-          {slideData.map((slide, index) => (
-            <Carousel.Slide
-              key={slide.id}
-              onClick={() => setActiveSlide(index)}
-            >
+          {reviewsSection.map((slide, index) => (
+            <Carousel.Slide key={index} onClick={() => setActiveSlide(index)}>
               <div className={classNames(s.review__card, s.custom__slide)}>
-                <ReviewsCardComponent data={reviewsSection[index]} />
+                <ReviewsCardComponent data={slide} />
               </div>
             </Carousel.Slide>
           ))}
