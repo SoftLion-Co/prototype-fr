@@ -35,6 +35,7 @@ const Technology = () => {
   return (
     <div>
       <HeroSection />
+      <CreationSection creationCard={data_java[0].creationSection}/>
       <AdvantagesSection
         paragraphs={data_java[0].advantagesSection}
         titleTech={data_java[0].heroSection.titleTech}
@@ -44,7 +45,6 @@ const Technology = () => {
         developmentSection={data_java[0].developmentSection}
       />
       <StagesSection stagesSection={data_java[0].stagesSection} />
-      <CreationSection creationCard={data_java[0].creationSection}/>
     </div>
   );
 };

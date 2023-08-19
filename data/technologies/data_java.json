@@ -6,16 +6,16 @@
     },
     "creationSection": [
       {
-        "content": "Web Applications: Java is well-suited for creating web applications using Java Servlets, JavaServer Pages (JSP), and JavaServer Faces (JSF). These  applications can handle client requests, interact with databases, and generate responses to be displayed on web pages"
+        "description": "Web Applications: Java is well-suited for creating web applications using Java Servlets, JavaServer Pages (JSP), and JavaServer Faces (JSF). These  applications can handle client requests, interact with databases, and generate responses to be displayed on web pages"
       },
       {
-        "content": "Applets: Historically, Java was widely used for creating applets, which are small programs that run on web pages within web browsers. However, due to technology limitations and security issues, applet support has been reduced, and it is recommended to use other approaches like JavaScript and HTML5."
+        "description": "Applets: Historically, Java was widely used for creating applets, which are small programs that run on web pages within web browsers. However, due to technology limitations and security issues, applet support has been reduced, and it is recommended to use other approaches like JavaScript and HTML5."
       },
       {
-        "content": "Mobile Applications: Java can be used for developing mobile applications for the Android platform. Using Android SDK and Java, you can create apps for smartphones and tablets."
+        "description": "Mobile Applications: Java can be used for developing mobile applications for the Android platform. Using Android SDK and Java, you can create apps for smartphones and tablets."
       },
       {
-        "content": "Business Applications: Java is often used for developing enterprise applications, such as Customer Relationship Management (CRM) systems, database management systems, financial programs, and more."
+        "description": "Business Applications: Java is often used for developing enterprise applications, such as Customer Relationship Management (CRM) systems, database management systems, financial programs, and more."
       }
     ],
     "advantagesSection": [

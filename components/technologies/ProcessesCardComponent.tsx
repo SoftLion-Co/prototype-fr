@@ -1,13 +1,17 @@
 import React from 'react';
 import s from "./ProcessesCardComponent.module.scss";
 
-interface ProcessCardProps {
-  content: string;
+interface  SlideData{
+  description: string;
 }
 
-const ProcessCard: React.FC<ProcessCardProps> = ({ content }) => (
+interface ProcessCardProps{
+  data: SlideData;
+}
+
+const ProcessCard: React.FC<ProcessCardProps> = ({ data }) => (
   <div className={s.card}>
-    <p className={s.card__text}>{content}</p>
+    <p className={s.card__text}>{data.description}</p>
   </div>
 );
 

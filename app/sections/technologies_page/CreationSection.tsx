@@ -6,7 +6,7 @@ import classNames from "classnames";
 import HeadingComponent from "@/components/technologies/HeadingComponent";
 
 interface CreationSectionProps {
-  content: string;
+    description: string;
 }
 
 interface Props {
@@ -17,16 +17,18 @@ const CreationSection: React.FC<Props> = ({ creationCard }: Props) => {
   return (
     <section className={classNames(s.container)}>
       <div className={s.heading}>
-        <HeadingComponent text="What we can create with Java" color="yellow"/>
+        <HeadingComponent text="What we can create with Java" color="yellow" />
+
         <div className={s.mobile}>
           <MobileSliderComponent
-            data={creationCard} // Передаємо масив об'єктів як дані для слайдера
+            data={creationCard}
             SlideComponent={ProcessCard}
           />
         </div>
+
         <div className={s.our__card}>
           {creationCard.map((item, index) => (
-            <ProcessCard key={index} content={item.content} />
+            <ProcessCard key={index} data={item} />
           ))}
         </div>
       </div>
