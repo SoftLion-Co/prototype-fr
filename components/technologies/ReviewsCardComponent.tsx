@@ -1,11 +1,41 @@
-import s from "./ReviewsCardComponent.module.scss"
+import React, { FC } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import s from "./ReviewsCardComponent.module.scss";
 
-const ReviewsCardComponent = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+import image from "@/images/human.jpg";
+
+interface SlideData {
+  name: string;
+  rating?: number | string;
+  paragraph: string;
 }
 
-export default ReviewsCardComponent
+interface ReviewsCardProps {
+  data: SlideData;
+}
+
+const ReviewsCardComponent: FC<ReviewsCardProps> = ({ data }) => {
+  const { name, paragraph } = data;
+
+  return (
+    <div className={classNames(s.review__card)}>
+      <div className={s.review__about}>
+        <Image
+          className={s.review__author___img}
+          src={image}
+          alt={name}
+          width={143}
+          height={143}
+        />
+        <div className={s.review__info}>
+          <h3 className={s.review__name}>{name}</h3>
+          <div className={s.review__rating}>★★★★★</div>
+        </div>
+      </div>
+      <p className={s.review__text}>{paragraph}</p>
+    </div>
+  );
+};
+
+export default ReviewsCardComponent;
