@@ -14,12 +14,9 @@ interface HeadingComponentProps {
   text: string;
 }
 
-const HeadingComponent: FC<HeadingComponentProps> = ({
-  color = "blue",
-  text,
-}) => {
+const HeadingComponent: FC<HeadingComponentProps> = ({ color = "", text }) => {
   const headingColor = classNames(s.heading, {
-    [s[color + "Text"]]: color !== "blue",
+    [s[color + "Text"]]: color !== "",
   });
 
   const headingTitle = classNames(s.heading__title);

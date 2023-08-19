@@ -35,6 +35,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
+        
         previousControlIcon={
           <Image
             className={s.arrow}

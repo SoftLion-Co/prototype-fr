@@ -36,9 +36,10 @@
       rgba(243, 182, 241, 0.07) 100%
     );
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 6px;
     padding: 40px 20px;
+    user-select: none;
 
     @include for-size(tablet) {
       border-radius: 8px;
@@ -55,6 +56,7 @@
 
     &:hover {
       transform: translateY(-0.7rem);
+      box-shadow: 0 0.9rem 1rem rgba(0, 0, 0, 0.2);
     }
   }
 
