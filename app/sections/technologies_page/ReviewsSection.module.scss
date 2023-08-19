@@ -9,60 +9,34 @@
 
   &__content {
     gap: 120px;
+    @include for-size(phone) {
+      display: none;
+    }
   }
 
   &__card {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 10px;
-    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s;
+    height: 100%;
+  }
 
-    border-radius: 15px;
-    // width: 495px;
-    min-height: 365px;
-    padding: 26px 25px 40px 25px;
-
-    &:hover {
-      transform: translateY(-0.7rem);
+  &__cards_mobile {
+    @include for-size(tablet) {
+      display: none;
     }
-  }
-
-  &__about {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-
-  &__author___img {
-    margin-right: 30px;
-    border-radius: 50%;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__name {
-    font-size: 30px;
-    line-height: 130%;
-    letter-spacing: 1.2px;
-    margin-bottom: 10px;
-  }
-
-  &__text {
-    width: 310px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.8px;
   }
 }
 
+.custom__control {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
 .arrow {
+  user-select: none;
+
   @include for-size(tablet) {
     height: 26px;
     width: auto;
@@ -77,6 +51,9 @@
   }
 
   &__left {
+    @include for-size(phone) {
+      display: none;
+    }
     @include for-size(tablet) {
       margin-left: -74px;
     }
@@ -91,6 +68,9 @@
   }
 
   &__right {
+    @include for-size(phone) {
+      display: none;
+    }
     @include for-size(tablet) {
       margin-right: -74px;
     }

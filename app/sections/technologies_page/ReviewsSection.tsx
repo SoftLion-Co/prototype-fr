@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+// ReviewsSection.tsx
+import React, { FC, useState } from "react";
 import s from "./ReviewsSection.module.scss";
 import classNames from "classnames";
 import Image from "next/image";
 import { Carousel, Embla } from "@mantine/carousel";
 
 import HeadingComponent from "@/components/technologies/HeadingComponent";
+import ReviewsCardComponent from "@/components/technologies/ReviewsCardComponent";
+import MobileSliderComponent from "@/components/MobileSliderComponent";
 
-import image from "@/images/human.jpg";
 import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
 
 interface reviewsItem {
   name: string;
-  rating: string;
+  rating: number;
   paragraph: string;
 }
 
@@ -20,7 +22,7 @@ interface Props {
   reviewsSection: reviewsItem[];
 }
 
-const ReviewsSection = ({ reviewsSection }: Props) => {
+const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -40,10 +42,18 @@ const ReviewsSection = ({ reviewsSection }: Props) => {
         <HeadingComponent color="turquoise" text={`Reviews`} />
       </div>
 
+      <div className={s.review__cards_mobile}>
+        <MobileSliderComponent
+          data={slideData}
+          SlideComponent={ReviewsCardComponent}
+        />
+      </div>
+
       <div className={classNames(s.container, s.review__content)}>
         <Carousel
           getEmblaApi={setEmbla}
           onSlideChange={(index) => setCurrentSlide(index)}
+          classNames={{ control: s.custom__control }}
           previousControlIcon={
             <Image
               className={classNames(s.arrow, s.arrow__left)}
@@ -68,24 +78,8 @@ const ReviewsSection = ({ reviewsSection }: Props) => {
               key={slide.id}
               onClick={() => setActiveSlide(index)}
             >
-              <div className={s.review__card}>
-                <div className={s.review__about}>
-                  <Image
-                    className={s.review__author___img}
-                    src={image}
-                    alt={reviewsSection[index].name}
-                    width={143}
-                    height={143}
-                  />
-                  <div className={s.review__info}>
-                    <h3 className={s.review__name}>
-                      {reviewsSection[index].name}
-                    </h3>
-                  </div>
-                </div>
-                <p className={s.review__text}>
-                  {reviewsSection[index].paragraph}
-                </p>
+              <div className={classNames(s.review__card, s.custom__slide)}>
+                <ReviewsCardComponent data={reviewsSection[index]} />
               </div>
             </Carousel.Slide>
           ))}
