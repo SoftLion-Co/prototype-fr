@@ -16,52 +16,78 @@
   }
 }
 
-.card:first-child {
-  display: flex;
-  flex-direction: column-reverse;
-
-  @include for-size(tablet) {
-    flex-direction: row;
-  }
-}
-
-.card:nth-child(2) {
-  display: flex;
-  flex-direction: column-reverse;
-
-  @include for-size(tablet) {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-}
-
-.card:nth-child(3) {
-  display: flex;
-  flex-direction: column-reverse;
-
-  @include for-size(tablet) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.card:last-child {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  row-gap: 40px;
-
-  @include for-size(tablet) {
-    justify-content: space-between;
-    align-items: flex-end;
-    min-height: 190px;
-  }
-}
-
 .card {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  &:first-child {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &:nth-child(2) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include for-size(tablet) {
+      flex-direction: row-reverse;
+      margin-top: -20px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: -80px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: -100px;
+    }
+  }
+
+  &:nth-child(3) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: -20px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: -80px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: -100px;
+    }
+  }
+
+  &:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+
+    @include for-size(tablet) {
+      justify-content: space-between;
+      align-items: flex-end;
+      min-height: 140px;
+      margin-top: -20px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: -30px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: -50px;
+    }
+  }
 
   @include for-size(tablet) {
     flex-direction: row;
@@ -87,6 +113,7 @@
 
     @include for-size(tablet) {
       width: 250px;
+      user-select: none;
     }
 
     @include for-size(laptop) {

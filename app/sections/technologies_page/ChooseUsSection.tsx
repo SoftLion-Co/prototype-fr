@@ -16,11 +16,11 @@ const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({ chooseUsSection }) =>
   const svgImages = [SvgImage1, SvgImage2, SvgImage3];
 
   return (
-    <section className={classNames(s.our__chose, s.container)}>
-      <div className={s.heading}>
+    <section className={s.our__chose}>
+    <div className={s.heading}>
         <HeadingComponent text="Why you should choose us" color="purple" />
       </div>
-      <div>
+      <div className={s.container}>
         {chooseUsSection.map((item: string, index: number) => (
           <div
             className={classNames(s.card, {
