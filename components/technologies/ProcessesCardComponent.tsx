@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import s from "./ProcessesCardComponent.module.scss";
 
-interface  SlideData{
+interface SlideData {
   description: string;
 }
 
-interface ProcessCardProps{
+interface ProcessCardProps {
   data: SlideData;
 }
 

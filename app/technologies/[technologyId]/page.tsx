@@ -35,7 +35,10 @@ const Technology = () => {
   return (
     <div>
       <HeroSection />
-      <CreationSection creationCard={data_java[0].creationSection}/>
+      <CreationSection
+        creationCard={data_java[0].creationSection}
+        titleTech={data_java[0].heroSection.titleTech}
+      />
       <AdvantagesSection
         paragraphs={data_java[0].advantagesSection}
         titleTech={data_java[0].heroSection.titleTech}

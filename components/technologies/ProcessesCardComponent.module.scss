@@ -1,14 +1,12 @@
 @import "../../styles/container";
 @import "../../styles/mixin";
 
-
-.our__card{
-    display: flex;
-    justify-content: center;
-    column-gap: 43px;
-    row-gap: 45px;
-    flex-wrap: wrap;
-
+.our__card {
+  display: flex;
+  justify-content: center;
+  column-gap: 43px;
+  row-gap: 45px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -22,8 +20,7 @@
     rgba(255, 224, 92, 0.56) 0%,
     rgba(255, 252, 168, 0) 100%
   );
-  box-shadow: 2px 3px 7.5px 0px
-    rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 3px 7.5px 0px rgba(0, 0, 0, 0.15);
 
   @include for-size(tablet) {
     width: 240px;
@@ -38,7 +35,7 @@
     border-radius: 10px;
   }
 
-  @include for-size(desktop){
+  @include for-size(desktop) {
     width: 373px;
     height: 325px;
     padding: 0px 48px;
@@ -55,19 +52,18 @@
     font-size: 14px;
 
     @include for-size(tablet) {
-        width: 240px;
-        font-size: 16px;
-
+      width: 240px;
+      font-size: 16px;
     }
 
     @include for-size(laptop) {
       width: 284px;
     }
 
-    @include for-size(desktop){
-    width: 373px;
-    font-family: Helvetica;
-    font-size: 20px;
+    @include for-size(desktop) {
+      width: 373px;
+      font-family: Helvetica;
+      font-size: 20px;
     }
   }
 }

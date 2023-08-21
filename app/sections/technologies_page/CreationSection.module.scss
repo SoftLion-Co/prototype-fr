@@ -1,27 +1,25 @@
 @import "../../../styles/mixin";
 @import "../../../styles/container";
 
+.our__card {
+  display: none;
 
-.our__card{
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+    column-gap: 43px;
+    row-gap: 45px;
+    flex-wrap: wrap;
+  }
+}
+
+.mobile {
+  display: block;
+  @include for-size(tablet) {
     display: none;
-
-    @include for-size(tablet){
-        display: flex;
-        justify-content: center;
-        column-gap: 43px;
-        row-gap: 45px;
-        flex-wrap: wrap;
-        margin-top: 10%;
-    }
-
-
+  }
 }
 
-.mobile{
-    display: block;
-    margin-top: 10%;
-    @include for-size(tablet){
-        display: none;
-    }
+.heading {
+  margin-bottom: 7%;
 }
-
