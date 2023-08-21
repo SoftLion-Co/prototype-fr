@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Image from "next/image";
 import classNames from "classnames";
+import { Rating } from "@mantine/core";
 import s from "./ReviewsCardComponent.module.scss";
 
 import image from "@/images/human.jpg";
@@ -16,7 +17,9 @@ interface ReviewsCardProps {
 }
 
 const ReviewsCardComponent: FC<ReviewsCardProps> = ({ data }) => {
-  const { name, paragraph } = data;
+  const [value, setValue] = useState(0);
+
+  const { name } = data;
 
   return (
     <div className={classNames(s.review__card)}>
@@ -29,11 +32,13 @@ const ReviewsCardComponent: FC<ReviewsCardProps> = ({ data }) => {
           height={143}
         />
         <div className={s.review__info}>
-          <h3 className={s.review__name}>{name}</h3>
-          <div className={s.review__rating}>★★★★★</div>
+          <h3 className={s.review__name}>{data.name}</h3>
+          <div className={s.review__rating}>
+            <Rating size="sm" value={5} onChange={setValue} readOnly={true} />
+          </div>
         </div>
       </div>
-      <p className={s.review__text}>{paragraph}</p>
+      <p className={s.review__text}>{data.paragraph}</p>
     </div>
   );
 };
