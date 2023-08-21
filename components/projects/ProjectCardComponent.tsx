@@ -36,7 +36,7 @@ const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({ data }) => {
           <h4 className={s.card__title}>{data.title}</h4>
           <p className={s.card__desc}>{data.description}</p>
         </div>
-        <Link href="/">
+        <Link href={`/projects/${data.id}`}>
           <PiArrowRightThin className={s.card__arrowIcon} />
         </Link>
       </div>

@@ -16,7 +16,7 @@ interface MobileSliderComponentProps {
     position?: string;
     linkedinUrl?: string;
   }>;
-  SlideComponent: React.ComponentType<{ data: any }>; // Пропс для передачі компоненти слайда
+  SlideComponent: React.FC<{ data: any }>; // Пропс для передачі компоненти слайда
 }
 
 const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComponent }) => {

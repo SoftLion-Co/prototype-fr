@@ -31,6 +31,7 @@ const ImpressionSection = () => {
     }
   });
 
+
   watch(({ name, email, comment }) => {
     setSubmitDisabled(!name || !email || !comment);
   });

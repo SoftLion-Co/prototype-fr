@@ -25,11 +25,10 @@
     padding-bottom: 0px;
   }
 
-  &__Logo{
-    
+  &__Logo {
     display: none;
 
-    &_small{
+    &_small {
       display: block;
 
       @include for-size(tablet) {
@@ -42,7 +41,7 @@
         display: none;
       }
     }
-    
+
     @include for-size(tablet) {
       display: block;
       max-width: 380px;
@@ -54,6 +53,16 @@
     @include for-size(desktop) {
       display: block;
       max-width: 800px;
+    }
+    animation: floatingAnimation 3s infinite ease-in-out;
+  }
+  @keyframes floatingAnimation {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
     }
   }
 

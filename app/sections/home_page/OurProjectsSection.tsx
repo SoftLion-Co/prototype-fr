@@ -48,7 +48,7 @@ const sampleData = [
 const OurProjectsSection = () => {
   return (
     <section className={s.projects}>
-      <ProjectHeadingComponent />
+      <ProjectHeadingComponent centered={false}/>
       <div className={s.projects__mobile_slider}>
         <MobileSliderComponent
           data={sampleData}
