@@ -5,7 +5,6 @@
   width: 170px;
   padding: 18px 20px 17px 22px;
   border-radius: 10px;
-  color: #000;
   background: $button-blue-background;
   border: none;
   box-shadow: $button-white-shadow;
@@ -31,4 +30,8 @@
     font-size: 20px;
     letter-spacing: 0.8px;
   }
+}
+
+.link{
+  color: #000;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
@@ -55,7 +57,10 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
       };
 
       // Replace "https://example.com/api/submit" with your actual backend endpoint
-      const response = await axios.post("https://example.com/api/submit", formData);
+      const response = await axios.post(
+        "https://example.com/api/submit",
+        formData
+      );
 
       console.log("Form successfully submitted:", response.data);
 
@@ -108,6 +113,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
               }`,
               placeholder: "",
             }}
+            enableSearch
+            disableSearchIcon
             inputClass={s.phoneInput}
             country={"us"}
             value={phone}
@@ -116,13 +123,19 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
             searchClass={s["search"]}
             searchStyle={{
               border: "none",
+              borderRadius: "0px",
               borderBottom: "1px solid #ccc",
               fontSize: "14px",
-              padding: "0",
+              paddingLeft: "5px",
               marginLeft: "0",
-              width: "70%",
+              width: "100%",
+              paddingBottom: "6px",
+              paddingTop: "6px",
+
             }}
+            dropdownClass={s["drop"]}
             containerClass={s["container"]}
+
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>
@@ -138,7 +151,9 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
           <label className={s.form__label} htmlFor="description">
             Short describe ur idea
           </label>
-          {errors.description && <p className={s.error}>{errors.description.message}</p>}
+          {errors.description && (
+            <p className={s.error}>{errors.description.message}</p>
+          )}
         </div>
       </div>
       <button
@@ -151,7 +166,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         Book Consultation
       </button>
       <p className={s.form__text}>
-        By clicking on this button I agree to the <span className={s.pr}>processing of personal data</span>
+        By clicking on this button I agree to the{" "}
+        <span className={s.pr}>processing of personal data</span>
       </p>
     </form>
   );

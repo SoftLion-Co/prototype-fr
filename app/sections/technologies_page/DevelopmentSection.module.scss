@@ -1,0 +1,139 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.development {
+  &__heading {
+    margin-bottom: 10%;
+  }
+
+  &__content {
+    @include for-size(phone) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include for-size(tablet) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__cards {
+    display: grid;
+    gap: 60px;
+    margin-bottom: 25%;
+
+    @include for-size(tablet) {
+      margin-bottom: 10%;
+    }
+    @include for-size(laptop) {
+      gap: 90px;
+    }
+    @include for-size(desktop) {
+      gap: 100px;
+    }
+  }
+
+  &__number {
+    user-select: none;
+    font-size: 94px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 2.8px;
+    @include for-size(phone) {
+      margin-bottom: 40px;
+    }
+    @include for-size(laptop) {
+      font-size: 130px;
+      letter-spacing: 3.8px;
+    }
+    @include for-size(desktop) {
+      font-size: 150px;
+      letter-spacing: 4.5px;
+    }
+
+    animation: floatingAnimation 2.2s infinite ease-in-out;
+  }
+
+  @keyframes floatingAnimation {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 5%;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+
+    @include for-size(tablet) {
+      font-size: 19px;
+    }
+    @include for-size(laptop) {
+      font-size: 26px;
+      letter-spacing: 0.8px;
+    }
+    @include for-size(desktop) {
+      font-size: 30px;
+      letter-spacing: 0.9px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+
+    @include for-size(tablet) {
+      width: 380px;
+    }
+    @include for-size(laptop) {
+      width: 485px;
+      font-size: 17px;
+    }
+    @include for-size(desktop) {
+      width: 600px;
+      font-size: 20px;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.yellow {
+  color: #f7ad2b;
+  text-shadow: 0 4px 28px rgba(247, 173, 43, 0.7);
+}
+
+.blue {
+  color: #308bb7;
+  text-shadow: 0 4px 28px rgba(48, 139, 183, 0.7);
+}
+
+.orange {
+  color: #ef8a66;
+  text-shadow: 0 4px 28px rgba(239, 138, 102, 0.7);
+}
+
+.purple {
+  color: #bd5ede;
+  text-shadow: 0 4px 28px rgba(189, 94, 222, 0.7);
+}
