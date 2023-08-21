@@ -6,6 +6,7 @@ import data_java from "@/data/technologies/data_java.json";
 import HeroSection from "@/app/sections/technologies_page/HeroSection";
 import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSection";
 import DevelopmentSection from "@/app/sections/technologies_page/DevelopmentSection";
+import ChooseUsSection from "@/app/sections/technologies_page/ChooseUsSection";
 import StagesSection from "@/app/sections/technologies_page/StagesSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 
@@ -38,6 +39,7 @@ const Technology = () => {
         paragraphs={data_java[0].advantagesSection}
         titleTech={data_java[0].heroSection.titleTech}
       />
+      <ChooseUsSection chooseUsSection={data_java[0].chooseUsSection} />
       <DevelopmentSection
         titleTech={data_java[0].heroSection.titleTech}
         developmentSection={data_java[0].developmentSection}
