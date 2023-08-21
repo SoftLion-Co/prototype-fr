@@ -8,6 +8,7 @@ import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSectio
 import DevelopmentSection from "@/app/sections/technologies_page/DevelopmentSection";
 import StagesSection from "@/app/sections/technologies_page/StagesSection";
 import OurProjectsSection from "@/app/sections/home_page/OurProjectsSection";
+import OurProjects from "@/app/sections/technologies_page/OurProjects";
 
 const Technology = () => {
   // const router = useRouter()
@@ -43,7 +44,10 @@ const Technology = () => {
         developmentSection={data_java[0].developmentSection}
       />
       <StagesSection stagesSection={data_java[0].stagesSection} />
-      <OurProjectsSection />
+      <OurProjects
+        data={data_java[0].projectsSection}
+        titleTech={data_java[0].heroSection.titleTech}
+      />
     </div>
   );
 };
