@@ -8,8 +8,54 @@
     transition: display 1s ease; /* Добавляем переход для свойства display */
   }
 
+  // &__imageWrapper:hover &__textEcommerce {
+  //   display: block;
+  // }
+  // &__imageWrapper:hover &__imageUIUX,
+  // &__imageWrapper:hover &__imageEcommerce,
+  // &__imageWrapper:hover &__imageSEO,
+  // &__imageWrapper:hover &__imageAPI,
+  // &__imageWrapper:hover &__descriptionFotoUIUX,
+  // &__imageWrapper:hover &__descriptionFoto,
+  // &__imageWrapper:hover &__descriptionFoto,
+  // &__imageWrapper:hover &__descriptionFotoSeo {
+  //   display: none;
+  // }
+
+  &__imageWrapper.hovered &__textEcommerce {
+    @include for-size(phone) {
+      display: block;
+    }
+    @include for-size(tablet) {
+      display: block;
+    }
+  }
+  &__imageWrapper.hovered &__imageUIUX,
+  &__imageWrapper.hovered &__imageEcommerce,
+  &__imageWrapper.hovered &__imageSEO,
+  &__imageWrapper.hovered &__imageAPI,
+  &__imageWrapper.hovered &__descriptionFotoUIUX,
+  &__imageWrapper.hovered &__descriptionFoto,
+  &__imageWrapper.hovered &__descriptionFoto,
+  &__imageWrapper.hovered &__descriptionFotoSeo {
+    @include for-size(phone) {
+      display: none;
+    }
+    @include for-size(tablet) {
+      display: none;
+    }
+    @include for-size(laptop) {
+      display: none;
+    }
+  }
   &__imageWrapper:hover &__textEcommerce {
-    display: block;
+    @include for-size(phone) {
+    }
+    @include for-size(tablet) {
+    }
+    @include for-size(laptop) {
+      display: block;
+    }
   }
   &__imageWrapper:hover &__imageUIUX,
   &__imageWrapper:hover &__imageEcommerce,
@@ -19,12 +65,19 @@
   &__imageWrapper:hover &__descriptionFoto,
   &__imageWrapper:hover &__descriptionFoto,
   &__imageWrapper:hover &__descriptionFotoSeo {
-    display: none;
+    @include for-size(phone) {
+    }
+    @include for-size(tablet) {
+    }
+    @include for-size(laptop) {
+      display: none;
+    }
   }
 
   &__textEcommerce {
     display: none;
   }
+
   &__imageWrapper {
     box-shadow: $technologies-card-shadow;
     background: $technologies-card-backbround;
@@ -33,21 +86,22 @@
     cursor: pointer;
 
     max-width: 224px;
-    max-height: 210px;
+    height: 210px;
 
     @include for-size(tablet) {
       max-width: 216px;
-      max-height: 208px;
+      height: 208px;
     }
 
     @include for-size(laptop) {
       max-width: 239px;
-      max-height: 229px;
+      height: 229px;
+      display: flex;
     }
 
     @include for-size(desktop) {
       max-width: 320px;
-      max-height: 307px;
+      height: 307px;
     }
   }
 
@@ -69,17 +123,15 @@
     @include for-size(laptop) {
       display: none;
     }
-
-    @include for-size(desktop) {
-      display: none;
-    }
   }
 
   &__iconWrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-left: auto;
+    @include for-size(laptop) {
+      display: none;
+    }
   }
 
   &__imageUIUX {
@@ -140,7 +192,6 @@
     width: 125px;
     height: 118px;
 
-    margin-top: 0px;
     margin-bottom: 14px;
 
     @include for-size(tablet) {
@@ -166,8 +217,6 @@
   }
 
   &__imageAPI {
-    margin-top: 0px;
-
     margin-bottom: 9px;
 
     width: 125px;
@@ -182,6 +231,7 @@
 
     @include for-size(laptop) {
       margin-bottom: 18px;
+
       height: 129px;
       width: 136px;
     }
@@ -257,30 +307,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
 
     width: 224px;
-    height: 210px;
 
     @include for-size(tablet) {
       width: 216px;
-      height: 208px;
-
-      justify-content: flex-start;
     }
 
     @include for-size(laptop) {
       width: 239px;
-      height: 229px;
 
       justify-content: center;
     }
 
     @include for-size(desktop) {
       width: 320px;
-      height: 307px;
-
-      justify-content: center;
     }
   }
 
@@ -290,34 +331,21 @@
     flex-wrap: wrap;
 
     gap: 32px;
-    margin-bottom: 0px;
-
-    width: 100%;
 
     @include for-size(tablet) {
-      flex-wrap: wrap;
       justify-content: center;
 
       gap: 46px;
-      margin-bottom: 0px;
-
-      width: calc((100% + 250px) / 2);
     }
 
     @include for-size(laptop) {
       flex-wrap: nowrap;
-
       gap: 41px;
-      margin-bottom: 0px;
-      width: 100%;
     }
 
     @include for-size(desktop) {
-      flex-wrap: nowrap;
-
       gap: 40px;
       margin-bottom: 27px;
-      width: 100%;
     }
   }
 
