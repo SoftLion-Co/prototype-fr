@@ -96,6 +96,10 @@
     @include for-size(desktop) {
       padding: 12px 0;
     }
+    &::placeholder {
+      font-family: Roboto;
+      color: $placeholder-color;
+    }
   }
 
   &__button {
