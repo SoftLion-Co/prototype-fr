@@ -15,7 +15,7 @@ interface Props {
 
 const CreationSection: React.FC<Props> = ({ creationCard }: Props) => {
   return (
-    <section className={classNames(s.container)}>
+    <section className={classNames()}>
       <div className={s.heading}>
         <HeadingComponent text="What we can create with Java" color="yellow" />
 
@@ -26,7 +26,7 @@ const CreationSection: React.FC<Props> = ({ creationCard }: Props) => {
           />
         </div>
 
-        <div className={s.our__card}>
+        <div className={classNames(s.our__card, s.container)}>
           {creationCard.map((item, index) => (
             <ProcessCard key={index} data={item} />
           ))}
