@@ -29,6 +29,12 @@ button {
   cursor: pointer;
 }
 
+button {
+  @include for-size(phone) {
+    font-size: 12px;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -37,6 +43,36 @@ h5,
 h6,
 p {
   margin: 0;
+}
+
+h1 {
+  @include for-size(phone) {
+    font-size: 26px;
+  }
+}
+
+h2 {
+  @include for-size(phone) {
+    font-size: 22px;
+  }
+}
+
+h3 {
+  @include for-size(phone) {
+    font-size: 18px;
+  }
+}
+
+h4 {
+  @include for-size(phone) {
+    font-size: 16px;
+  }
+}
+
+p {
+  @include for-size(phone) {
+    font-size: 14px;
+  }
 }
 
 ul,
