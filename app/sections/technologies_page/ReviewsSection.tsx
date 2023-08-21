@@ -47,20 +47,20 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
       <div className={classNames(s.container, s.review__content)}>
         <Carousel
           getEmblaApi={setEmbla}
-          onSlideChange={(index) => setCurrentSlide(index)}
           classNames={{ control: s.custom__control }}
+          onSlideChange={(index) => setCurrentSlide(index)}
           previousControlIcon={
             <Image
               className={classNames(s.arrow, s.arrow__left)}
               src={ArrowLeft}
-              alt="45"
+              alt="<"
             />
           }
           nextControlIcon={
             <Image
               className={classNames(s.arrow, s.arrow__right)}
               src={ArrowRight}
-              alt="45"
+              alt=">"
             />
           }
           align="start"

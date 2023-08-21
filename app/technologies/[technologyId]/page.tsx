@@ -32,7 +32,7 @@ const Technology = () => {
 
   //створити інтерфейс за json'oм для data ()
   return (
-    <div>
+    <div className={s.page}>
       <HeroSection />
       <AdvantagesSection
         paragraphs={data_java[0].advantagesSection}
