@@ -14,6 +14,9 @@ const Author = () => {
   const authorData: { [key: string]: AuthorInterface } = authors;
   const blogData: { [key: string]: BlogInterface } = blogs;
   const author = authorData[id];
+  if (!author) {
+    redirect(`/authors/${Object.keys(authorData)[0]}`);
+  }
   const links = [
     { title: "Authors", href: "" },
     { title: author.name, href: "" },
@@ -21,9 +24,6 @@ const Author = () => {
   const blogIds = Object.keys(blogData).filter(
     (key) => blogData[key].authorId === id
   );
-  if (!author) {
-    redirect(`/authors/${Object.keys(authorData)[0]}`);
-  }
 
   return (
     <div>
