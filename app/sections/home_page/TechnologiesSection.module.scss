@@ -8,27 +8,8 @@
     transition: display 1s ease; /* Добавляем переход для свойства display */
   }
 
-  // &__imageWrapper:hover &__textEcommerce {
-  //   display: block;
-  // }
-  // &__imageWrapper:hover &__imageUIUX,
-  // &__imageWrapper:hover &__imageEcommerce,
-  // &__imageWrapper:hover &__imageSEO,
-  // &__imageWrapper:hover &__imageAPI,
-  // &__imageWrapper:hover &__descriptionFotoUIUX,
-  // &__imageWrapper:hover &__descriptionFoto,
-  // &__imageWrapper:hover &__descriptionFoto,
-  // &__imageWrapper:hover &__descriptionFotoSeo {
-  //   display: none;
-  // }
-
   &__imageWrapper.hovered &__textEcommerce {
-    @include for-size(phone) {
-      display: block;
-    }
-    @include for-size(tablet) {
-      display: block;
-    }
+    display: block;
   }
   &__imageWrapper.hovered &__imageUIUX,
   &__imageWrapper.hovered &__imageEcommerce,
@@ -38,22 +19,13 @@
   &__imageWrapper.hovered &__descriptionFoto,
   &__imageWrapper.hovered &__descriptionFoto,
   &__imageWrapper.hovered &__descriptionFotoSeo {
-    @include for-size(phone) {
-      display: none;
-    }
-    @include for-size(tablet) {
-      display: none;
-    }
-    @include for-size(laptop) {
-      display: none;
-    }
+    display: none;
   }
   &__imageWrapper:hover &__textEcommerce {
-    @include for-size(phone) {
-    }
-    @include for-size(tablet) {
-    }
     @include for-size(laptop) {
+      display: block;
+    }
+    @include for-size(desktop) {
       display: block;
     }
   }
@@ -65,11 +37,10 @@
   &__imageWrapper:hover &__descriptionFoto,
   &__imageWrapper:hover &__descriptionFoto,
   &__imageWrapper:hover &__descriptionFotoSeo {
-    @include for-size(phone) {
-    }
-    @include for-size(tablet) {
-    }
     @include for-size(laptop) {
+      display: none;
+    }
+    @include for-size(desktop) {
       display: none;
     }
   }
@@ -345,7 +316,6 @@
 
     @include for-size(desktop) {
       gap: 40px;
-      margin-bottom: 27px;
     }
   }
 
@@ -359,7 +329,6 @@
     text-align: center;
 
     @include for-size(tablet) {
-      font-size: 20px;
       line-height: 27px;
       letter-spacing: 2px;
     }
@@ -367,7 +336,6 @@
     @include for-size(laptop) {
       font-size: 22px;
       line-height: 29px;
-      letter-spacing: 2px;
     }
 
     @include for-size(desktop) {
@@ -386,7 +354,6 @@
     text-align: center;
 
     @include for-size(tablet) {
-      font-size: 20px;
       line-height: 27px;
       letter-spacing: 1.8px;
     }
@@ -414,7 +381,6 @@
     letter-spacing: 1px;
 
     @include for-size(tablet) {
-      font-size: 20px;
       line-height: 27px;
       letter-spacing: 2px;
     }
@@ -422,7 +388,6 @@
     @include for-size(laptop) {
       font-size: 22px;
       line-height: 29px;
-      letter-spacing: 2px;
     }
 
     @include for-size(desktop) {
