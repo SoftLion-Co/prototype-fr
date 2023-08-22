@@ -7,23 +7,7 @@ import ArrowLeft from "../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
 
-interface BlogExtendedCardComponentProps {
-  id: number;
-  title: string;
-  authorId: string;
-  author: string;
-  authorIconSrc: string;
-  readingTime: string;
-  text: string;
-  imageSrc: string;
-  tags: string[];
-}
-
-interface BlogDesktopProps {
-  cardsData: BlogExtendedCardComponentProps[];
-}
-
-const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
+const BlogDesktopComponent: React.FC<{ blogIds: string[] }> = ({ blogIds }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -78,32 +62,22 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         }}
         align="center"
       >
-        {cardsData.map((x, index) => (
+        {blogIds.map((blogId, index) => (
           <>
             {currentSlide === index ? (
               <div className={s.slider__card_extended}>
                 <Carousel.Slide key={index}>
-                  <BlogExtendedCardComponent
-                    id={x.id}
-                    text={x.text}
-                    authorId={x.authorId}
-                    author={x.author}
-                    imageSrc={x.imageSrc}
-                    authorIconSrc={x.authorIconSrc}
-                    title={x.title}
-                    readingTime={x.readingTime}
-                    tags={x.tags}
-                  />
+                  <BlogExtendedCardComponent id={blogId} />
                 </Carousel.Slide>
               </div>
             ) : (
               <div
                 className={
                   currentSlide - 1 === index ||
-                  (currentSlide === 0 && index === cardsData.length - 1)
+                  (currentSlide === 0 && index === blogIds.length - 1)
                     ? s.slider__card_left
                     : currentSlide + 1 === index ||
-                      (currentSlide === cardsData.length - 1 && index === 0)
+                      (currentSlide === blogIds.length - 1 && index === 0)
                     ? s.slider__card_right
                     : s.slider__card_default
                 }
@@ -111,12 +85,12 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                 <Carousel.Slide
                   onClick={
                     currentSlide - 1 === index ||
-                    (currentSlide === 0 && index === cardsData.length - 1)
+                    (currentSlide === 0 && index === blogIds.length - 1)
                       ? () => {
                           embla?.scrollPrev();
                         }
                       : currentSlide + 1 === index ||
-                        (currentSlide === cardsData.length - 1 && index === 0)
+                        (currentSlide === blogIds.length - 1 && index === 0)
                       ? () => {
                           embla?.scrollNext();
                         }
@@ -124,10 +98,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                   }
                   key={index}
                 >
-                  <BlogRolledCardComponent
-                    title={x.title}
-                    imageSrc={x.imageSrc}
-                  />
+                  <BlogRolledCardComponent id={blogId} />
                 </Carousel.Slide>
               </div>
             )}

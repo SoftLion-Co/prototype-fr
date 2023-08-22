@@ -1,10 +1,7 @@
 export interface BlogInterface {
-    id: number;
-    category?:string;
+    category:string;
     title: string;
-    authorId?: string;
-    author: string;
-    authorIconSrc: string;
+    authorId: string;
     readingTime: string;
     text: string;
     imageSrc: string;
