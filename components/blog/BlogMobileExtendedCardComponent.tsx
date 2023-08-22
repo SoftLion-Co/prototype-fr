@@ -23,7 +23,7 @@ const BlogMobileExtendedCardComponent: React.FC<{ data: any }> = ({ data }) => {
           <h2 className={s.info__title}>{title}</h2>
 
           <div className={s.info__author}>
-            <Link href={`authors/${authorId}`}>
+            <Link href={`/authors/${authorId}`}>
               <img
                 alt="Softlion image"
                 className={s.info__author__icon}
@@ -38,7 +38,7 @@ const BlogMobileExtendedCardComponent: React.FC<{ data: any }> = ({ data }) => {
       <div className={s.card__line}></div>
       <div className={s.card__article}>
         <p className={s.card__article__text}>{text}</p>
-        <Link href={`blogs/${data}`}>
+        <Link href={`/blogs/${data}`}>
           <svg
             className={s.card__article__arrow}
             xmlns="http://www.w3.org/2000/svg"

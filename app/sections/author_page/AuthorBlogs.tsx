@@ -32,7 +32,7 @@ const AuthorBlogs: FC<{ articles: string[] }> = ({ articles }) => {
         {articles
           .slice(perPage * (activePage - 1), perPage * activePage)
           .map((item) => (
-            <BlogExtendedCardComponent id={item} />
+            <BlogExtendedCardComponent key={item} id={item} />
           ))}
       </div>
       {pages >= 2 ? (
