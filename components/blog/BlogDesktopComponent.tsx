@@ -19,13 +19,14 @@ const BlogDesktopComponent: React.FC<{ blogIds: string[] }> = ({ blogIds }) => {
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
+        
         previousControlIcon={
           <Image
             className={s.arrow}
             height={30}
             width={30}
             src={ArrowLeft}
-            alt="🢐"
+            alt="<"
           ></Image>
         }
         nextControlIcon={
@@ -34,7 +35,7 @@ const BlogDesktopComponent: React.FC<{ blogIds: string[] }> = ({ blogIds }) => {
             height={30}
             width={30}
             src={ArrowRight}
-            alt="🢒"
+            alt=">"
           ></Image>
         }
         skipSnaps

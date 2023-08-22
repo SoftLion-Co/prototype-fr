@@ -94,9 +94,9 @@ const OurTeamSetcion = () => {
             setCurrentSlide(slideIndex);
           }}
           previousControlIcon={
-            <Image className={classNames(s.arrow, s.arrow__left)} height={30} width={30} src={ArrowLeft} alt="45"></Image>
+            <Image className={classNames(s.arrow, s.arrow__left)} height={30} width={30} src={ArrowLeft} alt="<"></Image>
           }
-          nextControlIcon={<Image className={classNames(s.arrow, s.arrow__right)} height={30} width={30} src={ArrowRight} alt="45"></Image>}
+          nextControlIcon={<Image className={classNames(s.arrow, s.arrow__right)} height={30} width={30} src={ArrowRight} alt=">"></Image>}
           slideSize="20%"
           align="start"
           loop

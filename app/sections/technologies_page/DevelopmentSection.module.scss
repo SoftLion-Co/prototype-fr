@@ -18,15 +18,20 @@
       justify-content: space-evenly;
       align-items: center;
     }
+
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__cards {
     display: grid;
     gap: 60px;
-    margin-bottom: 25%;
+    margin-bottom: 10%;
 
     @include for-size(tablet) {
-      margin-bottom: 10%;
+      margin-bottom: 7%;
     }
     @include for-size(laptop) {
       gap: 90px;
@@ -37,6 +42,7 @@
   }
 
   &__number {
+    user-select: none;
     font-size: 94px;
     font-weight: 400;
     line-height: 130%;
@@ -51,6 +57,18 @@
     @include for-size(desktop) {
       font-size: 150px;
       letter-spacing: 4.5px;
+    }
+
+    animation: floatingAnimation 2.2s infinite ease-in-out;
+  }
+
+  @keyframes floatingAnimation {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
     }
   }
 
