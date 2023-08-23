@@ -2,10 +2,35 @@
 @import "../styles/container";
 @import "../styles/mixin";
 
-.header__item:hover > .header__sub_menu {
-  display: block;
-  position: absolute;
+.header_container {
+  width: 100%;
+  background-color: #fff;
 }
+
+.fixed {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  height: 57px;
+  opacity: 0;
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  @include for-size(tablet) {
+    height: 77px;
+  }
+  @include for-size(laptop) {
+    height: 97px;
+  }
+
+  &__active {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -30,27 +55,6 @@
     }
   }
 
-  &__list {
-    display: flex;
-    flex-direction: row;
-    gap: 23px;
-  }
-
-  &__sub_menu {
-    @include for-size(tablet) {
-      position: absolute;
-      display: none;
-    }
-    @include for-size(laptop) {
-    }
-    @include for-size(desktop) {
-    }
-
-    &__mobile_menu {
-      position: fixed;
-    }
-  }
-
   &__navigation {
     display: none;
 
@@ -61,15 +65,29 @@
     }
     @include for-size(laptop) {
       gap: 42px;
-      
     }
     @include for-size(desktop) {
       gap: 53px;
     }
   }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  &__item {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item:hover &__sub_menu {
+    display: block;
+  }
+
   &__link {
     font-size: 20px;
-    font-family: "Roboto";
     letter-spacing: 0.4px;
     color: black;
     line-height: 26px;
@@ -85,30 +103,59 @@
       font-size: 20px;
     }
     transition: box-shadow 0.3s ease;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      height: 2px;
+      background-color: rgb(48, 139, 183);
+      transition: width 0.1s ease, transform 0.3s ease;
+      width: 0;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
     &:hover {
-      color: (rgb(48, 139, 183));
+  
+      &::before,
+      &::after {
+        width: 50%;
+        transform: scaleX(1);
+      }
     }
   }
 
-  &__btn_burger {
-    background-color: transparent;
-    margin-left: auto;
-    border: none;
-    color: $burger-menu-color;
-    padding: 0;
-    height: 25px;
+  &__has_submenu {
+    position: relative;
+  }
+
+  &__sub_menu {
     @include for-size(tablet) {
       display: none;
-    }
-  }
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 20px;
+      width: 120px;
+      height: max-content;
 
-  &__burger {
-    font-size: 25px;
-  }
-  &__close_icon {
-    &:hover {
-      color: (rgb(48, 139, 183));
+      background-color: white;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1000;
     }
+  }
+  &__sub_menu > li {
+    padding: 10px;
   }
 
   &__btn_login {
@@ -135,164 +182,199 @@
       padding: 11px 25px;
       border-radius: 15px;
     }
-  }
-  &__btn_text {
-    font-size: 22px;
-    font-family: "Roboto";
-    font-weight: 500;
-    letter-spacing: 0.4px;
-    color: black;
-    line-height: 7px;
-    line-height: 26px;
-    @include for-size(tablet) {
-      font-weight: 400;
-      font-size: 12px;
-    }
 
-    @include for-size(laptop) {
-      font-size: 15px;
-    }
-    @include for-size(desktop) {
-      font-size: 20px;
+    &__text {
+      font-size: 22px;
+      letter-spacing: 0.4px;
+      color: black;
+      line-height: 7px;
+      line-height: 26px;
+      @include for-size(tablet) {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      @include for-size(laptop) {
+        font-size: 15px;
+      }
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
     }
   }
-  &__line {
+  &__btn_burger {
+    background-color: transparent;
+    margin-left: auto;
     border: none;
-    background-color: #83addf;
-    height: 1px;
-    margin: 10px 0 0 0;
+    color: $burger-menu-color;
+    padding: 0;
+    height: 25px;
     @include for-size(tablet) {
       display: none;
     }
   }
+
+  &__icon {
+    width: 17px;
+    height: 16px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    &__div {
+      position: absolute;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: $burger-menu-color;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transition: 0.25s ease-in-out;
+    }
+    &__div:nth-child(1) {
+      top: 0px;
+    }
+    &__div:nth-child(2),
+    &__div:nth-child(3) {
+      top: 6px;
+    }
+    &__div:nth-child(4) {
+      top: 12px;
+    }
+    &.open &__div:nth-child(1) {
+      top: 12px;
+      width: 0;
+      left: 50%;
+    }
+    &.open &__div:nth-child(2) {
+      transform: rotate(45deg);
+      top: 6px;
+    }
+    &.open &__div:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 6px;
+    }
+    &.open &__div:nth-child(4) {
+      top: 6px;
+      width: 0;
+      left: 50%;
+    }
+  }
 }
 
+/* MOBILE MENU */
 .header_modal {
   position: fixed;
-  top: 60px;
+  top: 55px;
   right: 0;
   height: 100%;
   width: 100%;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
 
   &__list {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     gap: 20px;
+    padding-top: 19px;
+  }
+
+  &__list &__item:last-child {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    text-align: center;
+    gap: 50px;
+  }
+
+  &__list > li {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  &__item {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
 
   &__link {
+    text-align: center;
     font-size: 22px;
-    font-family: "Roboto";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
     letter-spacing: 0.4px;
     color: black;
     line-height: 26px;
     position: relative;
-    display: flex;
-    gap: 5px;
-    align-items: center;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      height: 2px;
+      background-color: rgb(48, 139, 183);
+      transition: width 0.1s ease, transform 0.3s ease; 
+      width: 0;
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
     &:hover {
       color: rgb(48, 139, 183);
+      &::before,
+      &::after {
+        width: 50%;
+        transform: scaleX(1);
+      }
     }
   }
-
-  &__btn_login {
-    background: $button-blue-background;
-    color: black;
-    padding: 5.5px 13px;
-    border-radius: 6px;
-    border: none;
-    margin-top: 20px;
-  }
-
-  &__btn_text {
-    font-size: 22px;
-    font-family: "Roboto";
-    letter-spacing: 0.4px;
-    color: black;
-    line-height: 7px;
-    align-items: center;
-  }
-
   &__icon {
     opacity: 0.3;
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: $burger-menu-color;
   }
 
   &__sub_menu {
     display: none;
-    padding: 10px;
-    z-index: 1;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
   }
 
-  &__modal_open {
-    overflow: hidden;
+  &__sub_menu > li {
+    width: max-content;
+    margin: 0 auto;
   }
-}
 
-.header_modal__item:hover > .header_modal__sub_menu {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.icon {
-  width: 17px;
-  height: 16px;
-  position: relative;
-  transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-
-  &__span {
+  &__btn_hidden {
     display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: $burger-menu-color;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    margin: 0;
+    margin-top: 20px;
   }
+}
 
-  &__span:nth-child(1) {
-    top: 0px;
-  }
-  &__span:nth-child(2),
-  &__span:nth-child(3) {
-    top: 6px;
-  }
-  &__span:nth-child(4) {
-    top: 12px;
-  }
-  &.open &__span:nth-child(1) {
-    top: 12px;
-    width: 0;
-    left: 50%;
-  }
-  &.open &__span:nth-child(2) {
-    transform: rotate(45deg);
-    top: 6px;
-  }
-  &.open &__span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 6px;
-  }
-  &.open &__span:nth-child(4) {
-    top: 6px;
-    width: 0;
-    left: 50%;
-  }
+.stop_scrolling {
+  overflow: hidden;
 }
