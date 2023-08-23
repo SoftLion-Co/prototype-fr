@@ -28,7 +28,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className={s.blogDesktop}>
+    <div className={s.slider}>
       <Carousel
         getEmblaApi={setEmbla}
         loop
@@ -42,7 +42,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowLeft}
-            alt="🢐"
+            alt="<"
           ></Image>
         }
         nextControlIcon={
@@ -51,7 +51,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowRight}
-            alt="🢒"
+            alt=">"
           ></Image>
         }
         skipSnaps
@@ -82,7 +82,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         {cardsData.map((x, index) => (
           <>
             {currentSlide === index ? (
-              <div className={s.blogDesktop__extendedCard}>
+              <div className={s.slider__card_extended}>
                 <Carousel.Slide key={index}>
                   <BlogExtendedCardComponent
                     id={x.id}
@@ -102,11 +102,11 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                 className={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)
-                    ? s.blogDesktop__rolledCardLeft
+                    ? s.slider__card_left
                     : currentSlide + 1 === index ||
                       (currentSlide === cardsData.length - 1 && index === 0)
-                    ? s.blogDesktop__rolledCardRight
-                    : s.blogDesktop__rolledCardDefault
+                    ? s.slider__card_right
+                    : s.slider__card_default
                 }
               >
                 <Carousel.Slide
