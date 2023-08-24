@@ -91,17 +91,38 @@
   }
 
   &__spot_blue {
-    left: -27px;
-    margin-top: -173px;
+    z-index: -2;
     position: absolute;
-    fill: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(118, 189, 211, 0.25) 0%,
-      rgba(117, 184, 199, 0) 100%
-    );
-    width: 681.089px;
-    height: 424.137px;
-    flex-shrink: 0;
+
+    @include for-size(tablet) {
+      left: -16px;
+      width: 472.422px;
+      height: 427.403px;
+      flex-shrink: 0;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(118, 189, 211, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+      margin-top: -174px;
+    }
+
+    @include for-size(laptop) {
+      left: -27px;
+      margin-top: -173px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(118, 189, 211, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+      width: 681.089px;
+      height: 424.137px;
+      flex-shrink: 0;
+    }
+
+    @include for-size(desktop) {
+      display: none;
+    }
   }
 
   &__image_wrapper {
