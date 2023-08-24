@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BlogRolledCardComponent from "./BlogRolledCardComponent";
 import BlogExtendedCardComponent from "./BlogExtendedCardComponent";
 import s from "./BlogDesktopComponent.module.scss";
@@ -19,7 +19,6 @@ const BlogDesktopComponent: React.FC<{ blogIds: string[] }> = ({ blogIds }) => {
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
-        
         previousControlIcon={
           <Image
             className={s.arrow}

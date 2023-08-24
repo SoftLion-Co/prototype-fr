@@ -1,4 +1,3 @@
-import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";

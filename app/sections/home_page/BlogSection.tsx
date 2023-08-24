@@ -1,5 +1,6 @@
 "use client";
 
+import authorData from "@/data/blog/blogs_data.json";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import BlogDesktopComponent from "@/components/blog/BlogDesktopComponent";
 import BlogMobileExtendedCardComponent from "@/components/blog/BlogMobileExtendedCardComponent";
@@ -8,7 +9,7 @@ import classNames from "classnames";
 import HeadingComponent from "@/components/HeadingComponent";
 import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 
-const blogIds: any = [1, 2, 3, 4, 5, 6, 7, 8];
+const blogIds: any = Object.keys(authorData).slice(0, 8);
 
 const HomeBlog: React.FC = () => {
   return (
