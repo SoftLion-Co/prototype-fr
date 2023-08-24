@@ -14,7 +14,11 @@ interface ProjectData {
   description: string;
 }
 
-const ProjectCardComponent: React.FC<{ data: ProjectData }> = ({ data }) => {
+interface ProjectCardProps {
+  data: ProjectData;
+}
+
+const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__info}>
