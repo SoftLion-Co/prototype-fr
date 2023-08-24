@@ -24,7 +24,7 @@ const TechnologiesSection = () => {
   const [technologiesData, setTechnologiesData] = useState<Technology[]>([
     {
       id: "UIUX",
-      className: s.technologies__imageUIUX,
+      className: s.technologies__image_uiux,
       imgSrc: UIUX,
       imgAlt: "UI/UX",
       description:
@@ -34,7 +34,7 @@ const TechnologiesSection = () => {
     },
     {
       id: "Ecommerce",
-      className: s.technologies__imageEcommerce,
+      className: s.technologies__image_ecommerce,
       imgSrc: Ecommerce,
       imgAlt: "Ecommerce",
       description:
@@ -44,7 +44,7 @@ const TechnologiesSection = () => {
     },
     {
       id: "SEO",
-      className: s.technologies__imageSEO,
+      className: s.technologies__image_seo,
       imgSrc: SEO,
       imgAlt: "SEO",
       description:
@@ -54,7 +54,7 @@ const TechnologiesSection = () => {
     },
     {
       id: "API",
-      className: s.technologies__imageAPI,
+      className: s.technologies__image_api,
       imgSrc: API,
       imgAlt: "API",
       description:
@@ -75,35 +75,40 @@ const TechnologiesSection = () => {
   return (
     <section className={`${s.container} ${s.technologies}`}>
       <div className={s.technologies__wrapper}>
-        <div className={s.technologies__nameHeader}>
+        <div className={s.technologies__name_header}>
           <HeadingComponent text="Technologies" />
         </div>
-        <div className={s.technologies__headerWrapperImg}>
-          <div className={s.technologies__imagesWrapper}>
+        <div className={s.technologies__header_wrapper}>
+          <div className={s.technologies__images_wrapper}>
             {technologiesData.map((tech) => (
               <div
                 key={tech.id}
-                className={`${s.technologies__imageWrapper} ${
+                className={`${s.technologies__image_wrapper} ${
                   tech.isOpen ? s.hovered : ""
                 }`}
                 onClick={() => toggleIsOpen(tech.id)}
               >
-                <div className={s.technologies__iconWrapper}>
-                  <BiExpandAlt className={s.technologies__iconOpen} />
+                <div className={s.technologies__icon_wrapper}>
+                  <BiExpandAlt className={s.technologies__icon_open} />
                 </div>
-                <div className={s.technologies__cardContainer}>
+                <div className={s.technologies__card_container}>
                   <Image
                     className={tech.className}
                     src={tech.imgSrc}
                     alt={tech.imgAlt}
                   />
-                  <p className={s.technologies__descriptionFoto}>{tech.name}</p>
-                  <p className={s.technologies__textEcommerce}>
+                  <p className={s.technologies__description_photo}>
+                    {tech.name}
+                  </p>
+                  <p className={s.technologies__text_ecommerce}>
                     {tech.description}
                   </p>
                 </div>
               </div>
             ))}
+            <div className={s.technologies__spot_blue}></div>
+            <div className={s.technologies__spot_turquoise}></div>
+            <div className={s.technologies__spot_pink}></div>
           </div>
         </div>
       </div>
