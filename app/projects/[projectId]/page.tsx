@@ -8,7 +8,7 @@ import BlogSection from "@/app/sections/home_page/BlogSection";
 
 const Project = () => {
   return (
-    <div>
+    <div className={s.page}>
       <ProjectDescriptionSection />
       <RequestSection />
       <SolutionSection />
