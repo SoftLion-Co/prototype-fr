@@ -1,0 +1,100 @@
+@import "./../../styles/mixin";
+@import "./../../styles/colors";
+// @import "./../../styles/container";
+
+.review {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    margin: 10px;
+    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 26px 25px 40px 25px;
+
+    @include for-size(tablet) {
+      width: 100%;
+    }
+
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 1px 5px 7px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+
+  &__author___img {
+    margin-right: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.25);
+
+    width: 80px;
+    height: 80px;
+    @include for-size(tablet) {
+      width: 101px;
+      height: 101px;
+    }
+    @include for-size(laptop) {
+      width: 111px;
+      height: 111px;
+    }
+    @include for-size(desktop) {
+      width: 143px;
+      height: 143px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 17px;
+    letter-spacing: 0.7px;
+    line-height: 130%;
+    margin-bottom: 20%;
+    margin-left: 4%;
+
+    @include for-size(tablet) {
+      font-size: 21px;
+      letter-spacing: 0.9px;
+    }
+    @include for-size(laptop) {
+      font-size: 23px;
+    }
+    @include for-size(desktop) {
+      font-size: 30px;
+      letter-spacing: 1.2px;
+    }
+  }
+  &__rating {
+    font-size: 10px;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.8px;
+
+    @include for-size(tablet) {
+      width: 300px;
+    }
+    @include for-size(laptop) {
+      width: 460px;
+      min-height: 140px;
+    }
+    @include for-size(desktop) {
+      width: 600px;
+      min-height: 120px;
+    }
+  }
+}
