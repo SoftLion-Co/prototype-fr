@@ -18,7 +18,181 @@
     margin-bottom: 94px;
   }
 
+  &__spot_turquoise {
+    position: absolute;
+    z-index: -2;
+
+    @include for-size(tablet) {
+      width: 425px;
+      height: 251px;
+      flex-shrink: 0;
+
+      border-radius: 425px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(19, 235, 144, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+
+      right: 38px;
+      top: -14px;
+    }
+
+    @include for-size(laptop) {
+      width: 674px;
+      height: 268px;
+      flex-shrink: 0;
+
+      border-radius: 674px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(19, 235, 144, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+      right: 59px;
+      top: -32px;
+    }
+
+    @include for-size(desktop) {
+      width: 869px;
+      height: 346px;
+      flex-shrink: 0;
+
+      border-radius: 869px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(19, 235, 144, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+      top: -39px;
+      right: 62px;
+    }
+  }
+
+  &__spot_pink {
+    position: absolute;
+    z-index: -2;
+
+    right: -30px;
+    top: 18px;
+
+    width: 289px;
+    height: 327px;
+    flex-shrink: 0;
+    border-radius: 327px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(160, 24, 155, 0.21) 0%,
+      rgba(160, 24, 155, 0) 100%
+    );
+
+    @include for-size(tablet) {
+      width: 425px;
+      height: 251px;
+      flex-shrink: 0;
+
+      border-radius: 425px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(160, 24, 155, 0.21) 0%,
+        rgba(160, 24, 155, 0) 100%
+      );
+
+      left: -9px;
+      top: -14px;
+    }
+
+    @include for-size(laptop) {
+      width: 674px;
+      height: 268px;
+      flex-shrink: 0;
+
+      border-radius: 674px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(160, 24, 155, 0.21) 0%,
+        rgba(160, 24, 155, 0) 100%
+      );
+      top: -32px;
+      left: -13px;
+    }
+
+    @include for-size(desktop) {
+      width: 869px;
+      height: 346px;
+      flex-shrink: 0;
+
+      border-radius: 869px;
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(160, 24, 155, 0.21) 0%,
+        rgba(160, 24, 155, 0) 100%
+      );
+      left: -17px;
+      top: -27px;
+    }
+  }
+
+  &__spot_blue {
+    position: absolute;
+
+    top: -139px;
+    right: -30px;
+
+    width: 289px;
+    height: 327px;
+    flex-shrink: 0;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(118, 189, 211, 0.25) 0%,
+      rgba(117, 184, 199, 0) 100%
+    );
+    @include for-size(tablet) {
+      top: -35px;
+      left: -9px;
+
+      width: 641px;
+      height: 251px;
+      flex-shrink: 0;
+
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(118, 189, 211, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+    }
+
+    @include for-size(laptop) {
+      width: 674px;
+      height: 268px;
+      flex-shrink: 0;
+
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(118, 189, 211, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+      top: -42px;
+      left: -13px;
+    }
+
+    @include for-size(desktop) {
+      width: 869px;
+      height: 346px;
+      flex-shrink: 0;
+
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        rgba(118, 189, 211, 0.25) 0%,
+        rgba(117, 184, 199, 0) 100%
+      );
+      top: -68px;
+      left: -17px;
+    }
+  }
+
   &__block {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;

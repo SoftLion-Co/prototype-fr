@@ -9,11 +9,11 @@ import Image from "next/image";
 
 const FooterComponent = () => {
   const routes = [
-    { path: "/", label: "Service" },
+    { path: "/services", label: "Service" },
     { path: "/projects", label: "Our Projects" },
-    { path: "/technologies", label: "Technologies" },
+    { path: "/technologies/java", label: "Technologies" },
     { path: "/blogs", label: "Blog" },
-    { path: "/contact", label: "Contact Us" },
+    { path: "/contact-us", label: "Contact Us" },
   ];
 
   const socialLinks = [
@@ -96,6 +96,9 @@ const FooterComponent = () => {
             </MainButtonComponent>
           </div>
         </div>
+        <div className={s.footer__spot_blue}></div>
+        <div className={s.footer__spot_pink}></div>
+        <div className={s.footer__spot_turquoise}></div>
       </div>
     </footer>
   );
