@@ -374,15 +374,17 @@
     align-items: center;
 
     width: 224px;
-
     @include for-size(tablet) {
       width: 216px;
     }
 
     @include for-size(laptop) {
+      transition: transform 0.5s ease;
       width: 239px;
-
       justify-content: center;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     @include for-size(desktop) {
