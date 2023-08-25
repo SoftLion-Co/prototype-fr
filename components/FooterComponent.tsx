@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
 import s from "./FooterComponent.module.scss";
+
+import Link from "next/link";
+import React, { useRef } from "react";
+
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiFacebook } from "react-icons/fi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
@@ -8,14 +12,14 @@ import Logo from "./../images/logo.svg";
 import Image from "next/image";
 
 const FooterComponent = () => {
+  const topRef = useRef(null);
   const routes = [
     { path: "/services", label: "Service" },
     { path: "/projects", label: "Our Projects" },
-    { path: "/technologies/java", label: "Technologies" },
+    { path: "", label: "Technologies", ref: topRef },
     { path: "/blogs", label: "Blog" },
     { path: "/contact-us", label: "Contact Us" },
   ];
-
   const socialLinks = [
     {
       url: "https://www.linkedin.com/company/softlion/",
@@ -34,6 +38,12 @@ const FooterComponent = () => {
       icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
     },
   ];
+
+  const handleTechnologiesClick = () => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className={`${s.footer} ${s.container}`}>
@@ -55,6 +65,7 @@ const FooterComponent = () => {
                   key={index}
                   href={route.path}
                   className={s.footer__routs_name}
+                  onClick={index === 2 ? handleTechnologiesClick : undefined}
                 >
                   {route.label}
                 </Link>
