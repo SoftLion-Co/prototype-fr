@@ -126,8 +126,6 @@
   }
 
   &__description {
-    font-size: 14px;
-
     @include for-size(tablet) {
       width: 377px;
       font-size: 16px;

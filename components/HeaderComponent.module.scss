@@ -44,9 +44,7 @@
   &__link {
     font-size: 20px;
     font-family: "Roboto";
-    letter-spacing: 0.4px;
     color: black;
-    line-height: 26px;
 
     @include for-size(tablet) {
       font-size: 12px;
@@ -100,9 +98,8 @@
     font-size: 5.8px;
     font-family: "Roboto";
     font-weight: 500;
-    letter-spacing: 0.4px;
     color: black;
-    line-height: 7px;
+
     @include for-size(tablet) {
       font-weight: 400;
       font-size: 7.8px;

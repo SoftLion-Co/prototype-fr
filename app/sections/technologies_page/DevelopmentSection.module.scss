@@ -44,9 +44,7 @@
   &__number {
     user-select: none;
     font-size: 94px;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 2.8px;
+
     @include for-size(phone) {
       margin-bottom: 40px;
     }
@@ -74,9 +72,6 @@
 
   &__title {
     margin-bottom: 5%;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.6px;
 
     @include for-size(tablet) {
       font-size: 19px;
@@ -92,9 +87,6 @@
   }
 
   &__text {
-    font-weight: 400;
-    line-height: 130%;
-    font-size: 16px;
     letter-spacing: 0.5px;
 
     @include for-size(tablet) {

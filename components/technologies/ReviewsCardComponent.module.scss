@@ -52,8 +52,6 @@
 
   &__name {
     font-size: 17px;
-    letter-spacing: 0.7px;
-    line-height: 130%;
     margin-bottom: 20%;
 
     @include for-size(tablet) {
@@ -71,9 +69,6 @@
   &__text {
     text-align: center;
     font-size: 20px;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.8px;
 
     @include for-size(tablet) {
       width: 300px;

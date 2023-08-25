@@ -52,7 +52,6 @@
     }
   }
   &__name {
-    font-size: 22px;
     max-width: 310px;
     margin-bottom: 15px;
 
@@ -112,8 +111,6 @@
     }
   }
   &__description {
-    font-size: 12px;
-    letter-spacing: 0.3px;
     max-width: 279px;
     @include for-size(tablet) {
       max-width: 287px;

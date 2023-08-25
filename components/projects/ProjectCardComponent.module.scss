@@ -59,7 +59,6 @@
 
   &__info {
     height: 171px;
-    font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -136,9 +135,6 @@
   &__title {
     margin-top: 19px;
     font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 1.415px;
-    line-height: 130.49%;
 
     @include for-size(laptop) {
       margin-top: 20px;
@@ -154,9 +150,6 @@
   }
 
   &__desc {
-    font-size: 12px;
-    letter-spacing: 0.419px;
-
     @include for-size(laptop) {
       font-size: 15px;
       letter-spacing: 0.621px;

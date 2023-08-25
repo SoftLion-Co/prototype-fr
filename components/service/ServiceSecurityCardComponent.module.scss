@@ -9,11 +9,7 @@
   align-items: center;
   border-radius: 5px;
   padding: 33px 16px 33px 17px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 25%),
-    rgba(118, 228, 215, 25%)
-  );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 25%), rgba(118, 228, 215, 25%));
 
   @include for-size(tablet) {
     width: 280px;
@@ -78,11 +74,6 @@
     color: #000;
     text-align: center;
     font-family: Roboto;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 1.26px;
     margin-left: 5px;
 
     @include for-size(tablet) {
@@ -108,10 +99,6 @@
     color: #000;
     text-align: center;
     font-family: Helvetica;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 
     @include for-size(tablet) {
       max-width: 238px;

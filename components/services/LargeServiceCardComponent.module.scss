@@ -4,11 +4,7 @@
 .service {
   &__container {
     box-shadow: 6px 15px 10px 0px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 25%),
-      rgba(118, 228, 215, 25%)
-    );
+    background: linear-gradient(135deg, rgba(255, 255, 255, 25%), rgba(118, 228, 215, 25%));
 
     display: flex;
     align-items: center;
@@ -65,10 +61,8 @@
 
   &__heading {
     text-align: center;
-    font-weight: 400;
     font-size: 20px;
-    letter-spacing: 2px;
-    line-height: 130%;
+
     margin-bottom: 30px;
     @include for-size(tablet) {
       margin-bottom: 20px;

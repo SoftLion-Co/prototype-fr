@@ -23,16 +23,26 @@ code {
 
 a {
   text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.5px;
 }
 
 button {
   cursor: pointer;
-}
 
-button {
   @include for-size(phone) {
     font-size: 12px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.5px;
   }
+}
+
+input,
+textarea {
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.5px;
 }
 
 h1,
@@ -42,36 +52,43 @@ h4,
 h5,
 h6,
 p {
+  font-weight: 400;
+  line-height: 130%;
   margin: 0;
 }
 
 h1 {
   @include for-size(phone) {
     font-size: 26px;
+    letter-spacing: 1px;
   }
 }
 
 h2 {
   @include for-size(phone) {
     font-size: 22px;
+    letter-spacing: 1.4px;
   }
 }
 
 h3 {
   @include for-size(phone) {
     font-size: 18px;
+    letter-spacing: 1.4px;
   }
 }
 
 h4 {
   @include for-size(phone) {
     font-size: 16px;
+    letter-spacing: 1.4px;
   }
 }
 
 p {
   @include for-size(phone) {
     font-size: 14px;
+    letter-spacing: 0.6px;
   }
 }
 

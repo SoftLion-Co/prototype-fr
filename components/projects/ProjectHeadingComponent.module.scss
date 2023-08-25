@@ -21,11 +21,7 @@
   &__text {
     max-width: 223px;
     margin: 12px auto 0 auto;
-    font-size: 12px;
     align-self: flex-start;
-
-    line-height: 130.49%;
-    letter-spacing: 0.48px;
 
     @include for-size(tablet) {
       margin: 0;
@@ -45,7 +41,7 @@
       margin-top: 92px;
     }
 
-    &___centered{
+    &___centered {
       align-self: center;
       max-width: 320px;
       width: 100%;
@@ -75,6 +71,6 @@
   }
 
   &___centered {
-      align-items: center;
+    align-items: center;
   }
 }

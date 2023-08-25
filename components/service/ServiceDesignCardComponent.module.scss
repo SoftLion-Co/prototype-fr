@@ -78,9 +78,6 @@
   }
 
   &__descriptionResearch {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 1.44px;
     margin-left: 6px;
 
     @include for-size(tablet) {
@@ -104,9 +101,6 @@
   }
 
   &__descriptionUser {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 1.44px;
     margin-left: 3px;
 
     @include for-size(tablet) {
@@ -130,15 +124,9 @@
   }
 
   &__descriptionVisual {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 1.44px;
     margin-left: 10px;
 
     @include for-size(tablet) {
-      font-size: 15px;
-      line-height: 20px;
-      letter-spacing: 1.4px;
       margin-left: 11px;
     }
     @include for-size(laptop) {
@@ -156,9 +144,6 @@
   }
 
   &__descriptionIterative {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 1.44px;
     margin-left: 5px;
 
     @include for-size(tablet) {
@@ -182,9 +167,6 @@
   }
 
   &__descriptionResponsive {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 1.44px;
     margin-left: 21px;
 
     @include for-size(tablet) {
@@ -208,9 +190,6 @@
   }
 
   &__descriptionWireframing {
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 1.44px;
     margin-left: 19px;
 
     @include for-size(tablet) {
@@ -235,9 +214,6 @@
 
   &__text {
     text-align: center;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.48px;
 
     @include for-size(tablet) {
       text-align: start;

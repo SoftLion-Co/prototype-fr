@@ -40,10 +40,6 @@
 
   &__title {
     color: $blog-card-text-color;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 1.1px;
     margin-bottom: 16px;
 
     @include for-size(tablet) {
@@ -188,10 +184,6 @@
 
   &__text {
     color: $service-heading-color;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 0.3px;
 
     @include for-size(tablet) {
       font-size: 14px;

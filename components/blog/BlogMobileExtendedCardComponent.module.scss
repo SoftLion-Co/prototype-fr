@@ -10,8 +10,8 @@ $borderR: calc($currentW * 12 / 290);
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: calc($currentW * 16 / 680) calc($currentW * 40 / 680)
-    calc($currentW * 25 / 680) 0px #00000026;
+  box-shadow: calc($currentW * 16 / 680) calc($currentW * 40 / 680) calc($currentW * 25 / 680) 0px
+    #00000026;
   background: linear-gradient(
     115.15deg,
     rgba(247, 205, 245, 0.23) -20.67%,
@@ -20,8 +20,6 @@ $borderR: calc($currentW * 12 / 290);
   );
 
   font-size: $fontSize;
-  font-weight: 400;
-  letter-spacing: 0.04em;
 
   &__content {
     width: 100%;
@@ -60,7 +58,6 @@ $borderR: calc($currentW * 12 / 290);
     }
     &__arrow {
       color: black;
-      font-size: 0.9em;
     }
   }
 }
@@ -80,8 +77,6 @@ $borderR: calc($currentW * 12 / 290);
   }
   &__author {
     color: #000000b2;
-    font-size: 0.85em;
-    letter-spacing: 0.09em;
     display: flex;
     gap: 0.5em;
     align-items: center;

@@ -42,7 +42,6 @@
 
 .filter {
   &__main_button {
-    font-size: 12px;
     color: $heading-blue-color;
     display: flex;
     justify-content: center;
@@ -54,8 +53,6 @@
     border: none;
     background-color: transparent;
     margin-bottom: 17px;
-    line-height: 130.49%;
-    letter-spacing: 0.49px;
 
     @include for-size(tablet) {
       font-size: 14px;
@@ -123,13 +120,10 @@
   }
 
   &__title {
-    font-size: 11px;
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
-    line-height: 130.49%;
-    letter-spacing: 0.414px;
 
     @include for-size(tablet) {
       font-size: 12px;
@@ -228,9 +222,6 @@
     background-color: transparent;
     color: black;
     width: 51px;
-    font-size: 11px;
-    line-height: 130.49%;
-    letter-spacing: 0.414px;
 
     @include for-size(tablet) {
       width: 60px;
@@ -260,9 +251,6 @@
     border: none;
     background-color: transparent;
     color: black;
-    font-size: 11px;
-    line-height: 100%;
-    letter-spacing: 0.414px;
     width: 48%;
 
     @include for-size(tablet) {

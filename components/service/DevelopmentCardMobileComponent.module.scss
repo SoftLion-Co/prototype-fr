@@ -23,21 +23,13 @@
   }
   &__num {
     font-size: 77px;
-    font-weight: 400;
-    line-height: 90.25px;
-    letter-spacing: 2.31px;
     color: $placeholder-color;
   }
   &__pic1 {
     width: 109px;
     height: 109px;
   }
-  &__title {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 1.386px;
-  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -46,9 +38,6 @@
   }
   &__item {
     font-size: 12px;
-    font-weight: 400;
-    line-height: 13.4px;
-    letter-spacing: 0.4px;
     padding-left: 20px;
     background-image: url("../../images/project/request-list.svg");
     background-size: 12px 12px;

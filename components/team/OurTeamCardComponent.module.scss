@@ -64,9 +64,6 @@
     .member__position {
       color: $blog-card-text-color;
       font-size: 14px;
-      font-weight: 400;
-      line-height: 130.49%;
-      letter-spacing: 0.8px;
 
       @include for-size(tablet) {
         text-align: center;

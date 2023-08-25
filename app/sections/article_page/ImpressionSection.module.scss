@@ -31,10 +31,6 @@
 
   &__title {
     color: $heading-blue-color;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 1.1px;
     border-bottom: 1px solid $blog-card-text-color;
     display: inline-block;
     padding-bottom: 11px;
@@ -71,8 +67,6 @@
     color: $blog-card-text-color;
     font-size: 10px;
     font-weight: 700;
-    line-height: 130.49%;
-    letter-spacing: 0.4px;
     margin-bottom: 11px;
 
     @include for-size(tablet) {
@@ -98,8 +92,6 @@
     color: $blog-card-text-color;
     font-size: 12px;
     font-weight: 700;
-    line-height: 130.49%;
-    letter-spacing: 1px;
     margin-bottom: 35px;
 
     @include for-size(tablet) {
@@ -177,11 +169,6 @@
       outline: transparent;
       border-radius: 4px;
       color: $navigation-dark;
-      font-size: 10px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 130.49%;
-      letter-spacing: 0.4px;
       padding: 10px 15px;
 
       @include for-size(tablet) {
@@ -201,10 +188,6 @@
       &::placeholder {
         font-family: Roboto;
         color: $placeholder-color;
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 130.49%;
-        letter-spacing: 0.4px;
 
         @include for-size(tablet) {
           font-size: 15px;
@@ -237,10 +220,6 @@
       border: 1px solid $navigation-light;
       color: $navigation-dark;
       font-family: Roboto;
-      font-size: 10px;
-      font-weight: 400;
-      line-height: 130.49%;
-      letter-spacing: 0.4px;
       padding: 10px 15px;
 
       @include for-size(tablet) {
@@ -260,10 +239,6 @@
       &::placeholder {
         font-family: Roboto;
         color: $placeholder-color;
-        font-size: 10px;
-        font-weight: 400;
-        line-height: 130.49%;
-        letter-spacing: 0.4px;
 
         @include for-size(tablet) {
           font-size: 15px;

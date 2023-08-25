@@ -82,8 +82,6 @@
       }
     }
     &_name {
-      font-size: 12px;
-      letter-spacing: 0.4px;
       color: $blog-card-text-color;
 
       display: flex;
@@ -106,7 +104,6 @@
 
   &__btn {
     &_text {
-      font-size: 11.5px !important;
       @include for-size(tablet) {
       }
       @include for-size(laptop) {
@@ -119,9 +116,6 @@
     }
   }
   &__email {
-    font-size: 11px;
-    letter-spacing: 0.3px;
-
     color: $blog-card-text-color;
     @include for-size(tablet) {
       font-size: 12px;
@@ -204,8 +198,6 @@
       gap: 5px;
     }
     &_name {
-      font-size: 12px;
-      letter-spacing: 0.4px;
       color: $blog-card-text-color;
 
       @include for-size(tablet) {
@@ -242,7 +234,6 @@
   }
   &__copyright {
     font-size: 12px;
-    letter-spacing: 0.5px;
 
     @include for-size(tablet) {
       font-size: 12px;

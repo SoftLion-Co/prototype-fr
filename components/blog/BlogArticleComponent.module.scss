@@ -24,10 +24,6 @@
   }
 
   &__title {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 2.7px;
     color: $blog-card-text-color;
 
     @include for-size(tablet) {
@@ -41,10 +37,6 @@
 
   &__descripcion {
     color: $blog-card-text-color;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 0.4px;
 
     @include for-size(tablet) {
       font-size: 16px;

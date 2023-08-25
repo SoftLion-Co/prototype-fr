@@ -32,11 +32,7 @@
   }
 
   &--active {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 25%),
-      rgba(118, 228, 215, 25%)
-    );
+    background: linear-gradient(135deg, rgba(255, 255, 255, 25%), rgba(118, 228, 215, 25%));
   }
 
   @include for-size(phone) {

@@ -7,14 +7,11 @@
   border: none;
   position: relative;
   color: rgb(0, 0, 0, 75%);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: calc(19.6 / 16);
   padding: 3px 3px;
+
   @include for-size(tablet) {
     font-size: 14px;
     padding: 5px 10px;
-
   }
   @include for-size(laptop) {
     font-size: 17px;

@@ -19,11 +19,6 @@
     max-width: 266px;
     color: #000;
     text-align: center;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.48px;
     margin-top: 6px;
 
     @include for-size(tablet) {
@@ -121,9 +116,6 @@
     width: 100%;
     color: #858585;
     font-family: Open Sans;
-    font-size: 12px;
-    line-height: 154%;
-    letter-spacing: 0.19px;
     height: 15px;
 
     @include for-size(tablet) {
@@ -162,9 +154,6 @@
       left: 0;
       color: #858585;
       font-family: Open Sans;
-      font-size: 12px;
-      line-height: 154.5%;
-      letter-spacing: 0.19px;
 
       @include for-size(tablet) {
         top: 1px;
@@ -193,10 +182,6 @@
   }
 
   &__title {
-    font-size: 18px;
-    line-height: 130%;
-    letter-spacing: 1px;
-    font-weight: 400;
     margin-bottom: 39px;
 
     @include for-size(tablet) {
@@ -244,19 +229,10 @@
 
   &__button {
     border-radius: 7px;
-    background: linear-gradient(
-      180deg,
-      #308bb7 0%,
-      rgba(48, 139, 183, 0.57) 100%
-    );
+    background: linear-gradient(180deg, #308bb7 0%, rgba(48, 139, 183, 0.57) 100%);
     border: none;
     color: #fff;
     padding: 9px 17px;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.39px;
     margin-top: 17px;
     margin-bottom: 16px;
 
@@ -297,15 +273,12 @@
     text-align: center;
     font-family: Open Sans;
     max-width: 210px;
-    font-size: 11px;
-    line-height: 140%;
-    letter-spacing: 0.155px;
 
     @include for-size(tablet) {
       width: 160px;
       flex-shrink: 0;
       font-size: 7px;
-      letter-spacing: 0.20px;
+      letter-spacing: 0.2px;
     }
 
     @include for-size(laptop) {
@@ -328,13 +301,10 @@
       -webkit-text-fill-color: transparent;
 
       font-family: Open Sans;
-      font-size: 11px;
-      line-height: 140%;
-      letter-spacing: 0.155px;
 
       @include for-size(tablet) {
         font-size: 7px;
-        letter-spacing: 0.20px;
+        letter-spacing: 0.2px;
       }
 
       @include for-size(laptop) {
@@ -359,20 +329,19 @@
   background-color: transparent;
 }
 
-.search{
+.search {
   padding-left: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
 .buttonC {
-  width: 0 !important; 
+  width: 0 !important;
   padding: 0 !important;
   padding-right: 0;
   border: none !important;
   bottom: 2px;
   background-color: transparent !important;
-
 }
 
 .disabledButton {
@@ -394,24 +363,20 @@
 
 .invalidField {
   border-bottom: 1px solid red;
-} 
+}
 
-.drop{
-  font-size: 12px;
+.drop {
   width: 220px !important;
 
-  
-  @include for-size(tablet){
+  @include for-size(tablet) {
     width: 300px !important;
-
   }
 
-  @include for-size(laptop){
+  @include for-size(laptop) {
     font-size: 14px;
   }
 
-  @include for-size(desktop){
+  @include for-size(desktop) {
     font-size: 16px;
   }
-
 }

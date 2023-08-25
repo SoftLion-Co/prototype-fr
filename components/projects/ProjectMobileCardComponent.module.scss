@@ -2,32 +2,29 @@
 @import "./../styles/mixin";
 
 .card {
-    background: $our-projects-card-mobile-background;
-    box-shadow: $our-projects-card-mobile-shadow;
-    border-radius: 6px;
-  
-    &__main {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 21px 15px 10px 7px; 
-      border-bottom: 1px solid rgba(0, 0, 0, 0.43);
-    }
-  
-    &__title {
-      max-width: 48.7%; 
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 130.49%;
-      letter-spacing: 1.08px;
-    }
-  
-    &__image {
-      max-width: 46.8%; 
-      height: auto;
-    }
+  background: $our-projects-card-mobile-background;
+  box-shadow: $our-projects-card-mobile-shadow;
+  border-radius: 6px;
 
-  &__submain{
+  &__main {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 21px 15px 10px 7px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.43);
+  }
+
+  &__title {
+    max-width: 48.7%;
+    font-size: 12px;
+  }
+
+  &__image {
+    max-width: 46.8%;
+    height: auto;
+  }
+
+  &__submain {
     padding: 19px 9px 25px 9px;
     font-size: 10px;
     display: flex;
@@ -35,28 +32,27 @@
     align-items: start;
   }
 
-  &__subinfo{
+  &__subinfo {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 46%;
   }
 
-  &__desc{
+  &__desc {
     width: 54%;
     display: flex;
     justify-content: space-between;
-    align-items:flex-end;
+    align-items: flex-end;
   }
 
-  &__subdesc{
+  &__subdesc {
     width: 85%;
   }
 
-  &__arrow_icon{
+  &__arrow_icon {
     width: 20px;
     height: 20px;
     color: black;
   }
 }
- 

@@ -78,8 +78,6 @@
 
     &_text {
       font-size: 10px;
-      line-height: 13px;
-      letter-spacing: 0.4px;
 
       @include for-size(tablet) {
         font-size: 11px;

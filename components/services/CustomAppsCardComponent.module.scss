@@ -66,11 +66,7 @@
     }
   }
   &__title {
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0.6px;
     color: black;
-    line-height: 26px;
     text-align: center;
 
     @include for-size(tablet) {
@@ -112,11 +108,7 @@
   }
 
   &__text_mob {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.2px;
     color: black;
-    line-height: 15.66px;
     margin-top: 28px;
 
     @include for-size(tablet) {

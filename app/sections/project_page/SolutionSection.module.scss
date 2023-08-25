@@ -165,11 +165,8 @@
 
   &__heading_text {
     font-size: 10px;
-    line-height: 13px;
-    letter-spacing: 0.9px;
-    font-weight: 400;
-
     max-width: 152px;
+
     @include for-size(tablet) {
       font-size: 17px;
       line-height: 23px;
@@ -316,8 +313,6 @@
     margin-left: 39px;
 
     font-size: 10px;
-    line-height: 13px;
-    letter-spacing: 0.4px;
 
     @include for-size(tablet) {
       font-size: 12px;

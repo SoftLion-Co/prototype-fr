@@ -39,10 +39,10 @@
     }
 
     &.active {
-        @include for-size(tablet) {
-            width: 135px;
-            height: 129px;
-          }
+      @include for-size(tablet) {
+        width: 135px;
+        height: 129px;
+      }
       @include for-size(desktop) {
         width: 174px;
         height: 166px;
@@ -52,15 +52,14 @@
 
   &__paragraph {
     text-align: center;
-    font-size: 15px;
 
     @include for-size(tablet) {
-        display: flex;
-        align-items: center;
-        max-width: 200px;
-        height: 210px;
-        font-size: 12px;
-      }
+      display: flex;
+      align-items: center;
+      max-width: 200px;
+      height: 210px;
+      font-size: 12px;
+    }
 
     @include for-size(laptop) {
       max-width: 276px;
@@ -74,17 +73,17 @@
       font-size: 20px;
     }
     &.active {
-        @include for-size(tablet) {
-            max-width: 236px;
-            height: 219px;
-            font-size: 16px;
-          }
+      @include for-size(tablet) {
+        max-width: 236px;
+        height: 219px;
+        font-size: 16px;
+      }
 
-        @include for-size(laptop) {
-            max-width: 352px;
-            height: 269px;
-            font-size: 20px;
-          }
+      @include for-size(laptop) {
+        max-width: 352px;
+        height: 269px;
+        font-size: 20px;
+      }
       @include for-size(desktop) {
         max-width: 454px;
         height: 347px;

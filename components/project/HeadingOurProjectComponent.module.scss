@@ -7,10 +7,6 @@
     color: rgba(0, 0, 0, 0.64);
     font-family: Roboto;
     font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 0.149px;
 
     @include for-size(tablet) {
       max-width: 93px;
@@ -46,19 +42,15 @@
       stroke-width: 2.29px;
     }
 
-    @include for-size(desktop){
-        width: 522px;
-        stroke-width: 2.634px;
+    @include for-size(desktop) {
+      width: 522px;
+      stroke-width: 2.634px;
     }
   }
 
   &__text {
     color: rgba(0, 0, 0, 0.7);
     font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 1.012px;
     margin-left: 40px;
 
     @include for-size(tablet) {
