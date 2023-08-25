@@ -1,9 +1,6 @@
-"use client";
 import s from "./FooterComponent.module.scss";
 
 import Link from "next/link";
-import React, { useRef } from "react";
-
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiFacebook } from "react-icons/fi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
@@ -12,7 +9,6 @@ import Logo from "./../images/logo.svg";
 import Image from "next/image";
 
 const FooterComponent = () => {
-  const topRef = useRef(null);
   const routes = [
     { path: "/services", label: "Service" },
     { path: "/projects", label: "Our Projects" },
@@ -39,12 +35,6 @@ const FooterComponent = () => {
     },
   ];
 
-  const handleTechnologiesClick = () => {
-    if (topRef.current) {
-      topRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className={`${s.footer} ${s.container}`}>
       <div className={s.footer__block}>
@@ -65,7 +55,6 @@ const FooterComponent = () => {
                   key={index}
                   href={route.path}
                   className={s.footer__routs_name}
-                  onClick={index === 2 ? handleTechnologiesClick : undefined}
                 >
                   {route.label}
                 </Link>
@@ -107,9 +96,6 @@ const FooterComponent = () => {
             </MainButtonComponent>
           </div>
         </div>
-        <div className={s.footer__spot_blue}></div>
-        <div className={s.footer__spot_pink}></div>
-        <div className={s.footer__spot_turquoise}></div>
       </div>
     </footer>
   );
