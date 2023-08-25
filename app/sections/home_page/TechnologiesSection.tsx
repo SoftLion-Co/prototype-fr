@@ -106,6 +106,9 @@ const TechnologiesSection = () => {
                 </div>
               </div>
             ))}
+            <div className={s.technologies__spot_blue}></div>
+            <div className={s.technologies__spot_turquoise}></div>
+            <div className={s.technologies__spot_pink}></div>
           </div>
         </div>
       </div>
