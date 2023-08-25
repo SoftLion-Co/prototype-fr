@@ -1,33 +1,33 @@
-  {
+{
     "heroSection": {
-      "titleTech": "Java",
+      "titleTech": "Angular",
       "paragraph": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem."
     },
     "creationSection": [
       {
-        "description": "Web Applications: Java is well-suited for creating web applications using Java Servlets, JavaServer Pages (JSP), and JavaServer Faces (JSF). These  applications can handle client requests, interact with databases, and generate responses to be displayed on web pages"
+        "description": "Web Applications: Angular is well-suited for creating web applications using Angular Servlets, AngularServer Pages (JSP), and AngularServer Faces (JSF). These  applications can handle client requests, interact with databases, and generate responses to be displayed on web pages"
       },
       {
-        "description": "Applets: Historically, Java was widely used for creating applets, which are small programs that run on web pages within web browsers. However, due to technology limitations and security issues, applet support has been reduced, and it is recommended to use other approaches like JavaScript and HTML5."
+        "description": "Applets: Historically, Angular was widely used for creating applets, which are small programs that run on web pages within web browsers. However, due to technology limitations and security issues, applet support has been reduced, and it is recommended to use other approaches like AngularScript and HTML5."
       },
       {
-        "description": "Mobile Applications: Java can be used for developing mobile applications for the Android platform. Using Android SDK and Java, you can create apps for smartphones and tablets."
+        "description": "Mobile Applications: Angular can be used for developing mobile applications for the Android platform. Using Android SDK and Angular, you can create apps for smartphones and tablets."
       },
       {
-        "description": "Business Applications: Java is often used for developing enterprise applications, such as Customer Relationship Management (CRM) systems, database management systems, financial programs, and more."
+        "description": "Business Applications: Angular is often used for developing enterprise applications, such as Customer Relationship Management (CRM) systems, database management systems, financial programs, and more."
       }
     ],
     "advantagesSection": [
-      "Java supports multithreading, allowing the creation of multi-threaded programs that can work in parallel and optimize the utilization of system resources.",
-      "Java is a cross-platform programming language, which means that the same code can run on different operating systems without the need for recompilation. This allows creating applications that work on Windows, macOS, Linux, and other platforms.",
-      "Java is based on object-oriented programming, which enhances modularity, code maintainability, and development convenience. The object-oriented approach makes it easy to model real-world entities in the code.",
-      " Java has a vast developer community and a wide range of libraries that simplify application development. This allows quickly finding solutions for many problems and using ready-made components, speeding up the development process.",
-      "Java is known for its high performance, capable of handling large amounts of data and ensuring efficient operation in large-scale applications.",
-      "Java has built-in security mechanisms that enable running applications in a restricted environment (e.g., within a container), preventing unauthorized access to the system and potential virus spread."
+      "Angular supports multithreading, allowing the creation of multi-threaded programs that can work in parallel and optimize the utilization of system resources.",
+      "Angular is a cross-platform programming language, which means that the same code can run on different operating systems without the need for recompilation. This allows creating applications that work on Windows, macOS, Linux, and other platforms.",
+      "Angular is based on object-oriented programming, which enhances modularity, code maintainability, and development convenience. The object-oriented approach makes it easy to model real-world entities in the code.",
+      " Angular has a vast developer community and a wide range of libraries that simplify application development. This allows quickly finding solutions for many problems and using ready-made components, speeding up the development process.",
+      "Angular is known for its high performance, capable of handling large amounts of data and ensuring efficient operation in large-scale applications.",
+      "Angular has built-in security mechanisms that enable running applications in a restricted environment (e.g., within a container), preventing unauthorized access to the system and potential virus spread."
     ],
     "chooseUsSection": [
-      "SoftLion has extensive experience in developing projects using Java and possesses a broad range of knowledge in this technology. Their developers have a deep understanding of the language and its ecosystem, enabling them to create efficient and optimized programs.",
-      "Cross-platform and Portability: Utilizing Java technology allows SoftLion to develop cross-platform applications that can run on various operating systems without additional efforts. This provides the client with greater flexibility in choosing platforms and minimizes the efforts required for supporting different systems.",
+      "SoftLion has extensive experience in developing projects using Angular and possesses a broad range of knowledge in this technology. Their developers have a deep understanding of the language and its ecosystem, enabling them to create efficient and optimized programs.",
+      "Cross-platform and Portability: Utilizing Angular technology allows SoftLion to develop cross-platform applications that can run on various operating systems without additional efforts. This provides the client with greater flexibility in choosing platforms and minimizes the efforts required for supporting different systems.",
       "Support and Continuous Improvement: SoftLion goes beyond development and provides support and post-sales services. They are committed to the long-term success of their projects and continuously improve the applications to meet the evolving needs of the client.",
       "Flexibility and Scalability: SoftLion recognizes the importance of flexibility and scalability in projects. They can create applications that are easily adaptable and expandable to accommodate changing requirements and business needs."
     ],
@@ -35,22 +35,22 @@
       {
         "number": "1",
         "title": "Web Application Development",
-        "paragraph": "Companies specializing in web application development use Java to create high-quality websites and web applications. They utilize Java Servlets, JavaServer Pages (JSP), Spring Framework, and other tools to build scalable and secure web applications."
+        "paragraph": "Companies specializing in web application development use Angular to create high-quality websites and web applications. They utilize Angular Servlets, AngularServer Pages (JSP), Spring Framework, and other tools to build scalable and secure web applications."
       },
       {
         "number": "2",
         "title": "Mobile Application Development",
-        "paragraph": "Companies focusing on mobile application development can use Java to create apps for the Android platform. They use Android SDK and Java to develop various applications, ranging from simple games to corporate solutions."
+        "paragraph": "Companies focusing on mobile application development can use Angular to create apps for the Android platform. They use Android SDK and Angular to develop various applications, ranging from simple games to corporate solutions."
       },
       {
         "number": "3",
         "title": "Desktop Applications",
-        "paragraph": "Development services for desktop applications use JavaFX or Swing to create cross-platform applications that can run on different operating systems. They develop applications for data management, graphic editors, office tools, and other useful programs."
+        "paragraph": "Development services for desktop applications use AngularFX or Swing to create cross-platform applications that can run on different operating systems. They develop applications for data management, graphic editors, office tools, and other useful programs."
       },
       {
         "number": "4",
         "title": "Business Applications",
-        "paragraph": "Development services for business applications use Java to create software for customer management, financial transactions, logistics, project management, and other business automation needs."
+        "paragraph": "Development services for business applications use Angular to create software for customer management, financial transactions, logistics, project management, and other business automation needs."
       }
     ],
     "stagesSection": [
@@ -60,7 +60,7 @@
       },
       {
         "title": "Implementation (Coding)",
-        "paragraph": "At this stage, developers write the source code of the program in Java, following the established requirements and architecture. They use Java Integrated Development Environment (IDE) for coding and debugging."
+        "paragraph": "At this stage, developers write the source code of the program in Angular, following the established requirements and architecture. They use Angular Integrated Development Environment (IDE) for coding and debugging."
       },
       {
         "title": "Testing",

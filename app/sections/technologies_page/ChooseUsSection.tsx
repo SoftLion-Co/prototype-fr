@@ -18,7 +18,7 @@ const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({ chooseUsSection }) =>
   return (
     <section className={s.our__chose}>
     <div className={s.heading}>
-        <HeadingComponent text="Why you should choose us" color="purple" />
+        <HeadingComponent text="Why you should choose us" color="blue" />
       </div>
       <div className={s.container}>
         {chooseUsSection.map((item: string, index: number) => (
