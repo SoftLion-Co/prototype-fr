@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const HeaderComponent = () => {
   return (
-    <header className={s.container}>
+    <header className={s.container} id="headerTop">
       <div className={s.header}>
         <Link href="/">
           <Image className={s.header__logo} src={Logo} alt="SoftLion" />
