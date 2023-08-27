@@ -1,12 +1,12 @@
-import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
+import Link from "next/link";
 import { IoIosMenu } from "react-icons/io";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 
 const HeaderComponent = () => {
   return (
-    <header className={s.container}>
+    <header className={s.container} id="headerTop">
       <div className={s.header}>
         <Link href="/">
           <Image className={s.header__logo} src={Logo} alt="SoftLion" />

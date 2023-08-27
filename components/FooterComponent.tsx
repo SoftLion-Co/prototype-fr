@@ -1,22 +1,27 @@
-import Link from "next/link";
+"use client";
+
 import s from "./FooterComponent.module.scss";
+
+import Link from "next/link";
+import Image from "next/image";
+
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiFacebook } from "react-icons/fi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
+
 import MainButtonComponent from "./MainButtonComponent";
+
 import Logo from "./../images/logo.svg";
-import Image from "next/image";
 
 const FooterComponent = () => {
-  const routes = [
-    { path: "/", label: "Service" },
+  const routes: { path: string; label: string }[] = [
+    { path: "/services", label: "Services" },
     { path: "/projects", label: "Our Projects" },
-    { path: "/technologies", label: "Technologies" },
+    { path: "#headerTop", label: "Technologies" },
     { path: "/blogs", label: "Blog" },
-    { path: "/contact", label: "Contact Us" },
+    { path: "/contact-us", label: "Contact Us" },
   ];
-
-  const socialLinks = [
+  const socialLinks: { url: string; icon: JSX.Element }[] = [
     {
       url: "https://www.linkedin.com/company/softlion/",
       icon: <FiLinkedin className={s.footer__icon} />,
@@ -34,6 +39,17 @@ const FooterComponent = () => {
       icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
     },
   ];
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className={`${s.footer} ${s.container}`}>
@@ -55,6 +71,12 @@ const FooterComponent = () => {
                   key={index}
                   href={route.path}
                   className={s.footer__routs_name}
+                  onClick={(e) =>
+                    handleLinkClick(
+                      e,
+                      index === 2 ? route.path.substring(1) : ""
+                    )
+                  }
                 >
                   {route.label}
                 </Link>
