@@ -15,7 +15,7 @@ const ContactUsSection = () => {
           online world.
         </p>
       </div>
-      <FormComponent title="Book  consultation"/>
+      <FormComponent title="Book consultation"/>
     </div>
   );
 };
