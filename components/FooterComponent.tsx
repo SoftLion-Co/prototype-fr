@@ -15,7 +15,7 @@ import Logo from "./../images/logo.svg";
 
 const FooterComponent = () => {
   const routes: { path: string; label: string }[] = [
-    { path: "/services", label: "Service" },
+    { path: "/services", label: "Services" },
     { path: "/projects", label: "Our Projects" },
     { path: "#headerTop", label: "Technologies" },
     { path: "/blogs", label: "Blog" },
@@ -85,7 +85,7 @@ const FooterComponent = () => {
           </div>
           <div className={s.footer__colum_copy}>
             <p className={s.footer__copyright}>
-              Â©2023 Copyright SoftLion. All rights reserved.
+              ©2023 Copyright SoftLion. All rights reserved.
             </p>
             <Link href="/privacy-policy" className={s.footer__colum_name}>
               Privacy policy
