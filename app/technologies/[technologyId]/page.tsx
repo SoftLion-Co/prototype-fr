@@ -17,14 +17,14 @@ import CreationSection from "@/app/sections/technologies_page/CreationSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 
 export interface Data {
-  heroSection:        HeroSection;
-  creationSection:    CreationSection[];
-  advantagesSection:  string[];
-  chooseUsSection:    string[];
+  heroSection: HeroSection;
+  creationSection: CreationSection[];
+  advantagesSection: string[];
+  chooseUsSection: string[];
   developmentSection: DevelopmentSection[];
-  stagesSection:      StagesSection[];
-  reviewsSection:     ReviewsSection[];
-  projectsSection:    ProjectsSection[];
+  stagesSection: StagesSection[];
+  reviewsSection: ReviewsSection[];
+  projectsSection: ProjectsSection[];
 }
 
 export interface CreationSection {
@@ -32,8 +32,8 @@ export interface CreationSection {
 }
 
 export interface DevelopmentSection {
-  number:    string;
-  title:     string;
+  number: string;
+  title: string;
   paragraph: string;
 }
 
@@ -43,26 +43,25 @@ export interface HeroSection {
 }
 
 export interface ProjectsSection {
-  id:          number;
-  image:       string;
-  title:       string;
-  customer:    string;
-  year:        string;
-  author:      string;
+  id: number;
+  image: string;
+  title: string;
+  customer: string;
+  year: string;
+  author: string;
   description: string;
 }
 
 export interface ReviewsSection {
-  name:      string;
-  rating:    number;
+  name: string;
+  rating: number;
   paragraph: string;
 }
 
 export interface StagesSection {
-  title:     string;
+  title: string;
   paragraph: string;
 }
-
 
 const Technology = ({ params }: { params: any }) => {
   const technology = params.technologyId;
@@ -101,7 +100,7 @@ const Technology = ({ params }: { params: any }) => {
   //створити інтерфейс за json'oм для data ()
   return (
     <div className={s.page}>
-      <HeroSection />
+      <HeroSection heroTech={data.heroSection} />
       <CreationSection
         creationCard={data.creationSection}
         titleTech={data.heroSection.titleTech}
