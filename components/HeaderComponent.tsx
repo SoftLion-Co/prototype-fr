@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
@@ -12,13 +12,18 @@ const HeaderComponent = () => {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const [arrowDirection, setArrowDirection] = useState("down");
 
-  const handleMenuItemClick = (index:any) => {
+  const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
       setSelectedMenuItem(null);
     } else {
-      setSelectedMenuItem(index); 
+      setSelectedMenuItem(index);
     }
+  };
+
+  const handleArrowClick = () => {
+    setArrowDirection(arrowDirection === "down" ? "up" : "down");
   };
 
   const toggleModal = () => {
@@ -212,15 +217,24 @@ const HeaderComponent = () => {
                         selectedMenuItem === 0 ? s.selected : ""
                       )}
                       onClick={() => {
-                        toggleSubMenu(0);
+                        toggleSubMenu(0),
+                        handleArrowClick()
                       }}
                     >
                       <p>Services</p>
-                      <MdKeyboardArrowDown
-                        className={s.header_modal__icon}
-                        width="22px"
-                        height="22px"
-                      />
+                      {arrowDirection === "down" ? (
+                        <MdKeyboardArrowDown
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      ) : (
+                        <MdKeyboardArrowUp
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      )}
                     </div>
                   </div>
                   {openSubMenuIndex === 0 && (
@@ -279,24 +293,36 @@ const HeaderComponent = () => {
                     <p>Our Projects</p>
                   </Link>
                 </li>
-                <li className={s.header_modal__item} onClick={() => handleMenuItemClick(1)}>
+                <li
+                  className={s.header_modal__item}
+                  onClick={() => handleMenuItemClick(1)}
+                >
                   <div className={s.header_modal__link_container}>
                     <div
-                       className={classNames(
+                      className={classNames(
                         s.header_modal__link,
                         s.header__line,
                         selectedMenuItem === 1 ? s.selected : ""
                       )}
                       onClick={() => {
-                        toggleSubMenu(1);
+                        toggleSubMenu(1),
+                        handleArrowClick();
                       }}
                     >
                       <p>Technologies</p>
-                      <MdKeyboardArrowDown
-                        className={s.header_modal__icon}
-                        width="22px"
-                        height="22px"
-                      />
+                      {arrowDirection === "down" ? (
+                        <MdKeyboardArrowDown
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      ) : (
+                        <MdKeyboardArrowUp
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      )}
                     </div>
                   </div>
                   {openSubMenuIndex === 1 && (

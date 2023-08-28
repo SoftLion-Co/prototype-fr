@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   top: 0;
-  transition: all 0.5s ease !important;
+
   @include for-size(tablet) {
     height: 75px;
   }
@@ -21,10 +21,16 @@
     height: 85px;
   }
 
-
+  @keyframes slide{
+    100% {
+      opacity: 1;
+    }
+  }
   &__visible {
+    animation: slide 1.5s forwards;
     position: sticky;
     box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    opacity: 0;
   }
 }
 
@@ -47,12 +53,12 @@
       height: 2px;
       transition: left 0.3s ease-out, right 0.3s ease-out;
     }
-  
+
     &.selected::before {
       left: 0;
       right: 0;
     }
-  
+
     &:hover::before {
       left: 0;
       right: 0;
@@ -110,7 +116,15 @@
   &__item {
     list-style: none;
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
+  }
+
+  &__sub_menu > &__item {
+    @include for-size(tablet) {
+      padding-bottom: 5px;
+    }
+    @include for-size(desktop) {
+      padding-bottom: 15px;
+    }
   }
 
   &__item:hover &__sub_menu {
@@ -133,7 +147,6 @@
     @include for-size(desktop) {
       font-size: 20px;
     }
-
   }
 
   &__sub_menu {
@@ -143,7 +156,7 @@
       background-color: white;
       box-shadow: 0 12px 37px #2c2d501a;
       border-radius: 8px;
-      padding: 24px;
+      padding: 5px 18px;
       width: 100px;
       top: 30px;
       left: 0;
@@ -173,6 +186,7 @@
     }
     @include for-size(desktop) {
       width: 120px;
+      padding: 15px 24px;
     }
   }
 
@@ -290,6 +304,7 @@
   height: 100%;
   width: 100%;
   background-color: white;
+  z-index: 100;
 
   &__list {
     list-style: none;
@@ -302,7 +317,6 @@
   &__item {
     list-style: none;
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
     width: max-content;
     margin: 0 auto;
   }
@@ -342,6 +356,10 @@
     flex-direction: column;
     gap: 20px;
     padding-top: 20px;
+  }
+
+  &__sub_menu > &__item {
+    opacity: 75%;
   }
 
   &__btn_hidden {
