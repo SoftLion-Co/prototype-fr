@@ -1,5 +1,6 @@
 export interface BlogInterface {
-    category:string;
+    id:string|number;
+    category?:string;
     title: string;
     authorId: string;
     readingTime: string;

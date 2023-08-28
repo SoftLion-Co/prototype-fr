@@ -1,12 +1,13 @@
 import React from "react";
 import s from "./BlogRolledCardComponent.module.scss";
-import { BlogInterface } from "./BlogInteface";
-import blogs from "@/data/blog/blogs_data.json";
 
-const BlogRolledCardComponent: React.FC<{ id: string }> = ({ id }) => {
-  const blogData: { [key: string]: BlogInterface } = blogs;
-  const { imageSrc, title } = blogData[id];
+interface BlogRolledCardProps {
+  imageSrc: string;
+  title: string;
+}
 
+const BlogRolledCardComponent: React.FC<BlogRolledCardProps> = (data) => {
+  const { imageSrc, title } = data;
   return (
     <div className={s.blogCard}>
       <img className={s.blogCard__image} src={imageSrc} alt="Softlon image" />

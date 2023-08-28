@@ -4,7 +4,7 @@ import { Pagination } from "@mantine/core";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import s from "./AuthorBlogs.module.scss";
 
-const AuthorBlogs: FC<{ articles: string[] }> = ({ articles }) => {
+const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
   const perPage = 6;
   const pages = Math.ceil(articles.length / perPage);
   const [activePage, setPage] = useState(1);
@@ -32,7 +32,7 @@ const AuthorBlogs: FC<{ articles: string[] }> = ({ articles }) => {
         {articles
           .slice(perPage * (activePage - 1), perPage * activePage)
           .map((item) => (
-            <BlogExtendedCardComponent key={item} id={item} />
+            <BlogExtendedCardComponent key={item.id} data={item} />
           ))}
       </div>
       {pages >= 2 ? (

@@ -3,13 +3,15 @@
 import authorData from "@/data/blog/blogs_data.json";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import BlogDesktopComponent from "@/components/blog/BlogDesktopComponent";
-import BlogMobileExtendedCardComponent from "@/components/blog/BlogMobileExtendedCardComponent";
 import s from "./BlogSection.module.scss";
 import classNames from "classnames";
 import HeadingComponent from "@/components/HeadingComponent";
 import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
+import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
+import { BlogInterface } from "@/components/blog/BlogInteface";
+import useBlogsData from "@/hooks/useBlogsData";
 
-const blogIds: any = Object.keys(authorData).slice(0, 8);
+const blogs: BlogInterface[] = useBlogsData();
 
 const HomeBlog: React.FC = () => {
   return (
@@ -22,12 +24,12 @@ const HomeBlog: React.FC = () => {
             s.blogContainer__desktopSlider
           )}
         >
-          <BlogDesktopComponent blogIds={blogIds} />
+          <BlogDesktopComponent blogs={blogs} />
         </div>
         <div className={s.blogContainer__mobileSlider}>
           <MobileSliderComponent
-            data={blogIds}
-            SlideComponent={BlogMobileExtendedCardComponent}
+            data={blogs}
+            SlideComponent={BlogExtendedCardComponent}
           />
         </div>
       </div>

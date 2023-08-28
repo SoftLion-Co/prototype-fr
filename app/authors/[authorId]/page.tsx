@@ -4,16 +4,15 @@ import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import AuthorBlogs from "@/app/sections/author_page/AuthorBlogs";
 import AuthorSection from "@/app/sections/author_page/AuthorSection";
 import { usePathname, redirect } from "next/navigation";
-import { BlogInterface } from "@/components/blog/BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
-import blogs from "@/data/blog/blogs_data.json";
+import useBlogsData from "@/hooks/useBlogsData";
 
 const Author = () => {
   const id = usePathname().split("/").reverse()[0];
   const authorData: { [key: string]: AuthorInterface } = authors;
-  const blogData: { [key: string]: BlogInterface } = blogs;
   const author = authorData[id];
+  const blogData = useBlogsData();
   if (!author) {
     redirect(`/authors/${Object.keys(authorData)[0]}`);
   }
@@ -21,9 +20,7 @@ const Author = () => {
     { title: "Authors", href: "" },
     { title: author.name, href: "" },
   ];
-  const blogIds = Object.keys(blogData).filter(
-    (key) => blogData[key].authorId === id
-  );
+  const blogs = blogData.filter((item) => item.authorId === id);
 
   return (
     <div>
@@ -34,7 +31,7 @@ const Author = () => {
         occupation={author.occupation}
         description={author.generalInfo}
       />
-      <AuthorBlogs articles={blogIds}></AuthorBlogs>
+      <AuthorBlogs articles={blogs}></AuthorBlogs>
       <OurTeamSetcion />
     </div>
   );
