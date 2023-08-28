@@ -16,14 +16,11 @@ const Author = () => {
   if (!author) {
     redirect(`/authors/${Object.keys(authorData)[0]}`);
   }
-  const links = [
-    { title: "Authors", href: "" },
-    { title: author.name, href: "" },
-  ];
+  const links = [{ title: author.name, href: "" }];
   const blogs = blogData.filter((item) => item.authorId === id);
 
   return (
-    <div>
+    <div style={{ paddingBottom: "5%" }}>
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}
