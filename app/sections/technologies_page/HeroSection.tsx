@@ -5,7 +5,7 @@ import HeadingComponent from "@/components/HeadingComponent";
 import technologies from "../../../data/technologies/data_java.json";
 
 const HeroSection = () => {
-  const heroData = technologies[0].heroSection;
+  const heroData = technologies.heroSection;
 
   return (
     <section className={s.hero}>

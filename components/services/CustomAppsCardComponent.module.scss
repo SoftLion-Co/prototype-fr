@@ -47,13 +47,10 @@
     @include for-size(tablet) {
       width: 75px;
       height: 74px;
-      position: relative;
-      left: -12px;
     }
     @include for-size(laptop) {
       width: 113px;
       height: 111px;
-      position: static;
       margin-bottom: 26px;
     }
     @include for-size(desktop) {
