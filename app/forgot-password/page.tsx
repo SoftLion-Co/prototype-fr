@@ -1,11 +1,11 @@
 import s from "./page.module.scss";
 import ForgotPasswordSection from '../sections/forgot_password_page/ForgotPasswordSection';
 
-const Registration = () => {
+const ForgotPassword = () => {
   return (
-    <div>
+    <div className={s.forgot_password}>
       <ForgotPasswordSection/>
     </div>
   );
 };
-export default Registration;
+export default ForgotPassword;

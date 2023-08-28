@@ -1,5 +1,4 @@
 "use client";
-import SocialAuthorization from "@/components/login-registration/SocialAuthorizationComponent";
 import s from "./RegistrationSection.module.scss";
 import { LuUnlock } from "react-icons/lu";
 import classNames from "classnames";
@@ -56,8 +55,8 @@ const RegistrationSection = () => {
   };
 
   return (
-    <div className={classNames(s.container, s.registration)}>
-      <div className={s.wrapper}>
+    <div className={classNames(s.container, s.section)}>
+      <div className={s.section__wrapper}>
         <h2 className={s.title}>Registration</h2>
         <div className={s.information}>
           <LuUnlock className={s.information__icon} />
@@ -91,12 +90,11 @@ const RegistrationSection = () => {
             applyValidation={false}
             placeholder="Confirm your password"
           />
-          <MainButtonComponent disabled={submitDisabled} className={s.form__button} type="submit">
+          <MainButtonComponent disabled={submitDisabled} className={s.auth_button} type="submit">
             Continue
           </MainButtonComponent>
         </form>
       </div>
-      <SocialAuthorization text="You can register with" />
     </div>
   );
 };

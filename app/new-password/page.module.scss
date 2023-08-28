@@ -1,0 +1,21 @@
+@import "../../styles/mixin";
+
+.new_password {
+    margin-top: 64px;
+    margin-bottom: 104px;
+  
+    @include for-size(tablet) {
+      margin-top: 113px;
+      margin-bottom: 145px;
+    }
+  
+    @include for-size(laptop) {
+      margin-top: 168px;
+      margin-bottom: 214px;
+    }
+  
+    @include for-size(desktop) {
+      margin-top: 218px;
+      margin-bottom: 284px;
+    }
+}

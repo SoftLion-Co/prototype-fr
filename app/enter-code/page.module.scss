@@ -1,0 +1,23 @@
+@import "../../styles/colors";
+@import "../../styles/mixin";
+
+.container {
+  display: flex;
+  margin-top: 88px;
+  margin-bottom: 108px;
+
+  @include for-size(tablet) {
+    margin-top: 188px;
+    margin-bottom: 180px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: 176px;
+    margin-bottom: 186px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 181px;
+    margin-bottom: 192px;
+  }
+}

@@ -3,7 +3,7 @@ import s from "./page.module.scss";
 
 const newPassword = () => {
   return (
-    <div className={s.registration_page}>
+    <div className={s.new_password}>
       <NewPasswordSection/>
     </div>
   );

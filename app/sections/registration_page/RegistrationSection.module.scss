@@ -1,59 +1,9 @@
 @import "../../../styles/colors";
 @import "../../../styles/mixin";
 @import "../../../styles/container";
+@import "../AuthSectionsCommon.module.scss";
 
-.registration {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 65px;
-
-  @include for-size(tablet) {
-    flex-direction: row;
-    align-items: inherit;
-    gap: 102px;
-  }
-
-  @include for-size(laptop) {
-    gap: 20px;
-  }
-
-  @include for-size(desktop) {
-    gap: 38px;
-  }
-}
-
-.title {
-  text-align: center;
-  color: $blog-card-text-color;
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 130.49%;
-  letter-spacing: 2.25px;
-  margin-bottom: 25px;
-
-  @include for-size(tablet) {
-    text-align: start;
-    font-size: 26px;
-    letter-spacing: 2.4px;
-    margin-bottom: 45px;
-  }
-
-  @include for-size(laptop) {
-    font-size: 28px;
-    letter-spacing: 2.5px;
-    margin-bottom: 32px;
-  }
-
-  @include for-size(desktop) {
-    font-size: 30px;
-    letter-spacing: 2.7px;
-    margin-bottom: 34px;
-  }
-}
-
-.wrapper {
+.section__wrapper {
   max-width: 290px;
 
   @include for-size(tablet) {
@@ -110,7 +60,6 @@
       height: 22px;
     }
   }
-
   &__text {
     color: $navigation-dark;
     font-size: 12px;
@@ -156,30 +105,6 @@
 
   .mantine-Stack-root {
     width: 100%;
-  }
-
-  &__button {
-    padding: 17px 39px;
-    border-radius: 5px;
-    font-size: 15px;
-    line-height: 130.49%;
-    letter-spacing: 0.6px;
-    margin-top: 27px;
-
-    @include for-size(tablet) {
-      padding: 15px 33px;
-      margin-top: 25px;
-    }
-
-    @include for-size(laptop) {
-      padding: 17px 36px;
-      margin-top: 28px;
-    }
-
-    @include for-size(desktop) {
-      padding: 18px 40px;
-      margin-top: 30px;
-    }
   }
 }
 

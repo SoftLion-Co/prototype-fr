@@ -2,11 +2,11 @@
 import LoginSection from "../sections/login_page/LoginSection";
 import s from "./page.module.scss";
 
-const Registration = () => {
+const Login = () => {
   return (
-    <div>
+    <div className={s.login_page}>
       <LoginSection/>
     </div>
   );
 };
-export default Registration;
+export default Login;
