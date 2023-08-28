@@ -4,30 +4,27 @@
 
 .header_container {
   width: 100%;
-  background-color: #fff;
-}
-
-.fixed {
-  position: fixed;
-  top: -100px;
+  height: 62px;
+  background-color: white;
+  z-index: 10;
   left: 0;
   right: 0;
-  background-color: white;
-  z-index: 1000;
-  height: 57px;
-  opacity: 0;
-  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  top: 0;
+  transition: all 0.5s ease !important;
   @include for-size(tablet) {
-    height: 77px;
+    height: 75px;
   }
   @include for-size(laptop) {
-    height: 97px;
+    height: 80px;
+  }
+  @include for-size(desktop) {
+    height: 85px;
   }
 
-  &__active {
-    top: 0;
-    opacity: 1;
+
+  &__visible {
+    position: sticky;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
   }
 }
 
@@ -35,7 +32,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 19px;
+  padding: 19px 0;
+
+  &__line {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      background: $burger-menu-color;
+      bottom: -3px;
+      height: 2px;
+      transition: left 0.3s ease-out, right 0.3s ease-out;
+    }
+  
+    &.selected::before {
+      left: 0;
+      right: 0;
+    }
+  
+    &:hover::before {
+      left: 0;
+      right: 0;
+    }
+  }
 
   &__logo {
     width: 74px;
@@ -72,14 +94,23 @@
   }
 
   &__list {
-    display: flex;
-    align-items: center;
-    gap: 22px;
+    @include for-size(tablet) {
+      display: flex;
+      align-items: center;
+      gap: 31px;
+    }
+    @include for-size(laptop) {
+      gap: 42px;
+    }
+    @include for-size(desktop) {
+      gap: 53px;
+    }
   }
 
   &__item {
-    padding: 0;
-    margin: 0;
+    list-style: none;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
   }
 
   &__item:hover &__sub_menu {
@@ -102,60 +133,47 @@
     @include for-size(desktop) {
       font-size: 20px;
     }
-    transition: box-shadow 0.3s ease;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      height: 2px;
-      background-color: rgb(48, 139, 183);
-      transition: width 0.1s ease, transform 0.3s ease;
-      width: 0;
-      transform-origin: left center;
-      transform: scaleX(0);
-    }
-    &::before {
-      left: 0;
-    }
-
-    &::after {
-      right: 0;
-    }
-
-    &:hover {
-  
-      &::before,
-      &::after {
-        width: 50%;
-        transform: scaleX(1);
-      }
-    }
-  }
-
-  &__has_submenu {
-    position: relative;
   }
 
   &__sub_menu {
     @include for-size(tablet) {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      padding: 20px;
-      width: 120px;
-      height: max-content;
-
       background-color: white;
-      border-radius: 10px;
-      padding: 10px;
-      z-index: 1000;
+      box-shadow: 0 12px 37px #2c2d501a;
+      border-radius: 8px;
+      padding: 24px;
+      width: 100px;
+      top: 30px;
+      left: 0;
+
+      &::before {
+        content: "";
+        display: flex;
+        position: absolute;
+        left: 28px;
+        top: -3px;
+        width: 9px;
+        height: 12px;
+        background-size: cover;
+        width: 20px;
+        height: 12px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -10px;
+        height: 10px;
+        background: transparent;
+      }
     }
-  }
-  &__sub_menu > li {
-    padding: 10px;
+    @include for-size(desktop) {
+      width: 120px;
+    }
   }
 
   &__btn_login {
@@ -281,22 +299,12 @@
     padding-top: 19px;
   }
 
-  &__list &__item:last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 50px;
-  }
-
-  &__list > li {
+  &__item {
+    list-style: none;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
     width: max-content;
     margin: 0 auto;
-  }
-
-  &__item {
-    padding: 0;
-    margin: 0;
   }
 
   &__link_container {
@@ -317,35 +325,8 @@
     color: black;
     line-height: 26px;
     position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      height: 2px;
-      background-color: rgb(48, 139, 183);
-      transition: width 0.1s ease, transform 0.3s ease; 
-      width: 0;
-      transform-origin: left center;
-      transform: scaleX(0);
-    }
-    &::before {
-      left: 0;
-    }
-
-    &::after {
-      right: 0;
-    }
-
-    &:hover {
-      color: rgb(48, 139, 183);
-      &::before,
-      &::after {
-        width: 50%;
-        transform: scaleX(1);
-      }
-    }
   }
+
   &__icon {
     opacity: 0.3;
     position: absolute;
@@ -361,11 +342,6 @@
     flex-direction: column;
     gap: 20px;
     padding-top: 20px;
-  }
-
-  &__sub_menu > li {
-    width: max-content;
-    margin: 0 auto;
   }
 
   &__btn_hidden {
