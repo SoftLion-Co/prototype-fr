@@ -101,7 +101,7 @@ const Technology = ({ params }: { params: any }) => {
   //створити інтерфейс за json'oм для data ()
   return (
     <div className={s.page}>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <CreationSection
         creationCard={data.creationSection}
         titleTech={data.heroSection.titleTech}
