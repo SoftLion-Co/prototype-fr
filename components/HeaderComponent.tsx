@@ -123,7 +123,7 @@ const HeaderComponent = () => {
                 <ul className={s.header__sub_menu}>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/java"
+                      href="/technologies/java"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Java
@@ -131,7 +131,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/react"
+                      href="/technologies/react"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       React.js
@@ -139,7 +139,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/angular"
+                      href="/technologies/angular"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Angular
@@ -147,7 +147,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/vue"
+                      href="/technologies/vue"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Vue.js
@@ -155,7 +155,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/node"
+                      href="/technologies/node"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Node.js
@@ -163,7 +163,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/net"
+                      href="/technologies/net"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       .NET

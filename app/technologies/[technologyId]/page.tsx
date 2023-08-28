@@ -6,6 +6,7 @@ import data_react from "@/data/technologies/data_react.json";
 import data_node from "@/data/technologies/data_node.json";
 import data_vue from "@/data/technologies/data_vue.json";
 import data_angular from "@/data/technologies/data_angular.json";
+import data_net from "@/data/technologies/data_net.json";
 
 import HeroSection from "@/app/sections/technologies_page/HeroSection";
 import AdvantagesSection from "@/app/sections/technologies_page/AdvantagesSection";
@@ -85,6 +86,9 @@ const Technology = ({ params }: { params: any }) => {
       case "angular":
         data = data_angular;
         break;
+      case "net":
+      data = data_net;
+      break;
       default:
         break;
     }
