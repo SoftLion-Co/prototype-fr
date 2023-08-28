@@ -34,6 +34,8 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
   };
 
   return (
+    <div>
+  
     <section className={s.advantages}>
       <div className={s.advantages__heading}>
         <HeadingComponent
@@ -84,7 +86,7 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
           ))}
         </Carousel>
       </div>
-    </section>
+    </section></div>
   );
 };
 

@@ -10,7 +10,7 @@ const SeeMoreButtonComponent: FC<SeeMoreButtonComponentProps> = ({ path }) => {
   return (
     <div className={s.see_more}>
       <div className={s.see_more__background}>
-        <Link href={path}>
+        <Link href={`/${path}`}>
           <span className={s.see_more__text}>see more</span>
         </Link>
       </div>
