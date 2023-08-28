@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  height: 130px;
   border-radius: 5px;
   padding: 33px 16px 33px 17px;
   background: linear-gradient(
@@ -20,16 +21,19 @@
     padding: 51px 35px 52px;
     justify-content: center;
     border-radius: 8px;
+    height: 160px;
   }
 
   @include for-size(laptop) {
     min-width: 378px;
     padding: 84px 72px 85px 72px;
     border-radius: 12px;
+    height: 230px;
   }
 
   @include for-size(desktop) {
     min-width: 492px;
+    height: 290px;
     padding: 110px 94px 111px 94px;
     border-radius: 15px;
   }
@@ -53,19 +57,23 @@
   &__head {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin-bottom: 26px;
     margin-top: 11px;
+    gap: 15px;
 
     @include for-size(tablet) {
+      justify-content: center;
       margin-bottom: 39px;
       margin-top: 17px;
+      gap: 15px;
     }
 
     @include for-size(laptop) {
       margin-top: 25px;
       margin-bottom: 59px;
+      gap: 30px;
     }
 
     @include for-size(desktop) {
@@ -83,23 +91,23 @@
     font-weight: 400;
     line-height: 130.49%;
     letter-spacing: 1.26px;
-    margin-left: 5px;
 
     @include for-size(tablet) {
       font-size: 15px;
       letter-spacing: 1.391px;
-      margin-left: 20px;
+      max-width: 167px;
     }
 
     @include for-size(laptop) {
       font-size: 23px;
       letter-spacing: 2.079px;
+      max-width: 250px;
     }
 
     @include for-size(desktop) {
-      margin-left: 29px;
       font-size: 30px;
       letter-spacing: 2.7px;
+      max-width: 326px;
     }
   }
 

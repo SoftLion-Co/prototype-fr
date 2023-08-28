@@ -5,7 +5,7 @@ import Security from "../../images/security.svg";
 interface ServiceSecurityCardComponentProps {
   title?: string;
   description?: string;
-  data?: { description: string; title: string }; // Combine both description and title properties inside data
+  data?: { description: string; title: string };
 }
 
 const ServiceSecurityCardComponent: React.FC<
