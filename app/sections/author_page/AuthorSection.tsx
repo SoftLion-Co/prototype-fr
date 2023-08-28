@@ -22,7 +22,13 @@ const AuthorPage: FC<AuthorPageProps> = ({
       <div className={classNames(s.page, s.container)}>
         <div className={s.info}>
           <div className={s.profile}>
-            <img className={s.profile__img} src={imgSrc} alt="" />
+            <Image
+              className={s.profile__img}
+              height={300}
+              width={300}
+              src={imgSrc}
+              alt="Softlon image"
+            />
             <p className={s.profile__name}>{name}</p>
           </div>
           <p className={s.info__occupation}>{occupation}</p>
