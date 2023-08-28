@@ -87,8 +87,6 @@
   }
 
   &__text {
-    letter-spacing: 0.5px;
-
     @include for-size(tablet) {
       width: 380px;
     }

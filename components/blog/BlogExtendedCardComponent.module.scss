@@ -136,6 +136,10 @@
   &__title {
     margin-bottom: 5px;
 
+    @include for-size(tablet) {
+      font-size: 1.2em;
+    }
+
     @include for-size(laptop) {
       margin-bottom: 10px;
     }
@@ -143,11 +147,6 @@
     @include for-size(desktop) {
       margin-bottom: 15px;
     }
-
-    line-height: 1.4em;
-    font-size: 1.2em;
-    font-weight: 400;
-    letter-spacing: 0.09em;
   }
 
   &__author {

@@ -54,6 +54,7 @@
   &__name {
     max-width: 310px;
     margin-bottom: 15px;
+    font-weight: 700;
 
     @include for-size(tablet) {
       font-size: 24px;

@@ -77,8 +77,6 @@
     }
 
     &_text {
-      font-size: 10px;
-
       @include for-size(tablet) {
         font-size: 11px;
         line-height: 14px;

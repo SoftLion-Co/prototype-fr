@@ -47,6 +47,7 @@ $borderR: calc($currentW * 12 / 290);
     height: 55%;
 
     &__text {
+      font-size: min(14px, 0.9em);
       align-self: flex-start;
       position: relative;
       overflow: hidden;
@@ -71,8 +72,6 @@ $borderR: calc($currentW * 12 / 290);
     width: 100%;
     text-align: left;
     font-size: 1.05em;
-    font-weight: 400;
-    letter-spacing: 0.09em;
     margin-bottom: 15%;
   }
   &__author {

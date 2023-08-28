@@ -312,8 +312,6 @@
   &__text {
     margin-left: 39px;
 
-    font-size: 10px;
-
     @include for-size(tablet) {
       font-size: 12px;
       line-height: 15px;

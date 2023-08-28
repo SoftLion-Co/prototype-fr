@@ -40,14 +40,10 @@ const BlogExtendedCardComponent: React.FC<BlogExtendedCardComponentProps> = ({
               </p>
             ))}
           </div>
-          <h2 className={s.info__title}>{title}</h2>
+          <h4 className={s.info__title}>{title}</h4>
           <div className={s.info__author}>
             <Link href={`authors/${authorId}`}>
-              <img
-                alt="Softlion image"
-                className={s.info__author__icon}
-                src={authorIconSrc}
-              />
+              <img alt="Softlion image" className={s.info__author__icon} src={authorIconSrc} />
             </Link>
             <p className={s.info__author__name}>{author}</p>
           </div>

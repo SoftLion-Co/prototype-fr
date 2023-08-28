@@ -23,7 +23,6 @@ code {
 
 a {
   text-decoration: none;
-  font-size: 12px;
   letter-spacing: 0.5px;
 }
 
@@ -31,7 +30,7 @@ button {
   cursor: pointer;
 
   @include for-size(phone) {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0.5px;
@@ -86,10 +85,8 @@ h4 {
 }
 
 p {
-  @include for-size(phone) {
-    font-size: 14px;
-    letter-spacing: 0.6px;
-  }
+  font-size: 14px;
+  letter-spacing: 0.6px;
 }
 
 ul,
