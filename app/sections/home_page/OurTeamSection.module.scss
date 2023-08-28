@@ -4,8 +4,13 @@
 
 .team {
   margin-bottom: 60px;
+  width: 100%;
+
   @include for-size(tablet) {
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   @include for-size(laptop) {
@@ -15,9 +20,11 @@
   @include for-size(desktop) {
     margin-bottom: 140px;
   }
+
   &__title {
     box-sizing: border-box;
     margin-bottom: 25px;
+    width: 100%;
 
     @include for-size(tablet) {
       text-align: left;
@@ -64,8 +71,17 @@
 
 .desctop__slider {
   display: none;
+
   @include for-size(tablet) {
-    display: initial;
+    display: block;
+    max-width: 738px;
+  }
+  @include for-size(laptop) {
+    max-width: 1080px;
+  }
+
+  @include for-size(desktop) {
+    max-width: 1400px;
   }
 }
 
@@ -88,29 +104,29 @@
 
   &__left {
     @include for-size(tablet) {
-      margin-left: -74px;
+      margin-left: -54px;
     }
 
     @include for-size(laptop) {
-      margin-left: -92px;
+      margin-left: -82px;
     }
 
     @include for-size(desktop) {
-      margin-left: -112px;
+      margin-left: -98px;
     }
   }
 
   &__right {
     @include for-size(tablet) {
-      margin-right: -74px;
+      margin-right: -54px;
     }
 
     @include for-size(laptop) {
-      margin-right: -92px;
+      margin-right: -82px;
     }
 
     @include for-size(desktop) {
-      margin-right: -112px;
+      margin-right: -98px;
     }
   }
 }

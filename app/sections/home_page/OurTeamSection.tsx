@@ -80,13 +80,11 @@ const OurTeamSetcion = () => {
   };
 
   return (
-    <div className={classNames(s.container, s.team)}>
+    <div className={s.team}>
+      <div className={s.container}>
       <HeadingComponent customClass={s.team__title} text="Our team" />
-      <div className={s.mobile__slider}>
-        <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
-      </div>
       <div className={s.desctop__slider}>
-        <Carousel
+      <Carousel
           getEmblaApi={setEmbla}
           classNames={{ control: s.custom__control }}
           onSlideChange={(index) => {
@@ -108,6 +106,10 @@ const OurTeamSetcion = () => {
             </Carousel.Slide>
           ))}
         </Carousel>
+      </div>
+      </div>
+      <div className={s.mobile__slider}>
+        <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
       </div>
     </div>
   );
