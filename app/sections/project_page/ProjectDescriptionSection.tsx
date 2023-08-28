@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import s from "./ProjectDescriptionSection.module.scss";
 import React, { FC } from "react";
+import Image from "next/image";
 
 const ProjectDescriptionSection: FC = () => {
   const response = {
@@ -24,7 +25,13 @@ const ProjectDescriptionSection: FC = () => {
         <p className={s.article__year}>Year: {year}</p>
         <p className={s.article__location}>Location: {location}</p>
       </div>
-      <img src={imgSrc} alt={title} className={s.article__image} />
+      <Image
+        className={s.article__image}
+        height={300}
+        width={500}
+        src={imgSrc}
+        alt={title}
+      />
     </section>
   );
 };

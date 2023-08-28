@@ -4,7 +4,7 @@ import { PiArrowRightThin } from "react-icons/pi";
 import { BlogInterface } from "./BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
-import blogs from "@/data/blog/blogs_data.json";
+import Image from "next/image";
 
 const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
   data,
@@ -16,7 +16,13 @@ const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
   return (
     <div className={s.card}>
       <div className={s.card__container}>
-        <img alt="Softlion image" className={s.image} src={imageSrc} />
+        <Image
+          className={s.image}
+          height={300}
+          width={300}
+          src={imageSrc}
+          alt="Softlon image"
+        />
         <div className={s.info}>
           <div className={s.tags}>
             {tags?.map((tag, index) => (
@@ -28,10 +34,12 @@ const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
           <h2 className={s.info__title}>{title}</h2>
           <div className={s.info__author}>
             <Link href={`/authors/${authorId}`}>
-              <img
-                alt="Softlion image"
+              <Image
                 className={s.info__author__icon}
+                height={50}
+                width={50}
                 src={author.imgSrc}
+                alt="Softlon image"
               />
             </Link>
             <p className={s.info__author__name}>{author.name}</p>
