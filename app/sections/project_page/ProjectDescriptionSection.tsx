@@ -17,7 +17,8 @@ const ProjectDescriptionSection: FC = () => {
   const { title, description, time, year, location, imgSrc } = response;
 
   return (
-    <section className={classNames(s.container, s.project)}>
+    <div className={s.container}>
+    <section className={s.project}>
       <div className={s.article}>
         <h2 className={s.article__title}>{title}</h2>
         <p className={s.article__description}>{description}</p>
@@ -33,6 +34,8 @@ const ProjectDescriptionSection: FC = () => {
         alt={title}
       />
     </section>
+      <img src={imgSrc} alt={title} className={s.article__image} />
+    </section></div>
   );
 };
 

@@ -1,4 +1,3 @@
-[
   {
     "heroSection": {
       "titleTech": "Java",
@@ -73,26 +72,60 @@
       }
     ],
     "reviewsSection": [
+
+        {
+            "name": "Yura",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Paul",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Dima",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Vira",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Anatoliy",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        }
+      ],
+    "projectsSection": [
       {
-        "name": "Yura",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        "id": 1,
+        "image": "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+        "title": "Landing page of traveling company",
+        "customer": "customer: Move432432423",
+        "year": "year: 2022",
+        "author": "author: SoftLion",
+        "description": "In this project, we developed the design, implemented it, and provide further support"
       },
       {
-        "name": "Paul",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        "id": 2,
+        "image": "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+        "title": "Landing page of traveling company",
+        "customer": "customer: Move43543543",
+        "year": "year: 2022",
+        "author": "author: SoftLion",
+        "description": "In this project, we developed the design, implemented it, and provide further support"
       },
       {
-        "name": "Dima",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Vira",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        "id": 3,
+        "image": "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+        "title": "Landing page of traveling company",
+        "customer": "customer: Movetertgfd",
+        "year": "year: 2022",
+        "author": "author: SoftLion",
+        "description": "In this project, we developed the design, implemented it, and provide further support"
       }
     ]
   }
-]
