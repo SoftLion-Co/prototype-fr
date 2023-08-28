@@ -4,11 +4,11 @@ import s from "./BigButtonComponent.module.scss";
 
 const BigButtonComponent = () => {
   return (
-    <div>
-      <Link href={"/privacy-policy"} className={s.big__button}>
+    <button className={s.big__button}>
+      <Link href={"/contact-us"} className={s.link} >
         Book Consultation
       </Link>
-    </div>
+    </button>
   );
 };
 

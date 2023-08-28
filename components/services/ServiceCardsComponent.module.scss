@@ -4,7 +4,6 @@
 .service {
   display: flex;
   justify-content: center;
-  // align-items: flex-start;
   @include for-size(tablet) {
     gap: 21px;
   }
@@ -13,6 +12,16 @@
   }
   @include for-size(desktop) {
     gap: 40px;
+  }
+
+  &__mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include for-size(tablet) {
+      display: none;
+    }
   }
 
   &__card_left {
@@ -45,12 +54,5 @@
       rgba(242, 212, 239, 0.39) 0%,
       rgba(242, 213, 241, 0.26) 100%
     );
-  }
-}
-
-.service__mobile {
-  width: 100%;
-  @include for-size(tablet) {
-    display: none;
   }
 }

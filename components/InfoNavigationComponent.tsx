@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Anchor } from "@mantine/core";
 import s from "./InfoNavigationComponent.module.scss";
 import { BsHouseDoor } from "react-icons/bs";
 import classNames from "classnames";
+import Link from "next/link";
 
 interface InfoNavigationComponentProps {
   links: { title: string; href: string }[];
@@ -18,29 +18,28 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
     ...links,
   ];
 
-  const items = allLinks.map((item, index) => (
-    <Anchor
-      href={item.href}
+  const separator = "—";
+  const totalLinks = allLinks.length;
+
+  const items = allLinks.map(({ title, href }, index) => (
+    <Link
+      href={href}
       key={index}
-      className={
-        index === allLinks.length - 1
-          ? `${s.custom_breadcrumbs__link} ${s.custom_breadcrumbs__active}`
-          : s.custom_breadcrumbs__link
-      }
+      className={classNames(s.custom_breadcrumbs__link, {
+        [s.custom_breadcrumbs__active]: index === totalLinks - 1,
+      })}
     >
-      {item.title}
-    </Anchor>
+      {title}
+    </Link>
   ));
 
   return (
     <div className={classNames(s.container, s.custom_breadcrumbs)}>
       {items.map((item, index) => (
-        <React.Fragment key={index}>
-          {index > 0 && (
-            <span className={s.custom_breadcrumbs__separator}>—</span>
-          )}
+        <>
+          {index > 0 && <span key={index} className={s.custom_breadcrumbs__separator}>{separator}</span>}
           {item}
-        </React.Fragment>
+        </>
       ))}
     </div>
   );

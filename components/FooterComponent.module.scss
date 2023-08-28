@@ -17,72 +17,95 @@
     margin-top: 61px;
     margin-bottom: 94px;
   }
-  &__mainWrap {
+
+  &__block {
+    position: relative;
     display: flex;
-  }
-  &__secondBlock {
-    display: none;
-    @include for-size(tablet) {
-      margin-right: auto;
+    justify-content: space-between;
+    align-items: center;
 
-      margin-left: 221px;
+    @include for-size(tablet) {
+      align-items: stretch;
+      height: 139px;
+    }
+    @include for-size(laptop) {
+      height: 205px;
+    }
+
+    @include for-size(desktop) {
+      height: 264px;
+    }
+
+    &_first {
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 13px;
+
+      @include for-size(tablet) {
+        width: 61%;
+        gap: 0;
+      }
     }
-    @include for-size(laptop) {
-      margin-right: auto;
-      margin-left: 350px;
+    &_second {
       display: flex;
-    }
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
 
-    @include for-size(desktop) {
-      margin-right: auto;
-      margin-left: 418px;
+      @include for-size(tablet) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__colum {
+    &_link {
       display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      gap: 30px;
+      @include for-size(tablet) {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+    &_copy {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column-reverse;
+      gap: 28px;
+
+      @include for-size(tablet) {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+    &_name {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      color: $blog-card-text-color;
+
+      display: flex;
+      align-items: center;
+
+      @include for-size(tablet) {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+      @include for-size(laptop) {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
     }
   }
-  &__firstBlock {
-    max-width: 95px;
-    margin-right: auto;
-    @include for-size(tablet) {
-      max-width: none;
-      margin-right: 0;
-    }
-    @include for-size(laptop) {
-      max-width: none;
-      margin-right: 0;
-    }
 
-    @include for-size(desktop) {
-      max-width: none;
-      margin-right: 0;
-    }
-  }
-  &__thirdBlock {
-    margin-top: 54px;
-    @include for-size(tablet) {
-      margin-top: 0;
-    }
-    @include for-size(laptop) {
-      margin-top: 0;
-    }
-
-    @include for-size(desktop) {
-      margin-top: 0;
-    }
-  }
-  &__btnFooter {
-    margin-top: 10px;
-    @include for-size(tablet) {
-      margin-top: 57px;
-    }
-    @include for-size(laptop) {
-      margin-top: 107px;
-    }
-
-    @include for-size(desktop) {
-      margin-top: 107px;
-    }
-
+  &__btn {
     &_text {
       font-size: 11.5px !important;
       @include for-size(tablet) {
@@ -96,33 +119,26 @@
       }
     }
   }
-
   &__email {
     font-size: 11px;
     letter-spacing: 0.3px;
-    margin-top: 17px;
+
     color: $blog-card-text-color;
     @include for-size(tablet) {
       font-size: 12px;
       letter-spacing: 0.4px;
-      margin-top: 16px;
     }
     @include for-size(laptop) {
       font-size: 15px;
       letter-spacing: 0.8px;
-      margin-top: 23px;
     }
 
     @include for-size(desktop) {
       font-size: 20px;
-      letter-spacing: 0.8px;
-      margin-top: 30px;
     }
   }
-  &__thirdBlockLink {
-    color: $blog-card-text-color;
-  }
-  &__icons {
+
+  &__icon {
     width: 16px;
     height: 16px;
     @include for-size(tablet) {
@@ -139,8 +155,11 @@
       height: 24px;
     }
   }
-  &__iconsWrap {
+
+  &__icons {
     display: flex;
+    justify-content: flex-end;
+
     gap: 9px;
     @include for-size(tablet) {
       gap: 7px;
@@ -153,139 +172,94 @@
       gap: 14px;
     }
   }
-  &__thirdBlock {
+  &__content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+
+    gap: 17px;
+
+    @include for-size(tablet) {
+      gap: 16px;
+    }
+    @include for-size(laptop) {
+      gap: 23px;
+    }
+
+    @include for-size(desktop) {
+      gap: 30px;
+    }
   }
-  &__routeWrap2 {
+
+  &__link {
+    color: $blog-card-text-color;
+  }
+
+  &__routs {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin-bottom: 20px;
     @include for-size(tablet) {
       gap: 3px;
-      margin-bottom: 23px;
-      display: none;
     }
     @include for-size(laptop) {
       gap: 5px;
-      margin-bottom: 42px;
-      display: none;
     }
-
-    @include for-size(desktop) {
-      gap: 5px;
-      margin-bottom: 42px;
-      display: none;
-    }
-  }
-  &__routeWrap {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-bottom: 20px;
-    @include for-size(tablet) {
-      gap: 3px;
-      margin-bottom: 23px;
-    }
-    @include for-size(laptop) {
-      gap: 5px;
-      margin-bottom: 42px;
-    }
-
-    @include for-size(desktop) {
-      gap: 5px;
-      margin-bottom: 42px;
-    }
-  }
-  &__routeNamePriv {
-    font-size: 12px;
-    letter-spacing: 0.4px;
-    white-space: nowrap;
-    color: $blog-card-text-color;
-    margin-bottom: 28px;
-    @include for-size(tablet) {
+    &_name {
       font-size: 12px;
-      letter-spacing: 0.5px;
-      display: none;
-    }
-    @include for-size(laptop) {
-      font-size: 15px;
-      display: none;
-      letter-spacing: 0.8px;
-    }
+      letter-spacing: 0.4px;
+      color: $blog-card-text-color;
 
-    @include for-size(desktop) {
-      font-size: 20px;
-      letter-spacing: 0.8px;
-      display: none;
+      @include for-size(tablet) {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+      @include for-size(laptop) {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
     }
   }
-  &__routeName {
-    font-size: 12px;
-    letter-spacing: 0.4px;
-    white-space: nowrap;
-    color: $blog-card-text-color;
-    @include for-size(tablet) {
-      font-size: 12px;
-      letter-spacing: 0.5px;
-    }
-    @include for-size(laptop) {
-      font-size: 15px;
-      letter-spacing: 0.8px;
-    }
 
-    @include for-size(desktop) {
-      font-size: 20px;
-      letter-spacing: 0.8px;
-    }
-  }
   &__logo {
     max-width: 94px;
     height: 19px;
-    margin-bottom: 30px;
     @include for-size(tablet) {
       max-width: 63px;
       height: 13px;
-      margin-bottom: 93px;
     }
     @include for-size(laptop) {
       max-width: 92px;
       height: 18px;
-      margin-bottom: 135px;
     }
 
     @include for-size(desktop) {
       max-width: 119px;
       height: 24px;
-      margin-bottom: 175px;
     }
   }
-  &__logoText {
+  &__copyright {
     font-size: 12px;
-    min-width: 156px;
-    height: 31px;
     letter-spacing: 0.5px;
 
     @include for-size(tablet) {
       font-size: 12px;
       letter-spacing: 0.4px;
       max-width: 156px;
-      height: 34px;
     }
     @include for-size(laptop) {
       font-size: 15px;
       letter-spacing: 0.7px;
       max-width: 286px;
-      height: 65px;
     }
 
     @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
       max-width: 286px;
-      height: 65px;
     }
   }
 }

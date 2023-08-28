@@ -9,7 +9,7 @@ const Services = () => {
   const links = [{ title: "Services", href: "#" }];
 
   return (
-    <div className={s.service_page}>
+    <div>
       <InfoNavigationComponent links={links} />
       <DesignSection />
       <DevelopmentSection />

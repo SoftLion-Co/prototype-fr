@@ -10,6 +10,7 @@ import Image from "next/image";
 interface BlogExtendedCardComponentProps {
   id: number;
   title: string;
+  authorId: string;
   author: string;
   authorIconSrc: string;
   readingTime: string;
@@ -27,20 +28,22 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className={s.blogDesktop}>
+    <div className={s.slider}>
       <Carousel
         getEmblaApi={setEmbla}
         loop
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
+        
         previousControlIcon={
           <Image
             className={s.arrow}
             height={30}
             width={30}
             src={ArrowLeft}
-            alt="45"></Image>
+            alt="<"
+          ></Image>
         }
         nextControlIcon={
           <Image
@@ -48,7 +51,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowRight}
-            alt="45"></Image>
+            alt=">"
+          ></Image>
         }
         skipSnaps
         styles={{
@@ -60,6 +64,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             bottom: 0,
             top: 0,
             padding: 0,
+            maxWidth: "100vw",
             width: "106%",
             left: "-3%",
           },
@@ -72,15 +77,17 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             alignItems: "center",
           },
         }}
-        align="center">
+        align="center"
+      >
         {cardsData.map((x, index) => (
           <>
             {currentSlide === index ? (
-              <div className={s.blogDesktop__extendedCard}>
+              <div className={s.slider__card_extended}>
                 <Carousel.Slide key={index}>
                   <BlogExtendedCardComponent
                     id={x.id}
                     text={x.text}
+                    authorId={x.authorId}
                     author={x.author}
                     imageSrc={x.imageSrc}
                     authorIconSrc={x.authorIconSrc}
@@ -95,12 +102,13 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                 className={
                   currentSlide - 1 === index ||
                   (currentSlide === 0 && index === cardsData.length - 1)
-                    ? s.blogDesktop__rolledCardLeft
+                    ? s.slider__card_left
                     : currentSlide + 1 === index ||
                       (currentSlide === cardsData.length - 1 && index === 0)
-                    ? s.blogDesktop__rolledCardRight
-                    : s.blogDesktop__rolledCardDefault
-                }>
+                    ? s.slider__card_right
+                    : s.slider__card_default
+                }
+              >
                 <Carousel.Slide
                   onClick={
                     currentSlide - 1 === index ||
@@ -115,7 +123,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                         }
                       : undefined
                   }
-                  key={index}>
+                  key={index}
+                >
                   <BlogRolledCardComponent
                     title={x.title}
                     imageSrc={x.imageSrc}

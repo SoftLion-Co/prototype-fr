@@ -2,6 +2,7 @@
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoIosMenu } from "react-icons/io";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";

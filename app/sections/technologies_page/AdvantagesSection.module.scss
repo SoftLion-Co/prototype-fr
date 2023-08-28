@@ -1,0 +1,92 @@
+@import "./../styles/mixin";
+@import "./../styles/container";
+
+.advantages {
+  @include for-size(tablet) {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @include for-size(laptop) {
+    max-width: none;
+  }
+
+  &__heading {
+    margin-bottom: 5%;
+  }
+
+  &__cards_mobile {
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+
+  &__cards_desktop {
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+    }
+  }
+}
+
+.custom__control {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.arrow {
+  @include for-size(tablet) {
+    height: 26px;
+    width: auto;
+  }
+
+  @include for-size(laptop) {
+    height: 42px;
+  }
+
+  @include for-size(desktop) {
+    height: 55px;
+  }
+
+  &__left {
+    @include for-size(tablet) {
+      margin-left: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-left: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-left: -112px;
+    }
+  }
+
+  &__right {
+    @include for-size(tablet) {
+      margin-right: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-right: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-right: -112px;
+    }
+  }
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container {
+  @include for-size(tablet) {
+    padding: 0;
+  }
+}
