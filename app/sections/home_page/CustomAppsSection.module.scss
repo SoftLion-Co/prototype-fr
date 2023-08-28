@@ -25,6 +25,7 @@
     @include for-size(tablet) {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
 
       & > :first-child {
         margin-top: 111px;

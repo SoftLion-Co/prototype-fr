@@ -9,8 +9,8 @@
   }
 }
 
-.blogDesktop {
-  width: 780px;
+.slider {
+  width: 768px;
   button {
     display: none;
   }
@@ -29,7 +29,7 @@
       display: flex;
     }
   }
-  &__extendedCard {
+  &__card_extended {
     overflow: visible;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@
     }
   }
 
-  &__rolledCardLeft {
+  &__card_left {
     @include for-size(tablet) {
       padding: 0 78px 0 0;
     }
@@ -55,7 +55,7 @@
       padding: 0 147px 0 0;
     }
   }
-  &__rolledCardRight {
+  &__card_right {
     @include for-size(tablet) {
       padding: 0 0 0 78px;
     }
@@ -66,7 +66,7 @@
       padding: 0 0 0 147px;
     }
   }
-  &__rolledCardDefault {
+  &__card_default {
     @include for-size(tablet) {
       padding: 0 39px 0 39px;
     }

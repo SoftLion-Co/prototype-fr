@@ -3,6 +3,18 @@
 @import "./../../../styles/mixin";
 
 .team {
+  margin-bottom: 60px;
+  @include for-size(tablet) {
+    margin-bottom: 80px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 100px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 140px;
+  }
   &__title {
     box-sizing: border-box;
     margin-bottom: 25px;
