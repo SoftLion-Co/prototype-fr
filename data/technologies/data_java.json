@@ -87,27 +87,33 @@
       }
     ],
     "reviewsSection": [
-      {
-        "name": "Yura",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Paul",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Dima",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Vira",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      }
-    ],
+
+        {
+            "name": "Yura",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Paul",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Dima",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Vira",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Anatoliy",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        }
+
     "projectsSection": [
       {
         "id": 1,

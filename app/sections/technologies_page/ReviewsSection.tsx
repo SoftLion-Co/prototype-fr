@@ -1,4 +1,3 @@
-// ReviewsSection.tsx
 import React, { FC, useState } from "react";
 import s from "./ReviewsSection.module.scss";
 import classNames from "classnames";
@@ -27,8 +26,24 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const setActiveSlide = (index: number): void => {
-    embla?.scrollTo(index);
-    setCurrentSlide(index);
+    if (embla) {
+      const currentIndex = currentSlide;
+      const numSlides = reviewsSection.length;
+
+      let newIndex;
+
+      if (
+        index === currentIndex + 1 ||
+        (currentIndex === numSlides - 1 && index === 0)
+      ) {
+        newIndex = (currentIndex + 1) % numSlides;
+      } else {
+        newIndex = currentIndex - 1 < 0 ? numSlides - 1 : currentIndex - 1;
+      }
+
+      embla.scrollTo(newIndex);
+      setCurrentSlide(newIndex);
+    }
   };
 
   return (
@@ -68,13 +83,17 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
           loop
           slidesToScroll={1}
         >
-          {reviewsSection.map((slide, index) => (
-            <Carousel.Slide key={index} onClick={() => setActiveSlide(index)}>
-              <div className={classNames(s.review__card, s.custom__slide)}>
-                <ReviewsCardComponent data={slide} />
-              </div>
-            </Carousel.Slide>
-          ))}
+          {reviewsSection.map((slide, index) => {
+            const isActiveSlide = currentSlide === index;
+
+            return (
+              <Carousel.Slide key={index} onClick={() => setActiveSlide(index)}>
+                <div className={classNames(s.review__card, s.custom__slide)}>
+                  <ReviewsCardComponent data={slide} />
+                </div>
+              </Carousel.Slide>
+            );
+          })}
         </Carousel>
       </div>
     </section>
