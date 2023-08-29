@@ -1,4 +1,3 @@
-// ReviewsSection.tsx
 import React, { FC, useState } from "react";
 import s from "./ReviewsSection.module.scss";
 import classNames from "classnames";
@@ -12,28 +11,39 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
 
-interface reviewsItem {
+interface ReviewData {
   name: string;
   rating: number;
   paragraph: string;
 }
 
 interface Props {
-  reviewsSection: reviewsItem[];
+  reviewsSection: ReviewData[];
 }
 
 const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slideData = reviewsSection.map((review, index) => ({
-    id: index.toString(),
-    isActive: currentSlide === index,
-  }));
-
   const setActiveSlide = (index: number): void => {
-    embla?.scrollTo(index);
-    setCurrentSlide(index);
+    if (embla) {
+      const currentIndex = currentSlide;
+      const numSlides = reviewsSection.length;
+
+      let newIndex;
+
+      if (
+        index === currentIndex + 1 ||
+        (currentIndex === numSlides - 1 && index === 0)
+      ) {
+        newIndex = (currentIndex + 1) % numSlides;
+      } else {
+        newIndex = currentIndex - 1 < 0 ? numSlides - 1 : currentIndex - 1;
+      }
+
+      embla.scrollTo(newIndex);
+      setCurrentSlide(newIndex);
+    }
   };
 
   return (
@@ -44,7 +54,7 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
 
       <div className={s.review__cards_mobile}>
         <MobileSliderComponent
-          data={slideData}
+          data={reviewsSection}
           SlideComponent={ReviewsCardComponent}
         />
       </div>
@@ -52,20 +62,20 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
       <div className={classNames(s.container, s.review__content)}>
         <Carousel
           getEmblaApi={setEmbla}
-          onSlideChange={(index) => setCurrentSlide(index)}
           classNames={{ control: s.custom__control }}
+          onSlideChange={(index) => setCurrentSlide(index)}
           previousControlIcon={
             <Image
               className={classNames(s.arrow, s.arrow__left)}
               src={ArrowLeft}
-              alt="45"
+              alt="<"
             />
           }
           nextControlIcon={
             <Image
               className={classNames(s.arrow, s.arrow__right)}
               src={ArrowRight}
-              alt="45"
+              alt=">"
             />
           }
           align="start"
@@ -73,16 +83,17 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
           loop
           slidesToScroll={1}
         >
-          {slideData.map((slide, index) => (
-            <Carousel.Slide
-              key={slide.id}
-              onClick={() => setActiveSlide(index)}
-            >
-              <div className={classNames(s.review__card, s.custom__slide)}>
-                <ReviewsCardComponent data={reviewsSection[index]} />
-              </div>
-            </Carousel.Slide>
-          ))}
+          {reviewsSection.map((slide, index) => {
+            const isActiveSlide = currentSlide === index;
+
+            return (
+              <Carousel.Slide key={index} onClick={() => setActiveSlide(index)}>
+                <div className={classNames(s.review__card, s.custom__slide)}>
+                  <ReviewsCardComponent data={slide} />
+                </div>
+              </Carousel.Slide>
+            );
+          })}
         </Carousel>
       </div>
     </section>

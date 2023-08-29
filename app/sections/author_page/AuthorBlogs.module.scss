@@ -1,0 +1,27 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/container";
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0 40px 0;
+  gap: 40px;
+  @include for-size(tablet) {
+    gap: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 60px;
+    padding: 100px 0 5% 0;
+  }
+  @include for-size(laptop) {
+    padding: 120px 0 5% 0;
+    row-gap: 80px;
+  }
+  @include for-size(desktop) {
+    row-gap: 100px;
+  }
+}
+.container {
+  padding-bottom: 3%;
+}

@@ -4,7 +4,7 @@ import { SectionScrolIndicator } from "@/components/blog/BlogSectionScrolIndicat
 import classNames from "classnames";
 import Image from "next/image";
 
-export const ArticleSection = () => {
+const ArticleSection = () => {
   const response = {
     authorImg:
       "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
@@ -97,3 +97,5 @@ export const ArticleSection = () => {
     </section>
   );
 };
+
+export default ArticleSection;

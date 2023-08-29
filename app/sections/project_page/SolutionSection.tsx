@@ -10,7 +10,7 @@ interface DesignInfoItem {
   photo: string;
 }
 
-const silutionInfo: DesignInfoItem[] = [
+const solutionInfo: DesignInfoItem[] = [
   {
     photo: "Discover",
     title: "",
@@ -53,7 +53,7 @@ const SolutionSection = () => {
       </div>
       <div className={s.solution__lists}>
         <ul className={`${s.solution__list} ${s.container}`}>
-          {silutionInfo.map((info, index) => (
+          {solutionInfo.map((info, index) => (
             <li key={index} className={s.solution__item}>
               {info.title && info.title !== "/" && (
                 <h3
@@ -75,7 +75,7 @@ const SolutionSection = () => {
           ))}
         </ul>
         <ul className={`${s.solution__photos} ${s.container}`}>
-          {silutionInfo
+          {solutionInfo
             .filter((info) => info.imageSrc && info.imageSrc !== "/")
             .map((info) => (
               <li className={s[`solution__${info.class}`]}>

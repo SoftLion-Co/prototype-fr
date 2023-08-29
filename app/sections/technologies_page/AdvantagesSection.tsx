@@ -34,6 +34,8 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
   };
 
   return (
+    <div>
+  
     <section className={s.advantages}>
       <div className={s.advantages__heading}>
         <HeadingComponent
@@ -57,14 +59,14 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
             <Image
               className={classNames(s.arrow, s.arrow__left)}
               src={ArrowLeft}
-              alt="45"
+              alt="<"
             />
           }
           nextControlIcon={
             <Image
               className={classNames(s.arrow, s.arrow__right)}
               src={ArrowRight}
-              alt="45"
+              alt=">"
             />
           }
           slideSize="33.333%"
@@ -84,7 +86,7 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
           ))}
         </Carousel>
       </div>
-    </section>
+    </section></div>
   );
 };
 

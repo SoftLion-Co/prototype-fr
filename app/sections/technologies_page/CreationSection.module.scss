@@ -1,0 +1,25 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.our__card {
+  display: none;
+
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+    column-gap: 43px;
+    row-gap: 45px;
+    flex-wrap: wrap;
+  }
+}
+
+.mobile {
+  display: block;
+  @include for-size(tablet) {
+    display: none;
+  }
+}
+
+.heading {
+  margin-bottom: 7%;
+}

@@ -3,22 +3,26 @@
 @import "../styles/mixin";
 
 .footer {
-  @include for-size(tablet) {
-    margin-top: 32px;
-    margin-bottom: 50px;
-  }
+  margin-top: 30px;
+  margin-bottom: 30px;
 
-  @include for-size(laptop) {
-    margin-top: 61px;
-    margin-bottom: 94px;
-  }
+@include for-size(tablet) {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
 
-  @include for-size(desktop) {
-    margin-top: 61px;
-    margin-bottom: 94px;
-  }
+@include for-size(laptop) {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@include for-size(desktop) {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 
   &__block {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
