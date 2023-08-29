@@ -1,12 +1,12 @@
-"use client";
-import BlogsSection from "@/app/sections/blog_page/BlogsSection";
+import s from "./page.module.scss";
 
 const Blogs = () => {
   const links = [{ title: "Blog", href: "#" }];
 
   return (
     <div>
-      <BlogsSection />
+        <h1>Admin dashboard</h1>
+      
     </div>
   );
 };

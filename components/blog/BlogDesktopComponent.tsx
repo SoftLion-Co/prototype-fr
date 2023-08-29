@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BlogRolledCardComponent from "./BlogRolledCardComponent";
 import BlogExtendedCardComponent from "./BlogExtendedCardComponent";
 import s from "./BlogDesktopComponent.module.scss";
@@ -6,24 +6,11 @@ import { Carousel, Embla } from "@mantine/carousel";
 import ArrowLeft from "../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
+import { BlogInterface } from "./BlogInteface";
 
-interface BlogExtendedCardComponentProps {
-  id: number;
-  title: string;
-  authorId: string;
-  author: string;
-  authorIconSrc: string;
-  readingTime: string;
-  text: string;
-  imageSrc: string;
-  tags: string[];
-}
-
-interface BlogDesktopProps {
-  cardsData: BlogExtendedCardComponentProps[];
-}
-
-const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
+const BlogDesktopComponent: React.FC<{ blogs: BlogInterface[] }> = ({
+  blogs,
+}) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -35,7 +22,6 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         onSlideChange={(index) => {
           setCurrentSlide(index);
         }}
-        
         previousControlIcon={
           <Image
             className={s.arrow}
@@ -79,32 +65,22 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
         }}
         align="center"
       >
-        {cardsData.map((x, index) => (
+        {blogs.map((item, index) => (
           <>
             {currentSlide === index ? (
               <div className={s.slider__card_extended}>
                 <Carousel.Slide key={index}>
-                  <BlogExtendedCardComponent
-                    id={x.id}
-                    text={x.text}
-                    authorId={x.authorId}
-                    author={x.author}
-                    imageSrc={x.imageSrc}
-                    authorIconSrc={x.authorIconSrc}
-                    title={x.title}
-                    readingTime={x.readingTime}
-                    tags={x.tags}
-                  />
+                  <BlogExtendedCardComponent data={item} />
                 </Carousel.Slide>
               </div>
             ) : (
               <div
                 className={
                   currentSlide - 1 === index ||
-                  (currentSlide === 0 && index === cardsData.length - 1)
+                  (currentSlide === 0 && index === blogs.length - 1)
                     ? s.slider__card_left
                     : currentSlide + 1 === index ||
-                      (currentSlide === cardsData.length - 1 && index === 0)
+                      (currentSlide === blogs.length - 1 && index === 0)
                     ? s.slider__card_right
                     : s.slider__card_default
                 }
@@ -112,12 +88,12 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                 <Carousel.Slide
                   onClick={
                     currentSlide - 1 === index ||
-                    (currentSlide === 0 && index === cardsData.length - 1)
+                    (currentSlide === 0 && index === blogs.length - 1)
                       ? () => {
                           embla?.scrollPrev();
                         }
                       : currentSlide + 1 === index ||
-                        (currentSlide === cardsData.length - 1 && index === 0)
+                        (currentSlide === blogs.length - 1 && index === 0)
                       ? () => {
                           embla?.scrollNext();
                         }
@@ -126,8 +102,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
                   key={index}
                 >
                   <BlogRolledCardComponent
-                    title={x.title}
-                    imageSrc={x.imageSrc}
+                    title={item.title}
+                    imageSrc={item.imageSrc}
                   />
                 </Carousel.Slide>
               </div>

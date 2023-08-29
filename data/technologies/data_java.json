@@ -1,4 +1,3 @@
-[
   {
     "heroSection": {
       "titleTech": "Java",
@@ -17,20 +16,6 @@
       {
         "description": "Business Applications: Java is often used for developing enterprise applications, such as Customer Relationship Management (CRM) systems, database management systems, financial programs, and more."
       }
-    ],
-    "advantagesSection": [
-      "Java supports multithreading, allowing the creation of multi-threaded programs that can work in parallel and optimize the utilization of system resources.",
-      "Java is a cross-platform programming language, which means that the same code can run on different operating systems without the need for recompilation. This allows creating applications that work on Windows, macOS, Linux, and other platforms.",
-      "Java is based on object-oriented programming, which enhances modularity, code maintainability, and development convenience. The object-oriented approach makes it easy to model real-world entities in the code.",
-      " Java has a vast developer community and a wide range of libraries that simplify application development. This allows quickly finding solutions for many problems and using ready-made components, speeding up the development process.",
-      "Java is known for its high performance, capable of handling large amounts of data and ensuring efficient operation in large-scale applications.",
-      "Java has built-in security mechanisms that enable running applications in a restricted environment (e.g., within a container), preventing unauthorized access to the system and potential virus spread."
-    ],
-    "chooseUsSection": [
-      "SoftLion has extensive experience in developing projects using Java and possesses a broad range of knowledge in this technology. Their developers have a deep understanding of the language and its ecosystem, enabling them to create efficient and optimized programs.",
-      "Cross-platform and Portability: Utilizing Java technology allows SoftLion to develop cross-platform applications that can run on various operating systems without additional efforts. This provides the client with greater flexibility in choosing platforms and minimizes the efforts required for supporting different systems.",
-      "Support and Continuous Improvement: SoftLion goes beyond development and provides support and post-sales services. They are committed to the long-term success of their projects and continuously improve the applications to meet the evolving needs of the client.",
-      "Flexibility and Scalability: SoftLion recognizes the importance of flexibility and scalability in projects. They can create applications that are easily adaptable and expandable to accommodate changing requirements and business needs."
     ],
     "advantagesSection": [
       "Java supports multithreading, allowing the creation of multi-threaded programs that can work in parallel and optimize the utilization of system resources.",
@@ -87,27 +72,33 @@
       }
     ],
     "reviewsSection": [
-      {
-        "name": "Yura",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Paul",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Dima",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      },
-      {
-        "name": "Vira",
-        "rating": 5,
-        "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
-      }
-    ],
+
+        {
+            "name": "Yura",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Paul",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Dima",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Vira",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        },
+        {
+            "name": "Anatoliy",
+            "rating": 5,
+            "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+        }
+      ],
     "projectsSection": [
       {
         "id": 1,
@@ -138,4 +129,3 @@
       }
     ]
   }
-]
