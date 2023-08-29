@@ -1,21 +1,23 @@
 @import "../../styles/mixin";
 
 .login_page {
-  margin-top: 64px;
-  margin-bottom: 104px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  min-height: calc(100vh - 275px);
 
   @include for-size(tablet) {
-    margin-top: 113px;
-    margin-bottom: 145px;
+    margin-top: 20px;
+    min-height: calc(100vh - 286px);
   }
 
   @include for-size(laptop) {
-    margin-top: 168px;
-    margin-bottom: 214px;
+    margin-top: 30px;
+    min-height: calc(100vh - 459px);
   }
 
   @include for-size(desktop) {
-    margin-top: 218px;
-    margin-bottom: 284px;
+    margin-top: 40px;
+    min-height: calc(100vh - 520px);
   }
 }

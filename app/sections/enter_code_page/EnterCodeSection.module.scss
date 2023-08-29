@@ -38,40 +38,41 @@
     outline: transparent;
     border-bottom: 1px solid $blog-card-text-color;
     width: 25px;
-    font-size: 14px;
+    font-size: 22px;
+    font-family: Roboto;
     text-align: center;
 
     @include for-size(tablet) {
       width: 45px;
-      font-size: 20px;
+      font-size: 38px;
     }
 
     @include for-size(laptop) {
       width: 50px;
-      font-size: 24px;
+      font-size: 46px;
     }
 
     @include for-size(desktop) {
       width: 56px;
-      font-size: 28px;
+      font-size: 52px;
     }
   }
 }
 
 .option {
   display: flex;
-  margin-bottom: 34px;
+  margin-bottom: 16px;
 
   @include for-size(tablet) {
-    margin-bottom: 26px;
+    margin-bottom: 22px;
   }
 
   @include for-size(laptop) {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
 
   @include for-size(desktop) {
-    margin-bottom: 54px;
+    margin-bottom: 32px;
   }
 }
 
@@ -83,17 +84,17 @@
 
 .message {
   color: $navigation-light;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   @include for-size(tablet) {
-    margin-bottom: 28px;
+    margin-bottom: 14px;
   }
 
   @include for-size(laptop) {
-    margin-bottom: 36px;
+    margin-bottom: 18px;
   }
 
   @include for-size(desktop) {
-    margin-bottom: 44px;
+    margin-bottom: 22px;
   }
 }

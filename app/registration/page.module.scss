@@ -1,17 +1,23 @@
 @import "../../styles/mixin";
 
 .registration_page {
-  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  min-height: calc(100vh - 275px);
 
   @include for-size(tablet) {
-    margin-top: 140px;
+    margin-top: 20px;
+    min-height: calc(100vh - 286px);
   }
 
   @include for-size(laptop) {
-    margin-top: 112px;
+    margin-top: 30px;
+    min-height: calc(100vh - 459px);
   }
 
   @include for-size(desktop) {
-    margin-top: 96px;
+    margin-top: 40px;
+    min-height: calc(100vh - 520px);
   }
 }

@@ -3,21 +3,22 @@
 
 .container {
   display: flex;
-  margin-top: 88px;
-  margin-bottom: 108px;
+  align-items: center;
+  margin-top: 10px;
+  min-height: calc(100vh - 275px);
 
   @include for-size(tablet) {
-    margin-top: 188px;
-    margin-bottom: 180px;
+    margin-top: 20px;
+    min-height: calc(100vh - 286px);
   }
 
   @include for-size(laptop) {
-    margin-top: 176px;
-    margin-bottom: 186px;
+    margin-top: 30px;
+    min-height: calc(100vh - 459px);
   }
 
   @include for-size(desktop) {
-    margin-top: 181px;
-    margin-bottom: 192px;
+    margin-top: 40px;
+    min-height: calc(100vh - 520px);
   }
 }

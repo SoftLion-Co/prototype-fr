@@ -1,21 +1,23 @@
 @import "../../styles/mixin";
 
 .forgot_password {
-    margin-top: 80px;
-    margin-bottom: 89px;
-  
-    @include for-size(tablet) {
-      margin-top: 160px;
-      margin-bottom: 195px;
-    }
-  
-    @include for-size(laptop) {
-      margin-top: 180px;
-      margin-bottom: 176px;
-    }
-  
-    @include for-size(desktop) {
-      margin-top: 230px;
-      margin-bottom: 186px;
-    }
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  min-height: calc(100vh - 275px);
+
+  @include for-size(tablet) {
+    margin-top: 20px;
+    min-height: calc(100vh - 286px);
+  }
+
+  @include for-size(laptop) {
+    margin-top: 30px;
+    min-height: calc(100vh - 459px);
+  }
+
+  @include for-size(desktop) {
+    margin-top: 40px;
+    min-height: calc(100vh - 520px);
+  }
 }
