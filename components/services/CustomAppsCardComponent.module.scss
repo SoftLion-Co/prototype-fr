@@ -4,7 +4,6 @@
 
 .servicecard {
   width: 100%;
-  min-height: 395px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -18,7 +17,7 @@
 
   @include for-size(tablet) {
     width: 348px;
-    padding: 64px 30px 15px 30px;
+    padding: 20px;
     border-radius: 8px;
     align-items: left;
   }
@@ -87,8 +86,8 @@
 
     @include for-size(tablet) {
       display: block;
-      font-size: 10.23px;
-      width: 245px;
+      font-size: 14px;
+      width: 280px;
       letter-spacing: 0.04px;
     }
     @include for-size(laptop) {
@@ -104,7 +103,7 @@
   }
 
   &__text_mob {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.2px;
     color: black;

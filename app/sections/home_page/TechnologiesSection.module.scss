@@ -8,6 +8,10 @@
   }
 
   &__image_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
     /* ... */
     z-index: 2;
     transition: display 1s ease; /* Добавляем переход для свойства display */
@@ -101,9 +105,9 @@
   }
 
   &__icon_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    position: absolute;
+    top: 6px;
+    right: 6px;
     @include for-size(laptop) {
       display: none;
     }

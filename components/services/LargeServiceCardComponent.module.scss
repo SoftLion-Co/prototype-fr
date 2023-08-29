@@ -14,7 +14,6 @@
     align-items: center;
     flex-direction: column;
     border-radius: 8px;
-    min-height: 325px;
     padding: 40px 20px 40px 20px;
 
     @include for-size(tablet) {
@@ -85,7 +84,7 @@
 
   &__paragraph {
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     @include for-size(laptop) {
       font-size: 16px;

@@ -23,3 +23,11 @@
     }
   }
 }
+
+.blog {
+  &__heading {
+    @include for-size(mobile) {
+      margin-bottom: 50px;
+    }
+  }
+}
