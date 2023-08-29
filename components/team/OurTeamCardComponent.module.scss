@@ -6,10 +6,16 @@
   display: flex;
   gap: 29px;
   align-items: center;
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 30px 5px;
+  background: linear-gradient(90deg, rgba(175, 218, 237, 0.14) 0%, rgba(190, 244, 205, 0.34) 35.3%, rgba(243, 182, 241, 0.1) 100%);
 
   @include for-size(tablet) {
     flex-direction: column;
     gap: 10px;
+    box-shadow: none;
+    background: transparent;
   }
 
   @include for-size(laptop) {
