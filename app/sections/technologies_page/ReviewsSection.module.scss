@@ -1,32 +1,6 @@
 @import "./../../../styles/mixin";
 @import "./../../../styles/colors";
-// @import "./../../../styles/container";
-
-.container {
-  max-width: 320px;
-  padding: 0 16px;
-  margin: 0 auto;
-
-  @media (min-width: 375px) {
-    max-width: 480px;
-    padding: 0 20px;
-  }
-
-  @media (min-width: 768px) {
-    max-width: 760px;
-    padding: 0 15px;
-  }
-
-  @media (min-width: 1280px) {
-    max-width: 1100px;
-    padding: 0 100px;
-  }
-
-  @media (min-width: 1600px) {
-    max-width: 1420px;
-    padding: 0 100px;
-  }
-}
+@import "./../../../styles/container";
 
 .review {
   &__heading {
@@ -80,7 +54,7 @@
       display: none;
     }
     @include for-size(tablet) {
-      margin-left: -74px;
+      margin-left: -60px;
     }
 
     @include for-size(laptop) {
@@ -97,7 +71,7 @@
       display: none;
     }
     @include for-size(tablet) {
-      margin-right: -74px;
+      margin-right: -60px;
     }
 
     @include for-size(laptop) {
