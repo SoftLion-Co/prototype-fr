@@ -11,9 +11,15 @@ const Services = () => {
   return (
     <div>
       <InfoNavigationComponent links={links} />
-      <DesignSection />
-      <DevelopmentSection />
-      <CustomAppsSection />
+      <div id="design">
+        <DesignSection />
+      </div>
+      <div id="development">
+        <DevelopmentSection />
+      </div>
+      <div id="apps">
+        <CustomAppsSection />
+      </div>
       <SecuritySection />
     </div>
   );

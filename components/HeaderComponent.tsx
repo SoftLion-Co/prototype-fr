@@ -101,7 +101,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                 <ul className={s.header__sub_menu}>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/design"
+                      href="/services#design"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Design
@@ -109,7 +109,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/development"
+                      href="/services#development"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Development
@@ -117,7 +117,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/apps"
+                      href="/services#apps"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Apps

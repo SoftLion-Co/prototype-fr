@@ -14,6 +14,7 @@
   background: $cookies-background;
   box-shadow: 11px 12px 5.8px 0px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
+  height: 100%;
 
   @include for-size(tablet) {
     width: 348px;
