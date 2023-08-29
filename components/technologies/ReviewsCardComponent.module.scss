@@ -17,6 +17,11 @@
       width: 100%;
     }
 
+    @include for-size(laptop) {
+      width: 100%;
+      margin: 15px;
+    }
+
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     &:hover {
       box-shadow: 1px 5px 7px 0px rgba(0, 0, 0, 0.2);
@@ -86,14 +91,14 @@
     letter-spacing: 0.8px;
 
     @include for-size(tablet) {
-      width: 300px;
+      width: 280px;
     }
     @include for-size(laptop) {
       width: 460px;
       min-height: 140px;
     }
     @include for-size(desktop) {
-      width: 600px;
+      width: 620px;
       min-height: 120px;
     }
   }

@@ -79,7 +79,7 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
             />
           }
           align="start"
-          slideSize="50%"
+          slideSize="48%"
           loop
           slidesToScroll={1}
         >
