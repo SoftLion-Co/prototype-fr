@@ -28,7 +28,7 @@ const securityCardsData = [
   },
   {
     id: 4,
-    title: "Used of Secure Data Transmission",
+    title: "Use of Secure Data Transmission",
     description:
       "We utilize secure data transmission protocols, such as HTTPS, to encrypt and protect information transmitted between users and the application or website. This helps prevent interception of information during transmission.",
   },
