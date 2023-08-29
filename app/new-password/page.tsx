@@ -1,9 +1,9 @@
 import NewPasswordSection from "../sections/new_password_page/NewPasswordSection";
-import s from "./page.module.scss";
+import s from "../../app/sections/AuthSectionsCommon.module.scss";
 
 const newPassword = () => {
   return (
-    <div className={s.new_password}>
+    <div className={s.container_page}>
       <NewPasswordSection/>
     </div>
   );

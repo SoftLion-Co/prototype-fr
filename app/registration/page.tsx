@@ -1,9 +1,9 @@
 import RegistrationSection from "./../sections/registration_page/RegistrationSection";
-import s from "./page.module.scss";
+import s from "../../app/sections/AuthSectionsCommon.module.scss";
 
 const Registration = () => {
   return (
-    <div className={s.registration_page}>
+    <div className={s.container_page}>
       <RegistrationSection />
     </div>
   );

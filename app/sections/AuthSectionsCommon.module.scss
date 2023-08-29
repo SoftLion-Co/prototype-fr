@@ -131,3 +131,26 @@
     color: $placeholder-color;
   }
 }
+
+.container_page {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  min-height: calc(100vh - 353px);
+
+  @include for-size(tablet) {
+    margin-top: 30px;
+    min-height: calc(100vh - 314px);
+  }
+
+  @include for-size(laptop) {
+    margin-top: 40px;
+    min-height: calc(100vh - 405px);
+    
+  }
+
+  @include for-size(desktop) {
+    margin-top: 60px;
+    min-height: calc(100vh - 530px);
+  }
+}

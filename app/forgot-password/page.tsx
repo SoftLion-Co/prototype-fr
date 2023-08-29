@@ -1,9 +1,9 @@
-import s from "./page.module.scss";
+import s from "../../app/sections/AuthSectionsCommon.module.scss";
 import ForgotPasswordSection from '../sections/forgot_password_page/ForgotPasswordSection';
 
 const ForgotPassword = () => {
   return (
-    <div className={s.forgot_password}>
+    <div className={s.container_page}>
       <ForgotPasswordSection/>
     </div>
   );
