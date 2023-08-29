@@ -228,23 +228,18 @@
   &__text_ecommerce {
     text-align: center;
 
-    font-size: 15px;
+    font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.6px;
     padding-right: 15px;
     padding-left: 15px;
 
     @include for-size(tablet) {
-      font-size: 16px;
-      line-height: 16px;
-      letter-spacing: 0.6px;
-
       padding-right: 18px;
-      padding-left: 18px;
     }
 
     @include for-size(laptop) {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 18px;
       letter-spacing: 0.7px;
     }
