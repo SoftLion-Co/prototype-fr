@@ -40,30 +40,28 @@ const HeaderComponent = () => {
     toggleModal();
   };
 
+  const [isHeaderVisible, setHeaderVisible] = useState(true);
+
   useEffect(() => {
     const handleScroll = () => {
-      const currentPrevScroll = window.scrollY;
-      const headerContainer = document.querySelector(
-        `.${s.header_container}`
-      ) as HTMLElement;
+      
+      const currentScroll = window.scrollY;
+      const deltaY = currentScroll - prevScrollPos;
 
-      if (headerContainer) {
-        if (currentPrevScroll === 0) {
-          headerContainer.classList.remove(s.header_container__visible);
-        } else if (prevScrollPos > currentPrevScroll) {
-          headerContainer.classList.add(s.header_container__visible);
-        } else {
-          headerContainer.classList.remove(s.header_container__visible);
-        }
+      if (deltaY > 0 && isHeaderVisible) {
+        setHeaderVisible(currentScroll <= 20);
+      } else if (deltaY < 0 && !isHeaderVisible) {
+        setHeaderVisible(true);
       }
-      setPrevScrollPos(currentPrevScroll);
+
+      setPrevScrollPos(currentScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+  }, [prevScrollPos, isHeaderVisible]);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -74,7 +72,11 @@ const HeaderComponent = () => {
   }, [isModalOpen]);
 
   return (
-    <header className={s.header_container}>
+    <header
+      className={classNames(s.header_container, {
+        [s.header_hidden]: !isHeaderVisible,
+      })}
+    >
       <div className={s.container}>
         <div className={s.header}>
           <div>
