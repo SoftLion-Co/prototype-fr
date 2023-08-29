@@ -1,6 +1,5 @@
 "use client";
 
-import authorData from "@/data/blog/blogs_data.json";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import BlogDesktopComponent from "@/components/blog/BlogDesktopComponent";
 import s from "./BlogSection.module.scss";

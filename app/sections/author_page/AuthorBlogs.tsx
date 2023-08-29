@@ -26,6 +26,7 @@ const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
   return (
     <div className={s.container}>
       <div id="articles" className={s.articles}>
