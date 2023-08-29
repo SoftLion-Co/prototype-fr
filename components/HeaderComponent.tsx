@@ -13,7 +13,8 @@ const HeaderComponent = () => {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
-  const [arrowDirection, setArrowDirection] = useState("down");
+  const [arrowDirection1, setArrowDirection1] = useState("down");
+const [arrowDirection2, setArrowDirection2] = useState("down");
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
@@ -23,8 +24,14 @@ const HeaderComponent = () => {
     }
   };
 
-  const handleArrowClick = () => {
-    setArrowDirection(arrowDirection === "down" ? "up" : "down");
+  const headerHeight = 85;
+
+  const handleArrowClick1 = () => {
+    setArrowDirection1(arrowDirection1 === "down" ? "up" : "down");
+  };
+  
+  const handleArrowClick2 = () => {
+    setArrowDirection2(arrowDirection2 === "down" ? "up" : "down");
   };
 
   const toggleModal = () => {
@@ -73,10 +80,11 @@ const HeaderComponent = () => {
 
   return (
     <header
-      className={classNames(s.header_container, {
-        [s.header_hidden]: !isHeaderVisible,
-      })}
-    >
+  className={classNames(s.header_container, {
+    [s.header_hidden]: !isHeaderVisible,
+    [s.header_visible]: isHeaderVisible,
+  })}
+>
       <div className={s.container}>
         <div className={s.header}>
           <div>
@@ -220,11 +228,11 @@ const HeaderComponent = () => {
                       )}
                       onClick={() => {
                         toggleSubMenu(0),
-                        handleArrowClick()
+                        handleArrowClick1()
                       }}
                     >
                       <p>Services</p>
-                      {arrowDirection === "down" ? (
+                      {arrowDirection1 === "down" ? (
                         <MdKeyboardArrowDown
                           className={s.header_modal__icon}
                           width="22px"
@@ -308,11 +316,11 @@ const HeaderComponent = () => {
                       )}
                       onClick={() => {
                         toggleSubMenu(1),
-                        handleArrowClick();
+                        handleArrowClick2();
                       }}
                     >
                       <p>Technologies</p>
-                      {arrowDirection === "down" ? (
+                      {arrowDirection2 === "down" ? (
                         <MdKeyboardArrowDown
                           className={s.header_modal__icon}
                           width="22px"

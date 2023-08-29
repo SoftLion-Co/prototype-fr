@@ -2,6 +2,7 @@ import "./../styles/main.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";
+import s from "./layout.module.scss"
 
 export const metadata = {
   title: "SoftLion",
@@ -21,7 +22,9 @@ export default function RootLayout({
       </head>
       <body>
         <HeaderComponent />
-        {children}
+        <div className={s.page}>
+          {children}
+        </div>
         <FooterComponent />
       </body>
     </html>
