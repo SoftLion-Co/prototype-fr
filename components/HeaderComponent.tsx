@@ -43,7 +43,6 @@ const HeaderComponent = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentPrevScroll = window.scrollY;
-      console.log(currentPrevScroll);
       const headerContainer = document.querySelector(
         `.${s.header_container}`
       ) as HTMLElement;
