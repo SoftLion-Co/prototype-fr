@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import s from "./ProjectDescriptionSection.module.scss";
 import React, { FC } from "react";
+import Image from "next/image";
 
 const ProjectDescriptionSection: FC = () => {
   const response = {
@@ -17,16 +18,23 @@ const ProjectDescriptionSection: FC = () => {
 
   return (
     <div className={s.container}>
-    <section className={s.project}>
-      <div className={s.article}>
-        <h2 className={s.article__title}>{title}</h2>
-        <p className={s.article__description}>{description}</p>
-        <p className={s.article__time}>Time development: {time}</p>
-        <p className={s.article__year}>Year: {year}</p>
-        <p className={s.article__location}>Location: {location}</p>
-      </div>
-      <img src={imgSrc} alt={title} className={s.article__image} />
-    </section></div>
+      <section className={s.project}>
+        <div className={s.article}>
+          <h2 className={s.article__title}>{title}</h2>
+          <p className={s.article__description}>{description}</p>
+          <p className={s.article__time}>Time development: {time}</p>
+          <p className={s.article__year}>Year: {year}</p>
+          <p className={s.article__location}>Location: {location}</p>
+        </div>
+        <Image
+          className={s.article__image}
+          height={300}
+          width={500}
+          src={imgSrc}
+          alt={title}
+        />
+      </section>
+    </div>
   );
 };
 
