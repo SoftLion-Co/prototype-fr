@@ -90,9 +90,6 @@
     @include for-size(laptop) {
       right: 30px;
     }
-
-    @include for-size(desktop) {
-    }
   }
 
   &__title {
