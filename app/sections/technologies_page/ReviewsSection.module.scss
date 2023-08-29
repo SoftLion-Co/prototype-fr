@@ -54,7 +54,7 @@
       display: none;
     }
     @include for-size(tablet) {
-      margin-left: -60px;
+      display: none;
     }
 
     @include for-size(laptop) {
@@ -71,7 +71,7 @@
       display: none;
     }
     @include for-size(tablet) {
-      margin-right: -60px;
+      display: none;
     }
 
     @include for-size(laptop) {
