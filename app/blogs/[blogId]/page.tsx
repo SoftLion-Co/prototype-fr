@@ -11,7 +11,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className={s.page}>
+    <div>
       <InfoNavigationComponent links={links} />
       <ArticleSection />
       <ImpressionSection />

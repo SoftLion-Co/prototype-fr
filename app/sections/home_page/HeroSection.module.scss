@@ -8,10 +8,20 @@
   gap: 32px;
   width: -webkit-fill-available;
 
+
   @include for-size(tablet) {
     flex-direction: row;
     justify-content: space-between;
     gap: 0;
+    margin-top: 30px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: 40px;
+  }
+  @include for-size(desktop) {
+    margin-top: 70px;
+
   }
 
   &__logo {
