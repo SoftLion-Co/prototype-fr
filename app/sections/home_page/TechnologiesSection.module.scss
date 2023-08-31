@@ -345,9 +345,11 @@
 
 .blur {
   position: absolute;
-
+  pointer-events: none;
+  
   &_item {
     position: relative;
+    pointer-events: none;
 
     @include for-size(tablet) {
       background-image: url(../../../images/blur/techno_blurT.png);

@@ -60,7 +60,8 @@
 
   &_item {
     position: relative;
-
+    pointer-events: none;
+    
     @include for-size(tablet) {
       background-image: url(../../../images/blur/custom_blurL.png);
       background-repeat: no-repeat;

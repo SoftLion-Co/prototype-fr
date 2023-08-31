@@ -162,7 +162,8 @@
 
   &_item {
     position: relative;
-
+    pointer-events: none;
+    
     @include for-size(tablet) {
       background-image: url(../../../images/blur/hero_blurT.png);
       background-repeat: no-repeat;

@@ -71,10 +71,12 @@
 
 .blur {
   position: absolute;
-
+  pointer-events: none;
+  
   &_item {
     position: relative;
-
+    pointer-events: none;
+  
     @include for-size(tablet) {
       background-image: url(../../../images/blur/custom_blurL.png);
       background-repeat: no-repeat;
@@ -85,9 +87,7 @@
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/custom_blurL.png);
-      background-repeat: no-repeat;
       left: 150px;
-      top: -100px;
       width: 819px;
       height: 572px;
       bottom: 700px;
@@ -95,9 +95,7 @@
 
     @include for-size(desktop) {
       background-image: url(../../../images/blur/custom_blurD.png);
-      background-repeat: no-repeat;
       left: 200px;
-      top: -100px;
       width: 1265px;
       height: 744px;
     }
