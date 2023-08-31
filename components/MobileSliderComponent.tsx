@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
+import { StaticImageData } from "next/image";
 
 interface MobileSliderComponentProps {
   data: Array<{
@@ -12,7 +13,7 @@ interface MobileSliderComponentProps {
     author?: string;
     description?: string;
     name?: string;
-    avatar?: string;
+    avatar?: string | StaticImageData;
     position?: string;
     linkedinUrl?: string;
   }>;
