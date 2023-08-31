@@ -22,6 +22,9 @@ const HeroSection: React.FC<Props> = ({ heroTech }) => {
 
         <h2 className={s.hero__heading}>{heroTech.titleTech}</h2>
         <p className={s.hero__paragraph}>{heroTech.paragraph}</p>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       </div>
     </section>
   );
