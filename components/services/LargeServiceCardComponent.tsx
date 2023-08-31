@@ -1,8 +1,6 @@
-// LargeServiceCardComponent.tsx
 import React from "react";
 import s from "./LargeServiceCardComponent.module.scss";
 import Image from "next/image";
-import classNames from "classnames";
 
 interface LargeServiceCardComponentProps {
   title: string;
@@ -17,9 +15,8 @@ const LargeServiceCardComponent: React.FC<LargeServiceCardComponentProps> = ({
   image,
   isActive,
 }) => {
-
   return (
-    <div className={s.services}>
+    <div className={s.service}>
       <div className={s.service__container}>
         <Image
           className={s.service__image}

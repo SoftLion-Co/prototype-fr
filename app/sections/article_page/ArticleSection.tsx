@@ -4,7 +4,7 @@ import { SectionScrolIndicator } from "@/components/blog/BlogSectionScrolIndicat
 import classNames from "classnames";
 import Image from "next/image";
 
-export const ArticleSection = () => {
+const ArticleSection = () => {
   const response = {
     authorImg:
       "https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
@@ -59,12 +59,12 @@ export const ArticleSection = () => {
     response;
 
   return (
-    <section className={classNames(s.container, s.article_section)}>
-      <div className={s.article_container}>
-        <h2 className={s.article_section_title}>{articleName}</h2>
-        <div className={s.container_author}>
+    <section className={classNames(s.container, s.article)}>
+      <div className={s.article__container}>
+        <h2 className={s.article__title}>{articleName}</h2>
+        <div className={s.author__container}>
           <div className={s.author}>
-            <div className={s.author_img_container}>
+            <div className={s.author__image}>
               <Image
                 className={s.image}
                 width={44}
@@ -73,11 +73,11 @@ export const ArticleSection = () => {
                 alt={author}
               />
             </div>
-            <span className={s.author_text}>{author}</span>
+            <span className={s.author__text}>{author}</span>
           </div>
-          <span className={s.author_text}>Reading time:{readTime}</span>
+          <span className={s.author__text}>Reading time:{readTime}</span>
         </div>
-        <div className={s.article_section_img_container}>
+        <div className={s.article__image}>
           <Image
             width={800}
             height={600}
@@ -91,9 +91,11 @@ export const ArticleSection = () => {
           <Article key={article.id} {...article} />
         ))}
       </div>
-      <div className={s.article_navigation}>
+      <div className={s.navigation}>
         <SectionScrolIndicator items={articles} />
       </div>
     </section>
   );
 };
+
+export default ArticleSection;

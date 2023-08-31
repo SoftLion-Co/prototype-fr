@@ -12,12 +12,12 @@ interface ArticleProps {
 export const Article: FC<ArticleProps> = (article) => {
   return (
     <div className={s.article}>
-      <h3 className={s.article_title} id={article.id}>
+      <h3 className={s.article__title} id={article.id}>
         {article.title}
       </h3>
-      <p className={s.article_descripcion}>{article.description}</p>
+      <p className={s.article__descripcion}>{article.description}</p>
       {article.image && (
-        <div className={s.article_section_img_container}>
+        <div className={s.article__image}>
           <Image
             width={800}
             height={600}

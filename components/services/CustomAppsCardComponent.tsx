@@ -1,9 +1,6 @@
 import s from "./CustomAppsCardComponent.module.scss";
-import React, { FC, ReactNode, ComponentProps } from "react";
-// import pic from "../../images/services/custom-apps/Apps.svg";
-import { PiArrowRightThin } from "react-icons/pi";
+import React, { FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 interface CustomAppsCardComponentProps {
   arrow?: boolean;
@@ -14,7 +11,6 @@ interface CustomAppsCardComponentProps {
 }
 
 const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
-  arrow = false,
   path,
   title,
   text_mob,
@@ -27,17 +23,6 @@ const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
         <h2 className={s.servicecard__title}>{title}</h2>
         <p className={s.servicecard__text_mob}>{text_mob}</p>
         <p className={s.servicecard__text}>{text}</p>
-        {arrow ? (
-          <Link href="/services" className={s.servicecard__link}>
-            <PiArrowRightThin
-              className={s.servicecard__arrow}
-              width="51px"
-              height="49px"
-            />
-          </Link>
-        ) : (
-          ""
-        )}
       </div>
     </div>
   );

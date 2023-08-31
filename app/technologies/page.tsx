@@ -1,11 +1,10 @@
-import s from "./page.module.scss"
+"use client";
+import s from "./page.module.scss";
+import { redirect } from "next/navigation";
 
-const Technologies = () => {
-    return (
-        <div>
-            <h1>Technologies</h1>
-        </div>
-    )
-}
+const Technologies = async () => {
+  redirect("/technologies/java");
+  return <></>;
+};
 
-export default Technologies
+export default Technologies;

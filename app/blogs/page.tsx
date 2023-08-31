@@ -1,14 +1,12 @@
-import Link from "next/link";
-import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+"use client";
+import BlogsSection from "@/app/sections/blog_page/BlogsSection";
 
 const Blogs = () => {
   const links = [{ title: "Blog", href: "#" }];
 
   return (
     <div>
-      <InfoNavigationComponent links={links} />
-      <Link href="/blogs/1">1</Link>
-      <h1>Blogs</h1>
+      <BlogsSection />
     </div>
   );
 };

@@ -3,34 +3,31 @@
 @import "../styles/mixin";
 
 .servicecard {
-  width: 100%;
+  user-select: none;
   min-height: 395px;
   align-items: center;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   padding: 26px 21px 60px 15px;
-  position: relative;
   background: $cookies-background;
   box-shadow: 11px 12px 5.8px 0px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
+  height: 100%;
 
   @include for-size(tablet) {
     width: 348px;
-    height: 460px;
-    padding: 64px 30px 15px 30px;
+    padding: 64px 30px 45px 30px;
     border-radius: 8px;
     align-items: left;
   }
   @include for-size(laptop) {
     width: 519px;
-    height: 692px;
     border-radius: 12px;
     padding: 40px 75px 40px 75px;
   }
   @include for-size(desktop) {
     width: 680px;
-    height: 899px;
     border-radius: 15px;
     padding: 90px 64px 80px 64px;
   }
@@ -50,13 +47,10 @@
     @include for-size(tablet) {
       width: 75px;
       height: 74px;
-      position: relative;
-      left: -12px;
     }
     @include for-size(laptop) {
       width: 113px;
       height: 111px;
-      position: static;
       margin-bottom: 26px;
     }
     @include for-size(desktop) {
@@ -94,19 +88,16 @@
       display: block;
       font-size: 10.23px;
       width: 245px;
-      height: 226px;
       letter-spacing: 0.04px;
     }
     @include for-size(laptop) {
       font-size: 15.38px;
       width: 368px;
-      height: 340px;
       line-height: 130%;
     }
     @include for-size(desktop) {
       font-size: 20px;
       width: 479px;
-      height: 443px;
       line-height: 130%;
     }
   }
@@ -116,44 +107,11 @@
     font-weight: 400;
     letter-spacing: 0.2px;
     color: black;
-    line-height: 15.66px;
+    line-height: 16px;
     margin-top: 28px;
 
     @include for-size(tablet) {
       display: none;
-    }
-  }
-  &__link {
-    color: black;
-    height: 32px;
-    position: absolute;
-    right: 20px;
-    bottom: 27px;
-
-    @include for-size(tablet) {
-      position: absolute;
-      right: 11px;
-      bottom: 22px;
-    }
-    @include for-size(laptop) {
-      height: 68px;
-      right: 11px;
-      bottom: 34px;
-    }
-    @include for-size(desktop) {
-      height: 88px;
-      right: 23px;
-      bottom: 44px;
-    }
-  }
-
-  &__arrow {
-    font-size: 32px;
-    @include for-size(laptop) {
-      font-size: 68px;
-    }
-    @include for-size(desktop) {
-      font-size: 88px;
     }
   }
 }

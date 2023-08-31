@@ -1,0 +1,42 @@
+@import "./../../styles/mixin";
+@import "./../../styles/colors";
+@import "./../../styles/container";
+
+.pagination__button {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0, 75%);
+  font-weight: 400;
+  line-height: calc(19.6 / 16);
+  font-size: 16px;
+
+  @include for-size(tablet) {
+    font-size: 14px;
+  }
+  @include for-size(laptop) {
+    font-size: 18px;
+  }
+  @include for-size(desktop) {
+    font-size: 22px;
+  }
+}
+
+.activePagination {
+  background: $button-blue-form;
+  color: #ffffff;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  @include for-size(tablet) {
+    width: 32px;
+    height: 32px;
+  }
+  @include for-size(laptop) {
+    width: 40px;
+    height: 40px;
+  }
+  @include for-size(desktop) {
+    width: 44px;
+    height: 44px;
+  }
+}

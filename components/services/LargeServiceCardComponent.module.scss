@@ -16,6 +16,7 @@
     border-radius: 8px;
     min-height: 325px;
     padding: 40px 20px 40px 20px;
+    user-select: none;
 
     @include for-size(tablet) {
       box-shadow: $services-slider-center-card-shadow;

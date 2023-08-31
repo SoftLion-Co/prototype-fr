@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import s from "./FormComponent.module.scss";
-import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import s from "./FormComponent.module.scss";
 import axios from "axios";
+
+interface FormProps {
+  title: string;
+}
 
 interface FormData {
   email: string;
@@ -11,26 +17,42 @@ interface FormData {
   description: string;
 }
 
-const FormComponent = () => {
+const FormComponent: React.FC<FormProps> = ({ title }) => {
   const [phone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [submitDisabled, setSubmitDisabled] = useState(true);
 
   const {
     handleSubmit,
     register,
     formState: { errors },
     reset,
-  } = useForm<FormData>();
+    watch,
+  } = useForm<FormData>({
+    defaultValues: {
+      email: "",
+      phone: "",
+      description: "",
+    },
+  });
+
+  const watchEmail = watch("email");
+  const watchDescription = watch("description");
 
   const handleFormSubmit = async (data: FormData) => {
     try {
+      if (!data.email || !phone || !data.description) {
+        console.log("Please fill in all required fields");
+        return;
+      }
+
       console.log("email:", data.email);
       console.log("phone:", phone);
       console.log("description:", data.description);
 
       const formData = {
         email: data.email,
-        phone: phone,
+        phone: "+" + phone,
         description: data.description,
       };
 
@@ -40,25 +62,33 @@ const FormComponent = () => {
         formData
       );
 
-      console.log("Форма успішно надіслана:", response.data);
+      console.log("Form successfully submitted:", response.data);
 
       setIsFormSubmitted(true);
       reset();
       setPhone("");
     } catch (error) {
-      console.error("Помилка надсилання форми:", error);
+      console.error("Error submitting form:", error);
     }
   };
 
+  useEffect(() => {
+    setSubmitDisabled(!watchEmail || !phone || !watchDescription);
+  }, [watchEmail, phone, watchDescription]);
+
   return (
-    <form className={s.form} onSubmit={handleSubmit(handleFormSubmit)}>
-      <h2 className={s.form__title}>Book consultation</h2>
+    <form
+      className={s.form}
+      onSubmit={handleSubmit(handleFormSubmit)}
+      noValidate
+    >
+      <h2 className={s.form__title}>{title}</h2>
       <span className={s.form__line}></span>
       <div className={s.form__container}>
         <div className={s.form__input}>
           <input
             type="email"
-            className={s.form__field}
+            className={`${s.form__field} ${errors.email ? s.invalidField : ""}`}
             placeholder=" "
             {...register("email", {
               required: "Email is required",
@@ -78,12 +108,34 @@ const FormComponent = () => {
             inputProps={{
               required: true,
               name: "phone",
-              className: s.form__field,
-              placeholder: " ",
+              className: `${s.form__field} ${s.phoneInput} ${
+                errors.phone ? s.invalidField : ""
+              }`,
+              placeholder: "",
             }}
-            country={"ua"}
+            enableSearch
+            disableSearchIcon
+            inputClass={s.phoneInput}
+            country={"us"}
             value={phone}
             onChange={(phone: string) => setPhone(phone)}
+            buttonClass={s["buttonC"]}
+            searchClass={s["search"]}
+            searchStyle={{
+              border: "none",
+              borderRadius: "0px",
+              borderBottom: "1px solid #ccc",
+              fontSize: "14px",
+              paddingLeft: "5px",
+              marginLeft: "0",
+              width: "100%",
+              paddingBottom: "6px",
+              paddingTop: "6px",
+
+            }}
+            dropdownClass={s["drop"]}
+            containerClass={s["container"]}
+
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>
@@ -104,7 +156,13 @@ const FormComponent = () => {
           )}
         </div>
       </div>
-      <button type="submit" className={s.form__button}>
+      <button
+        type="submit"
+        className={`${s.form__button} ${
+          submitDisabled ? s.disabledButton : ""
+        }`}
+        disabled={submitDisabled}
+      >
         Book Consultation
       </button>
       <p className={s.form__text}>

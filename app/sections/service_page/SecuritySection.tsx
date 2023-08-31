@@ -5,9 +5,7 @@ import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCa
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
-import MainButtonComponent from "@/components/MainButtonComponent";
-import BigButtonComponent from "../../../components/BigButtonComponent";
-import Link from "next/link";
+import BigButtonComponent from "../../../components/service/BigButtonComponent";
 
 const securityCardsData = [
   {
@@ -30,7 +28,7 @@ const securityCardsData = [
   },
   {
     id: 4,
-    title: "Use of Secure Data Transmission Protocols",
+    title: "Use of Secure Data Transmission",
     description:
       "We utilize secure data transmission protocols, such as HTTPS, to encrypt and protect information transmitted between users and the application or website. This helps prevent interception of information during transmission.",
   },
@@ -40,10 +38,11 @@ const securityCardsData = [
     description:
       "We collaborate with trusted server and hosting providers that ensure a high level of data protection and system reliability. This helps minimize the risk of data loss or damage.",
   },
-  
 ];
 
 const SecuritySection = () => {
+  const isEven = securityCardsData.length % 2 === 0;
+
   return (
     <section className={s.security}>
       <ServiceHeadingComponent headingText="Security" />
@@ -55,18 +54,24 @@ const SecuritySection = () => {
       </div>
 
       <div className={classNames(s.container, s.security__container)}>
-        {securityCardsData.map((card) => (
-          <ServiceSecurityCardComponent
+        {securityCardsData.map((card, index) => (
+          <div
             key={card.id}
-            title={card.title}
-            description={card.description}
-          />
+            className={classNames(s.security__card, {
+              [s.centre]: !isEven && index === securityCardsData.length - 1,
+            })}
+          >
+            <ServiceSecurityCardComponent
+              title={card.title}
+              description={card.description}
+            />
+          </div>
         ))}
       </div>
       <div className={classNames(s.container, s.security__button)}>
-        <BigButtonComponent/>
+        <BigButtonComponent />
       </div>
-      </section>
+    </section>
   );
 };
 

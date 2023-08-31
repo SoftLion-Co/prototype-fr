@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BlogRolledCardComponent from "./BlogRolledCardComponent";
 import BlogExtendedCardComponent from "./BlogExtendedCardComponent";
 import s from "./BlogDesktopComponent.module.scss";
@@ -6,28 +6,16 @@ import { Carousel, Embla } from "@mantine/carousel";
 import ArrowLeft from "../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
+import { BlogInterface } from "./BlogInteface";
 
-interface BlogExtendedCardComponentProps {
-  id: number;
-  title: string;
-  author: string;
-  authorIconSrc: string;
-  readingTime: string;
-  text: string;
-  imageSrc: string;
-  tags: string[];
-}
-
-interface BlogDesktopProps {
-  cardsData: BlogExtendedCardComponentProps[];
-}
-
-const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
+const BlogDesktopComponent: React.FC<{ blogs: BlogInterface[] }> = ({
+  blogs,
+}) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className={s.blogDesktop}>
+    <div className={s.slider}>
       <Carousel
         getEmblaApi={setEmbla}
         loop
@@ -40,7 +28,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowLeft}
-            alt="45"></Image>
+            alt="<"
+          ></Image>
         }
         nextControlIcon={
           <Image
@@ -48,7 +37,8 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             height={30}
             width={30}
             src={ArrowRight}
-            alt="45"></Image>
+            alt=">"
+          ></Image>
         }
         skipSnaps
         styles={{
@@ -60,6 +50,7 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             bottom: 0,
             top: 0,
             padding: 0,
+            maxWidth: "100vw",
             width: "106%",
             left: "-3%",
           },
@@ -72,53 +63,47 @@ const BlogDesktopComponent: React.FC<BlogDesktopProps> = ({ cardsData }) => {
             alignItems: "center",
           },
         }}
-        align="center">
-        {cardsData.map((x, index) => (
+        align="center"
+      >
+        {blogs.map((item, index) => (
           <>
             {currentSlide === index ? (
-              <div className={s.blogDesktop__extendedCard}>
+              <div className={s.slider__card_extended}>
                 <Carousel.Slide key={index}>
-                  <BlogExtendedCardComponent
-                    id={x.id}
-                    text={x.text}
-                    author={x.author}
-                    imageSrc={x.imageSrc}
-                    authorIconSrc={x.authorIconSrc}
-                    title={x.title}
-                    readingTime={x.readingTime}
-                    tags={x.tags}
-                  />
+                  <BlogExtendedCardComponent data={item} />
                 </Carousel.Slide>
               </div>
             ) : (
               <div
                 className={
                   currentSlide - 1 === index ||
-                  (currentSlide === 0 && index === cardsData.length - 1)
-                    ? s.blogDesktop__rolledCardLeft
+                  (currentSlide === 0 && index === blogs.length - 1)
+                    ? s.slider__card_left
                     : currentSlide + 1 === index ||
-                      (currentSlide === cardsData.length - 1 && index === 0)
-                    ? s.blogDesktop__rolledCardRight
-                    : s.blogDesktop__rolledCardDefault
-                }>
+                      (currentSlide === blogs.length - 1 && index === 0)
+                    ? s.slider__card_right
+                    : s.slider__card_default
+                }
+              >
                 <Carousel.Slide
                   onClick={
                     currentSlide - 1 === index ||
-                    (currentSlide === 0 && index === cardsData.length - 1)
+                    (currentSlide === 0 && index === blogs.length - 1)
                       ? () => {
                           embla?.scrollPrev();
                         }
                       : currentSlide + 1 === index ||
-                        (currentSlide === cardsData.length - 1 && index === 0)
+                        (currentSlide === blogs.length - 1 && index === 0)
                       ? () => {
                           embla?.scrollNext();
                         }
                       : undefined
                   }
-                  key={index}>
+                  key={index}
+                >
                   <BlogRolledCardComponent
-                    title={x.title}
-                    imageSrc={x.imageSrc}
+                    title={item.title}
+                    imageSrc={item.imageSrc}
                   />
                 </Carousel.Slide>
               </div>
