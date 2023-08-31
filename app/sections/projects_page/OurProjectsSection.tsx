@@ -34,6 +34,9 @@ const sampleData: Array<{
 		author: "author: SoftLion",
 		description:
 		  "In this project, we developed the design, implemented it, and provide further support",
+		  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
 	 },
 	 {
 		id: 2,
@@ -44,6 +47,9 @@ const sampleData: Array<{
 		author: "author: SoftLion",
 		description:
 		  "In this project, we developed the design, implemented it, and provide further support",
+		  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
 	 },
 	 {
 		id: 3,
@@ -55,6 +61,9 @@ const sampleData: Array<{
 		author: "author: SoftLion",
 		description:
 		  "In this project, we developed the design, implemented it, and provide further support",
+		  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
 	 },
   {
     id: 4,
@@ -71,7 +80,7 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-	id: 5,
+	id: 1,
 	image:
 	  "https://res.cloudinary.com/dte7upwcr/image/upload/f_auto/v1653388323/blog/blog2/Business%20Website%20Templates%20to%20Help%20you%20Design%20Your%20Website/Webflow_2.png",
 	title: "Creating Website for IT company",
@@ -80,6 +89,9 @@ const sampleData: Array<{
 	author: "author: SoftLion",
 	description:
 	  "In this project, we developed the design, implemented it, and provide further support",
+	  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
  },
  {
 	id: 6,
@@ -90,6 +102,9 @@ const sampleData: Array<{
 	author: "author: SoftLion",
 	description:
 	  "In this project, we developed the design, implemented it, and provide further support",
+	  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
  },
  {
 	id: 7,
@@ -101,6 +116,9 @@ const sampleData: Array<{
 	author: "author: SoftLion",
 	description:
 	  "In this project, we developed the design, implemented it, and provide further support",
+	  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
  },
   {
 	id: 8,
@@ -112,6 +130,9 @@ const sampleData: Array<{
 	author: "author: SoftLion",
 	description:
 	  "In this project, we developed the design, implemented it, and provide further support",
+	  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
  },
  {
 	id: 9,
@@ -122,6 +143,9 @@ const sampleData: Array<{
 	author: "author: SoftLion",
 	description:
 	  "In this project, we developed the design, implemented it, and provide further support",
+	  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
  },
  {
 	id: 10,
@@ -133,6 +157,9 @@ const sampleData: Array<{
 	author: "author: SoftLion",
 	description:
 	  "In this project, we developed the design, implemented it, and provide further support",
+	  technology: "Vue.js",
+    country: "Ukraine",
+    countryCode: "UA",
  },
   {
     id: 11,
