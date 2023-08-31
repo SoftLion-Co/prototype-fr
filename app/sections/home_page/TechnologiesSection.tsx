@@ -2,6 +2,7 @@
 
 import s from "./TechnologiesSection.module.scss";
 import React, { useState } from "react";
+import classNames from "classnames";
 import Image from "next/image";
 import UIUX from "../../../images/technologies/UI-UX.svg";
 import Ecommerce from "../../../images/technologies/Ecommerce.svg";
@@ -106,6 +107,9 @@ const TechnologiesSection = () => {
                 </div>
               </div>
             ))}
+            <div className={s.blur}>
+              <div className={s.blur_item}></div>
+            </div>
           </div>
         </div>
       </div>

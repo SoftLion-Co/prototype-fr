@@ -62,3 +62,37 @@
     justify-content: space-between;
   }
 }
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+    
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/contact_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 120px;
+      left: 20px;
+      width: 345px;
+      height: 310px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/contact_blurL.png);
+      left: 50px;
+      bottom: 160px;
+      width: 503px;
+      height: 452px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/contact_blurD.png);
+      bottom: 180px;
+      width: 658px;
+      height: 592px;
+    }
+  }
+}

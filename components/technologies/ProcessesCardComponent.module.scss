@@ -21,6 +21,12 @@
     rgba(255, 252, 168, 0) 100%
   );
   box-shadow: 2px 3px 7.5px 0px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 4px 5px 7.5px 0px rgba(0, 0, 0, 0.17);
+    transform: translateY(-0.5rem);
+  }
 
   @include for-size(tablet) {
     width: 240px;
