@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { EmailInput } from "@/components/EmailInput";
 import PasswordInput from "@/components/PasswordInput";
 import Link from "next/link";
+import authService from "@/services/auth-service";
 
 interface FormData {
   email: string;
@@ -33,6 +34,7 @@ const LoginSection = () => {
   });
   const onSubmit = (data: FormData) => {
     const { email, password } = data;
+	 authService.signIn(data);
     console.log("Email: ", email, "Password: ", password);
     reset();
   };
