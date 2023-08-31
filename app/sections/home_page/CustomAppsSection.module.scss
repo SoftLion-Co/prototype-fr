@@ -54,3 +54,33 @@
     }
   }
 }
+
+.blur {
+  position: absolute;
+
+  &_item {
+    position: relative;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 600px;
+      width: 733px;
+      height: 638px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      width: 819px;
+      height: 572px;
+      bottom: 750px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/custom_blurD.png);
+      bottom: 1000px;
+      width: 1065px;
+      height: 744.539px;
+    }
+  }
+}

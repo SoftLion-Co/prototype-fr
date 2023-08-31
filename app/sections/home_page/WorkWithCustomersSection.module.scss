@@ -1,0 +1,35 @@
+@import "../../../styles/mixin";
+
+.blur {
+    position: absolute;
+  
+    &_item {
+      position: relative;
+  
+      @include for-size(tablet) {
+        background-image: url(../../../images/blur/custom_blurL.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 450px;
+        width: 733px;
+        height: 638px;
+      }
+  
+      @include for-size(laptop) {
+        background-image: url(../../../images/blur/custom_blurL.png);
+        background-repeat: no-repeat;
+        width: 819px;
+        height: 572px;
+        bottom: 500px;
+      }
+  
+      @include for-size(desktop) {
+        background-image: url(../../../images/blur/custom_blurD.png);
+        background-repeat: no-repeat;
+        bottom: 600px;
+        width: 1065px;
+        height: 744px;
+      }
+    }
+  }
+  

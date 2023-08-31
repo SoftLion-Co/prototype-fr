@@ -117,6 +117,9 @@ const FooterComponent = () => {
               Book Consultation
             </MainButtonComponent>
           </div>
+          <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
         </div>
       </div>
     </footer>

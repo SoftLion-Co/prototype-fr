@@ -342,3 +342,33 @@
     }
   }
 }
+
+.blur {
+  position: absolute;
+
+  &_item {
+    position: relative;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/techno_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 200px;
+      width: 733px;
+      height: 638px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/techno_blurL.png);
+      width: 1058px;
+      height: 633px;
+      bottom: 200px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/techno_blurL.png);
+      width: 1387px;
+      height: 802px;
+      bottom: 100px;
+    }
+  }
+}

@@ -18,6 +18,9 @@ const ProjectHeadingComponent: React.FC<{ centered: boolean }> = ({
         improve your service. For inspiration, you can view our previous
         projects.
       </p>
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
     </div>
   );
 };

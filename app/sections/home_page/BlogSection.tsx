@@ -31,6 +31,9 @@ const HomeBlog: React.FC = () => {
             SlideComponent={BlogExtendedCardComponent}
           />
         </div>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       </div>
       <div className={s.container}>
         <SeeMoreButtonComponent path="blogs" />
