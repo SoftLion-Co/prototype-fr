@@ -5,7 +5,7 @@ import Security from "../../images/security.svg";
 interface ServiceSecurityCardComponentProps {
   title?: string;
   description?: string;
-  data?: { description: string; title: string }; // Combine both description and title properties inside data
+  data?: { description: string; title: string };
 }
 
 const ServiceSecurityCardComponent: React.FC<
@@ -16,13 +16,17 @@ const ServiceSecurityCardComponent: React.FC<
 
   return (
     <div className={s.security}>
-      <div className={s.security__head}>
-        <Image
-          src={Security}
-          alt="Security Cards"
-          className={s.security__img}
-        />
-        <h4 className={s.security__title}>{cardTitle}</h4>
+      <div className={s.main__block}>
+        <div className={s.security__head}>
+          <Image
+            src={Security}
+            alt="Security Cards"
+            className={s.security__img}
+          />
+          <div>
+            <h4 className={s.security__title}>{cardTitle}</h4>
+          </div>
+        </div>
       </div>
       <p className={s.security__text}>{cardDescription}</p>
     </div>

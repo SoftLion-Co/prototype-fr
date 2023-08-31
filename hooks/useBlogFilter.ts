@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 interface Blog {
-  id: number;
+  id: string | number;
   title: string;
-  category: string;
+  category?:string;
   readingTime: string;
-  author: string;
-  authorIconSrc: string;
+  author?: string;
+  authorId: string;
+  authorIconSrc?: string; 
   text: string;
   imageSrc: string;
   tags: string[];

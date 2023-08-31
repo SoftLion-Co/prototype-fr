@@ -8,6 +8,7 @@
 
   &__container {
     @include for-size(tablet) {
+      user-select: none;
       display: flex;
       flex-direction: column;
       align-items: center;

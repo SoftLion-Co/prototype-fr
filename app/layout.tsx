@@ -3,8 +3,7 @@ import "./../styles/main.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";
-import { SessionProvider } from "next-auth/react";
-import { Session } from "next-auth";
+import s from "./layout.module.scss"
 
 export const metadata = {
   title: "SoftLion",
@@ -25,11 +24,11 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body>
-        <SessionProvider session={session}>
-          <HeaderComponent />
+        <HeaderComponent />
+        <div className={s.page}>
           {children}
-          <FooterComponent />
-        </SessionProvider>
+        </div>
+        <FooterComponent />
       </body>
     </html>
   );
