@@ -62,17 +62,21 @@
 .option {
   display: flex;
   margin-bottom: 16px;
+  gap: 6px;
 
   @include for-size(tablet) {
     margin-bottom: 22px;
+    gap: 12px;
   }
 
   @include for-size(laptop) {
     margin-bottom: 28px;
+    gap: 14px;
   }
 
   @include for-size(desktop) {
     margin-bottom: 32px;
+    gap: 16px;
   }
 }
 
@@ -97,4 +101,8 @@
   @include for-size(desktop) {
     margin-bottom: 22px;
   }
+}
+
+.timer{
+  color: $navigation-light;
 }

@@ -1,11 +1,11 @@
 "use client";
-
 import { EmailInput } from "@/components/EmailInput";
 import s from "./ForgotPasswordSection.module.scss";
 import MainButtonComponent from "@/components/MainButtonComponent";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import classNames from "classnames";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   email: string;
@@ -13,6 +13,7 @@ interface FormData {
 }
 
 const ForgotPasswordSection = () => {
+  const router = useRouter();
   const [submitDisabled, setSubmitDisabled] = useState(true);
   const {
     register,
@@ -29,9 +30,11 @@ const ForgotPasswordSection = () => {
   watch(({ email }) => {
     setSubmitDisabled(!email);
   });
+
   const onSubmit = (data: FormData) => {
     const { email } = data;
     console.log("Email: ", email);
+    router.push(`/enter-code?email=${email}`)
     reset();
   };
 
@@ -40,7 +43,7 @@ const ForgotPasswordSection = () => {
       <div className={s.wrapper}>
         <h2 className={s.title}>Forgot password?</h2>
         <p className={classNames(s.text, s.text__indent)}>We will send you a link to top up your account by mail and phone number.</p>
-        <form className={s.form}>
+        <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <EmailInput
             applyValidation={false}
             error={errors.email}
@@ -48,7 +51,7 @@ const ForgotPasswordSection = () => {
             register={register}
             showError={!submitDisabled}
           />
-          <MainButtonComponent disabled={submitDisabled} className={classNames(s.auth_button, s.button__indent)} type="submit">
+          <MainButtonComponent type="submit" className={classNames(s.auth_button, s.button__indent)} disabled={submitDisabled}>
             Accept
           </MainButtonComponent>
         </form>
