@@ -2,13 +2,12 @@
 @import "../../styles/mixin";
 
 .member {
-  cursor: pointer;
   display: flex;
   gap: 29px;
   align-items: center;
   box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
-  padding: 30px 5px;
+  padding: 30px 30px;
   background: linear-gradient(90deg, rgba(175, 218, 237, 0.14) 0%, rgba(190, 244, 205, 0.34) 35.3%, rgba(243, 182, 241, 0.1) 100%);
 
   @include for-size(tablet) {
@@ -172,4 +171,8 @@
   @include for-size(desktop) {
     font-size: 25px;
   }
+}
+
+.member_avatar_img{
+  cursor: pointer;
 }
