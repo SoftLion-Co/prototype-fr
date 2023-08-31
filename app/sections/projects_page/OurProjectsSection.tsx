@@ -24,48 +24,38 @@ const sampleData: Array<{
   country: string;
   countryCode: string;
 }> = [
-  {
-    id: 1,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Go",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Go",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 2,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: React.js",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "React.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 3,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Angular",
-    year: "year: 2022",
-    author: "author: Canada",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Angular",
-    country: "Canada",
-    countryCode: "CA",
-  },
+	{
+		id: 1,
+		image:
+		  "https://res.cloudinary.com/dte7upwcr/image/upload/f_auto/v1653388323/blog/blog2/Business%20Website%20Templates%20to%20Help%20you%20Design%20Your%20Website/Webflow_2.png",
+		title: "Creating Website for IT company",
+		customer: "customer: Move",
+		year: "year: 2020",
+		author: "author: SoftLion",
+		description:
+		  "In this project, we developed the design, implemented it, and provide further support",
+	 },
+	 {
+		id: 2,
+		image:"https://media.licdn.com/dms/image/D5612AQErJrHiEWZxxg/article-cover_image-shrink_720_1280/0/1672207059485?e=2147483647&v=beta&t=8xHZ8VkKb8EiJrBTWT11jtx92R5yrdSYk6E3Q-Bh-UM",
+		title: "Landing page of traveling company",
+		customer: "customer: Feel",
+		year: "year: 2021",
+		author: "author: SoftLion",
+		description:
+		  "In this project, we developed the design, implemented it, and provide further support",
+	 },
+	 {
+		id: 3,
+		image:
+		  "https://themeforest.img.customer.envatousercontent.com/files/356000339/02_home.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=7c4204b00e2c61354419a026e4651cbe",
+		title: "Shop page of agency company",
+		customer: "customer: Sneek",
+		year: "year: 2022",
+		author: "author: SoftLion",
+		description:
+		  "In this project, we developed the design, implemented it, and provide further support",
+	 },
   {
     id: 4,
     image:
@@ -81,89 +71,69 @@ const sampleData: Array<{
     countryCode: "UA",
   },
   {
-    id: 5,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js",
-    year: "year: 2022",
-    author: "author: Sweden",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Node.js",
-    country: "Sweden",
-    countryCode: "SE",
-  },
+	id: 5,
+	image:
+	  "https://res.cloudinary.com/dte7upwcr/image/upload/f_auto/v1653388323/blog/blog2/Business%20Website%20Templates%20to%20Help%20you%20Design%20Your%20Website/Webflow_2.png",
+	title: "Creating Website for IT company",
+	customer: "customer: Move",
+	year: "year: 2020",
+	author: "author: SoftLion",
+	description:
+	  "In this project, we developed the design, implemented it, and provide further support",
+ },
+ {
+	id: 6,
+	image:"https://media.licdn.com/dms/image/D5612AQErJrHiEWZxxg/article-cover_image-shrink_720_1280/0/1672207059485?e=2147483647&v=beta&t=8xHZ8VkKb8EiJrBTWT11jtx92R5yrdSYk6E3Q-Bh-UM",
+	title: "Landing page of traveling company",
+	customer: "customer: Feel",
+	year: "year: 2021",
+	author: "author: SoftLion",
+	description:
+	  "In this project, we developed the design, implemented it, and provide further support",
+ },
+ {
+	id: 7,
+	image:
+	  "https://themeforest.img.customer.envatousercontent.com/files/356000339/02_home.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=7c4204b00e2c61354419a026e4651cbe",
+	title: "Shop page of agency company",
+	customer: "customer: Sneek",
+	year: "year: 2022",
+	author: "author: SoftLion",
+	description:
+	  "In this project, we developed the design, implemented it, and provide further support",
+ },
   {
-    id: 6,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: .NET",
-    year: "year: 2022",
-    author: "author: UK",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: ".NET",
-    country: "UK",
-    countryCode: "GB",
-  },
-  {
-    id: 7,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Java",
-    year: "year: 2022",
-    author: "author: Israel",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Java",
-    country: "Israel",
-    countryCode: "IL",
-  },
-  {
-    id: 8,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: React.js2",
-    year: "year: 2022",
-    author: "author: Ireland",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "React.js",
-    country: "Ireland",
-    countryCode: "IE",
-  },
-  {
-    id: 9,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Angular2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Angular",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
+	id: 8,
+	image:
+	  "https://res.cloudinary.com/dte7upwcr/image/upload/f_auto/v1653388323/blog/blog2/Business%20Website%20Templates%20to%20Help%20you%20Design%20Your%20Website/Webflow_2.png",
+	title: "Creating Website for IT company",
+	customer: "customer: Move",
+	year: "year: 2020",
+	author: "author: SoftLion",
+	description:
+	  "In this project, we developed the design, implemented it, and provide further support",
+ },
+ {
+	id: 9,
+	image:"https://media.licdn.com/dms/image/D5612AQErJrHiEWZxxg/article-cover_image-shrink_720_1280/0/1672207059485?e=2147483647&v=beta&t=8xHZ8VkKb8EiJrBTWT11jtx92R5yrdSYk6E3Q-Bh-UM",
+	title: "Landing page of traveling company",
+	customer: "customer: Feel",
+	year: "year: 2021",
+	author: "author: SoftLion",
+	description:
+	  "In this project, we developed the design, implemented it, and provide further support",
+ },
+ {
+	id: 10,
+	image:
+	  "https://themeforest.img.customer.envatousercontent.com/files/356000339/02_home.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=7c4204b00e2c61354419a026e4651cbe",
+	title: "Shop page of agency company",
+	customer: "customer: Sneek",
+	year: "year: 2022",
+	author: "author: SoftLion",
+	description:
+	  "In this project, we developed the design, implemented it, and provide further support",
+ },
   {
     id: 11,
     image:
