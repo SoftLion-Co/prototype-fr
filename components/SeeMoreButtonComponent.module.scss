@@ -8,23 +8,24 @@
     color: black;
     font-family: Basley;
     font-size: 19px;
-    letter-spacing: 0.463px;
+    letter-spacing: 0.5px;
 
     @include for-size(tablet) {
       font-size: 20px;
-      letter-spacing: 0.597px;
+      letter-spacing: 0.6px;
     }
 
     @include for-size(laptop) {
       font-size: 27px;
-      letter-spacing: 0.823px;
+      letter-spacing: 0.8px;
     }
 
     @include for-size(desktop) {
       font-size: 36px;
-      letter-spacing: 1.08px;
+      letter-spacing: 1.1px;
     }
   }
+
   &__background {
     width: 134px;
     height: 121px;
