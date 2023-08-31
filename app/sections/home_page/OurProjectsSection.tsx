@@ -13,7 +13,7 @@ const sampleData = [
   {
     id: 1,
     image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+      "https://bootstrapmade.com/content/templatefiles/Impact/Impact-bootstrap-website-template-md.webp",
     title: "Landing page of traveling company",
     customer: "customer: Move",
     year: "year: 2022",
