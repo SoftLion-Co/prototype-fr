@@ -9,20 +9,30 @@
     font-family: Basley;
     font-size: 19px;
     letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
 
     @include for-size(tablet) {
       font-size: 20px;
       letter-spacing: 0.6px;
+      &:hover{
+        font-size: 24px;
+      }
     }
 
     @include for-size(laptop) {
       font-size: 27px;
       letter-spacing: 0.8px;
+      &:hover{
+        font-size: 31px;
+      }
     }
 
     @include for-size(desktop) {
       font-size: 36px;
       letter-spacing: 1.1px;
+      &:hover{
+        font-size: 40px;
+      }
     }
   }
 
