@@ -9,10 +9,11 @@ import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import useBlogsData from "@/hooks/useBlogsData";
+import { FC } from "react";
 
 const blogs: BlogInterface[] = useBlogsData();
 
-const HomeBlog: React.FC = () => {
+const HomeBlog: FC = () => {
   return (
     <section>
       <HeadingComponent text="Blog"></HeadingComponent>
