@@ -16,7 +16,7 @@ const blogs: BlogInterface[] = useBlogsData();
 const HomeBlog: FC = () => {
   return (
     <section>
-      <HeadingComponent text="Blog"></HeadingComponent>
+      <div className={s.blog__heading}><HeadingComponent text="Blog"></HeadingComponent></div>
       <div className={s.blogContainer}>
         <div
           className={classNames(

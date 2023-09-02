@@ -67,7 +67,6 @@
     margin: 10px 5px 0 5px;
     @include for-size(tablet) {
       width: 300px;
-      height: 110px;
     }
 
     @include for-size(laptop) {
@@ -142,7 +141,7 @@
 
   &__title {
     margin-bottom: 5px;
-
+    margin-top: 5px;
     @include for-size(laptop) {
       margin-bottom: 10px;
     }
@@ -151,8 +150,8 @@
       margin-bottom: 15px;
     }
 
-    line-height: 1.4em;
-    font-size: 1.2em;
+    line-height: 20px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.09em;
   }
@@ -184,7 +183,7 @@
 
   &__readingTime {
     color: #000000b2;
-    margin: 3px 0 3px 0;
+    margin: 5px 0 5px 0;
 
     @include for-size(laptop) {
       margin: 6px 0 6px 0;
@@ -198,10 +197,11 @@
 .article {
   display: flex;
   align-items: end;
+  font-size: 14px;
 }
 
 .tags {
-  font-size: 8px;
+  font-size: 10px;
   gap: 3px;
 
   @include for-size(laptop) {

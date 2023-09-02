@@ -2,20 +2,19 @@
 @import "./../styles/mixin";
 
 .button {
-  padding: 8.5px 18px;
+  padding: 8px 18px;
   border-radius: 7px;
   border: none;
-  font-size: 10px;
-  letter-spacing: 0.24px;
-  line-height: 151.682%;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 151%;
 
   @include for-size(tablet) {
-    padding: 9px 23.5px;
+    padding: 9px 23px;
     border-radius: 7px;
   }
 
   @include for-size(laptop) {
-    font-size: 12px;
     padding: 15px 25px;
     border-radius: 12px;
   }

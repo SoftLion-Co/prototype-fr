@@ -52,14 +52,13 @@
 
   &__paragraph {
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
 
     @include for-size(tablet) {
         display: flex;
         align-items: center;
         max-width: 200px;
         height: 210px;
-        font-size: 12px;
       }
 
     @include for-size(laptop) {
