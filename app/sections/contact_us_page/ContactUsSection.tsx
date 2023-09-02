@@ -12,7 +12,7 @@ const ContactUsSection = () => {
           Submit your request now, and we will get in touch with you to discuss
           the details and develop a customized solution. Together, we can create
           a powerful tool for your business and ensure your success in the
-          online world.
+          e-commerce world.
         </p>
       </div>
       <FormComponent title="Book consultation"/>

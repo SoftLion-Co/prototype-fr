@@ -131,3 +131,36 @@
     }
   }
 }
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/travel_blurT.png);
+      background-repeat: no-repeat;
+      right: 350px;
+      width: 747px;
+      height: 298px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/travel_blurL.png);
+      background-repeat: no-repeat;
+      right: 200px;
+      width: 1080px;
+      height: 430px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/travel_blurD.png);
+      background-repeat: no-repeat;
+      width: 1426px;
+      height: 569px;
+    }
+  }
+}

@@ -18,6 +18,7 @@ const ProjectDescriptionSection: FC = () => {
 
   return (
     <div className={s.container}>
+
       <section className={s.project}>
         <div className={s.article}>
           <h2 className={s.article__title}>{title}</h2>
