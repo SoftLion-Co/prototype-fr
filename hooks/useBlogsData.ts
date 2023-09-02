@@ -1,11 +1,9 @@
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import blogService from "@/services/blog-service";
 
-async function useBlogsData() {
-
-   //const data : BlogInterface[] = await blogService.getAllBlogs();
-	const data : BlogInterface[] =
-[
+function useBlogsData() {
+  //const data : BlogInterface[] = await blogService.getAllBlogs();
+  const data: BlogInterface[] = [
     {
       id: 1,
       title: "How to delegate work correctly 1",
