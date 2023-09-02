@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Fragment } from "react";
 import s from "./InfoNavigationComponent.module.scss";
 import { BsHouseDoor } from "react-icons/bs";
 import classNames from "classnames";
@@ -36,10 +36,12 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
   return (
     <div className={classNames(s.container, s.custom_breadcrumbs)}>
       {items.map((item, index) => (
-        <>
-          {index > 0 && <span key={index} className={s.custom_breadcrumbs__separator}>{separator}</span>}
+        <Fragment key={index}>
+          {index > 0 && (
+            <span className={s.custom_breadcrumbs__separator}>{separator}</span>
+          )}
           {item}
-        </>
+        </Fragment>
       ))}
     </div>
   );

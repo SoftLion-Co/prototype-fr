@@ -2,7 +2,6 @@
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { IoIosMenu } from "react-icons/io";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
@@ -14,7 +13,7 @@ const HeaderComponent = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const [arrowDirection1, setArrowDirection1] = useState("down");
-const [arrowDirection2, setArrowDirection2] = useState("down");
+  const [arrowDirection2, setArrowDirection2] = useState("down");
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
@@ -23,7 +22,6 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
       setSelectedMenuItem(index);
     }
   };
-
 
   const handleArrowClick1 = () => {
     setArrowDirection1(arrowDirection1 === "down" ? "up" : "down");

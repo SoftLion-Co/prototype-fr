@@ -36,9 +36,17 @@ const EcommerceSection = () => {
 
   return (
     <section className={s.container}>
-      <TitleServicesComponent position="left" num={"01"} text={"Ecommerce"} className={s.heading}/>
+      <TitleServicesComponent
+        position="left"
+        num={"01"}
+        text={"Ecommerce"}
+        className={s.heading}
+      />
       <ServiceCardsComponent cardData={cardComponent} />
       <SeeMoreButtonComponent path="services" />
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
     </section>
   );
 };

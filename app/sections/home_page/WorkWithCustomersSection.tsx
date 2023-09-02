@@ -4,6 +4,7 @@ import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import TitleServicesComponent from "@/components/services/TitleServicesComponent";
 
 import s from "./EcommerceSection.module.scss";
+import st from "./WorkWithCustomersSection.module.scss"
 import LaunchAndMaintenance from "@/images/services/work-with-customers/LaunchAndMaintenance.svg";
 import DiscoveryStage from "@/images/services/work-with-customers/DiscoveryStage.svg";
 import DesignAndDevelopmentStage from "@/images/services/work-with-customers/DesignAndDevelopmentStage.svg"; // Remove the extra dot before the @ symbol
@@ -45,6 +46,9 @@ const EcommerceSection = () => {
       />
 
       <ServiceCardsComponent cardData={cardComponent} />
+      <div className={st.blur}>
+        <div className={st.blur_item}></div>
+      </div>
     </section>
   );
 };

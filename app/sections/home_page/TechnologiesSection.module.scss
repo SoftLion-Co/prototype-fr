@@ -276,15 +276,17 @@
     align-items: center;
 
     width: 224px;
-
     @include for-size(tablet) {
       width: 216px;
     }
 
     @include for-size(laptop) {
+      transition: transform 0.5s ease;
       width: 239px;
-
       justify-content: center;
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     @include for-size(desktop) {
@@ -336,6 +338,38 @@
       font-size: 30px;
       line-height: 39px;
       letter-spacing: 2.7px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/techno_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 200px;
+      width: 733px;
+      height: 638px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/techno_blurL.png);
+      width: 1058px;
+      height: 633px;
+      bottom: 200px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/techno_blurL.png);
+      width: 1387px;
+      height: 802px;
+      bottom: 100px;
     }
   }
 }

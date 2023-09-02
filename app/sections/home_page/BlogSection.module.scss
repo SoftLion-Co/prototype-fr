@@ -31,3 +31,35 @@
     }
   }
 }
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/blog_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 60px;
+      width: 345px;
+      height: 310px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/blog_blurL.png);
+      bottom: 120px;
+      width: 1108px;
+      height: 597px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/blog_blurD.png);
+      bottom: 100px;
+      width: 1440px;
+      height: 776px;
+    }
+  }
+}
