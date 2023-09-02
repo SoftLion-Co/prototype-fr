@@ -8,7 +8,6 @@
   gap: 32px;
   width: -webkit-fill-available;
 
-
   @include for-size(tablet) {
     flex-direction: row;
     justify-content: space-between;
@@ -21,7 +20,6 @@
   }
   @include for-size(desktop) {
     margin-top: 70px;
-
   }
 
   &__logo {
@@ -81,7 +79,23 @@
       margin-bottom: 30px;
     }
     &_comp {
-      color: $hero-heading-blue-color;
+      background: linear-gradient(45deg, #00ffea, #0099ff, #1111ff);
+      background-size: 200% 200%;
+      background-clip: text;
+      color: transparent;
+      animation: gradientAnimation 2s linear infinite;
+    }
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
@@ -147,7 +161,6 @@
 .our_form {
   width: calc(100% - 40px);
   @include for-size(tablet) {
-
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -160,7 +173,7 @@
   &_item {
     position: relative;
     pointer-events: none;
-    
+
     @include for-size(tablet) {
       background-image: url(../../../images/blur/hero_blurT.png);
       background-repeat: no-repeat;

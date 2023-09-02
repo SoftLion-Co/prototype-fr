@@ -4,6 +4,8 @@
 
 .servicecard {
   width: 100%;
+  user-select: none;
+  // min-height: 395px;
   align-items: center;
   display: flex;
   flex-direction: column;
