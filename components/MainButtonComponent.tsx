@@ -7,7 +7,7 @@ interface MainButtonComponentProps extends ComponentProps<"button"> {
   loading?: boolean;
   color?: "blue" | "white" | "dark-blue";
   children: ReactNode;
-  path?: "services" | "projects";
+  path?: "services" | "projects" | "contact-us";
 }
 
 const MainButtonComponent: FC<MainButtonComponentProps> = ({ loading = false, color = "blue", path, className, children, ...rest }) => {
