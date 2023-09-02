@@ -8,7 +8,7 @@ import HeadingComponent from "@/components/HeadingComponent";
 import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import { BlogInterface } from "@/components/blog/BlogInteface";
-import useBlogsData from "@/hooks/useBlogsData";
+import blogService from "@/services/blog-service";
 
 const blogs: BlogInterface[] = useBlogsData();
 
