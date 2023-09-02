@@ -266,3 +266,34 @@
     }
   }
 }
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../images/blur/footer_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 50px;
+      width: 712.441px;
+      height: 203.328px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../images/blur/footer_blurL.png);
+      bottom: 50px;
+      width: 1045px;
+      height: 298px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../images/blur/footer_blurD.png);
+      width: 1349px;
+      height: 385px;
+    }
+  }
+}

@@ -75,7 +75,25 @@ async function useBlogsData() {
         "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
       tags: ["Tag1", "Medium tag", "Looooong tag", "Tag2"],
       text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 7",
-    },
+    },{
+      id: 8,
+      title: "How to delegate work correctly 8",
+      authorId: "PaulGraur",
+      readingTime: "12 mins",
+      imageSrc:
+        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+      tags: ["Tag1", "Medium tag", "Lodwoooong tag", "Tag2"],
+      text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 7",
+    },{
+    id: 9,
+    title: "How to delegate work correctly 9",
+    authorId: "PaulGraur",
+    readingTime: "12 mins",
+    imageSrc:
+      "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+    tags: ["Tag1", "Medium tag", "Lodwoooong tag", "Tag2"],
+    text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 7",
+  },
   ];
 
   return data;
