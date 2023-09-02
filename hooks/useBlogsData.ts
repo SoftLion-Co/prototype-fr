@@ -5,6 +5,7 @@ function useBlogsData() {
     {
       id: 1,
       title: "How to delegate work correctly 1",
+      category: "Guides",
       authorId: "PaulGraur",
       readingTime: "5 mins",
       imageSrc:
@@ -15,6 +16,7 @@ function useBlogsData() {
     {
       id: 2,
       title: "How to delegate work correctly 2",
+      category: "Technology",
       authorId: "PaulGraur",
       readingTime: "10 mins",
       imageSrc:
@@ -25,6 +27,7 @@ function useBlogsData() {
     {
       id: 3,
       title: "How to delegate work correctly 3",
+      category: "UI/UX",
       authorId: "PaulGraur",
       readingTime: "5 mins",
       imageSrc:
@@ -35,6 +38,7 @@ function useBlogsData() {
     {
       id: 4,
       title: "How to delegate work correctly 4",
+      category: "E-learning",
       authorId: "PaulGraur",
       readingTime: "10 mins",
       imageSrc:
@@ -45,6 +49,7 @@ function useBlogsData() {
     {
       id: 5,
       title: "How to delegate work correctly 5",
+      category: "Finance",
       authorId: "PaulGraur",
       readingTime: "5 mins",
       imageSrc:
@@ -55,6 +60,7 @@ function useBlogsData() {
     {
       id: 6,
       title: "How to delegate work correctly 6",
+      category: "Startups",
       authorId: "PaulGraur",
       readingTime: "10 mins",
       imageSrc:
@@ -65,6 +71,7 @@ function useBlogsData() {
     {
       id: 7,
       title: "How to delegate work correctly 7",
+      category: "Technology",
       authorId: "PaulGraur",
       readingTime: "10 mins",
       imageSrc:
@@ -74,6 +81,7 @@ function useBlogsData() {
     },{
       id: 8,
       title: "How to delegate work correctly 8",
+      category: "Technology",
       authorId: "PaulGraur",
       readingTime: "12 mins",
       imageSrc:
@@ -83,6 +91,7 @@ function useBlogsData() {
     },{
     id: 9,
     title: "How to delegate work correctly 9",
+    category: "Technology",
     authorId: "PaulGraur",
     readingTime: "12 mins",
     imageSrc:
