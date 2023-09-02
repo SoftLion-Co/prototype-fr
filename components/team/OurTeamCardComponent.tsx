@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import s from "./OurTeamCardComponent.module.scss";
 import { FC } from "react";
 import classNames from "classnames";
@@ -8,7 +8,7 @@ interface TeamsProps {
   data: {
     name: string;
     position: string;
-    avatar: string;
+    avatar: string | StaticImageData;
     id: string;
     linkedinUrl: string;
   };

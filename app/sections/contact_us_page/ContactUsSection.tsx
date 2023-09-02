@@ -16,6 +16,9 @@ const ContactUsSection = () => {
         </p>
       </div>
       <FormComponent title="Book consultation"/>
+      <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
     </div>
   );
 };

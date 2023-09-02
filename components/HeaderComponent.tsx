@@ -2,7 +2,6 @@
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { IoIosMenu } from "react-icons/io";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
@@ -14,7 +13,7 @@ const HeaderComponent = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const [arrowDirection1, setArrowDirection1] = useState("down");
-const [arrowDirection2, setArrowDirection2] = useState("down");
+  const [arrowDirection2, setArrowDirection2] = useState("down");
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
@@ -23,8 +22,6 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
       setSelectedMenuItem(index);
     }
   };
-
-  const headerHeight = 85;
 
   const handleArrowClick1 = () => {
     setArrowDirection1(arrowDirection1 === "down" ? "up" : "down");
@@ -256,7 +253,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/design"
+                          href="/services#design"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -270,7 +267,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/development"
+                          href="/services#development"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -284,7 +281,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/apps"
+                          href="/services#apps"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -344,7 +341,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/net"
+                          href="/technologies/net"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -358,7 +355,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/java"
+                          href="/technologies/java"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -372,7 +369,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/node"
+                          href="/technologies/node"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -386,7 +383,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/react"
+                          href="/technologies/react"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -400,7 +397,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/angular"
+                          href="/technologies/angular"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -414,7 +411,7 @@ const [arrowDirection2, setArrowDirection2] = useState("down");
                         )}
                       >
                         <Link
-                          href="/services/vue"
+                          href="/technologies/vue"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >

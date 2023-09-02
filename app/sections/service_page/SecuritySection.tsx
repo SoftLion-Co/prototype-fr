@@ -68,6 +68,9 @@ const SecuritySection = () => {
           </div>
         ))}
       </div>
+      <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       <div className={classNames(s.container, s.security__button)}>
         <BigButtonComponent />
       </div>
