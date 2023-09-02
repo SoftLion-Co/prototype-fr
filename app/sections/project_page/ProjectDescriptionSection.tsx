@@ -17,7 +17,9 @@ const ProjectDescriptionSection: FC<{ data: ProjectDescriptionData }> = ({ data 
 
   return (
     <div className={s.container}>
-
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
       <section className={s.project}>
         <div className={s.article}>
           <h2 className={s.article__title}>{title}</h2>

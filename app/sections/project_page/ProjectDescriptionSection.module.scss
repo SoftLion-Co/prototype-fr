@@ -143,15 +143,13 @@
     @include for-size(tablet) {
       background-image: url(../../../images/blur/travel_blurT.png);
       background-repeat: no-repeat;
-      right: 350px;
-      width: 747px;
+      width: 727px;
       height: 298px;
     }
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/travel_blurL.png);
       background-repeat: no-repeat;
-      right: 200px;
       width: 1080px;
       height: 430px;
     }

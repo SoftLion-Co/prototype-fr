@@ -31,10 +31,12 @@ const RequestSection: FC<RequestSectionProps> = ({ data }) => {
             </li>
           ))}
         </ul>
+        <div className={s.blur}>
+            <div className={s.blur_item}></div>
+          </div>
       </div>
     </section>
   );
 };
 
 export default RequestSection;
-

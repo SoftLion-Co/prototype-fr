@@ -47,6 +47,9 @@ const SolutionSection: FC<SolutionSectionProps> = ({ data }) => {
           ))}
         </ul>
         <ul className={`${s.solution__photos} ${s.container}`}>
+        <div className={s.blur}>
+            <div className={s.blur_item}></div>
+          </div>
           {data.images
             .filter((info) => info.imageSrc)
             .map((info, index) => (
