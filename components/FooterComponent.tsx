@@ -111,7 +111,7 @@ const FooterComponent = () => {
           <div className={s.footer__btn}>
             <MainButtonComponent
               color="dark-blue"
-              path="services"
+              path="contact-us"
               className={s.footer__btn_text}
             >
               Book Consultation
