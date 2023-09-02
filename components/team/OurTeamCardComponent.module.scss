@@ -2,7 +2,6 @@
 @import "../../styles/mixin";
 
 .member {
-  cursor: pointer;
   display: flex;
   gap: 29px;
   align-items: center;
@@ -172,4 +171,8 @@
   @include for-size(desktop) {
     font-size: 25px;
   }
+}
+
+.member_avatar_img{
+  cursor: pointer;
 }
