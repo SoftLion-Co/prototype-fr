@@ -7,11 +7,17 @@
   border: none;
   font-size: 10px;
   letter-spacing: 0.24px;
-  line-height: 151.682%;
+  line-height: 150%;
 
   @include for-size(tablet) {
     padding: 9px 23.5px;
     border-radius: 7px;
+    transition: transform 0.3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   @include for-size(laptop) {
@@ -26,10 +32,25 @@
     border-radius: 15px;
   }
 
+  animation: buttonShadowAnimation $button-shadow-duration infinite linear;
+
+  @keyframes buttonShadowAnimation {
+    0%,
+    100% {
+      box-shadow: 0 0 30px #76bdd335;
+    }
+    33% {
+      box-shadow: 0 0 30px #a0189b35;
+    }
+    66% {
+      box-shadow: 0 0 30px #13eb9035;
+    }
+  }
+
   &.blueButton {
     background: $button-blue-background;
-    box-shadow: $button-blue-shadow;
     color: black;
+    box-shadow: $button-blue-shadow;
 
     &:disabled {
       background: $button-blue-disabled;
@@ -39,8 +60,8 @@
 
   &.whiteButton {
     background: $button-white-background;
-    box-shadow: $button-white-shadow;
     color: black;
+    box-shadow: $button-white-shadow;
   }
 
   &.darkBlueButton {
