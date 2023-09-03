@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom:15px;
+  margin-bottom: 15px;
   font-size: 10px;
   line-height: 11px;
   letter-spacing: 0.04em;
@@ -70,12 +70,15 @@
     color: black;
     @include for-size(tablet) {
       margin-bottom: 35px;
+      width: 295px;
     }
     @include for-size(laptop) {
       margin-bottom: 60px;
+      width: 460px;
     }
     @include for-size(desktop) {
       margin-bottom: 70px;
+      width: 560px;
     }
   }
 
