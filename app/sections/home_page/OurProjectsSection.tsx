@@ -8,37 +8,16 @@ import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
+import trendHero from "@/images/project/project-trend/trend-hero.png";
 
 const sampleData = [
   {
     id: 1,
     image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Move",
-    year: "year: 2022",
-    author: "author: SoftLion",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-  },
-  {
-    id: 2,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Move",
-    year: "year: 2022",
-    author: "author: SoftLion",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-  },
-  {
-    id: 3,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Move",
-    year: "year: 2022",
+      "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero.png?raw=true",
+    title: "Landing page of Trend company",
+    customer: "customer: Trend",
+    year: "year: 2023",
     author: "author: SoftLion",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
@@ -48,7 +27,7 @@ const sampleData = [
 const OurProjectsSection = () => {
   return (
     <section className={s.projects}>
-      <ProjectHeadingComponent centered={false}/>
+      <ProjectHeadingComponent centered={false} />
       <div className={s.projects__mobile_slider}>
         <MobileSliderComponent
           data={sampleData}

@@ -15,7 +15,7 @@ const response = {
     time: "5 month",
     year: 2023,
     location: "Europe",
-    imgSrc: "https://i.ibb.co/CwYTtPR/photo-2023-08-07-14-08-48.jpg",
+    imgSrc: "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero.png?raw=true",
   },
   RequestSection: {
     paragraph:

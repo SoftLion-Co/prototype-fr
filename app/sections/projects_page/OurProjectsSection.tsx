@@ -27,7 +27,7 @@ const sampleData: Array<{
   {
     id: 1,
     image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+      "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero.png?raw=true",
     title: "Landing page of Trend company",
     customer: "customer: Trend",
     year: "year: 2023",
@@ -130,10 +130,10 @@ const OurProjectsSection = () => {
     if (topRef.current && window.scrollY > 0) {
       const elementPosition = topRef.current.getBoundingClientRect();
       const offset = 110;
-      
+
       const targetScrollPosition =
         window.scrollY + elementPosition.top - offset;
-  
+
       window.scrollTo({
         top: targetScrollPosition,
         behavior: "smooth",
@@ -273,12 +273,15 @@ const OurProjectsSection = () => {
         size={paginationSize}
         styles={(theme) => ({
           control: {
-            '&[data-active]': {
-              backgroundImage: theme.fn.gradient({ from: '#308bb7', to: '#7ec2e4' }),
+            "&[data-active]": {
+              backgroundImage: theme.fn.gradient({
+                from: "#308bb7",
+                to: "#7ec2e4",
+              }),
               border: 0,
             },
           },
-        })}      
+        })}
       />
     </section>
   );
