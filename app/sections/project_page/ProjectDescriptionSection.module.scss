@@ -24,20 +24,17 @@
   @include for-size(tablet) {
     margin-bottom: 0;
     gap: 0;
-    width: 315px;
     min-height: 220px;
     font-size: 11px;
     line-height: 14px;
   }
 
   @include for-size(laptop) {
-    width: 490px;
     min-height: 345px;
     font-size: 17px;
     line-height: 21px;
   }
   @include for-size(desktop) {
-    width: 600px;
     min-height: 415px;
     font-size: 20px;
     line-height: 26px;
