@@ -69,20 +69,20 @@
     font-size: 20px;
     line-height: 130%;
     letter-spacing: 1.8px;
-
     margin-bottom: 30px;
+
     @include for-size(tablet) {
       margin-bottom: 20px;
       letter-spacing: 1.4px;
     }
     @include for-size(laptop) {
       font-size: 24px;
-      margin-bottom: 29px;
+      margin-bottom: 50px;
       letter-spacing: 2px;
     }
     @include for-size(desktop) {
       font-size: 28px;
-      margin-bottom: 38px;
+      margin-bottom: 70px;
       letter-spacing: 2.7px;
     }
   }
