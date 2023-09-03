@@ -45,7 +45,7 @@
 
   &__title {
     color: black;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 23px;
     letter-spacing: 0em;
     @include for-size(tablet) {
@@ -83,6 +83,7 @@
   }
 
   &__time {
+    font-size: 12px;
     @include for-size(tablet) {
       margin-bottom: 16px;
     }
@@ -94,6 +95,7 @@
     }
   }
   &__year {
+    font-size: 12px;
     @include for-size(tablet) {
       margin-bottom: 12px;
     }
@@ -103,6 +105,10 @@
     @include for-size(desktop) {
       margin-bottom: 24px;
     }
+  }
+
+  &__location {
+    font-size: 12px;
   }
   &__image {
     align-self: center;

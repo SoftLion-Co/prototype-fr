@@ -60,14 +60,12 @@
     }
   }
   &__name {
-    font-size: 22px;
-    max-width: 310px;
+    font-size: 26px;
+    max-width: 380px;
     margin-bottom: 15px;
 
     @include for-size(tablet) {
-      font-size: 24px;
       max-width: 321px;
-
       margin-bottom: 13px;
     }
     @include for-size(laptop) {
@@ -136,12 +134,11 @@
     }
   }
   &__description {
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.3px;
-    max-width: 279px;
+    max-width: 349px;
     @include for-size(tablet) {
       max-width: 287px;
-      font-size: 9px;
       letter-spacing: 0.4px;
     }
     @include for-size(laptop) {

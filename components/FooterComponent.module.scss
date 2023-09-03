@@ -43,7 +43,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 13px;
+      gap: 20px;
 
       @include for-size(tablet) {
         width: 61%;
@@ -54,7 +54,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 10px;
+      gap: 30px;
 
       @include for-size(tablet) {
         justify-content: space-between;
@@ -200,7 +200,7 @@
   &__routs {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 5px;
     @include for-size(tablet) {
       gap: 3px;
     }

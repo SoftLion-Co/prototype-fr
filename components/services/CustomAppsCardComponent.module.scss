@@ -3,6 +3,7 @@
 @import "../styles/mixin";
 
 .servicecard {
+  width: 100%;
   user-select: none;
   // min-height: 395px;
   align-items: center;
@@ -17,7 +18,7 @@
 
   @include for-size(tablet) {
     width: 348px;
-    padding: 64px 30px 45px 30px;
+    padding: 20px;
     border-radius: 8px;
     align-items: left;
   }
@@ -60,7 +61,7 @@
     }
   }
   &__title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.6px;
     color: black;
@@ -86,8 +87,8 @@
 
     @include for-size(tablet) {
       display: block;
-      font-size: 10.23px;
-      width: 245px;
+      font-size: 14px;
+      width: 280px;
       letter-spacing: 0.04px;
     }
     @include for-size(laptop) {
@@ -103,12 +104,13 @@
   }
 
   &__text_mob {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.2px;
     color: black;
     line-height: 16px;
     margin-top: 28px;
+    text-align: center;
 
     @include for-size(tablet) {
       display: none;

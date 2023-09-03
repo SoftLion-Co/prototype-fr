@@ -1,4 +1,5 @@
 import { BlogInterface } from "@/components/blog/BlogInteface";
+import blogService from "@/services/blog-service";
 
 function useBlogsData() {
   const data: BlogInterface[] = [
