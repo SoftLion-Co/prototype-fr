@@ -5,11 +5,13 @@ import React, { useState, useEffect } from "react";
 import ReactCodeInput from "react-code-input";
 import classNames from "classnames";
 import { useSearchParams } from "next/navigation";
+import authService from "@/services/auth-service";
 
 const EnterCodeSection = () => {
-  const params = useSearchParams();
   const [countdown, setCountdown] = useState(60);
   const [isCounting, setIsCounting] = useState(false);
+  const [email, setEmail] = useState(localStorage.getItem("email"));
+  const [code, setCode] = useState(localStorage.getItem("code"));
 
   useEffect(() => {
     let interval: number;
@@ -33,19 +35,26 @@ const EnterCodeSection = () => {
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     if (!isCounting) {
       setIsCounting(true);
       setCountdown(60);
-    }
-    console.log("Email: ", params.get("email"))
-  };
 
+      try {
+        console.log("Email: ", email);
+        const response = await authService.sendCode(email);
+
+        setCode(response.code);
+      } catch (error) {
+        console.error("error");
+      }
+    }
+  };
 
   return (
     <div className={classNames(s.container, s.code)}>
       <h2 className={s.title}>Please, enter your code.</h2>
-      <p className={classNames(s.text, s.message)}>A confirmation code has been sent to the email {params.get("email")}</p>
+      <p className={classNames(s.text, s.message)}>A confirmation code has been sent to the email {email}</p>
       <form className={s.form}>
         <ReactCodeInput className={s.form__input} name="code" inputMode="numeric" type="text" fields={6} />
         <div className={s.option}>
@@ -54,7 +63,7 @@ const EnterCodeSection = () => {
           {isCounting ? (
             <span className={classNames(s.text, s.timer)}>Resend cod in {formatTime(countdown)}</span>
           ) : (
-            <button className={classNames(s.option__button, s.text)} onClick={handleButtonClick} disabled={isCounting}>
+            <button type="button" className={classNames(s.option__button, s.text)} onClick={handleButtonClick} disabled={isCounting}>
               Click here
             </button>
           )}

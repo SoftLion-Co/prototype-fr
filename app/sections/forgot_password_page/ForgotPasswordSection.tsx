@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
+import authService from "@/services/auth-service";
 
 interface FormData {
   email: string;
@@ -31,11 +32,18 @@ const ForgotPasswordSection = () => {
     setSubmitDisabled(!email);
   });
 
-  const onSubmit = (data: FormData) => {
-    const { email } = data;
-    console.log("Email: ", email);
-    router.push(`/enter-code?email=${email}`)
-    reset();
+  const onSubmit = async (data: FormData) => {
+    try {
+      const { email } = data;
+      console.log("Email: ", email);
+      const response = await authService.sendCode(email);
+      localStorage.setItem("email", email);
+      localStorage.setItem("code", response.code);
+      router.push(`/enter-code`);
+      reset();
+    } catch (error) {
+      console.error("error");
+    }
   };
 
   return (
@@ -45,7 +53,6 @@ const ForgotPasswordSection = () => {
         <p className={classNames(s.text, s.text__indent)}>We will send you a link to top up your account by mail and phone number.</p>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <EmailInput
-            applyValidation={false}
             error={errors.email}
             inputClass={s.input_underline}
             register={register}
