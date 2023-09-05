@@ -11,6 +11,14 @@
   gap: 30px;
   align-items: center;
 
+  transition: all 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0.9rem 4rem rgba(0, 0, 0, 0.17);
+    transform: scale(1.03);
+  }
+
   @include for-size(laptop) {
     padding: 21px 15px;
     gap: 56px;

@@ -9,13 +9,14 @@ import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import useBlogsData from "@/hooks/useBlogsData";
+import { FC } from "react";
 
 const blogs: BlogInterface[] = useBlogsData();
 
-const HomeBlog: React.FC = () => {
+const HomeBlog: FC = () => {
   return (
     <section>
-      <HeadingComponent text="Blog"></HeadingComponent>
+      <div className={s.blog__heading}><HeadingComponent text="Blog"></HeadingComponent></div>
       <div className={s.blogContainer}>
         <div
           className={classNames(
@@ -30,6 +31,9 @@ const HomeBlog: React.FC = () => {
             data={blogs}
             SlideComponent={BlogExtendedCardComponent}
           />
+        </div>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
         </div>
       </div>
       <div className={s.container}>

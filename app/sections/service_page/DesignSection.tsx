@@ -77,6 +77,9 @@ const DesignSection = () => {
           <ServiceDesignCardComponent key={info.id} {...info} />
         ))}
       </ul>
+      <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       <div className={s.design__wrapperBtn}>
         <BigButtonComponent />
       </div>

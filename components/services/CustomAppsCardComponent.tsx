@@ -20,7 +20,7 @@ const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
     <div className={s.servicecard}>
       <div className={s.servicecard__wrap}>
         <Image className={s.servicecard__pic} src={path} alt="phone" />
-        <h2 className={s.servicecard__title}>{title}</h2>
+        <h3 className={s.servicecard__title}>{title}</h3>
         <p className={s.servicecard__text_mob}>{text_mob}</p>
         <p className={s.servicecard__text}>{text}</p>
       </div>

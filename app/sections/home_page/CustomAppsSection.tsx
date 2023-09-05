@@ -33,6 +33,9 @@ const CustomAppsSection = () => {
           arrow={false}
         />
       </div>
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
       <div className={s.custom__more}>
         <SeeMoreButtonComponent path="services" />
       </div>

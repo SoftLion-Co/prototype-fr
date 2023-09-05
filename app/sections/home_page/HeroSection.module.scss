@@ -8,7 +8,6 @@
   gap: 32px;
   width: -webkit-fill-available;
 
-
   @include for-size(tablet) {
     flex-direction: row;
     justify-content: space-between;
@@ -21,7 +20,6 @@
   }
   @include for-size(desktop) {
     margin-top: 70px;
-
   }
 
   &__logo {
@@ -62,14 +60,12 @@
     }
   }
   &__name {
-    font-size: 22px;
-    max-width: 310px;
+    font-size: 26px;
+    max-width: 380px;
     margin-bottom: 15px;
 
     @include for-size(tablet) {
-      font-size: 24px;
       max-width: 321px;
-
       margin-bottom: 13px;
     }
     @include for-size(laptop) {
@@ -83,7 +79,23 @@
       margin-bottom: 30px;
     }
     &_comp {
-      color: $hero-heading-blue-color;
+      background: linear-gradient(45deg, #00ffea, #0099ff, #1111ff);
+      background-size: 200% 200%;
+      background-clip: text;
+      color: transparent;
+      animation: gradientAnimation 2s linear infinite;
+    }
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
@@ -122,12 +134,11 @@
     }
   }
   &__description {
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.3px;
-    max-width: 279px;
+    max-width: 349px;
     @include for-size(tablet) {
       max-width: 287px;
-      font-size: 9px;
       letter-spacing: 0.4px;
     }
     @include for-size(laptop) {
@@ -144,5 +155,48 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.our_form {
+  width: calc(100% - 40px);
+  @include for-size(tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.blur {
+  position: absolute;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/hero_blurT.png);
+      background-repeat: no-repeat;
+      right: 400px;
+      bottom: 100px;
+      width: 385px;
+      height: 360px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/hero_blurL.png);
+      right: 550px;
+      bottom: 130px;
+      width: 496px;
+      height: 463px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/hero_blurD.png);
+      right: 680px;
+      bottom: 180px;
+      width: 631px;
+      height: 589px;
+    }
   }
 }

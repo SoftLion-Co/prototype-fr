@@ -35,6 +35,10 @@
     }
 
     @include for-size(laptop) {
+      font-size: 26px;
+    }
+
+    @include for-size(desktop) {
       font-size: 30px;
     }
   }

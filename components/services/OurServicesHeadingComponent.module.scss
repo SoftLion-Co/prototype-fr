@@ -24,7 +24,7 @@
   &__text {
     margin: 0 auto;
     padding-top: 13px;
-    font-size: 12px;
+    font-size: 14px;
     align-self: flex-start;
     line-height: 130.49%;
     letter-spacing: 0.48px;
@@ -52,6 +52,39 @@
       font-size: 20px;
       max-width: 644px;
       letter-spacing: 0.8px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../images/blur/service_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 270px;
+      width: 324.892px;
+      height: 283.452px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../images/blur/service_blurL.png);
+      background-repeat: no-repeat;
+      width: 450px;
+      height: 390px;
+      bottom: 150px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../images/blur/service_blurD.png);
+      background-repeat: no-repeat;
+      width: 588px;
+      height: 513px;
     }
   }
 }

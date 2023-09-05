@@ -1,5 +1,3 @@
-'use client';
-import "./../styles/main.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";

@@ -28,7 +28,7 @@ const LargeServiceCardComponent: React.FC<LargeServiceCardComponentProps> = ({
 
         {isActive ? (
           <>
-            <h1 className={s.service__heading}>{title}</h1>
+            <h3 className={s.service__heading}>{title}</h3>
             <p className={s.service__paragraph}>{paragraph}</p>
           </>
         ) : (
