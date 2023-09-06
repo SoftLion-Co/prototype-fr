@@ -8,11 +8,12 @@ import bin from "@/app/admin/images/control/bin.svg";
 
 import Image from "next/image";
 
-interface User {
+export interface User {
   number: number;
   title: string;
   data: string;
   rating: string;
+  verified?: boolean | undefined;
 }
 
 interface UserInfoComponentProps {

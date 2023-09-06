@@ -1,0 +1,15 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixin";
+
+.button {
+
+    border: none;
+    border-radius: 10px;
+    background: (linear-gradient(99deg, #AFDAED 4.34%, #84C6E2 94.12%));
+    color: $blog-card-text-color;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 130.49%;
+    letter-spacing: 0.56px;
+    padding: 11px 21px;
+}
