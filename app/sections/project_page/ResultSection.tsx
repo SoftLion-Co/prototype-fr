@@ -33,7 +33,9 @@ const ResultSection: FC<ResultSectionProps> = ({ data }) => {
           <Image
             alt="Vectary-texture"
             className={s.design__container_photo}
-            src={"https://i.ibb.co/bbXrmNK/Vectary-texture.png"}
+            src={
+              "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero-in-desktop.png?raw=true"
+            }
             width={800}
             height={200}
           />

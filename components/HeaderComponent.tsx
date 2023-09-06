@@ -25,15 +25,21 @@ const HeaderComponent = () => {
 
   const handleArrowClick1 = () => {
     setArrowDirection1(arrowDirection1 === "down" ? "up" : "down");
+    
+      setArrowDirection2("down")
   };
   
   const handleArrowClick2 = () => {
     setArrowDirection2(arrowDirection2 === "down" ? "up" : "down");
+    setArrowDirection1("down")
+      
   };
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
     setOpenSubMenuIndex(-1);
+    setArrowDirection1("down")
+      setArrowDirection2("down")
   };
 
   const toggleSubMenu = (index: any) => {

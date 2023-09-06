@@ -12,7 +12,7 @@ const HeadingComponent: FC<HeadingComponentProps> = ({ text, customClass = '' })
 
   return (
     <div className={className}>
-      <h1 className={s.heading}>{text}</h1>
+      <h2 className={s.heading}>{text}</h2>
     </div>
   );
 };

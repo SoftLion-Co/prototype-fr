@@ -1,7 +1,7 @@
 import s from "./ContactUsSection.module.scss";
 import FormComponent from "../../../components/FormComponent";
 import HeadingComponent from "../../../components/HeadingComponent";
-import classNames from "classnames"
+import classNames from "classnames";
 
 const ContactUsSection = () => {
   return (
@@ -15,10 +15,10 @@ const ContactUsSection = () => {
           e-commerce world.
         </p>
       </div>
-      <FormComponent title="Book consultation"/>
+      <FormComponent title="Book consultation" />
       <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
+        <div className={s.blur_item}></div>
+      </div>
     </div>
   );
 };
