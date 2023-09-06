@@ -44,6 +44,22 @@
     padding: 20px;
   }
 
+  &__arrowIcon {
+    @include for-size(tablet) {
+      transition: transform 0.3s ease-in-out;
+    }
+    animation: arrowAnimation 1s infinite alternate;
+  }
+
+  @keyframes arrowAnimation {
+    0% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+
   &__container {
     width: 100%;
     display: flex;

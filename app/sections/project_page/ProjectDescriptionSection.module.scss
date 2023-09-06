@@ -16,27 +16,25 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
-  font-size: 14px;
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  line-height: 11px;
+  letter-spacing: 0.04em;
   color: #000000b2;
 
   @include for-size(tablet) {
     margin-bottom: 0;
     gap: 0;
-    width: 315px;
     min-height: 220px;
     font-size: 11px;
     line-height: 14px;
   }
 
   @include for-size(laptop) {
-    width: 490px;
     min-height: 345px;
     font-size: 17px;
     line-height: 21px;
   }
   @include for-size(desktop) {
-    width: 600px;
     min-height: 415px;
     font-size: 20px;
     line-height: 26px;
@@ -69,12 +67,15 @@
     color: black;
     @include for-size(tablet) {
       margin-bottom: 35px;
+      width: 295px;
     }
     @include for-size(laptop) {
       margin-bottom: 60px;
+      width: 460px;
     }
     @include for-size(desktop) {
       margin-bottom: 70px;
+      width: 560px;
     }
   }
 
