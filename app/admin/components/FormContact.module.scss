@@ -1,0 +1,134 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.form {
+  width: 555px;
+  height: 614px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 1px solid rgba(72, 138, 167, 0.75);
+  background: rgba(255, 255, 255, 0.75);
+
+  &_content {
+    margin-left: 90px;
+  }
+
+  &_phone {
+    padding-top: 55px;
+    padding-bottom: 20px;
+    display: flex;
+
+    &_text {
+      color: #488aa7;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.64px;
+      margin-left: 15px;
+    }
+  }
+
+  &_email {
+    display: flex;
+    padding-bottom: 20px;
+
+    &_text {
+      color: #488aa7;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.64px;
+      margin-left: 15px;
+    }
+  }
+
+  &_description {
+    padding-bottom: 20px;
+    display: flex;
+
+    &_text {
+      color: #488aa7;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.64px;
+      margin-left: 15px;
+    }
+  }
+
+  &_input {
+    width: 392px;
+    height: 200px;
+  }
+
+  &_send {
+    padding-top: 45px;
+    display: flex;
+
+    &_text {
+      color: #488aa7;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.64px;
+      margin-left: 15px;
+    }
+  }
+
+  &_button {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-top: 20px;
+
+    &_text {
+      border: none;
+      border-radius: 10px;
+      background: var(
+        --cta,
+        linear-gradient(99deg, #afdaed 4.34%, #84c6e2 94.12%)
+      );
+      padding: 11px 21px;
+      color: #000;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.56px;
+    }
+
+    &_delate{
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(99deg, #EDAFAF 4.34%, #E28484 94.12%);
+        padding: 11px 21px;
+        color: #000;
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 0.56px;
+    }
+  }
+}
+
+.line {
+  display: block;
+  height: 2px;
+  background: #afdaed;
+  width: 490px;
+  margin-bottom: 9px;
+  margin-top: 60px;
+  margin-left: 30px;
+}

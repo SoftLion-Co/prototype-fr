@@ -1,9 +1,12 @@
+"use client"
+
 import React, { useState } from "react";
 import s from "./page.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import PanelNavigationComponent from "@/app/admin/components/PanelNavigationComponent";
 import UserInfoComponent from "@/app/admin/components/blog/UserInfoComponent";
 import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayComponent";
+import FormContact from "../components/FormContact"
 // import { ChangeEvent } from "react";
 
 const Blogs = () => {
@@ -136,7 +139,7 @@ const Blogs = () => {
             />
           </div>
           <div className={s.user__container}>
-            <UserInfoComponent users={users} />
+            <UserInfoComponent users={users} />  
           </div>
           <div>
             <ItemCountDisplayComponent
@@ -147,6 +150,7 @@ const Blogs = () => {
           </div>
         </div>
       </div>
+      <FormContact/>
     </div>
   );
 };

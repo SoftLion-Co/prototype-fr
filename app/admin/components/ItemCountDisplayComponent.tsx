@@ -1,4 +1,4 @@
-import s from "./ItemCountDisplayComponent.module.module.scss";
+import s from "./ItemCountDisplayComponent.module.scss";
 import Image from "next/image";
 
 import peopleVector from "@/app/admin/images/quantity/peopleVector.svg";
