@@ -14,18 +14,18 @@
     align-items: center;
     flex-direction: column;
     border-radius: 8px;
-    min-height: 325px;
     padding: 40px 20px 40px 20px;
+    user-select: none;
 
     @include for-size(tablet) {
       box-shadow: $services-slider-center-card-shadow;
       margin-bottom: 0;
       padding: 22px 42px 30px 42px;
-      height: 328px;
+      height: 348px;
     }
     @include for-size(laptop) {
       border-radius: 12px;
-      padding: 44px 75px 44px 75px;
+      padding: 44px 70px 44px 70px;
       height: 462px;
     }
     @include for-size(desktop) {
@@ -67,31 +67,41 @@
     text-align: center;
     font-weight: 400;
     font-size: 20px;
-    letter-spacing: 2px;
     line-height: 130%;
+    letter-spacing: 1.8px;
     margin-bottom: 30px;
+
     @include for-size(tablet) {
       margin-bottom: 20px;
+      letter-spacing: 1.4px;
     }
     @include for-size(laptop) {
       font-size: 24px;
-      margin-bottom: 29px;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
     }
     @include for-size(desktop) {
       font-size: 28px;
-      margin-bottom: 38px;
+      margin-bottom: 70px;
+      letter-spacing: 2.7px;
     }
   }
 
   &__paragraph {
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
+    letter-spacing: 0.5px;
+    @include for-size(tablet) {
+      letter-spacing: 0.4px;
+    }
     @include for-size(laptop) {
       font-size: 16px;
+      letter-spacing: 0.6px;
     }
     @include for-size(desktop) {
       font-size: 20px;
+      letter-spacing: 0.8px;
     }
   }
 }

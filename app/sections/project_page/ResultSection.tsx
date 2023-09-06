@@ -1,27 +1,15 @@
 import s from "./ResultSection.module.scss";
 import HeadingOurProjectComponent from "../../../components/project/HeadingOurProjectComponent";
 import Image from "next/image";
+import { FC } from "react";
 
-interface resultInfoItem {
-  title: string;
+// Оголошуємо тип для об'єкта data
+
+interface ResultSectionProps {
+  data: string[];
 }
 
-const info: resultInfoItem[] = [
-  {
-    title:
-      "Attractive and modern design: We have developed an aesthetically appealing design that reflects the unique style of your company and captures the attention of visitors. The website has a clean and organized layout that ensures easy navigation and user-friendliness.",
-  },
-  {
-    title:
-      "SEO optimization: We have taken into account search engine optimization (SEO) principles during the website development process.",
-  },
-  {
-    title:
-      "Our website is fully responsive and compatible with various devices such as smartphones and tablets. Your customers will have access to information and booking capabilities from any device, ensuring convenience and accessibility.",
-  },
-];
-
-const ResultSection = () => {
+const ResultSection: FC<ResultSectionProps> = ({ data }) => {
   return (
     <section className={s.design}>
       <div className={s.design__heading}>
@@ -29,9 +17,9 @@ const ResultSection = () => {
       </div>
       <div className={`${s.container} ${s.design__wrapper}`}>
         <ul className={s.design__wrapper_texts}>
-          {info.map((item, index) => (
+          {data.map((item, index) => (
             <li className={s.design__wrapper_list} key={index}>
-              <p className={s.design__wrapper_text}>{item.title}</p>
+              <p className={s.design__wrapper_text}>{item}</p>
             </li>
           ))}
         </ul>
@@ -39,7 +27,9 @@ const ResultSection = () => {
           <Image
             alt="Vectary-texture"
             className={s.design__container_photo}
-            src={"https://i.ibb.co/bbXrmNK/Vectary-texture.png"}
+            src={
+              "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero-in-desktop.png?raw=true"
+            }
             width={800}
             height={200}
           />

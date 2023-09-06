@@ -28,7 +28,7 @@ const securityCardsData = [
   },
   {
     id: 4,
-    title: "Use of Secure Data Transmission Protocols",
+    title: "Use of Secure Data Transmission",
     description:
       "We utilize secure data transmission protocols, such as HTTPS, to encrypt and protect information transmitted between users and the application or website. This helps prevent interception of information during transmission.",
   },
@@ -68,6 +68,9 @@ const SecuritySection = () => {
           </div>
         ))}
       </div>
+      <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       <div className={classNames(s.container, s.security__button)}>
         <BigButtonComponent />
       </div>

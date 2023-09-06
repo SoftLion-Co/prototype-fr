@@ -164,12 +164,13 @@
   }
 
   &__heading_text {
-    font-size: 10px;
+    font-size: 16px;
     line-height: 13px;
     letter-spacing: 0.9px;
     font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-    max-width: 152px;
     @include for-size(tablet) {
       font-size: 17px;
       line-height: 23px;
@@ -291,32 +292,11 @@
     }
   }
 
-  &__heading_1 {
-    margin-bottom: 15px;
-    @include for-size(tablet) {
-      margin-bottom: 0;
-    }
-  }
-
-  &__heading_2 {
-    margin-bottom: 7px;
-    @include for-size(tablet) {
-      margin-bottom: 0;
-    }
-  }
-
-  &__heading_3 {
-    margin-bottom: 13px;
-    @include for-size(tablet) {
-      margin-bottom: 0;
-    }
-  }
-
   &__text {
     margin-left: 39px;
 
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 14px;
+    line-height: 18px;
     letter-spacing: 0.4px;
 
     @include for-size(tablet) {

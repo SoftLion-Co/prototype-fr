@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import s from "./DevelopmentSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
@@ -8,8 +8,6 @@ import pic3 from "../../../images/services/development/testing-and-debuging.svg"
 import pic4 from "../../../images/services/development/deployment-and-maintenance.svg";
 import DevelopmentCardComponent from "@/components/service/DevelopmentCardComponent";
 import DevelopmentCardMobileComponent from "@/components/service/DevelopmentCardMobileComponent";
-
-
 
 const cardsData = [
   {
@@ -32,7 +30,6 @@ const cardsData = [
       "Implementing testing and bug fixing.",
     ],
     path: pic2,
-    
   },
   {
     num: 3,
@@ -47,50 +44,56 @@ const cardsData = [
   },
   {
     num: 4,
-    title: "Design and Development",
+    title: "Deployment and Maintenance",
     items: [
       "Releasing the product, launching the website or application.",
       "Monitoring, ensuring stability and security.",
       "Providing user support, updating functionality, and product development.",
     ],
     path: pic4,
-
   },
 ];
 
 const DevelopmentSection = () => {
   return (
-    <section  className={classNames(s.container, s.develop)}>
-       <div className={s.develop__heading}>
-       <ServiceHeadingComponent headingText={" Development"} container={false}/>
-       </div>
-       <div className={s.develop__mob}>
-    {cardsData.map((data) => (
-      <DevelopmentCardMobileComponent
-        key={data.num}
-        num={data.num}
-        title={data.title}
-        items={data.items}
-        path={data.path}
-      />
-    ))}
-    </div>
-    <div className={s.develop__desktop}>
-  
-     {cardsData.map((data) => (
-        <DevelopmentCardComponent
-          key={data.num}
-          num={data.num}
-          title={data.title}
-          items={data.items}
-          path={data.path}
-          leftAligned={data.leftAligned}
-        /> 
-      ))}
-       </div>
-  </section>
-);
+    <section className={classNames(s.container, s.develop)}>
+      <div className={s.develop__heading}>
+        <ServiceHeadingComponent
+          headingText={" Development"}
+          container={false}
+        />
+      </div>
+      <div className={s.develop__mob}>
+        {cardsData.map((data) => (
+          <DevelopmentCardMobileComponent
+            key={data.num}
+            num={data.num}
+            title={data.title}
+            items={data.items}
+            path={data.path}
+          />
+        ))}
+      </div>
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
+      <div className={s.develop__desktop}>
+        {cardsData.map((data) => (
+          <DevelopmentCardComponent
+            key={data.num}
+            num={data.num}
+            title={data.title}
+            items={data.items}
+            path={data.path}
+            leftAligned={data.leftAligned}
+          />
+        ))}
+      </div>
+      <div className={s.blure}>
+        <div className={s.blure_item}></div>
+      </div>
+    </section>
+  );
 };
 
 export default DevelopmentSection;
-

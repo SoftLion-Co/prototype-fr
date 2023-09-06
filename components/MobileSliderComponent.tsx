@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
+import { StaticImageData } from "next/image";
 
 interface MobileSliderComponentProps {
   data: Array<{
@@ -12,7 +13,7 @@ interface MobileSliderComponentProps {
     author?: string;
     description?: string;
     name?: string;
-    avatar?: string;
+    avatar?: string | StaticImageData;
     position?: string;
     linkedinUrl?: string;
   }>;
@@ -66,8 +67,8 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComp
         },
       }}
     >
-      {data.map((item) => (
-        <Carousel.Slide key={item.id} style={{ marginRight: "40px" }}>
+      {data.map((item, index) => (
+        <Carousel.Slide key={index} style={{ marginRight: "40px" }}>
           <SlideComponent data={item} /> {/* Відображення переданої компоненти */}
         </Carousel.Slide>
       ))}

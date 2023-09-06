@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import s from "./HeaderComponent.module.scss";
-import { MdKeyboardArrowDown } from "react-icons/md";
-import { IoIosMenu } from "react-icons/io";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Logo from "images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
@@ -13,6 +12,8 @@ const HeaderComponent = () => {
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+  const [arrowDirection1, setArrowDirection1] = useState("down");
+  const [arrowDirection2, setArrowDirection2] = useState("down");
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
@@ -22,9 +23,23 @@ const HeaderComponent = () => {
     }
   };
 
+  const handleArrowClick1 = () => {
+    setArrowDirection1(arrowDirection1 === "down" ? "up" : "down");
+    
+      setArrowDirection2("down")
+  };
+  
+  const handleArrowClick2 = () => {
+    setArrowDirection2(arrowDirection2 === "down" ? "up" : "down");
+    setArrowDirection1("down")
+      
+  };
+
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
     setOpenSubMenuIndex(-1);
+    setArrowDirection1("down")
+      setArrowDirection2("down")
   };
 
   const toggleSubMenu = (index: any) => {
@@ -35,31 +50,28 @@ const HeaderComponent = () => {
     toggleModal();
   };
 
+  const [isHeaderVisible, setHeaderVisible] = useState(true);
+
   useEffect(() => {
     const handleScroll = () => {
-      const currentPrevScroll = window.scrollY;
-      console.log(currentPrevScroll);
-      const headerContainer = document.querySelector(
-        `.${s.header_container}`
-      ) as HTMLElement;
+      
+      const currentScroll = window.scrollY;
+      const deltaY = currentScroll - prevScrollPos;
 
-      if (headerContainer) {
-        if (currentPrevScroll === 0) {
-          headerContainer.classList.remove(s.header_container__visible);
-        } else if (prevScrollPos > currentPrevScroll) {
-          headerContainer.classList.add(s.header_container__visible);
-        } else {
-          headerContainer.classList.remove(s.header_container__visible);
-        }
+      if (deltaY > 0 && isHeaderVisible) {
+        setHeaderVisible(currentScroll <= 20);
+      } else if (deltaY < 0 && !isHeaderVisible) {
+        setHeaderVisible(true);
       }
-      setPrevScrollPos(currentPrevScroll);
+
+      setPrevScrollPos(currentScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+  }, [prevScrollPos, isHeaderVisible]);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -70,7 +82,12 @@ const HeaderComponent = () => {
   }, [isModalOpen]);
 
   return (
-    <header className={s.header_container}>
+    <header
+  className={classNames(s.header_container, {
+    [s.header_hidden]: !isHeaderVisible,
+    [s.header_visible]: isHeaderVisible,
+  })}
+>
       <div className={s.container}>
         <div className={s.header}>
           <div>
@@ -87,7 +104,7 @@ const HeaderComponent = () => {
                 <ul className={s.header__sub_menu}>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/design"
+                      href="/services#design"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Design
@@ -95,7 +112,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/development"
+                      href="/services#development"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Development
@@ -103,7 +120,7 @@ const HeaderComponent = () => {
                   </li>
                   <li className={s.header__item}>
                     <Link
-                      href="/services/apps"
+                      href="/services#apps"
                       className={classNames(s.header__link, s.header__line)}
                     >
                       Apps
@@ -213,15 +230,24 @@ const HeaderComponent = () => {
                         selectedMenuItem === 0 ? s.selected : ""
                       )}
                       onClick={() => {
-                        toggleSubMenu(0);
+                        toggleSubMenu(0),
+                        handleArrowClick1()
                       }}
                     >
                       <p>Services</p>
-                      <MdKeyboardArrowDown
-                        className={s.header_modal__icon}
-                        width="22px"
-                        height="22px"
-                      />
+                      {arrowDirection1 === "down" ? (
+                        <MdKeyboardArrowDown
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      ) : (
+                        <MdKeyboardArrowUp
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      )}
                     </div>
                   </div>
                   {openSubMenuIndex === 0 && (
@@ -233,7 +259,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/design"
+                          href="/services#design"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -247,7 +273,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/development"
+                          href="/services#development"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -261,7 +287,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/apps"
+                          href="/services#apps"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -292,15 +318,24 @@ const HeaderComponent = () => {
                         selectedMenuItem === 1 ? s.selected : ""
                       )}
                       onClick={() => {
-                        toggleSubMenu(1);
+                        toggleSubMenu(1),
+                        handleArrowClick2();
                       }}
                     >
                       <p>Technologies</p>
-                      <MdKeyboardArrowDown
-                        className={s.header_modal__icon}
-                        width="22px"
-                        height="22px"
-                      />
+                      {arrowDirection2 === "down" ? (
+                        <MdKeyboardArrowDown
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      ) : (
+                        <MdKeyboardArrowUp
+                          className={s.header_modal__icon}
+                          width="22px"
+                          height="22px"
+                        />
+                      )}
                     </div>
                   </div>
                   {openSubMenuIndex === 1 && (
@@ -312,7 +347,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/net"
+                          href="/technologies/net"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -326,7 +361,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/java"
+                          href="/technologies/java"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -340,7 +375,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/node"
+                          href="/technologies/node"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -354,7 +389,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/react"
+                          href="/technologies/react"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -368,7 +403,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/angular"
+                          href="/technologies/angular"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
@@ -382,7 +417,7 @@ const HeaderComponent = () => {
                         )}
                       >
                         <Link
-                          href="/services/vue"
+                          href="/technologies/vue"
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >

@@ -3,20 +3,23 @@
 @import "../styles/mixin";
 
 .footer {
-  @include for-size(tablet) {
-    margin-top: 32px;
-    margin-bottom: 50px;
-  }
+  margin-top: 30px;
+  margin-bottom: 30px;
 
-  @include for-size(laptop) {
-    margin-top: 61px;
-    margin-bottom: 94px;
-  }
+@include for-size(tablet) {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
 
-  @include for-size(desktop) {
-    margin-top: 61px;
-    margin-bottom: 94px;
-  }
+@include for-size(laptop) {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@include for-size(desktop) {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 
   &__block {
     position: relative;
@@ -40,7 +43,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 13px;
+      gap: 20px;
 
       @include for-size(tablet) {
         width: 61%;
@@ -51,7 +54,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 10px;
+      gap: 30px;
 
       @include for-size(tablet) {
         justify-content: space-between;
@@ -197,7 +200,7 @@
   &__routs {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 5px;
     @include for-size(tablet) {
       gap: 3px;
     }
@@ -260,6 +263,37 @@
       font-size: 20px;
       letter-spacing: 0.8px;
       max-width: 286px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../images/blur/footer_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 50px;
+      width: 712.441px;
+      height: 203.328px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../images/blur/footer_blurL.png);
+      bottom: 50px;
+      width: 1045px;
+      height: 298px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../images/blur/footer_blurD.png);
+      width: 1349px;
+      height: 385px;
     }
   }
 }

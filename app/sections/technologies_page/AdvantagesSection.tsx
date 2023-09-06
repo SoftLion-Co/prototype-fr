@@ -34,15 +34,15 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
   };
 
   return (
-    <div>
-  
-    <section className={s.advantages}>
-      <div className={s.advantages__heading}>
+    <section>
+  <div className={s.advantages__heading}>
         <HeadingComponent
           color="purple"
           text={`Advantages of using ${titleTech}`}
         />
       </div>
+    <div className={s.advantages}>
+      
 
       <div className={s.advantages__cards_mobile}>
         <MobileSliderComponent
@@ -86,7 +86,7 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
           ))}
         </Carousel>
       </div>
-    </section></div>
+    </div></section>
   );
 };
 

@@ -16,7 +16,7 @@
   
     &__title {
       max-width: 48.7%; 
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 400;
       line-height: 130.49%;
       letter-spacing: 1.08px;
@@ -30,7 +30,7 @@
 
   &__submain{
     padding: 19px 9px 25px 9px;
-    font-size: 10px;
+    font-size: 12px;
     display: flex;
     gap: 10px;
     align-items: start;
@@ -41,6 +41,7 @@
     flex-direction: column;
     gap: 10px;
     width: 46%;
+    
   }
 
   &__desc{
@@ -57,6 +58,10 @@
   &__arrow_icon{
     width: 20px;
     height: 20px;
+    color: black;
+  }
+
+  &__link{
     color: black;
   }
 }

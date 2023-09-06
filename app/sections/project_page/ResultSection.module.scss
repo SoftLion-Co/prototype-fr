@@ -77,8 +77,8 @@
     }
 
     &_text {
-      font-size: 10px;
-      line-height: 13px;
+      font-size: 14px;
+      line-height: 18px;
       letter-spacing: 0.4px;
 
       @include for-size(tablet) {
@@ -118,7 +118,7 @@
       height: 276px;
 
       @include for-size(tablet) {
-        width: 443px;
+        width: 360px;
         height: 314px;
       }
       @include for-size(laptop) {
