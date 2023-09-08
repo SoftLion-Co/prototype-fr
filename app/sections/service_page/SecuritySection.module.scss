@@ -79,7 +79,7 @@
     @include for-size(tablet) {
       background-image: url(../../../images/blur/custom_blurL.png);
       background-repeat: no-repeat;
-      left: 200px;
+      left: 0px;
       top: -1000px;
       width: 733px;
       height: 638px;
@@ -87,7 +87,7 @@
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/custom_blurL.png);
-      left: 150px;
+      left: 0px;
       top: -1400px;
       width: 819px;
       height: 572px;
@@ -96,7 +96,7 @@
 
     @include for-size(desktop) {
       background-image: url(../../../images/blur/custom_blurD.png);
-      left: 200px;
+      left: 0px;
       top: -1700px;
       width: 1265px;
       height: 744px;

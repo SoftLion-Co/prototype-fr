@@ -324,3 +324,38 @@
     }
   }
 }
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 700px;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 1200px;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      left: 150px;
+      bottom: 1200px;
+      width: 1240px;
+      height: 930px;
+    }
+  }
+}

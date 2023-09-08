@@ -24,7 +24,7 @@ const ServiceSecurityCardComponent: React.FC<
             className={s.security__img}
           />
           <div>
-            <h4 className={s.security__title}>{cardTitle}</h4>
+            <h3 className={s.security__title}>{cardTitle}</h3>
           </div>
         </div>
       </div>
