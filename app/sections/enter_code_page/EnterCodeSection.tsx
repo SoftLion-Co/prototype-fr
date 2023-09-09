@@ -6,6 +6,7 @@ import ReactCodeInput from "react-code-input";
 import classNames from "classnames";
 import { useSearchParams } from "next/navigation";
 import authService from "@/services/auth-service";
+import CryptoJS from "crypto-js";
 
 const EnterCodeSection = () => {
   const [countdown, setCountdown] = useState(60);
@@ -43,8 +44,13 @@ const EnterCodeSection = () => {
       try {
         console.log("Email: ", email);
         const response = await authService.sendCode(email);
-
-        setCode(response.code);
+        console.log(response);
+        const bytes = CryptoJS.AES.decrypt(
+          response.result,
+          "AAECAwQFBgcICQoLDA0ODw=="
+        );
+        const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+        setCode(decryptedData);
       } catch (error) {
         console.error("error");
       }
@@ -54,21 +60,38 @@ const EnterCodeSection = () => {
   return (
     <div className={classNames(s.container, s.code)}>
       <h2 className={s.title}>Please, enter your code.</h2>
-      <p className={classNames(s.text, s.message)}>A confirmation code has been sent to the email {email}</p>
+      <p className={classNames(s.text, s.message)}>
+        A confirmation code has been sent to the email {email}
+      </p>
       <form className={s.form}>
-        <ReactCodeInput className={s.form__input} name="code" inputMode="numeric" type="text" fields={6} />
+        <ReactCodeInput
+          className={s.form__input}
+          name="code"
+          inputMode="numeric"
+          type="text"
+          fields={6}
+        />
         <div className={s.option}>
           <p className={s.text}>Didn't get the code?</p>
 
           {isCounting ? (
-            <span className={classNames(s.text, s.timer)}>Resend cod in {formatTime(countdown)}</span>
+            <span className={classNames(s.text, s.timer)}>
+              Resend cod in {formatTime(countdown)}
+            </span>
           ) : (
-            <button type="button" className={classNames(s.option__button, s.text)} onClick={handleButtonClick} disabled={isCounting}>
+            <button
+              type="button"
+              className={classNames(s.option__button, s.text)}
+              onClick={handleButtonClick}
+              disabled={isCounting}
+            >
               Click here
             </button>
           )}
         </div>
-        <MainButtonComponent className={s.auth_button}>Enter</MainButtonComponent>
+        <MainButtonComponent className={s.auth_button}>
+          Enter
+        </MainButtonComponent>
       </form>
     </div>
   );

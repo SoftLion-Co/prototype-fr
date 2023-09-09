@@ -12,7 +12,7 @@ class AuthService {
     }
     const data = await response.json();
     console.log(data);
-    // return data;
+    return data.result;
   }
 
   async signIn(signInModel) {
@@ -29,11 +29,11 @@ class AuthService {
     }
     const data = await response.json();
     console.log(data);
-    // return data;
+    return data.result;
   }
 
   async sendCode(email) {
-    const response = await fetch("https://localhost:7296/api/auth/send-code", {
+    const response = await fetch(`https://localhost:7296/api/auth/send-code`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -48,13 +48,13 @@ class AuthService {
 	return data.result;
   }
 
-  async changePassword(email, newPassword) {
-    const response = await fetch("https://localhost:7296/api/auth/change-password", {
+  async changePassword(model) {
+    const response = await fetch(`https://localhost:7296/api/auth/change-password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, newPassword }),
+      body: JSON.stringify(model),
     });
 
     if (!response.ok) {
