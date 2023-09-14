@@ -270,6 +270,7 @@
 .blur {
   position: absolute;
   pointer-events: none;
+  height: 5px;
 
   &_item {
     position: relative;

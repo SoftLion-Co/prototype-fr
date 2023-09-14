@@ -126,6 +126,14 @@ const HeaderComponent = () => {
                       Apps
                     </Link>
                   </li>
+                  <li className={s.header__item}>
+                    <Link
+                      href="/services#security"
+                      className={classNames(s.header__link, s.header__line)}
+                    >
+                      Security
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li className={classNames(s.header__item, s.header__line)}>
@@ -292,6 +300,20 @@ const HeaderComponent = () => {
                           onClick={handleButtonClick}
                         >
                           <p>Apps</p>
+                        </Link>
+                      </li>
+                      <li
+                        className={classNames(
+                          s.header_modal__item,
+                          s.header__line
+                        )}
+                      >
+                        <Link
+                          href="/services#security"
+                          className={s.header_modal__link}
+                          onClick={handleButtonClick}
+                        >
+                          <p>Security</p>
                         </Link>
                       </li>
                     </ul>

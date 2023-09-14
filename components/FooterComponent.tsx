@@ -43,6 +43,9 @@ const FooterComponent = () => {
 
   return (
     <footer className={`${s.footer} ${s.container}`}>
+      <div className={s.blur}>
+            <div className={s.blur_item}></div>
+          </div>
       <div className={s.footer__block}>
         <div className={s.footer__block_first}>
           <div className={s.footer__colum_link}>
@@ -102,9 +105,7 @@ const FooterComponent = () => {
               Book Consultation
             </MainButtonComponent>
           </div>
-          <div className={s.blur}>
-            <div className={s.blur_item}></div>
-          </div>
+          
         </div>
       </div>
     </footer>

@@ -19,9 +19,6 @@
 
   &__heading {
     margin-bottom: 40px;
-    @include for-size(tablet) {
-      margin-bottom: 40px;
-    }
     @include for-size(laptop) {
       margin-bottom: 60px;
     }
