@@ -110,8 +110,6 @@
   &__image {
     align-self: center;
     object-fit: cover;
-    width: 240px;
-    height: 125px;
     border-radius: 5px;
     box-shadow: 3.7px 2px 4px 0px #00000040;
 
@@ -141,7 +139,7 @@
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;

@@ -5,7 +5,7 @@ import HeadingComponent from "@/components/HeadingComponent";
 
 const ProjectContactUs = () => {
   return (
-    <div>
+    <section>
       <div className={s.container}>
         <div className={s.blur}>
           <div className={s.blur_item}></div>
@@ -15,7 +15,7 @@ const ProjectContactUs = () => {
       <div className={classNames(s.our_form, s.container)}>
         <FormComponent title="Share an idea with us" />
       </div>
-    </div>
+    </section>
   );
 };
 
