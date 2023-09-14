@@ -6,9 +6,11 @@ import classNames from "classnames";
 const ContactUsSection = () => {
   return (
     <div className={classNames(s.container, s.our_form)}>
-      <div className={s.title}>
-        <HeadingComponent text="Contact Us" />
-        <p className={s.title__text}>
+      <div className={s.heading}>
+        <div className={s.heading__title}>
+          <HeadingComponent text="Contact Us" />
+        </div>
+        <p className={s.heading__text}>
           Submit your request now, and we will get in touch with you to discuss
           the details and develop a customized solution. Together, we can create
           a powerful tool for your business and ensure your success in the

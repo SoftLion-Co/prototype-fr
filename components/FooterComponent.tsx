@@ -40,7 +40,6 @@ const FooterComponent = () => {
     },
   ];
 
-
   return (
     <footer className={`${s.footer} ${s.container}`}>
       <div className={s.footer__block}>
@@ -61,7 +60,6 @@ const FooterComponent = () => {
                   key={index}
                   href={route.path}
                   className={s.footer__routs_name}
-                
                 >
                   {route.label}
                 </Link>
