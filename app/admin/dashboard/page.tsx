@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 import s from "./page.module.scss";
-import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
+
 import PanelNavigationComponent from "@/app/admin/components/PanelNavigationComponent";
-import UserInfoComponent from "@/app/admin/components/blog/UserInfoComponent";
+import BlogInfoComponent from "@/app/admin/components/blog/BlogInfoComponent";
 import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayComponent";
-// import { ChangeEvent } from "react";
+
+import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 
 const Blogs = () => {
   const links = [{ title: "Blog", href: "#" }];
@@ -12,137 +16,139 @@ const Blogs = () => {
   const users = [
     {
       number: 1,
-      title: "User 1",
+      title: "Blog 1",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 2,
-      title: "User 2",
+      title: "Blog 2",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 3,
-      title: "User 3",
+      title: "Blog 3",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 4,
-      title: "User 4",
+      title: "Blog 4",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 5,
-      title: "User 5",
+      title: "Blog 5",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 6,
-      title: "User 6",
+      title: "Blog 6",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 7,
-      title: "User 7",
+      title: "Blog 7",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 8,
-      title: "User 8",
+      title: "Blog 8",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 9,
-      title: "User 9",
+      title: "Blog 9",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 10,
-      title: "User 10",
+      title: "Blog 10",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 11,
-      title: "User 11",
+      title: "Blog 11",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 12,
-      title: "User 12",
+      title: "Blog 12",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 13,
-      title: "User 13",
+      title: "Blog 13",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 14,
-      title: "User 14",
+      title: "Blog 14",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 15,
-      title: "User 15",
+      title: "Blog 15",
       data: "01.07.2023",
       rating: "5.0",
     },
     {
       number: 16,
-      title: "User 16",
+      title: "Blog 16",
       data: "01.07.2023",
       rating: "5.0",
     },
   ];
 
   const itemCountData = {
-    text: "Кількість користувачів",
+    text: "Кількість блогів",
     number: users.length,
-    icon: "@/app/admin/images/quantity/peopleVector.svg",
+    icon: IconType.People,
   };
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResultCount, setSearchResultCount] = useState(0);
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+  useEffect(() => {
+    const count = users.filter((user) =>
+      user.title.toLowerCase().includes(searchTerm.toLowerCase())
+    ).length;
+    setSearchResultCount(count);
+  }, [searchTerm, users]);
 
   return (
-    <div className={s.container}>
+    <div className={classNames(s.container, s.container_admin)}>
       <div className={s.dashboard__container}>
         <div className={s.panel__container}>
           <PanelNavigationComponent />
         </div>
 
         <div className={s.page__container}>
-          <div className={s.search__container}>
-            <SearchInputComponent
-              placeholderText="Для пошуку за заголовком"
-              searchTerm={searchTerm}
-              handleSearch={handleSearch}
-            />
-          </div>
           <div className={s.user__container}>
-            <UserInfoComponent users={users} />
+            <BlogInfoComponent
+              users={users}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
           </div>
           <div>
             <ItemCountDisplayComponent
-              text={itemCountData.text}
-              number={itemCountData.number}
-              icon={itemCountData.icon}
+              text="Кількість блогів"
+              number={users.length}
+              icon={IconType.People}
+              searchResultCount={searchResultCount}
             />
           </div>
         </div>

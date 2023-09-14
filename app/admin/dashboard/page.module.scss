@@ -1,9 +1,11 @@
 @import "./../../../styles/mixin";
 @import "./../../../styles/colors";
 @import "./../../../styles/container";
+@import "./../../../styles/container_admin";
 
 .dashboard__container {
   display: flex;
+  margin-top: 90px;
 }
 
 .panel__container {

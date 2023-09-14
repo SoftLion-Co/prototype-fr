@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import s from "./UserInfoComponent.module.scss";
+import s from "./BlogInfoComponent.module.scss";
 
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 
@@ -15,11 +15,13 @@ interface User {
   rating: string;
 }
 
-interface UserInfoComponentProps {
+interface BlogInfoComponentProps {
   users: User[];
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
 }
 
-const UserInfoComponent: React.FC<UserInfoComponentProps> = ({ users }) => {
+const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,11 +34,14 @@ const UserInfoComponent: React.FC<UserInfoComponentProps> = ({ users }) => {
 
   return (
     <div className={s.user}>
-      <SearchInputComponent
-        placeholderText="Search by title"
-        searchTerm={searchTerm}
-        handleSearch={handleSearch}
-      />
+      <div>
+        <SearchInputComponent
+          placeholderText="Для пошуку за заголовком"
+          searchTerm={searchTerm}
+          handleSearch={handleSearch}
+        />
+      </div>
+
       <div className={s.scroll__container}>
         {filteredUsers.map((user, index) => (
           <div className={s.user__content} key={index}>
@@ -56,7 +61,7 @@ const UserInfoComponent: React.FC<UserInfoComponentProps> = ({ users }) => {
                   height={16}
                 />
               </button>
-              <button className={s.user__button}>
+              {/* <button className={s.user__button}>
                 <Image
                   className={s.user__image}
                   src={bin}
@@ -64,7 +69,7 @@ const UserInfoComponent: React.FC<UserInfoComponentProps> = ({ users }) => {
                   width={16}
                   height={16}
                 />
-              </button>
+              </button> */}
             </div>
           </div>
         ))}
@@ -73,4 +78,4 @@ const UserInfoComponent: React.FC<UserInfoComponentProps> = ({ users }) => {
   );
 };
 
-export default UserInfoComponent;
+export default BlogInfoComponent;

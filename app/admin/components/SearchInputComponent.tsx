@@ -13,8 +13,8 @@ const SearchInputComponent: React.FC<SearchInputProps> = ({
   handleSearch,
 }) => {
   return (
-    <div className={s.search__input}>
-      <input
+    <div>
+      <input className={s.search__input}
         type="text"
         placeholder={placeholderText}
         value={searchTerm}
