@@ -28,26 +28,14 @@ const SolutionSection: FC<SolutionSectionProps> = ({ data }) => {
           {data.paragraphs.map((info, index) => (
             <li key={index} className={s.solution__item}>
               {info.title && (
-                <h3
-                  className={`${s.solution__heading_text} ${
-                    s[`solution__heading_${index + 1}`]
-                  }`}
-                >
-                  {info.title}
-                </h3>
+                <h3 className={s.solution__heading_text}>{info.title}</h3>
               )}
-              <p
-                className={`${s.solution__text} ${
-                  s[`solution__description_${index + 1}`]
-                }`}
-              >
-                {info.description}
-              </p>
+              <p className={s.solution__text}>{info.description}</p>
             </li>
           ))}
         </ul>
         <ul className={`${s.solution__photos} ${s.container}`}>
-        <div className={s.blur}>
+          <div className={s.blur}>
             <div className={s.blur_item}></div>
           </div>
           {data.images

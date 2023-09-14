@@ -4,7 +4,7 @@
 
 .solution {
   &__heading {
-    margin-bottom: 9px;
+    margin-bottom: 30px;
     @include for-size(tablet) {
       margin-bottom: 13px;
     }
@@ -168,7 +168,6 @@
     line-height: 13px;
     letter-spacing: 0.9px;
     font-weight: 400;
-    margin-top: 20px;
     margin-bottom: 20px;
 
     @include for-size(tablet) {
@@ -200,7 +199,7 @@
     display: flex;
     flex-direction: column;
 
-    gap: 12px;
+    gap: 20px;
 
     margin-bottom: 31px;
     @include for-size(tablet) {
@@ -233,68 +232,10 @@
       }
     }
   }
-  &__description_1 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 319px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 592px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 660px;
-    }
-  }
-  &__description_2 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 349px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 538px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 599px;
-    }
-  }
-
-  &__description_3 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 389px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 600px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 669px;
-    }
-  }
-
-  &__description_4 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 384px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 592px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 660px;
-    }
-  }
 
   &__text {
     margin-left: 39px;
-
+    max-width: 250px;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.4px;
@@ -303,7 +244,7 @@
       font-size: 12px;
       line-height: 15px;
       letter-spacing: 0.5px;
-
+      max-width: 319px;
       margin-left: 189px;
     }
 
@@ -311,7 +252,7 @@
       font-size: 18px;
       line-height: 23px;
       letter-spacing: 0.7px;
-
+      max-width: 592px;
       margin-left: 281px;
     }
 
@@ -319,7 +260,7 @@
       font-size: 20px;
       line-height: 26px;
       letter-spacing: 0.8px;
-
+      max-width: 660px;
       margin-left: 324px;
     }
   }
@@ -328,7 +269,7 @@
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;

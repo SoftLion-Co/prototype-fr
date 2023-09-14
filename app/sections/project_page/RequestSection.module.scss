@@ -2,6 +2,19 @@
 @import "../../../styles/container";
 
 .request {
+  &__heading {
+    margin-bottom: 30px;
+    @include for-size(tablet) {
+      margin-bottom: 41px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 63px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 76px;
+    }
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -17,7 +30,6 @@
     font-weight: 400;
     line-height: 130.49%;
     letter-spacing: 0.48px;
-    margin-top: 9px;
     margin-bottom: 36px;
 
     @include for-size(tablet) {
@@ -49,18 +61,17 @@
     padding: 0;
     width: 220px;
 
-    @include for-size(tablet){
-        width: 380px;
-    }
-    
-    @include for-size(laptop){
-        width: 506px;
+    @include for-size(tablet) {
+      width: 380px;
     }
 
-    @include for-size(desktop){
-        width: 582px;
+    @include for-size(laptop) {
+      width: 506px;
     }
 
+    @include for-size(desktop) {
+      width: 582px;
+    }
   }
 
   &__list_text {
@@ -102,76 +113,74 @@
 
   &__svg {
     margin-right: 8px;
-    @include for-size(tablet){
-        margin-right: 14px;
+    @include for-size(tablet) {
+      margin-right: 14px;
     }
 
-    @include for-size(laptop){
-        margin-right: 19px;
+    @include for-size(laptop) {
+      margin-right: 19px;
     }
 
     @include for-size(desktop) {
       margin-right: 22px;
     }
   }
-
-
 }
 
 .request__svg_img {
-    width: 9px;
-    height: 8px;
-    margin-right: 8px;
-    margin-top: 2px;
+  width: 9px;
+  height: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
 
-    @include for-size(tablet){
-        width: 15px;
-        height: 14px;
-        margin-right: 14px;
-    }
-
-    @include for-size(laptop){
-        width: 20px;
-        height: 20px;
-        margin-right: 19px;
-    }
-
-    @include for-size(desktop){
-        width: 24px;
-        height: 23px;
-        margin-right: 22px;
-    }
+  @include for-size(tablet) {
+    width: 15px;
+    height: 14px;
+    margin-right: 14px;
   }
 
-  .blur {
-    position: absolute;
+  @include for-size(laptop) {
+    width: 20px;
+    height: 20px;
+    margin-right: 19px;
+  }
+
+  @include for-size(desktop) {
+    width: 24px;
+    height: 23px;
+    margin-right: 22px;
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
     pointer-events: none;
-    
-    &_item {
-      position: relative;
-      pointer-events: none;
-  
-      @include for-size(tablet) {
-        background-image: url(../../../images/blur/request_blurT.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 721px;
-        height: 541px;
-      }
-  
-      @include for-size(laptop) {
-        background-image: url(../../../images/blur/request_blurD.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 1077px;
-        height: 676px;
-      }
-  
-      @include for-size(desktop) {
-        background-image: url(../../../images/blur/request_blurD.png);
-        background-repeat: no-repeat;
-        width: 1240px;
-        height: 778px;
-      }
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/request_blurT.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/request_blurD.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 1077px;
+      height: 676px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/request_blurD.png);
+      background-repeat: no-repeat;
+      width: 1240px;
+      height: 778px;
     }
   }
+}
