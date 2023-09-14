@@ -45,7 +45,10 @@ const SecuritySection = () => {
 
   return (
     <section className={s.security}>
-      <ServiceHeadingComponent headingText="Security" />
+      <div className={s.security__heading}>
+        <ServiceHeadingComponent headingText="Security" />
+      </div>
+
       <div className={s.security__slider}>
         <MobileSliderComponent
           data={securityCardsData}
@@ -54,6 +57,9 @@ const SecuritySection = () => {
       </div>
 
       <div className={classNames(s.container, s.security__container)}>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
         {securityCardsData.map((card, index) => (
           <div
             key={card.id}
@@ -70,9 +76,6 @@ const SecuritySection = () => {
       </div>
 
       <div className={classNames(s.container, s.security__button)}>
-      <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
         <BigButtonComponent />
       </div>
     </section>
