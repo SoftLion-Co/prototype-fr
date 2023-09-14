@@ -1,8 +1,9 @@
-@import "./../../../../styles/mixin";
-@import "./../../../../styles/colors";
-@import "./../../../../styles/container";
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
 
-.blog__input {
+
+.search__input {
   background-color: #ffffff;
   border: 2px solid #488aa750;
   width: 550px;
