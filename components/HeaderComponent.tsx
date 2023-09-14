@@ -25,21 +25,20 @@ const HeaderComponent = () => {
 
   const handleArrowClick1 = () => {
     setArrowDirection1(arrowDirection1 === "down" ? "up" : "down");
-    
-      setArrowDirection2("down")
+
+    setArrowDirection2("down");
   };
-  
+
   const handleArrowClick2 = () => {
     setArrowDirection2(arrowDirection2 === "down" ? "up" : "down");
-    setArrowDirection1("down")
-      
+    setArrowDirection1("down");
   };
 
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
     setOpenSubMenuIndex(-1);
-    setArrowDirection1("down")
-      setArrowDirection2("down")
+    setArrowDirection1("down");
+    setArrowDirection2("down");
   };
 
   const toggleSubMenu = (index: any) => {
@@ -54,7 +53,6 @@ const HeaderComponent = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      
       const currentScroll = window.scrollY;
       const deltaY = currentScroll - prevScrollPos;
 
@@ -83,11 +81,11 @@ const HeaderComponent = () => {
 
   return (
     <header
-  className={classNames(s.header_container, {
-    [s.header_hidden]: !isHeaderVisible,
-    [s.header_visible]: isHeaderVisible,
-  })}
->
+      className={classNames(s.header_container, {
+        [s.header_hidden]: !isHeaderVisible,
+        [s.header_visible]: isHeaderVisible,
+      })}
+    >
       <div className={s.container}>
         <div className={s.header}>
           <div>
@@ -238,8 +236,7 @@ const HeaderComponent = () => {
                         selectedMenuItem === 0 ? s.selected : ""
                       )}
                       onClick={() => {
-                        toggleSubMenu(0),
-                        handleArrowClick1()
+                        toggleSubMenu(0), handleArrowClick1();
                       }}
                     >
                       <p>Services</p>
@@ -340,8 +337,7 @@ const HeaderComponent = () => {
                         selectedMenuItem === 1 ? s.selected : ""
                       )}
                       onClick={() => {
-                        toggleSubMenu(1),
-                        handleArrowClick2();
+                        toggleSubMenu(1), handleArrowClick2();
                       }}
                     >
                       <p>Technologies</p>
@@ -446,8 +442,6 @@ const HeaderComponent = () => {
                           <p>Vue.js</p>
                         </Link>
                       </li>
-                      
-                      
                     </ul>
                   )}
                 </li>

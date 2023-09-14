@@ -16,7 +16,7 @@
     margin-bottom: 200px;
   }
 
-  &__heading{
+  &__heading {
     margin-bottom: 40px;
     @include for-size(laptop) {
       margin-bottom: 60px;
@@ -27,7 +27,6 @@
   }
 
   &__slider {
-    
     margin-bottom: 36px;
 
     @include for-size(tablet) {
@@ -81,11 +80,11 @@
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;
-  
+
     @include for-size(tablet) {
       background-image: url(../../../images/blur/custom_blurL.png);
       background-repeat: no-repeat;

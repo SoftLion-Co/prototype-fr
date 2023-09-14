@@ -40,12 +40,11 @@ const FooterComponent = () => {
     },
   ];
 
-
   return (
     <footer className={`${s.footer} ${s.container}`}>
       <div className={s.blur}>
-            <div className={s.blur_item}></div>
-          </div>
+        <div className={s.blur_item}></div>
+      </div>
       <div className={s.footer__block}>
         <div className={s.footer__block_first}>
           <div className={s.footer__colum_link}>
@@ -64,7 +63,6 @@ const FooterComponent = () => {
                   key={index}
                   href={route.path}
                   className={s.footer__routs_name}
-                
                 >
                   {route.label}
                 </Link>
@@ -105,7 +103,6 @@ const FooterComponent = () => {
               Book Consultation
             </MainButtonComponent>
           </div>
-          
         </div>
       </div>
     </footer>

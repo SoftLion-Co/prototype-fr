@@ -57,7 +57,7 @@ const SecuritySection = () => {
       </div>
 
       <div className={classNames(s.container, s.security__container)}>
-      <div className={s.blur}>
+        <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
         {securityCardsData.map((card, index) => (
