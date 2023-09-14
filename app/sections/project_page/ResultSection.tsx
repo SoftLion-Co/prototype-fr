@@ -23,6 +23,12 @@ const ResultSection: FC<ResultSectionProps> = ({ data }) => {
             </li>
           ))}
         </ul>
+        <div className={s.blur}>
+            <div className={s.blur_item}></div>
+          </div>
+          <div className={s.blure}>
+            <div className={s.blure_item}></div>
+          </div>
         <div className={s.design__container}>
           <Image
             alt="Vectary-texture"

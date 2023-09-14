@@ -33,6 +33,9 @@ const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({ chooseUsSection }) =>
                 <Image src={svgImages[index]} alt="SVG" className={s.card__svg} />
               </div>
             )}
+                  <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
             <p className={s.card__description}>{item}</p>
             {index === chooseUsSection.length - 1 && <BigButtonComponent />}
           </div>
