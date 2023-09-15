@@ -136,21 +136,21 @@
   display: flex;
   align-items: center;
   margin-top: 20px;
-  min-height: calc(100vh - 353px);
+  min-height: calc(100vh - 373px);
 
   @include for-size(tablet) {
     margin-top: 30px;
-    min-height: calc(100vh - 314px);
+    min-height: calc(100vh - 334px);
   }
 
   @include for-size(laptop) {
     margin-top: 40px;
-    min-height: calc(100vh - 405px);
+    min-height: calc(100vh - 430px);
     
   }
 
   @include for-size(desktop) {
     margin-top: 60px;
-    min-height: calc(100vh - 530px);
+    min-height: calc(100vh - 550px);
   }
 }
