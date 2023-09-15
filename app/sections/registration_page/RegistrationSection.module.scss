@@ -1,0 +1,261 @@
+@import "../../../styles/colors";
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+@import "../AuthSectionsCommon.module.scss";
+
+.section__wrapper {
+  max-width: 290px;
+
+  @include for-size(tablet) {
+    max-width: 268px;
+  }
+
+  @include for-size(laptop) {
+    max-width: 300px;
+  }
+
+  @include for-size(desktop) {
+    max-width: 320px;
+  }
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0 13px 19px;
+  background: $registration-info-card-background;
+  border-radius: 5px;
+  margin-bottom: 27px;
+
+  @include for-size(tablet) {
+    gap: 11px;
+    padding: 12px 0 12px 18px;
+    margin-bottom: 25px;
+  }
+
+  @include for-size(laptop) {
+    gap: 12px;
+    padding: 13px 2px 13px 20px;
+    margin-bottom: 28px;
+  }
+
+  @include for-size(desktop) {
+    gap: 13px;
+    padding: 14px 4px 14px 21px;
+    margin-bottom: 30px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    @include for-size(tablet) {
+      width: 18px;
+      height: 18px;
+    }
+
+    @include for-size(laptop) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  &__text {
+    color: $navigation-dark;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.47px;
+
+    @include for-size(tablet) {
+      font-size: 11px;
+      letter-spacing: 0.44px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 13px;
+      letter-spacing: 0.52px;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include for-size(tablet) {
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  @include for-size(laptop) {
+    gap: 10px;
+  }
+
+  @include for-size(desktop) {
+    gap: 11px;
+  }
+
+  .mantine-Stack-root {
+    width: 100%;
+  }
+}
+
+.form__input {
+  width: 100%;
+  padding: 17px 27px;
+  border: 1px solid $navigation-light;
+  outline: transparent;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: $navigation-dark;
+  font-size: 15px;
+  line-height: 130.49%;
+  letter-spacing: 0.6px;
+
+  @include for-size(tablet) {
+    padding: 16px 25px;
+  }
+
+  @include for-size(laptop) {
+    padding: 18px 28px;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+  }
+
+  @include for-size(desktop) {
+    padding: 19px 30px;
+  }
+
+  &::placeholder {
+    font-family: Roboto;
+    color: $placeholder-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.5px;
+
+    @include for-size(tablet) {
+      font-size: 15px;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  &.input__root {
+    width: 100%;
+    padding: 0;
+    border: 1px solid $navigation-light;
+
+    &.error__input {
+      border: 1px solid $error-color;
+    }
+
+    .input__wrapper {
+      border: none;
+
+      .input {
+        height: 55px;
+        border: none;
+
+        @include for-size(tablet) {
+          height: 53px;
+        }
+
+        @include for-size(laptop) {
+          height: 61px;
+        }
+
+        @include for-size(desktop) {
+          height: 63px;
+        }
+
+        .input__inner {
+          width: 100%;
+          padding: 18px 28px;
+          height: 100%;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.error {
+  font-size: 10px;
+  color: $error-color;
+  border-radius: 4px;
+  @include for-size(tablet) {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 15px;
+  }
+
+  &__input {
+    border: 1px solid $error-color;
+  }
+
+  &__password {
+    color: $error-color;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 0.48px;
+    margin-bottom: 27px;
+
+    @include for-size(tablet) {
+      width: 228px;
+      font-size: 15px;
+      letter-spacing: 0.6px;
+      margin-bottom: 25px;
+    }
+
+    @include for-size(laptop) {
+      width: 260px;
+      margin-bottom: 30px;
+    }
+
+    @include for-size(desktop) {
+    }
+  }
+}
+
+.phone__input {
+  height: 55px !important;
+  padding: 17px 27px 17px 42px !important;
+  width: 100% !important;
+  font-size: 15px !important;
+  border: 1px solid $navigation-light !important;
+
+  @include for-size(tablet) {
+    padding: 16px 25px 16px 42px !important;
+    height: 53px !important;
+  }
+
+  @include for-size(laptop) {
+    padding: 18px 28px 18px 42px !important;
+    height: 61px !important;
+    font-size: 18px !important;
+  }
+
+  @include for-size(desktop) {
+    padding: 19px 30px 19px 42px !important;
+    height: 63px !important;
+  }
+}
+
+.phone__dropdown {
+  border-color: $navigation-light !important;
+  border-radius: 5px 0 0 5px !important;
+}
