@@ -4,8 +4,8 @@
 
 .form {
   width: 555px;
-  height: 614px;
   flex-shrink: 0;
+  margin-top: 90px;
   border-radius: 15px;
   border: 1px solid rgba(72, 138, 167, 0.75);
   background: rgba(255, 255, 255, 0.75);
@@ -31,6 +31,15 @@
     }
   }
 
+  &_data {
+    display: flex;
+    padding-top: 30px;
+
+    &__text {
+      margin-left: 15px;
+    }
+  }
+
   &_email {
     display: flex;
     padding-bottom: 20px;
@@ -48,8 +57,14 @@
   }
 
   &_description {
-    padding-bottom: 20px;
     display: flex;
+    padding-bottom: 20px;
+
+    &__text {
+      border: 1px solid #afdaed;
+      width: 350px;
+      pointer-events: none;
+    }
 
     &_text {
       color: #488aa7;
@@ -65,7 +80,7 @@
 
   &_input {
     width: 392px;
-    height: 200px;
+    pointer-events: none;
   }
 
   &_send {
@@ -89,6 +104,7 @@
     justify-content: center;
     gap: 80px;
     padding-top: 20px;
+    padding-bottom: 55px;
 
     &_text {
       border: none;
@@ -107,18 +123,18 @@
       letter-spacing: 0.56px;
     }
 
-    &_delate{
-        border: none;
-        border-radius: 10px;
-        background: linear-gradient(99deg, #EDAFAF 4.34%, #E28484 94.12%);
-        padding: 11px 21px;
-        color: #000;
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-        letter-spacing: 0.56px;
+    &_delate {
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(99deg, #edafaf 4.34%, #e28484 94.12%);
+      padding: 11px 21px;
+      color: #000;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.56px;
     }
   }
 }

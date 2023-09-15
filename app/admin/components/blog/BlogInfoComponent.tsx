@@ -1,13 +1,12 @@
+// BlogInfoComponent.tsx
 import React, { useState } from "react";
 import s from "./BlogInfoComponent.module.scss";
-
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
-
 import edit from "@/app/admin/images/control/edit.svg";
 import bin from "@/app/admin/images/control/bin.svg";
-
 import Image from "next/image";
 
+// Додано оголошення імпортів
 interface User {
   number: number;
   title: string;
@@ -15,15 +14,29 @@ interface User {
   rating: string;
 }
 
-interface BlogInfoComponentProps {
-  users: User[];
-  searchTerm: string;
-  setSearchTerm: (term: string) => void;
+interface BlogData {
+  number: number;
+  title: string;
+  data: string;
+  rating: string;
+  email: string;
+  description: string;
+  tell: number;
 }
 
-const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+interface BlogInfoComponentProps {
+  users: BlogData[];
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
+  onCardClick: (blogData: BlogData) => void;
+}
 
+const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
+  users,
+  searchTerm,
+  setSearchTerm,
+  onCardClick,
+}) => {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -45,7 +58,10 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
       <div className={s.scroll__container}>
         {filteredUsers.map((user, index) => (
           <div className={s.user__content} key={index}>
-            <div className={s.user__information}>
+            <div
+              className={s.user__information}
+              onClick={() => onCardClick(user)} // Додаємо обробник кліку на картці
+            >
               <p className={s.user__number}>{user.number}</p>
               <h2 className={s.user__title}>{user.title}</h2>
               <p className={s.user__data}>{user.data}</p>
@@ -61,15 +77,6 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
                   height={16}
                 />
               </button>
-              {/* <button className={s.user__button}>
-                <Image
-                  className={s.user__image}
-                  src={bin}
-                  alt="Bin"
-                  width={16}
-                  height={16}
-                />
-              </button> */}
             </div>
           </div>
         ))}
