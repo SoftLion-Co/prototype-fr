@@ -82,6 +82,19 @@
 
   &___centered {
     align-items: center;
+    margin-bottom: 40px;
+      
+    @include for-size(tablet) {
+      margin-bottom: 70px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 90px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 110px;
+    }
   }
 }
 
