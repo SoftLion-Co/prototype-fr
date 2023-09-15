@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
+const baseUrl = "https://localhost:7296/api";
 
 class ProjectService {
 
