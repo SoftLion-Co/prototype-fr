@@ -12,12 +12,14 @@ interface ChooseUsSectionProps {
   chooseUsSection: string[]; // Визначте тип для властивості
 }
 
-const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({ chooseUsSection }) => {
+const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({
+  chooseUsSection,
+}) => {
   const svgImages = [SvgImage1, SvgImage2, SvgImage3];
 
   return (
     <section className={s.our__chose}>
-    <div className={s.heading}>
+      <div className={s.heading}>
         <HeadingComponent text="Why you should choose us" color="blue" />
       </div>
       <div className={s.container}>
@@ -30,16 +32,20 @@ const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({ chooseUsSection }) =>
           >
             {index < 3 && (
               <div className={s.card__image}>
-                <Image src={svgImages[index]} alt="SVG" className={s.card__svg} />
+                <Image
+                  src={svgImages[index]}
+                  alt="SVG"
+                  className={s.card__svg}
+                />
               </div>
             )}
-                  <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
             <p className={s.card__description}>{item}</p>
             {index === chooseUsSection.length - 1 && <BigButtonComponent />}
           </div>
         ))}
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       </div>
     </section>
   );

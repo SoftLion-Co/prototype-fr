@@ -34,6 +34,9 @@ const CreationSection: React.FC<Props> = ({
         {creationCard.map((item, index) => (
           <ProcessCard key={index} data={item} />
         ))}
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       </div>
     </section>
   );
