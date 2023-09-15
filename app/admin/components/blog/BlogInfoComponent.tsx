@@ -52,7 +52,7 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
               <p className={s.user__rating}>{user.rating}</p>
             </div>
             <div className={s.user__buttons}>
-              <button className={s.user__button}>
+              <button type="button" className={s.user__button}>
                 <Image
                   className={s.user__image}
                   src={edit}

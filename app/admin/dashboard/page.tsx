@@ -7,6 +7,7 @@ import s from "./page.module.scss";
 import PanelNavigationComponent from "@/app/admin/components/PanelNavigationComponent";
 import BlogInfoComponent from "@/app/admin/components/blog/BlogInfoComponent";
 import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayComponent";
+import ContentEditor from "@/app/admin/components/blog/ContentEditor";
 
 import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 
@@ -152,6 +153,10 @@ const Blogs = () => {
             />
           </div>
         </div>
+      </div>
+
+      <div>
+        <ContentEditor />
       </div>
     </div>
   );

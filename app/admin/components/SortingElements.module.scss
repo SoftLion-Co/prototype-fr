@@ -1,0 +1,16 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.sorting {
+
+    &__elements {
+        display: flex;
+        gap: 14px;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+    }
+}
