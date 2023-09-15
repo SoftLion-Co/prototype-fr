@@ -76,7 +76,7 @@ const EnterCodeSection = () => {
 
           {isCounting ? (
             <span className={classNames(s.text, s.timer)}>
-              Resend cod in {formatTime(countdown)}
+              Resend code in {formatTime(countdown)}
             </span>
           ) : (
             <button
