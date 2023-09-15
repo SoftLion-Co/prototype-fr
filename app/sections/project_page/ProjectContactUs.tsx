@@ -5,14 +5,17 @@ import HeadingComponent from "@/components/HeadingComponent";
 
 const ProjectContactUs = () => {
   return (
-    <div >
+    <section>
       <div className={s.container}>
-      <HeadingComponent text="Contact Us" customClass={s.heading} />
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
+        <HeadingComponent text="Contact Us" customClass={s.heading} />
       </div>
       <div className={classNames(s.our_form, s.container)}>
         <FormComponent title="Share an idea with us" />
       </div>
-    </div>
+    </section>
   );
 };
 

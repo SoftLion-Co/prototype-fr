@@ -110,8 +110,6 @@
   &__image {
     align-self: center;
     object-fit: cover;
-    width: 240px;
-    height: 125px;
     border-radius: 5px;
     box-shadow: 3.7px 2px 4px 0px #00000040;
 
@@ -134,6 +132,37 @@
 
       border-radius: 15px;
       box-shadow: 11px 6px 12px 0px #00000040;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/travel_blurT.png);
+      background-repeat: no-repeat;
+      width: 727px;
+      height: 298px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/travel_blurL.png);
+      background-repeat: no-repeat;
+      width: 1080px;
+      height: 430px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/travel_blurD.png);
+      background-repeat: no-repeat;
+      width: 1426px;
+      height: 569px;
     }
   }
 }

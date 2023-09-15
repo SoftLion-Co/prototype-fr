@@ -35,6 +35,9 @@ const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
           .map((item) => (
             <BlogExtendedCardComponent key={item.id} data={item} />
           ))}
+                  <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       </div>
       {pages >= 2 ? (
         <Pagination
