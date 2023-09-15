@@ -52,7 +52,7 @@ const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
       <div className={s.article}>
         <p className={s.card__text}>{text}</p>
         <Link href={`/blogs/${id}`}>
-          <PiArrowRightThin color="black" size="2.5em" />
+          <PiArrowRightThin className={s.card__arrowIcon} color="black" size="2.5em" />
         </Link>
       </div>
     </div>

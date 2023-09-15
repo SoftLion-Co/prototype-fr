@@ -50,31 +50,32 @@
 .blur {
   position: absolute;
   pointer-events: none;
-
+  
   &_item {
     position: relative;
+    pointer-events: none;
+
     @include for-size(tablet) {
-      background-image: url(../../../images/blur/custom_blurL.png);
+      background-image: url(../../../images/blur/service_blurT.png);
       background-repeat: no-repeat;
-      top: -100px;
-      width: 733px;
-      height: 638px;
+      bottom: 30px;
+      width: 324px;
+      height: 283px;
     }
 
     @include for-size(laptop) {
-      background-image: url(../../../images/blur/custom_blurL.png);
-      left: 0px;
-      width: 819px;
-      height: 572px;
-      bottom: 700px;
+      background-image: url(../../../images/blur/service_blurL.png);
+      background-repeat: no-repeat;
+      width: 450px;
+      height: 390px;
+      bottom: 50px;
     }
 
     @include for-size(desktop) {
-      background-image: url(../../../images/blur/custom_blurD.png);
-      left: 100px;
-      top: -150px;
-      width: 1265px;
-      height: 744px;
+      background-image: url(../../../images/blur/service_blurD.png);
+      background-repeat: no-repeat;
+      width: 588px;
+      height: 513px;
     }
   }
 }

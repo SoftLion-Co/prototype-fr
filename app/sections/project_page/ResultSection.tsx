@@ -23,11 +23,19 @@ const ResultSection: FC<ResultSectionProps> = ({ data }) => {
             </li>
           ))}
         </ul>
+        <div className={s.blur}>
+            <div className={s.blur_item}></div>
+          </div>
+          <div className={s.blure}>
+            <div className={s.blure_item}></div>
+          </div>
         <div className={s.design__container}>
           <Image
             alt="Vectary-texture"
             className={s.design__container_photo}
-            src={"https://i.ibb.co/bbXrmNK/Vectary-texture.png"}
+            src={
+              "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero-in-desktop.png?raw=true"
+            }
             width={800}
             height={200}
           />

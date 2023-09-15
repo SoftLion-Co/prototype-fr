@@ -277,6 +277,9 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.container}>
+      <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
         <div className={s.blog__filter}>
           <div
             className={classNames(

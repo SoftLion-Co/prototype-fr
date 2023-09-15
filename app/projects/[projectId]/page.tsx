@@ -9,13 +9,13 @@ import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
 const response = {
   ProjectDescriptionSection: {
-    title: "Travel company MOVE",
+    title: "Trend",
     description:
-      "Move is a company specializing in providing tourist services in Norway. Our goal is to provide unforgettable adventures and experiences for our clients in this enchanting Scandinavian country.",
-    time: "3 month",
+      "Trend is a contemporary sports goods marketplace, designed to offer a convenient and exciting shopping experience. We've created this online store to consolidate a wide range of sporting goods and provide a straightforward, efficient way to shop for renowned sports brands.",
+    time: "5 month",
     year: 2023,
     location: "Europe",
-    imgSrc: "https://i.ibb.co/CwYTtPR/photo-2023-08-07-14-08-48.jpg",
+    imgSrc: "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero.png?raw=true",
   },
   RequestSection: {
     paragraph:
@@ -23,47 +23,43 @@ const response = {
     arrays: [
       {
         id: 1,
-        text: "Mobile compatibility for correct display on different devices",
+        text: "Inconsistent mobile display, causing inconvenience for users accessing the website from different devices.",
       },
       {
         id: 2,
-        text: "Analytics and tracking to collect data about visits and user behavior.",
+        text: "Lack of insights into user behavior and site performance due to the absence of analytics and tracking tools.",
       },
       {
         id: 3,
-        text: "A convenient online booking system for services that require a reservation.",
+        text: "Difficulty in booking services that require reservations, leading to a loss of potential revenue.",
       },
       {
         id: 4,
-        text: "Support and after-sales service for reliable cooperation.",
-      },
-      {
-        id: 5,
-        text: "Fast page loading to ensure visitor satisfaction.",
+        text: "Limited customer support and after-sales service, resulting in dissatisfaction and reduced customer loyalty.",
       },
     ],
   },
   SolutionSection: {
     paragraphs: [
       {
-        title: "",
+        title: "Mobile Compatibility",
         description:
-          "Upon receiving your request, we proceed to review and analyze all the details. Our experts study your requirements and expectations, conducting additional research if necessary, to ensure successful project implementation.",
+          "To address mobile display issues, we have implemented responsive design practices. This ensures that our website adapts seamlessly to various devices, providing a consistent and user-friendly experience for all visitors.",
       },
       {
         title: "Analytics and Tracking",
         description:
-          "Integrated robust analytics and tracking tools, such as Google Analytics, to collect valuable data on website visits, user behavior, and conversions. Utilized this data to gain insights into user preferences, measure the effectiveness of marketing strategies, and make data-driven decisions for further improvements.",
+          "We have integrated robust analytics and tracking tools, such as Google Analytics, to gather valuable insights into user behavior, website visits, and conversions. This data-driven approach enables us to make informed decisions for further website improvements and marketing strategies.",
       },
       {
-        title: "Fast Page Loading",
+        title: "Convenient Online Booking System",
         description:
-          "Implemented various optimization techniques to enhance page loading speed and performance. This included optimizing image sizes, minimizing file sizes, leveraging caching mechanisms, and utilizing content delivery networks (CDNs) to deliver content efficiently. As a result, visitors experience fast and responsive page loading, ensuring a positive user experience.",
+          "To simplify the booking process for services requiring reservations, we have developed a user-friendly online booking system. Customers can easily schedule appointments and reserve services with just a few clicks, enhancing their overall shopping experience.",
       },
       {
         title: "Support and After-Sales Service",
         description:
-          "Established a reliable support system to address customer inquiries, concerns, and provide assistance throughout the customer journey. Implemented live chat support, email ticketing systems, and a dedicated customer support team to ensure prompt and efficient resolution of customer issues, fostering reliable cooperation and customer satisfaction. ",
+          "We've established a dedicated customer support system that includes live chat support, email ticketing systems, and a responsive customer support team. This ensures quick and efficient resolution of customer inquiries and concerns, fostering reliable cooperation and increasing customer satisfaction.",
       },
     ],
     images: [
@@ -82,11 +78,11 @@ const response = {
     ],
   },
   ResultSection: [
-    "Attractive and modern design: We have developed an aesthetically appealing design that reflects the unique style of your company and captures the attention of visitors. The website has a clean and organized layout that ensures easy navigation and user-friendliness.",
+    "Users now experience a consistent and user-friendly shopping experience across various devices, increasing accessibility and satisfaction. Valuable insights from analytics and tracking tools enable data-driven decision-making, leading to better marketing strategies and website enhancements.",
 
-    "SEO optimization: We have taken into account search engine optimization (SEO) principles during the website development process.",
+    "The convenient online booking system has streamlined the reservation process, contributing to increased revenue and customer satisfaction. Our dedicated customer support system has fostered reliable cooperation and higher customer satisfaction.",
 
-    "Our website is fully responsive and compatible with various devices such as smartphones and tablets. Your customers will have access to information and booking capabilities from any device, ensuring convenience and accessibility.",
+    "Fast page loading times ensure a more enjoyable and efficient browsing experience for our users, enhancing overall website performance. We're also enhancing our SEO optimization practices to boost the visibility of our marketplace in search engines and generate more organic traffic.",
   ],
 };
 

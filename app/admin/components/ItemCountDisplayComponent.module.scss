@@ -1,0 +1,27 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.count {
+  display: flex;
+  align-items: flex-end;
+  &__icon {
+    fill: #488aa7;
+    margin-right: 10px;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    margin-right: 10px;
+    color: #488aa7;
+  }
+  &__number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 1px;
+    color: #488aa7;
+  }
+}
