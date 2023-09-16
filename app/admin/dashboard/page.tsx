@@ -121,6 +121,12 @@ const Blogs = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultCount, setSearchResultCount] = useState(0);
+  const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
+
+  const handleEditButtonClick = () => {
+    console.log("Edit button clicked");
+    setIsContentEditorVisible(!isContentEditorVisible); // Змінюємо стан видимості
+  };
 
   useEffect(() => {
     const count = users.filter((user) =>
@@ -142,6 +148,7 @@ const Blogs = () => {
               users={users}
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+              onEditButtonClick={handleEditButtonClick}
             />
           </div>
           <div>
@@ -155,9 +162,7 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div>
-        <ContentEditor />
-      </div>
+      <div>{isContentEditorVisible && <ContentEditor />}</div>
     </div>
   );
 };

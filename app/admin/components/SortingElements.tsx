@@ -8,22 +8,24 @@ import update from "@/app/admin/images/sort/update.svg";
 import addToList from "@/app/admin/images/sort/add-to-list.svg";
 import ContentEditor from "@/app/admin/components/blog/ContentEditor";
 
-const SortingElements = () => {
-  const [isContentEditorOpen, setIsContentEditorOpen] = useState(false);
+interface SortingElementsProps {
+  onEditButtonClick: () => void; // Додайте проп
+}
 
+const SortingElements: React.FC<SortingElementsProps> = ({
+  onEditButtonClick,
+}) => {
   const handleSortingButtonClick = () => {
     console.log("Sorting button clicked");
-    setIsContentEditorOpen(true);
   };
 
   const handleEditButtonClick = () => {
     console.log("Edit button clicked");
-    setIsContentEditorOpen(true);
+    onEditButtonClick();
   };
 
   const handleAddToListClick = () => {
     console.log("Add to list button clicked");
-    setIsContentEditorOpen(true);
   };
 
   return (
@@ -44,8 +46,6 @@ const SortingElements = () => {
       >
         <Image src={addToList} alt="add to list" />
       </button>
-
-      {/* {isContentEditorOpen && <ContentEditor />} */}
     </div>
   );
 };
