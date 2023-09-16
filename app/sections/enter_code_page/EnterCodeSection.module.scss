@@ -1,0 +1,108 @@
+@import "../../../styles/colors";
+@import "../../../styles/container";
+@import "../../../styles/mixin";
+@import "../AuthSectionsCommon.module.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include for-size(tablet) {
+    align-items: start;
+  }
+}
+
+.form__input {
+  display: flex !important;
+  gap: 20px;
+  margin-bottom: 31px;
+
+  @include for-size(tablet) {
+    gap: 36px;
+    margin-bottom: 51px;
+  }
+
+  @include for-size(laptop) {
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  @include for-size(desktop) {
+    gap: 45px;
+    margin-bottom: 28px;
+  }
+
+  & > input {
+    border: none;
+    outline: transparent;
+    border-bottom: 1px solid $blog-card-text-color;
+    width: 25px;
+    font-size: 22px;
+    font-family: Roboto;
+    text-align: center;
+
+    @include for-size(tablet) {
+      width: 45px;
+      font-size: 38px;
+    }
+
+    @include for-size(laptop) {
+      width: 50px;
+      font-size: 46px;
+    }
+
+    @include for-size(desktop) {
+      width: 56px;
+      font-size: 52px;
+    }
+  }
+}
+
+.option {
+  display: flex;
+  margin-bottom: 16px;
+  gap: 6px;
+
+  @include for-size(tablet) {
+    margin-bottom: 22px;
+    gap: 12px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 28px;
+    gap: 14px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 32px;
+    gap: 16px;
+  }
+}
+
+.option__button {
+  border: none;
+  background-color: transparent;
+  color: $heading-blue-color;
+}
+
+.message {
+  color: $navigation-light;
+  margin-bottom: 10px;
+
+  @include for-size(tablet) {
+    margin-bottom: 14px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 18px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 22px;
+  }
+}
+
+.timer{
+  color: $navigation-light;
+}

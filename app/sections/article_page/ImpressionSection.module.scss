@@ -67,17 +67,21 @@
   flex: 1;
   margin-bottom: 19px;
 
+  @include for-size(tablet) {
+    margin-bottom: 0px;
+  }
+
   &__text {
     color: $blog-card-text-color;
     font-size: 10px;
     font-weight: 700;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.4px;
     margin-bottom: 11px;
 
     @include for-size(tablet) {
       font-size: 11px;
-      letter-spacing: 0.42px;
+      letter-spacing: 0.4px;
       margin-bottom: 14px;
     }
 
@@ -276,7 +280,7 @@
 
 .error {
   font-size: 10px;
-  color: red;
+  color: $error-color;
   border-radius: 4px;
   @include for-size(tablet) {
     padding-bottom: 5px;
@@ -291,7 +295,7 @@
 .error__input {
   & input,
   & textarea {
-    border: 1px solid red;
+    border: 1px solid $error-color;
   }
 }
 .image__container {

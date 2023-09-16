@@ -3,20 +3,6 @@
 @import "../styles/mixin";
 
 .custom {
-  @include for-size(tablet) {
-    padding-top: 50px; //Якщо будемо класти gap у OurServicesSection то ці падінги зверху від сеції треба забрати
-    padding-bottom: 30px;
-  }
-
-  @include for-size(tablet) {
-    padding-top: 90px; //Якщо будемо класти gap у OurServicesSection то ці падінги зверху від сеції треба забрати
-  }
-
-  @include for-size(tablet) {
-    padding-top: 125px; //Якщо будемо класти gap у OurServicesSection то ці падінги зверху від сеції треба забрати
-    padding-bottom: 0;
-  }
-
   &__cards {
     display: flex;
     flex-direction: column;
@@ -61,7 +47,7 @@
   &_item {
     position: relative;
     pointer-events: none;
-    
+
     @include for-size(tablet) {
       background-image: url(../../../images/blur/custom_blurL.png);
       background-repeat: no-repeat;
