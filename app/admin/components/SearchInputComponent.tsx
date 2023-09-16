@@ -7,12 +7,14 @@ interface SearchInputProps {
   placeholderText: string;
   searchTerm: string;
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onEditButtonClick: () => void; // Додайте проп
 }
 
 const SearchInputComponent: React.FC<SearchInputProps> = ({
   placeholderText,
   searchTerm,
   handleSearch,
+  onEditButtonClick, // Включіть проп
 }) => {
   return (
     <div className={s.search}>
@@ -24,7 +26,7 @@ const SearchInputComponent: React.FC<SearchInputProps> = ({
         onChange={handleSearch}
       />
 
-      <SortingElements />
+      <SortingElements onEditButtonClick={onEditButtonClick} />
     </div>
   );
 };

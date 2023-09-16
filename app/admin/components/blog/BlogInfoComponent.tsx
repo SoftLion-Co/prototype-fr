@@ -19,9 +19,13 @@ interface BlogInfoComponentProps {
   users: User[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
+  onEditButtonClick: () => void; // Додайте проп для обробки кліку на кнопку "Edit"
 }
 
-const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
+const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
+  users,
+  onEditButtonClick, // Отримайте проп
+}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +43,7 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({ users }) => {
           placeholderText="Для пошуку за заголовком"
           searchTerm={searchTerm}
           handleSearch={handleSearch}
+          onEditButtonClick={onEditButtonClick}
         />
       </div>
 
