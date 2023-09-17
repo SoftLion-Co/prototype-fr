@@ -1,0 +1,156 @@
+@import "../../styles/colors";
+@import "../../styles/mixin";
+@import "../../styles/container";
+
+.title {
+  text-align: center;
+  color: $blog-card-text-color;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 130.49%;
+  letter-spacing: 2.3px;
+  margin-bottom: 26px;
+
+  @include for-size(tablet) {
+    text-align: start;
+    font-size: 24px;
+    letter-spacing: 2.4px;
+    margin-bottom: 34px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 26px;
+    letter-spacing: 2.5px;
+    margin-bottom: 38px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 28px;
+    letter-spacing: 2.6px;
+    margin-bottom: 40px;
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 288px;
+
+  @include for-size(tablet) {
+    width: 314px;
+  }
+
+  @include for-size(laptop) {
+    width: 352px;
+  }
+
+  @include for-size(desktop) {
+    width: 372px;
+  }
+}
+
+.text {
+  color: $blog-card-text-color;
+  font-size: 14px;
+  line-height: 130.49%;
+  letter-spacing: 0.48px;
+
+  @include for-size(tablet) {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 18px;
+    letter-spacing: 0.6px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 20px;
+    letter-spacing: 0.8px;
+  }
+}
+
+.auth_button {
+  padding: 14px 34px;
+  border-radius: 11px;
+  font-size: 12px;
+  line-height: 130.49%;
+  letter-spacing: 0.6px;
+  margin-top: 17px;
+
+  @include for-size(tablet) {
+    padding: 16px 30px;
+    font-size: 14px;
+    border-radius: 13px;
+    margin-top: 16px;
+  }
+
+  @include for-size(laptop) {
+    padding: 18px 32px;
+    font-size: 16px;
+    border-radius: 14px;
+    margin-top: 18px;
+  }
+
+  @include for-size(desktop) {
+    padding: 20px 36px;
+    font-size: 20px;
+    border-radius: 15px;
+    margin-top: 19px;
+  }
+}
+
+.input_underline {
+  width: 100%;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid $navigation-light;
+  padding: 9px 0;
+  outline: transparent;
+
+  @include for-size(tablet) {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  @include for-size(laptop) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
+
+  @include for-size(desktop) {
+    padding: 14px 0;
+  }
+  
+  &::placeholder {
+    font-family: Roboto;
+    color: $placeholder-color;
+  }
+}
+
+.container_page {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  min-height: calc(100vh - 373px);
+
+  @include for-size(tablet) {
+    margin-top: 30px;
+    min-height: calc(100vh - 334px);
+  }
+
+  @include for-size(laptop) {
+    margin-top: 40px;
+    min-height: calc(100vh - 430px);
+    
+  }
+
+  @include for-size(desktop) {
+    margin-top: 60px;
+    min-height: calc(100vh - 550px);
+  }
+}
