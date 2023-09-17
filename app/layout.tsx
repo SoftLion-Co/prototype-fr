@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  session
+  // session
 }: {
-  session: Session;
+  // session: Session;
   children: React.ReactNode;
 }) {
   return (
