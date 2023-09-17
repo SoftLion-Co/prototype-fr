@@ -1,0 +1,22 @@
+@import "./../../../../styles/mixin";
+@import "./../../../../styles/colors";
+@import "./../../../../styles/container";
+@import "./../../../../styles/container_admin";
+
+.container_admin {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+
+  margin-top: 60px;
+}
+
+.dashboard__container {
+  display: flex;
+  margin-right: 120px;
+  gap: 140px;
+}
+
+.panel__container {
+  margin-right: 34px;
+}

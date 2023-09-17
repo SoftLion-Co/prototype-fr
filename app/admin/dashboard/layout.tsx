@@ -22,10 +22,6 @@ export default function RootLayout({
           <HeaderComponent />
         </div>
         {children}
-
-        <div>
-          {/* <Panel/> */}
-        </div>
       </body>
     </html>
   );

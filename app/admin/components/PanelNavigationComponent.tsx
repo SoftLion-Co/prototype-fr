@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./PanelNavigationComponent.module.scss";
+import Link from "next/link";
 
 const PanelNavigationComponent = () => {
   return (
@@ -7,45 +8,45 @@ const PanelNavigationComponent = () => {
       <div className={s.panel}>
         <ul className={s.panel__list}>
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="/admin/dashboard/blog">
               Блог
-            </a>
+            </Link>
           </li>
 
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="#">
               Клієнти
-            </a>
+            </Link>
           </li>
 
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="/admin/dashboard/contactUs">
               Зв’язатись ContactUS
-            </a>
+            </Link>
           </li>
 
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="#">
               Зв’язатись BLOG
-            </a>
+            </Link>
           </li>
 
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="#">
               Проекти
-            </a>
+            </Link>
           </li>
 
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="#">
               Статус замовлення
-            </a>
+            </Link>
           </li>
 
           <li className={s.panel__item}>
-            <a className={s.panel__link} href="#">
+            <Link className={s.panel__link} href="#">
               Статистика
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
