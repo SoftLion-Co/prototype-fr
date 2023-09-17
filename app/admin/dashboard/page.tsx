@@ -166,7 +166,6 @@ const users: BlogData[] = [
     description: "Description 13",
   }
   
-  // Додайте інші об'єкти з email та description тут
 ];
 
 const Blogs: React.FC<BlogsProps> = ({ onBlogSelect }) => {
