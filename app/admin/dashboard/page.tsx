@@ -9,10 +9,10 @@ import BlogInfoComponent from "@/app/admin/components/blog/BlogInfoComponent";
 import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayComponent";
 
 import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
+import { useAuth } from "@/hooks/useAuth";
 
 const Blogs = () => {
-  const links = [{ title: "Blog", href: "#" }];
-
+  useAuth()
   const users = [
     {
       number: 1,
