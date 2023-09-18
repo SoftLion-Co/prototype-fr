@@ -1,0 +1,94 @@
+@import "./../../styles/mixin";
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 231px;
+  justify-content: center;
+
+  @include for-size(tablet) {
+    width: 236px;
+    height: 420px;
+  }
+
+  @include for-size(laptop) {
+    width: 359px;
+    height: 427px;
+  }
+
+  @include for-size(desktop) {
+    width: 422px;
+    height: 550px;
+  }
+
+  &__active {
+    @include for-size(desktop) {
+      width: 454px;
+      height: 550px;
+    }
+  }
+
+  &__icon {
+    height: 100px;
+    width: 104px;
+
+    @include for-size(desktop) {
+      width: 136px;
+      height: 130px;
+    }
+
+    &.active {
+        @include for-size(tablet) {
+            width: 135px;
+            height: 129px;
+          }
+      @include for-size(desktop) {
+        width: 174px;
+        height: 166px;
+      }
+    }
+  }
+
+  &__paragraph {
+    text-align: center;
+    font-size: 14px;
+
+    @include for-size(tablet) {
+        display: flex;
+        align-items: center;
+        max-width: 200px;
+        height: 210px;
+      }
+
+    @include for-size(laptop) {
+      max-width: 276px;
+      height: 210px;
+      font-size: 16px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 355px;
+      height: 271px;
+      font-size: 20px;
+    }
+    &.active {
+        @include for-size(tablet) {
+            max-width: 236px;
+            height: 219px;
+            font-size: 16px;
+          }
+
+        @include for-size(laptop) {
+            max-width: 352px;
+            height: 269px;
+            font-size: 20px;
+          }
+      @include for-size(desktop) {
+        max-width: 454px;
+        height: 347px;
+        font-size: 25px;
+      }
+    }
+  }
+}

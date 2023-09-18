@@ -1,0 +1,381 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.header_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &.header_hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  @include for-size(tablet) {
+    height: 75px;
+  }
+  @include for-size(laptop) {
+    height: 80px;
+  }
+  @include for-size(desktop) {
+    height: 85px;
+  }
+
+  @keyframes slide{
+    100% {
+      opacity: 1;
+    }
+  }
+  &__visible {
+    animation: slide 1.5s forwards;
+    position: sticky;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    opacity: 0;
+  }
+  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0;
+
+  &__line {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      background: $burger-menu-color;
+      bottom: -3px;
+      height: 2px;
+      transition: left 0.3s ease-out, right 0.3s ease-out;
+    }
+
+    &.selected::before {
+      left: 0;
+      right: 0;
+    }
+
+    &:hover::before {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__logo {
+    width: 74px;
+    height: 15px;
+
+    @include for-size(tablet) {
+      width: 62px;
+      height: 12px;
+    }
+    @include for-size(laptop) {
+      width: 92px;
+      height: 19px;
+    }
+    @include for-size(desktop) {
+      width: 119px;
+      height: 24px;
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @include for-size(tablet) {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include for-size(laptop) {
+      gap: 42px;
+    }
+    @include for-size(desktop) {
+      gap: 53px;
+    }
+  }
+
+  &__list {
+    @include for-size(tablet) {
+      display: flex;
+      align-items: center;
+      gap: 31px;
+    }
+    @include for-size(laptop) {
+      gap: 42px;
+    }
+    @include for-size(desktop) {
+      gap: 53px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+    transform: perspective(1px) translateZ(0);
+  }
+
+  &__sub_menu > &__item {
+    @include for-size(tablet) {
+      padding-bottom: 5px;
+    }
+    @include for-size(desktop) {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__item:hover &__sub_menu {
+    display: block;
+  }
+
+  &__link {
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    color: black;
+    line-height: 26px;
+    position: relative;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+  }
+
+  &__sub_menu {
+    @include for-size(tablet) {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 12px 37px #2c2d501a;
+      border-radius: 8px;
+      padding: 5px 18px;
+      width: 100px;
+      top: 30px;
+      left: 0;
+
+      &::before {
+        content: "";
+        display: flex;
+        position: absolute;
+        left: 28px;
+        top: -3px;
+        width: 9px;
+        height: 12px;
+        background-size: cover;
+        width: 20px;
+        height: 12px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -10px;
+        height: 10px;
+        background: transparent;
+      }
+    }
+    @include for-size(desktop) {
+      width: 120px;
+      padding: 15px 24px;
+    }
+  }
+
+  &__btn_login {
+    background: $button-blue-background;
+    color: black;
+    padding: 5.5px 13px;
+    border-radius: 6px;
+    border: none;
+    margin-left: 21px;
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+      padding: 5.5px 13px;
+      border-radius: 8px;
+      margin-left: 0px;
+    }
+    @include for-size(laptop) {
+      display: block;
+      padding: 8px 19px;
+      border-radius: 12px;
+    }
+    @include for-size(desktop) {
+      display: block;
+      padding: 11px 25px;
+      border-radius: 15px;
+    }
+
+    &__text {
+      font-size: 22px;
+      letter-spacing: 0.4px;
+      color: black;
+      line-height: 7px;
+      line-height: 26px;
+      @include for-size(tablet) {
+        font-weight: 400;
+        font-size: 12px;
+      }
+
+      @include for-size(laptop) {
+        font-size: 15px;
+      }
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
+    }
+  }
+  &__btn_burger {
+    background-color: transparent;
+    margin-left: auto;
+    border: none;
+    color: $burger-menu-color;
+    padding: 0;
+    height: 25px;
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    width: 17px;
+    height: 16px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    &__div {
+      position: absolute;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: $burger-menu-color;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transition: 0.25s ease-in-out;
+    }
+    &__div:nth-child(1) {
+      top: 0px;
+    }
+    &__div:nth-child(2),
+    &__div:nth-child(3) {
+      top: 6px;
+    }
+    &__div:nth-child(4) {
+      top: 12px;
+    }
+    &.open &__div:nth-child(1) {
+      top: 12px;
+      width: 0;
+      left: 50%;
+    }
+    &.open &__div:nth-child(2) {
+      transform: rotate(45deg);
+      top: 6px;
+    }
+    &.open &__div:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 6px;
+    }
+    &.open &__div:nth-child(4) {
+      top: 6px;
+      width: 0;
+      left: 50%;
+    }
+  }
+}
+
+/* MOBILE MENU */
+.header_modal {
+  position: fixed;
+  top: 55px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 19px;
+  }
+
+  &__item {
+    list-style: none;
+    transform: perspective(1px) translateZ(0);
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  &__link_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__link {
+    text-align: center;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    letter-spacing: 0.4px;
+    color: black;
+    line-height: 26px;
+    position: relative;
+  }
+
+  &__icon {
+    opacity: 0.3;
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: $burger-menu-color;
+  }
+
+  &__sub_menu {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  &__sub_menu > &__item {
+    opacity: 75%;
+  }
+
+  &__btn_hidden {
+    display: block;
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+.stop_scrolling {
+  overflow: hidden;
+}

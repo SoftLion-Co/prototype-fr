@@ -1,0 +1,125 @@
+{
+  "heroSection": {
+    "titleTech": "Node.js",
+    "paragraph": "Node.js is an open-source, server-side JavaScript platform that allows for the development of scalable network applications. Node.js uses an asynchronous, non-blocking I/O model, which makes it very efficient for handling user requests. It also has a large library of modules that can be used to create a variety of network applications."
+  },
+  "creationSection": [
+    {
+      "description": "Web applications: Node.js is a popular choice for creating web applications, as it allows for the creation of fast, scalable websites that can handle large volumes of data."
+    },
+    {
+      "description": "Chatbots: Node.js can be used to create chatbots that can interact with users online in real time."
+    },
+    {
+      "description": "Message processing systems: Node.js can be used to create message processing systems that can handle large volumes of data"
+    },
+    {
+      "description": "Business Applications: Node.js is often used for developing enterprise applications, such as Customer Relationship Management (CRM) systems, database management systems, financial programs, and more."
+    }
+  ],
+  "advantagesSection": [
+    "Extensibility: Node.js has a large library of modules that can be used to create a variety of network applications. This makes it easy to add new features and capabilities to web applications.",
+    "Mobility: Node.js can be used to develop mobile applications using platforms such as React Native or Cordova. This allows for the creation of a single codebase that can be run on both web servers and mobile devices.",
+    "Simplicity: Node.js is built on JavaScript, which makes it easy to learn and use. This is important for developers who do not have experience with other platforms for developing network applications.",
+    "Scalability: Node.js can be easily scaled to handle large volumes of traffic and data. This is important for web applications that can grow rapidly.",
+    "Support: Node.js is supported by a large community of developers and tools. This makes Node.js a good choice for developing software for which resources and support are available.",
+    "Efficiency: Node.js uses an asynchronous, non-blocking I/O model, which makes it very efficient for handling user requests. This is important for web applications that often receive a lot of requests from users."
+  ],
+  "chooseUsSection": [
+    "SoftLion has developed Node.js software for a wide range of industries, including e-commerce, web development, mobile development, and embedded systems. We have the experience and expertise to meet your specific needs.",
+    "SoftLion has a team of experienced designers who can help you create an attractive and intuitive user interface. Our designers will work with you to create a user interface that meets your needs and meets your branding standards.",
+    "SoftLion has a dedicated project manager who will coordinate the team's work and ensure the timely and quality delivery of your project. Our project manager will work with you to understand your needs and create a plan to meet those needs.",
+    "SoftLion is committed to providing excellent customer support. We offer a variety of support options, including phone, email, and live chat. We are always available to answer your questions and help you with any issues you may have."
+  ],
+  "developmentSection": [
+    {
+      "number": "1",
+      "title": "Development of new software products",
+      "paragraph": "We can develop new software products for you from scratch, be it a website, mobile app, enterprise system, or anything else. We have experience in a wide range of industries and can develop software that meets your specific needs."
+    },
+    {
+      "number": "2",
+      "title": "Improvement of existing software",
+      "paragraph": "We can also help you improve existing software. We can make changes to the functionality, design, or performance of your software to meet your current needs."
+    },
+    {
+      "number": "3",
+      "title": "Software support",
+      "paragraph": "We can provide support for your software to keep it running smoothly. We can troubleshoot, resolve issues, and ensure the security of your software."
+    },
+    {
+      "number": "4",
+      "title": "Consulting on Node.js software development",
+      "paragraph": "If you need help with Node.js software development, we can provide you with consulting. We can help you define your needs, develop a project plan, and choose the right technologies."
+    }
+  ],
+  "stagesSection": [
+    {
+      "title": "Planning and design",
+      "paragraph": "At the beginning of the project, we work closely with you to understand your needs and goals. We will then develop a project plan that outlines the project’s scope, schedule, budget, and risks. We will also create wireframes, mockups, and prototypes to help you visualize your product or service."
+    },
+    {
+      "title": "Development and testing",
+      "paragraph": "Once we have a clear understanding of your needs and goals, we begin the development process. We use the latest technologies to create high-quality products and services that meet your requirements. We also test the product or service throughout the development process to ensure that it meets your expectations."
+    },
+    {
+      "title": "Deployment",
+      "paragraph": "Once the product or service is ready, it is time to deploy it to production. This involves making the product or service available to users and ensuring that it can handle the load."
+    },
+    {
+      "title": "Support",
+      "paragraph": "After your product or service is launched, we offer ongoing support to ensure that it continues to meet your needs. We can help you with maintenance, updates, and troubleshooting."
+    }
+  ],
+  "reviewsSection": [
+    {
+      "name": "Yura",
+      "rating": 5,
+      "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+    },
+    {
+      "name": "Paul",
+      "rating": 5,
+      "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+    },
+    {
+      "name": "Dima",
+      "rating": 5,
+      "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+    },
+    {
+      "name": "Vira",
+      "rating": 5,
+      "paragraph": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?"
+    }
+  ],
+  "projectsSection": [
+    {
+      "id": 1,
+      "image": "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+      "title": "Landing page of traveling company",
+      "customer": "customer: Move432432423",
+      "year": "year: 2022",
+      "author": "author: SoftLion",
+      "description": "In this project, we developed the design, implemented it, and provide further support"
+    },
+    {
+      "id": 2,
+      "image": "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+      "title": "Landing page of traveling company",
+      "customer": "customer: Move43543543",
+      "year": "year: 2022",
+      "author": "author: SoftLion",
+      "description": "In this project, we developed the design, implemented it, and provide further support"
+    },
+    {
+      "id": 3,
+      "image": "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
+      "title": "Landing page of traveling company",
+      "customer": "customer: Movetertgfd",
+      "year": "year: 2022",
+      "author": "author: SoftLion",
+      "description": "In this project, we developed the design, implemented it, and provide further support"
+    }
+  ]
+}

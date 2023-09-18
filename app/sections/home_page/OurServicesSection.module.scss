@@ -1,0 +1,20 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.services {
+  display: grid;
+  gap: 30px;
+
+  @include for-size(tablet) {
+    gap: 50px;
+  }
+
+  @include for-size(laptop) {
+    gap: 60px;
+  }
+
+  @include for-size(desktop) {
+    gap: 80px;
+  }
+}

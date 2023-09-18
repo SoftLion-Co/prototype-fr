@@ -1,0 +1,144 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.stages {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 10%;
+
+  @include for-size(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 7%;
+  }
+
+  &__heading {
+    margin-bottom: 10%;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(
+      897.97% 128.57% at 4.17% 6.52%,
+      rgba(175, 218, 237, 0.1) 0%,
+      rgba(190, 244, 205, 0.2) 45.3%,
+      rgba(243, 182, 241, 0.1) 100%
+    );
+    border: 1px solid rgba(176, 226, 190, 0.34);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 40px 20px;
+    user-select: none;
+
+    @include for-size(tablet) {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      border-radius: 8px;
+      padding: 35px 25px;
+      &:hover {
+        transform: translateY(-0.7rem);
+        box-shadow: 0 0.9rem 1rem rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  @include for-size(laptop) {
+    border-radius: 12px;
+    padding: 45px 30px;
+  }
+  @include for-size(desktop) {
+    border-radius: 15px;
+    padding: 45px 30px;
+  }
+
+  &__img {
+    margin-bottom: 3%;
+  }
+
+  &__title {
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 5%;
+    font-size: 30px;
+    font-size: 19px;
+    letter-spacing: 0.6px;
+
+    @include for-size(laptop) {
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
+    @include for-size(desktop) {
+      font-size: 30px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.5px;
+
+    @include for-size(tablet) {
+      width: 295px;
+      min-height: 190px;
+    }
+    @include for-size(laptop) {
+      width: 440px;
+      font-size: 20px;
+      min-height: 190px;
+      letter-spacing: 0.7px;
+    }
+    @include for-size(desktop) {
+      width: 610px;
+      font-size: 20px;
+      min-height: 190px;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/service_blurT.png);
+      background-repeat: no-repeat;
+      top: 270px;
+      left: 200px;
+      width: 324px;
+      height: 283px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/service_blurL.png);
+      background-repeat: no-repeat;
+      top: 180px;
+      left: 300px;
+      width: 450px;
+      height: 390px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/service_blurD.png);
+      background-repeat: no-repeat;
+      top: 100px;
+      left: 300px;
+      width: 588px;
+      height: 513px;
+    }
+  }
+}

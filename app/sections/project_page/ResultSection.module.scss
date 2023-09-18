@@ -1,0 +1,202 @@
+@import "/styles/colors";
+@import "/styles/container";
+@import "/styles/mixin";
+
+.design {
+  &__heading {
+    margin-bottom: 30px;
+    @include for-size(tablet) {
+      margin-bottom: 41px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 63px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 76px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+    }
+
+    &_texts {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      width: 100%;
+
+      @include for-size(tablet) {
+        gap: 46px;
+
+        width: 400px;
+      }
+      @include for-size(laptop) {
+        gap: 66px;
+
+        width: 628px;
+      }
+
+      @include for-size(desktop) {
+        gap: 83px;
+
+        width: 767px;
+      }
+    }
+
+    &_list {
+      @include for-size(tablet) {
+        max-width: 297px;
+      }
+      @include for-size(laptop) {
+        max-width: 452px;
+      }
+      @include for-size(desktop) {
+        max-width: 547px;
+      }
+
+      &:nth-child(2) {
+        @include for-size(tablet) {
+          margin-left: auto;
+          max-width: 219px;
+        }
+        @include for-size(laptop) {
+          max-width: 333px;
+        }
+        @include for-size(desktop) {
+          max-width: 403px;
+        }
+      }
+    }
+
+    &_text {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.4px;
+
+      @include for-size(tablet) {
+        font-size: 11px;
+        line-height: 14px;
+        letter-spacing: 0.5px;
+      }
+      @include for-size(laptop) {
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 0.7px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 250px;
+    @include for-size(tablet) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &_photo {
+      position: absolute;
+      object-fit: cover;
+
+      width: 388px;
+      height: 276px;
+
+      @include for-size(tablet) {
+        width: 360px;
+        height: 314px;
+      }
+      @include for-size(laptop) {
+        width: 675px;
+        height: 489px;
+      }
+
+      @include for-size(desktop) {
+        width: 817px;
+        height: 580px;
+      }
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 700px;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 1200px;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      left: 150px;
+      bottom: 1200px;
+      width: 1240px;
+      height: 930px;
+    }
+  }
+}
+
+.blure {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      top: 0px;
+      width: 1240px;
+      height: 930px;
+    }
+  }
+}

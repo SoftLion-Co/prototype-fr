@@ -1,0 +1,114 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.security {
+  margin-bottom: 60px;
+
+  @include for-size(tablet) {
+    margin-bottom: 70px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 200px;
+  }
+
+  &__heading {
+    margin-bottom: 40px;
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 36px;
+
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: none;
+
+    @include for-size(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      column-gap: 21px;
+      row-gap: 55px;
+      margin-top: 84px;
+      margin-bottom: 29px;
+    }
+
+    @include for-size(laptop) {
+      column-gap: 19px;
+      row-gap: 82px;
+      margin-top: 67px;
+      margin-bottom: 53px;
+    }
+
+    @include for-size(desktop) {
+      column-gap: 40px;
+      row-gap: 107px;
+      margin-top: 87px;
+      margin-bottom: 63px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include for-size(tablet) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.centre {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      background-repeat: no-repeat;
+      left: 0px;
+      top: -100px;
+      width: 733px;
+      height: 638px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      left: 0px;
+      top: -200px;
+      width: 819px;
+      height: 572px;
+      bottom: 700px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/custom_blurD.png);
+      left: 0px;
+      top: -1700px;
+      width: 1265px;
+      height: 744px;
+    }
+  }
+}

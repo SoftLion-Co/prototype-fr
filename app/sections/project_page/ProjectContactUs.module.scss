@@ -1,0 +1,63 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+
+.our_form {
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  @include for-size(tablet) {
+    justify-content: flex-start;
+    margin-bottom: 60px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 150px;
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 200px;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 350px;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      bottom: 300px;
+      width: 1240px;
+      height: 930px;
+    }
+  }
+}

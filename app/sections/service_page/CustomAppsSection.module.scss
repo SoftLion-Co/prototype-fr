@@ -1,0 +1,103 @@
+@import "../styles/colors";
+@import "/styles/container";
+@import "../styles/mixin";
+
+.custom {
+  margin-bottom: 60px;
+
+  @include for-size(tablet) {
+    margin-bottom: 70px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 130px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 200px;
+  }
+
+  &__title{
+    margin-bottom: 40px;
+    @include for-size(tablet) {
+      margin-bottom: 40px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
+
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+
+    @include for-size(tablet) {
+      position: relative;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+   
+  }
+
+  &__btn {
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      position: absolute;
+      right: 22px;
+      bottom: -56px;
+    }
+    @include for-size(laptop) {
+      font-size: 28px;
+      right: 93px;
+      bottom: -50px;
+    }
+    @include for-size(desktop) {
+      font-size: 36px;
+      right: 123px;
+      bottom: -60px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+  
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      background-repeat: no-repeat;
+      top: -100px;
+      width: 733px;
+      height: 638px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      left: 150px;
+      width: 819px;
+      height: 572px;
+      bottom: 700px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/custom_blurD.png);
+      left: 200px;
+      width: 1265px;
+      height: 744px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+@import "./../styles/container";
+
+.cookies {
+  box-sizing: border-box;
+  border-radius: 4.5px;
+  background: $cookies-background;
+  box-shadow: $cookies-shadow;
+  padding: 15px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+
+  z-index: 9999;
+  animation: slide-up 0.3s ease-out;
+
+  @keyframes slide-up {
+    from {
+      transform: translateX(-50%) translateY(100%);
+    }
+    to {
+      transform: translateX(200%) translateY(0);
+    }
+  }
+
+  transform: translate(-50%, -15%);
+  min-width: 290px;
+
+  @include for-size(tablet) {
+    padding: 20px 37px 20px 25px;
+    font-size: 12px;
+    gap: 38px;
+    transform: translate(-50%, -175%);
+    min-width: 675px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 20px;
+    gap: 70px;
+    transform: translate(-50%, 10%);
+    min-width: 1080px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 25px;
+    padding: 46px 130px 30px 52px;
+    gap: 79px;
+    transform: translate(-50%, 200%);
+    min-width: 1385px;
+  }
+}

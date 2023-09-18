@@ -1,0 +1,42 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+
+.heading {
+  color: $heading-blue-color;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 130.49%;
+
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid $heading-blue-color;
+
+  &_container{
+    text-align: center;
+  }
+
+  @include for-size(tablet) {
+    font-size: 33px;
+    letter-spacing: 2.6px; 
+    padding-right: 15px; 
+    padding-left: 15px;
+    border-bottom: 2px solid $heading-blue-color;
+  }
+
+  @include for-size(laptop) {
+    font-size: 48px;
+    letter-spacing: 2.634px; 
+    padding-right: 15px; 
+    padding-left: 15px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 63px;
+    letter-spacing: 3.84px;
+    padding-right: 20px; 
+    padding-left: 20px;
+    border-bottom: 3px solid $heading-blue-color;
+  }
+}

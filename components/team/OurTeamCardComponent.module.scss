@@ -1,0 +1,184 @@
+@import "../../styles/colors";
+@import "../../styles/mixin";
+
+.member {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 30px 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(175, 218, 237, 0.14) 0%,
+    rgba(190, 244, 205, 0.34) 35.3%,
+    rgba(243, 182, 241, 0.1) 100%
+  );
+
+  @include for-size(tablet) {
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  @include for-size(laptop) {
+    gap: 15px;
+  }
+
+  @include for-size(desktop) {
+    gap: 20px;
+  }
+
+  &__avatar {
+    width: 125px;
+    height: 125px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @include for-size(tablet) {
+      width: 93px;
+      height: 93px;
+    }
+
+    @include for-size(laptop) {
+      width: 150px;
+      height: 150px;
+    }
+
+    @include for-size(desktop) {
+      width: 195px;
+      height: 195px;
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    @include for-size(tablet) {
+      align-items: center;
+      gap: 5px;
+    }
+
+    @include for-size(laptop) {
+      gap: 8px;
+    }
+
+    @include for-size(desktop) {
+      gap: 10px;
+    }
+
+    .member__name,
+    .member__position {
+      color: $blog-card-text-color;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.8px;
+
+      @include for-size(tablet) {
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 0.6px;
+      }
+
+      @include for-size(laptop) {
+        font-size: 17px;
+        letter-spacing: 1px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 22px;
+        letter-spacing: 1.3px;
+      }
+    }
+  }
+
+  &.active {
+    @include for-size(tablet) {
+      gap: 11px;
+    }
+
+    @include for-size(laptop) {
+      gap: 18px;
+    }
+
+    @include for-size(desktop) {
+      gap: 23px;
+    }
+
+    .member__avatar {
+      @include for-size(tablet) {
+        width: 135px;
+        height: 131px;
+      }
+
+      @include for-size(laptop) {
+        width: 220px;
+        height: 220px;
+      }
+
+      @include for-size(desktop) {
+        width: 285px;
+        height: 285px;
+      }
+    }
+    .member__name,
+    .member__position {
+      @include for-size(tablet) {
+        color: $heading-blue-color;
+        font-size: 12px;
+        letter-spacing: 0.7px;
+      }
+
+      @include for-size(laptop) {
+        font-size: 20px;
+        letter-spacing: 1.2px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 25px;
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+
+  &:not(.active) {
+    @include for-size(tablet) {
+      margin-top: 19px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: 35px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: 44px;
+    }
+  }
+}
+
+.member__linkedin {
+  color: $blog-card-text-color;
+  font-size: 14px;
+
+  @include for-size(tablet) {
+    color: $heading-blue-color;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 20px;
+  }
+
+  @include for-size(desktop) {
+    font-size: 25px;
+  }
+}
+
+.member_avatar_img {
+  cursor: pointer;
+}

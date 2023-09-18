@@ -1,0 +1,104 @@
+@import "../styles/mixin";
+@import "../styles/colors";
+@import "../styles/container";
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @include for-size(tablet) {
+    align-items: flex-end;
+    margin-top: -39px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: -25px;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    @include for-size(tablet) {
+      margin-bottom: 22px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 30px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    color: #000;
+    text-align: center;
+    line-height: 130%;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    max-width: 80%;
+
+    @include for-size(tablet) {
+      max-width: none;
+      width: 290px;
+      text-align: left;
+      letter-spacing: 0.4px;
+    }
+
+    @include for-size(laptop) {
+      width: 380px;
+      font-size: 15px;
+      letter-spacing: 0.6px;
+    }
+
+    @include for-size(desktop) {
+      width: 514px;
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
+  }
+}
+
+.our_form {
+  width: calc(100% - 40px);
+  @include for-size(tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/contact_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 120px;
+      left: 20px;
+      width: 345px;
+      height: 310px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/contact_blurL.png);
+      left: 50px;
+      bottom: 160px;
+      width: 503px;
+      height: 452px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/contact_blurD.png);
+      bottom: 180px;
+      width: 658px;
+      height: 592px;
+    }
+  }
+}

@@ -1,0 +1,375 @@
+@import "./../styles/colors";
+@import "./../styles/mixin";
+@import "../styles/container";
+
+.technologies {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__image_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /* ... */
+    z-index: 2;
+    transition: display 1s ease; /* Добавляем переход для свойства display */
+  }
+
+  &__image_wrapper.hovered &__text_ecommerce {
+    display: block;
+  }
+  &__image_wrapper.hovered &__image_uiux,
+  &__image_wrapper.hovered &__image_ecommerce,
+  &__image_wrapper.hovered &__image_seo,
+  &__image_wrapper.hovered &__image_api,
+  &__image_wrapper.hovered &__descriptionFotoUIUX,
+  &__image_wrapper.hovered &__description_photo,
+  &__image_wrapper.hovered &__description_photo,
+  &__image_wrapper.hovered &__descriptionFotoSeo {
+    display: none;
+  }
+  &__image_wrapper:hover &__text_ecommerce {
+    @include for-size(laptop) {
+      display: block;
+    }
+    @include for-size(desktop) {
+      display: block;
+    }
+  }
+  &__image_wrapper:hover &__image_uiux,
+  &__image_wrapper:hover &__image_ecommerce,
+  &__image_wrapper:hover &__image_seo,
+  &__image_wrapper:hover &__image_api,
+  &__image_wrapper:hover &__descriptionFotoUIUX,
+  &__image_wrapper:hover &__description_photo,
+  &__image_wrapper:hover &__description_photo,
+  &__image_wrapper:hover &__descriptionFotoSeo {
+    @include for-size(laptop) {
+      display: none;
+    }
+    @include for-size(desktop) {
+      display: none;
+    }
+  }
+
+  &__text_ecommerce {
+    display: none;
+  }
+
+  &__image_wrapper {
+    box-shadow: $technologies-card-shadow;
+    background: $technologies-card-backbround;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    max-width: 224px;
+    height: 210px;
+
+    @include for-size(tablet) {
+      max-width: 216px;
+      height: 208px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 239px;
+      height: 229px;
+      display: flex;
+    }
+
+    @include for-size(desktop) {
+      max-width: 320px;
+      height: 307px;
+    }
+  }
+
+  &__icon_open {
+    display: flex;
+    fill: rgba(0, 0, 0, 0.6);
+    max-width: 19px;
+    max-height: 19px;
+
+    padding-top: 7px;
+    padding-right: 7px;
+
+    @include for-size(tablet) {
+      max-width: 22px;
+      max-height: 22px;
+    }
+
+    @include for-size(laptop) {
+      display: none;
+    }
+  }
+
+  &__icon_wrapper {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    @include for-size(laptop) {
+      display: none;
+    }
+  }
+
+  &__image_uiux {
+    margin-bottom: 8px;
+
+    width: 125px;
+    height: 118px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 110px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(laptop) {
+      width: 136px;
+      height: 129px;
+
+      margin-bottom: 18px;
+    }
+
+    @include for-size(desktop) {
+      width: 181px;
+      height: 165px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__image_ecommerce {
+    width: 125px;
+    height: 118px;
+
+    margin-bottom: 8px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 110px;
+    }
+
+    @include for-size(laptop) {
+      width: 136px;
+      height: 129px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(desktop) {
+      width: 181px;
+      height: 165px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__image_seo {
+    width: 125px;
+    height: 118px;
+
+    margin-bottom: 14px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 114px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 18px;
+
+      height: 129px;
+      width: 136px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 20px;
+
+      width: 181px;
+      height: 165px;
+    }
+  }
+
+  &__image_api {
+    margin-bottom: 9px;
+
+    width: 125px;
+    height: 118px;
+
+    @include for-size(tablet) {
+      width: 119px;
+      height: 110px;
+
+      margin-bottom: 10px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 18px;
+
+      height: 129px;
+      width: 136px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 20px;
+
+      width: 181px;
+      height: 165px;
+    }
+  }
+
+  &__header_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text_ecommerce {
+    text-align: center;
+
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.6px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include for-size(tablet) {
+      padding-right: 18px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0.7px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__name_header {
+    margin-bottom: 47px;
+    @include for-size(tablet) {
+      margin-bottom: 118px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 135px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 172px;
+    }
+  }
+
+  &__card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 224px;
+    @include for-size(tablet) {
+      width: 216px;
+    }
+
+    @include for-size(laptop) {
+      transition: transform 0.5s ease;
+      width: 239px;
+      justify-content: center;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include for-size(desktop) {
+      width: 320px;
+    }
+  }
+
+  &__images_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 32px;
+
+    @include for-size(tablet) {
+      gap: 46px;
+    }
+
+    @include for-size(laptop) {
+      flex-wrap: nowrap;
+      gap: 41px;
+    }
+
+    @include for-size(desktop) {
+      gap: 40px;
+    }
+  }
+
+  &__description_photo {
+    color: $heading-blue-color;
+
+    text-align: center;
+
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 1px;
+
+    @include for-size(tablet) {
+      line-height: 27px;
+      letter-spacing: 2px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22px;
+      line-height: 29px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 30px;
+      line-height: 39px;
+      letter-spacing: 2.7px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/techno_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 200px;
+      width: 733px;
+      height: 638px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/techno_blurL.png);
+      width: 1058px;
+      height: 633px;
+      bottom: 200px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/techno_blurL.png);
+      width: 1387px;
+      height: 802px;
+      bottom: 100px;
+    }
+  }
+}

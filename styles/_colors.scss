@@ -1,0 +1,114 @@
+//Text colors
+$hero-heading-color: #2b2b2c;
+$hero-heading-blue-color: #27b7fc;
+$heading-blue-color: #308bb7;
+$heading-purple-color: rgba(160, 24, 155, 0.7);
+$heading-green-color: rgba(59, 141, 97, 0.87);
+
+$blog-card-text-color: #161616;
+
+$service-heading-color: rgba(0, 0, 0, 0.7);
+
+$placeholder-color: rgba(0, 0, 0, 0.5);
+
+$navigation-dark: #373a24;
+$navigation-light: #8b8b8b;
+
+//Buttons
+$button-shadow-colors: #a0189b50, #76bdd350, #13eb9050;
+$button-shadow-duration: 5s;
+
+$button-blue-background: linear-gradient(139deg, #afdaed 0%, #84c6e2 100%);
+$button-blue-shadow: 0px 3px 32px 0px rgba(36, 141, 238, 0.33);
+
+$button-blue-disabled: linear-gradient(139deg, #cce5f0 0%, #bcd7e3 100%);
+
+$button-white-background: rgba(242, 212, 239, 0.07);
+$button-white-shadow: 5px 6px 12px 0px rgba(0, 0, 0, 0.15);
+$button-blue-form: linear-gradient(180deg, #308bb7 0%, rgba(48, 139, 183, 0.57) 100%);
+
+$button-dark-blue-background: linear-gradient(136deg, #308bb7 0%, rgba(48, 139, 183, 0.79) 100%);
+
+$scrollbar-color: #a7caf0;
+$burger-menu-color: #83addf;
+$scrollbar-background: #e8e8e8;
+
+//Card backgrounds
+$technologies-card-backbround: radial-gradient(
+  148.72% 141.42% at 0% 0%,
+  rgba(19, 235, 144, 0.08) 0%,
+  rgba(246, 205, 245, 0.23) 41.46%,
+  rgba(175, 218, 237, 0.24) 100%
+);
+$technologies-card-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.25);
+
+$cookies-background: radial-gradient(
+  114.26% 136.2% at 100% 100%,
+  rgba(160, 24, 155, 0) 0%,
+  rgba(160, 24, 155, 0.11) 50%,
+  rgba(133, 0, 127, 0.05) 100%
+);
+$cookies-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+
+$services-slider-left-card-background: linear-gradient(134deg, rgba(243, 223, 183, 0.58) 0%, rgba(246, 243, 170, 0.11) 100%);
+$services-slider-right-card-background: linear-gradient(135deg, rgba(242, 212, 239, 0.39) 0%, rgba(242, 213, 241, 0.26) 100%);
+$services-slider-center-card-background: linear-gradient(135deg, rgba(255, 255, 255, 0.58) 0%, rgba(118, 228, 215, 0) 100%);
+$services-slider-small-card-shadow: 9px 12px 9px 0px rgba(0, 0, 0, 0.15);
+$services-slider-center-card-shadow: 16px 40px 25px 0px rgba(0, 0, 0, 0.15);
+
+$services-custom-apps-card-background: radial-gradient(
+  114.26% 136.2% at 100% 100%,
+  rgba(160, 24, 155, 0) 0%,
+  rgba(160, 24, 155, 0.11) 50%,
+  rgba(133, 0, 127, 0.05) 100%
+);
+
+$our-projects-card-mobile-background: linear-gradient(
+  133deg,
+  rgba(246, 205, 245, 0.23) 0%,
+  rgba(242, 212, 239, 0.23) 57.5%,
+  rgba(168, 225, 250, 0.03) 99.55%
+);
+$our-projects-card-mobile-shadow: 6.466665744781494px 16.16666603088379px 10.104165077209473px 0px rgba(0, 0, 0, 0.15);
+
+$project-card-background: linear-gradient(
+  90deg,
+  rgba(175, 218, 237, 0.14) 0%,
+  rgba(190, 244, 205, 0.34) 35.3%,
+  rgba(243, 182, 241, 0.1) 100%
+);
+$project-card-shadow: 2px 17px 18px -2px rgba(0, 0, 0, 0.15);
+
+$blog-card-background: linear-gradient(
+  133deg,
+  rgba(246, 205, 245, 0.23) 0%,
+  rgba(242, 212, 239, 0.23) 57.5%,
+  rgba(168, 225, 250, 0.03) 99.55%
+);
+
+$registration-info-card-background: linear-gradient(
+  135deg,
+  rgba(202, 214, 255, 0.36) 41.82%, 
+  rgba(242, 213, 241, 0.26) 100%);
+  
+//Form backgrounds
+$contact-us-form-background: radial-gradient(
+  114.26% 136.2% at 100% 100%,
+  rgba(160, 24, 155, 0) 0%,
+  rgba(160, 24, 155, 0.11) 50%,
+  rgba(133, 0, 127, 0.05) 100%
+);
+
+//Colorful site background
+$main-purple: radial-gradient(50% 50% at 50% 50%, rgba(160, 24, 155, 0.21) 0%, rgba(160, 24, 155, 0) 100%);
+$main-cyan: radial-gradient(50% 50% at 50% 50%, rgba(19, 235, 144, 0.25) 0%, rgba(117, 184, 199, 0) 100%);
+$main-blue: radial-gradient(50% 50% at 50% 50%, rgba(118, 189, 211, 0.25) 0%, rgba(117, 184, 199, 0) 100%);
+
+//Rating stars color
+$rating-stars-color: #fcc71f;
+
+$main-green-color: rgba(59, 141, 97, 0.87);
+$main-purple-color: rgba(160, 24, 155, 0.7);
+
+//error input and message color
+$error-color: #F00;

@@ -1,0 +1,300 @@
+@import "../styles/colors";
+@import "../styles/container";
+@import "../styles/mixin";
+
+.footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  @include for-size(tablet) {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  @include for-size(laptop) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  &__block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-size(tablet) {
+      align-items: stretch;
+      height: 139px;
+    }
+    @include for-size(laptop) {
+      height: 205px;
+    }
+
+    @include for-size(desktop) {
+      height: 264px;
+    }
+
+    &_first {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+
+      @include for-size(tablet) {
+        width: 61%;
+        gap: 0;
+      }
+    }
+    &_second {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 30px;
+
+      @include for-size(tablet) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__colum {
+    &_link {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      gap: 30px;
+      @include for-size(tablet) {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+    &_copy {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column-reverse;
+      gap: 28px;
+
+      @include for-size(tablet) {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+    &_name {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      color: $blog-card-text-color;
+
+      display: flex;
+      align-items: center;
+
+      @include for-size(tablet) {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+      @include for-size(laptop) {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__btn {
+    &_text {
+      font-size: 11.5px !important;
+      @include for-size(tablet) {
+      }
+      @include for-size(laptop) {
+        font-size: 15px !important;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px !important;
+      }
+    }
+  }
+  &__email {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+
+    color: $blog-card-text-color;
+    @include for-size(tablet) {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+      letter-spacing: 0.8px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    @include for-size(tablet) {
+      width: 13px;
+      height: 13px;
+    }
+    @include for-size(laptop) {
+      width: 18px;
+      height: 18px;
+    }
+
+    @include for-size(desktop) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 9px;
+    @include for-size(tablet) {
+      gap: 7px;
+    }
+    @include for-size(laptop) {
+      gap: 11px;
+    }
+
+    @include for-size(desktop) {
+      gap: 14px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+
+    @include for-size(tablet) {
+      gap: 16px;
+    }
+    @include for-size(laptop) {
+      gap: 23px;
+    }
+
+    @include for-size(desktop) {
+      gap: 30px;
+    }
+  }
+
+  &__link {
+    color: $blog-card-text-color;
+  }
+
+  &__routs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @include for-size(tablet) {
+      gap: 3px;
+    }
+    @include for-size(laptop) {
+      gap: 5px;
+    }
+    &_name {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      color: $blog-card-text-color;
+
+      @include for-size(tablet) {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+      @include for-size(laptop) {
+        font-size: 15px;
+        letter-spacing: 0.8px;
+      }
+
+      @include for-size(desktop) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 94px;
+    height: 19px;
+    @include for-size(tablet) {
+      max-width: 63px;
+      height: 13px;
+    }
+    @include for-size(laptop) {
+      max-width: 92px;
+      height: 18px;
+    }
+
+    @include for-size(desktop) {
+      max-width: 119px;
+      height: 24px;
+    }
+  }
+  &__copyright {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+
+    @include for-size(tablet) {
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      max-width: 156px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+      letter-spacing: 0.7px;
+      max-width: 286px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 20px;
+      letter-spacing: 0.8px;
+      max-width: 286px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  height: 5px;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../images/blur/footer_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 50px;
+      width: 712.441px;
+      height: 203.328px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../images/blur/footer_blurL.png);
+      bottom: 50px;
+      width: 1045px;
+      height: 298px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../images/blur/footer_blurD.png);
+      width: 1349px;
+      height: 385px;
+    }
+  }
+}

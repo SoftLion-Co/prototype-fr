@@ -1,0 +1,145 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+// @import "./../../../styles/container";
+
+.container {
+  max-width: 320px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  @media (min-width: 375px) {
+    max-width: 480px;
+    padding: 0 20px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 700px;
+    padding: 0 15px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1080px;
+    padding: 0 100px;
+  }
+
+  @media (min-width: 1600px) {
+    max-width: 1400px;
+    padding: 0 100px;
+  }
+}
+
+.review {
+  &__heading {
+    margin-bottom: 5%;
+  }
+
+  &__content {
+    @include for-size(phone) {
+      display: none;
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__cards_mobile {
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
+}
+
+.custom__control {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.arrow {
+  user-select: none;
+
+  @include for-size(tablet) {
+    height: 26px;
+    width: auto;
+  }
+
+  @include for-size(laptop) {
+    height: 42px;
+  }
+
+  @include for-size(desktop) {
+    height: 55px;
+  }
+
+  &__left {
+    @include for-size(phone) {
+      display: none;
+    }
+    @include for-size(tablet) {
+      margin-left: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-left: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-left: -112px;
+    }
+  }
+
+  &__right {
+    @include for-size(phone) {
+      display: none;
+    }
+    @include for-size(tablet) {
+      margin-right: -74px;
+    }
+
+    @include for-size(laptop) {
+      margin-right: -92px;
+    }
+
+    @include for-size(desktop) {
+      margin-right: -112px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/service_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 230px;
+      width: 324px;
+      height: 283px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/service_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 350px;
+      width: 450px;
+      height: 390px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/service_blurD.png);
+      background-repeat: no-repeat;
+      bottom: 400px;
+      width: 588px;
+      height: 513px;
+    }
+  }
+}

@@ -1,0 +1,319 @@
+@import "./../../../styles/colors";
+@import "./../../../styles/mixin";
+@import "./../../../styles/container";
+
+.impression {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+  @include for-size(tablet) {
+    margin-bottom: 84px;
+  }
+
+  @include for-size(laptop) {
+    margin-bottom: 102px;
+  }
+
+  @include for-size(desktop) {
+    margin-bottom: 242px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    color: $heading-blue-color;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130.49%;
+    letter-spacing: 1.1px;
+    border-bottom: 1px solid $blog-card-text-color;
+    display: inline-block;
+    padding-bottom: 11px;
+    margin-bottom: 11px;
+
+    @include for-size(tablet) {
+      font-size: 25px;
+      letter-spacing: 1.6px;
+      padding-bottom: 19px;
+      margin-bottom: 48px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 30px;
+      letter-spacing: 2px;
+      padding-bottom: 27px;
+      margin-bottom: 58px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 40px;
+      letter-spacing: 2.6px;
+      padding-bottom: 35px;
+      margin-bottom: 89px;
+    }
+  }
+}
+
+.rating {
+  flex: 1;
+  margin-bottom: 19px;
+
+  @include for-size(tablet) {
+    margin-bottom: 0px;
+  }
+
+  &__text {
+    color: $blog-card-text-color;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+    margin-bottom: 11px;
+
+    @include for-size(tablet) {
+      font-size: 11px;
+      letter-spacing: 0.4px;
+      margin-bottom: 14px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.8px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.feedback {
+  flex: 1;
+
+  &__title {
+    width: 210px;
+    color: $blog-card-text-color;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 130.49%;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+
+    @include for-size(tablet) {
+      width: 254px;
+      font-size: 16px;
+      letter-spacing: 1.4px;
+      margin-bottom: 31px;
+    }
+
+    @include for-size(laptop) {
+      width: 382px;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 2.2px;
+      margin-bottom: 35px;
+    }
+
+    @include for-size(desktop) {
+      width: 476px;
+      font-size: 30px;
+      letter-spacing: 2.7px;
+      margin-bottom: 61px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 28px;
+
+    @include for-size(tablet) {
+      gap: 34px;
+    }
+
+    @include for-size(laptop) {
+      gap: 52px;
+    }
+
+    @include for-size(desktop) {
+      gap: 64px;
+    }
+  }
+}
+
+.form {
+  flex: 1;
+  max-width: 200px;
+
+  @include for-size(tablet) {
+    max-width: 200px;
+  }
+
+  @include for-size(laptop) {
+    max-width: 250px;
+  }
+
+  @include for-size(desktop) {
+    max-width: 300px;
+  }
+
+  &__input {
+    margin-bottom: 6px;
+
+    @include for-size(laptop) {
+      margin-bottom: 9px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 11px;
+    }
+
+    & input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid $navigation-light;
+      outline: transparent;
+      border-radius: 4px;
+      color: $navigation-dark;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.4px;
+      padding: 10px 15px;
+
+      @include for-size(tablet) {
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        padding: 10px 16px;
+      }
+
+      @include for-size(laptop) {
+        padding: 15px 25px;
+      }
+
+      @include for-size(desktop) {
+        padding: 19px 30px;
+      }
+
+      &::placeholder {
+        font-family: Roboto;
+        color: $placeholder-color;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 130.49%;
+        letter-spacing: 0.4px;
+
+        @include for-size(tablet) {
+          font-size: 15px;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+  }
+
+  &__textarea {
+    margin-bottom: 8px;
+    @include for-size(tablet) {
+      margin-bottom: 20px;
+    }
+
+    @include for-size(laptop) {
+      margin-bottom: 30px;
+    }
+
+    @include for-size(desktop) {
+      margin-bottom: 37px;
+    }
+
+    & textarea {
+      border-radius: 4px;
+      resize: none;
+      width: 100%;
+      box-sizing: border-box;
+      outline: transparent;
+      border: 1px solid $navigation-light;
+      color: $navigation-dark;
+      font-family: Roboto;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 130.49%;
+      letter-spacing: 0.4px;
+      padding: 10px 15px;
+
+      @include for-size(tablet) {
+        font-size: 15px;
+        letter-spacing: 0.6px;
+        padding: 10px 16px;
+      }
+
+      @include for-size(laptop) {
+        padding: 15px 25px;
+      }
+
+      @include for-size(desktop) {
+        padding: 19px 30px;
+      }
+
+      &::placeholder {
+        font-family: Roboto;
+        color: $placeholder-color;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 130.49%;
+        letter-spacing: 0.4px;
+
+        @include for-size(tablet) {
+          font-size: 15px;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+  }
+}
+
+.error {
+  font-size: 10px;
+  color: $error-color;
+  border-radius: 4px;
+  @include for-size(tablet) {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 15px;
+  }
+}
+
+.error__input {
+  & input,
+  & textarea {
+    border: 1px solid $error-color;
+  }
+}
+.image__container {
+  width: 110px;
+  margin-top: -48px;
+
+  @include for-size(tablet) {
+    width: 125px;
+    margin-top: -55px;
+  }
+
+  @include for-size(laptop) {
+    width: 176px;
+    margin-top: -89px;
+  }
+
+  @include for-size(desktop) {
+    width: 220px;
+    margin-top: -130px;
+  }
+}

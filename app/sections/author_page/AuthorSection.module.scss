@@ -1,0 +1,140 @@
+@import "../../../styles/mixin";
+@import "../../../styles/container";
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  @include for-size(tablet) {
+    gap: 5px;
+  }
+
+  @include for-size(desktop) {
+    gap: 7px;
+  }
+
+  &__name {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 11px;
+
+    line-height: 14px;
+    letter-spacing: 0.04em;
+
+    @include for-size(tablet) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @include for-size(laptop) {
+      font-size: 15px;
+      line-height: 19px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+  &__img {
+    background-color: rgb(194, 194, 194);
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    @include for-size(laptop) {
+      height: 200px;
+      width: 200px;
+    }
+    @include for-size(desktop) {
+      height: 260px;
+      width: 260px;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 13px;
+  margin-bottom: 28px;
+  @include for-size(tablet) {
+    gap: 66px;
+    flex-direction: row;
+  }
+
+  @include for-size(tablet) {
+    gap: 70px;
+  }
+  @include for-size(desktop) {
+    gap: 81px;
+  }
+
+  &__occupation {
+    font-size: 20px;
+    line-height: 26px;
+    @include for-size(tablet) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @include for-size(tablet) {
+      font-size: 25px;
+      line-height: 32px;
+    }
+  }
+}
+
+.page {
+  @include for-size(tablet) {
+    width: 480px;
+  }
+  @include for-size(laptop) {
+    width: 511px;
+  }
+  @include for-size(desktop) {
+    width: 680px;
+  }
+
+  &__about {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    @include for-size(desktop) {
+      font-size: 25px;
+      line-height: 32px;
+    }
+  }
+  &__line {
+    width: 165px;
+    margin-bottom: 10px;
+    @include for-size(tablet) {
+      margin-bottom: 12px;
+      width: 368px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 20px;
+      width: 392px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 23px;
+      width: 522px;
+    }
+  }
+
+  &__description {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    @include for-size(tablet) {
+      font-size: 11px;
+      line-height: 14px;
+    }
+    @include for-size(tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+@import "../../../styles/container";
+@import "../../../styles/mixin";
+
+.our__chose {
+  display: flex;
+  flex-direction: column;
+}
+
+.reverseRow {
+  display: flex;
+  flex-direction: row;
+
+  @include for-size(tablet) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &:first-child {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &:nth-child(2) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include for-size(tablet) {
+      flex-direction: row-reverse;
+      margin-top: -20px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: -80px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: -100px;
+    }
+  }
+
+  &:nth-child(3) {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: -20px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: -80px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: -100px;
+    }
+  }
+
+  &:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
+
+    @include for-size(tablet) {
+      justify-content: space-between;
+      align-items: flex-end;
+      min-height: 140px;
+      margin-top: -20px;
+    }
+
+    @include for-size(laptop) {
+      margin-top: -30px;
+    }
+
+    @include for-size(desktop) {
+      margin-top: -50px;
+    }
+  }
+
+  @include for-size(tablet) {
+    flex-direction: row;
+    align-items: center;
+    gap: 130px;
+  }
+
+  @include for-size(laptop) {
+    gap: 180px;
+  }
+
+  @include for-size(desktop) {
+    gap: 250px;
+  }
+
+  &__svg {
+    &:last-child {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    max-width: 100%;
+
+    @include for-size(tablet) {
+      width: 250px;
+      user-select: none;
+    }
+
+    @include for-size(laptop) {
+      width: 450px;
+    }
+
+    @include for-size(desktop) {
+      width: 520px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+
+    @include for-size(tablet) {
+      width: 377px;
+      font-size: 16px;
+    }
+
+    @include for-size(laptop) {
+      width: 470px;
+      font-size: 18px;
+      line-height: 130.49%;
+      letter-spacing: 0.54px;
+    }
+
+    @include for-size(desktop) {
+      width: 635px;
+      font-size: 20px;
+      letter-spacing: 0.6px;
+    }
+  }
+}
+
+.heading {
+  margin-bottom: 10%;
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/service_blurT.png);
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      top: 130px;
+      width: 324px;
+      height: 283px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/service_blurL.png);
+      background-repeat: no-repeat;
+      top: 180px;
+      width: 450px;
+      height: 390px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/service_blurD.png);
+      background-repeat: no-repeat;
+      top: 250px;
+      width: 588px;
+      height: 513px;
+    }
+  }
+}
