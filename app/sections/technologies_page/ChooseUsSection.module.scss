@@ -164,24 +164,24 @@
       background-image: url(../../../images/blur/service_blurT.png);
       background-repeat: no-repeat;
       transform: rotate(180deg);
-      top: 130px;
-      width: 324px;
+      top: -530px;
+      width: 524px;
       height: 283px;
     }
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/service_blurL.png);
       background-repeat: no-repeat;
-      top: 180px;
-      width: 450px;
+      top: -680px;
+      width: 750px;
       height: 390px;
     }
 
     @include for-size(desktop) {
       background-image: url(../../../images/blur/service_blurD.png);
       background-repeat: no-repeat;
-      top: 250px;
-      width: 588px;
+      top: -850px;
+      width: 1088px;
       height: 513px;
     }
   }

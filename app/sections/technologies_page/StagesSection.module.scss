@@ -115,30 +115,27 @@
     pointer-events: none;
 
     @include for-size(tablet) {
-      background-image: url(../../../images/blur/service_blurT.png);
+      background-image: url(../../../images/blur/blog_blurT.png);
       background-repeat: no-repeat;
-      top: 270px;
-      left: 200px;
-      width: 324px;
-      height: 283px;
+      left: 150px;
+      top: 150px;
+      width: 345px;
+      height: 310px;
     }
 
     @include for-size(laptop) {
-      background-image: url(../../../images/blur/service_blurL.png);
-      background-repeat: no-repeat;
-      top: 180px;
-      left: 300px;
-      width: 450px;
-      height: 390px;
+      background-image: url(../../../images/blur/blog_blurL.png);
+      left: 0;
+      top: 0px;
+      width: 1108px;
+      height: 597px;
     }
 
     @include for-size(desktop) {
-      background-image: url(../../../images/blur/service_blurD.png);
-      background-repeat: no-repeat;
-      top: 100px;
-      left: 300px;
-      width: 588px;
-      height: 513px;
+      background-image: url(../../../images/blur/blog_blurD.png);
+      tpo: -100px;
+      width: 1440px;
+      height: 776px;
     }
   }
 }
