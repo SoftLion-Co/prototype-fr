@@ -96,7 +96,7 @@ const HeaderComponent = () => {
           <nav className={s.header__navigation}>
             <ul className={s.header__list}>
               <li className={classNames(s.header__item, s.header__line)}>
-                <Link href="" className={s.header__link}>
+                <Link href="/services" className={s.header__link}>
                   Services
                 </Link>
                 <ul className={s.header__sub_menu}>

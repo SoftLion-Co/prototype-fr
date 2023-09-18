@@ -17,16 +17,6 @@
     opacity: 0;
   }
 
-  @include for-size(tablet) {
-    height: 75px;
-  }
-  @include for-size(laptop) {
-    height: 80px;
-  }
-  @include for-size(desktop) {
-    height: 85px;
-  }
-
   @keyframes slide{
     100% {
       opacity: 1;

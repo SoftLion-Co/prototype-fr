@@ -129,11 +129,11 @@ const Technology = ({ params }: { params: any }) => {
           developmentSection={data.developmentSection}
         />
         <StagesSection stagesSection={data.stagesSection} />
-        <ReviewsSection reviewsSection={data.reviewsSection} />
-        <OurProjects
+        {/* <ReviewsSection reviewsSection={data.reviewsSection} /> */}
+        {/* <OurProjects
           data={data.projectsSection}
           titleTech={data.heroSection.titleTech}
-        />
+        /> */}
       </div>
     </div>
   );
