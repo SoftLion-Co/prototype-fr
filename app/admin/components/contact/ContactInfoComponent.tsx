@@ -1,8 +1,9 @@
 // BlogInfoComponent.tsx
 import React, { useState } from "react";
-import s from "./BlogInfoComponent.module.scss";
+import s from "./ContactInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import edit from "@/app/admin/images/control/edit.svg";
+import bin from "@/app/admin/images/control/bin.svg";
 import Image from "next/image";
 
 // Додано оголошення імпортів
@@ -13,46 +14,42 @@ interface User {
   rating: string;
 }
 
-interface BlogData {
+interface ContactData {
   number: number;
-  title: string;
   data: string;
-  rating: string;
   email: string;
   description: string;
   tell: number;
 }
 
 interface BlogInfoComponentProps {
-  users: BlogData[];
+  users: ContactData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onEditButtonClick: () => void;
+  onCardClick: (ContactData: ContactData) => void;
 }
 
-const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
+const ContactInfoComponent: React.FC<BlogInfoComponentProps> = ({
   users,
-
-  onEditButtonClick,
+  searchTerm,
+  setSearchTerm,
+  onCardClick,
 }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
   const filteredUsers = users.filter((user) =>
-    user.title.toLowerCase().includes(searchTerm.toLowerCase())
+    user.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className={s.user}>
-      <div className={s.user__search}>
+      <div>
         <SearchInputComponent
           placeholderText="Для пошуку за заголовком"
           searchTerm={searchTerm}
           handleSearch={handleSearch}
-          onEditButtonClick={onEditButtonClick}
         />
       </div>
 
@@ -64,12 +61,11 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
               onClick={() => onCardClick(user)} // Додаємо обробник кліку на картці
             >
               <p className={s.user__number}>{user.number}</p>
-              <h2 className={s.user__title}>{user.title}</h2>
+              <h2 className={s.user__description}>{user.description}</h2>
               <p className={s.user__data}>{user.data}</p>
-              <p className={s.user__rating}>{user.rating}</p>
             </div>
             <div className={s.user__buttons}>
-              <button type="button" className={s.user__button}>
+              <button className={s.user__button}>
                 <Image
                   className={s.user__image}
                   src={edit}
@@ -86,4 +82,4 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
   );
 };
 
-export default BlogInfoComponent;
+export default ContactInfoComponent;
