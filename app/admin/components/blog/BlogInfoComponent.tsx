@@ -59,10 +59,7 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
       <div className={s.scroll__container}>
         {filteredUsers.map((user, index) => (
           <div className={s.user__content} key={index}>
-            <div
-              className={s.user__information}
-              onClick={() => onCardClick(user)} // Додаємо обробник кліку на картці
-            >
+            <div className={s.user__information}>
               <p className={s.user__number}>{user.number}</p>
               <h2 className={s.user__title}>{user.title}</h2>
               <p className={s.user__data}>{user.data}</p>
