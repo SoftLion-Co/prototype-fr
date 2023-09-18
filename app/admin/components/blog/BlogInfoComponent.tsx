@@ -18,9 +18,9 @@ interface BlogData {
   title: string;
   data: string;
   rating: string;
-  email: string;
-  description: string;
-  tell: number;
+  email?: string;
+  description?: string;
+  tell?: number;
 }
 
 interface BlogInfoComponentProps {

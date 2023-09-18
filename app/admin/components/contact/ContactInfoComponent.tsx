@@ -27,6 +27,7 @@ interface BlogInfoComponentProps {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
   onCardClick: (ContactData: ContactData) => void;
+  onEditButtonClick: () => void;
 }
 
 const ContactInfoComponent: React.FC<BlogInfoComponentProps> = ({
@@ -34,6 +35,7 @@ const ContactInfoComponent: React.FC<BlogInfoComponentProps> = ({
   searchTerm,
   setSearchTerm,
   onCardClick,
+  onEditButtonClick,
 }) => {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -50,6 +52,7 @@ const ContactInfoComponent: React.FC<BlogInfoComponentProps> = ({
           placeholderText="Для пошуку за заголовком"
           searchTerm={searchTerm}
           handleSearch={handleSearch}
+          onEditButtonClick={onEditButtonClick}
         />
       </div>
 

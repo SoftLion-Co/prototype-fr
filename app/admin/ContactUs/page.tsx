@@ -10,6 +10,11 @@ import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 
 const ContactUsPage: React.FC = () => {
   const [selectedBlog, setSelectedBlog] = useState<ContactData | null>(null);
+  const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
+
+  const handleEditButtonClick = () => {
+    setIsContentEditorVisible(!isContentEditorVisible);
+  };
 
   const handleBlogSelect = (ContactData: ContactData) => {
     setSelectedBlog(ContactData);
@@ -161,6 +166,7 @@ const ContactUsPage: React.FC = () => {
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
                 onCardClick={handleCardClick}
+                onEditButtonClick={handleEditButtonClick}
               />
             </div>
             <div>
