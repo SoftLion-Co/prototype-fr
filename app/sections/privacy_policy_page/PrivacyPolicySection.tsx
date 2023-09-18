@@ -5,7 +5,7 @@ const PrivacyPolicySection = () => {
   return (
     <section className={classNames(s.container, s.privacy)}>
       <p className={classNames(s.privacy___bold, s.privacy___date)}>
-        This version of Privacy Policy was published __/__/____
+        Last update September 18, 2023
       </p>
       <h1 className={s.privacy__title}>SUMMARY OF THE KEY POINTS</h1>
       <p className={s.privacy__text}>
@@ -67,7 +67,13 @@ const PrivacyPolicySection = () => {
         </li>
       </ul>
       <h2 className={s.privacy__title}>TABLE OF CONTENTS:</h2>
-      <ul className={classNames(s.privacy__list, s.privacy__list___tab, s.privacy__list___color )}>
+      <ul
+        className={classNames(
+          s.privacy__list,
+          s.privacy__list___tab,
+          s.privacy__list___color
+        )}
+      >
         <li className={s.privacy__item}>
           <a href="#item1" className={s.privacy__title___color}>
             {" "}
@@ -136,10 +142,7 @@ const PrivacyPolicySection = () => {
       {/* =========== 1 ========== */}
       <ol className={s.privacy__list}>
         <li>
-          <h2
-            id="item1"
-            className={s.privacy__title}
-          >
+          <h2 id="item1" className={s.privacy__title}>
             1. WHAT TYPE OF INFORMATION IS COLLECTED BY SOFTLION?
           </h2>
           <h3 className={s.privacy__title}>
@@ -212,10 +215,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 2 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item2"
-            className={s.privacy__title}
-          >
+          <h2 id="item2" className={s.privacy__title}>
             2. WHAT IS THE METHOD OF PROCESSING YOUR INFORMATION?
           </h2>
           <p className={s.privacy__text}>
@@ -270,10 +270,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 3 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item3"
-            className={s.privacy__title}
-          >
+          <h2 id="item3" className={s.privacy__title}>
             {" "}
             3. WHEN AND TO WITH IS YOUR PERSONAL INFORMATION SHARED?
           </h2>
@@ -313,10 +310,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 4 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item4"
-            className={s.privacy__title}
-          >
+          <h2 id="item4" className={s.privacy__title}>
             4. IS THE USAGE OF COOKIES AND OTHER TRACKING TECHNOLOGIES
             IMPLEMENTED?
           </h2>
@@ -331,10 +325,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 5 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item5"
-            className={s.privacy__title}
-          >
+          <h2 id="item5" className={s.privacy__title}>
             5. WHAT IS THE DURATION OF INFORMATION RETENTION?
           </h2>
           <p className={s.privacy__text}>
@@ -356,10 +347,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 6 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item6"
-            className={s.privacy__title}
-          >
+          <h2 id="item6" className={s.privacy__title}>
             6. HAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
             INFORMATION?
           </h2>
@@ -384,10 +372,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 7 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item7"
-            className={s.privacy__title}
-          >
+          <h2 id="item7" className={s.privacy__title}>
             7. IS INFORMATION COLLECTED FROM MINORS?
           </h2>
           <p className={s.privacy__text}>
@@ -407,10 +392,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 8 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item8"
-            className={s.privacy__title}
-          >
+          <h2 id="item8" className={s.privacy__title}>
             8. WHAT ARE YOUR RIGHTS REGARDING PRIVACY?
           </h2>
           <p className={s.privacy__text}>
@@ -439,10 +421,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 9 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item9"
-            className={s.privacy__title}
-          >
+          <h2 id="item9" className={s.privacy__title}>
             9. CONTROLS REGARDING “DO-NOT-TRACK FEATURES”
           </h2>
           <p className={s.privacy__text}>
@@ -459,10 +438,7 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 10 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item10"
-            className={s.privacy__title}
-          >
+          <h2 id="item10" className={s.privacy__title}>
             10. ARE UPDATES MADE TO THIS NOTICE?
           </h2>
           <p className={s.privacy__text}>
@@ -480,23 +456,19 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 11 ========== */}
         <li className={s.privacy__item___num}>
-          <h2
-            id="item11"
-            className={s.privacy__title}
-          >
+          <h2 id="item11" className={s.privacy__title}>
             11. WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?
           </h2>
           <p className={s.privacy__text}>
             If you have some questions or comments about your privacy rights,
-            you may email us at office.softlion@gmail.com or by post to:
+            you may email us at office.softlion@gmail.com.
           </p>
 
-          <address className={s.privacy___no_italic}>
-            <p>SoftLion LLC</p>
-            <p>“our address…”</p>
+          {/* <address className={s.privacy___no_italic}>
+            <p>SoftLion</p>
             <p>Chernivtsi, Chernivetska 58000</p>
             <p>Ukraine</p>
-          </address>
+          </address> */}
         </li>
       </ol>
     </section>

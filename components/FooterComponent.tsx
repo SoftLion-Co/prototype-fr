@@ -82,7 +82,13 @@ const FooterComponent = () => {
           <div className={s.footer__content}>
             <div className={s.footer__icons}>
               {socialLinks.map((link, index) => (
-                <a key={index} className={s.footer__link} href={link.url}>
+                <a
+                  key={index}
+                  className={s.footer__link}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {link.icon}
                 </a>
               ))}
