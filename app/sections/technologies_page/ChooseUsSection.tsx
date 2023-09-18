@@ -43,9 +43,6 @@ const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({
             {index === chooseUsSection.length - 1 && <BigButtonComponent />}
           </div>
         ))}
-        <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
       </div>
     </section>
   );
