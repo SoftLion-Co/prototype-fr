@@ -27,7 +27,7 @@ const SettingsSection: FC = () => {
     console.log(data);
   };
 
-  const links = [{ title: "Personal-space-Settings", href: "/settings" }];
+  const links = [{ title: "Personal-space", href: "/#" }, { title: "Settings", href: "/#" }];
 
   return (
     <section className={s.settings}>
