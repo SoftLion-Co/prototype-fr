@@ -206,11 +206,9 @@ const HeaderComponent = () => {
               </li>
             </ul>
           </nav>
-          <button className={s.header__btn_login}>
-            <Link href="/login" className={s.header__btn_login__text}>
-              Login
-            </Link>
-          </button>
+          <Link href="/login" className={s.header__btn_login__text}>
+            <button className={s.header__btn_login}>Login</button>
+          </Link>
           <button className={s.header__btn_burger} onClick={handleButtonClick}>
             <div className={`${s.header__icon} ${isModalOpen ? s.open : ""}`}>
               <div className={s.header__icon__div}></div>

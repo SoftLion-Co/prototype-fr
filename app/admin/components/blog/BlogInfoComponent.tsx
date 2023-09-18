@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import s from "./BlogInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import edit from "@/app/admin/images/control/edit.svg";
-import bin from "@/app/admin/images/control/bin.svg";
 import Image from "next/image";
 
 // Додано оголошення імпортів
@@ -28,15 +27,16 @@ interface BlogInfoComponentProps {
   users: BlogData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onCardClick: (blogData: BlogData) => void;
+  onEditButtonClick: () => void;
 }
 
 const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
   users,
-  searchTerm,
-  setSearchTerm,
-  onCardClick,
+
+  onEditButtonClick,
 }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -47,11 +47,12 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
 
   return (
     <div className={s.user}>
-      <div>
+      <div className={s.user__search}>
         <SearchInputComponent
           placeholderText="Для пошуку за заголовком"
           searchTerm={searchTerm}
           handleSearch={handleSearch}
+          onEditButtonClick={onEditButtonClick}
         />
       </div>
 
@@ -68,7 +69,7 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
               <p className={s.user__rating}>{user.rating}</p>
             </div>
             <div className={s.user__buttons}>
-              <button className={s.user__button}>
+              <button type="button" className={s.user__button}>
                 <Image
                   className={s.user__image}
                   src={edit}

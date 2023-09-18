@@ -11,8 +11,8 @@ import CryptoJS from "crypto-js";
 const EnterCodeSection = () => {
   const [countdown, setCountdown] = useState(60);
   const [isCounting, setIsCounting] = useState(false);
-  const [email, setEmail] = useState(localStorage.getItem("email"));
-  const [code, setCode] = useState(localStorage.getItem("code"));
+  const [email, setEmail] = useState(/*localStorage.getItem*/("email"));
+  const [code, setCode] = useState(/*localStorage.getItem*/("code"));
 
   useEffect(() => {
     let interval: number;

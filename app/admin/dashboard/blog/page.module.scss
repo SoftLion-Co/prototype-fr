@@ -1,0 +1,34 @@
+@import "./../../../../styles/mixin";
+@import "./../../../../styles/colors";
+@import "./../../../../styles/container";
+@import "./../../../../styles/container_admin";
+
+.container_admin {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+.dashboard__container {
+  display: flex;
+  margin-top: 86px;
+  margin-right: 120px;
+}
+
+.panel__container {
+  margin-right: 34px;
+}
+
+.page__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.search__container {
+  margin-bottom: 30px;
+}
+
+.user__container {
+  display: grid;
+  gap: 10px;
+}
