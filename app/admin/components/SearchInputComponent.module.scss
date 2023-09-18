@@ -2,28 +2,32 @@
 @import "./../../../styles/colors";
 @import "./../../../styles/container";
 
+.search {
+  display: flex;
 
-.search__input {
-  background-color: #ffffff;
-  border: 2px solid #488aa750;
-  width: 550px;
-  height: 46px;
-  border-radius: 15px;
-  padding-left: 20px;
-  box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  &__input {
+    margin-right: 40px;
+    background-color: #ffffff;
+    border: 2px solid #488aa750;
+    width: 420px;
+    height: 46px;
+    border-radius: 15px;
+    padding-left: 20px;
+    box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 
-  &:hover,
-  &:focus {
-    border: 2px solid #488aa7;
-    outline: none;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
+    &:hover,
+    &:focus {
+      border: 2px solid #488aa7;
+      outline: none;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
 
-  &::placeholder {
-    color: #488aa775;
-    font-size: 16px;
-    line-height: 130%;
-    letter-spacing: 0.7px;
+    &::placeholder {
+      color: #488aa775;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+    }
   }
 }
