@@ -16,7 +16,7 @@ const response = {
     year: 2023,
     location: "Europe",
     imgSrc:
-      "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero.png?raw=true",
+      "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
   },
   RequestSection: {
     paragraph:
@@ -66,15 +66,17 @@ const response = {
     images: [
       {
         imageSrc:
-          "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
+          "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero(light).png?raw=true",
         class: "photo_discover",
       },
       {
-        imageSrc: "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-basket.png?raw=true",
+        imageSrc:
+          "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-basket.png?raw=true",
         class: "photo_about",
       },
       {
-        imageSrc: "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-delivery.png?raw=true",
+        imageSrc:
+          "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-delivery.png?raw=true",
         class: "photo_trevel",
       },
     ],
