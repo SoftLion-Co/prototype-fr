@@ -14,24 +14,22 @@ interface User {
   rating: string;
 }
 
-interface BlogData {
+interface ContactData {
   number: number;
-  title: string;
   data: string;
-  rating: string;
   email: string;
   description: string;
   tell: number;
 }
 
 interface BlogInfoComponentProps {
-  users: BlogData[];
+  users: ContactData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onCardClick: (blogData: BlogData) => void;
+  onCardClick: (ContactData: ContactData) => void;
 }
 
-const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
+const ContactInfoComponent: React.FC<BlogInfoComponentProps> = ({
   users,
   searchTerm,
   setSearchTerm,
@@ -42,7 +40,7 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
   };
 
   const filteredUsers = users.filter((user) =>
-    user.title.toLowerCase().includes(searchTerm.toLowerCase())
+    user.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -84,4 +82,4 @@ const BlogInfoComponent: React.FC<BlogInfoComponentProps> = ({
   );
 };
 
-export default BlogInfoComponent;
+export default ContactInfoComponent;

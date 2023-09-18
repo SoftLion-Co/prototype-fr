@@ -9,12 +9,10 @@ import phone from "../images/applications/numberOfPhone.svg";
 import desc from "../images/applications/description.svg";
 import time from "../images/applications/data.svg";
 
-// Оголосіть інтерфейс для властивості blogData
-interface BlogData {
+// Оголосіть інтерфейс для властивості ContactData
+interface ContactData {
   number: number;
-  title: string;
   data: string;
-  rating: string;
   email: string;
   description: string;
   tell: number;
@@ -22,28 +20,28 @@ interface BlogData {
 
 // Оголосіть інтерфейс для властивостей компонента ContactUs
 interface ContactUsProps {
-  blogData: BlogData;
+  ContactData: ContactData;
 }
 
-const ContactUs: React.FC<ContactUsProps> = ({ blogData }) => {
+const ContactUs: React.FC<ContactUsProps> = ({ ContactData }) => {
   // Встановлюємо початкове значення description
-  const [description, setDescription] = useState(blogData.description);
+  const [description, setDescription] = useState(ContactData.description);
 
-  // Використовуємо useEffect для оновлення description при зміні blogData
+  // Використовуємо useEffect для оновлення description при зміні ContactData
   useEffect(() => {
-    setDescription(blogData.description);
-  }, [blogData]);;
+    setDescription(ContactData.description);
+  }, [ContactData]);;
   return (
     <div>
       <div className={s.form}>
         <div className={s.form_content}>
           <div className={s.form_phone}>
             <Image src={phone} alt="phone" />
-            <p className={s.form_phone_text}>Номер телефону: {blogData.tell}</p>
+            <p className={s.form_phone_text}>Номер телефону: {ContactData.tell}</p>
           </div>
           <div className={s.form_email}>
             <Image src={email} alt="email" />
-            <p className={s.form_email_text}>Email: {blogData.email}</p>
+            <p className={s.form_email_text}>Email: {ContactData.email}</p>
           </div>
           <div className={s.form_description}>
             <Image src={desc} alt="description" />
@@ -61,7 +59,7 @@ const ContactUs: React.FC<ContactUsProps> = ({ blogData }) => {
         </textarea>
         <div className={s.form_data}>
           <Image src={time} alt="data" />
-          <p className={s.form_data__text}>Дата відправлення: {blogData.data}</p>
+          <p className={s.form_data__text}>Дата відправлення: {ContactData.data}</p>
           </div>
         </div>
         <span className={s.line}></span>
