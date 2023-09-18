@@ -17,12 +17,12 @@ const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
   text,
 }) => {
   return (
-    <div className={s.servicecard}>
-      <div className={s.servicecard__wrap}>
-        <Image className={s.servicecard__pic} src={path} alt="phone" />
-        <h2 className={s.servicecard__title}>{title}</h2>
-        <p className={s.servicecard__text_mob}>{text_mob}</p>
-        <p className={s.servicecard__text}>{text}</p>
+    <div className={s.service}>
+      <div className={s.service__wrap}>
+        <Image className={s.service__pic} src={path} alt="phone" />
+        <h3 className={s.service__title}>{title}</h3>
+        <p className={s.service__text_mob}>{text_mob}</p>
+        <p className={s.service__text}>{text}</p>
       </div>
     </div>
   );

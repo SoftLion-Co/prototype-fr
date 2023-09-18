@@ -27,10 +27,10 @@ const sampleData: Array<{
   {
     id: 1,
     image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Go",
-    year: "year: 2022",
+      "https://github.com/SoftLion-Co/prototype-fr/blob/refactor/new-data/images/project/project-trend/trend-hero.png?raw=true",
+    title: "Landing page of Trend company",
+    customer: "customer: Trend",
+    year: "year: 2023",
     author: "author: Germany",
     description:
       "In this project, we developed the design, implemented it, and provide further support",
@@ -38,342 +38,6 @@ const sampleData: Array<{
     country: "Germany",
     countryCode: "DE",
   },
-  {
-    id: 2,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: React.js",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "React.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 3,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Angular",
-    year: "year: 2022",
-    author: "author: Canada",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Angular",
-    country: "Canada",
-    countryCode: "CA",
-  },
-  {
-    id: 4,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js",
-    year: "year: 2022",
-    author: "author: Ukraine",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Ukraine",
-    countryCode: "UA",
-  },
-  {
-    id: 5,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js",
-    year: "year: 2022",
-    author: "author: Sweden",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Node.js",
-    country: "Sweden",
-    countryCode: "SE",
-  },
-  {
-    id: 6,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: .NET",
-    year: "year: 2022",
-    author: "author: UK",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: ".NET",
-    country: "UK",
-    countryCode: "GB",
-  },
-  {
-    id: 7,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Java",
-    year: "year: 2022",
-    author: "author: Israel",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Java",
-    country: "Israel",
-    countryCode: "IL",
-  },
-  {
-    id: 8,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: React.js2",
-    year: "year: 2022",
-    author: "author: Ireland",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "React.js",
-    country: "Ireland",
-    countryCode: "IE",
-  },
-  {
-    id: 9,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Angular2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Angular",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 10,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Vue.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Vue.js",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 11,
-    image:
-      "https://img.freepik.com/free-photo/creative-copywriting-commercial-text-seo-editing_107791-15687.jpg?w=2000&t=st=1689761442~exp=1689762042~hmac=764807ff7ce02e9377fd4137c6e335816a5e066d40244b6dd7f13aca2a9fd9b9",
-    title: "Landing page of traveling company",
-    customer: "customer: Node.js2",
-    year: "year: 2022",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Next",
-    country: "Germany",
-    countryCode: "DE",
-  }
 ];
 
 //* METHOD TO GET UNIFIED VALUES FROM sampleData AND MAKE UNIQUE ARRAYS
@@ -466,10 +130,10 @@ const OurProjectsSection = () => {
     if (topRef.current && window.scrollY > 0) {
       const elementPosition = topRef.current.getBoundingClientRect();
       const offset = 110;
-      
+
       const targetScrollPosition =
         window.scrollY + elementPosition.top - offset;
-  
+
       window.scrollTo({
         top: targetScrollPosition,
         behavior: "smooth",
@@ -609,12 +273,15 @@ const OurProjectsSection = () => {
         size={paginationSize}
         styles={(theme) => ({
           control: {
-            '&[data-active]': {
-              backgroundImage: theme.fn.gradient({ from: '#308bb7', to: '#7ec2e4' }),
+            "&[data-active]": {
+              backgroundImage: theme.fn.gradient({
+                from: "#308bb7",
+                to: "#7ec2e4",
+              }),
               border: 0,
             },
           },
-        })}      
+        })}
       />
     </section>
   );

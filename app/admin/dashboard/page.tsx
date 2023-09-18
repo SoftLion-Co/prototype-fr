@@ -1,14 +1,14 @@
-import s from "./page.module.scss";
+import React from "react";
+import s from "./blog/blog.module.scss";
 
-const Blogs = () => {
-  const links = [{ title: "Blog", href: "#" }];
+import BlogPage from "./blog/page";
 
+const AdminPage = () => {
   return (
     <div>
-        <h1>Admin dashboard</h1>
-      
+      <BlogPage />
     </div>
   );
 };
 
-export default Blogs;
+export default AdminPage;

@@ -44,6 +44,22 @@
     padding: 20px;
   }
 
+  &__arrowIcon {
+    @include for-size(tablet) {
+      transition: transform 0.3s ease-in-out;
+    }
+    animation: arrowAnimation 1s infinite alternate;
+  }
+
+  @keyframes arrowAnimation {
+    0% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+
   &__container {
     width: 100%;
     display: flex;
@@ -65,21 +81,28 @@
   &__text {
     min-height: 110px;
     margin: 10px 5px 0 5px;
+    line-height: 130%;
+    font-size: 12px;
+    letter-spacing: 0.5;
+
     @include for-size(tablet) {
       width: 300px;
-      height: 110px;
     }
 
     @include for-size(laptop) {
       width: 435px;
       height: 160px;
       margin: 16px 8px 0 8px;
+      font-size: 16px;
+      letter-spacing: 0.6;
     }
 
     @include for-size(desktop) {
       width: 570px;
       height: 200px;
       margin: 20px 10px 0 10px;
+      font-size: 20px;
+      letter-spacing: 0.8;
     }
 
     overflow: hidden;
@@ -142,19 +165,24 @@
 
   &__title {
     margin-bottom: 5px;
-
+    margin-top: 5px;
+    line-height: 130%;
+    font-size: 14px;
+    font-weight: 400;
+    @include for-size(tablet) {
+      letter-spacing: 1.2;
+    }
     @include for-size(laptop) {
       margin-bottom: 10px;
+      font-size: 20px;
+      letter-spacing: 1.8;
     }
 
     @include for-size(desktop) {
       margin-bottom: 15px;
+      font-size: 25px;
+      letter-spacing: 1.8;
     }
-
-    line-height: 1.4em;
-    font-size: 1.2em;
-    font-weight: 400;
-    letter-spacing: 0.09em;
   }
 
   &__author {
@@ -184,7 +212,7 @@
 
   &__readingTime {
     color: #000000b2;
-    margin: 3px 0 3px 0;
+    margin: 5px 0 5px 0;
 
     @include for-size(laptop) {
       margin: 6px 0 6px 0;
@@ -198,10 +226,11 @@
 .article {
   display: flex;
   align-items: end;
+  font-size: 14px;
 }
 
 .tags {
-  font-size: 8px;
+  font-size: 10px;
   gap: 3px;
 
   @include for-size(laptop) {

@@ -20,7 +20,9 @@ const Services = () => {
       <div id="apps">
         <CustomAppsSection />
       </div>
-      <SecuritySection />
+      <div id="security">
+        <SecuritySection />
+      </div>
     </div>
   );
 };

@@ -40,19 +40,11 @@ const FooterComponent = () => {
     },
   ];
 
-  const handleLinkClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string
-  ) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className={`${s.footer} ${s.container}`}>
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
       <div className={s.footer__block}>
         <div className={s.footer__block_first}>
           <div className={s.footer__colum_link}>
@@ -71,12 +63,6 @@ const FooterComponent = () => {
                   key={index}
                   href={route.path}
                   className={s.footer__routs_name}
-                  onClick={(e) =>
-                    handleLinkClick(
-                      e,
-                      index === 2 ? route.path.substring(1) : ""
-                    )
-                  }
                 >
                   {route.label}
                 </Link>
@@ -111,15 +97,12 @@ const FooterComponent = () => {
           <div className={s.footer__btn}>
             <MainButtonComponent
               color="dark-blue"
-              path="services"
+              path="contact-us"
               className={s.footer__btn_text}
             >
               Book Consultation
             </MainButtonComponent>
           </div>
-          <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
         </div>
       </div>
     </footer>

@@ -60,6 +60,9 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
       </div>
 
       <div className={classNames(s.container, s.review__content)}>
+      <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
         <Carousel
           getEmblaApi={setEmbla}
           classNames={{ control: s.custom__control }}

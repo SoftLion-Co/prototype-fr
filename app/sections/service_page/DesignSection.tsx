@@ -71,15 +71,17 @@ const DesignSection = () => {
 
   return (
     <section className={`${s.container} ${s.design}`}>
-      <ServiceHeadingComponent headingText={"Desing"} container={false} />
+      <div className={s.design__heading}>
+        <ServiceHeadingComponent headingText={"Desing"} container={false} />
+      </div>
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
           <ServiceDesignCardComponent key={info.id} {...info} />
         ))}
       </ul>
       <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
+        <div className={s.blur_item}></div>
+      </div>
       <div className={s.design__wrapperBtn}>
         <BigButtonComponent />
       </div>

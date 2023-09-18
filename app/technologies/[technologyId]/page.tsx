@@ -16,6 +16,7 @@ import StagesSection from "@/app/sections/technologies_page/StagesSection";
 import OurProjects from "@/app/sections/technologies_page/OurProjects";
 import CreationSection from "@/app/sections/technologies_page/CreationSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
+import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
 export interface Data {
   heroSection: HeroSection;
@@ -87,8 +88,8 @@ const Technology = ({ params }: { params: any }) => {
         data = data_angular;
         break;
       case "net":
-      data = data_net;
-      break;
+        data = data_net;
+        break;
       default:
         break;
     }
@@ -101,29 +102,39 @@ const Technology = ({ params }: { params: any }) => {
     return <h1>Data not found</h1>;
   }
 
+  const links = [
+    {
+      title: `${data.heroSection.titleTech} Technology`,
+      href: `/${technology}`,
+    },
+  ];
+
   //створити інтерфейс за json'oм для data ()
   return (
-    <div className={s.page}>
-      <HeroSection heroTech={data.heroSection} />
-      <CreationSection
-        creationCard={data.creationSection}
-        titleTech={data.heroSection.titleTech}
-      />
-      <AdvantagesSection
-        paragraphs={data.advantagesSection}
-        titleTech={data.heroSection.titleTech}
-      />
-      <ChooseUsSection chooseUsSection={data.chooseUsSection} />
-      <DevelopmentSection
-        titleTech={data.heroSection.titleTech}
-        developmentSection={data.developmentSection}
-      />
-      <StagesSection stagesSection={data.stagesSection} />
-      <ReviewsSection reviewsSection={data.reviewsSection} />
-      <OurProjects
-        data={data.projectsSection}
-        titleTech={data.heroSection.titleTech}
-      />
+    <div>
+      <InfoNavigationComponent links={links} />
+      <div className={s.page}>
+        <HeroSection heroTech={data.heroSection} />
+        <CreationSection
+          creationCard={data.creationSection}
+          titleTech={data.heroSection.titleTech}
+        />
+        <AdvantagesSection
+          paragraphs={data.advantagesSection}
+          titleTech={data.heroSection.titleTech}
+        />
+        <ChooseUsSection chooseUsSection={data.chooseUsSection} />
+        <DevelopmentSection
+          titleTech={data.heroSection.titleTech}
+          developmentSection={data.developmentSection}
+        />
+        <StagesSection stagesSection={data.stagesSection} />
+        <ReviewsSection reviewsSection={data.reviewsSection} />
+        <OurProjects
+          data={data.projectsSection}
+          titleTech={data.heroSection.titleTech}
+        />
+      </div>
     </div>
   );
 };

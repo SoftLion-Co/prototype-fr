@@ -8,12 +8,11 @@
   margin-top: 25px;
   margin-bottom: 30px;
   font-weight: 700;
-  font-size: 8px;
+  font-size: 12px;
   line-height: 130.49%;
   letter-spacing: 0.26px;
 
   @include for-size(tablet) {
-    font-size: 10px;
     letter-spacing: 0.52px;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -26,12 +25,9 @@
   }
 
   &__home {
-    height: 10px;
-    width: 10px;
-    @include for-size(tablet) {
-      width: 15px;
-      height: 15px;
-    }
+    height: 15px;
+    width: 15px;
+    
 
     @include for-size(laptop) {
       width: 20px;

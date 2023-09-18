@@ -1,0 +1,105 @@
+@import "./../../../../styles/mixin";
+@import "./../../../../styles/colors";
+@import "./../../../../styles/container";
+
+.user {
+  margin-bottom: 40px;
+
+  &__search {
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: rgba(175, 218, 237, 0.15);
+    border: 1px solid rgba(72, 138, 167, 0.5);
+    border-radius: 15px;
+
+    padding: 0 15px;
+    width: 620px;
+    height: 45px;
+  }
+
+  &__information {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__number {
+    border: 1px solid #488aa780;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #488aa7cc;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+  }
+  &__title {
+    border: 1px solid #488aa780;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #488aa7cc;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+  }
+  &__data {
+    border: 1px solid #488aa780;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #488aa7cc;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+  }
+  &__rating {
+    border: 1px solid #488aa780;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 5px 20px;
+    color: #488aa7cc;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+  &__button {
+    background-color: rgba(175, 218, 237, 0.5);
+    border: 1px solid #488aa780;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  &__image {
+    width: 16px;
+    height: 16px;
+  }
+}
+.scroll__container {
+  display: grid;
+  gap: 10px;
+  max-height: 640px;
+  overflow-y: scroll;
+  margin-top: 20px;
+}

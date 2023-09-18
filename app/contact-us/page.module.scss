@@ -1,28 +1,31 @@
 @import "../styles/mixin";
 
+.contact_page {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 320px);
+  min-height: 500px;
+  @include for-size(tablet) {
+    gap: 80px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    height: calc(100vh - 554px);
+    min-height: 400px;
+  }
 
-.contact_page{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    margin-top: 45px;
-    margin-bottom: 80px;
+  @include for-size(laptop) {
+    gap: 120px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    height: calc(100vh - 730px);
+    min-height: 500px;
+  }
 
-    @include for-size(tablet){
-        gap: 80px;
-        margin-top: 150px;
-        margin-bottom: 150px;
-    }
-
-    @include for-size(laptop){
-        gap: 120px;
-        margin-top: 200px;
-        margin-bottom: 200px;
-    }
-
-    @include for-size(desktop){
-        gap: 150px;
-        margin-top: 245px;
-        margin-bottom: 200px;
-    }
+  @include for-size(desktop) {
+    gap: 150px;
+    margin-top: 245px;
+    margin-bottom: 200px;
+    height: calc(100vh - 860px);
+    min-height: 700px;
+  }
 }

@@ -44,7 +44,7 @@ const cardsData = [
   },
   {
     num: 4,
-    title: "Design and Development",
+    title: "Deployment and Maintenance",
     items: [
       "Releasing the product, launching the website or application.",
       "Monitoring, ensuring stability and security.",

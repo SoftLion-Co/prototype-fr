@@ -12,6 +12,9 @@ interface ProcessCardProps {
 const ProcessCard: React.FC<ProcessCardProps> = ({ data }) => (
   <div className={s.card}>
     <p className={s.card__text}>{data.description}</p>
+    <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
   </div>
 );
 
