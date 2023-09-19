@@ -50,7 +50,7 @@ const ForgotPasswordSection = () => {
     <div className={classNames(s.container, s.section)}>
       <div className={s.wrapper}>
         <h2 className={s.title}>Forgot password?</h2>
-        <p className={classNames(s.text, s.text__indent)}>We will send you a link to top up your account by mail and phone number.</p>
+        <p className={classNames(s.text, s.text__indent)}>We will send you a code to restore access to your account.</p>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <EmailInput
             error={errors.email}
