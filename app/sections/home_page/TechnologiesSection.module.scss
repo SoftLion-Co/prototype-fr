@@ -14,7 +14,6 @@
     position: relative;
 
     @include for-size(laptop) {
-      justify-content: center;
       flex-direction: row;
     }
     /* ... */
