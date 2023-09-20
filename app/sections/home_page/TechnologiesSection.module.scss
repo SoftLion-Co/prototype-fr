@@ -12,6 +12,11 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
+
+    @include for-size(laptop) {
+      justify-content: center;
+      flex-direction: row;
+    }
     /* ... */
     z-index: 2;
     transition: display 1s ease; /* Добавляем переход для свойства display */
@@ -345,7 +350,7 @@
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;
