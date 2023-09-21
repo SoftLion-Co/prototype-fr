@@ -110,7 +110,7 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.container}>
-      <div className={s.blur}>
+        <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
         <div className={s.blog__filter}>
@@ -192,7 +192,9 @@ const BlogsSection = () => {
 
         <div className={s.blog__cards}>
           {currentBlogs.map((blog) => (
-            <BlogExtendedCardComponent data={blog} />
+            <div className={s.blog__card}>
+              <BlogExtendedCardComponent data={blog} />
+            </div>
           ))}
         </div>
 
