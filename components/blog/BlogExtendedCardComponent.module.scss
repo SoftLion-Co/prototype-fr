@@ -79,12 +79,13 @@
   }
 
   &__text {
-    min-height: 110px;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
     margin: 10px 5px 0 5px;
-    line-height: 130%;
+    line-height: 1.25;
     font-size: 12px;
-    letter-spacing: 0.5;
-
+    height: 120px;
     @include for-size(tablet) {
       width: 300px;
     }
