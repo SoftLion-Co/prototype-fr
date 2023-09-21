@@ -74,7 +74,7 @@ const TechnologiesSection = () => {
   };
 
   return (
-    <section className={`${s.container} ${s.technologies}`}>
+    <section className={`${s.container}`}>
       <div className={s.technologies__wrapper}>
         <div className={s.technologies__name_header}>
           <HeadingComponent text="Technologies" />
