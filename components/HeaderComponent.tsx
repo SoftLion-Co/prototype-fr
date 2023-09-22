@@ -195,8 +195,8 @@ const HeaderComponent = () => {
                 </ul>
               </li>
               <li className={classNames(s.header__item, s.header__line)}>
-                <Link href="/blogs" className={s.header__link}>
-                  Blogs
+                <Link href="/blog" className={s.header__link}>
+                  Blog
                 </Link>
               </li>
               <li className={classNames(s.header__item, s.header__line)}>
@@ -445,7 +445,7 @@ const HeaderComponent = () => {
                 </li>
                 <li className={s.header_modal__item}>
                   <Link
-                    href="/blogs"
+                    href="/blog"
                     className={classNames(s.header_modal__link, s.header__line)}
                     onClick={handleButtonClick}
                   >
