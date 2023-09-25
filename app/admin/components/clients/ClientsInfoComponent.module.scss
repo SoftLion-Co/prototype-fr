@@ -1,6 +1,6 @@
-@import "./../../../../styles/mixin";
-@import "./../../../../styles/colors";
-@import "./../../../../styles/container";
+@import "@/styles/mixin";
+@import "@/styles/colors";
+@import "@/styles/container";
 
 .user {
   margin-bottom: 40px;
@@ -12,10 +12,11 @@
   &__list {
     display: grid;
     gap: 10px;
-    height: 657px;
+    max-height: 657px;
     overflow-y: scroll;
 
     &__item {
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -35,7 +36,7 @@
       align-items: center;
       gap: 20px;
 
-      & p {
+      p {
         border: 1px solid #488aa780;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 8px;
@@ -45,6 +46,7 @@
         font-weight: 400;
         line-height: 130%;
         letter-spacing: 0.6px;
+        white-space: nowrap;
 
         &:first-of-type {
           padding: 5px 10px;

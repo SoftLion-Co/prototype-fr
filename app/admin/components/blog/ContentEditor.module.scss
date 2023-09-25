@@ -1,36 +1,35 @@
-@import "./../../../../styles/mixin";
-@import "./../../../../styles/colors";
-@import "./../../../../styles/container";
+@import "@/styles/mixin";
+@import "@/styles/colors";
+@import "@/styles/container";
 
 .input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   &__scroll {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
     gap: 25px;
-    max-height: 560px;
+    height: 589px;
     overflow-y: scroll;
     margin-bottom: 20px;
   }
 
   &__container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
     gap: 10px;
   }
 
   &__entry {
-    margin-right: 40px;
     background: rgba(175, 218, 237, 0.1);
     border: 2px solid rgba(72, 138, 167, 0.3);
-    width: 580px;
     height: 36px;
     border-radius: 15px;
-    padding-left: 20px;
+    padding: 0 20px;
     box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     resize: vertical;
+    margin-right: 20px;
 
     &:hover,
     &:focus {
@@ -47,8 +46,8 @@
     }
 
     &_extended {
+      padding: 10px 20px;
       min-height: 160px;
-      padding: 10px;
       font-family: Roboto;
     }
   }
@@ -57,11 +56,10 @@
     width: 500px;
     border-bottom: 2px solid #afdaed80;
     margin-bottom: 20px;
+    margin-right: 37px;
   }
 
   &__group_button {
-    display: flex;
-    flex-direction: column;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,6 +68,7 @@
   &__buttons {
     display: flex;
     gap: 50px;
+    margin-right: 37px;
   }
 
   &__button {
@@ -78,14 +77,14 @@
     padding: 10px 7px 10px 7px;
     justify-content: center;
     align-items: center;
-    background: var(
-      --cta,
-      linear-gradient(99deg, #afdaed 4.34%, #84c6e2 94.12%)
-    );
+    background: var(--cta, linear-gradient(99deg, #afdaed 4.34%, #84c6e2 94.12%));
 
     &_article {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      margin-right: 37px;
+
       display: flex;
+      justify-content: center;
       gap: 40px;
     }
 

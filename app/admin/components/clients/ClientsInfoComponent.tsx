@@ -1,31 +1,29 @@
 import React from "react";
-import s from "./ContactInfoComponent.module.scss";
+import s from "./ClientsInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 
-import { ContactData } from "../../dashboard/types";
+import { ClientData } from "../../dashboard/types";
+import { useDateFormat } from "@/hooks/useDateFormat";
 
 interface Props {
-  contacts: ContactData[];
+  clients: ClientData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onCardClick: (ContactData: ContactData) => void;
+  onCardClick: (ContactData: ClientData) => void;
   onEditButtonClick: () => void;
 }
 
-const ContactInfoComponent: React.FC<Props> = ({
-  contacts,
+const ClientsInfoComponent: React.FC<Props> = ({
+  clients,
   searchTerm,
   setSearchTerm,
   onCardClick,
   onEditButtonClick,
 }) => {
+  const { formatDMY } = useDateFormat();
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
-
-  const filteredContacts = contacts.filter(contact =>
-    contact.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <div className={s.user}>
@@ -39,12 +37,12 @@ const ContactInfoComponent: React.FC<Props> = ({
       </div>
 
       <ul className={s.user__list}>
-        {filteredContacts.map((contact, index) => (
-          <li onClick={() => onCardClick(contact)} className={s.user__list__item} key={contact.id}>
-            <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
+        {clients.map((client, index) => (
+          <li onClick={() => onCardClick(client)} className={s.user__list__item} key={client.id}>
+            <div className={s.user__list__information}>
               <p>{index + 1}</p>
-              <p>{contact.email}</p>
-              <p>{contact.sendData.toString()}</p>
+              <p>{client.name}</p>
+              <p>{formatDMY(client.registerDate)}</p>
             </div>
           </li>
         ))}
@@ -53,4 +51,4 @@ const ContactInfoComponent: React.FC<Props> = ({
   );
 };
 
-export default ContactInfoComponent;
+export default ClientsInfoComponent;
