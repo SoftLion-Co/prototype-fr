@@ -41,7 +41,7 @@ const FooterComponent = () => {
   ];
 
   return (
-    <footer className={`${s.footer} ${s.container}`}>
+    <footer className={`${s.footer} ${s.container}`} id="footer">
       <div className={s.blur}>
         <div className={s.blur_item}></div>
       </div>
@@ -59,20 +59,14 @@ const FooterComponent = () => {
             </Link>
             <div className={s.footer__routs}>
               {routes.map((route, index) => (
-                <Link
-                  key={index}
-                  href={route.path}
-                  className={s.footer__routs_name}
-                >
+                <Link key={index} href={route.path} className={s.footer__routs_name}>
                   {route.label}
                 </Link>
               ))}
             </div>
           </div>
           <div className={s.footer__colum_copy}>
-            <p className={s.footer__copyright}>
-              ©2023 Copyright SoftLion. All rights reserved.
-            </p>
+            <p className={s.footer__copyright}>©2023 Copyright SoftLion. All rights reserved.</p>
             <Link href="/privacy-policy" className={s.footer__colum_name}>
               Privacy policy
             </Link>
@@ -87,19 +81,12 @@ const FooterComponent = () => {
                 </a>
               ))}
             </div>
-            <a
-              href="mailto:office.softlion@gmail.com"
-              className={s.footer__email}
-            >
+            <a href="mailto:office.softlion@gmail.com" className={s.footer__email}>
               office.softlion@gmail.com
             </a>
           </div>
           <div className={s.footer__btn}>
-            <MainButtonComponent
-              color="dark-blue"
-              path="contact-us"
-              className={s.footer__btn_text}
-            >
+            <MainButtonComponent color="dark-blue" path="contact-us" className={s.footer__btn_text}>
               Book Consultation
             </MainButtonComponent>
           </div>

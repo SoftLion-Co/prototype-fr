@@ -1,19 +1,25 @@
 import React from "react";
-import s from "./ContactInfoComponent.module.scss";
+import s from "./ProjectsInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 
-import { ContactData } from "../../dashboard/types";
+interface ContactData {
+  number: number;
+  data: string;
+  email: string;
+  description: string;
+  tell: number;
+}
 
 interface Props {
-  contacts: ContactData[];
+  users: ContactData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
   onCardClick: (ContactData: ContactData) => void;
   onEditButtonClick: () => void;
 }
 
-const ContactInfoComponent: React.FC<Props> = ({
-  contacts,
+const ProjectsInfoComponent: React.FC<Props> = ({
+  users,
   searchTerm,
   setSearchTerm,
   onCardClick,
@@ -23,8 +29,8 @@ const ContactInfoComponent: React.FC<Props> = ({
     setSearchTerm(event.target.value);
   };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredUsers = users.filter(user =>
+    user.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -39,12 +45,12 @@ const ContactInfoComponent: React.FC<Props> = ({
       </div>
 
       <ul className={s.user__list}>
-        {filteredContacts.map((contact, index) => (
-          <li onClick={() => onCardClick(contact)} className={s.user__list__item} key={contact.id}>
-            <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
-              <p>{index + 1}</p>
-              <p>{contact.email}</p>
-              <p>{contact.sendData.toString()}</p>
+        {filteredUsers.map(user => (
+          <li className={s.user__list__item} key={user.number}>
+            <div className={s.user__list__information} onClick={() => onCardClick(user)}>
+              <p>{user.number}</p>
+              <p>{user.description}</p>
+              <p>{user.data}</p>
             </div>
           </li>
         ))}
@@ -53,4 +59,4 @@ const ContactInfoComponent: React.FC<Props> = ({
   );
 };
 
-export default ContactInfoComponent;
+export default ProjectsInfoComponent;
