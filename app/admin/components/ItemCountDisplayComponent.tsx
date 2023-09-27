@@ -18,6 +18,7 @@ interface ItemCountDisplayProps {
   text: string;
   number: number;
   icon: IconType;
+  searchResultCount?: number;
 }
 
 const ItemCountDisplayComponent: React.FC<ItemCountDisplayProps> = ({
