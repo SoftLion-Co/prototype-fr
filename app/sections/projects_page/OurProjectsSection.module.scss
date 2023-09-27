@@ -4,21 +4,21 @@
 
 .projects {
   margin-top: 42px;
-  margin-bottom: 30px;
+  margin-bottom: 105px;
 
   @include for-size(tablet) {
     margin-top: 70px;
-    margin-bottom: 100px;
+    margin-bottom: 155px;
   }
 
   @include for-size(laptop) {
     margin-top: 100px;
-    margin-bottom: 140px;
+    margin-bottom: 250px;
   }
 
   @include for-size(desktop) {
     margin-top: 150px;
-    margin-bottom: 165px;
+    margin-bottom: 380px;
   }
 
   &__cards_desktop {
@@ -171,8 +171,8 @@
   }
 
   &__wrapper {
-    background: linear-gradient(139deg, #dff6ff 0%, #c3edff 100%);
-    box-shadow: $button-blue-shadow;
+    background: linear-gradient(140deg, #ffffff 0%, #ffffff 100%);
+    box-shadow: 0px 3px 32px 0px rgba(35, 140, 240, 0.2);
     border-radius: 6px;
     padding: 18px;
     width: 100%;

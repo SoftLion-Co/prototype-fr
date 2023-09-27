@@ -10,8 +10,15 @@
   @include for-size(tablet) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 44px;
     margin-bottom: 7%;
+  }
+  @include for-size(laptop) {
+    gap: 95px;
+  }
+  @include for-size(desktop) {
+    gap: 75px;
   }
 
   &__heading {
@@ -87,14 +94,11 @@
     }
     @include for-size(laptop) {
       width: 440px;
-      font-size: 20px;
-      min-height: 190px;
       letter-spacing: 0.7px;
     }
     @include for-size(desktop) {
       width: 610px;
       font-size: 20px;
-      min-height: 190px;
       letter-spacing: 0.8px;
     }
   }
@@ -106,36 +110,36 @@
   }
 }
 
-.blur {
-  position: absolute;
-  pointer-events: none;
+// .blur {
+//   position: absolute;
+//   pointer-events: none;
 
-  &_item {
-    position: relative;
-    pointer-events: none;
+//   &_item {
+//     position: relative;
+//     pointer-events: none;
 
-    @include for-size(tablet) {
-      background-image: url(../../../images/blur/blog_blurT.png);
-      background-repeat: no-repeat;
-      left: 150px;
-      top: 150px;
-      width: 345px;
-      height: 310px;
-    }
+//     @include for-size(tablet) {
+//       background-image: url(../../../images/blur/blog_blurT.png);
+//       background-repeat: no-repeat;
+//       left: 150px;
+//       top: 150px;
+//       width: 345px;
+//       height: 310px;
+//     }
 
-    @include for-size(laptop) {
-      background-image: url(../../../images/blur/blog_blurL.png);
-      left: 0;
-      top: 0px;
-      width: 1108px;
-      height: 597px;
-    }
+//     @include for-size(laptop) {
+//       background-image: url(../../../images/blur/blog_blurL.png);
+//       left: 0;
+//       top: 0px;
+//       width: 1108px;
+//       height: 597px;
+//     }
 
-    @include for-size(desktop) {
-      background-image: url(../../../images/blur/blog_blurD.png);
-      tpo: -100px;
-      width: 1440px;
-      height: 776px;
-    }
-  }
-}
+//     @include for-size(desktop) {
+//       background-image: url(../../../images/blur/blog_blurD.png);
+//       tpo: -100px;
+//       width: 1440px;
+//       height: 776px;
+//     }
+//   }
+// }

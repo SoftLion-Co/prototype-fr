@@ -21,7 +21,7 @@ function useBlogsData() {
       imageSrc:
         "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
       tags: ["React", "UI/UX", "Guides"],
-      text: "Embrace the enduring advantages of basic design in e-commerce, courtesy of our skilled designers. With a timeless appeal, lightning-fast loading, a spotlight on your products, and adaptable simplicity, our design team ensures a seamless user experience that drives sales. Don't miss out – opt for basic design and unlock your e-commerce potential with us!",
+      text: "Embrace the enduring advantages of basic design in e-commerce, courtesy of our skilled designers. With a timeless appeal, lightning-fast loading, a spotlight on your products, and adaptable simplicity, our design team ensures a seamless user experience that drives sales.",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ function useBlogsData() {
       imageSrc:
         "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
       tags: ["Finance", "Startups", "Technology"],
-      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge. Join us on this journey of finance and tech fusion for entrepreneurial excellence!",
+      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge.",
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ function useBlogsData() {
       imageSrc:
         "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
       tags: ["Finance", "Startups", "Technology"],
-      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge. Join us on this journey of finance and tech fusion for entrepreneurial excellence!",
+      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge.",
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ function useBlogsData() {
       imageSrc:
         "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
       tags: ["Finance", "Startups", "Technology"],
-      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge. Join us on this journey of finance and tech fusion for entrepreneurial excellence!",
+      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge.",
     },
     {
       id: 6,
@@ -61,7 +61,7 @@ function useBlogsData() {
       imageSrc:
         "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
       tags: ["Finance", "Startups", "Technology"],
-      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge. Join us on this journey of finance and tech fusion for entrepreneurial excellence!",
+      text: "Explore the intersection of Finance, Startups, and Technology with our dynamic content. Stay informed about the latest trends, innovations, and strategies that drive success in the finance and startup world. From disruptive fintech solutions to the startup ecosystem's growth, our insights provide you with a competitive edge.",
     },
   ];
 

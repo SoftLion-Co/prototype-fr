@@ -45,10 +45,27 @@
   }
 
   &__arrowIcon {
+    animation: arrowAnimation 1s infinite alternate;
+
+    width: 45px;
+    height: 45px;
+
     @include for-size(tablet) {
       transition: transform 0.3s ease-in-out;
+
+      width: 35px;
+      height: 35px;
     }
-    animation: arrowAnimation 1s infinite alternate;
+
+    @include for-size(laptop) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include for-size(desktop) {
+      width: 55px;
+      height: 55px;
+    }
   }
 
   @keyframes arrowAnimation {
