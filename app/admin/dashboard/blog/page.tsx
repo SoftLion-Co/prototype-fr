@@ -137,14 +137,15 @@ const Blogs = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultCount, setSearchResultCount] = useState(0);
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
-  const [isConfirmDeleteModalOpen, setIsConfirmDeleteModalOpen] = useState(true);
+  const [isConfirmDeleteModalOpen, setIsConfirmDeleteModalOpen] =
+    useState(true);
 
   const handleEditButtonClick = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
   };
 
   useEffect(() => {
-    const count = users.filter(user =>
+    const count = users.filter((user) =>
       user.title.toLowerCase().includes(searchTerm.toLowerCase())
     ).length;
     setSearchResultCount(count);
@@ -154,12 +155,16 @@ const Blogs = () => {
     <>
       <AdminLayout>
         <div className={s.blog}>
-          <BlogInfoComponent users={users} onEditButtonClick={handleEditButtonClick} />
+          <BlogInfoComponent
+            users={users}
+            onEditButtonClick={handleEditButtonClick}
+          />
 
           <ItemCountDisplayComponent
-            text="Кількість блогів"
-            number={users ? users.length : 0}
+            text="Кількість заявок"
+            number={users.length}
             icon={IconType.People}
+            searchResultCount={searchResultCount}
           />
         </div>
 

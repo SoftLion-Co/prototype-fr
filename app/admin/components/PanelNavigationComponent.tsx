@@ -6,11 +6,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 const PanelNavigationComponent = () => {
-  const getLocation = () => {
-    const urlArr = window.location.href.split("/");
-
-    return urlArr[urlArr.length - 1];
-  };
+  
 
   return (
     <div>
@@ -18,7 +14,7 @@ const PanelNavigationComponent = () => {
         <ul className={s.panel__list}>
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "blog" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/blog"
             >
               Блог
@@ -27,7 +23,7 @@ const PanelNavigationComponent = () => {
 
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "clients" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/clients"
             >
               Клієнти
@@ -36,7 +32,7 @@ const PanelNavigationComponent = () => {
 
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "contactUs" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/contactUs"
             >
               Зв’язатись ContactUS
@@ -45,7 +41,7 @@ const PanelNavigationComponent = () => {
 
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "contactBlog" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/contactBlog"
             >
               Зв’язатись BLOG
@@ -54,7 +50,7 @@ const PanelNavigationComponent = () => {
 
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "projects" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/projects"
             >
               Проекти
@@ -63,7 +59,7 @@ const PanelNavigationComponent = () => {
 
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "orderStatus" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/orderStatus"
             >
               Статус замовлення
@@ -72,7 +68,7 @@ const PanelNavigationComponent = () => {
 
           <li className={s.panel__item}>
             <Link
-              className={classNames(s.panel__link, getLocation() === "statistics" ? s.active : "")}
+              className={classNames(s.panel__link)}
               href="/admin/dashboard/statistics"
             >
               Статистика
