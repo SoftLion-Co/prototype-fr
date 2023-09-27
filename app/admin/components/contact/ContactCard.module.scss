@@ -1,0 +1,69 @@
+@import "@/styles/mixin";
+@import "@/styles/colors";
+
+.card {
+  padding: 50px;
+  margin: 50px;
+  margin-top: 0;
+  border: 1px solid $heading-blue-color;
+  border-radius: 15px;
+
+  color: $heading-blue-color;
+
+  &__info {
+    & div {
+      display: flex;
+      gap: 10px;
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      & span {
+        font-weight: 700;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__first_info {
+    border-bottom: 1px solid $heading-blue-color;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__second_info {
+    margin-bottom: 100px;
+  }
+
+  &__view_projects_btn {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    background: none;
+    border: 0;
+    font-size: 14px;
+    color: $heading-blue-color;
+
+    &::after {
+      cursor: default;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: 1px;
+      background-color: $heading-blue-color;
+    }
+  }
+}
+
+.buttons_container {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+}

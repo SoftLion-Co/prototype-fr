@@ -4,15 +4,16 @@
 
 .search {
   display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  height: 50px;
 
   &__input {
-    margin-right: 40px;
     background-color: #ffffff;
     border: 2px solid #488aa750;
-    width: 420px;
-    height: 46px;
+    width: 100%;
     border-radius: 15px;
-    padding-left: 20px;
+    padding: 0 20px;
     box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 

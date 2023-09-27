@@ -8,11 +8,7 @@ interface MainPageHeadingProps {
 const MainPageHeading: React.FC<MainPageHeadingProps> = ({ initialText }) => {
   const [tsxt] = useState(initialText);
 
-  return (
-    <div>
-      <h1 className={s.main__heading}>{tsxt}</h1>
-    </div>
-  );
+  return <h1 className={s.main__heading}>{tsxt}</h1>;
 };
 
 export default MainPageHeading;
