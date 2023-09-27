@@ -1,0 +1,39 @@
+@import "../styles/mixin";
+@import "../styles/container";
+@import "../styles/colors";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 360px);
+  min-height: 300px;
+
+  @include for-size(tablet){
+    height: calc(100vh - 330px);
+  }
+
+  @include for-size(laptop){
+    height: calc(100vh - 430px);
+  }
+
+  @include for-size(desktop){
+    height: calc(100vh - 550px);
+  }
+
+  &__paragraph {
+    font-size: 30px;
+    color: #737373;
+    font-weight: 700;
+  }
+
+  &__link {
+    color: $hero-heading-blue-color;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__image {
+    width: 200px;
+  }
+}

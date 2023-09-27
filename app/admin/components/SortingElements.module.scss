@@ -3,14 +3,12 @@
 @import "./../../../styles/container";
 
 .sorting {
+  display: flex;
+  flex-shrink: 0;
+  gap: 14px;
 
-    &__elements {
-        display: flex;
-        gap: 14px;
-    }
-
-    &__button {
-        background-color: transparent;
-        border: none;
-    }
+  &__button {
+    background-color: transparent;
+    border: none;
+  }
 }
