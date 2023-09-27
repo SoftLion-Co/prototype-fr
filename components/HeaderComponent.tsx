@@ -196,7 +196,7 @@ const HeaderComponent = () => {
               </li>
               <li className={classNames(s.header__item, s.header__line)}>
                 <Link href="/blogs" className={s.header__link}>
-                  Blogs
+                  Blog
                 </Link>
               </li>
               <li className={classNames(s.header__item, s.header__line)}>

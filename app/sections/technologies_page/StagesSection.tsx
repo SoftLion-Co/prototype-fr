@@ -45,9 +45,9 @@ const StagesSection = (props: Props) => {
       </div>
 
       <div className={classNames(s.stages, s.container)}>
-      <div className={s.blur}>
+        {/* <div className={s.blur}>
           <div className={s.blur_item}></div>
-        </div>
+        </div> */}
         {props.stagesSection.map((item, index) => (
           <div key={index} className={s.stages__card}>
             <Image
