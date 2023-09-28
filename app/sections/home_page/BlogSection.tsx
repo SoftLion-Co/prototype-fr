@@ -8,10 +8,10 @@ import HeadingComponent from "@/components/HeadingComponent";
 import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import { BlogInterface } from "@/components/blog/BlogInteface";
-import useBlogsData from "@/hooks/useBlogsData";
+import getBlogsData from "@/hooks/getBlogsData";
 import { FC } from "react";
 
-const blogs: BlogInterface[] = useBlogsData();
+const blogs: BlogInterface[] = getBlogsData();
 
 const HomeBlog: FC = () => {
   return (
