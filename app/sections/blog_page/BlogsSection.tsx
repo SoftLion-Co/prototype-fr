@@ -23,7 +23,7 @@ const BlogsSection = () => {
     "Technology",
     "Guides",
     "UI/UX",
-    "E-learning",
+    "E-commerce",
     "Finance",
     "Startups",
     "Development",

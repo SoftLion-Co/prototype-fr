@@ -41,7 +41,7 @@ const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
             </div>
             <span className={s.author__text}>{author}</span>
           </div>
-          <span className={s.author__text}>Reading time:{readTime}</span>
+          <span className={s.author__text}>Reading time: {readTime}</span>
         </div>
         <div className={s.article__image}>
           <Image
