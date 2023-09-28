@@ -92,16 +92,11 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
     width: 80%;
 
     @include for-size(tablet) {
-      gap: 12px;
       width: 100%;
-    }
-
-    @include for-size(laptop) {
-      gap: 17px;
     }
 
     @include for-size(desktop) {
@@ -111,8 +106,9 @@
 
   &__field {
     &:nth-child(2) {
-      padding-left: 39px;
+      padding-left: 42px;
     }
+
     padding: 0;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -124,17 +120,15 @@
     font-size: 12px;
     line-height: 154%;
     letter-spacing: 0.19px;
-    height: 15px;
+    padding-bottom: 10px;
 
     @include for-size(tablet) {
       width: 195px;
-      height: 19px;
       font-size: 12px;
       letter-spacing: 0.25px;
     }
 
     @include for-size(laptop) {
-      height: 27px;
       width: 284px;
       font-size: 12px;
       letter-spacing: 0.36px;
@@ -142,7 +136,6 @@
 
     @include for-size(desktop) {
       width: 372px;
-      height: 40px;
       font-size: 16px;
       letter-spacing: 0.48px;
     }
@@ -193,14 +186,13 @@
   }
 
   &__title {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 130%;
     letter-spacing: 1px;
     font-weight: 400;
     margin-bottom: 39px;
 
     @include for-size(tablet) {
-      font-size: 16px;
       letter-spacing: 1.42px;
       margin-bottom: 40px;
     }
@@ -354,7 +346,7 @@
   color: red;
 }
 
-.container {
+.container-input {
   min-width: 100%;
   background-color: transparent;
 }
@@ -370,9 +362,8 @@
   padding: 0 !important;
   padding-right: 0;
   border: none !important;
-  bottom: 2px;
+  bottom: 12px !important;
   background-color: transparent !important;
-
 }
 
 .disabledButton {
@@ -415,3 +406,4 @@
   }
 
 }
+
