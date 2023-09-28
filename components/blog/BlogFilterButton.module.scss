@@ -6,37 +6,26 @@
   background: none;
   border: none;
   position: relative;
-  color: rgb(0, 0, 0, 75%);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 13px;
   font-weight: 400;
   line-height: calc(19.6 / 16);
   padding: 3px 3px;
+
   @include for-size(tablet) {
     font-size: 14px;
     padding: 5px 10px;
-
   }
   @include for-size(laptop) {
-    font-size: 17px;
+    font-size: 18px;
     padding: 5px 20px;
   }
   @include for-size(desktop) {
-    font-size: 22px;
+    font-size: 24px;
     padding: 5px 25px;
   }
 }
 
 .activeFilter {
-  background: $button-blue-form;
-  color: #ffffff;
-  border-radius: 6px;
-  @include for-size(tablet) {
-    border-radius: 8px;
-  }
-  @include for-size(laptop) {
-    border-radius: 12px;
-  }
-  @include for-size(desktop) {
-    border-radius: 15px;
-  }
+  color: #000000;
 }

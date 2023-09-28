@@ -45,10 +45,27 @@
   }
 
   &__arrowIcon {
+    animation: arrowAnimation 1s infinite alternate;
+
+    width: 45px;
+    height: 45px;
+
     @include for-size(tablet) {
       transition: transform 0.3s ease-in-out;
+
+      width: 35px;
+      height: 35px;
     }
-    animation: arrowAnimation 1s infinite alternate;
+
+    @include for-size(laptop) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include for-size(desktop) {
+      width: 55px;
+      height: 55px;
+    }
   }
 
   @keyframes arrowAnimation {
@@ -245,7 +262,10 @@
   display: flex;
   flex-wrap: wrap;
   &__item {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 5px;
+    @include for-size(laptop){
+      padding: 0px 10px;
+    }
     border: 1px solid rgb(220 151 151 / 30%);
     background-color: rgb(255 255 255 / 100%);
     border-radius: 100px;

@@ -131,10 +131,10 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
               width: "100%",
               paddingBottom: "6px",
               paddingTop: "6px",
-
+              height: "20px"
             }}
             dropdownClass={s["drop"]}
-            containerClass={s["container"]}
+            containerClass={s["container-input"]}
 
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
