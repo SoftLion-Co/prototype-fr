@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import s from "./FormComponent.module.scss";
+import Link from "next/link";
 import axios from "axios";
 
 interface FormProps {
@@ -36,6 +37,16 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
     },
   });
 
+
+  const [textareaHeight, setTextareaHeight] = useState('auto'); // Оголошення textareaHeight
+
+  // Функція для встановлення висоти <textarea> в залежності від змісту
+  const adjustTextareaHeight = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const textarea = event.target;
+    textarea.style.height = 'auto'; // Спершу встановіть висоту на автоматичну
+    textarea.style.height = `${textarea.scrollHeight}px`; // Встановіть висоту відповідно до змісту
+    setTextareaHeight(textarea.style.height); // Збережіть висоту у стані компонента
+  };
   const watchEmail = watch("email");
   const watchDescription = watch("description");
 
@@ -89,7 +100,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
           <input
             type="email"
             className={`${s.form__field} ${errors.email ? s.invalidField : ""}`}
-            placeholder=" "
+            placeholder="E-mail"
             {...register("email", {
               required: "Email is required",
               pattern: {
@@ -98,9 +109,6 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
               },
             })}
           />
-          <label className={s.form__label} htmlFor="email">
-            E-mail
-          </label>
           {errors.email && <p className={s.error}>{errors.email.message}</p>}
         </div>
         <div className={s.form__input}>
@@ -131,30 +139,30 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
               width: "100%",
               paddingBottom: "6px",
               paddingTop: "6px",
-              height: "20px"
+              height: "20px",
             }}
             dropdownClass={s["drop"]}
             containerClass={s["container-input"]}
-
           />
           {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
         </div>
         <div className={s.form__input}>
-          <input
-            type="text"
-            className={s.form__field}
-            placeholder=" "
-            {...register("description", {
-              required: "Description is required",
-            })}
-          />
-          <label className={s.form__label} htmlFor="description">
-            Short describe ur idea
-          </label>
-          {errors.description && (
-            <p className={s.error}>{errors.description.message}</p>
-          )}
-        </div>
+      <textarea
+        placeholder='Short describe ur idea'
+        cols={3}
+        rows={1}
+        draggable={false}
+        className={s.form__area}
+        style={{ height: textareaHeight }}
+        onInput={adjustTextareaHeight}
+        {...register('description', {
+          required: 'Description is required',
+        })}
+      ></textarea>
+      {errors.description && (
+        <p className={s.error}>{errors.description.message}</p>
+      )}
+    </div>
       </div>
       <button
         type="submit"
@@ -167,7 +175,9 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
       </button>
       <p className={s.form__text}>
         By clicking on this button I agree to the{" "}
-        <span className={s.pr}>processing of personal data</span>
+        <Link href="privacy-policy" className={s.pr}>
+        processing of personal data
+      </Link>
       </p>
     </form>
   );
