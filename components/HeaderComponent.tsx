@@ -6,14 +6,19 @@ import Logo from "images/logo.svg";
 import Image from "next/image";
 import classNames from "classnames";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const HeaderComponent = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   const [isModalOpen, setModalOpen] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const [arrowDirection1, setArrowDirection1] = useState("down");
   const [arrowDirection2, setArrowDirection2] = useState("down");
+
+  console.log(pathname == "/projects" ? "yes" : "no");
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
@@ -95,7 +100,13 @@ const HeaderComponent = () => {
           </div>
           <nav className={s.header__navigation}>
             <ul className={s.header__list}>
-              <li className={classNames(s.header__item, s.header__line)}>
+              <li
+                className={classNames(
+                  pathname === "/services" ? s.header__active : "",
+                  s.header__item,
+                  s.header__line
+                )}
+              >
                 <Link href="/services" className={s.header__link}>
                   Services
                 </Link>
@@ -134,13 +145,25 @@ const HeaderComponent = () => {
                   </li>
                 </ul>
               </li>
-              <li className={classNames(s.header__item, s.header__line)}>
-                <Link href="/projects" className={`${s.header__link}`}>
+              <li
+                className={classNames(
+                  pathname === "/projects" ? s.header__active : "",
+                  s.header__item,
+                  s.header__line
+                )}
+              >
+                <Link href="/projects" className={classNames(s.header__link)}>
                   Our Projects
                 </Link>
               </li>
-              <li className={classNames(s.header__item, s.header__line)}>
-                <Link href="" className={s.header__link}>
+              <li
+                className={classNames(
+                  pathname.startsWith("/technologies") ? s.header__active : "",
+                  s.header__item,
+                  s.header__line
+                )}
+              >
+                <Link href="" className={classNames(s.header__link)}>
                   Technologies
                 </Link>
                 <ul className={s.header__sub_menu}>
@@ -194,12 +217,24 @@ const HeaderComponent = () => {
                   </li>
                 </ul>
               </li>
-              <li className={classNames(s.header__item, s.header__line)}>
+              <li
+                className={classNames(
+                  pathname === "/blog" ? s.header__active : "",
+                  s.header__item,
+                  s.header__line
+                )}
+              >
                 <Link href="/blog" className={s.header__link}>
                   Blog
                 </Link>
               </li>
-              <li className={classNames(s.header__item, s.header__line)}>
+              <li
+                className={classNames(
+                  pathname === "/contact-us" ? s.header__active : "",
+                  s.header__item,
+                  s.header__line
+                )}
+              >
                 <Link href="/contact-us" className={s.header__link}>
                   Contact Us
                 </Link>
@@ -231,6 +266,7 @@ const HeaderComponent = () => {
                       className={classNames(
                         s.header_modal__link,
                         s.header__line,
+                        pathname === "/services" ? s.header__active : "",
                         selectedMenuItem === 0 ? s.selected : ""
                       )}
                       onClick={() => {
@@ -317,7 +353,7 @@ const HeaderComponent = () => {
                 <li className={s.header_modal__item}>
                   <Link
                     href="/projects"
-                    className={classNames(s.header_modal__link, s.header__line)}
+                    className={classNames(pathname === "/projects" ? s.header__active : "", s.header_modal__link, s.header__line)}
                     onClick={handleButtonClick}
                   >
                     <p>Our Projects</p>
@@ -330,6 +366,7 @@ const HeaderComponent = () => {
                   <div className={s.header_modal__link_container}>
                     <div
                       className={classNames(
+                        pathname.startsWith("/technologies") ? s.header__active : "",
                         s.header_modal__link,
                         s.header__line,
                         selectedMenuItem === 1 ? s.selected : ""
@@ -387,7 +424,7 @@ const HeaderComponent = () => {
                       <li
                         className={classNames(
                           s.header_modal__item,
-                          s.header__line
+                          s.header__line,
                         )}
                       >
                         <Link
@@ -446,7 +483,7 @@ const HeaderComponent = () => {
                 <li className={s.header_modal__item}>
                   <Link
                     href="/blog"
-                    className={classNames(s.header_modal__link, s.header__line)}
+                    className={classNames(pathname === "/blog" ? s.header__active : "", s.header_modal__link, s.header__line)}
                     onClick={handleButtonClick}
                   >
                     <p>Blog</p>
@@ -455,7 +492,7 @@ const HeaderComponent = () => {
                 <li className={s.header_modal__item}>
                   <Link
                     href="/contact-us"
-                    className={classNames(s.header_modal__link, s.header__line)}
+                    className={classNames(pathname === "/contact-us" ? s.header__active : "", s.header_modal__link, s.header__line)}
                     onClick={handleButtonClick}
                   >
                     <p>Contact Us</p>
