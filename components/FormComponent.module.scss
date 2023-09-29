@@ -145,6 +145,45 @@
     }
   }
 
+  &__area {
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    background-color: transparent;
+    color: #858585;
+    font-family: Open Sans;
+    font-size: 12px;
+    line-height: 154%;
+    letter-spacing: 0.19px;
+    padding-bottom: 3px;
+    resize: none;
+    max-height: 400px;
+
+    @include for-size(tablet) {
+      width: 195px;
+      font-size: 12px;
+      letter-spacing: 0.25px;
+    }
+
+    @include for-size(laptop) {
+      width: 284px;
+      font-size: 12px;
+      letter-spacing: 0.36px;
+    }
+
+    @include for-size(desktop) {
+
+      width: 372px;
+      font-size: 16px;
+      letter-spacing: 0.48px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
   &__input {
     position: relative;
 
@@ -297,7 +336,7 @@
       width: 160px;
       flex-shrink: 0;
       font-size: 7px;
-      letter-spacing: 0.20px;
+      letter-spacing: 0.2px;
     }
 
     @include for-size(laptop) {
@@ -326,7 +365,7 @@
 
       @include for-size(tablet) {
         font-size: 7px;
-        letter-spacing: 0.20px;
+        letter-spacing: 0.2px;
       }
 
       @include for-size(laptop) {
@@ -351,14 +390,14 @@
   background-color: transparent;
 }
 
-.search{
+.search {
   padding-left: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
 .buttonC {
-  width: 0 !important; 
+  width: 0 !important;
   padding: 0 !important;
   padding-right: 0;
   border: none !important;
@@ -385,25 +424,21 @@
 
 .invalidField {
   border-bottom: 1px solid red;
-} 
+}
 
-.drop{
+.drop {
   font-size: 12px;
   width: 220px !important;
 
-  
-  @include for-size(tablet){
+  @include for-size(tablet) {
     width: 300px !important;
-
   }
 
-  @include for-size(laptop){
+  @include for-size(laptop) {
     font-size: 14px;
   }
 
-  @include for-size(desktop){
+  @include for-size(desktop) {
     font-size: 16px;
   }
-
 }
-
