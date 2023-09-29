@@ -10,15 +10,12 @@ import { usePathname } from "next/navigation";
 
 const HeaderComponent = () => {
   const pathname = usePathname();
-  console.log(pathname);
   const [isModalOpen, setModalOpen] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(-1);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [selectedMenuItem, setSelectedMenuItem] = useState(null);
   const [arrowDirection1, setArrowDirection1] = useState("down");
   const [arrowDirection2, setArrowDirection2] = useState("down");
-
-  console.log(pathname == "/projects" ? "yes" : "no");
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
