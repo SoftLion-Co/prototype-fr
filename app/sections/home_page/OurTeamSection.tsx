@@ -12,10 +12,14 @@ import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
 import AvatarYan from "./../../../images/avatar/Yan.jpeg";
+import { usePathname } from "next/navigation";
 
 const OurTeamSetcion = () => {
+  const pathname = usePathname();
+
+  const isOnHomePage = pathname === "/";
   const [embla, setEmbla] = useState<Embla | null>(null);
-  const [currentSlide, setCurrentSlide] = useState(2);
+  const [currentSlide, setCurrentSlide] = useState(1);
 
   interface Props {
     id: string;
@@ -60,12 +64,10 @@ const OurTeamSetcion = () => {
     },
     {
       id: "5",
-      name: "Danyil Terentiev",
-      position: "FullStack developer",
-      avatar:
-        "https://media.licdn.com/dms/image/D4D35AQFZXHwrdofn8Q/profile-framedphoto-shrink_800_800/0/1676486269690?e=1694077200&v=beta&t=SpX2oizuXc9h_3wrARKMmcEmk3elpkXL43O4SfkyfzU",
-      linkedinUrl:
-        "https://www.linkedin.com/in/%D0%B4%D0%B0%D0%BD%D0%B8%D1%97%D0%BB-%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D1%82%D1%8C%D1%94%D0%B2-b69725203/",
+      name: "Tetiana Hlushko",
+      position: "Designer",
+      avatar: AvatarTetiana,
+      linkedinUrl: "",
     },
     {
       id: "6",
@@ -77,10 +79,12 @@ const OurTeamSetcion = () => {
     },
     {
       id: "7",
-      name: "Tetiana Hlushko",
-      position: "Designer",
-      avatar: AvatarTetiana,
-      linkedinUrl: "",
+      name: "Danyil Terentiev",
+      position: "FullStack developer",
+      avatar:
+        "https://media.licdn.com/dms/image/D4D35AQFZXHwrdofn8Q/profile-framedphoto-shrink_400_400/0/1676486269258?e=1696593600&v=beta&t=V-0F1r5o2DhWi9Us7GNewebK9NqOefPF6YFrAZ33yz8",
+      linkedinUrl:
+        "https://www.linkedin.com/in/%D0%B4%D0%B0%D0%BD%D0%B8%D1%97%D0%BB-%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D1%82%D1%8C%D1%94%D0%B2-b69725203/",
     },
     {
       id: "8",
@@ -103,8 +107,7 @@ const OurTeamSetcion = () => {
       id: "10",
       name: "Misha Zlupko",
       position: "Front-End Developer",
-      avatar:
-        "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052467203?e=1694077200&v=beta&t=PKG5Wq2yulNIW99gZZNNVY21OMwtNxLSO94voBOBY44",
+      avatar: "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052467203?e=1694077200&v=beta&t=PKG5Wq2yulNIW99gZZNNVY21OMwtNxLSO94voBOBY44",
       linkedinUrl: "https://www.linkedin.com/in/misha-zlupko-150649269/",
     },
     {
@@ -123,20 +126,22 @@ const OurTeamSetcion = () => {
       linkedinUrl:
         "https://www.linkedin.com/in/anastasiia-moskaliuk-9048b7288/",
     },
-    {
-      id: "13",
-      name: "Maxim Fedechko",
-      position: "Front-End Developer",
-      avatar:
-        "https://media.licdn.com/dms/image/D4D35AQHtv0bPPdOWjw/profile-framedphoto-shrink_800_800/0/1678909075960?e=1694077200&v=beta&t=OHOPtkKVs8G7zDttlMSVb0StzlcJCXjJwCA9Z0LQyMI",
-      linkedinUrl: "https://www.linkedin.com/in/maxim-fedechko/",
-    },
   ];
 
   const setActiveCard = (index: number): void => {
-    const slideIndex = index - 2 > 0 ? index - 2 : index - 2 + response.length;
+    const slideIndex = isOnHomePage
+      ? index - 1 > 0
+        ? index - 1
+        : index - 1 + teamMembers.length
+      : index - 2 > 0
+      ? index - 2
+      : index - 2 + teamMembers.length;
     embla?.scrollTo(slideIndex);
   };
+
+  const firstFourTeamMembers = response.slice(0, 5);
+
+  const teamMembers = isOnHomePage ? firstFourTeamMembers : response;
 
   return (
     <div className={s.team}>
@@ -147,10 +152,13 @@ const OurTeamSetcion = () => {
             getEmblaApi={setEmbla}
             classNames={{ control: s.custom__control }}
             onSlideChange={(index) => {
-              const slideIndex =
-                index + 2 < response.length
-                  ? index + 2
-                  : index + 2 - response.length;
+              const slideIndex = isOnHomePage
+                ? index + 1 < teamMembers.length
+                  ? index + 1
+                  : index + 1 - teamMembers.length
+                : index + 2 < teamMembers.length
+                ? index + 2
+                : index + 2 - teamMembers.length;
               setCurrentSlide(slideIndex);
             }}
             previousControlIcon={
@@ -171,12 +179,12 @@ const OurTeamSetcion = () => {
                 alt=">"
               ></Image>
             }
-            slideSize="20%"
+            slideSize={isOnHomePage ? "33.3%" : "20%"}
             align="start"
             loop
             slidesToScroll={1}
           >
-            {response.map((member, index) => (
+            {teamMembers.map((member, index) => (
               <Carousel.Slide
                 onClick={() => setActiveCard(index)}
                 key={member.id}
@@ -188,7 +196,10 @@ const OurTeamSetcion = () => {
         </div>
       </div>
       <div className={s.mobile__slider}>
-        <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
+        <MobileSliderComponent
+          data={teamMembers}
+          SlideComponent={OurTeamCard}
+        />
       </div>
     </div>
   );
