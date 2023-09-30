@@ -123,14 +123,6 @@ const OurTeamSetcion = () => {
       linkedinUrl:
         "https://www.linkedin.com/in/anastasiia-moskaliuk-9048b7288/",
     },
-    {
-      id: "13",
-      name: "Maxim Fedechko",
-      position: "Front-End Developer",
-      avatar:
-        "https://media.licdn.com/dms/image/D4D35AQHtv0bPPdOWjw/profile-framedphoto-shrink_800_800/0/1678909075960?e=1694077200&v=beta&t=OHOPtkKVs8G7zDttlMSVb0StzlcJCXjJwCA9Z0LQyMI",
-      linkedinUrl: "https://www.linkedin.com/in/maxim-fedechko/",
-    },
   ];
 
   const setActiveCard = (index: number): void => {

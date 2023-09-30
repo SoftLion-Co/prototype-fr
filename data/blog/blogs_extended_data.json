@@ -2,7 +2,7 @@
   "1": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
     "articleName": "The Role of Backend Development",
-    "articleimg": "https://assets.website-files.com/6364b6fd26e298b11fb9391f/6364b6fd26e2982ebab93dde_Cv_drawkit_Teamwork%20Illustrations-min.png",
+    "articleimg": "https://github.com/PaulGraur/gallery/blob/main/PNG/example-scene-1.png?raw=true",
     "readTime": "12 min",
     "author": "Paul Graur",
     "articles": [
@@ -10,7 +10,7 @@
         "id": "1",
         "title": "Backend Development Basics: A Comprehensive Guide",
         "description": "Backend development plays a pivotal role in powering websites, applications, and online services, managing databases, handling business logic, and ensuring smooth communication between the frontend and the server. For beginners aspiring to delve into backend development, this guide will provide insights into the fundamentals and lay a strong foundation for their journey.",
-        "image": "https://t3.ftcdn.net/jpg/04/53/15/70/360_F_453157099_WDyakeU2ZoDdLDnfH8gVlhy4zI5fgcwX.jpg"
+        "image": "https://github.com/PaulGraur/gallery/blob/main/PNG/example-scene-2.png?raw=true"
       },
       {
         "id": "2",

@@ -9,7 +9,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "12 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://github.com/PaulGraur/gallery/blob/main/PNG/example-scene-1.png?raw=true",
       tags: ["Education", "Development"],
       text: "Explore essential backend development in this guide. Learn programming languages, frameworks, data management, testing, security, scalability, and deployment. Lay a solid foundation for efficient, resilient applications.",
     },
