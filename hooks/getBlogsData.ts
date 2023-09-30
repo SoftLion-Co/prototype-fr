@@ -10,7 +10,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "12 mins",
       imageSrc:
-        "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/1-the-role-of-backend-development/example-scene-2.svg",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/1-the-role-of-backend-development/example-scene-1.svg",
       tags: ["Technology", "Node.js"],
       text: "Explore essential backend development in this guide. Learn programming languages, frameworks, data management, testing, security, scalability, and deployment. Lay a solid foundation for efficient, resilient applications.",
     },
@@ -21,7 +21,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "10 mins",
       imageSrc:
-        "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-11.svg",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-11.svg",
       tags: ["UI/UX", "Guides"],
       text: "Explore the impact of simple, functional design in e-commerce. Learn how it enhances user experience, loading speed, and product visibility. Timeless and clean designs, advocated by our seasoned designers, prioritize products, engage customers, and drive sales in the competitive e-commerce landscape.",
     },
@@ -32,7 +32,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "14 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/3-enhancing-ecommerce/DrawKit-10.svg",
       tags: ["E-commerce", "Guides", "React"],
       text: "Explore front-end tech: TypeScript, Next.js, and React, transforming e-commerce. Uncover how they boost code quality, accelerate rendering, and craft interactive UIs, staying competitive in e-commerce with user-friendly platforms.",
     },
@@ -43,7 +43,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "12 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/4-shopify-development-company/DrawKit-1.svg",
       tags: ["Finance", "E-commerce", "Technology"],
       text: "Meet SoftLion, experts in Shopify development for businesses of all sizes. Learn why Shopify is a top choice for ecommerce and explore our wide range of services, from development to 24/7 customer support.",
     },
@@ -54,7 +54,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "11 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-12.svg",
       tags: ["Technology", "Development", "Guides"],
       text: "Discover Progressive Web Apps (PWAs) and their app-like experiences. Learn principles, tech insights, and building steps. Optimize performance and enhance discoverability. Unleash PWA potential for a digital revolution",
     },
@@ -65,7 +65,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "13 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-11.svg",
       tags: ["Technology", "Development", "UI/UX"],
       text: "Unlock the potential of frontend web development with insights into Bootstrap, Material-UI, and Tailwind CSS. This guide demystifies these frameworks, empowering you to craft captivating web experiences seamlessly.",
     },
