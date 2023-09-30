@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
