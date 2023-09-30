@@ -33,7 +33,7 @@ const Blog = ({ params }: { params: BlogParams }) => {
   }
 
   const links = [
-    { title: "Blog", href: "/blogs" },
+    { title: "Blog", href: "/blog" },
     { title: response.articleName, href: "#" },
   ];
 
