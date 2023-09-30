@@ -74,14 +74,14 @@
 
   @include for-size(tablet) {
     display: block;
-    max-width: 738px;
+    width: 738px;
   }
   @include for-size(laptop) {
-    max-width: 1080px;
+    width: 1080px;
   }
 
   @include for-size(desktop) {
-    max-width: 1400px;
+    width: 1400px;
   }
 }
 

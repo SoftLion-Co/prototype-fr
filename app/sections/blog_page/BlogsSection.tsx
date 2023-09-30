@@ -13,17 +13,17 @@ import useResponsiveItemsToShow from "@/hooks/useResponsiveItemsToShow";
 import { useSwipeForFilter } from "@/hooks/useSwipeForFilter";
 import useSwitchingCategoriesCarousel from "@/hooks/useSwitchingCategoriesCarousel";
 import { BlogInterface } from "@/components/blog/BlogInteface";
-import useBlogsData from "@/hooks/useBlogsData";
+import getBlogsData from "@/hooks/getBlogsData";
 
 const BlogsSection = () => {
-  const blogs: BlogInterface[] = useBlogsData();
+  const blogs: BlogInterface[] = getBlogsData();
 
   const categories = [
     "All articles",
     "Technology",
     "Guides",
     "UI/UX",
-    "E-learning",
+    "E-commerce",
     "Finance",
     "Startups",
     "Development",
@@ -52,7 +52,7 @@ const BlogsSection = () => {
     handleCategoryChange,
     selectedCategory,
   } = useBlogFilter({
-    blogsData: useBlogsData(),
+    blogsData: getBlogsData(),
     blogsPerPage: blogsPerPage,
     setCurrentPage: handlePageChange,
   });
@@ -106,7 +106,7 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.blog__title}>
-        <ServiceHeadingComponent headingText="Blogs" container={true} />
+        <ServiceHeadingComponent headingText="Blog" container={true} />
       </div>
 
       <div className={s.container}>
