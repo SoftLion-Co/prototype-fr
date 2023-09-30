@@ -9,7 +9,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "12 mins",
       imageSrc:
-        "https://github.com/PaulGraur/gallery/blob/main/PNG/example-scene-1.png?raw=true",
+        "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/1-the-role-of-backend-development/example-scene-2.svg",
       tags: ["Education", "Development"],
       text: "Explore essential backend development in this guide. Learn programming languages, frameworks, data management, testing, security, scalability, and deployment. Lay a solid foundation for efficient, resilient applications.",
     },
@@ -19,7 +19,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "10 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-11.svg",
       tags: ["UI/UX", "Guides"],
       text: "Explore the impact of simple, functional design in e-commerce. Learn how it enhances user experience, loading speed, and product visibility. Timeless and clean designs, advocated by our seasoned designers, prioritize products, engage customers, and drive sales in the competitive e-commerce landscape.",
     },

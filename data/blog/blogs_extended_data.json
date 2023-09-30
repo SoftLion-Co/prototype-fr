@@ -2,7 +2,7 @@
   "1": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
     "articleName": "The Role of Backend Development",
-    "articleimg": "https://github.com/PaulGraur/gallery/blob/main/PNG/example-scene-1.png?raw=true",
+    "articleimg": "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/1-the-role-of-backend-development/example-scene-1.svg",
     "readTime": "12 min",
     "author": "Paul Graur",
     "articles": [
@@ -10,7 +10,7 @@
         "id": "1",
         "title": "Backend Development Basics: A Comprehensive Guide",
         "description": "Backend development plays a pivotal role in powering websites, applications, and online services, managing databases, handling business logic, and ensuring smooth communication between the frontend and the server. For beginners aspiring to delve into backend development, this guide will provide insights into the fundamentals and lay a strong foundation for their journey.",
-        "image": "https://github.com/PaulGraur/gallery/blob/main/PNG/example-scene-2.png?raw=true"
+        "image": "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/1-the-role-of-backend-development/example-scene-2.svg"
       },
       {
         "id": "2",
@@ -42,7 +42,7 @@
   "2": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
     "articleName": "Simplified Basic Design",
-    "articleimg": "https://assets.website-files.com/6364b6fd26e298b11fb9391f/6364b6fd26e2982ebab93dde_Cv_drawkit_Teamwork%20Illustrations-min.png",
+    "articleimg": "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-2.svg",
     "readTime": "10 min",
     "author": "Paul Graur",
     "articles": [
@@ -55,7 +55,7 @@
         "id": "2",
         "title": "Universality",
         "description": "Our adept designers recognize the enduring appeal of basic design. Its classic and timeless nature renders it suitable for a diverse array of businesses, ensuring that it remains relevant over extended periods. They possess the artistry to craft a visually captivating and professional website that withstands the test of time. Their primary focus lies in creating a user-friendly and seamlessly navigable platform, thereby enhancing the overall user experience.",
-        "image": "https://t3.ftcdn.net/jpg/04/53/15/70/360_F_453157099_WDyakeU2ZoDdLDnfH8gVlhy4zI5fgcwX.jpg"
+        "image": "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-3.svg"
       },
       {
         "id": "3",
@@ -65,12 +65,14 @@
       {
         "id": "4",
         "title": "Product Emphasis",
-        "description": "Our committed designers are virtuosos at harnessing the power of basic design to place your products at the forefront. Through a clean and minimalist design philosophy, they ensure that your product catalog, descriptions, and features take center stage. By eliminating extraneous distractions and delivering a visually appealing presentation, our designers elevate the user experience, resulting in heightened conversions and increased sales."
+        "description": "Our committed designers are virtuosos at harnessing the power of basic design to place your products at the forefront. Through a clean and minimalist design philosophy, they ensure that your product catalog, descriptions, and features take center stage. By eliminating extraneous distractions and delivering a visually appealing presentation, our designers elevate the user experience, resulting in heightened conversions and increased sales.",
+        "image": "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-17.svg"
       },
       {
         "id": "5",
         "title": "Flexibility and Simplicity",
-        "description": "Our talented designers excel at fashioning basic designs with streamlined structures that lend themselves to effortless modification. They acknowledge that your e-commerce venture must adapt and evolve over time. Whether you need to refresh your product listings, make adjustments to your layout, or incorporate novel features, our designers provide the flexibility necessary to meet your evolving requirements. Leveraging their expertise, they swiftly enact minor modifications, ensuring that your website remains aligned with your business objectives while keeping maintenance and future updates straightforward."
+        "description": "Our talented designers excel at fashioning basic designs with streamlined structures that lend themselves to effortless modification. They acknowledge that your e-commerce venture must adapt and evolve over time. Whether you need to refresh your product listings, make adjustments to your layout, or incorporate novel features, our designers provide the flexibility necessary to meet your evolving requirements. Leveraging their expertise, they swiftly enact minor modifications, ensuring that your website remains aligned with your business objectives while keeping maintenance and future updates straightforward.",
+        "image": "https://github.com/SoftLion-Co/prototype-fr/blob/feature/blog-data-refactor/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-12.svg"
       },
       {
         "id": "6",
