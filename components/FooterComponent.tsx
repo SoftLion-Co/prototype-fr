@@ -34,10 +34,10 @@ const FooterComponent = () => {
       url: "https://www.facebook.com/people/SoftLion/100093384261914/",
       icon: <FiFacebook className={s.footer__icon} />,
     },
-    {
-      url: "#",
-      icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
-    },
+    // {
+    //   url: "#",
+    //   icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
+    // },
   ];
 
   return (
