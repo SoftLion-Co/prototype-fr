@@ -32,7 +32,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "14 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/3-enhancing-ecommerce/DrawKit-10.svg",
       tags: ["E-commerce", "Guides", "React"],
       text: "Explore front-end tech: TypeScript, Next.js, and React, transforming e-commerce. Uncover how they boost code quality, accelerate rendering, and craft interactive UIs, staying competitive in e-commerce with user-friendly platforms.",
     },
@@ -43,7 +43,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "12 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/4-shopify-development-company/DrawKit-1.svg",
       tags: ["Finance", "E-commerce", "Technology"],
       text: "Meet SoftLion, experts in Shopify development for businesses of all sizes. Learn why Shopify is a top choice for ecommerce and explore our wide range of services, from development to 24/7 customer support.",
     },
@@ -54,7 +54,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "11 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-12.svg",
       tags: ["Technology", "Development", "Guides"],
       text: "Discover Progressive Web Apps (PWAs) and their app-like experiences. Learn principles, tech insights, and building steps. Optimize performance and enhance discoverability. Unleash PWA potential for a digital revolution",
     },
@@ -65,7 +65,7 @@ function useBlogsData() {
       authorId: "PaulGraur",
       readingTime: "13 mins",
       imageSrc:
-        "https://i.ibb.co/6vkcVDN/photo-2023-08-15-19-43-53-removebg-preview.png",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-11.svg",
       tags: ["Technology", "Development", "UI/UX"],
       text: "Unlock the potential of frontend web development with insights into Bootstrap, Material-UI, and Tailwind CSS. This guide demystifies these frameworks, empowering you to craft captivating web experiences seamlessly.",
     },

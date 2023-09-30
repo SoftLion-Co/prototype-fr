@@ -84,7 +84,7 @@
   "3": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
     "articleName": "Enhancing E-commerce",
-    "articleimg": "https://assets.website-files.com/6364b6fd26e298b11fb9391f/6364b6fd26e2982ebab93dde_Cv_drawkit_Teamwork%20Illustrations-min.png",
+    "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/3-enhancing-ecommerce/DrawKit-3.svg",
     "readTime": "14 min",
     "author": "Paul Graur",
     "articles": [
@@ -92,7 +92,7 @@
         "id": "1",
         "title": "The Power of TypeScript, Next.js, and React",
         "description": "In today’s competitive digital landscape, building a robust and user-friendly e-commerce platform is paramount for businesses aiming to thrive online. Front-end development technologies play a pivotal role in creating exceptional user experiences and driving success in the e-commerce realm. This article delves into the significance of utilizing TypeScript, Next.js, and React in the development process, highlighting their advantages over competing technologies.",
-        "image": "https://t3.ftcdn.net/jpg/04/53/15/70/360_F_453157099_WDyakeU2ZoDdLDnfH8gVlhy4zI5fgcwX.jpg"
+        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/3-enhancing-ecommerce/DrawKit-5.svg"
       },
       {
         "id": "2",
@@ -166,7 +166,7 @@
   "5": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
     "articleName": "Mastering Progressive Web Apps: A Comprehensive Guide",
-    "articleimg": "https://assets.website-files.com/6364b6fd26e298b11fb9391f/6364b6fd26e2982ebab93dde_Cv_drawkit_Teamwork%20Illustrations-min.png",
+    "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-15.svg",
     "readTime": "11 min",
     "author": "Paul Graur",
     "articles": [
@@ -174,12 +174,13 @@
         "id": "1",
         "title": "Bridging the Gap Between Web and Apps",
         "description": "In the rapidly evolving digital landscape, Progressive Web Apps (PWAs) have emerged as a game-changer. They represent a fusion of traditional websites' widespread accessibility with the immersive, app-like experience of native applications. PWAs leverage the latest web technologies to deliver a reliable, fast, and engaging user experience across various devices and network conditions. This article aims to provide an in-depth exploration of the fundamental aspects of PWAs and their profound impact on modern web development practices.",
-        "image": "https://t3.ftcdn.net/jpg/04/53/15/70/360_F_453157099_WDyakeU2ZoDdLDnfH8gVlhy4zI5fgcwX.jpg"
+        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-2.svg"
       },
       {
         "id": "2",
         "title": "Understanding Progressive Web Apps (PWAs)",
-        "description": "Progressive Web Apps (PWAs) embody a paradigm shift in web development. They bridge the gap between web and mobile applications, providing users with an exceptional experience. Key defining attributes of PWAs include reliability, ensuring instant loading and performance even in uncertain or slow network environments; speed, responding swiftly to user interactions, enhancing engagement; and app-like behavior, immersing users in an interface akin to native apps. These characteristics position PWAs as a versatile and powerful solution for modern digital experiences."
+        "description": "Progressive Web Apps (PWAs) embody a paradigm shift in web development. They bridge the gap between web and mobile applications, providing users with an exceptional experience. Key defining attributes of PWAs include reliability, ensuring instant loading and performance even in uncertain or slow network environments; speed, responding swiftly to user interactions, enhancing engagement; and app-like behavior, immersing users in an interface akin to native apps. These characteristics position PWAs as a versatile and powerful solution for modern digital experiences.",
+        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-6.svg"
       },
       {
         "id": "3",
@@ -194,7 +195,8 @@
       {
         "id": "5",
         "title": "Building a Progressive Web App: Step-by-Step",
-        "description": "Developing a PWA requires a structured approach to harness its full potential. The initial step involves defining the app's architecture and selecting the appropriate technologies based on the project requirements. Implementing features such as caching strategies (e.g., utilizing Cache API for efficient storage and retrieval), enabling push notifications to re-engage users, and integrating background sync for seamless data synchronization are pivotal for an enhanced user experience. Rigorous testing across various browsers and devices is essential to ensure consistent functionality. Employing a progressive enhancement strategy guarantees that the PWA is accessible and functional across a broad spectrum of devices, amplifying its reach and impact."
+        "description": "Developing a PWA requires a structured approach to harness its full potential. The initial step involves defining the app's architecture and selecting the appropriate technologies based on the project requirements. Implementing features such as caching strategies (e.g., utilizing Cache API for efficient storage and retrieval), enabling push notifications to re-engage users, and integrating background sync for seamless data synchronization are pivotal for an enhanced user experience. Rigorous testing across various browsers and devices is essential to ensure consistent functionality. Employing a progressive enhancement strategy guarantees that the PWA is accessible and functional across a broad spectrum of devices, amplifying its reach and impact.",
+        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-12.svg"
       },
       {
         "id": "6",
@@ -206,7 +208,7 @@
   "6": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
     "articleName": "Mastering Web Development",
-    "articleimg": "https://assets.website-files.com/6364b6fd26e298b11fb9391f/6364b6fd26e2982ebab93dde_Cv_drawkit_Teamwork%20Illustrations-min.png",
+    "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-6.svg",
     "readTime": "13 min",
     "author": "Paul Graur",
     "articles": [
@@ -214,7 +216,7 @@
         "id": "1",
         "title": "The Essence of Frontend UI Frameworks",
         "description": "As someone deeply involved in the dynamic world of web development, the significance of selecting the right tools cannot be overstated. Imagine embarking on a project armed with a toolkit that perfectly aligns with your needs - this is the essence of frontend UI frameworks. In this exploration, we will uncover the potential of three prominent frameworks: Bootstrap, Material-UI, and Tailwind CSS. These frameworks are like the toolbox of a craftsman, ready to be opened and utilized to build remarkable digital experiences.",
-        "image": "https://t3.ftcdn.net/jpg/04/53/15/70/360_F_453157099_WDyakeU2ZoDdLDnfH8gVlhy4zI5fgcwX.jpg"
+        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-11.svg"
       },
       {
         "id": "2",
