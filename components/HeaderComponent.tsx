@@ -34,10 +34,10 @@ const HeaderComponent = () => {
       url: "https://www.facebook.com/people/SoftLion/100093384261914/",
       icon: <FiFacebook className={s.header_modal__container__icon} />,
     },
-    {
-      url: "#",
-      icon: <PiTelegramLogoDuotone className={s.header_modal__container__icon} />,
-    },
+    // {
+    //   url: "#",
+    //   icon: <PiTelegramLogoDuotone className={s.header_modal__container__icon} />,
+    // },
   ];
 
   const handleMenuItemClick = (index: any) => {
