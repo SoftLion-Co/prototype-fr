@@ -6,6 +6,7 @@ export interface BlogInterface {
   authorIconSrc?: string;
   authorId: string;
   readingTime: string;
+  publicationDate?: string;
   text: string;
   imageSrc: string;
   tags: string[];

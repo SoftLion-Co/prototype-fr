@@ -128,17 +128,15 @@
     height: 200px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
     align-items: end;
 
     @include for-size(laptop) {
       height: 295px;
-      gap: 30px;
     }
 
     @include for-size(desktop) {
       height: 381px;
-      gap: 39px;
     }
   }
 

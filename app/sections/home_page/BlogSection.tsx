@@ -37,7 +37,7 @@ const HomeBlog: FC = () => {
         </div>
       </div>
       <div className={s.container}>
-        <SeeMoreButtonComponent path="blogs" />
+        <SeeMoreButtonComponent path="blog" />
       </div>
     </section>
   );

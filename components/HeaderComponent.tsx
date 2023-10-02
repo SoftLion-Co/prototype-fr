@@ -206,9 +206,9 @@ const HeaderComponent = () => {
               </li>
             </ul>
           </nav>
-          <Link href="/login" className={s.header__btn_login__text}>
+          {/* <Link href="/login" className={s.header__btn_login__text}>
             <button className={s.header__btn_login}>Login</button>
-          </Link>
+          </Link> */}
           <button className={s.header__btn_burger} onClick={handleButtonClick}>
             <div className={`${s.header__icon} ${isModalOpen ? s.open : ""}`}>
               <div className={s.header__icon__div}></div>
@@ -461,7 +461,7 @@ const HeaderComponent = () => {
                     <p>Contact Us</p>
                   </Link>
                 </li>
-                <li className={s.header_modal__item}>
+                {/* <li className={s.header_modal__item}>
                   <div
                     className={classNames(
                       s.header__btn_login,
@@ -476,7 +476,7 @@ const HeaderComponent = () => {
                       Login
                     </Link>
                   </div>
-                </li>
+                </li> */}
               </ul>
             </div>
           )}

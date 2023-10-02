@@ -85,8 +85,8 @@
 
     @include for-size(tablet) {
       display: flex;
-      margin-left: auto;
-      margin-right: auto;
+      // margin-left: auto;
+      // margin-right: auto;
     }
     @include for-size(laptop) {
       gap: 42px;
