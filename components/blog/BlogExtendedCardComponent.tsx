@@ -44,7 +44,10 @@ const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
                 alt="Softlon image"
               />
             </Link>
-            <p className={s.info__author__name}>{author.name}</p>
+
+            <Link href={`/authors/${authorId}`}>
+              <p className={s.info__author__name}>{author.name}</p>
+            </Link>
           </div>
 
           <div className={s.info__box}>
