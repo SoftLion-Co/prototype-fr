@@ -175,7 +175,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
       </button>
       <p className={s.form__text}>
         By clicking on this button I agree to the{" "}
-        <Link href="privacy-policy" className={s.pr}>
+        <Link href="/privacy-policy" className={s.pr}>
         processing of personal data
       </Link>
       </p>
