@@ -8,7 +8,8 @@ function useBlogsData() {
       title: "The Role of Backend Development",
       category: "Technology",
       authorId: "PaulGraur",
-      readingTime: "12 mins",
+      readingTime: "12 min",
+      publicationDate: "jul 10, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/1-the-role-of-backend-development/example-scene-1.svg",
       tags: ["Technology", "Node.js"],
@@ -19,18 +20,20 @@ function useBlogsData() {
       title: "Basic Design, Sales Boost!",
       category: "UI/UX",
       authorId: "PaulGraur",
-      readingTime: "10 mins",
+      readingTime: "10 min",
+      publicationDate: "jul 11, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-11.svg",
       tags: ["UI/UX", "Guides"],
-      text: "Explore the impact of simple, functional design in e-commerce. Learn how it enhances user experience, loading speed, and product visibility. Timeless and clean designs, advocated by our seasoned designers, prioritize products, engage customers, and drive sales in the competitive e-commerce landscape.",
+      text: "Simple, functional design in e-commerce boosts UX, speed, and product visibility. Timeless, clean designs by seasoned designers prioritize products, engage customers, and drive sales in the competitive e-commerce scene.",
     },
     {
       id: 3,
       title: "Enhancing E-commerce",
       category: "E-commerce",
       authorId: "PaulGraur",
-      readingTime: "14 mins",
+      readingTime: "14 min",
+      publicationDate: "jul 13, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/3-enhancing-ecommerce/DrawKit-10.svg",
       tags: ["E-commerce", "Guides", "React"],
@@ -41,7 +44,8 @@ function useBlogsData() {
       title: "SoftLion — Your Shopify Development Company",
       category: "Finance",
       authorId: "PaulGraur",
-      readingTime: "12 mins",
+      readingTime: "12 min",
+      publicationDate: "aug 14, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/4-shopify-development-company/DrawKit-1.svg",
       tags: ["Finance", "E-commerce", "Technology"],
@@ -52,7 +56,8 @@ function useBlogsData() {
       title: "Unveiling the Power of Progressive Web Apps",
       category: "Technology",
       authorId: "PaulGraur",
-      readingTime: "11 mins",
+      readingTime: "11 min",
+      publicationDate: "sep 28, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-12.svg",
       tags: ["Technology", "Development", "Guides"],
@@ -63,7 +68,8 @@ function useBlogsData() {
       title: "Mastering Web Development",
       category: "Technology",
       authorId: "PaulGraur",
-      readingTime: "13 mins",
+      readingTime: "13 min",
+      publicationDate: "sep 28, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-11.svg",
       tags: ["Technology", "Development", "UI/UX"],

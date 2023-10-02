@@ -3,7 +3,7 @@ import s from "./SeeMoreButtonComponent.module.scss";
 import Link from "next/link";
 
 interface SeeMoreButtonComponentProps extends ComponentProps<"button"> {
-  path: "services" | "projects" | "blogs";
+  path: "services" | "projects" | "blog";
 }
 
 const SeeMoreButtonComponent: FC<SeeMoreButtonComponentProps> = ({ path }) => {
