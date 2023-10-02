@@ -12,7 +12,7 @@ function useBlogsData() {
       publicationDate: "jul 10, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/1-the-role-of-backend-development/example-scene-1.svg",
-      tags: ["Technology", "Node.js"],
+      tags: ["Technology", "Node.js", "Java"],
       text: "Explore essential backend development in this guide. Learn programming languages, frameworks, data management, testing, security, scalability, and deployment. Lay a solid foundation for efficient, resilient applications.",
     },
     {
@@ -24,7 +24,7 @@ function useBlogsData() {
       publicationDate: "jul 11, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-11.svg",
-      tags: ["UI/UX", "Guides"],
+      tags: ["UI/UX", "Guides", "Development"],
       text: "Simple, functional design in e-commerce boosts UX, speed, and product visibility. Timeless, clean designs by seasoned designers prioritize products, engage customers, and drive sales in the competitive e-commerce scene.",
     },
     {
