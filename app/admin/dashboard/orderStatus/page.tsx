@@ -7,8 +7,9 @@ import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayCo
 import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
+import { OrderCard } from "../../components/orderStatus/OrderStatusCard";
 
-interface ContactData {
+interface OrderStatusData {
   number: number;
   data: string;
   email: string;
@@ -16,8 +17,8 @@ interface ContactData {
   tell: number;
 }
 
-const contactUs = () => {
-  const users: ContactData[] = [
+const OrderStatus = () => {
+  const users: OrderStatusData[] = [
     {
       number: 1,
       data: "01.07.2023",
@@ -119,16 +120,16 @@ const contactUs = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
   };
 
-  useEffect(() => {
-    const count = users.filter(user =>
-      user.email.toLowerCase().includes(searchTerm.toLowerCase())
-    ).length;
-    setSearchResultCount(count);
-  }, [searchTerm, users]);
+  // useEffect(() => {
+  //   const count = users.filter(user =>
+  //     user.email.toLowerCase().includes(searchTerm.toLowerCase())
+  //   ).length;
+  //   setSearchResultCount(count);
+  // }, [searchTerm, users]);
 
   return (
     <AdminLayout>
-      <div className={s.contact}>
+      <div className={s.order}>
         <OrderStatusInfoComponent
           users={users}
           searchTerm={searchTerm}
@@ -145,11 +146,12 @@ const contactUs = () => {
         />
       </div>
 
-      <div className={s.content_editor}>
+      <div className={s.order_editor}>
         <MainPageHeading initialText="Статус замовлення" />
+        <OrderCard project = {{}} />
       </div>
     </AdminLayout>
   );
 };
 
-export default contactUs;
+export default OrderStatus;

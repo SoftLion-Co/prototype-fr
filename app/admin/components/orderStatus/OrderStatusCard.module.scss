@@ -1,0 +1,98 @@
+@import "@/styles/mixin";
+@import "@/styles/colors";
+
+.input__title {
+  width: 100%;
+  margin-bottom: 51px;
+
+  &::placeholder {
+    color: #488aa775;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+  }
+}
+
+.input {
+  background: rgba(175, 218, 237, 0.1);
+  border: 2px solid rgba(72, 138, 167, 0.3);
+  border-radius: 15px;
+  box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+  padding: 10px 20px;
+
+  &:hover,
+  &:focus {
+    border: 2px solid #488aa7;
+    outline: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.order {
+  width: 555px;
+  box-sizing: border-box;
+}
+
+.status {
+  border-radius: 15px;
+  border: 1px solid rgba(72, 138, 167, 0.75);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 28px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 61px;
+  margin-top: 18px;
+}
+.status__text {
+  color: #488aa7;
+  font-size: 16px;
+  line-height: 130.49%;
+  letter-spacing: 0.64px;
+}
+.progress {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 61px;
+}
+
+.input__label {
+  color: rgba(72, 138, 167, 0.5);
+  font-size: 14px;
+  line-height: 130.49%;
+  letter-spacing: 0.56px;
+  margin-left: 12px;
+}
+.input__progress {
+  font-size: 16px;
+  width: 100%;
+
+  &::placeholder {
+    color: rgba(72, 138, 167, 0.5);
+    font-size: 24px;
+    line-height: 130.49%;
+    letter-spacing: 0.96px;
+    text-align: right;
+  }
+}
+
+.buttons_container{
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  border-top: 2px solid #afdaed;
+  padding-top: 45px;
+}
+
+.status__info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

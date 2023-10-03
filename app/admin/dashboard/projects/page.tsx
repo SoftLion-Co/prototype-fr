@@ -7,139 +7,114 @@ import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayCo
 import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
+import { ProjectCard } from "../../components/projects/ProjectCard";
 
-interface ContactData {
+export interface ProjectData {
   number: number;
-  data: string;
-  email: string;
+  title: string;
   description: string;
-  tell: number;
 }
 
-const contactUs = () => {
-  const users: ContactData[] = [
+const projects = () => {
+  const projects: ProjectData[] = [
     {
       number: 1,
-      data: "01.07.2023",
-      tell: +380,
-      email: "email1@example.com",
-      description: "Description 1",
+      title: "Lorem",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 2,
-      data: "01.07.2023",
-      tell: +380,
-      email: "email2@example.com",
-      description: "Description 2",
+      title: "Lorem 2",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
+    },
+    {
+      number: 3,
+      title: "Lorem 3",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
+    },
+    {
+      number: 4,
+      title: "Lorem 4",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 5,
-      data: "01.07.2023",
-      tell: +380,
-      email: "email3@example.com",
-      description: "Description 3",
+      title: "Lorem 5",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 6,
-      data: "02.07.2023",
-      tell: +380,
-      email: "email4@example.com",
-      description: "Description 4",
+      title: "Lorem 6",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 7,
-      data: "03.07.2023",
-      tell: +380,
-      email: "email5@example.com",
-      description: "Description 5",
+      title: "Lorem 7",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 8,
-      data: "04.07.2023",
-      tell: +380,
-      email: "email6@example.com",
-      description: "Description 6",
+      title: "Lorem 8",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 9,
-      data: "05.07.2023",
-      tell: +380,
-      email: "email7@example.com",
-      description: "Description 7",
+      title: "Lorem 9",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 10,
-      data: "06.07.2023",
-      tell: +380,
-      email: "email8@example.com",
-      description: "Description 8",
+      title: "Lorem 10",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
     {
       number: 11,
-      data: "07.07.2023",
-      tell: +380,
-      email: "email9@example.com",
-      description: "Description 9",
-    },
-    {
-      number: 12,
-      data: "08.07.2023",
-      tell: +380,
-      email: "email10@example.com",
-      description: "Description 10",
-    },
-    {
-      number: 13,
-      data: "09.07.2023",
-      tell: +380,
-      email: "email11@example.com",
-      description: "Description 11",
-    },
-    {
-      number: 14,
-      data: "10.07.2023",
-      tell: +380,
-      email: "email12@example.com",
-      description: "Description 12",
-    },
-    {
-      number: 15,
-      data: "11.07.2023",
-      tell: +380,
-      email: "email13@example.com",
-      description: "Description 13",
+      title: "Lorem 11",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Atque, veniam nisi! Itaque animi consequatur magni aliasquaerat eveniet maxime, explicabo commodi ipsam tenetur,reprehenderit dolorum nostrum, odio pariatur sed. Ex nihilcum illum veniam.",
     },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultCount, setSearchResultCount] = useState(0);
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
+  const [openProject, setOpenProject] = useState<ProjectData | null>(null);
 
   const handleEditButtonClick = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
   };
 
-  useEffect(() => {
-    const count = users.filter(user =>
-      user.email.toLowerCase().includes(searchTerm.toLowerCase())
-    ).length;
-    setSearchResultCount(count);
-  }, [searchTerm, users]);
+  // useEffect(() => {
+  //   const count = projects.filter((project) => project.email.toLowerCase().includes(searchTerm.toLowerCase())).length;
+  //   setSearchResultCount(count);
+  // }, [searchTerm, projects]);
 
   return (
     <AdminLayout>
       <div className={s.contact}>
         <ProjectsInfoComponent
-          users={users}
+          projects={projects}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
-          onCardClick={() => {}}
+          onCardClick={(project) => {
+            setOpenProject(project);
+          }}
           onEditButtonClick={handleEditButtonClick}
         />
 
         <ItemCountDisplayComponent
           text="Кількість проектів"
-          number={users.length}
+          number={projects.length}
           icon={IconType.People}
           searchResultCount={searchResultCount}
         />
@@ -147,9 +122,11 @@ const contactUs = () => {
 
       <div className={s.content_editor}>
         <MainPageHeading initialText="Проекти" />
+        {openProject && <ProjectCard project={openProject} />}
       </div>
+    
     </AdminLayout>
   );
 };
 
-export default contactUs;
+export default projects;

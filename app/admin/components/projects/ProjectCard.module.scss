@@ -1,0 +1,43 @@
+@import "@/styles/mixin";
+@import "@/styles/colors";
+
+.project__card {
+  padding: 40px 42px 50px 56px;
+  margin: 50px;
+  margin-top: 0;
+  border: 1px solid $heading-blue-color;
+  border-radius: 15px;
+
+  color: $heading-blue-color;
+}
+
+.project__title {
+  color: #003349;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 130.49%;
+  letter-spacing: 0.96px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project__descripcion {
+  color: #003349;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130.49%;
+  letter-spacing: 0.64px;
+  margin-bottom: 80px;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  border-top: 2px solid #afdaed;
+  padding-top: 45px;
+}
+

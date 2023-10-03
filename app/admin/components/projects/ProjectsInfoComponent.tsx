@@ -1,25 +1,18 @@
 import React from "react";
 import s from "./ProjectsInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
-
-interface ContactData {
-  number: number;
-  data: string;
-  email: string;
-  description: string;
-  tell: number;
-}
+import { ProjectData } from "../../dashboard/projects/page";
 
 interface Props {
-  users: ContactData[];
+  projects: ProjectData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onCardClick: (ContactData: ContactData) => void;
+  onCardClick: (ProjectData: ProjectData) => void;
   onEditButtonClick: () => void;
 }
 
 const ProjectsInfoComponent: React.FC<Props> = ({
-  users,
+  projects,
   searchTerm,
   setSearchTerm,
   onCardClick,
@@ -29,8 +22,8 @@ const ProjectsInfoComponent: React.FC<Props> = ({
     setSearchTerm(event.target.value);
   };
 
-  const filteredUsers = users.filter(user =>
-    user.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredUsers = projects.filter(project =>
+    project.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -46,11 +39,10 @@ const ProjectsInfoComponent: React.FC<Props> = ({
 
       <ul className={s.user__list}>
         {filteredUsers.map(user => (
-          <li className={s.user__list__item} key={user.number}>
-            <div className={s.user__list__information} onClick={() => onCardClick(user)}>
+          <li className={s.user__list__item} key={user.number} onClick={() => onCardClick(user)}>
+            <div className={s.user__list__information}>
               <p>{user.number}</p>
-              <p>{user.description}</p>
-              <p>{user.data}</p>
+              <p>{user.title}</p>
             </div>
           </li>
         ))}
