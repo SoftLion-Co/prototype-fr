@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import BlogsSection from "@/app/sections/blog_page/BlogsSection";
+import { Helmet } from "react-helmet";
 
 declare global {
   interface Window {
@@ -32,6 +33,10 @@ const Blogs = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>SoftLion | Blog</title>
+      </Helmet>
+
       <BlogsSection />
     </div>
   );
