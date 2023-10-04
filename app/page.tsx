@@ -1,5 +1,6 @@
 "use client";
 
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import HeroSection from "./sections/home_page/HeroSection";
@@ -32,7 +33,11 @@ const Home = () => {
   }, []);
 
   return (
+    
     <div className={s.home_page}>
+      <Helmet>
+        <title>Web development company</title>
+      </Helmet>
       <HeroSection />
       {/* <CookiesComponent /> */}
       <TechnologiesSection />

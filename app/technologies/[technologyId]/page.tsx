@@ -1,5 +1,5 @@
 "use client";
-
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 
@@ -132,6 +132,10 @@ const Technology = ({ params }: { params: any }) => {
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
+      <Helmet>
+        <title>SoftLion | Technologies</title>
+      </Helmet>
+
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <HeroSection heroTech={data.heroSection} />

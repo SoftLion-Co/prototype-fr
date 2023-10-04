@@ -1,5 +1,6 @@
 "use client";
 
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import DesignSection from "../sections/service_page/DesignSection";
@@ -32,6 +33,10 @@ const Services = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>SoftLion | Services</title>
+      </Helmet>
+
       <InfoNavigationComponent links={links} />
       <div id="design">
         <DesignSection />
