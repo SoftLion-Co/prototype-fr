@@ -33,7 +33,7 @@ const Services = () => {
 
   return (
     <div>
-      <Helmet>
+      <Helmet key={window.location.pathname}>
         <title>SoftLion | Services</title>
       </Helmet>
 

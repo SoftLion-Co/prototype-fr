@@ -43,7 +43,7 @@ const Author = () => {
 
   return (
     <div style={{ paddingBottom: "5%" }}>
-      <Helmet>
+      <Helmet key={window.location.pathname}>
         <title>SoftLion | Author</title>
       </Helmet>
 
