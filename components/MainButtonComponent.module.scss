@@ -46,6 +46,11 @@
     background: $button-white-background;
     color: black;
     box-shadow: $button-white-shadow;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+      background: #afdaed;
+    }
   }
 
   &.darkBlueButton {
