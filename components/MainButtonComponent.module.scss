@@ -31,21 +31,6 @@
     border-radius: 15px;
   }
 
-  animation: buttonShadowAnimation $button-shadow-duration infinite linear;
-
-  @keyframes buttonShadowAnimation {
-    0%,
-    100% {
-      box-shadow: 0 0 30px #76bdd335;
-    }
-    33% {
-      box-shadow: 0 0 30px #a0189b35;
-    }
-    66% {
-      box-shadow: 0 0 30px #13eb9035;
-    }
-  }
-
   &.blueButton {
     background: $button-blue-background;
     color: black;

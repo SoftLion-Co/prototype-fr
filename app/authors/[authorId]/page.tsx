@@ -1,5 +1,6 @@
 "use client";
 
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
@@ -42,6 +43,10 @@ const Author = () => {
 
   return (
     <div style={{ paddingBottom: "5%" }}>
+      <Helmet>
+        <title>SoftLion | Author</title>
+      </Helmet>
+
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}

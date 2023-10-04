@@ -1,5 +1,6 @@
 "use client";
 
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import ContactUsSection from "../sections/contact_us_page/ContactUsSection";
@@ -26,6 +27,10 @@ const ContactUs: React.FC = () => {
 
   return (
     <div className={s.contact_page}>
+      <Helmet>
+        <title>SoftLion | Contact Us</title>
+      </Helmet>
+
       <ContactUsSection />
     </div>
   );

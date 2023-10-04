@@ -10,5 +10,11 @@
     "occupation": "CTO",
     "imgSrc": "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_400_400/0/1687091718713?e=1698278400&v=beta&t=phbfafcOAP7SqTABmRKeFeAZ_2qGo-fY5gxP9o_GwPc",
     "generalInfo": "I'm Matviy Yuri, an experienced IT professional with a robust background in outsourcing, outstaffing, and consulting services. With numerous years of industry expertise, I currently hold the position of Chief Technology Officer (CTO) at SoftLion, a leading company in the ecommerce and blockchain sectors. SoftLion stands out as a highly promising entity in these domains. In my role as CTO, I am deeply involved in harnessing an array of technologies to drive our projects forward. My proficiency spans across a spectrum of technologies including React, Vue, Angular, Node.js, Java, C#, and various databases. I've honed my skills over the years, not only in programming but also in effectively organizing and strategizing to ensure the optimal functioning and growth of our company. For more detailed insights about my journey and SoftLion's impactful ventures, feel free to explore our website. Your curiosity is always welcomed."
+  },
+  "TaniaHlushko": {
+    "name": "Tania Hlushko",
+    "occupation": "Designer",
+    "imgSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/main/images/avatar/Tetiana.jpg?raw=true",
+    "generalInfo": "I'm Tanya, a highly skilled UI/UX designer with extensive experience. My expertise lies in creating engaging landing pages and e-commerce designs that embody the essence of a company, particularly for clients associated with SoftLion. I am deeply passionate about my work and make it a priority to stay up-to-date with the latest trends in web design, ensuring that the projects I undertake are always modern and visually appealing. My dedication to design excellence is evident in every project, making me a valuable asset to the SoftLion team."
   }
 }

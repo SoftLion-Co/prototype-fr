@@ -7,24 +7,24 @@ function useBlogsData() {
       id: 1,
       title: "The Role of Backend Development",
       category: "Technology",
-      authorId: "PaulGraur",
+      authorId: "YuriiMatvii",
       readingTime: "12 min",
       publicationDate: "jul 10, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/1-the-role-of-backend-development/example-scene-1.svg",
-      tags: ["Technology", "Node.js"],
+      tags: ["Technology", "Node.js", "Java"],
       text: "Explore essential backend development in this guide. Learn programming languages, frameworks, data management, testing, security, scalability, and deployment. Lay a solid foundation for efficient, resilient applications.",
     },
     {
       id: 2,
       title: "Basic Design, Sales Boost!",
       category: "UI/UX",
-      authorId: "PaulGraur",
+      authorId: "TaniaHlushko",
       readingTime: "10 min",
       publicationDate: "jul 11, 2023",
       imageSrc:
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-11.svg",
-      tags: ["UI/UX", "Guides"],
+      tags: ["UI/UX", "Guides", "Development"],
       text: "Simple, functional design in e-commerce boosts UX, speed, and product visibility. Timeless, clean designs by seasoned designers prioritize products, engage customers, and drive sales in the competitive e-commerce scene.",
     },
     {
@@ -55,7 +55,7 @@ function useBlogsData() {
       id: 5,
       title: "Unveiling the Power of Progressive Web Apps",
       category: "Technology",
-      authorId: "PaulGraur",
+      authorId: "YuriiMatvii",
       readingTime: "11 min",
       publicationDate: "sep 28, 2023",
       imageSrc:
@@ -67,7 +67,7 @@ function useBlogsData() {
       id: 6,
       title: "Mastering Web Development",
       category: "Technology",
-      authorId: "PaulGraur",
+      authorId: "YuriiMatvii",
       readingTime: "13 min",
       publicationDate: "sep 28, 2023",
       imageSrc:
