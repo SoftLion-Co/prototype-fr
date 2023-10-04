@@ -3,6 +3,7 @@ import s from "./OurTeamCardComponent.module.scss";
 import { FC } from "react";
 import classNames from "classnames";
 import { FiLinkedin } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 interface TeamsProps {
   data: {
@@ -16,6 +17,9 @@ interface TeamsProps {
 }
 
 const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
+  const pathname = usePathname();
+  const isOnHomePage = pathname === "/";
+
   const memberClassName = isActive ? classNames(s.member, s.active) : s.member;
 
   return (
@@ -31,7 +35,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
       </div>
       <div className={s.member__information}>
         <p className={s.member__name}>{data.name}</p>
-        {isActive && (
+        {isActive || isOnHomePage ? (
           <>
             <p className={s.member__position}>{data.position}</p>
             <a
@@ -43,7 +47,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
               <FiLinkedin className={s.linkedin__icon} />
             </a>
           </>
-        )}
+        ): null}
       </div>
     </div>
   );

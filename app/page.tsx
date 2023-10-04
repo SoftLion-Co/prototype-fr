@@ -1,5 +1,6 @@
 "use client";
 
+import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import HeroSection from "./sections/home_page/HeroSection";
@@ -10,6 +11,7 @@ import BlogSection from "./sections/home_page/BlogSection";
 import OurServicesSection from "./sections/home_page/OurServicesSection";
 import TechnologiesSection from "./sections/home_page/TechnologiesSection";
 import OurTeamSetcion from "./sections/home_page/OurTeamSection";
+import OurTeamStatic from "./sections/home_page/OurTeamStatic";
 
 const Home = () => {
   useEffect(() => {
@@ -32,14 +34,19 @@ const Home = () => {
   }, []);
 
   return (
+    
     <div className={s.home_page}>
+      <Helmet>
+        <title>Web development company</title>
+      </Helmet>
       <HeroSection />
       {/* <CookiesComponent /> */}
       <TechnologiesSection />
       <OurServicesSection />
       <OurProjectsSection />
       <BlogSection />
-      <OurTeamSetcion />
+      {/* <OurTeamSetcion /> */}
+      <OurTeamStatic />
       <ContactUsSection />
     </div>
   );

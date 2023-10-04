@@ -1,0 +1,39 @@
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+@import "./../../../styles/mixin";
+
+.team{
+    &__container{
+        justify-content: space-between;
+
+        display: none;
+        @include for-size (tablet){
+          display: flex;
+        }
+    }
+
+    &__title {
+      box-sizing: border-box;
+      margin-bottom: 25px;
+      width: 100%;
+  
+      @include for-size(tablet) {
+        text-align: left;
+        margin-bottom: 47px;
+      }
+  
+      @include for-size(laptop) {
+        margin-bottom: 76px;
+      }
+  
+      @include for-size(desktop) {
+        margin-bottom: 99px;
+      }
+    }
+}
+
+.mobile__slider {
+    @include for-size(tablet) {
+      display: none;
+    }
+  }
