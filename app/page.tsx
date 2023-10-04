@@ -35,7 +35,7 @@ const Home = () => {
 
   return (
     <div className={s.home_page}>
-      <Helmet key={window.location.pathname}>
+      <Helmet>
         <title>Web development company</title>
       </Helmet>
 

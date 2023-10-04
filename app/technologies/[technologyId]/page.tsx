@@ -132,7 +132,7 @@ const Technology = ({ params }: { params: any }) => {
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
-      <Helmet key={window.location.pathname}>
+      <Helmet>
         <title>SoftLion | Technologies</title>
       </Helmet>
 

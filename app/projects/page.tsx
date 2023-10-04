@@ -29,7 +29,7 @@ const Projects = () => {
 
   return (
     <div>
-      <Helmet key={window.location.pathname}>
+      <Helmet>
         <title>SoftLion | Our Projects</title>
       </Helmet>
 
