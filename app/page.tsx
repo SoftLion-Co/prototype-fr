@@ -33,11 +33,11 @@ const Home = () => {
   }, []);
 
   return (
-    
     <div className={s.home_page}>
-      <Helmet>
+      <Helmet key={window.location.pathname}>
         <title>Web development company</title>
       </Helmet>
+
       <HeroSection />
       {/* <CookiesComponent /> */}
       <TechnologiesSection />
