@@ -27,7 +27,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <div className={s.contact_page}>
-      <Helmet key={window.location.pathname}>
+      <Helmet>
         <title>SoftLion | Contact Us</title>
       </Helmet>
 
