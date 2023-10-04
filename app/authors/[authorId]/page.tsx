@@ -1,6 +1,5 @@
 "use client";
 
-import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
@@ -29,6 +28,9 @@ const Author = () => {
 
     document.head.appendChild(script1);
     document.head.appendChild(script2);
+
+    // Set document title
+    document.title = "SoftLion | Authors";
   }, []);
 
   const id = usePathname().split("/").reverse()[0];
@@ -43,10 +45,6 @@ const Author = () => {
 
   return (
     <div style={{ paddingBottom: "5%" }}>
-      <Helmet key={window.location.pathname}>
-        <title>SoftLion | Author</title>
-      </Helmet>
-
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}

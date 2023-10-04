@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import s from "./page.module.scss";
 import ResultSection from "@/app/sections/project_page/ResultSection";
 import RequestSection from "@/app/sections/project_page/RequestSection";
@@ -6,6 +9,7 @@ import SolutionSection from "@/app/sections/project_page/SolutionSection";
 import BlogSection from "@/app/sections/home_page/BlogSection";
 import ProjectContactUs from "@/app/sections/project_page/ProjectContactUs";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+import useDocumentTitle from "@/hooks/useDocumentTitle";
 
 const response = {
   ProjectDescriptionSection: {
@@ -96,6 +100,8 @@ const links = [
 ];
 
 const Project = () => {
+  useDocumentTitle(response.ProjectDescriptionSection.title);
+
   return (
     <div>
       <InfoNavigationComponent links={links} />

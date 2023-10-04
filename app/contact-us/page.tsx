@@ -1,6 +1,5 @@
 "use client";
 
-import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import ContactUsSection from "../sections/contact_us_page/ContactUsSection";
@@ -23,14 +22,13 @@ const ContactUs: React.FC = () => {
 
     document.head.appendChild(script1);
     document.head.appendChild(script2);
+    
+    // Set document title
+    document.title = "SoftLion | Contact Us";
   }, []);
 
   return (
     <div className={s.contact_page}>
-      <Helmet key={window.location.pathname}>
-        <title>SoftLion | Contact Us</title>
-      </Helmet>
-
       <ContactUsSection />
     </div>
   );

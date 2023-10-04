@@ -1,6 +1,5 @@
 "use client";
 
-import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import DesignSection from "../sections/service_page/DesignSection";
@@ -27,16 +26,15 @@ const Services = () => {
 
     document.head.appendChild(script1);
     document.head.appendChild(script2);
+
+    // Set document title
+    document.title = "SoftLion | Services";
   }, []);
 
   const links = [{ title: "Services", href: "#" }];
 
   return (
     <div>
-      <Helmet key={window.location.pathname}>
-        <title>SoftLion | Services</title>
-      </Helmet>
-
       <InfoNavigationComponent links={links} />
       <div id="design">
         <DesignSection />

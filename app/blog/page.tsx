@@ -2,7 +2,6 @@
 
 import React, { useEffect } from "react";
 import BlogsSection from "@/app/sections/blog_page/BlogsSection";
-import { Helmet } from "react-helmet";
 
 declare global {
   interface Window {
@@ -27,16 +26,15 @@ const Blogs = () => {
       gtag("js", { "new Date()": new Date() });
       gtag("config", "G-YPC94QJXCN");
     };
+
+    // Set document title
+    document.title = "SoftLion | Blog";
   }, []);
 
   const links = [{ title: "Blog", href: "#" }];
 
   return (
     <div>
-      <Helmet key={window.location.pathname}>
-        <title>SoftLion | Blog</title>
-      </Helmet>
-
       <BlogsSection />
     </div>
   );

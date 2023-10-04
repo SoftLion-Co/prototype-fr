@@ -1,5 +1,4 @@
 "use client";
-import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 
@@ -118,7 +117,7 @@ const Technology = ({ params }: { params: any }) => {
 
   const data = getData();
 
-  if (data === null || undefined) {
+  if (data === null) {
     return <h1>Data not found</h1>;
   }
 
@@ -129,13 +128,14 @@ const Technology = ({ params }: { params: any }) => {
     },
   ];
 
+  useEffect(() => {
+    // Set document title
+    document.title = `SoftLion | ${data.heroSection.titleTech}`;
+  });
+
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
-      <Helmet key={window.location.pathname}>
-        <title>SoftLion | Technologies</title>
-      </Helmet>
-
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <HeroSection heroTech={data.heroSection} />
