@@ -201,6 +201,7 @@
     margin-bottom: 5%;
 
     &__icon {
+      object-fit: cover;
       margin: 0px 5px 0px 0;
 
       @include for-size(laptop) {

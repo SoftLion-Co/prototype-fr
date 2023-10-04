@@ -7,7 +7,7 @@ function useBlogsData() {
       id: 1,
       title: "The Role of Backend Development",
       category: "Technology",
-      authorId: "PaulGraur",
+      authorId: "YuriiMatvii",
       readingTime: "12 min",
       publicationDate: "jul 10, 2023",
       imageSrc:
@@ -19,7 +19,7 @@ function useBlogsData() {
       id: 2,
       title: "Basic Design, Sales Boost!",
       category: "UI/UX",
-      authorId: "PaulGraur",
+      authorId: "TaniaHlushko",
       readingTime: "10 min",
       publicationDate: "jul 11, 2023",
       imageSrc:
@@ -55,7 +55,7 @@ function useBlogsData() {
       id: 5,
       title: "Unveiling the Power of Progressive Web Apps",
       category: "Technology",
-      authorId: "PaulGraur",
+      authorId: "YuriiMatvii",
       readingTime: "11 min",
       publicationDate: "sep 28, 2023",
       imageSrc:
@@ -67,7 +67,7 @@ function useBlogsData() {
       id: 6,
       title: "Mastering Web Development",
       category: "Technology",
-      authorId: "PaulGraur",
+      authorId: "YuriiMatvii",
       readingTime: "13 min",
       publicationDate: "sep 28, 2023",
       imageSrc:

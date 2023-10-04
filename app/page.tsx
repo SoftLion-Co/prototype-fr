@@ -10,6 +10,7 @@ import BlogSection from "./sections/home_page/BlogSection";
 import OurServicesSection from "./sections/home_page/OurServicesSection";
 import TechnologiesSection from "./sections/home_page/TechnologiesSection";
 import OurTeamSetcion from "./sections/home_page/OurTeamSection";
+import OurTeamStatic from "./sections/home_page/OurTeamStatic";
 
 const Home = () => {
   useEffect(() => {
@@ -39,7 +40,8 @@ const Home = () => {
       <OurServicesSection />
       <OurProjectsSection />
       <BlogSection />
-      <OurTeamSetcion />
+      {/* <OurTeamSetcion /> */}
+      <OurTeamStatic />
       <ContactUsSection />
     </div>
   );
