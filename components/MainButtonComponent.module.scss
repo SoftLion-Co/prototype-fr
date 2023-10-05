@@ -12,12 +12,6 @@
   @include for-size(tablet) {
     padding: 9px 23px;
     border-radius: 7px;
-    transition: transform 0.3s ease-in-out;
-
-    &:focus,
-    &:hover {
-      transform: scale(1.03);
-    }
   }
 
   @include for-size(laptop) {
