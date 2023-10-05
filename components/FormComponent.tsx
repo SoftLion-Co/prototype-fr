@@ -148,7 +148,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         </div>
         <div className={s.form__input}>
       <textarea
-        placeholder='Short describe ur idea'
+        placeholder='Short describe your idea'
         cols={3}
         rows={1}
         draggable={false}

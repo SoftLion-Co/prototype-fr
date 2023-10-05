@@ -1,0 +1,87 @@
+"use client";
+
+import HeadingComponent from "@/components/HeadingComponent";
+import s from "./OurTeamStatic.module.scss";
+import classNames from "classnames";
+import OurTeamCard from "@/components/team/OurTeamCardComponent";
+import { Carousel, Embla } from "@mantine/carousel";
+import { useState } from "react";
+import MobileSliderComponent from "@/components/MobileSliderComponent";
+import Image, { StaticImageData } from "next/image";
+
+import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
+import AvatarYan from "./../../../images/avatar/Yan.jpeg";
+
+const OurTeamSetcion = () => {
+  interface Props {
+    id: string;
+    name: string;
+    position: string;
+    avatar: string | StaticImageData;
+    linkedinUrl: string;
+  }
+
+  const response: Props[] = [
+    {
+      id: "1",
+      name: "Pavlo Graur",
+      position: "CEO",
+      avatar:
+        "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_800_800/0/1670855656809?e=1698883200&v=beta&t=Xrv7PpcxyXFk8pXqXn-jXQxYVgcXoEgL4XWwX4LLPH0",
+      linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
+    },
+    {
+      id: "2",
+      name: "Yurii Matvii",
+      position: "CTO",
+      avatar:
+        "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_800_800/0/1687091721886?e=1698883200&v=beta&t=-ZgKukPHBgsrNkj0otDaHor8eqc-i39V6zYc9S7RgS8",
+      linkedinUrl: "https://www.linkedin.com/in/yurii-matvii-179766230/",
+    },
+    {
+      id: "3",
+      name: "Dima Klapiychuk",
+      position: "COO",
+      avatar:
+        "https://media.licdn.com/dms/image/D4D03AQHAgP85JknqKA/profile-displayphoto-shrink_800_800/0/1686751374128?e=1698883200&v=beta&t=Ks5_aBaMfSvX5Obq1Xx-XhwMB6J4qD1M79q_M7coCUo",
+      linkedinUrl: "https://www.linkedin.com/in/dima-klapiychuk-22a989268/",
+    },
+    {
+      id: "4",
+      name: "Vira Lyzen",
+      position: "Head Of Development",
+      avatar:
+        "https://media.licdn.com/dms/image/D4D03AQGnDWtRjuaD0w/profile-displayphoto-shrink_800_800/0/1692445989303?e=1698883200&v=beta&t=8y0QUHF6KuNjAFL46TCj8bzUFdc7ZjFJ_9Rs141LXjA",
+      linkedinUrl: "https://www.linkedin.com/in/vira-lyzen-a63ba1281/",
+    },
+    {
+      id: "5",
+      name: "Tetiana Hlushko",
+      position: "Designer",
+      avatar: AvatarTetiana,
+      linkedinUrl: "",
+    },
+  ];
+
+  return (
+    <div className={s.team}>
+      <div className={s.container}>
+        <div className={s.team__title}></div>
+        <HeadingComponent customClass={s.team__title} text="Our team" />
+        <div className={s.team__container}>
+            {response.map((member, index) => (
+                <OurTeamCard data={member} isActive={false} />
+            ))}
+         </div>
+      </div>
+      <div className={s.mobile__slider}>
+        <MobileSliderComponent
+          data={response}
+          SlideComponent={OurTeamCard} 
+        />
+      </div>
+    </div>
+  );
+};
+
+export default OurTeamSetcion;
