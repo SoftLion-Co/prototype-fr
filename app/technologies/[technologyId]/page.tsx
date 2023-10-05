@@ -117,7 +117,7 @@ const Technology = ({ params }: { params: any }) => {
 
   const data = getData();
 
-  if (data === null) {
+  if (data === null || undefined) {
     return <h1>Data not found</h1>;
   }
 
