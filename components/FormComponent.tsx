@@ -6,6 +6,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import s from "./FormComponent.module.scss";
 import axios from "axios";
+import orderProjectService from "./../services/order-project-service"; 
 
 interface FormProps {
   title: string;
@@ -21,48 +22,48 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
   const [phone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
-
+  
   const {
-    handleSubmit,
-    register,
-    formState: { errors },
-    reset,
-    watch,
-  } = useForm<FormData>({
-    defaultValues: {
-      email: "",
-      phone: "",
-      description: "",
-    },
-  });
-
-  const watchEmail = watch("email");
-  const watchDescription = watch("description");
-
-  const handleFormSubmit = async (data: FormData) => {
-    try {
-      if (!data.email || !phone || !data.description) {
-        console.log("Please fill in all required fields");
-        return;
+	  handleSubmit,
+	  register,
+	  formState: { errors },
+	  reset,
+	  watch,
+	} = useForm<FormData>({
+		defaultValues: {
+			email: "",
+			phone: "",
+			description: "",
+		},
+	});
+	
+	const watchEmail = watch("email");
+	const watchDescription = watch("description");
+	
+	const handleFormSubmit = async (data: FormData) => {
+		try {
+			if (!data.email || !phone || !data.description) {
+				console.log("Please fill in all required fields");
+				return;
       }
 
       console.log("email:", data.email);
       console.log("phone:", phone);
       console.log("description:", data.description);
-
+		
       const formData = {
-        email: data.email,
-        phone: "+" + phone,
-        description: data.description,
+			email: data.email,
+			phone: "+" + phone,
+			description: data.description,
       };
-
-      // Replace "https://example.com/api/submit" with your actual backend endpoint
-      const response = await axios.post(
-        "https://example.com/api/submit",
-        formData
-      );
-
-      console.log("Form successfully submitted:", response.data);
+		
+		const response = await orderProjectService.createOrderProject(formData);
+      if(response.result!){
+			console.log("Form successfully submitted:", response.result);
+		}
+		else{
+			console.log("Oops:", response.error);
+		}
 
       setIsFormSubmitted(true);
       reset();

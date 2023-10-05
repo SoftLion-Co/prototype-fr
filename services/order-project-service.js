@@ -1,4 +1,4 @@
-const baseUrl = "https://localhost:7296/api";
+import baseUrl from "./base-links/config.json"
 
 class OrderProjectService {
 
@@ -55,6 +55,7 @@ class OrderProjectService {
 			throw new Error('Error creating orderProject');
 		}
 		console.log(await response.json())
+		return response.ison();
 	}
 
 	async updateOrderProject(orderProjectData) {
@@ -65,7 +66,7 @@ class OrderProjectService {
 		},
 			body: JSON.stringify(orderProjectData)
 		});
-
+		console,log(orderProjectData);
 		if (!response.ok) {
 			throw new Error('Error updating orderProject');
 		}

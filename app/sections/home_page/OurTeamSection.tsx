@@ -10,8 +10,6 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import Image, { StaticImageData } from "next/image";
 import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
-import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
-import AvatarYan from "./../../../images/avatar/Yan.jpeg";
 import AuthorService from "./../../../services/author-service";
 
 const OurTeamSetcion = () => {
@@ -23,7 +21,7 @@ const OurTeamSetcion = () => {
     name: string;
     employment: string;
     avatar: string | StaticImageData;
-    //   linkedinUrl: string;
+    linkedinUrl: string;
   }
 
   const getAllShortAuthors = async () => {

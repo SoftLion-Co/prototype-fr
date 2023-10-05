@@ -10,7 +10,7 @@ interface TeamsProps {
     employment: string;
     avatar: string | StaticImageData;
     id: string;
-    linkedinUrl?: string;
+    linkedinUrl: string;
   };
   isActive?: boolean;
 }

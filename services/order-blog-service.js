@@ -1,4 +1,4 @@
-const baseUrl = "https://localhost:7296/api";
+import baseUrl from "./base-links/config.json"
 
 class OrderBlogService {
 
