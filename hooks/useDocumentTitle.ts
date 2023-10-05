@@ -1,11 +1,9 @@
-"use client";
-
 import { useEffect } from "react";
 
-const useDocumentTitle = (title: any) => {
+const useDocumentTitle = (title: string) => {
   useEffect(() => {
-    document.title = `SoftLion | ${title}`; 
-  }, [title]); 
+    document.title = `SoftLion | ${title}`;
+  }, [title]);
 };
 
 export default useDocumentTitle;

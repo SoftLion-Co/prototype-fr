@@ -5,7 +5,8 @@ import s from "./layout.module.scss";
 
 export const metadata = {
   title: "SoftLion",
-  description: "Embrace the Lion's Share Technological Advancements with SoftLion",
+  description:
+    "Embrace the Lion's Share Technological Advancements with SoftLion",
 };
 
 export default function RootLayout({

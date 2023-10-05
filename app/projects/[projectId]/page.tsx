@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import React from "react";
 import s from "./page.module.scss";
@@ -10,6 +10,7 @@ import BlogSection from "@/app/sections/home_page/BlogSection";
 import ProjectContactUs from "@/app/sections/project_page/ProjectContactUs";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import useDocumentTitle from "@/hooks/useDocumentTitle";
+import UseClientComponent from "@/hooks/useClientComponent";
 
 const response = {
   ProjectDescriptionSection: {
@@ -99,11 +100,12 @@ const links = [
   { title: response.ProjectDescriptionSection.title, href: "#" },
 ];
 
-const Project = () => {
-  useDocumentTitle(response.ProjectDescriptionSection.title);
+const Project = (argument?: string) => {
+  const title = response.ProjectDescriptionSection.title;
 
   return (
     <div>
+      <UseClientComponent argument={argument} title={title} />
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <ProjectDescriptionSection data={response.ProjectDescriptionSection} />
