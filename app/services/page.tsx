@@ -7,14 +7,14 @@ import SecuritySection from "../sections/service_page/SecuritySection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import UseClientComponent from "@/hooks/useClientComponent";
 
-const Services = (argument?: string) => {
+const Services = () => {
   const title = "Services";
 
   const links = [{ title: "Services", href: "#" }];
 
   return (
     <div>
-      <UseClientComponent argument={argument} title={title} />
+      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <div id="design">
         <DesignSection />

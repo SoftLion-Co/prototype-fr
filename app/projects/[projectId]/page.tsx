@@ -100,12 +100,12 @@ const links = [
   { title: response.ProjectDescriptionSection.title, href: "#" },
 ];
 
-const Project = (argument?: string) => {
+const Project = () => {
   const title = response.ProjectDescriptionSection.title;
 
   return (
     <div>
-      <UseClientComponent argument={argument} title={title} />
+      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <ProjectDescriptionSection data={response.ProjectDescriptionSection} />

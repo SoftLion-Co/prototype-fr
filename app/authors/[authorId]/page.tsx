@@ -11,7 +11,7 @@ import authors from "@/data/blog/authors_data.json";
 import getBlogsData from "@/hooks/getBlogsData";
 import UseClientComponent from "@/hooks/useClientComponent";
 
-const Author = (argument?: string) => {
+const Author = () => {
   const title = "Author";
 
   const id = usePathname().split("/").reverse()[0];
@@ -26,7 +26,7 @@ const Author = (argument?: string) => {
 
   return (
     <div style={{ paddingBottom: "5%" }}>
-      <UseClientComponent argument={argument} title={title} />
+      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}
