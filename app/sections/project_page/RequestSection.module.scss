@@ -82,24 +82,22 @@
     align-items: flex-start;
     width: 100%;
     color: #000;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130.49%;
+    font-size: 14px;
+    line-height: 130%;
     letter-spacing: 0.4px;
     margin-bottom: 8px;
 
     @include for-size(tablet) {
       width: 100%;
       font-size: 13px;
-      letter-spacing: 0.521px;
+      letter-spacing: 0.5px;
       margin-bottom: 15px;
     }
 
     @include for-size(laptop) {
       width: 100%;
       font-size: 18px;
-      letter-spacing: 0.72px;
+      letter-spacing: 0.7px;
       margin-bottom: 19px;
     }
 
