@@ -74,7 +74,7 @@ const TechnologiesSection = () => {
   };
 
   return (
-    <section className={`${s.container}`}>
+    <section className={`${s.container} ${s.technologies}`}>
       <div className={s.technologies__wrapper}>
         <div className={s.technologies__name_header}>
           <HeadingComponent text="Technologies" />
@@ -84,26 +84,33 @@ const TechnologiesSection = () => {
             {technologiesData.map((tech) => (
               <div
                 key={tech.id}
-                className={`${s.technologies__image_wrapper} ${
-                  tech.isOpen ? s.hovered : ""
-                }`}
+                className={`${s.technologies__image_wrapper} 
+                ${tech.isOpen ? s.clicked : ""}   
+                ${s.flip_card}
+                `}
                 onClick={() => toggleIsOpen(tech.id)}
               >
-                <div className={s.technologies__icon_wrapper}>
-                  <BiExpandAlt className={s.technologies__icon_open} />
-                </div>
-                <div className={s.technologies__card_container}>
-                  <Image
-                    className={tech.className}
-                    src={tech.imgSrc}
-                    alt={tech.imgAlt}
-                  />
-                  <p className={s.technologies__description_photo}>
-                    {tech.name}
-                  </p>
-                  <p className={s.technologies__text_ecommerce}>
-                    {tech.description}
-                  </p>
+                <div
+                  className={`${s.flip_card_inner} ${s.technologies__card_container}`}
+                >
+                  <div className={s.flip_card_front}>
+                    <div className={s.technologies__icon_wrapper}>
+                      <BiExpandAlt className={s.technologies__icon_open} />
+                    </div>
+                    <Image
+                      className={tech.className}
+                      src={tech.imgSrc}
+                      alt={tech.imgAlt}
+                    />
+                    <p className={s.technologies__description_photo}>
+                      {tech.name}
+                    </p>
+                  </div>
+                  <div className={s.flip_card_back}>
+                    <p className={s.technologies__text_ecommerce}>
+                      {tech.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

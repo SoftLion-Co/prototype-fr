@@ -2,6 +2,53 @@
 @import "./../styles/mixin";
 @import "../styles/container";
 
+.flip_card {
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.clicked .flip_card_inner {
+  transform: rotateY(180deg);
+}
+
+/* This container is needed to position the front and back side */
+.flip_card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip_card:hover .flip_card_inner {
+  @include for-size(laptop) {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip_card_front,
+.flip_card_back {
+  box-shadow: $technologies-card-shadow;
+  background: $technologies-card-backbround;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip_card_back {
+  transform: rotateY(180deg);
+}
+
 .technologies {
   &__wrapper {
     position: relative;
@@ -18,53 +65,9 @@
     }
     /* ... */
     z-index: 2;
-    transition: display 1s ease; /* Добавляем переход для свойства display */
-  }
-
-  &__image_wrapper.hovered &__text_ecommerce {
-    display: block;
-  }
-  &__image_wrapper.hovered &__image_uiux,
-  &__image_wrapper.hovered &__image_ecommerce,
-  &__image_wrapper.hovered &__image_seo,
-  &__image_wrapper.hovered &__image_api,
-  &__image_wrapper.hovered &__descriptionFotoUIUX,
-  &__image_wrapper.hovered &__description_photo,
-  &__image_wrapper.hovered &__description_photo,
-  &__image_wrapper.hovered &__descriptionFotoSeo {
-    display: none;
-  }
-  &__image_wrapper:hover &__text_ecommerce {
-    @include for-size(laptop) {
-      display: block;
-    }
-    @include for-size(desktop) {
-      display: block;
-    }
-  }
-  &__image_wrapper:hover &__image_uiux,
-  &__image_wrapper:hover &__image_ecommerce,
-  &__image_wrapper:hover &__image_seo,
-  &__image_wrapper:hover &__image_api,
-  &__image_wrapper:hover &__descriptionFotoUIUX,
-  &__image_wrapper:hover &__description_photo,
-  &__image_wrapper:hover &__description_photo,
-  &__image_wrapper:hover &__descriptionFotoSeo {
-    @include for-size(laptop) {
-      display: none;
-    }
-    @include for-size(desktop) {
-      display: none;
-    }
-  }
-
-  &__text_ecommerce {
-    display: none;
   }
 
   &__image_wrapper {
-    box-shadow: $technologies-card-shadow;
-    background: $technologies-card-backbround;
     border-radius: 15px;
 
     cursor: pointer;
@@ -101,10 +104,6 @@
     @include for-size(tablet) {
       max-width: 22px;
       max-height: 22px;
-    }
-
-    @include for-size(laptop) {
-      display: none;
     }
   }
 
@@ -285,12 +284,12 @@
     }
 
     @include for-size(laptop) {
-      transition: transform 0.5s ease;
+      // transition: transform 0.5s ease;
       width: 239px;
       justify-content: center;
-      &:hover {
-        transform: scale(1.05);
-      }
+      // &:hover {
+      //   transform: scale(1.05);
+      // }
     }
 
     @include for-size(desktop) {
