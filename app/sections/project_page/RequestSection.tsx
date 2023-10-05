@@ -20,7 +20,9 @@ const RequestSection: FC<RequestSectionProps> = ({ data }) => {
 
   return (
     <section className={s.request}>
-      <HeadingOurProjectComponent title="01" text="Request" />
+      <div className={s.request__heading}>
+        <HeadingOurProjectComponent title="01" text="Request" />
+      </div>
       <div className={classNames(s.container, s.request__content)}>
         <p className={s.request__text}>{paragraph}</p>
         <ul className={s.request__list}>
@@ -31,10 +33,12 @@ const RequestSection: FC<RequestSectionProps> = ({ data }) => {
             </li>
           ))}
         </ul>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default RequestSection;
-

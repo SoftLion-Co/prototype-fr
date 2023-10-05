@@ -2,22 +2,31 @@
 @import "../../../styles/container";
 
 .security {
-  margin-bottom: 60px;
+  margin-bottom: 105px;
 
   @include for-size(tablet) {
-    margin-bottom: 70px;
+    margin-bottom: 155px;
   }
 
   @include for-size(laptop) {
-    margin-bottom: 130px;
+    margin-bottom: 250px;
   }
 
   @include for-size(desktop) {
-    margin-bottom: 200px;
+    margin-bottom: 380px;
+  }
+
+  &__heading {
+    margin-bottom: 40px;
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
   }
 
   &__slider {
-    margin-top: 54px;
     margin-bottom: 36px;
 
     @include for-size(tablet) {
@@ -32,21 +41,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      column-gap: 21px;
       row-gap: 55px;
       margin-top: 84px;
       margin-bottom: 29px;
     }
 
     @include for-size(laptop) {
-      column-gap: 19px;
       row-gap: 82px;
       margin-top: 67px;
       margin-bottom: 53px;
     }
 
     @include for-size(desktop) {
-      column-gap: 40px;
       row-gap: 107px;
       margin-top: 87px;
       margin-bottom: 63px;
@@ -71,24 +77,24 @@
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;
-  
+
     @include for-size(tablet) {
       background-image: url(../../../images/blur/custom_blurL.png);
       background-repeat: no-repeat;
-      left: 200px;
-      top: -1000px;
+      left: 0px;
+      top: -100px;
       width: 733px;
       height: 638px;
     }
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/custom_blurL.png);
-      left: 150px;
-      top: -1400px;
+      left: 0px;
+      top: -200px;
       width: 819px;
       height: 572px;
       bottom: 700px;
@@ -96,7 +102,7 @@
 
     @include for-size(desktop) {
       background-image: url(../../../images/blur/custom_blurD.png);
-      left: 200px;
+      left: 0px;
       top: -1700px;
       width: 1265px;
       height: 744px;

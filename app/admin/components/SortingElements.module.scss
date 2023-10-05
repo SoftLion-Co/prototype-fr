@@ -1,0 +1,14 @@
+@import "./../../../styles/mixin";
+@import "./../../../styles/colors";
+@import "./../../../styles/container";
+
+.sorting {
+  display: flex;
+  flex-shrink: 0;
+  gap: 14px;
+
+  &__button {
+    background-color: transparent;
+    border: none;
+  }
+}

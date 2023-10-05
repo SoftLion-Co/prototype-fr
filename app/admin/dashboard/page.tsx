@@ -1,14 +1,13 @@
-import s from "./page.module.scss";
+import React, { FC } from "react";
+import s from "./blog/blog.module.scss";
+import { AdminLayout } from "./AdminLayout";
 
-const Blogs = () => {
-  const links = [{ title: "Blog", href: "#" }];
-
+const DashboardPage: FC = () => {
   return (
-    <div>
-        <h1>Admin dashboard</h1>
-      
-    </div>
+    <AdminLayout>
+      <div>Dashboard</div>
+    </AdminLayout>
   );
 };
 
-export default Blogs;
+export default DashboardPage;

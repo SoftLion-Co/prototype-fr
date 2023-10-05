@@ -4,7 +4,7 @@
 
 .solution {
   &__heading {
-    margin-bottom: 9px;
+    margin-bottom: 30px;
     @include for-size(tablet) {
       margin-bottom: 13px;
     }
@@ -164,12 +164,12 @@
   }
 
   &__heading_text {
-    font-size: 10px;
+    font-size: 16px;
     line-height: 13px;
     letter-spacing: 0.9px;
     font-weight: 400;
+    margin-bottom: 20px;
 
-    max-width: 152px;
     @include for-size(tablet) {
       font-size: 17px;
       line-height: 23px;
@@ -199,7 +199,7 @@
     display: flex;
     flex-direction: column;
 
-    gap: 12px;
+    gap: 20px;
 
     margin-bottom: 31px;
     @include for-size(tablet) {
@@ -232,98 +232,19 @@
       }
     }
   }
-  &__description_1 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 319px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 592px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 660px;
-    }
-  }
-  &__description_2 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 349px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 538px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 599px;
-    }
-  }
-
-  &__description_3 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 389px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 600px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 669px;
-    }
-  }
-
-  &__description_4 {
-    max-width: 250px;
-    @include for-size(tablet) {
-      max-width: 384px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 592px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 660px;
-    }
-  }
-
-  &__heading_1 {
-    margin-bottom: 15px;
-    @include for-size(tablet) {
-      margin-bottom: 0;
-    }
-  }
-
-  &__heading_2 {
-    margin-bottom: 7px;
-    @include for-size(tablet) {
-      margin-bottom: 0;
-    }
-  }
-
-  &__heading_3 {
-    margin-bottom: 13px;
-    @include for-size(tablet) {
-      margin-bottom: 0;
-    }
-  }
 
   &__text {
     margin-left: 39px;
-
-    font-size: 10px;
-    line-height: 13px;
+    max-width: 250px;
+    font-size: 14px;
+    line-height: 18px;
     letter-spacing: 0.4px;
 
     @include for-size(tablet) {
       font-size: 12px;
       line-height: 15px;
       letter-spacing: 0.5px;
-
+      max-width: 319px;
       margin-left: 189px;
     }
 
@@ -331,7 +252,7 @@
       font-size: 18px;
       line-height: 23px;
       letter-spacing: 0.7px;
-
+      max-width: 592px;
       margin-left: 281px;
     }
 
@@ -339,8 +260,43 @@
       font-size: 20px;
       line-height: 26px;
       letter-spacing: 0.8px;
-
+      max-width: 660px;
       margin-left: 324px;
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 700px;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 1200px;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      left: 150px;
+      bottom: 1200px;
+      width: 1240px;
+      height: 930px;
     }
   }
 }

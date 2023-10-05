@@ -1,4 +1,6 @@
 "use client";
+import { Helmet } from "react-helmet";
+import React, { useEffect } from "react";
 import s from "./page.module.scss";
 
 import data_java from "@/data/technologies/data_java.json";
@@ -96,6 +98,24 @@ const Technology = ({ params }: { params: any }) => {
     return data;
   };
 
+  useEffect(() => {
+    // Google tag (gtag.js)
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
+
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: (string | Date)[]) {
+        window.dataLayer.push(...args);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-YPC94QJXCN");
+    };
+
+    document.head.appendChild(script);
+  }, []);
+
   const data = getData();
 
   if (data === null || undefined) {
@@ -112,6 +132,10 @@ const Technology = ({ params }: { params: any }) => {
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
+      <Helmet>
+        <title>SoftLion | Technologies</title>
+      </Helmet>
+
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <HeroSection heroTech={data.heroSection} />
@@ -129,11 +153,11 @@ const Technology = ({ params }: { params: any }) => {
           developmentSection={data.developmentSection}
         />
         <StagesSection stagesSection={data.stagesSection} />
-        <ReviewsSection reviewsSection={data.reviewsSection} />
-        <OurProjects
+        {/* <ReviewsSection reviewsSection={data.reviewsSection} /> */}
+        {/* <OurProjects
           data={data.projectsSection}
           titleTech={data.heroSection.titleTech}
-        />
+        /> */}
       </div>
     </div>
   );

@@ -77,8 +77,8 @@
     }
 
     &_text {
-      font-size: 10px;
-      line-height: 13px;
+      font-size: 14px;
+      line-height: 18px;
       letter-spacing: 0.4px;
 
       @include for-size(tablet) {
@@ -130,6 +130,73 @@
         width: 817px;
         height: 580px;
       }
+    }
+  }
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      bottom: 700px;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      bottom: 1200px;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      left: 150px;
+      bottom: 1200px;
+      width: 1240px;
+      height: 930px;
+    }
+  }
+}
+
+.blure {
+  position: absolute;
+  pointer-events: none;
+  
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/solution_blurT.png);
+      background-repeat: no-repeat;
+      width: 721px;
+      height: 541px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/solution_blurL.png);
+      background-repeat: no-repeat;
+      width: 1112px;
+      height: 834px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/solution_blurD.png);
+      background-repeat: no-repeat;
+      top: 0px;
+      width: 1240px;
+      height: 930px;
     }
   }
 }

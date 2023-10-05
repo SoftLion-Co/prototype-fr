@@ -22,4 +22,3 @@ const HeadingOurProjectComponent: React.FC<HeadingOurProjectComponentProps> = ({
 };
 
 export default HeadingOurProjectComponent;
-

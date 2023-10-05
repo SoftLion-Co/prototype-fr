@@ -4,21 +4,21 @@
 
 .projects {
   margin-top: 42px;
-  margin-bottom: 30px;
+  margin-bottom: 105px;
 
   @include for-size(tablet) {
     margin-top: 70px;
-    margin-bottom: 100px;
+    margin-bottom: 155px;
   }
 
   @include for-size(laptop) {
     margin-top: 100px;
-    margin-bottom: 140px;
+    margin-bottom: 250px;
   }
 
   @include for-size(desktop) {
     margin-top: 150px;
-    margin-bottom: 165px;
+    margin-bottom: 380px;
   }
 
   &__cards_desktop {
@@ -42,7 +42,7 @@
 
 .filter {
   &__main_button {
-    font-size: 12px;
+    font-size: 14px;
     color: $heading-blue-color;
     display: flex;
     justify-content: center;
@@ -58,7 +58,6 @@
     letter-spacing: 0.49px;
 
     @include for-size(tablet) {
-      font-size: 14px;
       margin-bottom: 23px;
       line-height: 130.49%;
       letter-spacing: 0.629px;
@@ -123,7 +122,7 @@
   }
 
   &__title {
-    font-size: 11px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -172,8 +171,8 @@
   }
 
   &__wrapper {
-    background: linear-gradient(139deg, #dff6ff 0%, #c3edff 100%);
-    box-shadow: $button-blue-shadow;
+    background: linear-gradient(140deg, #ffffff 0%, #ffffff 100%);
+    box-shadow: 0px 3px 32px 0px rgba(35, 140, 240, 0.2);
     border-radius: 6px;
     padding: 18px;
     width: 100%;
@@ -228,9 +227,9 @@
     background-color: transparent;
     color: black;
     width: 51px;
-    font-size: 11px;
-    line-height: 130.49%;
-    letter-spacing: 0.414px;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0.4px;
 
     @include for-size(tablet) {
       width: 60px;

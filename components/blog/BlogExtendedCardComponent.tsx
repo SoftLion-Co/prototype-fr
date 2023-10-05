@@ -9,8 +9,17 @@ import Image from "next/image";
 const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
   data,
 }) => {
-  const { id, category, title, authorId, readingTime, text, imageSrc, tags } =
-    data;
+  const {
+    id,
+    category,
+    title,
+    authorId,
+    readingTime,
+    publicationDate,
+    text,
+    imageSrc,
+    tags,
+  } = data;
   const authorsData: { [key: string]: AuthorInterface } = authors;
   const author = authorsData[authorId];
   return (
@@ -24,13 +33,6 @@ const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
           alt="Softlon image"
         />
         <div className={s.info}>
-          <div className={s.tags}>
-            {tags?.map((tag, index) => (
-              <p className={s.tags__item} key={index}>
-                {tag}
-              </p>
-            ))}
-          </div>
           <h2 className={s.info__title}>{title}</h2>
           <div className={s.info__author}>
             <Link href={`/authors/${authorId}`}>
@@ -42,17 +44,38 @@ const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
                 alt="Softlon image"
               />
             </Link>
-            <p className={s.info__author__name}>{author.name}</p>
+
+            <Link href={`/authors/${authorId}`}>
+              <p className={s.info__author__name}>{author.name}</p>
+            </Link>
           </div>
 
-          <p className={s.info__readingTime}>Reading Time: {readingTime}</p>
+          <div className={s.info__box}>
+            <p className={s.info__readingTime}>{readingTime} read</p>
+
+            <p className={s.info__readingTime}>{publicationDate}</p>
+          </div>
         </div>
       </div>
       <div className={s.card__line}></div>
       <div className={s.article}>
-        <p className={s.card__text}>{text}</p>
-        <Link href={`/blogs/${id}`}>
-          <PiArrowRightThin color="black" size="2.5em" />
+        <div className={s.article__container}>
+          <div className={s.tags}>
+            {tags?.map((tag, index) => (
+              <p className={s.tags__item} key={index}>
+                {tag}
+              </p>
+            ))}
+          </div>
+          <p className={s.card__text}>{text}</p>
+        </div>
+
+        <Link href={`/blog/${id}`}>
+          <PiArrowRightThin
+            className={s.card__arrowIcon}
+            color="black"
+            size="2.5em"
+          />
         </Link>
       </div>
     </div>

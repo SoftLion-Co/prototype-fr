@@ -5,28 +5,26 @@
 .article {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 20px;
-
-  @include for-size(tablet) {
-    gap: 30px;
-    margin-bottom: 38px;
-  }
+  gap: 30px;
+  margin-bottom: 50px;
 
   @include for-size(laptop) {
-    gap: 38px;
-    margin-bottom: 55px;
+    gap: 40px;
+    margin-bottom: 80px;
   }
 
   @include for-size(desktop) {
-    gap: 58px;
-    margin-bottom: 73px;
+    margin-bottom: 100px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
   &__title {
     font-size: 15px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 2.7px;
     color: $blog-card-text-color;
 
@@ -47,7 +45,7 @@
     color: $blog-card-text-color;
     font-size: 14px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.4px;
 
     @include for-size(tablet) {

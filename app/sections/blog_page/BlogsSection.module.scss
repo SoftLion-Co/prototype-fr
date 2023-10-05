@@ -3,6 +3,18 @@
 @import "./../../../styles/container";
 
 .blog {
+  margin-bottom: 105px;
+
+  @include for-size(tablet) {
+    margin-bottom: 155px;
+  }
+  @include for-size(laptop) {
+    margin-bottom: 250px;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 380px;
+  }
+
   &__hero {
     display: flex;
     flex-direction: column;
@@ -20,39 +32,17 @@
   }
 
   &__title {
-    margin-bottom: 16px;
+    margin-bottom: 35px;
     @include for-size(tablet) {
-      margin-bottom: 26px;
+      margin-bottom: 40px;
     }
     @include for-size(laptop) {
-      margin-bottom: 34px;
+      margin-bottom: 80px;
     }
     @include for-size(desktop) {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
     }
   }
-
-  // &__paragraph {
-  //   width: 290px;
-  //   font-size: 12px;
-  //   font-weight: 400;
-  //   line-height: 130%;
-  //   letter-spacing: 0.8px;
-  //   margin: 0 auto;
-
-  //   @include for-size(tablet) {
-  //     width: 400px;
-  //     font-size: 14px;
-  //   }
-  //   @include for-size(laptop) {
-  //     width: 520px;
-  //     font-size: 18px;
-  //   }
-  //   @include for-size(desktop) {
-  //     width: 560px;
-  //     font-size: 20px;
-  //   }
-  // }
 }
 
 // ==============================================//
@@ -62,23 +52,33 @@
 .blog__cards {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   margin-bottom: 65px;
 
   @include for-size(tablet) {
     justify-content: space-between;
     flex-direction: row;
+    gap: 0;
     flex-wrap: wrap;
     row-gap: 60px;
     margin-bottom: 8%;
   }
   @include for-size(laptop) {
-    gap: 38px;
     row-gap: 80px;
   }
   @include for-size(desktop) {
-    gap: 40px;
     row-gap: 160px;
+  }
+}
+
+.blog__card {
+  @include for-size(tablet) {
+    max-width: 350px;
+    box-sizing: border-box;
+  }
+
+  @include for-size(laptop) {
+    max-width: none;
   }
 }
 
@@ -112,7 +112,7 @@
       gap: 25px;
     }
     @include for-size(laptop) {
-      gap: 50px;
+      gap: 40px;
     }
     @include for-size(desktop) {
       gap: 50px;
@@ -164,7 +164,7 @@
     @include for-size(laptop) {
       gap: 20px;
     }
-    @include for-size(tablet) {
+    @include for-size(desktop) {
       gap: 25px;
     }
   }
@@ -207,10 +207,44 @@
 // ==================================================//
 
 .pagination {
-  margin-bottom: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1%;
-  margin-bottom: 65px;
+}
+
+.blur {
+  position: absolute;
+  pointer-events: none;
+
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/service_blurT.png);
+      background-repeat: no-repeat;
+      left: 40px;
+      bottom: 240px;
+      width: 324px;
+      height: 283px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/service_blurL.png);
+      background-repeat: no-repeat;
+      width: 450px;
+      height: 390px;
+      bottom: 350px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/service_blurD.png);
+      background-repeat: no-repeat;
+      left: 70px;
+      bottom: 400px;
+      width: 588px;
+      height: 513px;
+    }
+  }
 }

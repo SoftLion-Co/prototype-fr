@@ -16,7 +16,7 @@
   border-radius: 6px;
   font-size: 12px;
   line-height: 14px;
-  padding: 10px;
+  padding: 15px 10px;
   box-shadow: 6px 15px 9px 0px rgba(0, 0, 0, 0.15);
 
   @include for-size(tablet) {
@@ -44,6 +44,39 @@
     padding: 20px;
   }
 
+  &__arrowIcon {
+    animation: arrowAnimation 1s infinite alternate;
+
+    width: 45px;
+    height: 45px;
+
+    @include for-size(tablet) {
+      transition: transform 0.3s ease-in-out;
+
+      width: 35px;
+      height: 35px;
+    }
+
+    @include for-size(laptop) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include for-size(desktop) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  @keyframes arrowAnimation {
+    0% {
+      transform: translateX(2px);
+    }
+    100% {
+      transform: translateX(-5px);
+    }
+  }
+
   &__container {
     width: 100%;
     display: flex;
@@ -52,6 +85,7 @@
 
   &__line {
     height: 1px;
+    margin-bottom: 4%;
     @include for-size(laptop) {
       height: 1.5px;
     }
@@ -64,29 +98,32 @@
 
   &__text {
     min-height: 110px;
-    margin: 10px 5px 0 5px;
+    line-height: 130%;
+    letter-spacing: 0.5;
+
     @include for-size(tablet) {
       width: 300px;
-      height: 110px;
     }
 
     @include for-size(laptop) {
       width: 435px;
       height: 160px;
-      margin: 16px 8px 0 8px;
+      font-size: 16px;
+      letter-spacing: 0.6;
     }
 
     @include for-size(desktop) {
       width: 570px;
       height: 200px;
-      margin: 20px 10px 0 10px;
+      font-size: 20px;
+      letter-spacing: 0.8;
     }
 
     overflow: hidden;
     align-self: start;
     text-overflow: ellipsis;
-    text-align: left;
   }
+
   &__arrow {
     font-size: 0.5em;
     color: black;
@@ -120,6 +157,10 @@
 }
 
 .info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
   @include for-size(tablet) {
     width: 175px;
     height: 120px;
@@ -135,33 +176,32 @@
     height: 240px;
   }
 
-  text-align: left;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-
   &__title {
-    margin-bottom: 5px;
+    line-height: 130%;
+    font-weight: 400;
+    margin-bottom: 15%;
 
+    @include for-size(tablet) {
+      letter-spacing: 1.2;
+    }
     @include for-size(laptop) {
-      margin-bottom: 10px;
+      font-size: 20px;
+      letter-spacing: 1.8;
     }
 
     @include for-size(desktop) {
-      margin-bottom: 15px;
+      font-size: 25px;
+      letter-spacing: 1.8;
     }
-
-    line-height: 1.4em;
-    font-size: 1.2em;
-    font-weight: 400;
-    letter-spacing: 0.09em;
   }
 
   &__author {
     display: flex;
     align-items: center;
+    margin-bottom: 5%;
 
     &__icon {
+      object-fit: cover;
       margin: 0px 5px 0px 0;
 
       @include for-size(laptop) {
@@ -182,41 +222,48 @@
     }
   }
 
+  &__box {
+    display: flex;
+    gap: 20px;
+  }
+
   &__readingTime {
     color: #000000b2;
-    margin: 3px 0 3px 0;
-
-    @include for-size(laptop) {
-      margin: 6px 0 6px 0;
-    }
-    @include for-size(desktop) {
-      margin: 9px 0 9px 0;
-    }
   }
 }
 
 .article {
   display: flex;
   align-items: end;
+  font-size: 14px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .tags {
-  font-size: 8px;
-  gap: 3px;
+  font-size: 10px;
+  gap: 4px;
+  margin-bottom: 3%;
 
   @include for-size(laptop) {
     font-size: 12px;
     gap: 6px;
   }
   @include for-size(desktop) {
-    font-size: 16px;
+    font-size: 14px;
     gap: 9px;
   }
 
   display: flex;
   flex-wrap: wrap;
   &__item {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 5px;
+    @include for-size(laptop) {
+      padding: 0px 10px;
+    }
     border: 1px solid rgb(220 151 151 / 30%);
     background-color: rgb(255 255 255 / 100%);
     border-radius: 100px;
