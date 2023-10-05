@@ -1,5 +1,4 @@
 "use client";
-import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 
@@ -98,23 +97,23 @@ const Technology = ({ params }: { params: any }) => {
     return data;
   };
 
-  useEffect(() => {
-    // Google tag (gtag.js)
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
+  // useEffect(() => {
+  //   // Google tag (gtag.js)
+  //   const script = document.createElement("script");
+  //   script.async = true;
+  //   script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
 
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(...args: (string | Date)[]) {
-        window.dataLayer.push(...args);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-YPC94QJXCN");
-    };
+  //   script.onload = () => {
+  //     window.dataLayer = window.dataLayer || [];
+  //     function gtag(...args: (string | Date)[]) {
+  //       window.dataLayer.push(...args);
+  //     }
+  //     gtag("js", new Date());
+  //     gtag("config", "G-YPC94QJXCN");
+  //   };
 
-    document.head.appendChild(script);
-  }, []);
+  //   document.head.appendChild(script);
+  // }, []);
 
   const data = getData();
 
@@ -129,13 +128,14 @@ const Technology = ({ params }: { params: any }) => {
     },
   ];
 
+  useEffect(() => {
+    // Set document title
+    document.title = `SoftLion | ${data.heroSection.titleTech}`;
+  });
+
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
-      <Helmet>
-        <title>SoftLion | Technologies</title>
-      </Helmet>
-
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <HeroSection heroTech={data.heroSection} />

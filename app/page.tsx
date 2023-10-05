@@ -1,10 +1,8 @@
 "use client";
 
-import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import s from "./page.module.scss";
 import HeroSection from "./sections/home_page/HeroSection";
-// import CookiesComponent from "@/components/CookiesComponent";
 import OurProjectsSection from "./sections/home_page/OurProjectsSection";
 import ContactUsSection from "./sections/contact_us_page/ContactUsSection";
 import BlogSection from "./sections/home_page/BlogSection";
@@ -25,22 +23,19 @@ const Home = () => {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-YPC94QJXCN');
     `;
 
     document.head.appendChild(script1);
     document.head.appendChild(script2);
+
+    // Set document title
+    document.title = "Web development company";
   }, []);
 
   return (
     <div className={s.home_page}>
-      <Helmet>
-        <title>Web development company</title>
-      </Helmet>
-
       <HeroSection />
-      {/* <CookiesComponent /> */}
       <TechnologiesSection />
       <OurServicesSection />
       <OurProjectsSection />
@@ -51,4 +46,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;
