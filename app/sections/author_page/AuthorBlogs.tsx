@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useEffect, useState } from "react";
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import { Pagination } from "@mantine/core";
@@ -26,7 +28,7 @@ const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   return (
     <div className={s.container}>
       <div id="articles" className={s.articles}>
@@ -35,7 +37,7 @@ const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
           .map((item) => (
             <BlogExtendedCardComponent key={item.id} data={item} />
           ))}
-                  <div className={s.blur}>
+        <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const FooterComponent = () => {
     { path: "/services", label: "Services" },
     { path: "/projects", label: "Our Projects" },
     { path: "#headerTop", label: "Technologies" },
-    { path: "/blogs", label: "Blog" },
+    { path: "/blog", label: "Blog" },
     { path: "/contact-us", label: "Contact Us" },
   ];
   const socialLinks: { url: string; icon: JSX.Element }[] = [
