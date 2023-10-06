@@ -1,37 +1,13 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 import BlogsSection from "@/app/sections/blog_page/BlogsSection";
-
-declare global {
-  interface Window {
-    dataLayer: any[];
-  }
-}
+import UseClientComponent from "@/hooks/useClientComponent";
 
 const Blogs = () => {
-  useEffect(() => {
-    // Google tag (gtag.js)
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
-        window.dataLayer.push(args);
-      }
-
-      gtag("js", { "new Date()": new Date() });
-      gtag("config", "G-YPC94QJXCN");
-    };
-  }, []);
-
-  const links = [{ title: "Blog", href: "#" }];
+  const title = "Blog";
 
   return (
     <div>
+      <UseClientComponent title={title} />
       <BlogsSection />
     </div>
   );

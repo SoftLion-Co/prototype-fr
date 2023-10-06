@@ -28,7 +28,7 @@ const sampleData: Array<{
     id: 1,
     image:
       "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
-    title: "Landing page of Trend company",
+    title: "Trend company",
     customer: "customer: Trend",
     year: "year: 2023",
     author: "author: Germany",

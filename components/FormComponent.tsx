@@ -148,7 +148,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         </div>
         <div className={s.form__input}>
       <textarea
-        placeholder='Short describe ur idea'
+        placeholder='Short describe your idea'
         cols={3}
         rows={1}
         draggable={false}
@@ -175,7 +175,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
       </button>
       <p className={s.form__text}>
         By clicking on this button I agree to the{" "}
-        <Link href="privacy-policy" className={s.pr}>
+        <Link href="/privacy-policy" className={s.pr}>
         processing of personal data
       </Link>
       </p>
