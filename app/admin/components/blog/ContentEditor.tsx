@@ -1,10 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, FC } from "react";
 import s from "./ContentEditor.module.scss";
 import classNames from "classnames";
+import FileInput from "../FileInputComponent";
+import { DetailsModal } from "../../modals/DetailsModal";
+import { BlogData } from "./BlogInfoComponent";
 
-const ContentEditor = () => {
+interface ContentEditorProps {
+  blog: BlogData | null;
+}
+
+const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
   const [paragraphsCount, setParagraphsCount] = useState(1);
   const lastParagraphRef = useRef<HTMLTextAreaElement | null>(null);
+  const [showDetailsModal, setShowDetailsModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (lastParagraphRef.current) {
@@ -24,22 +32,19 @@ const ContentEditor = () => {
     }
   };
 
+  const handleDetailsModal = (): void => {
+    setShowDetailsModal(!showDetailsModal);
+    console.log("Modal", showDetailsModal);
+  };
+
   const renderParagraphs = () => {
     const paragraphs = [];
     for (let i = 0; i < paragraphsCount; i++) {
       const isLastGroup = i + 3 >= paragraphsCount;
       paragraphs.push(
         <div className={s.input__container} key={i}>
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для картинки"
-          />
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для заголовку абзацу"
-          />
+          <FileInput placeholder="Для картинки" />
+          <input className={s.input__entry} type="text" placeholder="Для заголовку абзацу" />
           <textarea
             className={classNames(s.input__entry, s.input__entry_extended, {
               [s.lastParagraph]: isLastGroup,
@@ -57,53 +62,25 @@ const ContentEditor = () => {
     <div className={s.input}>
       <div className={s.input__scroll}>
         <div className={s.input__container}>
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для ілюстрації"
-          />
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для заголовку"
-          />
+          <FileInput placeholder="Для ілюстрації" />
+          <input className={s.input__entry} type="text" placeholder="Для заголовку" />
         </div>
 
         <div className={s.input__container}>
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для імені автора"
-          />
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для фотографії автора"
-          />
-          <input
-            className={s.input__entry}
-            type="text"
-            placeholder="Для посади автора"
-          />
+          <input className={s.input__entry} type="text" placeholder="Для імені автора" />
+          <FileInput placeholder="Для фотографії автора" />
+          <input className={s.input__entry} type="text" placeholder="Для посади автора" />
         </div>
 
         {renderParagraphs()}
       </div>
 
       <div className={s.input__button_article}>
-        <button
-          className={s.input__button}
-          type="button"
-          onClick={handleAddParagraph}
-        >
+        <button className={s.input__button} type="button" onClick={handleAddParagraph}>
           Додати абзац
         </button>
 
-        <button
-          className={classNames(s.input__button, s.input__button_delete)}
-          type="button"
-          onClick={handleDeleteParagraph}
-        >
+        <button className={classNames(s.input__button, s.input__button_delete)} type="button" onClick={handleDeleteParagraph}>
           Видалити абзац
         </button>
       </div>
@@ -116,18 +93,18 @@ const ContentEditor = () => {
             Опублікувати
           </button>
 
-          <button className={s.input__button} type="button">
-            Деталі
-          </button>
+          {blog && (
+            <button className={s.input__button} type="button" onClick={handleDetailsModal}>
+              Деталі
+            </button>
+          )}
 
-          <button
-            className={classNames(s.input__button, s.input__button_delete)}
-            type="button"
-          >
+          <button className={classNames(s.input__button, s.input__button_delete)} type="button">
             Видалити
           </button>
         </div>
       </div>
+      <DetailsModal isOpen={showDetailsModal} onClose={() => setShowDetailsModal(false)} blog={blog} />
     </div>
   );
 };

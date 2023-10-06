@@ -33,6 +33,7 @@ const ClientsInfoComponent: React.FC<Props> = ({
           searchTerm={searchTerm}
           handleSearch={handleSearch}
           onEditButtonClick={onEditButtonClick}
+          
         />
       </div>
 

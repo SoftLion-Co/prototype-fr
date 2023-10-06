@@ -5,7 +5,7 @@ import { BsFillTelephoneFill, BsCalendar3 } from "react-icons/bs";
 import { useDateFormat } from "@/hooks/useDateFormat";
 import { ConfirmDeleteModal } from "../../modals/ConfirmDeleteModal";
 import classNames from "classnames";
-import { Button } from "../../buttons/Button";
+import { Button } from "../Button";
 import { ContactData } from "../../dashboard/types";
 
 interface Props {
@@ -52,9 +52,10 @@ export const ContactCard: FC<Props> = ({ contact }) => {
       </div>
 
       <div className={s.buttons_container}>
-        <Button fnc={() => {}} text="Редагувати" />
-        <Button fnc={() => {}} text="Відхилити" />
-        <Button fnc={() => setIsDeleteModalOpen(true)} text="Видалити" theme="delete" />
+        <Button  text="Редагувати" />
+        <Button  text="Відхилити" />
+        <Button text="Видалити" theme="delete" /> 
+        {/* fnc={() => setIsDeleteModalOpen(true)}  */}
       </div>
 
       <ConfirmDeleteModal

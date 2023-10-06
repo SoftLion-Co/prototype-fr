@@ -4,12 +4,14 @@ import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import edit from "@/app/admin/images/control/edit.svg";
 import bin from "@/app/admin/images/control/bin.svg";
 import Image from "next/image";
+import { SortMenuOption } from "../SortMenuComponent";
+import { formatDate } from "../../utils/formatDate";
 
-interface BlogData {
+export interface BlogData {
   number: number;
   title: string;
   data: string;
-  rating: string;
+  rating: number;
   email?: string;
   description?: string;
   tell?: number;
@@ -17,19 +19,45 @@ interface BlogData {
 
 interface Props {
   users: BlogData[];
-  onEditButtonClick: () => void;
+  onEditButtonClick: (blog: BlogData | null) => void;
 }
 
 const BlogInfoComponent: React.FC<Props> = ({ users, onEditButtonClick }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredUsers, setfilteredUsers] = useState<BlogData[]>(users);
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+    setfilteredUsers(users.filter((user) => user.title.toLowerCase().includes(event.target.value.toLowerCase())));
   };
 
-  const filteredUsers = users.filter(user =>
-    user.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const sortOptions: SortMenuOption[] = [
+    {
+      name: "Заголовок",
+      action: () => {
+        setfilteredUsers(
+          [...filteredUsers].sort((blog1, blog2) => {
+            return blog1.title.toLowerCase().localeCompare(blog2.title.toLowerCase());
+          })
+        );
+      },
+    },
+    {
+      name: "Рейтинг",
+      action: () => {
+        setfilteredUsers([...filteredUsers].sort((blog1, blog2) => blog2.rating - blog1.rating));
+      },
+    },
+    {
+      name: "Дата",
+      action: () => {
+        setfilteredUsers([...filteredUsers].sort((blog1, blog2) => new Date(blog1.data).getTime() - new Date(blog2.data).getTime()));
+      },
+    },
+  ];
+
+  const sortOrderChange = () => {
+    setfilteredUsers([...filteredUsers].reverse());
+  };
 
   return (
     <div className={s.user}>
@@ -39,36 +67,26 @@ const BlogInfoComponent: React.FC<Props> = ({ users, onEditButtonClick }) => {
           searchTerm={searchTerm}
           handleSearch={handleSearch}
           onEditButtonClick={onEditButtonClick}
+          sortOptions={sortOptions}
+          sortOrderChange={sortOrderChange}
         />
       </div>
 
       <ul className={s.user__list}>
-        {filteredUsers.map(user => (
+        {filteredUsers.map((user, index) => (
           <li className={s.user__list__item} key={user.number}>
             <div className={s.user__list__information}>
-              <p>{user.number}</p>
+              <p>{index + 1}</p>
               <p>{user.title}</p>
-              <p>{user.data}</p>
+              <p>{formatDate(user.data)}</p>
               <p>{user.rating}</p>
             </div>
             <div className={s.user__list__buttons}>
               <button type="button" className={s.user__list__button}>
-                <Image
-                  className={s.user__list__button__image}
-                  src={edit}
-                  alt="Edit"
-                  width={16}
-                  height={16}
-                />
+                <Image className={s.user__list__button__image} src={edit} alt="Edit" width={16} height={16} onClick={() => onEditButtonClick(user)}/>
               </button>
               <button type="button" className={s.user__list__button}>
-                <Image
-                  className={s.user__list__button__image}
-                  src={bin}
-                  alt="Edit"
-                  width={16}
-                  height={16}
-                />
+                <Image className={s.user__list__button__image} src={bin} alt="Edit" width={16} height={16} />
               </button>
             </div>
           </li>

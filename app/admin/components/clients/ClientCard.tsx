@@ -10,7 +10,7 @@ import { ConfirmDeleteModal } from "../../modals/ConfirmDeleteModal";
 
 import { ClientData } from "../../dashboard/types";
 import classNames from "classnames";
-import { Button } from "../../buttons/Button";
+import { Button } from "../Button";
 
 interface Props {
   client: ClientData;
@@ -77,8 +77,8 @@ export const ClientCard: FC<Props> = ({ client }) => {
       </div>
 
       <div className={s.buttons_container}>
-        <Button fnc={() => {}} text="Редагувати" />
-        <Button fnc={() => setIsDeleteModalOpen(true)} text="Видалити" theme="delete" />
+        <Button  text="Редагувати" />
+        <Button  text="Видалити" theme="delete" />
       </div>
 
       <ConfirmDeleteModal

@@ -1,0 +1,40 @@
+@import "../../../styles/colors";
+
+.options__container {
+    border-radius: 35px;
+    background: #FFF;
+    position: absolute;
+    padding: 19px 25px;
+    border: 1px solid  #AFDAED;
+    left: -14px;
+    top: 50px;
+}
+
+.options__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.options__item {
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 130.49%;
+    letter-spacing: 0.56px;
+
+    &.active {
+        color: red;
+    }
+
+    &:not(:first-child):before{
+        content: "";
+    display: block;
+    height: 2px;
+    background: #AFDAED;
+    width: 190px;
+    margin-bottom: 10px;
+    }
+}
+
+

@@ -2,19 +2,28 @@ import React from "react";
 import s from "./SearchInputComponent.module.scss";
 
 import SortingElements from "@/app/admin/components/SortingElements";
+import { SortMenuOption } from "./SortMenuComponent";
+import { BlogData } from "./blog/BlogInfoComponent";
 
 interface SearchInputProps {
   placeholderText: string;
   searchTerm: string;
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onEditButtonClick: () => void; // Додайте проп
+  onEditButtonClick: (blog: BlogData | null) => void; 
+  sortOptions: SortMenuOption[];
+  sortOrderChange: () => void;
+ 
+
 }
 
 const SearchInputComponent: React.FC<SearchInputProps> = ({
   placeholderText,
   searchTerm,
   handleSearch,
-  onEditButtonClick, // Включіть проп
+  onEditButtonClick,
+  sortOptions,
+  sortOrderChange,
+  // Включіть проп
 }) => {
   return (
     <div className={s.search}>
@@ -26,7 +35,7 @@ const SearchInputComponent: React.FC<SearchInputProps> = ({
         onChange={handleSearch}
       />
 
-      <SortingElements onEditButtonClick={onEditButtonClick} />
+      <SortingElements sortOrderChange={sortOrderChange}  sortOptions={sortOptions} onAddToList={onEditButtonClick}  />
     </div>
   );
 };

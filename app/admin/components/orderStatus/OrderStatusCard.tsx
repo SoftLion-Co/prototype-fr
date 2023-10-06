@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import s from "./OrderStatusCard.module.scss";
-import { Button } from "../../buttons/Button";
+import { Button } from "../Button";
 import { ProjectData } from "../../dashboard/projects/page";
 import classNames from "classnames";
 import { FaRegHandPointDown } from "react-icons/fa";
@@ -45,8 +45,8 @@ export const OrderCard: FC<ProjectCardProps> = ({ project }) => {
       </div>
 
       <div className={s.buttons_container}>
-        <Button fnc={() => {}} text="Опублікувати" />
-        <Button fnc={() => {}} text="Видалити" theme="delete" />
+        <Button  text="Опублікувати" />
+        <Button  text="Видалити" theme="delete" />
       </div>
     </div>
   );

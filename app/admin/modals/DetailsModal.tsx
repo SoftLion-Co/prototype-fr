@@ -3,11 +3,13 @@ import { Portal } from "@/app/portal";
 import s from "./ConfirmDeleteModal.module.scss";
 import classNames from "classnames";
 import { RxCross2 } from "react-icons/rx";
+import { BlogData } from '../components/blog/BlogInfoComponent';
+import { formatDate } from "../utils/formatDate";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  blog: any;
+  blog: BlogData | null;
 }
 
 export const DetailsModal: FC<ModalProps> = ({ isOpen, onClose, blog }) => {
@@ -54,8 +56,8 @@ export const DetailsModal: FC<ModalProps> = ({ isOpen, onClose, blog }) => {
           </div>
 
           <div className={s.modal__content}>
-            <p>Рейтинг:</p>
-            <p>Дата опублікування:</p>
+            <p>Рейтинг: {blog?.rating}</p>
+            <p>Дата опублікування: {formatDate(blog?.data)}</p>
             <p>Дата оновлення:</p>
             <p>Кількість переглядів:</p>
             <p>Кількість реакцій:</p>

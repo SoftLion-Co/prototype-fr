@@ -10,5 +10,19 @@
   &__button {
     background-color: transparent;
     border: none;
+    position: relative;
   }
+}
+
+.button__disabled {
+  & img {
+    opacity: 0.4;
+    cursor: no-drop;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }

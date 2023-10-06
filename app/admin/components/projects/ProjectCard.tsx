@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import s from "./ProjectCard.module.scss";
-import { Button } from "../../buttons/Button";
+import { Button } from "../Button";
 import { ProjectData } from "../../dashboard/projects/page";
 
 interface ProjectCardProps {
@@ -14,8 +14,8 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
       <p className={s.project__descripcion}>{project.description}</p>
 
       <div className={s.buttons_container}>
-        <Button fnc={() => {}} text="Редагувати" />
-        <Button fnc={() => {}} text="Видалити" theme="delete" />
+        <Button  text="Редагувати" />
+        <Button  text="Видалити" theme="delete" />
       </div>
     </div>
   );
