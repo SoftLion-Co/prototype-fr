@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useState } from "react";
 import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
@@ -20,7 +22,10 @@ interface MobileSliderComponentProps {
   SlideComponent: React.FC<{ data: any }>; // Пропс для передачі компоненти слайда
 }
 
-const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComponent }) => {
+const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
+  data,
+  SlideComponent,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
@@ -69,7 +74,8 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({ data, SlideComp
     >
       {data.map((item, index) => (
         <Carousel.Slide key={index} style={{ marginRight: "40px" }}>
-          <SlideComponent data={item} /> {/* Відображення переданої компоненти */}
+          <SlideComponent data={item} />{" "}
+          {/* Відображення переданої компоненти */}
         </Carousel.Slide>
       ))}
     </Carousel>

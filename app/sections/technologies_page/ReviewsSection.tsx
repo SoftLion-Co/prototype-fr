@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useState } from "react";
 import s from "./ReviewsSection.module.scss";
 import classNames from "classnames";
@@ -60,7 +62,7 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
       </div>
 
       <div className={classNames(s.container, s.review__content)}>
-      <div className={s.blur}>
+        <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
         <Carousel
