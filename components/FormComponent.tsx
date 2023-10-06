@@ -69,7 +69,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
 
       // Replace "https://example.com/api/submit" with your actual backend endpoint
       const response = await axios.post(
-        "https://example.com/api/submit",
+        "",
         formData
       );
 
