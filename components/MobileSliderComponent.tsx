@@ -74,7 +74,7 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
     >
       {data.map((item, index) => (
         <Carousel.Slide key={index} style={{ marginRight: "40px" }}>
-          <SlideComponent data={item} />{" "}
+          <SlideComponent data={item} />
           {/* Відображення переданої компоненти */}
         </Carousel.Slide>
       ))}
