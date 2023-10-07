@@ -1,7 +1,9 @@
 export interface AuthorInterface {
+    id: number;
     name: string;
-    occupation: string;
-    imgSrc: string;
+    position: string;
+    avatar: string;
     generalInfo: string;
-    articleIds?: string[]; 
+    linkedinUrl: string;
   }
+  

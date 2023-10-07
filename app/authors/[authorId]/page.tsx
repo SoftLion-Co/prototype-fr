@@ -6,19 +6,21 @@ import AuthorBlogs from "@/app/sections/author_page/AuthorBlogs";
 import AuthorSection from "@/app/sections/author_page/AuthorSection";
 import { usePathname, redirect } from "next/navigation";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
-import authors from "@/data/blog/authors_data.json";
+import authors from "@/data/blog/authors_data_test.json";
 import getBlogsData from "@/hooks/getBlogsData";
 
-
+const authorsArray: AuthorInterface[] = [
+  // Your array of authors here
+];
 
 const Author = () => {
 
   const id = usePathname().split("/").reverse()[0];
-  const authorData: { [key: string]: AuthorInterface } = authors;
-  const author = authorData[id];
+
+  const author = authors[id];
   const blogData = getBlogsData();
   if (!author) {
-    redirect(`/authors/${Object.keys(authorData)[0]}`);
+    redirect(`/authors/${Object.keys(authors)[0]}`);
   }
   const links = [{ title: author.name, href: "" }];
   const blogs = blogData.filter((item) => item.authorId === id);
