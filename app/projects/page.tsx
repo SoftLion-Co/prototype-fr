@@ -1,15 +1,15 @@
 import React from "react";
 import OurProjectsSection from "../sections/projects_page/OurProjectsSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import UseClientComponent from "@/hooks/useClientComponent";
+export async function generateMetadata({}) {
+  return { title: "SoftLion | Projects" };
+}
 
 const Projects = () => {
   const links = [{ title: "Projects", href: "/projects" }];
-  const title = "Projects";
 
   return (
     <div>
-      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <OurProjectsSection />
     </div>

@@ -1,12 +1,8 @@
-"use client";
-
-import React, { useEffect } from "react";
-import s from "./page.module.scss";
-import ImpressionSection from "@/app/sections/article_page/ImpressionSection";
+import React from "react";
+import InformationSection from "@/app/sections/article_page/ImpressionSection";
 import ArticleSection from "@/app/sections/article_page/ArticleSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
-import getBlogsData from "@/hooks/getBlogsData";
+import OurTeamSection from "@/app/sections/home_page/OurTeamSection";
 import blogsData from "@/data/blog/blogs_extended_data.json";
 
 type BlogData = {
@@ -25,6 +21,7 @@ type BlogData = {
 
 interface BlogParams {
   blogId: string;
+  id: string;
 }
 
 const Blog = ({ params }: { params: BlogParams }) => {
@@ -41,17 +38,20 @@ const Blog = ({ params }: { params: BlogParams }) => {
     { title: response.articleName, href: "#" },
   ];
 
-  useEffect(() => {
-    // Set document title
-    document.title = response.articleName;
-  });
+  const metadata = {
+    title: response.articleName,
+  };
 
   return (
     <div>
+      <head>
+        <title>{metadata.title}</title>
+      </head>
+
       <InfoNavigationComponent links={links} />
       <ArticleSection response={response} />
-      <ImpressionSection />
-      <OurTeamSetcion />
+      <InformationSection />
+      <OurTeamSection />
     </div>
   );
 };

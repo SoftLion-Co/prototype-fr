@@ -1,14 +1,13 @@
 import React from "react";
 import s from "./page.module.scss";
 import ContactUsSection from "../sections/contact_us_page/ContactUsSection";
-import UseClientComponent from "@/hooks/useClientComponent";
+export async function generateMetadata({}) {
+  return { title: "SoftLion | Contact Us" };
+}
 
 const ContactUs = () => {
-  const title = "Contact Us";
-
   return (
     <div className={s.contact_page}>
-      <UseClientComponent title={title} />
       <ContactUsSection />
     </div>
   );

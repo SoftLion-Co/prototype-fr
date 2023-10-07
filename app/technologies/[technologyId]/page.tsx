@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import s from "./page.module.scss";
 
 import data_java from "@/data/technologies/data_java.json";
@@ -18,6 +18,10 @@ import OurProjects from "@/app/sections/technologies_page/OurProjects";
 import CreationSection from "@/app/sections/technologies_page/CreationSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+
+export async function generateMetadata({}) {
+  return { title: "SoftLion | Technology" };
+}
 
 export interface Data {
   heroSection: HeroSection;
@@ -97,24 +101,6 @@ const Technology = ({ params }: { params: any }) => {
     return data;
   };
 
-  // useEffect(() => {
-  //   // Google tag (gtag.js)
-  //   const script = document.createElement("script");
-  //   script.async = true;
-  //   script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
-
-  //   script.onload = () => {
-  //     window.dataLayer = window.dataLayer || [];
-  //     function gtag(...args: (string | Date)[]) {
-  //       window.dataLayer.push(...args);
-  //     }
-  //     gtag("js", new Date());
-  //     gtag("config", "G-YPC94QJXCN");
-  //   };
-
-  //   document.head.appendChild(script);
-  // }, []);
-
   const data = getData();
 
   if (data === null || undefined) {
@@ -128,14 +114,17 @@ const Technology = ({ params }: { params: any }) => {
     },
   ];
 
-  useEffect(() => {
-    // Set document title
-    document.title = `SoftLion | ${data.heroSection.titleTech}`;
-  });
+  const metadata = {
+    title: data.heroSection.titleTech,
+  };
 
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
+      <head>
+        <title>{metadata.title}</title>
+      </head>
+
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <HeroSection heroTech={data.heroSection} />
