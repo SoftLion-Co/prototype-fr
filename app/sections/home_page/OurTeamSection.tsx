@@ -32,7 +32,7 @@ const OurTeamSetcion = () => {
   const response: Props[] = [
     {
       id: "1",
-      name: "Pavlo Graur",
+      name: "Paul Graur",
       position: "CEO",
       avatar:
         "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_800_800/0/1670855656809?e=1698883200&v=beta&t=Xrv7PpcxyXFk8pXqXn-jXQxYVgcXoEgL4XWwX4LLPH0",
