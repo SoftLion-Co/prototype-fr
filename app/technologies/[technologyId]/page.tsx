@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React from "react";
 import s from "./page.module.scss";
 
@@ -19,9 +19,7 @@ import CreationSection from "@/app/sections/technologies_page/CreationSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
-export async function generateMetadata({}) {
-  return { title: "SoftLion | Technology" };
-}
+
 
 export interface Data {
   heroSection: HeroSection;

@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React from "react";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
@@ -9,9 +8,8 @@ import { usePathname, redirect } from "next/navigation";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
 import getBlogsData from "@/hooks/getBlogsData";
-export async function generateMetadata({}) {
-  return { title: "Author" };
-}
+
+
 
 const Author = () => {
 
