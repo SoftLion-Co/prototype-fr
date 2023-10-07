@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, useState, useEffect } from "react";
 import s from "./DevelopmentSection.module.scss";
 import classNames from "classnames";

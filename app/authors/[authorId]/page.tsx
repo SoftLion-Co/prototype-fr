@@ -9,10 +9,11 @@ import { usePathname, redirect } from "next/navigation";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
 import getBlogsData from "@/hooks/getBlogsData";
-import UseClientComponent from "@/hooks/useClientComponent";
+export async function generateMetadata({}) {
+  return { title: "Author" };
+}
 
 const Author = () => {
-  const title = "Author";
 
   const id = usePathname().split("/").reverse()[0];
   const authorData: { [key: string]: AuthorInterface } = authors;
@@ -26,7 +27,6 @@ const Author = () => {
 
   return (
     <div style={{ paddingBottom: "5%" }}>
-      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}
