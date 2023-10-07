@@ -2,51 +2,50 @@
 @import "./../styles/mixin";
 @import "../styles/container";
 
-.flip_card {
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
+.flip {
+  &_card {
+    perspective: 1000px;
+  }
 
-.clicked .flip_card_inner {
-  transform: rotateY(180deg);
-}
-
-/* This container is needed to position the front and back side */
-.flip_card_inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip_card:hover .flip_card_inner {
-  @include for-size(laptop) {
+  .clicked &_card_inner {
     transform: rotateY(180deg);
   }
-}
 
-.flip_card_front,
-.flip_card_back {
-  box-shadow: $technologies-card-shadow;
-  background: $technologies-card-backbround;
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
+  &_card_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
+  &_card:hover &_card_inner {
+    @include for-size(laptop) {
+      transform: rotateY(180deg);
+    }
+  }
 
-/* Style the back side */
-.flip_card_back {
-  transform: rotateY(180deg);
+  &_card_front,
+  &_card_back {
+    box-shadow: $technologies-card-shadow;
+    background: $technologies-card-backbround;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  &_card_back {
+    transform: rotateY(180deg);
+  }
 }
 
 .technologies {
@@ -54,20 +53,7 @@
     position: relative;
   }
 
-  &__image_wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-
-    @include for-size(laptop) {
-      flex-direction: row;
-    }
-    /* ... */
-    z-index: 2;
-  }
-
-  &__image_wrapper {
+  &__card_wrapper {
     border-radius: 15px;
 
     cursor: pointer;
@@ -116,123 +102,13 @@
     }
   }
 
-  &__image_uiux {
-    margin-bottom: 8px;
-
-    width: 125px;
-    height: 118px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 110px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(laptop) {
-      width: 136px;
-      height: 129px;
-
-      margin-bottom: 18px;
-    }
-
-    @include for-size(desktop) {
-      width: 181px;
-      height: 165px;
-
-      margin-bottom: 20px;
-    }
-  }
-
-  &__image_ecommerce {
-    width: 125px;
-    height: 118px;
-
-    margin-bottom: 8px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 110px;
-    }
-
-    @include for-size(laptop) {
-      width: 136px;
-      height: 129px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(desktop) {
-      width: 181px;
-      height: 165px;
-
-      margin-bottom: 20px;
-    }
-  }
-
-  &__image_seo {
-    width: 125px;
-    height: 118px;
-
-    margin-bottom: 14px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 114px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(laptop) {
-      margin-bottom: 18px;
-
-      height: 129px;
-      width: 136px;
-    }
-
-    @include for-size(desktop) {
-      margin-bottom: 20px;
-
-      width: 181px;
-      height: 165px;
-    }
-  }
-
-  &__image_api {
-    margin-bottom: 9px;
-
-    width: 125px;
-    height: 118px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 110px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(laptop) {
-      margin-bottom: 18px;
-
-      height: 129px;
-      width: 136px;
-    }
-
-    @include for-size(desktop) {
-      margin-bottom: 20px;
-
-      width: 181px;
-      height: 165px;
-    }
-  }
-
-  &__header_wrapper {
+  &__cards {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__text_ecommerce {
+  &__text {
     text-align: center;
 
     font-size: 14px;
@@ -259,9 +135,9 @@
   }
 
   &__name_header {
-    margin-bottom: 47px;
+    margin-bottom: 45px;
     @include for-size(tablet) {
-      margin-bottom: 118px;
+      margin-bottom: 115px;
     }
 
     @include for-size(laptop) {
@@ -269,7 +145,7 @@
     }
 
     @include for-size(desktop) {
-      margin-bottom: 172px;
+      margin-bottom: 170px;
     }
   }
 
@@ -284,12 +160,8 @@
     }
 
     @include for-size(laptop) {
-      // transition: transform 0.5s ease;
       width: 239px;
       justify-content: center;
-      // &:hover {
-      //   transform: scale(1.05);
-      // }
     }
 
     @include for-size(desktop) {
@@ -297,23 +169,43 @@
     }
   }
 
-  &__images_wrapper {
+  &__container_image {
+    height: 118px;
+    width: 125px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    @include for-size(tablet) {
+      height: 126px;
+      width: 132px;
+    }
+
+    @include for-size(laptop) {
+      height: 140px;
+      width: 146px;
+    }
+
+    @include for-size(desktop) {
+      height: 198px;
+      width: 188px;
+    }
+  }
+
+  &__cards_wrapper {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 
-    gap: 32px;
+    gap: 30px;
 
     @include for-size(tablet) {
-      gap: 46px;
+      gap: 50px 65px;
     }
 
     @include for-size(laptop) {
       flex-wrap: nowrap;
-      gap: 41px;
-    }
-
-    @include for-size(desktop) {
       gap: 40px;
     }
   }
