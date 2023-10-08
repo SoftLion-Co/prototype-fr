@@ -19,7 +19,7 @@ const Clients = () => {
       email: "client1@example.com",
       password: "password1",
       projectsCount: 0,
-      registerDate: new Date(),
+      registerDate: "Fri Oct 06 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -29,7 +29,7 @@ const Clients = () => {
       email: "client2@example.com",
       password: "password2",
       projectsCount: 2,
-      registerDate: new Date(),
+      registerDate: "Thu Oct 12 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -39,7 +39,7 @@ const Clients = () => {
       email: "client3@example.com",
       password: "password3",
       projectsCount: 4,
-      registerDate: new Date(),
+      registerDate: "Thu Oct 05 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -49,7 +49,7 @@ const Clients = () => {
       email: "client4@example.com",
       password: "password4",
       projectsCount: 6,
-      registerDate: new Date(),
+      registerDate: "Thu Oct 26 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -59,7 +59,7 @@ const Clients = () => {
       email: "client5@example.com",
       password: "password5",
       projectsCount: 8,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 09 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -69,7 +69,7 @@ const Clients = () => {
       email: "client6@example.com",
       password: "password6",
       projectsCount: 10,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -79,7 +79,7 @@ const Clients = () => {
       email: "client7@example.com",
       password: "password7",
       projectsCount: 12,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -89,7 +89,7 @@ const Clients = () => {
       email: "client8@example.com",
       password: "password8",
       projectsCount: 14,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -99,7 +99,7 @@ const Clients = () => {
       email: "client9@example.com",
       password: "password9",
       projectsCount: 16,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -109,7 +109,7 @@ const Clients = () => {
       email: "client10@example.com",
       password: "password10",
       projectsCount: 18,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -119,7 +119,7 @@ const Clients = () => {
       email: "client11@example.com",
       password: "password11",
       projectsCount: 20,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -129,7 +129,7 @@ const Clients = () => {
       email: "client12@example.com",
       password: "password12",
       projectsCount: 22,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -139,7 +139,7 @@ const Clients = () => {
       email: "client13@example.com",
       password: "password13",
       projectsCount: 24,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -149,7 +149,7 @@ const Clients = () => {
       email: "client14@example.com",
       password: "password14",
       projectsCount: 26,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -159,7 +159,7 @@ const Clients = () => {
       email: "client15@example.com",
       password: "password15",
       projectsCount: 28,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -169,7 +169,7 @@ const Clients = () => {
       email: "client16@example.com",
       password: "password16",
       projectsCount: 30,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -179,7 +179,7 @@ const Clients = () => {
       email: "client17@example.com",
       password: "password17",
       projectsCount: 32,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -189,7 +189,7 @@ const Clients = () => {
       email: "client18@example.com",
       password: "password18",
       projectsCount: 34,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -199,7 +199,7 @@ const Clients = () => {
       email: "client19@example.com",
       password: "password19",
       projectsCount: 36,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -209,7 +209,7 @@ const Clients = () => {
       email: "client20@example.com",
       password: "password20",
       projectsCount: 38,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -219,7 +219,7 @@ const Clients = () => {
       email: "client21@example.com",
       password: "password21",
       projectsCount: 40,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -229,7 +229,7 @@ const Clients = () => {
       email: "client22@example.com",
       password: "password22",
       projectsCount: 42,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -239,7 +239,7 @@ const Clients = () => {
       email: "client23@example.com",
       password: "password23",
       projectsCount: 44,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -249,7 +249,7 @@ const Clients = () => {
       email: "client24@example.com",
       password: "password24",
       projectsCount: 46,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
     {
@@ -259,7 +259,7 @@ const Clients = () => {
       email: "client25@example.com",
       password: "password25",
       projectsCount: 48,
-      registerDate: new Date(),
+      registerDate: "Thu Nov 02 2023 12:09:50 GMT+0300",
       wasOnline: new Date(),
     },
   ];

@@ -1,37 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./OrderStatusInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
-
-interface ContactData {
-  number: number;
-  data: string;
-  email: string;
-  description: string;
-  tell: number;
-}
+import { OrderStatusData } from "../../dashboard/orderStatus/page";
+import { SortMenuOption } from "../SortMenuComponent";
+import { useDateFormat } from "@/hooks/useDateFormat";
 
 interface Props {
-  users: ContactData[];
+  orders: OrderStatusData[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  onCardClick: (ContactData: ContactData) => void;
+  onCardClick: (order: OrderStatusData) => void;
   onEditButtonClick: () => void;
 }
 
 const OrderStatusInfoComponent: React.FC<Props> = ({
-  users,
+  orders,
   searchTerm,
   setSearchTerm,
   onCardClick,
   onEditButtonClick,
 }) => {
+  const {formatDMY} = useDateFormat();
+  const [filteredOrders, setFilteredOrders] = useState<OrderStatusData[]>(orders.filter(order =>
+    order.description.toLowerCase().includes(searchTerm.toLowerCase())
+  ));
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredUsers = users.filter(user =>
-    user.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const onSortOrderChange = (): void => {
+    setFilteredOrders([...filteredOrders].reverse());
+  }
+
+  const sortOptions: SortMenuOption[] = [
+    {
+      name: "Назва",
+      action: (): void => {
+        setFilteredOrders(
+          [...filteredOrders].sort((order1, order2) => {
+            return order1.description.toLowerCase().localeCompare(order2.description.toLowerCase());
+          })
+        );
+      },
+    },
+    {
+      name: "Дата",
+      action: (): void => {
+        setFilteredOrders([...filteredOrders]
+          .sort((order1, order2) => new Date(order1.data).getTime() - new Date(order2.data).getTime()));
+      },
+    },
+  ];
 
   return (
     <div className={s.user}>
@@ -41,16 +60,18 @@ const OrderStatusInfoComponent: React.FC<Props> = ({
           searchTerm={searchTerm}
           handleSearch={handleSearch}
           onEditButtonClick={onEditButtonClick}
+          sortOptions={sortOptions}
+          sortOrderChange={onSortOrderChange}
         />
       </div>
 
       <ul className={s.user__list}>
-        {filteredUsers.map(user => (
-          <li className={s.user__list__item} key={user.number}>
-            <div className={s.user__list__information} onClick={() => onCardClick(user)}>
-              <p>{user.number}</p>
-              <p>{user.description}</p>
-              <p>{user.data}</p>
+        {filteredOrders.map((order, index) => (
+          <li className={s.user__list__item} key={order.number}>
+            <div className={s.user__list__information} onClick={() => onCardClick(order)}>
+              <p>{index + 1}</p>
+              <p>{order.description}</p>
+              <p>{formatDMY(new Date(order.data))}</p>
             </div>
           </li>
         ))}

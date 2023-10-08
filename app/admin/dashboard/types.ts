@@ -5,7 +5,7 @@ export interface ClientData {
   email: string;
   password: string;
   projectsCount: number;
-  registerDate: Date;
+  registerDate: string | number;
   wasOnline: Date;
 }
 

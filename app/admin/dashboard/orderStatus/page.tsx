@@ -9,7 +9,7 @@ import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
 import { OrderCard } from "../../components/orderStatus/OrderStatusCard";
 
-interface OrderStatusData {
+export interface OrderStatusData {
   number: number;
   data: string;
   email: string;
@@ -20,95 +20,95 @@ interface OrderStatusData {
 const OrderStatus = () => {
   const users: OrderStatusData[] = [
     {
-      number: 1,
-      data: "01.07.2023",
-      tell: +380,
-      email: "email1@example.com",
-      description: "Description 1",
-    },
-    {
       number: 2,
-      data: "01.07.2023",
+      data: "Fri Oct 06 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email2@example.com",
       description: "Description 2",
     },
     {
       number: 5,
-      data: "01.07.2023",
+      data: "Thu Oct 05 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email3@example.com",
       description: "Description 3",
     },
     {
+      number: 1,
+      data: "Sat Oct 07 2023 12:09:50 GMT+0300",
+      tell: +380,
+      email: "email1@example.com",
+      description: "Description 1",
+    },
+    {
+      number: 12,
+      data: "Sun Oct 01 2023 12:09:50 GMT+0300",
+      tell: +380,
+      email: "email10@example.com",
+      description: "Description 10",
+    },
+    {
       number: 6,
-      data: "02.07.2023",
+      data: "Sun Oct 08 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email4@example.com",
       description: "Description 4",
     },
     {
       number: 7,
-      data: "03.07.2023",
+      data: "Wed Oct 04 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email5@example.com",
       description: "Description 5",
     },
     {
       number: 8,
-      data: "04.07.2023",
+      data: "Mon Oct 09 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email6@example.com",
       description: "Description 6",
     },
     {
+      number: 15,
+      data: "Sat Oct 14 2023 12:09:50 GMT+0300",
+      tell: +380,
+      email: "email13@example.com",
+      description: "Description 13",
+    },
+    {
       number: 9,
-      data: "05.07.2023",
+      data: "Tus Oct 03 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email7@example.com",
       description: "Description 7",
     },
     {
       number: 10,
-      data: "06.07.2023",
+      data: "Tus Oct 10 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email8@example.com",
       description: "Description 8",
     },
     {
       number: 11,
-      data: "07.07.2023",
+      data: "Mon Oct 02 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email9@example.com",
       description: "Description 9",
     },
     {
-      number: 12,
-      data: "08.07.2023",
-      tell: +380,
-      email: "email10@example.com",
-      description: "Description 10",
-    },
-    {
       number: 13,
-      data: "09.07.2023",
+      data: "Wed Oct 11 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email11@example.com",
       description: "Description 11",
     },
     {
       number: 14,
-      data: "10.07.2023",
+      data: "Thu Oct 12 2023 12:09:50 GMT+0300",
       tell: +380,
       email: "email12@example.com",
       description: "Description 12",
-    },
-    {
-      number: 15,
-      data: "11.07.2023",
-      tell: +380,
-      email: "email13@example.com",
-      description: "Description 13",
     },
   ];
 
@@ -120,18 +120,18 @@ const OrderStatus = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
   };
 
-  // useEffect(() => {
-  //   const count = users.filter(user =>
-  //     user.email.toLowerCase().includes(searchTerm.toLowerCase())
-  //   ).length;
-  //   setSearchResultCount(count);
-  // }, [searchTerm, users]);
+  useEffect(() => {
+    const count = users.filter(user =>
+      user.email.toLowerCase().includes(searchTerm.toLowerCase())
+    ).length;
+    setSearchResultCount(count);
+  }, [searchTerm, users]);
 
   return (
     <AdminLayout>
       <div className={s.order}>
         <OrderStatusInfoComponent
-          users={users}
+          orders={users}
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           onCardClick={() => {}}
@@ -148,7 +148,7 @@ const OrderStatus = () => {
 
       <div className={s.order_editor}>
         <MainPageHeading initialText="Статус замовлення" />
-        <OrderCard project = {{}} />
+        {isContentEditorVisible && <OrderCard project = {{}} />}
       </div>
     </AdminLayout>
   );

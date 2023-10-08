@@ -60,13 +60,13 @@ export const ClientCard: FC<Props> = ({ client }) => {
           <div>
             <BsCalendar3 />
             <p>
-              Дата реєстрації: <span>{formatDMYT(client.registerDate)}</span>
+              Дата реєстрації: <span>{formatDMYT(new Date(client.registerDate))}</span>
             </p>
           </div>
           <div>
             <BiTimeFive />
             <p>
-              Був в мережі: <span>{formatDMYT(client.wasOnline)}</span>
+              Був в мережі: <span>{formatDMYT(new Date (client.wasOnline))}</span>
             </p>
           </div>
         </div>

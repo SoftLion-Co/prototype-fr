@@ -162,7 +162,6 @@ const contactUs = () => {
       sendData: new Date("2024-08-15T08:40:00Z"),
     },
   ];
-  const [searchTerm, setSearchTerm] = useState("");
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
   const [contact, setContact] = useState<null | ContactData>(null);
 
@@ -175,8 +174,6 @@ const contactUs = () => {
       <div className={s.contact}>
         <ContactInfoComponent
           contacts={contacts}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
           onCardClick={setContact}
           onEditButtonClick={handleEditButtonClick}
         />
