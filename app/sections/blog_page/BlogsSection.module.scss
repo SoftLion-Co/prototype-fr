@@ -49,36 +49,63 @@
 // ====================CARDS=====================//
 // ==============================================//
 
-.blog__cards {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 65px;
+.blog {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 65px;
 
-  @include for-size(tablet) {
-    justify-content: space-between;
-    flex-direction: row;
-    gap: 0;
-    flex-wrap: wrap;
-    row-gap: 60px;
-    margin-bottom: 8%;
-  }
-  @include for-size(laptop) {
-    row-gap: 80px;
-  }
-  @include for-size(desktop) {
-    row-gap: 160px;
-  }
-}
-
-.blog__card {
-  @include for-size(tablet) {
-    max-width: 350px;
-    box-sizing: border-box;
+    @include for-size(tablet) {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 0;
+      flex-wrap: wrap;
+      row-gap: 60px;
+      margin-bottom: 8%;
+    }
+    @include for-size(laptop) {
+      row-gap: 80px;
+    }
+    @include for-size(desktop) {
+      row-gap: 160px;
+    }
   }
 
-  @include for-size(laptop) {
-    max-width: none;
+  &__cards {
+    @include for-size(tablet) {
+      max-width: 350px;
+      box-sizing: border-box;
+    }
+
+    @include for-size(laptop) {
+      max-width: none;
+    }
+  }
+
+  &__nothing {
+    margin: 0 auto;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    letter-spacing: 1.6px;
+    font-weight: 400;
+    line-height: 130%;
+
+    @include for-size(tablet) {
+      font-size: 18px;
+      letter-spacing: 2.2px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22px;
+      letter-spacing: 2.6px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 28px;
+      letter-spacing: 3px;
+      text-align: center;
+    }
   }
 }
 
