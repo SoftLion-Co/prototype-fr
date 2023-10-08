@@ -1,3 +1,6 @@
+// "use client";
+
+import React from "react";
 import s from "./page.module.scss";
 import ResultSection from "@/app/sections/project_page/ResultSection";
 import RequestSection from "@/app/sections/project_page/RequestSection";
@@ -96,8 +99,16 @@ const links = [
 ];
 
 const Project = () => {
+  const metadata = {
+    title: response.ProjectDescriptionSection.title,
+  };
+
   return (
     <div>
+      <head>
+        <title>{metadata.title}</title>
+      </head>
+
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <ProjectDescriptionSection data={response.ProjectDescriptionSection} />

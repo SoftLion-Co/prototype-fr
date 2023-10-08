@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.2",
+    "@types/react-helmet": "^6.1.7",
     "@types/react-slick": "^0.23.10",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",

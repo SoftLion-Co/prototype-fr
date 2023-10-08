@@ -201,6 +201,7 @@
     margin-bottom: 5%;
 
     &__icon {
+      object-fit: cover;
       margin: 0px 5px 0px 0;
 
       @include for-size(laptop) {
@@ -224,6 +225,7 @@
   &__box {
     display: flex;
     gap: 20px;
+    margin-bottom: 5%;
   }
 
   &__readingTime {
