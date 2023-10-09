@@ -11,7 +11,7 @@ import DotImg from "@/images/project/request-list.svg";
 import Image from "next/image";
 import CountryFlag from "react-country-flag";
 import { Pagination } from "@mantine/core";
-import data from "@/data/projects/projects_data.json"
+import data from "@/data/projects/projects_data.json";
 
 const sampleData: Array<{
   id: number;
@@ -44,14 +44,20 @@ const getUniqueFieldValues = (
 };
 
 //* DEFAULT TECHNOLOGIES AND COUNTRIES FOR FILTER
-const defaultTechnologies = ["Java", "React.js", "Angular", "Vue.js", "Node.js", ".NET"];
+const defaultTechnologies = [
+  "Java",
+  "React.js",
+  "Angular",
+  "Vue.js",
+  "Node.js",
+  ".NET",
+];
 
 const filterTechnologiesOptions = getUniqueFieldValues(
   sampleData,
   "technology",
   defaultTechnologies
 );
-
 
 const filterCountriesOptions = getUniqueFieldValues(sampleData, "country");
 console.log(filterCountriesOptions);
@@ -262,7 +268,9 @@ const OurProjectsSection = () => {
 
       <div className={s.projects__cards_mobile}>
         {filteredProjects.length === 0 ? (
-          <p className={s.projects__nothing}>No projects found for the selected filter.</p>
+          <p className={s.projects__nothing}>
+            No projects found for the selected filter.
+          </p>
         ) : (
           visibleProjects.map((project) => (
             <ProjectMobileCardComponent key={project.id} data={project} />
@@ -271,7 +279,9 @@ const OurProjectsSection = () => {
       </div>
       <div className={s.projects__cards_desktop}>
         {filteredProjects.length === 0 ? (
-          <p className={s.projects__nothing}>No projects found for the selected filter.</p>
+          <p className={s.projects__nothing}>
+            No projects found for the selected filter.
+          </p>
         ) : (
           visibleProjects.map((project) => (
             <ProjectCardComponent key={project.id} data={project} />

@@ -201,50 +201,48 @@
   }
 
   &__wrapper {
-    background: linear-gradient(140deg, #ffffff 0%, #ffffff 100%);
+    background-color: white;
     box-shadow: 0px 3px 32px 0px rgba(90, 92, 94, 0.2);
     border-radius: 6px;
     padding: 18px;
     width: 100%;
     box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px; 
 
     &___country {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
       width: 100%;
-      gap: 0;
-      row-gap: 18px;
+      grid-gap: 18px;
     }
 
     @include for-size(tablet) {
-      gap: 14px;
+      grid-gap: 14px;
       padding: 20px;
       border-radius: 8px;
 
       &___country {
-        gap: 0;
-        row-gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-row-gap: 20px;
       }
     }
     @include for-size(laptop) {
-      gap: 18px;
+      grid-gap: 18px;
       padding: 22px;
       border-radius: 12px;
 
       &___country {
-        gap: 0;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
         row-gap: 28px;
       }
     }
     @include for-size(desktop) {
-      gap: 23px;
+      grid-gap: 23px;
       padding: 26px;
       border-radius: 15px;
 
       &___country {
-        gap: 0;
         row-gap: 35px;
       }
     }
