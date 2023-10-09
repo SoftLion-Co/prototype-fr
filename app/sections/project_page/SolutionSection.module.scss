@@ -165,32 +165,24 @@
 
   &__heading_text {
     font-size: 16px;
-    line-height: 13px;
+    line-height: 130%;
     letter-spacing: 0.9px;
     font-weight: 400;
     margin-bottom: 20px;
 
     @include for-size(tablet) {
       font-size: 17px;
-      line-height: 23px;
       letter-spacing: 1.6px;
-
       max-width: 153px;
     }
-
     @include for-size(laptop) {
       font-size: 27px;
-      line-height: 35px;
       letter-spacing: 2.4px;
-
       max-width: 235px;
     }
-
     @include for-size(desktop) {
       font-size: 30px;
-      line-height: 39px;
       letter-spacing: 2.7px;
-
       max-width: 262px;
     }
   }
@@ -235,30 +227,23 @@
 
   &__text {
     margin-left: 39px;
-    max-width: 250px;
+    max-width: 280px;
     font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 0.4px;
+    line-height: 130%;
+    letter-spacing: 0.5px;
 
     @include for-size(tablet) {
-      font-size: 12px;
-      line-height: 15px;
-      letter-spacing: 0.5px;
-      max-width: 319px;
-      margin-left: 189px;
+      max-width: 370px;
+      margin-left: 190px;
     }
-
     @include for-size(laptop) {
       font-size: 18px;
-      line-height: 23px;
       letter-spacing: 0.7px;
       max-width: 592px;
       margin-left: 281px;
     }
-
     @include for-size(desktop) {
       font-size: 20px;
-      line-height: 26px;
       letter-spacing: 0.8px;
       max-width: 660px;
       margin-left: 324px;

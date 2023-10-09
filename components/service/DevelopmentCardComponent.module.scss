@@ -11,19 +11,17 @@
     @include for-size(tablet) {
       font-size: 16px;
       font-weight: 400;
-      line-height: 20px;
+      line-height: 130%;
       letter-spacing: 1.4px;
       margin-bottom: 31px;
     }
     @include for-size(laptop) {
       font-size: 23px;
-      line-height: 30px;
       letter-spacing: 2px;
       margin-bottom: 50px;
     }
     @include for-size(desktop) {
       font-size: 30px;
-      line-height: 39px;
       letter-spacing: 2.7px;
       margin-bottom: 70px;
     }
@@ -66,9 +64,9 @@
   }
   &__item {
     @include for-size(tablet) {
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 400;
-      line-height: 13px;
+      line-height: 130%;
       letter-spacing: 0.4px;
       padding-left: 20px;
       background-image: url("../../images/project/request-list.svg");
@@ -79,15 +77,12 @@
     }
     @include for-size(laptop) {
       font-size: 18px;
-      font-weight: 400;
-      line-height: 24px;
       letter-spacing: 0.7px;
       padding-left: 28px;
       background-size: 18px 18px;
     }
     @include for-size(desktop) {
       font-size: 20px;
-      line-height: 26px;
       letter-spacing: 0.8px;
       padding-left: 34px;
       background-size: 23px 23px;
@@ -98,18 +93,16 @@
     @include for-size(tablet) {
       font-size: 77px;
       font-weight: 400;
-      line-height: 90px;
+      line-height: 130%;
       letter-spacing: 2.3px;
       color: $placeholder-color;
     }
     @include for-size(laptop) {
       font-size: 115px;
-      line-height: 140px;
       letter-spacing: 3.5px;
     }
     @include for-size(desktop) {
       font-size: 150px;
-      line-height: 140px;
       letter-spacing: 4.5px;
     }
   }

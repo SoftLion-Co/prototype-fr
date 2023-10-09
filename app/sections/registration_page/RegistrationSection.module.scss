@@ -64,7 +64,7 @@
     color: $navigation-dark;
     font-size: 12px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.47px;
 
     @include for-size(tablet) {
@@ -117,7 +117,7 @@
   border-radius: 5px;
   color: $navigation-dark;
   font-size: 15px;
-  line-height: 130.49%;
+  line-height: 130%;
   letter-spacing: 0.6px;
 
   @include for-size(tablet) {
@@ -139,7 +139,7 @@
     color: $placeholder-color;
     font-size: 14px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.5px;
 
     @include for-size(tablet) {
@@ -210,8 +210,8 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130.49%;
-    letter-spacing: 0.48px;
+    line-height: 130%;
+    letter-spacing: 0.5px;
     margin-bottom: 27px;
 
     @include for-size(tablet) {
