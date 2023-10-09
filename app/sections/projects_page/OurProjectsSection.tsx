@@ -11,6 +11,7 @@ import DotImg from "@/images/project/request-list.svg";
 import Image from "next/image";
 import CountryFlag from "react-country-flag";
 import { Pagination } from "@mantine/core";
+import data from "@/data/projects/projects_data.json"
 
 const sampleData: Array<{
   id: number;
@@ -23,36 +24,7 @@ const sampleData: Array<{
   technology: string;
   country: string;
   countryCode: string;
-}> = [
-  {
-    id: 1,
-    image:
-      "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
-    title: "Trend company",
-    customer: "customer: Trend",
-    year: "year: 2023",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Go",
-    country: "Germany",
-    countryCode: "DE",
-  },
-  {
-    id: 1,
-    image:
-      "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
-    title: "Trend company",
-    customer: "customer: Trend",
-    year: "year: 2023",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Go",
-    country: "Ukraine",
-    countryCode: "UA",
-  },
-];
+}> = data;
 
 //* METHOD TO GET UNIFIED VALUES FROM sampleData AND MAKE UNIQUE ARRAYS
 const getUniqueFieldValues = (
@@ -72,7 +44,7 @@ const getUniqueFieldValues = (
 };
 
 //* DEFAULT TECHNOLOGIES AND COUNTRIES FOR FILTER
-const defaultTechnologies = ["Java", "React.js", "Angular", "Vue.js"];
+const defaultTechnologies = ["Java", "React.js", "Angular", "Vue.js", "Node.js", ".NET"];
 
 const filterTechnologiesOptions = getUniqueFieldValues(
   sampleData,
