@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
+const baseUrl = 'http://176.117.72.71:2891/api';
 
 class AuthorService {
 
@@ -11,9 +11,17 @@ class AuthorService {
 	}
 
 	async getAllShortAuthors() {
-		const response = await fetch(`${baseUrl}/author/get-short-all`);
-		const data = await response.json();
-		return data;
+		try {
+			const response = await fetch(`${baseUrl}/author/get-short-all`);
+			if (!response.ok) {
+				 throw new Error(`Request failed with status: ${response.status}`);
+			}
+			const data = await response.json();
+			console.log(data);
+			return data.result;
+	  } catch (error) {
+			console.error('Error:', error);
+	  }
 	}
 
 	async getAuthor(id) {
