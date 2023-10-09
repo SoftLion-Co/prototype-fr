@@ -83,17 +83,19 @@
   }
 
   &__paragraph {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 0.5px;
 
     @include for-size(tablet) {
       width: 295px;
-      min-height: 190px;
+      min-height: 160px;
+      font-size: 16px;
     }
     @include for-size(laptop) {
       width: 440px;
+      font-size: 18px;
       letter-spacing: 0.7px;
     }
     @include for-size(desktop) {

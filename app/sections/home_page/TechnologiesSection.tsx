@@ -12,60 +12,50 @@ import { BiExpandAlt } from "react-icons/bi";
 import HeadingComponent from "../../../components/HeadingComponent";
 
 interface Technology {
-  id: string;
-  className: string;
+  id: number;
   imgSrc: string;
   imgAlt: string;
   description: string;
-  name: string;
   isOpen: boolean;
 }
 
 const TechnologiesSection = () => {
   const [technologiesData, setTechnologiesData] = useState<Technology[]>([
     {
-      id: "UIUX",
-      className: s.technologies__image_uiux,
+      id: 1,
       imgSrc: UIUX,
       imgAlt: "UI/UX",
       description:
-        "UI/UX focuses on designing intuitive and visually appealing interfaces that provide users with a positive experience when interacting with digital products.",
-      name: "UI/UX",
+        "UI/UX design is the process of creating interfaces that are intuitive and visually appealing. These interfaces provide a positive user experience when interacting with digital products.",
       isOpen: false,
     },
     {
-      id: "Ecommerce",
-      className: s.technologies__image_ecommerce,
+      id: 2,
       imgSrc: Ecommerce,
       imgAlt: "Ecommerce",
       description:
-        "Ecommerce refers to the buying and selling of goods and services online. It involves the creation and management of online stores or platforms where businesses and consumers can engage in transactions.",
-      name: "Ecommerce",
+        "E-commerce businesses utilize online platforms to sell products/services, employing various technologies for transactions, including credit card processing, shipping, and customer service.",
       isOpen: false,
     },
     {
-      id: "SEO",
-      className: s.technologies__image_seo,
+      id: 3,
       imgSrc: SEO,
       imgAlt: "SEO",
       description:
-        "SEO optimization includes the use of keywords, improving website structure, internal and external linking, and other strategies to ensure high organic visibility and attract more visitors to the site. SEO",
-      name: "SEO",
+        "SEO optimization is a critical tool for businesses that want to be found online. By optimizing their websites for relevant keywords, businesses can improve their chances of ranking high in search results and attracting more visitors.",
       isOpen: false,
     },
     {
-      id: "API",
-      className: s.technologies__image_api,
+      id: 4,
       imgSrc: API,
       imgAlt: "API",
       description:
-        "APIs provide the ability to exchange data and functionality between various software applications, allowing for enhanced functionality and integration of different services.",
-      name: "API",
+        "APIs, or application programming interfaces, are a way for software applications to communicate with each other. They allow applications to share data and functionality, which can enhance functionality and integration.",
       isOpen: false,
     },
   ]);
 
-  const toggleIsOpen = (id: string) => {
+  const toggleIsOpen = (id: number) => {
     setTechnologiesData((prevData) =>
       prevData.map((tech) =>
         tech.id === id ? { ...tech, isOpen: !tech.isOpen } : tech
@@ -74,36 +64,43 @@ const TechnologiesSection = () => {
   };
 
   return (
-    <section className={`${s.container}`}>
+    <section className={classNames(s.container, s.technologies)}>
       <div className={s.technologies__wrapper}>
         <div className={s.technologies__name_header}>
           <HeadingComponent text="Technologies" />
         </div>
-        <div className={s.technologies__header_wrapper}>
-          <div className={s.technologies__images_wrapper}>
+        <div className={s.technologies__cards}>
+          <div className={s.technologies__cards_wrapper}>
             {technologiesData.map((tech) => (
               <div
                 key={tech.id}
-                className={`${s.technologies__image_wrapper} ${
-                  tech.isOpen ? s.hovered : ""
-                }`}
+                className={classNames(
+                  s.technologies__card_wrapper,
+                  tech.isOpen ? s.clicked : "",
+                  s.flip_card
+                )}
                 onClick={() => toggleIsOpen(tech.id)}
               >
-                <div className={s.technologies__icon_wrapper}>
-                  <BiExpandAlt className={s.technologies__icon_open} />
-                </div>
-                <div className={s.technologies__card_container}>
-                  <Image
-                    className={tech.className}
-                    src={tech.imgSrc}
-                    alt={tech.imgAlt}
-                  />
-                  <p className={s.technologies__description_photo}>
-                    {tech.name}
-                  </p>
-                  <p className={s.technologies__text_ecommerce}>
-                    {tech.description}
-                  </p>
+                <div
+                  className={classNames(
+                    s.flip_card_inner,
+                    s.technologies__card_container
+                  )}
+                >
+                  <div className={s.flip_card_front}>
+                    <div className={s.technologies__icon_wrapper}>
+                      <BiExpandAlt className={s.technologies__icon_open} />
+                    </div>
+                    <div className={s.technologies__container_image}>
+                      <Image src={tech.imgSrc} alt={tech.imgSrc} />
+                    </div>
+                    <p className={s.technologies__description_photo}>
+                      {tech.imgAlt}
+                    </p>
+                  </div>
+                  <div className={s.flip_card_back}>
+                    <p className={s.technologies__text}>{tech.description}</p>
+                  </div>
                 </div>
               </div>
             ))}

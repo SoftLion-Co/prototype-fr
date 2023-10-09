@@ -40,7 +40,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
             <p className={s.member__position}>{data.position}</p>
             <a
               className={s.member__linkedin}
-              href={data.linkedinUrl}
+              href={data.linkedinUrl === "" ? "https://www.linkedin.com/company/softlion" : data.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

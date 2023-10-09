@@ -7,13 +7,11 @@ interface CustomAppsCardComponentProps {
   path?: any;
   title?: string;
   text?: string;
-  text_mob?: string;
 }
 
 const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
   path,
   title,
-  text_mob,
   text,
 }) => {
   return (
@@ -21,7 +19,6 @@ const CustomAppsCardComponent: FC<CustomAppsCardComponentProps> = ({
       <div className={s.service__wrap}>
         <Image className={s.service__pic} src={path} alt="phone" />
         <h3 className={s.service__title}>{title}</h3>
-        <p className={s.service__text_mob}>{text_mob}</p>
         <p className={s.service__text}>{text}</p>
       </div>
     </div>

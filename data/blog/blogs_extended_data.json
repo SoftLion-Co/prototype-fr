@@ -1,10 +1,10 @@
 {
   "1": {
-    "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
+    "authorImg": "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_400_400/0/1687091718713?e=1698278400&v=beta&t=phbfafcOAP7SqTABmRKeFeAZ_2qGo-fY5gxP9o_GwPc",
     "articleName": "The Role of Backend Development",
     "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/1-the-role-of-backend-development/example-scene-1.svg",
     "readTime": "12 min",
-    "author": "Paul Graur",
+    "author": "Yurii Matvii",
     "articles": [
       {
         "id": "1",
@@ -40,11 +40,11 @@
     ]
   },
   "2": {
-    "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
+    "authorImg": "https://github.com/SoftLion-Co/prototype-fr/blob/main/images/avatar/Tetiana.jpg?raw=true",
     "articleName": "Simplified Basic Design",
     "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/6f455534d40b7b0c38e42947a0ef27d7841c8761/images/blog/2-basic-design-sales-boost/drawkit-grape-pack-illustration-2.svg",
     "readTime": "10 min",
-    "author": "Paul Graur",
+    "author": "Tania Hlushko",
     "articles": [
       {
         "id": "1",
@@ -164,11 +164,11 @@
     ]
   },
   "5": {
-    "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
+    "authorImg": "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_400_400/0/1687091718713?e=1698278400&v=beta&t=phbfafcOAP7SqTABmRKeFeAZ_2qGo-fY5gxP9o_GwPc",
     "articleName": "Mastering Progressive Web Apps: A Comprehensive Guide",
     "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/5-web-apps/drawkit-15.svg",
     "readTime": "11 min",
-    "author": "Paul Graur",
+    "author": "Yurii Matvii",
     "articles": [
       {
         "id": "1",
@@ -206,11 +206,11 @@
     ]
   },
   "6": {
-    "authorImg": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_200_200/0/1670855543512?e=1701302400&v=beta&t=B77PSuxeOJbPl2wWEFGl9alS4VomTUBEftqBFGtWp-E",
+    "authorImg": "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_400_400/0/1687091718713?e=1698278400&v=beta&t=phbfafcOAP7SqTABmRKeFeAZ_2qGo-fY5gxP9o_GwPc",
     "articleName": "Mastering Web Development",
     "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-6.svg",
     "readTime": "13 min",
-    "author": "Paul Graur",
+    "author": "Yurii Matvii",
     "articles": [
       {
         "id": "1",
