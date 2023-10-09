@@ -80,7 +80,7 @@ const OurTeamSetcion = () => {
     {
       id: "4",
       name: "Vira Lyzen",
-      position: "Head Of Development Department",
+      position: "Head Of Development",
       avatar:
         "https://media.licdn.com/dms/image/D4D03AQGnDWtRjuaD0w/profile-displayphoto-shrink_800_800/0/1692445989303?e=1698883200&v=beta&t=8y0QUHF6KuNjAFL46TCj8bzUFdc7ZjFJ_9Rs141LXjA",
       linkedinUrl: "https://www.linkedin.com/in/vira-lyzen-a63ba1281/",
@@ -130,7 +130,7 @@ const OurTeamSetcion = () => {
       id: "10",
       name: "Misha Zlupko",
       position: "Front-End Developer",
-      avatar: "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052467203?e=1694077200&v=beta&t=PKG5Wq2yulNIW99gZZNNVY21OMwtNxLSO94voBOBY44",
+      avatar: "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052466298?e=1697119200&v=beta&t=kI7CWP99jVLZyFLsWRv7W6BYh8e-QQItyQ3BSDzazmI",
       linkedinUrl: "https://www.linkedin.com/in/misha-zlupko-150649269/",
     },
     {

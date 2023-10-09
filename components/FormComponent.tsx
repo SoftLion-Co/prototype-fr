@@ -63,9 +63,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
 			email: data.email,
 			shortDescription: data.shortDescription,
       };
-
 	   await orderProjectService.createOrderProject(formData);
-		
+
       setIsFormSubmitted(true);
       reset();
       setPhone("");

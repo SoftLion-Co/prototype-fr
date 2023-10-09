@@ -1,11 +1,9 @@
-import s from "./page.module.scss";
-import ImpressionSection from "@/app/sections/article_page/ImpressionSection";
+import React from "react";
+import InformationSection from "@/app/sections/article_page/ImpressionSection";
 import ArticleSection from "@/app/sections/article_page/ArticleSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
-import getBlogsData from "@/hooks/getBlogsData";
-import blogsData from "@/data/blog/blogs_extended_data.json"; 
-
+import OurTeamSection from "@/app/sections/home_page/OurTeamSection";
+import blogsData from "@/data/blog/blogs_extended_data.json";
 
 type BlogData = {
   [key: string]: {
@@ -14,16 +12,19 @@ type BlogData = {
     articleimg: string;
     readTime: string;
     author: string;
-    articles: ({ id: string; title: string; description: string; image: string } | { id: string; title: string; description: string; image?: undefined })[];
+    articles: (
+      | { id: string; title: string; description: string; image: string }
+      | { id: string; title: string; description: string; image?: undefined }
+    )[];
   };
 };
 
 interface BlogParams {
   blogId: string;
+  id: string;
 }
 
 const Blog = ({ params }: { params: BlogParams }) => {
-
   const { blogId } = params;
 
   const response = (blogsData as BlogData)[blogId];
@@ -37,12 +38,20 @@ const Blog = ({ params }: { params: BlogParams }) => {
     { title: response.articleName, href: "#" },
   ];
 
+  const metadata = {
+    title: response.articleName,
+  };
+
   return (
     <div>
+      <head>
+        <title>{metadata.title}</title>
+      </head>
+
       <InfoNavigationComponent links={links} />
-      <ArticleSection response={response}/>
-      <ImpressionSection />
-      <OurTeamSetcion />
+      <ArticleSection response={response} />
+      <InformationSection />
+      <OurTeamSection />
     </div>
   );
 };
