@@ -54,19 +54,16 @@
     border: none;
     background-color: transparent;
     margin-bottom: 17px;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.49px;
 
     @include for-size(tablet) {
       margin-bottom: 23px;
-      line-height: 130.49%;
       letter-spacing: 0.629px;
     }
-
     @include for-size(laptop) {
       font-size: 16px;
     }
-
     @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
@@ -127,7 +124,7 @@
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.414px;
 
     @include for-size(tablet) {

@@ -47,7 +47,7 @@
     color: $blog-card-text-color;
     font-size: 20px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 1.1px;
     margin-bottom: 16px;
 
@@ -123,7 +123,7 @@
       padding-left: 20px;
       font-size: 12px;
       font-weight: 400;
-      line-height: 130.49%;
+      line-height: 130%;
       letter-spacing: 1.8px;
       position: relative;
       transition: color 200ms ease-in-out;
@@ -196,7 +196,7 @@
     color: $service-heading-color;
     font-size: 12px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.3px;
 
     @include for-size(tablet) {

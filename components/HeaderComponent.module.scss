@@ -143,7 +143,7 @@
     font-size: 20px;
     letter-spacing: 0.4px;
     color: black;
-    line-height: 26px;
+    line-height: 130%;
     position: relative;
 
     @include for-size(tablet) {
@@ -227,8 +227,7 @@
       font-size: 22px;
       letter-spacing: 0.4px;
       color: black;
-      line-height: 7px;
-      line-height: 26px;
+      line-height: 130%;
       @include for-size(tablet) {
         font-weight: 400;
         font-size: 12px;
@@ -379,7 +378,7 @@
     font-size: 22px;
     letter-spacing: 0.4px;
     color: black;
-    line-height: 26px;
+    line-height: 130%;
     position: relative;
   }
 

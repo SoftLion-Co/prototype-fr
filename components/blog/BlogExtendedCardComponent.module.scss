@@ -22,25 +22,19 @@
   @include for-size(tablet) {
     border-radius: 8px;
     font-size: 11px;
-    line-height: 13px;
+    line-height: 130%;
     box-shadow: 8.4px 21px 13.1px 0px #00000026;
   }
 
   @include for-size(laptop) {
     border-radius: 12px;
     font-size: 15px;
-    line-height: 20px;
-    box-shadow: 12.3px 30.7px 19.2px 0px #00000026;
-
     padding: 15px;
   }
 
   @include for-size(desktop) {
     border-radius: 15px;
     font-size: 20px;
-    line-height: 26px;
-    box-shadow: 16px 40px 25px 0px #00000026;
-
     padding: 20px;
   }
 

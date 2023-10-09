@@ -12,7 +12,7 @@
   &__title {
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 130%;
     color: black;
     margin-bottom: 20px;
     @include for-size(tablet) {
@@ -20,7 +20,6 @@
     }
     @include for-size(desktop) {
       font-size: 25px;
-      line-height: 33px;
       margin-bottom: 40px;
     }
     &___color {
@@ -31,16 +30,16 @@
   &__text {
     font-size: 14px;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 130%;
     color: black;
     margin-bottom: 30px;
+
     @include for-size(tablet) {
       display: block;
       margin-bottom: 45px;
     }
     @include for-size(desktop) {
       font-size: 25px;
-      line-height: 33px;
       margin-bottom: 60px;
     }
   }
@@ -48,24 +47,23 @@
   &___bold {
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 130%;
     color: black;
+
     @include for-size(desktop) {
       font-size: 25px;
-      line-height: 33px;
     }
   }
 
   &__list {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 130%;
     margin-bottom: 40px;
     @include for-size(tablet) {
       margin-bottom: 60px;
     }
     @include for-size(desktop) {
       font-size: 25px;
-      line-height: 33px;
       margin-bottom: 90px;
       
     }

@@ -112,7 +112,7 @@
     text-align: center;
 
     font-size: 14px;
-    line-height: 17px;
+    line-height: 130%;
     letter-spacing: 0.6px;
     padding-right: 15px;
     padding-left: 15px;
@@ -120,16 +120,12 @@
     @include for-size(tablet) {
       padding-right: 18px;
     }
-
     @include for-size(laptop) {
       font-size: 16px;
-      line-height: 18px;
       letter-spacing: 0.7px;
     }
-
     @include for-size(desktop) {
       font-size: 20px;
-      line-height: 26px;
       letter-spacing: 0.8px;
     }
   }
@@ -216,22 +212,17 @@
     text-align: center;
 
     font-size: 20px;
-    line-height: 22px;
+    line-height: 130%;
     letter-spacing: 1px;
 
     @include for-size(tablet) {
-      line-height: 27px;
       letter-spacing: 2px;
     }
-
     @include for-size(laptop) {
       font-size: 22px;
-      line-height: 29px;
     }
-
     @include for-size(desktop) {
       font-size: 30px;
-      line-height: 39px;
       letter-spacing: 2.7px;
     }
   }

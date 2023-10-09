@@ -26,7 +26,7 @@ const TechnologiesSection = () => {
       imgSrc: UIUX,
       imgAlt: "UI/UX",
       description:
-        "UI/UX focuses on designing intuitive and visually appealing interfaces that provide users with a positive experience when interacting with digital products.",
+        "UI/UX design is the process of creating interfaces that are intuitive and visually appealing. These interfaces provide a positive user experience when interacting with digital products.",
       isOpen: false,
     },
     {
@@ -34,7 +34,7 @@ const TechnologiesSection = () => {
       imgSrc: Ecommerce,
       imgAlt: "Ecommerce",
       description:
-        "Ecommerce refers to the buying and selling of goods and services online. It involves the creation and management of online stores or platforms where businesses and consumers can engage in transactions.",
+        "E-commerce businesses utilize online platforms to sell products/services, employing various technologies for transactions, including credit card processing, shipping, and customer service.",
       isOpen: false,
     },
     {
@@ -42,7 +42,7 @@ const TechnologiesSection = () => {
       imgSrc: SEO,
       imgAlt: "SEO",
       description:
-        "SEO optimization includes the use of keywords, improving website structure, internal and external linking, and other strategies to ensure high organic visibility and attract more visitors to the site. SEO",
+        "SEO optimization is a critical tool for businesses that want to be found online. By optimizing their websites for relevant keywords, businesses can improve their chances of ranking high in search results and attracting more visitors.",
       isOpen: false,
     },
     {
@@ -50,7 +50,7 @@ const TechnologiesSection = () => {
       imgSrc: API,
       imgAlt: "API",
       description:
-        "APIs provide the ability to exchange data and functionality between various software applications, allowing for enhanced functionality and integration of different services.",
+        "APIs, or application programming interfaces, are a way for software applications to communicate with each other. They allow applications to share data and functionality, which can enhance functionality and integration.",
       isOpen: false,
     },
   ]);
