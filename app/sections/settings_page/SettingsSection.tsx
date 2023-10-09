@@ -2,7 +2,7 @@
 import classNames from "classnames";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
+// import Link from "next/link";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import s from "./SettingsSection.module.scss";
 
@@ -27,68 +27,64 @@ const SettingsSection: FC = () => {
     console.log(data);
   };
 
-  const links = [{ title: "Personal-space", href: "/#" }, { title: "Settings", href: "/#" }];
+  const links = [
+    { title: "Personal-space", href: "/#" },
+    { title: "Settings", href: "/#" },
+  ];
 
   return (
-    <section className={s.settings}>
-      <InfoNavigationComponent links={links} />
-      <h2>Settings</h2>
-      <div className={classNames(s.container, s.settings)}>
-        <div>
-          <Link href="/settings-progect" title="Project" replace></Link>
-          {/* <div>
-            <h2>Project</h2>
-            <h2>Company Move</h2>
-            <h2>Project Name</h2>
-            <h2>Project Name</h2>
-          </div>
-          <div>
-            <h2>Settings</h2>
-            <h2>Privat Information</h2>
-          </div> */}
-        </div>
-        <form className={s.settingsForm} onSubmit={handleSubmit(onSubmit)}>
+    <>
+      <div className={s.infoNavigat}>
+        <InfoNavigationComponent links={links} />
+      </div>
+      <section className={s.settings}>
+        <h2 className={s.settingsHeader}>Settings</h2>
+        <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <section className={s.formSection}>
             <h3>Personal Information</h3>
-            <div className={s.formRow}>
-              <label>Change name</label>
-              <input
-                placeholder="Name"
-                type="text"
-                {...register("personalName")}
-              />
-            </div>
-            <div className={s.formRow}>
-              <label>Change surname</label>
-              <input
-                placeholder="Surname"
-                type="text"
-                {...register("personalSurname")}
-              />
+            <div className={s.formInput}>
+              <div className={s.formRow}>
+                <label>Change name</label>
+                <input
+                  placeholder="Name"
+                  type="text"
+                  {...register("personalName")}
+                />
+              </div>
+              <div className={s.formRow}>
+                <label>Change surname</label>
+                <input
+                  placeholder="Surname"
+                  type="text"
+                  {...register("personalSurname")}
+                />
+              </div>
             </div>
           </section>
 
           <section className={s.formSection}>
             <h3>Contacts</h3>
-            <div className={s.formRow}>
-              <label>Change email</label>
-              <input
-                placeholder="Email"
-                type="email"
-                {...register("contactEmail")}
-              />
-            </div>
-            <div className={s.formRow}>
-              <label>Change phone</label>
-              <input
-                placeholder="Phone"
-                type="tel"
-                {...register("contactPhone")}
-              />
+            <div className={s.formInput}>
+              <div className={s.formRow}>
+                <label>Change email</label>
+                <input
+                  placeholder="Email"
+                  type="email"
+                  {...register("contactEmail")}
+                />
+              </div>
+              <div className={s.formRow}>
+                <label>Change phone</label>
+                <input
+                  placeholder="Phone"
+                  type="tel"
+                  {...register("contactPhone")}
+                />
+              </div>
             </div>
           </section>
 
-          <section className={s.formSection}>
+          <section className={classNames(s.formSection, s.security)}>
             <h3>Security</h3>
             <div className={s.formRow}>
               <label>New password</label>
@@ -109,11 +105,12 @@ const SettingsSection: FC = () => {
               />
             </div>
           </section>
-
-          <button type="submit">Save changes</button>
+          <div className={s.formBtn}>
+            <button type="submit">Save changes</button>
+          </div>
         </form>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

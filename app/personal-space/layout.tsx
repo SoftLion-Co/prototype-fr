@@ -1,15 +1,13 @@
-import Link from "next/link";
 import s from "./page.module.scss";
 import React, { ReactNode } from "react";
- import SidebarMenu from "@/components/personal-space/SidebarMenu";
+import classNames from "classnames";
+import SidebarMenu from "@/components/personal-space/SidebarMenu";
 
 const PersonalLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div>
-      <div>
-        <SidebarMenu />
-      </div>
-      <div>{children}</div>
+    <div className={classNames(s.personalSpace_page, s.container)}>
+      <SidebarMenu />
+      <>{children}</>
     </div>
   );
 };

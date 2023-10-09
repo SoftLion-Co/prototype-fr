@@ -1,1 +1,24 @@
 @import "./../../styles/container";
+@import "./../../styles/mixin";
+
+.personalSpace_page {
+  display: grid;
+  padding-bottom: 220px;
+  grid-template-columns: 100%;
+  @include for-size(tablet) {
+    gap: 13px 0;
+    padding-bottom: 270px;
+    // grid-template-columns: 27% 20%;
+    grid-template-columns: 27% 1fr;
+  }
+  @include for-size(laptop) {
+    gap: 26px 0;
+    // grid-template-columns: 27% 50%;
+    padding-bottom: 300px;
+  }
+  @include for-size(desktop) {
+    gap: 40px 0;
+    // grid-template-columns: 25.5% 52%;
+    grid-template-columns: 25.5% 1fr;
+  }
+}

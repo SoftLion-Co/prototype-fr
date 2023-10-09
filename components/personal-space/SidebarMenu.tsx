@@ -4,28 +4,44 @@ import s from "./SidebarMenu.module.scss";
 
 const SidebarMenu = () => {
   const response = [
-    { name: "Project1", id: 1 },
-    { name: "Project2", id: 2 },
-    { name: "Project3", id: 3 },
+    { name: "Company Move", id: 1 },
+    { name: "Project Name FRANCHISE", id: 2 },
+    { name: "Project Name Alaska", id: 3 },
+    { name: "Project Name Simphone", id: 4 },
+    { name: "Project Name Shops", id: 5 },
+    { name: "Project Name Donuts", id: 6 },
+    { name: "Project Name Bank", id: 7 },
+    { name: "Project Name Tour", id: 8 },
+    { name: "Project Name FREELANCE", id: 9 },
+    { name: "Project Name FUTURE", id: 10 },
+    { name: "Project Name FORECAST", id: 11 },
+    { name: "Project Name COTTAGE", id: 12 },
   ];
 
   return (
-    <div className={s.settings}>
-      <div>
-        <h1>Project</h1>
-        <ul>
+    <div className={s.sideBar}>
+      <div className={s.block}>
+        <h1 className={s.block__title}>Projects</h1>
+        <ul className={s.block__list}>
           {response.map((project) => (
-            <li key={project.id}>
-              <Link href={`/personal-space/projects/${project.name}`}>
-                <h2>{project.name}</h2>
+            <li className={s.block__listItem} key={project.id}>
+              <Link
+                href={`/personal-space/projects/${project.name}`}
+                className={s.block__link}
+              >
+                <h2 className={s.block__linkText}>{project.name}</h2>
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div>
-        <h1>Settings</h1>
-        <h1>Private Information</h1>
+      <div className={s.block}>
+        <Link href={`/personal-space/settings/`} className={s.block__link}>
+          <h1 className={s.block__title}>Settings</h1>
+        </Link>
+        <Link href={`/personal-space/#`} className={s.block__link}>
+          <h1 className={s.block__title}>Privat Information</h1>
+        </Link>
       </div>
     </div>
   );
