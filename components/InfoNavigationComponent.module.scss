@@ -36,20 +36,20 @@
   }
 
   &__link {
-    color: $navigation-light;
+    color: $navigation-dark;
     text-decoration: none;
 
     &:hover {
-      color: $navigation-dark;
+      color: $navigation-light;
     }
   }
 
   &__active {
-    color: $heading-blue-color;
+    color: $navigation-light;
   }
 
   &__separator {
-    color: $navigation-light;
+    color: $navigation-dark;
     margin: 0 4px;
     font-weight: normal;
 
