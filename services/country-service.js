@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
+const baseUrl = 'http://176.117.72.71:2891/api';
 
 class CountryService {
 

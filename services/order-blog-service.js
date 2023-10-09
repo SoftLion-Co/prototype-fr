@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
+const baseUrl = 'http://176.117.72.71:2891/api';
 
 class OrderBlogService {
 
@@ -11,7 +11,8 @@ class OrderBlogService {
 	}
 
 	async changeTypeOrder(id, numberType) {
-		const response = await fetch(`${baseUrl}/order-blog/${id}`, {
+		
+		const response = await fetch(`${baseUrl}/order-blog/change-type?id=${id}&typeNumber=${numberType}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
@@ -50,27 +51,27 @@ class OrderBlogService {
 		},
 			body: JSON.stringify(orderBlogData)
 		});
-
+		console.log(response);
 		if (!response.ok) {
 			throw new Error('Error creating orderBlog');
 		}
 		console.log(await response.json())
 	}
 
-	async updateOrderBlog(orderBlogData) {
-		const response = await fetch(`${baseUrl}/order-blog`, {
-		method: 'PUT',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-			body: JSON.stringify(orderBlogData)
-		});
+	// async updateOrderBlog(orderBlogData) {
+	// 	const response = await fetch(`${baseUrl}/order-blog`, {
+	// 	method: 'PUT',
+	// 	headers: {
+	// 		'Content-Type': 'application/json'
+	// 	},
+	// 		body: JSON.stringify(orderBlogData)
+	// 	});
 
-		if (!response.ok) {
-			throw new Error('Error updating orderBlog');
-		}
-		console.log(await response.json())
-	}
+	// 	if (!response.ok) {
+	// 		throw new Error('Error updating orderBlog');
+	// 	}
+	// 	console.log(await response.json())
+	// }
 
 }
 

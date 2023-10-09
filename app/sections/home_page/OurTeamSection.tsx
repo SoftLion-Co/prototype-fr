@@ -5,11 +5,12 @@ import s from "./OurTeamSection.module.scss";
 import classNames from "classnames";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 import { Carousel, Embla } from "@mantine/carousel";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import Image, { StaticImageData } from "next/image";
 import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
+import AuthorService from "./../../../services/author-service";
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
 import AvatarYan from "./../../../images/avatar/Yan.jpeg";
 import { usePathname } from "next/navigation";
@@ -28,6 +29,28 @@ const OurTeamSetcion = () => {
     avatar: string | StaticImageData;
     linkedinUrl: string;
   }
+
+//   const getAllShortAuthors = async () => {
+//     try {
+//       const response: Props[] = await AuthorService.getAllShortAuthors();
+//       console.log(response);
+//       return response;
+//     } catch (error) {
+//       console.error(error);
+//       return [];
+//     }
+//   };
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const data: Props[] = await getAllShortAuthors();
+//       setResponse(data);
+//     };
+
+//     fetchData();
+//   }, []);
+
+//   const [response, setResponse] = useState<Props[]>([]);
 
   const response: Props[] = [
     {
@@ -159,6 +182,7 @@ const OurTeamSetcion = () => {
                 : index + 2 < teamMembers.length
                 ? index + 2
                 : index + 2 - teamMembers.length;
+
               setCurrentSlide(slideIndex);
             }}
             previousControlIcon={
