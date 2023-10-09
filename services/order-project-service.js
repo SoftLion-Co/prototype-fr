@@ -1,4 +1,4 @@
-import baseUrl from "./base-links/config.json"
+const baseUrl = 'http://176.117.72.71:2891/api';
 
 class OrderProjectService {
 
@@ -11,7 +11,8 @@ class OrderProjectService {
 	}
 
 	async changeTypeOrder(id, numberType) {
-		const response = await fetch(`${baseUrl}/order-project/${id}`, {
+		
+		const response = await fetch(`${baseUrl}/order-project/change-type?id=${id}&typeNumber=${numberType}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
@@ -29,6 +30,9 @@ class OrderProjectService {
 	async getOrderProject(id) {
 		const response = await fetch(`${baseUrl}/order-project/${id}`);
 		const data = await response.json();
+		if (!response.ok) {
+			throw new Error('Oops!');
+			}
 		return data;
 	}
 
@@ -58,20 +62,20 @@ class OrderProjectService {
 		return response.ison();
 	}
 
-	async updateOrderProject(orderProjectData) {
-		const response = await fetch(`${baseUrl}/order-project`, {
-		method: 'PUT',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-			body: JSON.stringify(orderProjectData)
-		});
-		console,log(orderProjectData);
-		if (!response.ok) {
-			throw new Error('Error updating orderProject');
-		}
-		console.log(await response.json())
-	}
+	// async updateOrderProject(orderProjectData) {
+	// 	const response = await fetch(`${baseUrl}/order-project`, {
+	// 	method: 'PUT',
+	// 	headers: {
+	// 		'Content-Type': 'application/json'
+	// 	},
+	// 		body: JSON.stringify(orderProjectData)
+	// 	});
+	// 	console,log(orderProjectData);
+	// 	if (!response.ok) {
+	// 		throw new Error('Error updating orderProject');
+	// 	}
+	// 	console.log(await response.json())
+	// }
 
 }
 

@@ -1,4 +1,4 @@
-import baseUrl from "./base-links/config.json"
+const baseUrl = 'http://176.117.72.71:2891/api';
 
 class TechnologyService {
 

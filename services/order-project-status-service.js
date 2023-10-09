@@ -1,9 +1,25 @@
-import baseUrl from "./base-links/config.json"
+const baseUrl = 'http://176.117.72.71:2891/api';
 
 class OrderProjectStatusService {
 
 	async getAllOrderProjectStatuses() {
 		const response = await fetch(`${baseUrl}/order-project-status`);
+		const data = await response.json();
+		return data;
+	}
+	async changeTypeOrder(id, numberType) {
+		
+		const response = await fetch(`${baseUrl}/order-project-status/change-type?id=${id}&typeNumber=${numberType}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+				body: JSON.stringify(numberType)
+			});
+	
+			if (!response.ok) {
+				throw new Error('Error');
+			}
 		const data = await response.json();
 		return data;
 	}

@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 interface TeamsProps {
   data: {
     name: string;
-    employment: string;
+    position: string;
     avatar: string | StaticImageData;
     id: string;
     linkedinUrl: string;

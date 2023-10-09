@@ -14,13 +14,13 @@ interface FormProps {
 }
 
 interface FormData {
-  email: string;
-  phone: string;
-  description: string;
+	numberPhone: string;
+	email: string;
+	shortDescription: string;
 }
 
 const FormComponent: React.FC<FormProps> = ({ title }) => {
-  const [phone, setPhone] = useState("");
+  const [numberPhone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
   
@@ -32,9 +32,9 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
     watch,
   } = useForm<FormData>({
     defaultValues: {
+		numberPhone: "",
       email: "",
-      phone: "",
-      description: "",
+      shortDescription: "",
     },
   });
 
@@ -49,33 +49,23 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
     setTextareaHeight(textarea.style.height); // Збережіть висоту у стані компонента
   };
   const watchEmail = watch("email");
-  const watchDescription = watch("description");
+  const watchDescription = watch("shortDescription");
 
   const handleFormSubmit = async (data: FormData) => {
     try {
-      if (!data.email || !phone || !data.description) {
+      if (!data.email || !numberPhone || !data.shortDescription) {
         console.log("Please fill in all required fields");
         return;
       }
-
-      console.log("email:", data.email);
-      console.log("phone:", phone);
-      console.log("description:", data.description);
 		
       const formData = {
+			numberPhone: "+" + numberPhone,
 			email: data.email,
-			phone: "+" + phone,
-			description: data.description,
+			shortDescription: data.shortDescription,
       };
-		
-		const response = await orderProjectService.createOrderProject(formData);
-      if(response.result!){
-			console.log("Form successfully submitted:", response.result);
-		}
-		else{
-			console.log("Oops:", response.error);
-		}
 
+	   await orderProjectService.createOrderProject(formData);
+		
       setIsFormSubmitted(true);
       reset();
       setPhone("");
@@ -85,8 +75,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
   };
 
   useEffect(() => {
-    setSubmitDisabled(!watchEmail || !phone || !watchDescription);
-  }, [watchEmail, phone, watchDescription]);
+    setSubmitDisabled(!watchEmail || !numberPhone || !watchDescription);
+  }, [watchEmail, numberPhone, watchDescription]);
 
   return (
     <form
@@ -116,9 +106,9 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
           <PhoneInput
             inputProps={{
               required: true,
-              name: "phone",
+              name: "numberPhone",
               className: `${s.form__field} ${s.phoneInput} ${
-                errors.phone ? s.invalidField : ""
+                errors.numberPhone ? s.invalidField : ""
               }`,
               placeholder: "",
             }}
@@ -126,8 +116,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
             disableSearchIcon
             inputClass={s.phoneInput}
             country={"us"}
-            value={phone}
-            onChange={(phone: string) => setPhone(phone)}
+            value={numberPhone}
+            onChange={(numberPhone: string) => setPhone(numberPhone)}
             buttonClass={s["buttonC"]}
             searchClass={s["search"]}
             searchStyle={{
@@ -145,7 +135,7 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
             dropdownClass={s["drop"]}
             containerClass={s["container-input"]}
           />
-          {errors.phone && <p className={s.error}>{errors.phone.message}</p>}
+          {errors.numberPhone && <p className={s.error}>{errors.numberPhone.message}</p>}
         </div>
         <div className={s.form__input}>
       <textarea
@@ -156,12 +146,12 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         className={s.form__area}
         style={{ height: textareaHeight }}
         onInput={adjustTextareaHeight}
-        {...register('description', {
+        {...register('shortDescription', {
           required: 'Description is required',
         })}
       ></textarea>
-      {errors.description && (
-        <p className={s.error}>{errors.description.message}</p>
+      {errors.shortDescription && (
+        <p className={s.error}>{errors.shortDescription.message}</p>
       )}
     </div>
       </div>
