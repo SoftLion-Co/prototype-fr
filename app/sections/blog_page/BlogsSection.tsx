@@ -192,12 +192,16 @@ const BlogsSection = () => {
           </div>
         </div>
 
-        <div className={s.blog__cards}>
-          {currentBlogs.map((blog) => (
-            <div className={s.blog__card}>
-              <BlogExtendedCardComponent data={blog} />
-            </div>
-          ))}
+        <div className={s.blog__card}>
+          {currentBlogs.length > 0 ? (
+            currentBlogs.reverse().map((blog) => (
+              <div className={s.blog__cards}>
+                <BlogExtendedCardComponent data={blog} />
+              </div>
+            ))
+          ) : (
+            <p className={s.blog__nothing}>Nothing found for your request</p>
+          )}
         </div>
 
         <div className={s.pagination}>
