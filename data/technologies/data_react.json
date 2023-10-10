@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "titleTech": "React",
-    "paragraph": "React is a JavaScript library for building user interfaces. It is a declarative, component-based library that makes it easy to create interactive, dynamic web applications. Declarative means that you tell React what your UI should look like, and React figures out how to render it. This makes it easier to write code that is easy to understand and maintain. Component-based means that you break your UI down into smaller, reusable components. This makes it easier to build complex UIs and to make changes to your code without breaking everything."
+    "paragraph": "React is a powerful JavaScript library for building user interfaces that is known for its speed, flexibility, and scalability. It uses a declarative and component-based approach to make it easy to create interactive and dynamic web applications. React is also very popular, with a large and active community that contributes to its extensive library of modules and components."
   },
   "creationSection": [
     {

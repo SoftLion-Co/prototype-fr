@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "titleTech": "Vue",
-    "paragraph": "Vue.js is an open-source JavaScript framework for building user interfaces. It is small in size and has a lightweight structure, making it easy to use and learn. Vue.js uses a component-based model for building user interfaces. Components are self-contained pieces of the interface that can be reused in different parts of the application. Vue.js also has a built-in routing and state management system, making it a powerful tool for building complex web applications. Vue.js is used by many well-known companies, such as Alibaba, Baidu, Gitlab, and Tesla."
+    "paragraph": "Vue.js is a lightweight JavaScript framework for building modern user interfaces. It uses a component-based model and has a built-in routing and state management system. Vue.js is easy to use and learn, making it a popular choice for developing both simple and complex web applications. It is used by many well-known companies, including Alibaba, Baidu, Gitlab, and Tesla."
   },
   "creationSection": [
     {
