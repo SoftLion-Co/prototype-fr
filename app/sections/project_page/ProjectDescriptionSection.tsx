@@ -1,7 +1,6 @@
-import classNames from "classnames";
-import s from "./ProjectDescriptionSection.module.scss";
 import React, { FC } from "react";
 import Image from "next/image";
+import s from "./ProjectDescriptionSection.module.scss";
 
 interface ProjectDescriptionData {
   title: string;
@@ -22,7 +21,7 @@ const ProjectDescriptionSection: FC<{ data: ProjectDescriptionData }> = ({
       <div className={s.container}>
         <div className={s.project}>
           <div className={s.article}>
-            <h2 className={s.article__title}>{title}</h2>
+            <h1 className={s.article__title}>{title}</h1>
             <p className={s.article__description}>{description}</p>
             <p className={s.article__time}>Time development: {time}</p>
             <p className={s.article__year}>Year: {year}</p>

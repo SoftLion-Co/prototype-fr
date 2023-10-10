@@ -39,14 +39,14 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
   });
 
 
-  const [textareaHeight, setTextareaHeight] = useState('auto'); // Оголошення textareaHeight
+  const [textareaHeight, setTextareaHeight] = useState('auto');
 
-  // Функція для встановлення висоти <textarea> в залежності від змісту
+ 
   const adjustTextareaHeight = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = event.target;
-    textarea.style.height = 'auto'; // Спершу встановіть висоту на автоматичну
-    textarea.style.height = `${textarea.scrollHeight}px`; // Встановіть висоту відповідно до змісту
-    setTextareaHeight(textarea.style.height); // Збережіть висоту у стані компонента
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`; 
+    setTextareaHeight(textarea.style.height);
   };
   const watchEmail = watch("email");
   const watchDescription = watch("shortDescription");
@@ -57,19 +57,23 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         console.log("Please fill in all required fields");
         return;
       }
-		
+  
       const formData = {
-			numberPhone: "+" + numberPhone,
-			email: data.email,
-			shortDescription: data.shortDescription,
+        numberPhone: "+" + numberPhone,
+        email: data.email,
+        shortDescription: data.shortDescription,
       };
-	   await orderProjectService.createOrderProject(formData);
-
+      await orderProjectService.createOrderProject(formData);
+  
       setIsFormSubmitted(true);
       reset();
       setPhone("");
+      
     } catch (error) {
       console.error("Error submitting form:", error);
+  
+      reset();
+      setPhone("");
     }
   };
 

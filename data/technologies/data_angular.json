@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "titleTech": "Angular",
-    "paragraph": "Angular is a popular JavaScript framework for developing web applications. It uses a component-based model to create user interfaces, and it also has a built-in routing and state management system. Angular is a good choice for developing large and complex web applications, as it provides high performance, scalability, and flexibility."
+    "paragraph": "Angular is a popular JavaScript framework for developing high-performance, scalable, and flexible web applications. It uses a component-based model to create user interfaces and has a built-in routing and state management system. Angular is a good choice for developing large and complex web applications."
   },
   "creationSection": [
     {

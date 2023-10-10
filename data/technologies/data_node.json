@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "titleTech": "Node.js",
-    "paragraph": "Node.js is an open-source, server-side JavaScript platform that allows for the development of scalable network applications. Node.js uses an asynchronous, non-blocking I/O model, which makes it very efficient for handling user requests. It also has a large library of modules that can be used to create a variety of network applications."
+    "paragraph": "Node.js is an open-source, server-side JavaScript platform for developing scalable network applications. It uses an asynchronous, non-blocking I/O model to efficiently handle user requests. Node.js has a large library of modules for creating a variety of network applications, such as web servers, chat applications, and real-time data streaming applications."
   },
   "creationSection": [
     {
