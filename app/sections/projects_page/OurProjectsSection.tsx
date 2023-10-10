@@ -21,26 +21,34 @@ const sampleData: Array<{
   year: string;
   author: string;
   description: string;
-  technology: string;
+  technology: string[];
   country: string;
   countryCode: string;
 }> = data;
 
 //* METHOD TO GET UNIFIED VALUES FROM sampleData AND MAKE UNIQUE ARRAYS
 const getUniqueFieldValues = (
-  data: any,
-  field: any,
+  data: any[],
+  field: string,
   defaultValues: string[] = []
 ) => {
-  const uniqueValues = data.reduce((accumulator: any, project: any) => {
-    if (!accumulator.includes(project[field])) {
-      accumulator.push(project[field]);
-    }
-    return accumulator;
-  }, []);
+  const uniqueValues: string[] = [...defaultValues];
 
-  // Додавання дефолтних значень
-  return [...defaultValues, ...uniqueValues];
+  data.forEach((project) => {
+    if (Array.isArray(project[field])) {
+      project[field].forEach((tech: any) => {
+        if (!uniqueValues.includes(tech)) {
+          uniqueValues.push(tech);
+        }
+      });
+    } else if (typeof project[field] === 'string') {
+      if (!uniqueValues.includes(project[field])) {
+        uniqueValues.push(project[field]);
+      }
+    }
+  });
+
+  return uniqueValues;
 };
 
 //* DEFAULT TECHNOLOGIES AND COUNTRIES FOR FILTER
@@ -79,10 +87,10 @@ const OurProjectsSection = () => {
   const filteredProjects = sampleData.filter(
     (project) =>
       (selectedTechnologies.length === 0 ||
-        selectedTechnologies.includes(project.technology)) &&
+        selectedTechnologies.some((tech) => project.technology.includes(tech))) &&
       (selectedCountries.length === 0 ||
         selectedCountries.includes(project.country))
-  );
+  );  
 
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 

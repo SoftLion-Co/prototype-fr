@@ -7,7 +7,7 @@
     "year": "year: 2023",
     "author": "author: SoftLion",
     "description": "In this project, we developed the design, implemented it, and provide further support",
-    "technology": "Go",
+    "technology": [".NET", "React.js"],
     "country": "Germany",
     "countryCode": "DE"
   }
