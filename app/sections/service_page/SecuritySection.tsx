@@ -12,31 +12,31 @@ const securityCardsData = [
     id: 1,
     title: "Discovery Stage",
     description:
-      "When developing applications or websites, we pay great attention to protecting the customer's confidential information. We employ advanced encryption technologies to safeguard personal data and other sensitive information.",
+      "We prioritize customer data protection when developing applications and websites. We use advanced encryption technologies to safeguard personal data and other sensitive information.",
   },
   {
     id: 2,
     title: "Protection",
     description:
-      "During this stage, the focus is on understanding the client's needs and requirements. This involves conducting research, gathering information, and analyzing the client's business goals.",
+      "We begin the development process by understanding the client's needs and requirements. This involves conducting research, gathering information, and analyzing the client's business goals.",
   },
   {
     id: 3,
     title: "Security Measures",
     description:
-      "We implement various security measures, such as protection against hacking attacks, software vulnerability protection, and abuse prevention. We regularly update systems and perform security audits to ensure the highest level of customer data protection.",
+      "We implement a variety of security measures to ensure the highest level of customer data protection. This includes protection against hacking attacks, software vulnerability protection, and abuse prevention. We also regularly update systems and perform security audits.",
   },
   {
     id: 4,
     title: "Use of Secure Data Transmission",
     description:
-      "We utilize secure data transmission protocols, such as HTTPS, to encrypt and protect information transmitted between users and the application or website. This helps prevent interception of information during transmission.",
+      "We use secure data transmission protocols, such as HTTPS, to encrypt and protect information transmitted between users and the application or website. This helps prevent interception of information during transmission.",
   },
   {
     id: 5,
     title: "Reliable Servers and Hosting Providers",
     description:
-      "We collaborate with trusted server and hosting providers that ensure a high level of data protection and system reliability. This helps minimize the risk of data loss or damage.",
+      "We partner with trusted server and hosting providers to ensure a high level of data protection and system reliability. This helps minimize the risk of data loss or damage.",
   },
 ];
 

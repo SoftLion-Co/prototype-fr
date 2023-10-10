@@ -14,9 +14,9 @@ const HeadingOurProjectComponent: React.FC<HeadingOurProjectComponentProps> = ({
 }) => {
   return (
     <div className={classNames(s.container, s.heading)}>
-      <h3 className={s.heading__title}>{title}</h3>
+      <p className={s.heading__title}>{title}</p>
       <Image src={Line} alt="" className={s.heading__svg} />
-      <p className={s.heading__text}>{text}</p>
+      <h2 className={s.heading__text}>{text}</h2>
     </div>
   );
 };

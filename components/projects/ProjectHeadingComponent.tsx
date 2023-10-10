@@ -24,9 +24,9 @@ const ProjectHeadingComponent: React.FC<{ centered: boolean }> = ({
           [s.heading__text___centered]: centered,
         })}
       >
-        Our team encourages all your ideas and works as hard as possible to
-        improve your service. For inspiration, you can view our previous
-        projects.
+        We are always looking for ways to improve our services and are always
+        open to your feedback. To get a better understanding of our work, please
+        take a look at our portfolio of previous projects.
       </p>
       <div className={s.blur}>
         <div className={s.blur_item}></div>

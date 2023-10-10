@@ -4,10 +4,10 @@ import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import TitleServicesComponent from "@/components/services/TitleServicesComponent";
 
 import s from "./EcommerceSection.module.scss";
-import st from "./WorkWithCustomersSection.module.scss"
+import st from "./WorkWithCustomersSection.module.scss";
 import LaunchAndMaintenance from "@/images/services/work-with-customers/LaunchAndMaintenance.svg";
 import DiscoveryStage from "@/images/services/work-with-customers/DiscoveryStage.svg";
-import DesignAndDevelopmentStage from "@/images/services/work-with-customers/DesignAndDevelopmentStage.svg"; // Remove the extra dot before the @ symbol
+import DesignAndDevelopmentStage from "@/images/services/work-with-customers/DesignAndDevelopmentStage.svg";
 import Vector from "@/images/services/ecommerce/Vector.svg";
 
 const EcommerceSection = () => {
@@ -15,21 +15,21 @@ const EcommerceSection = () => {
     {
       title: "Launch and Maintenance",
       paragraph:
-        "Once the discovery stage is complete, the primary focus naturally shifts towards the meticulous process of designing and developing the website or web application. This significant stage involves a series of crucial steps, starting with the creation of detailed wireframes, which serve as the structural blueprint, outlining the arrangement and positioning of elements on each page.",
+        "Once the discovery stage of a website or web application development project is complete, the focus shifts to the design and development phase. This critical stage involves a series of steps, starting with the creation of detailed wireframes. Wireframes are blueprints that outline the structure and layout of each page, including the arrangement and positioning of all elements.",
       image: LaunchAndMaintenance,
       vector: Vector,
     },
     {
       title: "Discovery Stage",
       paragraph:
-        "During this crucial stage, the primary focus is on gaining a comprehensive understanding of the client's specific needs and requirements. This involves embarking on an in-depth and iterative process of conducting thorough research, gathering extensive information, and meticulously analyzing the client's unique business goals and objectives. The development team actively collaborates with the client, seeking to grasp the core essence of the project.",
+        "The discovery phase of a website or web application development project is critical for understanding the client's specific needs and requirements. This phase involves in-depth research, data gathering, and analysis of the client's business goals and objectives. The development team actively collaborates with the client to develop a deep understanding of the project's core essence.",
       image: DiscoveryStage,
       vector: Vector,
     },
     {
       title: "Design and Development",
       paragraph:
-        "After the completion of the discovery stage and a clear definition of project requirements, the team shifts its attention towards the creative aspects of crafting the actual design and bringing it to life by implementing the desired functionality. During this stage, our designers meticulously work on creating wireframes and mockups that serve as the visual foundation for the final product.",
+        "Once the discovery stage is complete and project requirements are clearly defined, the team shifts its focus to the creative aspects of designing and developing the website or web application. During this stage, our designers meticulously craft wireframes and mockups, which serve as the visual foundation for the final product.",
       image: DesignAndDevelopmentStage,
       vector: Vector,
     },

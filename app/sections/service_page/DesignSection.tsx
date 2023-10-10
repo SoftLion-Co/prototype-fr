@@ -22,7 +22,7 @@ const DesignSection = () => {
     {
       alt: "Visual Design",
       title:
-        "We explore a range of design styles to find the best fit for the brand identity and target audience. Our design team works closely with stakeholders to define the visual direction, incorporating elements such as color schemes, typography, imagery, and graphics.",
+        "Our design team uses a variety of design styles to create a visual identity that is both appealing and effective for the target audience. We work closely with stakeholders to understand their needs and goals, and to create a design that is both visually appealing and functionally sound.",
       imageSrc: Visual,
       description: "Visual Design",
       id: 1,
@@ -30,7 +30,7 @@ const DesignSection = () => {
     {
       alt: "User Experience (UX) Design",
       title:
-        "We prioritize user experience by ensuring intuitive navigation, clear information hierarchy, and easy accessibility. We apply user-centric design principles to enhance usability, readability, and overall satisfaction.",
+        "We focus on user experience by creating intuitive navigation, clear information hierarchy, and easy accessibility. We use user-centered design principles to improve usability, readability, and overall satisfaction.",
       imageSrc: UX,
       description: "User Experience (UX) Design",
       id: 2,
@@ -38,7 +38,7 @@ const DesignSection = () => {
     {
       alt: "Research and Planning",
       title:
-        "At the initial stage, we conduct extensive research to understand the target audience, their preferences, and the specific requirements of the website.",
+        "We begin the website development process with a comprehensive research phase to understand the target audience, their needs, and the goals of the website. We use this information to create a design that is both user-friendly and effective.",
       imageSrc: Reserch,
       description: "Research and Planning",
       id: 3,
@@ -46,7 +46,7 @@ const DesignSection = () => {
     {
       alt: "Wireframing and Prototyping",
       title:
-        "We create wireframes to outline the basic layout and structure of the website, focusing on usability and user experience.",
+        "We use wireframes to create a visual representation of the website's layout and structure. We focus on usability and user experience to ensure that the website is easy to use and navigate.",
       imageSrc: Wireframing,
       description: "Wireframing and Prototyping",
       id: 4,
@@ -54,7 +54,7 @@ const DesignSection = () => {
     {
       alt: "Responsive Design",
       title:
-        "We implement a responsive approach to guarantee a user-friendly experience across devices. We adapt the layout and content to different screen sizes and resolutions, ensuring optimal display and functionality on desktops, tablets, and mobile devices.",
+        "We use responsive web design to create websites that look and function well on all devices. We adapt the layout and content to different screen sizes and resolutions to ensure that the website is easy to use and navigate, regardless of the device being used.",
       imageSrc: Responsive,
       description: "Responsive Design",
       id: 5,
@@ -62,7 +62,7 @@ const DesignSection = () => {
     {
       alt: "Iterative Refinement",
       title:
-        " Throughout the design development process, we engage in multiple iterations and refinements based on feedback from stakeholders, usability testing, and user feedback.",
+        "We use an iterative design process to ensure that the website meets the needs of all stakeholders. We collect feedback from stakeholders, usability testers, and users to make improvements throughout the development process.",
       imageSrc: Interactive,
       description: "Iterative Refinement",
       id: 6,
