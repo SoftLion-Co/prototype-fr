@@ -62,6 +62,7 @@
   &__occupation {
     font-size: 20px;
     line-height: 130%;
+    font-weight: 400;
 
     @include for-size(tablet) {
       font-size: 18px;

@@ -34,7 +34,7 @@ const LoginSection = () => {
   });
   const onSubmit = (data: FormData) => {
     const { email, password } = data;
-	 authService.signIn(data);
+    authService.signIn(data);
     console.log("Email: ", email, "Password: ", password);
     reset();
   };
@@ -42,7 +42,7 @@ const LoginSection = () => {
   return (
     <div className={classNames(s.container, s.section)}>
       <div className={s.wrapper}>
-        <h2 className={s.title}>Login</h2>
+        <h1 className={s.title}>Login</h1>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <EmailInput
             applyValidation={false}
@@ -52,13 +52,19 @@ const LoginSection = () => {
             showError={!submitDisabled}
           />
           <PasswordInput
-            inputClass={classNames(s.input_underline, { [s.error__input]: !submitDisabled && errors.password })}
+            inputClass={classNames(s.input_underline, {
+              [s.error__input]: !submitDisabled && errors.password,
+            })}
             error={errors.password}
             showError={!submitDisabled}
             register={register}
             applyValidation={false}
           />
-          <MainButtonComponent disabled={submitDisabled} className={s.auth_button} type="submit">
+          <MainButtonComponent
+            disabled={submitDisabled}
+            className={s.auth_button}
+            type="submit"
+          >
             Log in
           </MainButtonComponent>
         </form>

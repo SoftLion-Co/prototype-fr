@@ -108,7 +108,7 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.blog__title}>
-        <ServiceHeadingComponent headingText="Blog" container={true} />
+        <ServiceHeadingComponent headingText="Blog" container={true} tag="h1" />
       </div>
 
       <div className={s.container}>

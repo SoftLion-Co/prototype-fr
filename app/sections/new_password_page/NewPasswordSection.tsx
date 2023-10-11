@@ -35,7 +35,9 @@ const NewPasswordSection = () => {
     const { password, passwordConfirm } = data;
 
     if (password !== passwordConfirm) {
-      setError("passwordConfirm", { message: "Your password do not match, please try again." });
+      setError("passwordConfirm", {
+        message: "Your password do not match, please try again.",
+      });
       return;
     }
 
@@ -45,11 +47,15 @@ const NewPasswordSection = () => {
   return (
     <div className={classNames(s.container, s.section)}>
       <div className={s.wrapper}>
-        <h2 className={s.title}>Create new password.</h2>
-        {!submitDisabled && errors.passwordConfirm && <p className={s.error__password}>{errors.passwordConfirm.message}</p>}
+        <h1 className={s.title}>Create new password.</h1>
+        {!submitDisabled && errors.passwordConfirm && (
+          <p className={s.error__password}>{errors.passwordConfirm.message}</p>
+        )}
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <PasswordInput
-            inputClass={classNames(s.input_underline, { [s.error__input]: !submitDisabled && errors.passwordConfirm })}
+            inputClass={classNames(s.input_underline, {
+              [s.error__input]: !submitDisabled && errors.passwordConfirm,
+            })}
             error={errors.password}
             showError={!submitDisabled}
             register={register}
@@ -57,14 +63,20 @@ const NewPasswordSection = () => {
             placeholder="Password"
           />
           <PasswordInput
-            inputClass={classNames(s.input_underline, { [s.error__input]: !submitDisabled && errors.passwordConfirm })}
+            inputClass={classNames(s.input_underline, {
+              [s.error__input]: !submitDisabled && errors.passwordConfirm,
+            })}
             showError={!submitDisabled}
             register={register}
             registerName="passwordConfirm"
             applyValidation={false}
             placeholder="Confirm your password"
           />
-          <MainButtonComponent disabled={submitDisabled} className={s.auth_button} type="submit">
+          <MainButtonComponent
+            disabled={submitDisabled}
+            className={s.auth_button}
+            type="submit"
+          >
             Accept
           </MainButtonComponent>
         </form>
