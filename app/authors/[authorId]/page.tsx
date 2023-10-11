@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
@@ -9,10 +9,7 @@ import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
 import getBlogsData from "@/hooks/getBlogsData";
 
-
-
 const Author = () => {
-
   const id = usePathname().split("/").reverse()[0];
   const authorData: { [key: string]: AuthorInterface } = authors;
   const author = authorData[id];

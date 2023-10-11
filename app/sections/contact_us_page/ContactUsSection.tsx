@@ -8,7 +8,7 @@ const ContactUsSection = () => {
     <div className={classNames(s.container, s.our_form)}>
       <div className={s.heading}>
         <div className={s.heading__title}>
-          <HeadingComponent text="Contact Us" />
+          <HeadingComponent text="Contact Us" tag="h1" />
         </div>
         <p className={s.heading__text}>
           Submit your request now, and we will get in touch with you to discuss

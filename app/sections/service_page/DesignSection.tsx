@@ -72,7 +72,11 @@ const DesignSection = () => {
   return (
     <section className={`${s.container} ${s.design}`}>
       <div className={s.design__heading}>
-        <ServiceHeadingComponent headingText={"Desing"} container={false} />
+        <ServiceHeadingComponent
+          headingText={"Desing"}
+          container={false}
+          tag="h1"
+        />
       </div>
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
