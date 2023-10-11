@@ -108,7 +108,7 @@ const Technology = ({ params }: { params: any }) => {
   const links = [
     {
       title: `${data.heroSection.titleTech} Technology`,
-      href: `/${technology}`,
+      href: `/technologies/${technology}`,
     },
   ];
 
