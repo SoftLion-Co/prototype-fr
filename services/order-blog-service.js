@@ -1,4 +1,4 @@
-const baseUrl = 'https://softlion.online/api';
+import { baseUrl } from './apiConfig';
 
 class OrderBlogService {
 
