@@ -75,6 +75,18 @@ function useBlogsData() {
       tags: ["Technology", "Development", "UI/UX"],
       text: "Unlock the potential of frontend web development with insights into Bootstrap, Material-UI, and Tailwind CSS. This guide demystifies these frameworks, empowering you to craft captivating web experiences seamlessly.",
     },
+    {
+      id: 7,
+      title: "Psychology Driving Web Engagement",
+      category: "UI/UX",
+      authorId: "TaniaHlushko",
+      readingTime: "19 min",
+      publicationDate: "oct 11, 2023",
+      imageSrc:
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-11.svg",
+      tags: ["UI/UX", "Technology"],
+      text: "Unlock the potential of frontend web development with insights into Bootstrap, Material-UI, and Tailwind CSS. This guide demystifies these frameworks, empowering you to craft captivating web experiences seamlessly.",
+    },
   ];
 
   return data;

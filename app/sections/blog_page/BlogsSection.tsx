@@ -48,12 +48,7 @@ const BlogsSection = () => {
     setScrollToTop(true);
   };
 
-  const {
-    filteredBlogsData,
-    totalPagesForSelectedCategory,
-    handleCategoryChange,
-    selectedCategory,
-  } = useBlogFilter({
+  const { filteredBlogsData, handleCategoryChange } = useBlogFilter({
     blogsData: getBlogsData(),
     blogsPerPage: blogsPerPage,
     setCurrentPage: handlePageChange,
@@ -94,10 +89,11 @@ const BlogsSection = () => {
     setSliderPosition
   );
 
-  const currentBlogs = filteredBlogsData.slice(
-    (currentPage - 1) * blogsPerPage,
-    currentPage * blogsPerPage
-  );
+  const allBlogs = filteredBlogsData.slice().reverse();
+  const startIndex = (currentPage - 1) * blogsPerPage;
+  const endIndex = Math.min(startIndex + blogsPerPage, allBlogs.length);
+
+  const currentBlogs = allBlogs.slice(startIndex, endIndex);
 
   const links = [{ title: "Blog", href: "/blogs" }];
 
@@ -194,7 +190,7 @@ const BlogsSection = () => {
 
         <div className={s.blog__card}>
           {currentBlogs.length > 0 ? (
-            currentBlogs.reverse().map((blog) => (
+            currentBlogs.map((blog) => (
               <div className={s.blog__cards}>
                 <BlogExtendedCardComponent data={blog} />
               </div>
