@@ -1,4 +1,5 @@
 const baseUrl = 'https://softlion.online/api';
+
 class OrderBlogService {
 
 	async getAllOrderBlogs() {
