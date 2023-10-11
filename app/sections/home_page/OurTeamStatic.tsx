@@ -27,7 +27,7 @@ const OurTeamSetcion = () => {
       name: "Pavlo Graur",
       position: "CEO",
       avatar:
-        "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_800_800/0/1670855656809?e=1698883200&v=beta&t=Xrv7PpcxyXFk8pXqXn-jXQxYVgcXoEgL4XWwX4LLPH0",
+        "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_800_800/0/1697010844966?e=1702512000&v=beta&t=o1zowEeuAk2Y-eW6DL6IrIzkaOMJgeVbSD9uEHIY_lM",
       linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
     },
     {
@@ -57,7 +57,7 @@ const OurTeamSetcion = () => {
     {
       id: "5",
       name: "Tetiana Hlushko",
-      position: "Designer",
+      position: "UI/UX Designer",
       avatar: AvatarTetiana,
       linkedinUrl: "",
     },
@@ -69,16 +69,13 @@ const OurTeamSetcion = () => {
         <div className={s.team__title}></div>
         <HeadingComponent customClass={s.team__title} text="Our team" />
         <div className={s.team__container}>
-            {response.map((member, index) => (
-                <OurTeamCard data={member} isActive={false} />
-            ))}
-         </div>
+          {response.map((member, index) => (
+            <OurTeamCard data={member} isActive={false} />
+          ))}
+        </div>
       </div>
       <div className={s.mobile__slider}>
-        <MobileSliderComponent
-          data={response}
-          SlideComponent={OurTeamCard} 
-        />
+        <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
       </div>
     </div>
   );

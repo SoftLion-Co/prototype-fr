@@ -88,7 +88,7 @@ const OurTeamSetcion = () => {
     {
       id: "5",
       name: "Tetiana Hlushko",
-      position: "Designer",
+      position: "UI/UX Designer",
       avatar: AvatarTetiana,
       linkedinUrl: "",
     },

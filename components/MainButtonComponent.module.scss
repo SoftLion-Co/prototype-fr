@@ -28,8 +28,13 @@
   &.blueButton {
     background: $button-blue-background;
     color: black;
+    box-shadow: $button-white-shadow;
+    transition: box-shadow 0.3s ease-in-out;;
+    &:hover{
+
     box-shadow: $button-blue-shadow;
 
+    }
     &:disabled {
       background: $button-blue-disabled;
       cursor: not-allowed;
