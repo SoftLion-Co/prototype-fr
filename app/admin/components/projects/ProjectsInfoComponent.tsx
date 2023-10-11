@@ -19,6 +19,7 @@ const ProjectsInfoComponent: React.FC<Props> = ({
   setSearchTerm,
   onCardClick,
   onEditButtonClick,
+ 
 }) => {
   const {formatDMY} = useDateFormat();
   const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>(projects.filter(project =>
@@ -72,6 +73,8 @@ const ProjectsInfoComponent: React.FC<Props> = ({
   const onSortChange = (): void => {
     setFilteredProjects([...filteredProjects].reverse());
   }
+
+
 
   return (
     <div className={s.user}>

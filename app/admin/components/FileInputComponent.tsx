@@ -6,9 +6,10 @@ export interface FileInputProps {
   alloudFileTypes?: string;
   placeholder: string;
   fileUploaded?: (file: File) => void;
+  className?: string;
 }
 
-const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", placeholder, fileUploaded }) => {
+const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", placeholder, fileUploaded, className }) => {
   const myInput = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
 
@@ -25,7 +26,7 @@ const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", place
   };
 
   return (
-    <div onClick={handleClick} className={s.input__container}>
+    <div onClick={handleClick} className={classNames(s.input__container, className ?? '')}>
       {file ? (
         <span className={classNames(s.input__text, s.text__color)}>{file.name}</span>
       ) : (

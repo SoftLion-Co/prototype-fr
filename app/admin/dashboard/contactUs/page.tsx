@@ -10,6 +10,7 @@ import MainPageHeading from "../../components/MainPageHeading";
 import { ContactCard } from "../../components/contact/ContactCard";
 
 import { ContactData } from "../types";
+import FilterContactControls from "../../components/FilterButtons";
 
 const contactUs = () => {
   const contacts: ContactData[] = [
@@ -17,9 +18,9 @@ const contactUs = () => {
       id: "1",
       tell: "+1234567890",
       email: "example1@email.com",
-      description:
-        "Це опис контакту номер 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Це опис контакту номер 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       sendData: new Date("2023-01-15T12:00:00Z"),
+      verified: true,
     },
     {
       id: "2",
@@ -34,6 +35,7 @@ const contactUs = () => {
       email: "example3@email.com",
       description: "Це третій контакт. Nulla facilisi. Vivamus efficitur purus eu leo vehicula.",
       sendData: new Date("2023-03-10T09:45:00Z"),
+      verified: true,
     },
     {
       id: "4",
@@ -41,14 +43,15 @@ const contactUs = () => {
       email: "example4@email.com",
       description: "Опис четвертого контакту. Sed ac erat vitae odio ullamcorper rhoncus.",
       sendData: new Date("2023-04-05T18:15:00Z"),
+      verified: false,
     },
     {
       id: "5",
       tell: "+7778889999",
       email: "example5@email.com",
-      description:
-        "П'ятий контакт. Maecenas auctor tortor in erat feugiat, in convallis dolor eleifend.",
+      description: "П'ятий контакт. Maecenas auctor tortor in erat feugiat, in convallis dolor eleifend.",
       sendData: new Date("2023-05-12T10:30:00Z"),
+      verified: false,
     },
     {
       id: "6",
@@ -75,8 +78,7 @@ const contactUs = () => {
       id: "9",
       tell: "+1122334400",
       email: "example9@email.com",
-      description:
-        "Дев'ятий контакт. Sed euismod elit eget orci bibendum, sed laoreet elit vehicula.",
+      description: "Дев'ятий контакт. Sed euismod elit eget orci bibendum, sed laoreet elit vehicula.",
       sendData: new Date("2023-09-17T17:00:00Z"),
     },
     {
@@ -90,16 +92,14 @@ const contactUs = () => {
       id: "11",
       tell: "+1122004455",
       email: "example11@email.com",
-      description:
-        "Одинадцятий контакт. Nunc auctor, lorem quis euismod eleifend, libero mi dignissim ex.",
+      description: "Одинадцятий контакт. Nunc auctor, lorem quis euismod eleifend, libero mi dignissim ex.",
       sendData: new Date("2023-11-14T16:15:00Z"),
     },
     {
       id: "12",
       tell: "+9900112244",
       email: "example12@email.com",
-      description:
-        "Дванадцятий контакт. Nullam non sapien eget elit posuere tempor sit amet id erat.",
+      description: "Дванадцятий контакт. Nullam non sapien eget elit posuere tempor sit amet id erat.",
       sendData: new Date("2023-12-07T09:10:00Z"),
     },
     {
@@ -120,16 +120,14 @@ const contactUs = () => {
       id: "15",
       tell: "+3344556677",
       email: "example15@email.com",
-      description:
-        "П'ятнадцятий контакт. Integer bibendum, urna et malesuada dignissim, nisl justo venenatis libero.",
+      description: "П'ятнадцятий контакт. Integer bibendum, urna et malesuada dignissim, nisl justo venenatis libero.",
       sendData: new Date("2024-03-29T16:50:00Z"),
     },
     {
       id: "16",
       tell: "+9988771122",
       email: "example16@email.com",
-      description:
-        "Шістнадцятий контакт. Suspendisse potenti. Aenean tristique purus a metus gravida, a malesuada tellus venenatis.",
+      description: "Шістнадцятий контакт. Suspendisse potenti. Aenean tristique purus a metus gravida, a malesuada tellus venenatis.",
       sendData: new Date("2024-04-10T10:05:00Z"),
     },
     {
@@ -150,8 +148,7 @@ const contactUs = () => {
       id: "19",
       tell: "+6677889900",
       email: "example19@email.com",
-      description:
-        "Дев'ятнадцятий контакт. Phasellus vitae libero vel velit faucibus dignissim in nec arcu.",
+      description: "Дев'ятнадцятий контакт. Phasellus vitae libero vel velit faucibus dignissim in nec arcu.",
       sendData: new Date("2024-07-24T17:55:00Z"),
     },
     {
@@ -164,6 +161,7 @@ const contactUs = () => {
   ];
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
   const [contact, setContact] = useState<null | ContactData>(null);
+  const [filteredContact, setFilteredContact] = useState<ContactData[]>(contacts);
 
   const handleEditButtonClick = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
@@ -172,17 +170,11 @@ const contactUs = () => {
   return (
     <AdminLayout>
       <div className={s.contact}>
-        <ContactInfoComponent
-          contacts={contacts}
-          onCardClick={setContact}
-          onEditButtonClick={handleEditButtonClick}
-        />
+        <ContactInfoComponent contacts={filteredContact} onCardClick={setContact} onEditButtonClick={handleEditButtonClick} />
 
-        <ItemCountDisplayComponent
-          text="Кількість заявок"
-          number={contacts.length}
-          icon={IconType.People}
-        />
+        <ItemCountDisplayComponent text="Кількість заявок" number={filteredContact.length} icon={IconType.People} />
+
+        <FilterContactControls contacts={contacts} setFilteredContact={setFilteredContact} />
       </div>
 
       <div className={s.content_editor}>

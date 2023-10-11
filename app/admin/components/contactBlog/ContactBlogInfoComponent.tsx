@@ -3,18 +3,11 @@ import s from "./ContactBlogInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import { SortMenuOption } from "../SortMenuComponent";
 import { useDateFormat } from "@/hooks/useDateFormat";
-
-interface ContactData {
-  number: number;
-  data: string;
-  email: string;
-  description: string;
-  tell: number;
-}
+import { ContactBlogData } from "../../dashboard/contactBlog/page";
 
 interface Props {
-  contacts: ContactData[];
-  onCardClick: (ContactData: ContactData) => void;
+  contacts: ContactBlogData[];
+  onCardClick: (ContactData: ContactBlogData) => void;
   onEditButtonClick: () => void;
 }
 
@@ -24,7 +17,7 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
   onEditButtonClick,
 }) => {
   const {formatDMY} = useDateFormat();
-  const [filteredContacts, setFilteredContacts] = useState<ContactData[]>(contacts);
+  const [filteredContacts, setFilteredContacts] = useState<ContactBlogData[]>(contacts);
   const [searchTerm, setSearchTerm] = useState<string>('');
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);

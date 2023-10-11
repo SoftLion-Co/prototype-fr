@@ -15,4 +15,6 @@ export interface ContactData {
   email: string;
   description: string;
   sendData: Date;
+  verified?: boolean;
 }
+

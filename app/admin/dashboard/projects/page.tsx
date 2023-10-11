@@ -8,6 +8,7 @@ import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
 import { ProjectCard } from "../../components/projects/ProjectCard";
+import { useRouter } from "next/navigation";
 
 export interface ProjectData {
   number: number;
@@ -125,9 +126,10 @@ const projects = () => {
   const [searchResultCount, setSearchResultCount] = useState(0);
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
   const [openProject, setOpenProject] = useState<ProjectData | null>(null);
+  const router = useRouter()
 
   const handleEditButtonClick = () => {
-    setIsContentEditorVisible(!isContentEditorVisible);
+    router.push('/admin/dashboard/newProject')
   };
 
   useEffect(() => {

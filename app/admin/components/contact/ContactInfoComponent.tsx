@@ -21,6 +21,10 @@ const ContactInfoComponent: React.FC<Props> = ({
   const [filteredContacts, setFilteredContacts] = useState<ContactData[]>(contacts);
 
   useEffect(() => {
+    setFilteredContacts(contacts);
+  }, [contacts])
+
+  useEffect(() => {
     setFilteredContacts(contacts.filter(contact =>
       contact.description.toLowerCase().includes(searchTerm.toLowerCase())));
   }, [searchTerm]);

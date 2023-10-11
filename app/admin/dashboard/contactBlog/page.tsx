@@ -7,17 +7,19 @@ import ItemCountDisplayComponent from "@/app/admin/components/ItemCountDisplayCo
 import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
+import FilterContactControls from "../../components/FilterButtons";
 
-interface ContactData {
+export interface ContactBlogData {
   number: number;
   data: string;
   email: string;
   description: string;
   tell: number;
+  verified?: boolean;
 }
 
 const contactUs = () => {
-  const users: ContactData[] = [
+  const users: ContactBlogData[] = [
     {
       number: 1,
       data: "Fri Oct 06 2023 12:09:50 GMT+0300",
@@ -112,6 +114,8 @@ const contactUs = () => {
   ];
 
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
+  const [filteredContact, setFilteredContact] = useState(users);
+
 
   const handleEditButtonClick = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
@@ -120,18 +124,10 @@ const contactUs = () => {
   return (
     <AdminLayout>
       <div className={s.contact}>
-        <ContactBlogInfoComponent
-          contacts={users}
-          onCardClick={() => {}}
-          onEditButtonClick={handleEditButtonClick}
-        />
+        <ContactBlogInfoComponent contacts={users} onCardClick={() => {}} onEditButtonClick={handleEditButtonClick} />
 
-        <ItemCountDisplayComponent
-          text="Кількість заявок"
-          number={users.length}
-          icon={IconType.People}
-          searchResultCount={users.length}
-        />
+        <ItemCountDisplayComponent text="Кількість заявок" number={users.length} icon={IconType.People} searchResultCount={users.length} />
+        <FilterContactControls contacts={users} setFilteredContact={setFilteredContact} />
       </div>
 
       <div className={s.content_editor}>
