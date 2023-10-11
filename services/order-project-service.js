@@ -1,4 +1,4 @@
-const baseUrl = 'http://176.117.72.71:2891/api';
+import { baseUrl } from './apiConfig';
 
 class OrderProjectService {
 
@@ -55,11 +55,12 @@ class OrderProjectService {
 			body: JSON.stringify(orderProjectData)
 		});
 
-		if (!response.ok) {
+		if (response.ok) {
+			const responseData = await response.json();
+			return responseData;
+		} else {
 			throw new Error('Error creating orderProject');
 		}
-		console.log(await response.json())
-		return response.ison();
 	}
 
 	// async updateOrderProject(orderProjectData) {
