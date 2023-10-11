@@ -12,6 +12,7 @@ import { PiTelegramLogoDuotone } from "react-icons/pi";
 import MainButtonComponent from "./MainButtonComponent";
 
 import Logo from "./../images/logo.svg";
+import classNames from "classnames";
 
 const FooterComponent = () => {
   const routes: { path: string; label: string }[] = [
@@ -59,15 +60,24 @@ const FooterComponent = () => {
             </Link>
             <div className={s.footer__routs}>
               {routes.map((route, index) => (
-                <Link key={index} href={route.path} className={s.footer__routs_name}>
+                <Link
+                  key={index}
+                  href={route.path}
+                  className={classNames(s.footer__routs_name, s.footer__text)}
+                >
                   {route.label}
                 </Link>
               ))}
             </div>
           </div>
           <div className={s.footer__colum_copy}>
-            <p className={s.footer__copyright}>©2023 Copyright SoftLion. All rights reserved.</p>
-            <Link href="/privacy-policy" className={s.footer__colum_name}>
+            <p className={classNames(s.footer__text, s.footer__copyright)}>
+              ©2023 Copyright SoftLion. All rights reserved.
+            </p>
+            <Link
+              href="/privacy-policy"
+              className={classNames(s.footer__colum_name, s.footer__text)}
+            >
               Privacy policy
             </Link>
           </div>
@@ -87,12 +97,19 @@ const FooterComponent = () => {
                 </a>
               ))}
             </div>
-            <a href="mailto:office.softlion@gmail.com" className={s.footer__email}>
+            <a
+              href="mailto:office.softlion@gmail.com"
+              className={classNames(s.footer__email, s.footer__text)}
+            >
               office.softlion@gmail.com
             </a>
           </div>
           <div className={s.footer__btn}>
-            <MainButtonComponent color="dark-blue" path="contact-us" className={s.footer__btn_text}>
+            <MainButtonComponent
+              color="dark-blue"
+              path="contact-us"
+              className={s.footer__btn_text}
+            >
               Book Consultation
             </MainButtonComponent>
           </div>

@@ -17,7 +17,7 @@ const ProjectHeadingComponent: React.FC<{ centered: boolean }> = ({
       })}
     >
       <div className={s.heading__title}>
-        <HeadingComponent text="Our Projects" />
+        <HeadingComponent text="Our Projects" tag="h1" />
       </div>
       <p
         className={classNames(s.heading__text, {
