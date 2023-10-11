@@ -55,11 +55,12 @@ class OrderProjectService {
 			body: JSON.stringify(orderProjectData)
 		});
 
-		if (!response.ok) {
+		if (response.ok) {
+			const responseData = await response.json();
+			return responseData;
+		} else {
 			throw new Error('Error creating orderProject');
 		}
-		console.log(await response.json())
-		return response.json();
 	}
 
 	// async updateOrderProject(orderProjectData) {
