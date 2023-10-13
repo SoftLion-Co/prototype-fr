@@ -11,7 +11,8 @@ const HeroSection = () => {
       <div>
         <div className={s.hero__wrapper_inf}>
           <h1 className={s.hero__name}>
-            Embrace the Lion's Share Technological Advancements with{" "}
+            Embrace the <span className={s.hero__name_comp}>Lion's</span> Share
+            Technological Advancements with{" "}
             <span className={s.hero__name_comp}>SoftLion</span>
           </h1>
           <p className={s.hero__description}>
