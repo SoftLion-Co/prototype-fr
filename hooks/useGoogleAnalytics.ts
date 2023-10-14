@@ -1,30 +1,26 @@
-// "use client"
+interface CustomWindow extends Window {
+  dataLayer: any[];
+}
 
-// import { useEffect } from "react";
+const useGoogleAnalytics = () => {
+  if (typeof document !== "undefined") {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
+    document.head.appendChild(script);
 
-// declare global {
-//   interface Window {
-//     dataLayer: any[];
-//   }
-// }
+    script.onload = () => {
+      const windowWithCustomProps = window as unknown as CustomWindow;
+      windowWithCustomProps.dataLayer = windowWithCustomProps.dataLayer || [];
 
-// const useGoogleAnalytics = () => {
-//   useEffect(() => {
-//     const script = document.createElement("script");
-//     script.async = true;
-//     script.src = "https://www.googletagmanager.com/gtag/js?id=G-YPC94QJXCN";
-//     document.head.appendChild(script);
+      function gtag(...args: any[]) {
+        windowWithCustomProps.dataLayer.push(args);
+      }
 
-//     script.onload = () => {
-//       window.dataLayer = window.dataLayer || [];
-//       function gtag(...args: any[]) {
-//         window.dataLayer.push(args);
-//       }
+      gtag("js", { "new Date()": new Date() });
+      gtag("config", "G-YPC94QJXCN");
+    };
+  }
+};
 
-//       gtag("js", { "new Date()": new Date() });
-//       gtag("config", "G-YPC94QJXCN");
-//     };
-//   }, []);
-// };
-
-// export default useGoogleAnalytics;
+export default useGoogleAnalytics;

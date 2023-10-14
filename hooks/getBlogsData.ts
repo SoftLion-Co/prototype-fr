@@ -87,6 +87,18 @@ function useBlogsData() {
       tags: ["UI/UX", "Technology", "Guides"],
       text: "The article highlights the blend of psychology and web design, crucial for engaging user experiences and boosting conversions. Understanding perception, interaction, and consistency is key to crafting captivating websites.",
     },
+    {
+      id: 8,
+      title: "Comprehensive Overview of React",
+      category: "React",
+      authorId: "YuriiMatvii",
+      readingTime: "16 min",
+      publicationDate: "oct 13, 2023",
+      imageSrc:
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/3ab15980b017540e98d06501c39c546e748f0c28/images/blog/8-comprehensive-overview-of-react/Illustration-03.svg",
+      tags: ["React", "Technology", "Guides"],
+      text: "The article delves into how React streamlines web development at SoftLion, making scalable applications feasible through its component-based approach, a vital factor for successful projects.",
+    },
   ];
 
   return data;
