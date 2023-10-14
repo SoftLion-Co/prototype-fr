@@ -95,7 +95,7 @@ function useBlogsData() {
       readingTime: "16 min",
       publicationDate: "oct 13, 2023",
       imageSrc:
-        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/3ab15980b017540e98d06501c39c546e748f0c28/images/blog/8-comprehensive-overview-of-react/Illustration-03.svg",
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/1bdebe01ff06fdb7594784079455f5e889001d65/images/blog/8-comprehensive-overview-of-react/react.svg",
       tags: ["React", "Technology", "Guides"],
       text: "The article delves into how React streamlines web development at SoftLion, making scalable applications feasible through its component-based approach, a vital factor for successful projects.",
     },
