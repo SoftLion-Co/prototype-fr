@@ -297,7 +297,7 @@
   "8": {
     "authorImg": "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_400_400/0/1687091718713?e=1698278400&v=beta&t=phbfafcOAP7SqTABmRKeFeAZ_2qGo-fY5gxP9o_GwPc",
     "articleName": "A Comprehensive Overview of React",
-    "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/99731b2749810f691eb4e04bc86476ccb2f75139/images/blog/7-psychology-driving-web-engagement/drawkit-3.svg",
+    "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/3ab15980b017540e98d06501c39c546e748f0c28/images/blog/8-comprehensive-overview-of-react/Illustration-01.svg",
     "readTime": "16 min",
     "author": "Yurii Matvii",
     "articles": [
@@ -305,7 +305,7 @@
         "id": "1",
         "title": "Speed, Simplicity, Scalability",
         "description": "In today's rapidly evolving digital landscape, crafting compelling web applications demands not only innovation but also efficiency and agility. I am Matviy Yuri, CTO of SoftLion, an IT services and consulting company. I recognize the critical role of a robust and flexible framework in achieving development goals. React, a JavaScript library conceived by Facebook, stands at the forefront of modern web development. It is renowned for its speed, convenience, and component-based architecture. This article comprehensively explores React's attributes, focusing on how it accelerates web development, amplifies user experience, and optimizes e-commerce platforms within the context of our software development efforts at SoftLion.",
-        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/99731b2749810f691eb4e04bc86476ccb2f75139/images/blog/7-psychology-driving-web-engagement/drawkit-14.svg"
+        "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/3ab15980b017540e98d06501c39c546e748f0c28/images/blog/8-comprehensive-overview-of-react/Illustration-05.svg"
       },
       {
         "id": "2",
