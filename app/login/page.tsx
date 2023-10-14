@@ -9,6 +9,7 @@ const Login = () => {
   return (
     <div className={s.container_page}>
       <LoginSection />
+      <h1>Hello to new server!</h1>
     </div>
   );
 };
