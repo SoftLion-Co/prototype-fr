@@ -42,11 +42,11 @@ const FooterComponent = () => {
   ];
 
   return (
-    <footer className={`${s.footer} ${s.container}`} id="footer">
+    <footer className={s.footer} id="footer">
       <div className={s.blur}>
         <div className={s.blur_item}></div>
       </div>
-      <div className={s.footer__block}>
+      <div className={classNames(s.footer__block, s.container)}>
         <div className={s.footer__block_first}>
           <div className={s.footer__colum_link}>
             <Link href="/">

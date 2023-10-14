@@ -76,16 +76,16 @@
   }
 
   &__logo {
-    width: 74px;
-    height: 15px;
+    width: 100px;
+    height: 25px;
 
     @include for-size(tablet) {
-      width: 62px;
-      height: 12px;
+      width: 100px;
+      height: 25px;
     }
     @include for-size(laptop) {
-      width: 92px;
-      height: 19px;
+      width: 100px;
+      height: px;
     }
     @include for-size(desktop) {
       width: 119px;
@@ -147,7 +147,7 @@
     position: relative;
 
     @include for-size(tablet) {
-      font-size: 12px;
+      font-size: 14px;
     }
     @include for-size(laptop) {
       font-size: 15px;
