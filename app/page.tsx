@@ -9,11 +9,15 @@ import TechnologiesSection from "./sections/home_page/TechnologiesSection";
 import OurTeamSetcion from "./sections/home_page/OurTeamSection";
 import OurTeamStatic from "./sections/home_page/OurTeamStatic";
 
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
+
 export async function generateMetadata({}) {
   return { title: "Web development company" };
 }
 
 const Home = () => {
+  useGoogleAnalytics();
+
   return (
     <div className={s.home_page}>
       <HeroSection />

@@ -1,4 +1,4 @@
-const baseUrl = 'http://176.117.72.71:2891/api';
+import { baseUrl } from './apiConfig';
 
 class OrderBlogService {
 
