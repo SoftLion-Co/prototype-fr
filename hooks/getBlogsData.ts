@@ -87,6 +87,18 @@ function useBlogsData() {
       tags: ["UI/UX", "Technology", "Guides"],
       text: "The article highlights the blend of psychology and web design, crucial for engaging user experiences and boosting conversions. Understanding perception, interaction, and consistency is key to crafting captivating websites.",
     },
+    {
+      id: 8,
+      title: "Comprehensive Overview of React",
+      category: "React",
+      authorId: "YuriiMatvii",
+      readingTime: "16 min",
+      publicationDate: "oct 13, 2023",
+      imageSrc:
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/99731b2749810f691eb4e04bc86476ccb2f75139/images/blog/7-psychology-driving-web-engagement/drawkit-3.svg",
+      tags: ["React", "Technology", "Guides"],
+      text: "The article highlights the blend of psychology and web design, crucial for engaging user experiences and boosting conversions. Understanding perception, interaction, and consistency is key to crafting captivating websites.",
+    }
   ];
 
   return data;
