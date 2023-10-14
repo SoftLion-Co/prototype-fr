@@ -30,27 +30,27 @@ const OurTeamSetcion = () => {
     linkedinUrl: string;
   }
 
-//   const getAllShortAuthors = async () => {
-//     try {
-//       const response: Props[] = await AuthorService.getAllShortAuthors();
-//       console.log(response);
-//       return response;
-//     } catch (error) {
-//       console.error(error);
-//       return [];
-//     }
-//   };
+  //   const getAllShortAuthors = async () => {
+  //     try {
+  //       const response: Props[] = await AuthorService.getAllShortAuthors();
+  //       console.log(response);
+  //       return response;
+  //     } catch (error) {
+  //       console.error(error);
+  //       return [];
+  //     }
+  //   };
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const data: Props[] = await getAllShortAuthors();
-//       setResponse(data);
-//     };
+  //   useEffect(() => {
+  //     const fetchData = async () => {
+  //       const data: Props[] = await getAllShortAuthors();
+  //       setResponse(data);
+  //     };
 
-//     fetchData();
-//   }, []);
+  //     fetchData();
+  //   }, []);
 
-//   const [response, setResponse] = useState<Props[]>([]);
+  //   const [response, setResponse] = useState<Props[]>([]);
 
   const response: Props[] = [
     {
@@ -58,7 +58,7 @@ const OurTeamSetcion = () => {
       name: "Pavlo Graur",
       position: "CEO",
       avatar:
-        "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_800_800/0/1670855656809?e=1698883200&v=beta&t=Xrv7PpcxyXFk8pXqXn-jXQxYVgcXoEgL4XWwX4LLPH0",
+        "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_800_800/0/1697010844966?e=1702512000&v=beta&t=o1zowEeuAk2Y-eW6DL6IrIzkaOMJgeVbSD9uEHIY_lM",
       linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
     },
     {
@@ -105,7 +105,7 @@ const OurTeamSetcion = () => {
       name: "Danyil Terentiev",
       position: "FullStack developer",
       avatar:
-        "https://media.licdn.com/dms/image/D4D35AQFZXHwrdofn8Q/profile-framedphoto-shrink_400_400/0/1676486269258?e=1696593600&v=beta&t=V-0F1r5o2DhWi9Us7GNewebK9NqOefPF6YFrAZ33yz8",
+        "https://media.licdn.com/dms/image/D4D35AQFZXHwrdofn8Q/profile-framedphoto-shrink_800_800/0/1676486269258?e=1697918400&v=beta&t=HLxoTLyaCd3Yl-D4jbL5NHSAidtYZ7F8nmwSn0zaie4",
       linkedinUrl:
         "https://www.linkedin.com/in/%D0%B4%D0%B0%D0%BD%D0%B8%D1%97%D0%BB-%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D1%82%D1%8C%D1%94%D0%B2-b69725203/",
     },
@@ -130,7 +130,8 @@ const OurTeamSetcion = () => {
       id: "10",
       name: "Misha Zlupko",
       position: "Front-End Developer",
-      avatar: "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052466298?e=1697119200&v=beta&t=kI7CWP99jVLZyFLsWRv7W6BYh8e-QQItyQ3BSDzazmI",
+      avatar:
+        "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052466298?e=1697918400&v=beta&t=if6kBen9Y9YivrFhKUB-L2ZxAiO8itY5Hs7LLCAmadQ",
       linkedinUrl: "https://www.linkedin.com/in/misha-zlupko-150649269/",
     },
     {
