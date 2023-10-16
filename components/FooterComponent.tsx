@@ -43,9 +43,6 @@ const FooterComponent = () => {
 
   return (
     <footer className={`${s.footer} ${s.container}`} id="footer">
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
       <div className={s.footer__block}>
         <div className={s.footer__block_first}>
           <div className={s.footer__colum_link}>
@@ -59,6 +56,7 @@ const FooterComponent = () => {
               />
             </Link>
             <div className={s.footer__routs}>
+
               {routes.map((route, index) => (
                 <Link
                   key={index}
@@ -71,6 +69,9 @@ const FooterComponent = () => {
             </div>
           </div>
           <div className={s.footer__colum_copy}>
+          <div className={s.blur}>
+        <div className={s.blur_item}></div>
+      </div>
             <p className={classNames(s.footer__text, s.footer__copyright)}>
               ©2023 Copyright SoftLion. All rights reserved.
             </p>
