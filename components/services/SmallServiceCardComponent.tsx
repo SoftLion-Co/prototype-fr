@@ -18,6 +18,7 @@ const SmallServiceCardComponent: React.FC<SmallServiceCardComponentProps> = ({
   image,
   vector,
   onClick,
+  isActive,
   background,
 }) => {
   return (
