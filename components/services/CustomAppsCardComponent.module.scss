@@ -84,7 +84,7 @@
   &__text {
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.5px;
     color: black;
     line-height: 130%;
     margin-top: 28px;
@@ -94,15 +94,16 @@
       display: block;
       font-size: 14px;
       width: 280px;
-      letter-spacing: 0.04px;
     }
     @include for-size(laptop) {
-      font-size: 14px;
+      letter-spacing: 0.7px;
+      font-size: 15px;
       width: 368px;
     }
     @include for-size(desktop) {
+      letter-spacing: 0.8px;
       font-size: 20px;
-      width: 479px;
+      width: 480px;
     }
   }
 }
