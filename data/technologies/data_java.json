@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "titleTech": "Java",
-    "paragraph": "Java is an object-oriented programming language developed by Sun Microsystems in 1995. It is one of the most popular programming languages in the world, and it is used to develop a wide range of software, including websites, mobile applications, and e-commerce. Java has a number of advantages that make it attractive to software developers. It is portable, meaning that programs written in Java can run on any platform that supports the Java Virtual Machine (JVM). It is also secure, as it has built-in security features that help protect programs from malicious code. Additionally, Java is scalable, meaning that it can be used to develop software that can run at large scales."
+    "paragraph": "Java is a portable, secure, and scalable object-oriented programming language. It is one of the most popular programming languages in the world, and it is used to develop a wide range of software applications. Java is a good choice for software developers because it can be used to create programs that can run on any platform that supports the Java Virtual Machine (JVM). Java also has built-in security features that help protect programs from malicious code. Additionally, Java is scalable, meaning that it can be used to develop software that can run at large scales."
   },
   "creationSection": [
     {

@@ -6,34 +6,20 @@
   flex-direction: column;
   align-items: center;
 
-  gap: 4px;
-
-  @include for-size(tablet) {
-    gap: 5px;
-  }
-
-  @include for-size(desktop) {
-    gap: 7px;
-  }
-
   &__name {
     color: rgba(0, 0, 0, 0.7);
-    font-size: 11px;
-
-    line-height: 14px;
+    font-size: 20px;
+    line-height: 130%;
     letter-spacing: 0.04em;
 
     @include for-size(tablet) {
       font-size: 14px;
-      line-height: 18px;
     }
     @include for-size(laptop) {
       font-size: 15px;
-      line-height: 19px;
     }
     @include for-size(desktop) {
       font-size: 20px;
-      line-height: 26px;
     }
   }
   &__img {
@@ -42,6 +28,7 @@
     width: 190px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 20px;
     @include for-size(laptop) {
       height: 200px;
       width: 200px;
@@ -57,9 +44,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 13px;
   margin-bottom: 28px;
+
   @include for-size(tablet) {
     gap: 66px;
     flex-direction: row;
@@ -74,14 +61,14 @@
 
   &__occupation {
     font-size: 20px;
-    line-height: 26px;
+    line-height: 130%;
+    font-weight: 400;
+
     @include for-size(tablet) {
       font-size: 18px;
-      line-height: 23px;
     }
     @include for-size(tablet) {
       font-size: 25px;
-      line-height: 32px;
     }
   }
 }
@@ -100,11 +87,10 @@
   &__about {
     font-weight: 500;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 130%;
 
     @include for-size(desktop) {
       font-size: 25px;
-      line-height: 32px;
     }
   }
   &__line {
@@ -125,16 +111,14 @@
   }
 
   &__description {
-    font-size: 10px;
-    line-height: 13px;
-    letter-spacing: 0.04em;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.5px;
     @include for-size(tablet) {
       font-size: 11px;
-      line-height: 14px;
     }
     @include for-size(tablet) {
       font-size: 16px;
-      line-height: 20px;
     }
   }
 }

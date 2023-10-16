@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import s from "./page.module.scss";
 
 import data_java from "@/data/technologies/data_java.json";
@@ -17,6 +18,8 @@ import OurProjects from "@/app/sections/technologies_page/OurProjects";
 import CreationSection from "@/app/sections/technologies_page/CreationSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
 
 export interface Data {
   heroSection: HeroSection;
@@ -66,6 +69,8 @@ export interface StagesSection {
 }
 
 const Technology = ({ params }: { params: any }) => {
+  useGoogleAnalytics();
+
   const technology = params.technologyId;
 
   //знайти потрібний json за id (switch case)
@@ -105,13 +110,21 @@ const Technology = ({ params }: { params: any }) => {
   const links = [
     {
       title: `${data.heroSection.titleTech} Technology`,
-      href: `/${technology}`,
+      href: `/technologies/${technology}`,
     },
   ];
+
+  const metadata = {
+    title: data.heroSection.titleTech,
+  };
 
   //створити інтерфейс за json'oм для data ()
   return (
     <div>
+      <head>
+        <title>{metadata.title}</title>
+      </head>
+
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <HeroSection heroTech={data.heroSection} />

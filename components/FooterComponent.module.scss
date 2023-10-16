@@ -86,24 +86,14 @@
       }
     }
     &_name {
-      font-size: 12px;
-      letter-spacing: 0.4px;
       color: $blog-card-text-color;
+      transition: color 0.15s ease-in-out;
 
       display: flex;
       align-items: center;
 
-      @include for-size(tablet) {
-        font-size: 12px;
-        letter-spacing: 0.5px;
-      }
-      @include for-size(laptop) {
-        font-size: 15px;
-        letter-spacing: 0.8px;
-      }
-
-      @include for-size(desktop) {
-        font-size: 20px;
+      &:hover {
+        color: #308bb7;
       }
     }
   }
@@ -123,21 +113,11 @@
     }
   }
   &__email {
-    font-size: 11px;
-    letter-spacing: 0.3px;
-
+    transition: color 0.15s ease-in-out;
     color: $blog-card-text-color;
-    @include for-size(tablet) {
-      font-size: 12px;
-      letter-spacing: 0.4px;
-    }
-    @include for-size(laptop) {
-      font-size: 15px;
-      letter-spacing: 0.8px;
-    }
 
-    @include for-size(desktop) {
-      font-size: 20px;
+    &:hover {
+      color: #308bb7;
     }
   }
 
@@ -195,6 +175,11 @@
 
   &__link {
     color: $blog-card-text-color;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: #308bb7;
+    }
   }
 
   &__routs {
@@ -207,22 +192,13 @@
     @include for-size(laptop) {
       gap: 5px;
     }
+
     &_name {
-      font-size: 12px;
-      letter-spacing: 0.4px;
       color: $blog-card-text-color;
+      transition: color 0.15s ease-in-out;
 
-      @include for-size(tablet) {
-        font-size: 12px;
-        letter-spacing: 0.5px;
-      }
-      @include for-size(laptop) {
-        font-size: 15px;
-        letter-spacing: 0.8px;
-      }
-
-      @include for-size(desktop) {
-        font-size: 20px;
+      &:hover {
+        color: #308bb7;
       }
     }
   }
@@ -244,31 +220,40 @@
       height: 24px;
     }
   }
-  &__copyright {
+
+  &__text {
     font-size: 12px;
     letter-spacing: 0.5px;
 
     @include for-size(tablet) {
-      font-size: 12px;
       letter-spacing: 0.4px;
-      max-width: 156px;
     }
     @include for-size(laptop) {
       font-size: 15px;
       letter-spacing: 0.7px;
-      max-width: 286px;
     }
 
     @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
+    }
+  }
+
+  &__copyright {
+    @include for-size(tablet) {
+      max-width: 156px;
+    }
+    @include for-size(laptop) {
+      max-width: 286px;
+    }
+
+    @include for-size(desktop) {
       max-width: 286px;
     }
   }
 }
 
 .blur {
-  position: absolute;
   pointer-events: none;
   height: 5px;
 
@@ -279,20 +264,21 @@
     @include for-size(tablet) {
       background-image: url(../images/blur/footer_blurT.png);
       background-repeat: no-repeat;
-      bottom: 50px;
+      bottom: 150px;
       width: 712.441px;
       height: 203.328px;
     }
 
     @include for-size(laptop) {
       background-image: url(../images/blur/footer_blurL.png);
-      bottom: 50px;
+      bottom: 200px;
       width: 1045px;
       height: 298px;
     }
 
     @include for-size(desktop) {
       background-image: url(../images/blur/footer_blurD.png);
+      bottom: 300px;
       width: 1349px;
       height: 385px;
     }

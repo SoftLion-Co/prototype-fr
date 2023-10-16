@@ -33,14 +33,13 @@
     font-size: 50px;
     letter-spacing: 0.05px;
     font-weight: 400;
-    line-height: 42px;
+    line-height: 130%;
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 
     @include for-size(tablet) {
       font-size: 67px;
       letter-spacing: 0.5px;
-      line-height: 62px;
 
       padding-right: 32px;
       padding-left: 186px;
@@ -49,7 +48,6 @@
     @include for-size(laptop) {
       font-size: 115px;
       letter-spacing: 0.5px;
-      line-height: 110px;
 
       padding-right: 60px;
       padding-left: 300px;
@@ -59,7 +57,6 @@
     @include for-size(desktop) {
       font-size: 150px;
       letter-spacing: 3.84px;
-      line-height: 140px;
 
       padding-right: 70px;
       padding-left: 390px;
@@ -71,21 +68,16 @@
     font-size: 22px;
     letter-spacing: 0.6px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 130%;
 
     @include for-size(tablet) {
       font-size: 29px;
-      line-height: 32px;
     }
-
     @include for-size(laptop) {
       font-size: 49px;
-      line-height: 54px;
     }
-
     @include for-size(desktop) {
       font-size: 64px;
-      line-height: 68px;
     }
   }
 }

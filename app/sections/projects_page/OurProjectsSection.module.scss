@@ -4,21 +4,21 @@
 
 .projects {
   margin-top: 42px;
-  margin-bottom: 30px;
+  margin-bottom: 105px;
 
   @include for-size(tablet) {
     margin-top: 70px;
-    margin-bottom: 100px;
+    margin-bottom: 155px;
   }
 
   @include for-size(laptop) {
     margin-top: 100px;
-    margin-bottom: 140px;
+    margin-bottom: 250px;
   }
 
   @include for-size(desktop) {
     margin-top: 150px;
-    margin-bottom: 165px;
+    margin-bottom: 380px;
   }
 
   &__cards_desktop {
@@ -38,12 +38,37 @@
       display: none;
     }
   }
+
+  &__nothing {
+    margin: 0 auto;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    letter-spacing: 1.6px;
+    font-weight: 400;
+    line-height: 130%;
+
+    @include for-size(tablet) {
+      font-size: 18px;
+      letter-spacing: 2.2px;
+    }
+
+    @include for-size(laptop) {
+      font-size: 22px;
+      letter-spacing: 2.6px;
+    }
+
+    @include for-size(desktop) {
+      font-size: 28px;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  }
 }
 
 .filter {
   &__main_button {
     font-size: 14px;
-    color: $heading-blue-color;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,19 +79,21 @@
     border: none;
     background-color: transparent;
     margin-bottom: 17px;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.49px;
+    transition: color 0.2s ease-in-out;
+
+    &_active{
+      color: $heading-blue-color;
+    }
 
     @include for-size(tablet) {
       margin-bottom: 23px;
-      line-height: 130.49%;
       letter-spacing: 0.629px;
     }
-
     @include for-size(laptop) {
       font-size: 16px;
     }
-
     @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
@@ -84,18 +111,21 @@
   &__opened {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    margin-bottom: 34px;
+    gap: 30px;
+    margin-bottom: 50px;
 
     @include for-size(tablet) {
-      margin-bottom: 50px;
+      gap: 40px;
+      margin-bottom: 60px;
     }
 
     @include for-size(laptop) {
+      gap: 50px;
       margin-bottom: 70px;
     }
 
     @include for-size(desktop) {
+      gap: 60px;
       margin-bottom: 100px;
     }
   }
@@ -127,7 +157,7 @@
     align-items: center;
     gap: 5px;
     margin-bottom: 10px;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.414px;
 
     @include for-size(tablet) {
@@ -171,50 +201,48 @@
   }
 
   &__wrapper {
-    background: linear-gradient(139deg, #dff6ff 0%, #c3edff 100%);
-    box-shadow: $button-blue-shadow;
+    background-color: white;
+    box-shadow: 0px 3px 32px 0px rgba(90, 92, 94, 0.2);
     border-radius: 6px;
     padding: 18px;
     width: 100%;
     box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px; 
 
     &___country {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
       width: 100%;
-      gap: 0;
-      row-gap: 18px;
+      grid-gap: 18px;
     }
 
     @include for-size(tablet) {
-      gap: 14px;
+      grid-gap: 14px;
       padding: 20px;
       border-radius: 8px;
 
       &___country {
-        gap: 0;
-        row-gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-row-gap: 20px;
       }
     }
     @include for-size(laptop) {
-      gap: 18px;
+      grid-gap: 18px;
       padding: 22px;
       border-radius: 12px;
 
       &___country {
-        gap: 0;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
         row-gap: 28px;
       }
     }
     @include for-size(desktop) {
-      gap: 23px;
+      grid-gap: 23px;
       padding: 26px;
       border-radius: 15px;
 
       &___country {
-        gap: 0;
         row-gap: 35px;
       }
     }
@@ -226,25 +254,21 @@
     border: none;
     background-color: transparent;
     color: black;
-    width: 51px;
     font-size: 12px;
     line-height: 130%;
     letter-spacing: 0.4px;
 
     @include for-size(tablet) {
-      width: 60px;
       font-size: 12px;
       letter-spacing: 0.49px;
     }
 
     @include for-size(laptop) {
-      width: 77px;
       font-size: 16px;
       letter-spacing: 0.629px;
     }
 
     @include for-size(desktop) {
-      width: 99px;
       font-size: 20px;
       letter-spacing: 0.8px;
     }

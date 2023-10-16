@@ -32,6 +32,13 @@
 
     transition: all 0.3s ease;
 
+    &.active {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      background-color: #76bcda;
+      color: #021d29;
+      transform: scale(1.05);
+    }
+
     &:hover,
     &:focus {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);

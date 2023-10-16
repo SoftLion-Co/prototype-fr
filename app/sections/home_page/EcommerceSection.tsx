@@ -14,21 +14,21 @@ const EcommerceSection = () => {
     {
       title: "Design",
       paragraph:
-        "The process of making a signature for the product design block is important because it helps to create a unique identity for the product. It should be designed to reflect the brand’s values and mission, as well as the product’s purpose and features. The signature should be simple, memorable, and recognizable. It should also be versatile enough to be used in a variety of contexts, such as on the product’s packaging, website, and promotional materials.",
+        "A product design signature is a unique visual element that helps to identify a product and distinguish it from its competitors. It should be designed to reflect the brand's values and mission, as well as the product's purpose and features. An effective product design signature is simple, memorable, recognizable, and versatile. It should be able to be used in a variety of contexts, such as on the product's packaging, website, and promotional materials.",
       image: Design,
       vector: Vector,
     },
     {
       title: "Development",
       paragraph:
-        "Site development and web applications offer a variety of advantages to businesses and individuals. For businesses, web applications can provide a cost-effective way to reach a larger audience, increase efficiency, and reduce operational costs. Web applications can also help businesses to improve customer service, increase sales, and gain a competitive edge.",
+        "Web development and web applications offer a range of benefits to businesses and individuals. For businesses, web applications can provide a cost-effective way to reach a global audience, improve operational efficiency, and reduce costs. They can also help businesses to improve customer service, increase sales, and gain a competitive advantage.",
       image: Development,
       vector: Vector,
     },
     {
       title: "Security",
       paragraph:
-        "We thoroughly test websites and applications to identify potential weaknesses and vulnerabilities, taking measures to address them. We also implement protective mechanisms such as data encryption, authentication, authorization, backups, and system monitoring to ensure a high level of security for our clients.",
+        "We offer comprehensive website and application security testing services to identify and mitigate potential vulnerabilities. We also implement a variety of security measures, including data encryption, authentication, authorization, backups, and system monitoring, to protect our clients' data and systems.",
       image: Security,
       vector: Vector,
     },

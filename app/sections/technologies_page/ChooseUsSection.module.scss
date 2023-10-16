@@ -127,6 +127,7 @@
 
   &__description {
     font-size: 14px;
+    line-height: 130%;
 
     @include for-size(tablet) {
       width: 377px;
@@ -136,7 +137,6 @@
     @include for-size(laptop) {
       width: 470px;
       font-size: 18px;
-      line-height: 130.49%;
       letter-spacing: 0.54px;
     }
 
@@ -155,7 +155,7 @@
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;

@@ -11,7 +11,10 @@
   }
 
   &__upsection {
-    margin-bottom: 31px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__wrap {
@@ -21,29 +24,34 @@
     gap: 10px;
     margin-bottom: 18px;
   }
+
   &__num {
     font-size: 77px;
     font-weight: 400;
-    line-height: 90.25px;
+    line-height: 130%;
     letter-spacing: 2.31px;
     color: $placeholder-color;
   }
+
   &__pic1 {
     width: 109px;
     height: 109px;
   }
+
   &__title {
     font-size: 18px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 130%;
     letter-spacing: 1.386px;
   }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     max-width: 291px;
   }
+
   &__item {
     font-size: 14px;
     font-weight: 400;

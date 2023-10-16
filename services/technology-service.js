@@ -1,5 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
-
+import { baseUrl } from './apiConfig';
 class TechnologyService {
 
 	async getAllTechnologies() {

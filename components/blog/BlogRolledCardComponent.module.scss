@@ -1,6 +1,6 @@
 @import "../styles/mixin";
 
-.blogCard {
+.card {
   cursor: pointer;
   @include for-size(tablet) {
     width: 168px;
@@ -9,9 +9,8 @@
     box-shadow: 4.7px 6.3px 4.7px 0px #00000026;
 
     font-size: 12px;
-    line-height: 17px;
+    line-height: 130%;
   }
-
   @include for-size(laptop) {
     width: 240px;
     height: 303px;
@@ -19,9 +18,7 @@
     box-shadow: 6.9px 9.2px 6.9px 0px #00000026;
 
     font-size: 19px;
-    line-height: 25px;
   }
-
   @include for-size(desktop) {
     width: 320px;
     height: 393px;
@@ -29,7 +26,6 @@
     box-shadow: 9px 12px 9px 0px #00000026;
 
     font-size: 25px;
-    line-height: 33px;
   }
 
   display: flex;
@@ -42,8 +38,27 @@
     rgba(168, 225, 250, 0.0322) 99.46%
   );
 
+  &__box {
+    @include for-size(tablet) {
+      display: flex;
+      align-items: center;
+      width: 150px;
+      height: 130px;
+    }
+    @include for-size(laptop) {
+      width: 220px;
+      height: 200px;
+    }
+    @include for-size(desktop) {
+      width: 280px;
+      height: 250px;
+    }
+  }
+
   &__image {
-    object-fit: cover;
+    object-fit: contain;
+    height: 90%;
+
     @include for-size(tablet) {
       border-radius: 8px 8px 0 0;
     }
@@ -53,9 +68,6 @@
     @include for-size(desktop) {
       border-radius: 15px 15px 0 0;
     }
-
-    width: 100%;
-    height: 66%;
   }
 
   &__line {

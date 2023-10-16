@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import s from "./BlogsSection.module.scss";
 import classNames from "classnames";
@@ -13,17 +15,17 @@ import useResponsiveItemsToShow from "@/hooks/useResponsiveItemsToShow";
 import { useSwipeForFilter } from "@/hooks/useSwipeForFilter";
 import useSwitchingCategoriesCarousel from "@/hooks/useSwitchingCategoriesCarousel";
 import { BlogInterface } from "@/components/blog/BlogInteface";
-import useBlogsData from "@/hooks/useBlogsData";
+import getBlogsData from "@/hooks/getBlogsData";
 
 const BlogsSection = () => {
-  const blogs: BlogInterface[] = useBlogsData();
+  const blogs: BlogInterface[] = getBlogsData();
 
   const categories = [
     "All articles",
     "Technology",
     "Guides",
     "UI/UX",
-    "E-learning",
+    "E-commerce",
     "Finance",
     "Startups",
     "Development",
@@ -46,13 +48,8 @@ const BlogsSection = () => {
     setScrollToTop(true);
   };
 
-  const {
-    filteredBlogsData,
-    totalPagesForSelectedCategory,
-    handleCategoryChange,
-    selectedCategory,
-  } = useBlogFilter({
-    blogsData: useBlogsData(),
+  const { filteredBlogsData, handleCategoryChange } = useBlogFilter({
+    blogsData: getBlogsData(),
     blogsPerPage: blogsPerPage,
     setCurrentPage: handlePageChange,
   });
@@ -92,10 +89,11 @@ const BlogsSection = () => {
     setSliderPosition
   );
 
-  const currentBlogs = filteredBlogsData.slice(
-    (currentPage - 1) * blogsPerPage,
-    currentPage * blogsPerPage
-  );
+  const allBlogs = filteredBlogsData.slice().reverse();
+  const startIndex = (currentPage - 1) * blogsPerPage;
+  const endIndex = Math.min(startIndex + blogsPerPage, allBlogs.length);
+
+  const currentBlogs = allBlogs.slice(startIndex, endIndex);
 
   const links = [{ title: "Blog", href: "/blogs" }];
 
@@ -106,11 +104,11 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.blog__title}>
-        <ServiceHeadingComponent headingText="Blog" container={true} />
+        <ServiceHeadingComponent headingText="Blog" container={true} tag="h1" />
       </div>
 
       <div className={s.container}>
-      <div className={s.blur}>
+        <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
         <div className={s.blog__filter}>
@@ -190,10 +188,16 @@ const BlogsSection = () => {
           </div>
         </div>
 
-        <div className={s.blog__cards}>
-          {currentBlogs.map((blog) => (
-            <BlogExtendedCardComponent data={blog} />
-          ))}
+        <div className={s.blog__card}>
+          {currentBlogs.length > 0 ? (
+            currentBlogs.map((blog) => (
+              <div className={s.blog__cards}>
+                <BlogExtendedCardComponent data={blog} />
+              </div>
+            ))
+          ) : (
+            <p className={s.blog__nothing}>Nothing found for your request</p>
+          )}
         </div>
 
         <div className={s.pagination}>

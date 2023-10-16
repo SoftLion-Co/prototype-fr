@@ -21,8 +21,6 @@
     margin-bottom: 140px;
   }
 
-  
-
   &__image {
     width: 290px;
     height: 140px;
@@ -49,25 +47,26 @@
     color: $blog-card-text-color;
     font-size: 20px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 1.1px;
-    // margin-bottom: 16px;
+    margin-bottom: 16px;
 
     @include for-size(tablet) {
       font-size: 22px;
       letter-spacing: 1.9px;
-      // margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     @include for-size(laptop) {
       font-size: 32px;
       letter-spacing: 2.5px;
+      margin-bottom: 40px;
     }
 
     @include for-size(desktop) {
       font-size: 40px;
       letter-spacing: 2.6px;
-      // margin-bottom: 32px;
+      margin-bottom: 40px;
     }
   }
   &__container {
@@ -124,7 +123,7 @@
       padding-left: 20px;
       font-size: 12px;
       font-weight: 400;
-      line-height: 130.49%;
+      line-height: 130%;
       letter-spacing: 1.8px;
       position: relative;
       transition: color 200ms ease-in-out;
@@ -197,7 +196,7 @@
     color: $service-heading-color;
     font-size: 12px;
     font-weight: 400;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.3px;
 
     @include for-size(tablet) {
@@ -228,6 +227,12 @@
       height: 44px;
     }
   }
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .image {

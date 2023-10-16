@@ -1,6 +1,8 @@
+import { baseUrl } from './apiConfig';
+
 class AuthService {
   async signUp(signUpModel) {
-    const response = await fetch(`https://localhost:7296/api/auth/sign-up`, {
+    const response = await fetch(`${baseUrl}/auth/sign-up`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -16,7 +18,7 @@ class AuthService {
   }
 
   async signIn(signInModel) {
-    const response = await fetch(`https://localhost:7296/api/auth/sign-in`, {
+    const response = await fetch(`${baseUrl}/auth/sign-in`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +35,7 @@ class AuthService {
   }
 
   async sendCode(email) {
-    const response = await fetch(`https://localhost:7296/api/auth/send-code`, {
+    const response = await fetch(`${baseUrl}/auth/send-code`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +51,7 @@ class AuthService {
   }
 
   async changePassword(model) {
-    const response = await fetch(`https://localhost:7296/api/auth/change-password`, {
+    const response = await fetch(`${baseUrl}/auth/change-password`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

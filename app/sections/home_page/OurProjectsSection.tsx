@@ -9,20 +9,7 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 import trendHero from "@/images/project/project-trend/trend-hero.png";
-
-const sampleData = [
-  {
-    id: 1,
-    image:
-      "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
-    title: "Landing page of Trend company",
-    customer: "customer: Trend",
-    year: "year: 2023",
-    author: "author: SoftLion",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-  },
-];
+import data from "@/data/projects/projects_data.json"
 
 const OurProjectsSection = () => {
   return (
@@ -30,13 +17,13 @@ const OurProjectsSection = () => {
       <ProjectHeadingComponent centered={false} />
       <div className={s.projects__mobile_slider}>
         <MobileSliderComponent
-          data={sampleData}
+          data={data}
           SlideComponent={ProjectMobileCardComponent}
         />
         <SeeMoreButtonComponent path="projects" />
       </div>
       <div className={classNames(s.container, s.projects__desktop_wrapper)}>
-        {sampleData.map((project) => (
+        {data.map((project) => (
           <ProjectCardComponent key={project.id} data={project} />
         ))}
         <SeeMoreButtonComponent path="projects" />

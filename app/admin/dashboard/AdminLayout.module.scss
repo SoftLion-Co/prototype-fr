@@ -1,0 +1,13 @@
+@import "@/styles/container";
+@import "@/styles/container_admin";
+
+.container_admin {
+  background: none;
+}
+
+.layout {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  height: 870px;
+}

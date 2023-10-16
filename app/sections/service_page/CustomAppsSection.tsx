@@ -19,22 +19,20 @@ const CustomAppsSection = () => {
           <CustomAppsCardComponent
             title="Apps"
             path={pic}
-            text_mob="App development is the creation of software for devices like smartphones, tablets, and computers. It involves building tools that perform tasks and provide users with capabilities. Apps are developed for platforms like iOS, Android, and Windows. This process includes UI design, programming, testing, debugging, and post-release support. App development is crucial for technology, enabling innovative solutions to meet user needs.
-        "
-            text="App development is the process of creating software for various devices, such as smartphones, tablets, computers, and others. This development involves building functional tools that perform specific tasks or provide users with certain capabilities. Apps can be developed for different platforms, such as iOS, Android, Windows, and many others. This process includes user interface design, functionality programming, testing, debugging, and post-release support of the software product. App development is an essential component of the modern technology world, enabling the creation of innovative solutions to address various tasks and meet user needs.
-        "
+            text="App development is the process of creating software applications for mobile and desktop devices. It involves designing, developing, testing, and deploying apps that meet the needs of users. App developers use a variety of programming languages and tools to create apps for different platforms, such as iOS, Android, and Windows. App development is a complex and challenging process, but it is also very rewarding. By creating innovative and user-friendly apps, app developers can make a real difference in the lives of people around the world."
             arrow={false}
           />
         </div>
+
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
+
         <div className={s.custom__card2}>
           <CustomAppsCardComponent
             title="Custom App Development"
             path={pic2}
-            text_mob="App development begins with gathering requirements and analyzing user needs. Developers create the UI design and software architecture. They program using various languages and frameworks. Testing ensures functionality and identifies errors. After testing, the app is released through stores or direct installation. Developers provide support and updates to improve functionality and fix bugs post-release."
-            text="The process of app development begins with gathering requirements and analyzing user needs. Developers then create the user interface design and develop the software architecture. They proceed to programming, using various programming languages and frameworks to implement the app's functionality. After writing the code, testing is conducted to ensure the app works correctly and to identify any errors. Once testing is successfully completed, the app is ready for release. It can be distributed through app stores or installed directly on users' devices. Additionally, developers provide support and release updates to improve functionality and fix any bugs after the app's release."
+            text="App development is the process of creating software applications for mobile and desktop devices. It begins with gathering requirements and analyzing user needs to ensure that the app meets the needs of its target audience. Developers then create the user interface design and develop the software architecture, which is the blueprint for how the app will work. Once the architecture is in place, developers proceed to programming, using various programming languages and frameworks to implement the app's functionality."
             arrow={false}
           />
         </div>

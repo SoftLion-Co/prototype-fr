@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import SmallServiceCardComponent from "./SmallServiceCardComponent";
 import LargeServiceCardComponent from "./LargeServiceCardComponent";

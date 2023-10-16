@@ -128,17 +128,15 @@
     height: 200px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
     align-items: end;
 
     @include for-size(laptop) {
       height: 295px;
-      gap: 30px;
     }
 
     @include for-size(desktop) {
       height: 381px;
-      gap: 39px;
     }
   }
 
@@ -160,13 +158,13 @@
     margin-top: 19px;
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 1.415px;
-    line-height: 130.49%;
+    letter-spacing: 1.4px;
+    line-height: 130%;
 
     @include for-size(laptop) {
       margin-top: 20px;
       font-size: 23px;
-      letter-spacing: 2.094px;
+      letter-spacing: 2.1px;
     }
 
     @include for-size(desktop) {
@@ -178,11 +176,11 @@
 
   &__desc {
     font-size: 12px;
-    letter-spacing: 0.419px;
+    letter-spacing: 0.4px;
 
     @include for-size(laptop) {
       font-size: 15px;
-      letter-spacing: 0.621px;
+      letter-spacing: 0.6px;
     }
 
     @include for-size(desktop) {

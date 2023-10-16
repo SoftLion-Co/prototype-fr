@@ -1,7 +1,7 @@
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";
-import s from "./layout.module.scss"
+import s from "./layout.module.scss";
 
 export const metadata = {
   title: "SoftLion",
@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-  // session
-}: {
+}: // session
+{
   // session: Session;
   children: React.ReactNode;
 }) {
@@ -22,11 +22,14 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body>
-        <HeaderComponent />
-        <div className={s.page}>
-          {children}
+        <div className={s.main}>
+          <HeaderComponent />
+          <div className={s.page} id="layout">
+            {children}
+          </div>
+          <FooterComponent />
         </div>
-        <FooterComponent />
+        <div id="modalRoot"></div>
       </body>
     </html>
   );

@@ -11,8 +11,8 @@ import CryptoJS from "crypto-js";
 const EnterCodeSection = () => {
   const [countdown, setCountdown] = useState(60);
   const [isCounting, setIsCounting] = useState(false);
-  const [email, setEmail] = useState(/*localStorage.getItem*/("email"));
-  const [code, setCode] = useState(/*localStorage.getItem*/("code"));
+  const [email, setEmail] = useState(/*localStorage.getItem*/ "email");
+  const [code, setCode] = useState(/*localStorage.getItem*/ "code");
 
   useEffect(() => {
     let interval: number;
@@ -59,7 +59,7 @@ const EnterCodeSection = () => {
 
   return (
     <div className={classNames(s.container, s.code)}>
-      <h2 className={s.title}>Please, enter your code.</h2>
+      <h1 className={s.title}>Please, enter your code.</h1>
       <p className={classNames(s.text, s.message)}>
         A confirmation code has been sent to the email {email}
       </p>

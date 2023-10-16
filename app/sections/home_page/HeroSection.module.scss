@@ -7,19 +7,20 @@
   flex-direction: column;
   gap: 32px;
   width: -webkit-fill-available;
+  margin-top: 20px;
 
   @include for-size(tablet) {
     flex-direction: row;
     justify-content: space-between;
     gap: 0;
-    margin-top: 30px;
+    margin-top: 100px;
   }
 
   @include for-size(laptop) {
-    margin-top: 40px;
+    margin-top: 120px;
   }
   @include for-size(desktop) {
-    margin-top: 70px;
+    margin-top: 150px;
   }
 
   &__logo {
@@ -59,14 +60,15 @@
       transform: translateY(-20px);
     }
   }
+
   &__name {
     font-size: 26px;
     max-width: 380px;
     margin-bottom: 15px;
 
     @include for-size(tablet) {
-      max-width: 321px;
-      margin-bottom: 13px;
+      max-width: 350px;
+      margin-bottom: 14px;
     }
     @include for-size(laptop) {
       font-size: 35px;
@@ -75,11 +77,12 @@
     }
     @include for-size(desktop) {
       font-size: 45px;
-      max-width: 613px;
+      max-width: 615px;
       margin-bottom: 30px;
     }
+
     &_comp {
-      background: linear-gradient(45deg, #00ffea, #0099ff, #1111ff);
+      background: linear-gradient(45deg, #07bcf8, #04aee7, #003e85);
       background-size: 200% 200%;
       background-clip: text;
       color: transparent;
@@ -122,6 +125,7 @@
   }
   &__wrapper_btn {
     display: none;
+
     @include for-size(tablet) {
       display: flex;
       gap: 39px;
@@ -133,24 +137,31 @@
       gap: 75px;
     }
   }
+
   &__description {
     font-size: 16px;
     letter-spacing: 0.3px;
-    max-width: 349px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    max-width: 350px;
+
     @include for-size(tablet) {
-      max-width: 287px;
+      max-width: 350px;
       letter-spacing: 0.4px;
     }
     @include for-size(laptop) {
       max-width: 440px;
-      font-size: 14px;
-      letter-spacing: 0.7px;
+      font-size: 16px;
+      letter-spacing: 0.6px;
     }
     @include for-size(desktop) {
       max-width: 549px;
       font-size: 18px;
+      letter-spacing: 0.7px;
     }
   }
+
   &__wrapper_second {
     display: flex;
     flex-direction: column;
@@ -160,6 +171,7 @@
 
 .our_form {
   width: calc(100% - 40px);
+
   @include for-size(tablet) {
     display: flex;
     flex-direction: row-reverse;

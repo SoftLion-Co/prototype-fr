@@ -1,12 +1,22 @@
 @import "../styles/mixin";
 
-.page{
-    margin-top: 90px;
-    @include for-size(tablet){
-        margin-top: 120px;
-    }@include for-size(laptop){
-        margin-top: 140px;
-    }@include for-size(desktop){
-        margin-top: 150px;
-    }
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 80px;
+
+  @include for-size(tablet) {
+    margin-top: 60px;
+  }
+
+  @include for-size(desktop) {
+    margin-top: 70px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

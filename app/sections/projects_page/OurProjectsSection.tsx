@@ -11,6 +11,7 @@ import DotImg from "@/images/project/request-list.svg";
 import Image from "next/image";
 import CountryFlag from "react-country-flag";
 import { Pagination } from "@mantine/core";
+import data from "@/data/projects/projects_data.json";
 
 const sampleData: Array<{
   id: number;
@@ -20,41 +21,54 @@ const sampleData: Array<{
   year: string;
   author: string;
   description: string;
-  technology: string;
+  technology: string[];
   country: string;
   countryCode: string;
-}> = [
-  {
-    id: 1,
-    image:
-      "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
-    title: "Landing page of Trend company",
-    customer: "customer: Trend",
-    year: "year: 2023",
-    author: "author: Germany",
-    description:
-      "In this project, we developed the design, implemented it, and provide further support",
-    technology: "Go",
-    country: "Germany",
-    countryCode: "DE",
-  },
-];
+}> = data;
 
 //* METHOD TO GET UNIFIED VALUES FROM sampleData AND MAKE UNIQUE ARRAYS
-const getUniqueFieldValues = (data: any, field: any) => {
-  return data.reduce((accumulator: any, project: any) => {
-    if (!accumulator.includes(project[field])) {
-      accumulator.push(project[field]);
+const getUniqueFieldValues = (
+  data: any[],
+  field: string,
+  defaultValues: string[] = []
+) => {
+  const uniqueValues: string[] = [...defaultValues];
+
+  data.forEach((project) => {
+    if (Array.isArray(project[field])) {
+      project[field].forEach((tech: any) => {
+        if (!uniqueValues.includes(tech)) {
+          uniqueValues.push(tech);
+        }
+      });
+    } else if (typeof project[field] === 'string') {
+      if (!uniqueValues.includes(project[field])) {
+        uniqueValues.push(project[field]);
+      }
     }
-    return accumulator;
-  }, []);
+  });
+
+  return uniqueValues;
 };
+
+//* DEFAULT TECHNOLOGIES AND COUNTRIES FOR FILTER
+const defaultTechnologies = [
+  "Java",
+  "React.js",
+  "Angular",
+  "Vue.js",
+  "Node.js",
+  ".NET",
+];
 
 const filterTechnologiesOptions = getUniqueFieldValues(
   sampleData,
-  "technology"
+  "technology",
+  defaultTechnologies
 );
+
 const filterCountriesOptions = getUniqueFieldValues(sampleData, "country");
+console.log(filterCountriesOptions);
 
 const OurProjectsSection = () => {
   //* FILTER STATE
@@ -73,10 +87,10 @@ const OurProjectsSection = () => {
   const filteredProjects = sampleData.filter(
     (project) =>
       (selectedTechnologies.length === 0 ||
-        selectedTechnologies.includes(project.technology)) &&
+        selectedTechnologies.some((tech) => project.technology.includes(tech))) &&
       (selectedCountries.length === 0 ||
         selectedCountries.includes(project.country))
-  );
+  );  
 
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
@@ -163,7 +177,14 @@ const OurProjectsSection = () => {
     <section className={classNames(s.container, s.projects)}>
       <ProjectHeadingComponent centered={true} />
       <div className={s.filter} ref={topRef}>
-        <button onClick={toggleFilter} className={s.filter__main_button}>
+        <button
+          onClick={toggleFilter}
+          className={
+            isFilterOpened
+              ? classNames(s.filter__main_button, s.filter__main_button_active)
+              : s.filter__main_button
+          }
+        >
           Filter{" "}
           <FiChevronDown
             className={classNames(s.filter__icon, {
@@ -254,14 +275,26 @@ const OurProjectsSection = () => {
       )}
 
       <div className={s.projects__cards_mobile}>
-        {visibleProjects.map((project) => (
-          <ProjectMobileCardComponent key={project.id} data={project} />
-        ))}
+        {filteredProjects.length === 0 ? (
+          <p className={s.projects__nothing}>
+            No projects found for the selected filter.
+          </p>
+        ) : (
+          visibleProjects.map((project) => (
+            <ProjectMobileCardComponent key={project.id} data={project} />
+          ))
+        )}
       </div>
       <div className={s.projects__cards_desktop}>
-        {visibleProjects.map((project) => (
-          <ProjectCardComponent key={project.id} data={project} />
-        ))}
+        {filteredProjects.length === 0 ? (
+          <p className={s.projects__nothing}>
+            No projects found for the selected filter.
+          </p>
+        ) : (
+          visibleProjects.map((project) => (
+            <ProjectCardComponent key={project.id} data={project} />
+          ))
+        )}
       </div>
 
       <Pagination
