@@ -1,19 +1,13 @@
 "use client";
-
 import s from "./FooterComponent.module.scss";
-
 import Link from "next/link";
 import Image from "next/image";
-
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiFacebook } from "react-icons/fi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
-
 import MainButtonComponent from "./MainButtonComponent";
-
 import Logo from "./../images/logo.svg";
 import classNames from "classnames";
-
 const FooterComponent = () => {
   const routes: { path: string; label: string }[] = [
     { path: "/services", label: "Services" },
@@ -39,41 +33,41 @@ const FooterComponent = () => {
     //   url: "#",
     //   icon: <PiTelegramLogoDuotone className={s.footer__icon} />,
     // },
-  ];
+   ];
 
-  return (
-    <footer className={s.footer} id="footer">
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
-      <div className={classNames(s.footer__block, s.container)}>
-        <div className={s.footer__block_first}>
-          <div className={s.footer__colum_link}>
-            <Link href="/">
+   return (
+     <footer className={s.footer} id="footer">
+       <div className={s.blur}>
+         <div className={s.blur_item}></div>
+       </div>
+       <div className={classNames(s.footer__block, s.container)}>
+         <div className={s.footer__block_first}>
+           <div className={s.footer__colum_link}>
+             <Link href="/">
               <Image
                 alt="SoftLion"
                 className={s.footer__logo}
                 src={Logo}
                 width={800}
                 height={554}
-              />
-            </Link>
-            <div className={s.footer__routs}>
-              {routes.map((route, index) => (
-                <Link
-                  key={index}
+               />
+             </Link>
+             <div className={s.footer__routs}>
+               {routes.map((route, index) => (
+                 <Link
+                   key={index}
                   href={route.path}
                   className={classNames(s.footer__routs_name, s.footer__text)}
                 >
                   {route.label}
                 </Link>
               ))}
-            </div>
-          </div>
-          <div className={s.footer__colum_copy}>
-            <p className={classNames(s.footer__text, s.footer__copyright)}>
-              ©2023 Copyright SoftLion. All rights reserved.
-            </p>
+             </div>
+           </div>
+           <div className={s.footer__colum_copy}>
+             <p className={classNames(s.footer__text, s.footer__copyright)}>
+               ©2023 Copyright SoftLion. All rights reserved.
+             </p>
             <Link
               href="/privacy-policy"
               className={classNames(s.footer__colum_name, s.footer__text)}

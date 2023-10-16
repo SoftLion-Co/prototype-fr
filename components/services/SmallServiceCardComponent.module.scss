@@ -8,6 +8,7 @@
 
   &__container {
     @include for-size(tablet) {
+      transition: all 0.3s ease-in-out;
       user-select: none;
       display: flex;
       flex-direction: column;
@@ -84,6 +85,7 @@
 
   &__vector {
     @include for-size(tablet) {
+      animation: vector 1.3s infinite alternate;
       position: absolute;
       cursor: pointer;
       top: 180px;
@@ -102,6 +104,15 @@
       left: 270px;
       width: 30px;
       height: 30px;
+    }
+
+    @keyframes vector {
+      0% {
+        transform: scale(45%);
+      }
+      100% {
+        transform: scale(90%);
+      }
     }
   }
 }

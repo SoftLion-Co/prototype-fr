@@ -45,20 +45,19 @@
     @include for-size(tablet) {
       text-align: left;
       max-width: none;
-      font-size: 14px;
     }
 
     @include for-size(laptop) {
       margin: 0;
-      font-size: 15px;
-      max-width: 491px;
-      letter-spacing: 0.611px;
+      font-size: 16px;
+      max-width: 505px;
+      letter-spacing: 0.6px;
     }
 
     @include for-size(desktop) {
       margin: 0;
       font-size: 20px;
-      max-width: 644px;
+      max-width: 645px;
       letter-spacing: 0.8px;
     }
   }
