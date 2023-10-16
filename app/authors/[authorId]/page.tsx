@@ -9,7 +9,11 @@ import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
 import getBlogsData from "@/hooks/getBlogsData";
 
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
+
 const Author = () => {
+  useGoogleAnalytics();
+
   const id = usePathname().split("/").reverse()[0];
   const authorData: { [key: string]: AuthorInterface } = authors;
   const author = authorData[id];

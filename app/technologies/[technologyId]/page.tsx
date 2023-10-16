@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import s from "./page.module.scss";
 
@@ -19,7 +19,7 @@ import CreationSection from "@/app/sections/technologies_page/CreationSection";
 import ReviewsSection from "@/app/sections/technologies_page/ReviewsSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 
-
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
 
 export interface Data {
   heroSection: HeroSection;
@@ -69,6 +69,8 @@ export interface StagesSection {
 }
 
 const Technology = ({ params }: { params: any }) => {
+  useGoogleAnalytics();
+
   const technology = params.technologyId;
 
   //знайти потрібний json за id (switch case)

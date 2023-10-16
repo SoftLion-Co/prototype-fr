@@ -1,4 +1,3 @@
-// SmallServiceCardComponent.tsx
 import React from "react";
 import s from "./SmallServiceCardComponent.module.scss";
 import Image from "next/image";

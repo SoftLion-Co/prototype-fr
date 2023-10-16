@@ -5,6 +5,8 @@ import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import OurTeamSection from "@/app/sections/home_page/OurTeamSection";
 import blogsData from "@/data/blog/blogs_extended_data.json";
 
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
+
 type BlogData = {
   [key: string]: {
     authorImg: string;
@@ -25,6 +27,8 @@ interface BlogParams {
 }
 
 const Blog = ({ params }: { params: BlogParams }) => {
+  useGoogleAnalytics();
+
   const { blogId } = params;
 
   const response = (blogsData as BlogData)[blogId];
