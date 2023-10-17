@@ -318,10 +318,6 @@
   align-items: center;
   gap: 60px;
 
-  @include for-size(tablet) {
-    display: none;
-  }
-
   &__line {
     &::before {
       content: "";
