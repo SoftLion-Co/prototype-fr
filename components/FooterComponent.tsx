@@ -37,7 +37,7 @@ const FooterComponent = () => {
 
    return (
      <footer className={s.footer} id="footer">
-       <div className={s.blur}>
+       <div className={classNames(s.blur, s.container)}>
          <div className={s.blur_item}></div>
        </div>
        <div className={classNames(s.footer__block, s.container)}>
