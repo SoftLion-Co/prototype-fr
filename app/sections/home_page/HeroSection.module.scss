@@ -52,7 +52,7 @@
     margin-bottom: 15px;
 
     @include for-size(tablet) {
-      max-width: 455px;
+      max-width: 350px;
       margin-bottom: 14px;
     }
     @include for-size(laptop) {
@@ -147,16 +147,16 @@
       }
       @include for-size(tablet) {
         position: relative;
+        width: 255px;
         top: -25%;
-        left: -3%;
+        left: -25%;
         animation: Scale 3s infinite ease-in-out;
       }
       @include for-size(laptop) {
-        left: -15%;
+        width: 375px;
       }
       @include for-size(desktop) {
-        top: -20%;
-        left: -20%;
+        width: 490px;
       }
     }
   }
