@@ -1,9 +1,9 @@
 {
-  "PaulGraur": {
-    "name": "Paul Graur",
-    "occupation": "CEO",
-    "imgSrc": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_400_400/0/1670855543512?e=1698278400&v=beta&t=NcGChEbH99doL7xI05HDdBUvgpF-hlPF7jKt7RjJuV0",
-    "generalInfo": "I'm Paul Graur, an experienced IT professional deeply involved in outsourcing, staff augmentation, and consulting services. Currently serving as the CEO of SoftLion, a rapidly advancing company specializing in ecommerce and blockchain technologies. At SoftLion, we are committed to innovation and strive for excellence. My expertise spans a wide range of technologies, including React, Vue, Angular, Node.js, Java, C#, and more. These skills enable me to stay at the forefront of the ever-evolving IT landscape. I'm dedicated to leading the team at SoftLion, propelling the company's growth, and positioning it as a highly promising entity in the ecommerce and blockchain domains. For a detailed overview of my work and SoftLion's achievements, feel free to visit our website, where you can explore my profile and learn more about the remarkable journey of SoftLion."
+  "DimaKlapiychuk": {
+    "name": "Dima Klapiychuk",
+    "occupation": "COO",
+    "imgSrc": "https://media.licdn.com/dms/image/D4D03AQHAgP85JknqKA/profile-displayphoto-shrink_800_800/0/1686751374128?e=1698883200&v=beta&t=Ks5_aBaMfSvX5Obq1Xx-XhwMB6J4qD1M79q_M7coCUo",
+    "generalInfo": "I'm Dima Klapiychuk, an experienced IT professional deeply involved in outsourcing, staff augmentation, and consulting services. Currently serving as the COO of SoftLion, a rapidly advancing company specializing in ecommerce and blockchain technologies. At SoftLion, we are committed to innovation and strive for excellence. My expertise spans a wide range of technologies, including React, Vue, Angular, Node.js, Java, C#, and more. These skills enable me to stay at the forefront of the ever-evolving IT landscape. I'm dedicated to leading the team at SoftLion, propelling the company's growth, and positioning it as a highly promising entity in the ecommerce and blockchain domains. For a detailed overview of my work and SoftLion's achievements, feel free to visit our website, where you can explore my profile and learn more about the remarkable journey of SoftLion."
   },
   "YuriiMatvii": {
     "name": "Yurii Matvii",
@@ -16,5 +16,11 @@
     "occupation": "UI/UX Designer",
     "imgSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/main/images/avatar/Tetiana.jpg?raw=true",
     "generalInfo": "I'm Tanya, a highly skilled UI/UX designer with extensive experience. My expertise lies in creating engaging landing pages and e-commerce designs that embody the essence of a company, particularly for clients associated with SoftLion. I am deeply passionate about my work and make it a priority to stay up-to-date with the latest trends in web design, ensuring that the projects I undertake are always modern and visually appealing. My dedication to design excellence is evident in every project, making me a valuable asset to the SoftLion team."
+  },
+  "PaulGraur": {
+    "name": "Paul Graur",
+    "occupation": "CEO",
+    "imgSrc": "https://media.licdn.com/dms/image/D4D03AQH746g8dZ8QPA/profile-displayphoto-shrink_400_400/0/1670855543512?e=1698278400&v=beta&t=NcGChEbH99doL7xI05HDdBUvgpF-hlPF7jKt7RjJuV0",
+    "generalInfo": "I'm Paul Graur, an experienced IT professional deeply involved in outsourcing, staff augmentation, and consulting services. Currently serving as the CEO of SoftLion, a rapidly advancing company specializing in ecommerce and blockchain technologies. At SoftLion, we are committed to innovation and strive for excellence. My expertise spans a wide range of technologies, including React, Vue, Angular, Node.js, Java, C#, and more. These skills enable me to stay at the forefront of the ever-evolving IT landscape. I'm dedicated to leading the team at SoftLion, propelling the company's growth, and positioning it as a highly promising entity in the ecommerce and blockchain domains. For a detailed overview of my work and SoftLion's achievements, feel free to visit our website, where you can explore my profile and learn more about the remarkable journey of SoftLion."
   }
 }

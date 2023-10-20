@@ -31,7 +31,7 @@ function useBlogsData() {
       id: 3,
       title: "Enhancing E-commerce",
       category: "E-commerce",
-      authorId: "PaulGraur",
+      authorId: "DimaKlapiychuk",
       readingTime: "14 min",
       publicationDate: "jul 13, 2023",
       imageSrc:
@@ -43,7 +43,7 @@ function useBlogsData() {
       id: 4,
       title: "SoftLion — Your Shopify Development Company",
       category: "Finance",
-      authorId: "PaulGraur",
+      authorId: "DimaKlapiychuk",
       readingTime: "12 min",
       publicationDate: "aug 14, 2023",
       imageSrc:
