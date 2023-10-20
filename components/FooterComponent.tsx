@@ -22,18 +22,21 @@ const FooterComponent = () => {
     { path: "/blog", label: "Blog" },
     { path: "/contact-us", label: "Contact Us" },
   ];
-  const socialLinks: { url: string; icon: JSX.Element }[] = [
+  const socialLinks: { url: string; icon: JSX.Element; title: string }[] = [
     {
       url: "https://www.linkedin.com/company/softlion/",
       icon: <FiLinkedin className={s.footer__icon} />,
+      title: "linkedin",
     },
     {
       url: "https://instagram.com/softlion_co/",
       icon: <AiOutlineInstagram className={s.footer__icon} />,
+      title: "instagram",
     },
     {
       url: "https://www.facebook.com/people/SoftLion/100093384261914/",
       icon: <FiFacebook className={s.footer__icon} />,
+      title: "facebook",
     },
     // {
     //   url: "#",
@@ -90,6 +93,7 @@ const FooterComponent = () => {
                   key={index}
                   className={s.footer__link}
                   href={link.url}
+                  title={link.title}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

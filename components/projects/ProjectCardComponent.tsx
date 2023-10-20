@@ -37,7 +37,7 @@ const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
       />
       <div className={s.card__text}>
         <div className={s.card__subtext}>
-          <h4 className={s.card__title}>{data.title}</h4>
+          <h2 className={s.card__title}>{data.title}</h2>
           <p className={s.card__desc}>{data.description}</p>
         </div>
         <Link href={`/projects/${data.id}`}>
