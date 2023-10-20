@@ -53,14 +53,14 @@ const OurTeamSetcion = () => {
   //   const [response, setResponse] = useState<Props[]>([]);
 
   const response: Props[] = [
-    {
-      id: "1",
-      name: "Pavlo Graur",
-      position: "CEO",
-      avatar:
-        "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_800_800/0/1697010844966?e=1702512000&v=beta&t=o1zowEeuAk2Y-eW6DL6IrIzkaOMJgeVbSD9uEHIY_lM",
-      linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
-    },
+    // {
+    //   id: "1",
+    //   name: "Pavlo Graur",
+    //   position: "CEO",
+    //   avatar:
+    //     "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_800_800/0/1697010844966?e=1702512000&v=beta&t=o1zowEeuAk2Y-eW6DL6IrIzkaOMJgeVbSD9uEHIY_lM",
+    //   linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
+    // },
     {
       id: "2",
       name: "Yurii Matvii",
