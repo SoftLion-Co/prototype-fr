@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  // Налаштування підключення SCSS
   sassOptions: {
     includePaths: ["styles"],
   },
@@ -13,10 +12,5 @@ module.exports = {
         hostname: '**',
       },
     ],
-  },
-
-  sitemap: {
-    hostname: "https://softlion.co",
-    generate: true,
   },
 };
