@@ -7,6 +7,7 @@ import { ConfirmDeleteModal } from "../../modals/ConfirmDeleteModal";
 import classNames from "classnames";
 import { Button } from "../Button";
 import { ContactData } from "../../dashboard/types";
+import orderProjectService from '../../../../services/order-project-service';
 
 interface Props {
   contact: ContactData;
@@ -16,6 +17,14 @@ export const ContactCard: FC<Props> = ({ contact }) => {
   const { formatDMYT } = useDateFormat();
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
+  const approveContact = (): void => {
+    orderProjectService.changeTypeOrder(contact.id, true);
+  }
+
+  const rejectContact = (): void => {
+    orderProjectService.changeTypeOrder(contact.id, false);
+  }
+
   return (
     <>
       <div className={s.card}>
@@ -23,7 +32,7 @@ export const ContactCard: FC<Props> = ({ contact }) => {
           <div>
             <BsFillTelephoneFill />
             <p>
-              Номер телефону: <span>{contact.tell}</span>
+              Номер телефону: <span>{contact.numberPhone}</span>
             </p>
           </div>
           <div>
@@ -35,13 +44,13 @@ export const ContactCard: FC<Props> = ({ contact }) => {
           <div>
             ################
             <p>
-              Короткий опис: <span>{contact.description}</span>
+              Короткий опис: <span>{contact.shortDescription}</span>
             </p>
           </div>
           <div>
             <BsCalendar3 />
             <p>
-              Дата відправлення: <span>{formatDMYT(contact.sendData)}</span>
+              Дата відправлення: <span>{formatDMYT(new Date(contact.createdDateTime))}</span>
             </p>
           </div>
         </div>
@@ -52,8 +61,8 @@ export const ContactCard: FC<Props> = ({ contact }) => {
       </div>
 
       <div className={s.buttons_container}>
-        <Button  text="Редагувати" />
-        <Button  text="Відхилити" />
+        <Button  text="Прийняти" onClick={approveContact}/>
+        <Button  text="Відхилити" onClick={rejectContact}/>
         <Button text="Видалити" theme="delete" /> 
         {/* fnc={() => setIsDeleteModalOpen(true)}  */}
       </div>

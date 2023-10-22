@@ -9,12 +9,14 @@ interface Props {
   contacts: ContactData[];
   onCardClick: (ContactData: ContactData) => void;
   onEditButtonClick: () => void;
+  onUpdate: () => void;
 }
 
 const ContactInfoComponent: React.FC<Props> = ({
   contacts,
   onCardClick,
   onEditButtonClick,
+  onUpdate
 }) => {
   const {formatDMY} = useDateFormat();
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -26,7 +28,7 @@ const ContactInfoComponent: React.FC<Props> = ({
 
   useEffect(() => {
     setFilteredContacts(contacts.filter(contact =>
-      contact.description.toLowerCase().includes(searchTerm.toLowerCase())));
+      contact.shortDescription.toLowerCase().includes(searchTerm.toLowerCase())));
   }, [searchTerm]);
 
   const sortOptions: SortMenuOption[] = [
@@ -44,7 +46,7 @@ const ContactInfoComponent: React.FC<Props> = ({
       name: "Дата",
       action: (): void => {
         setFilteredContacts([...filteredContacts]
-          .sort((contact1, contact2) => contact1.sendData.getTime() - contact2.sendData.getTime()));
+          .sort((contact1, contact2) => new Date(contact1.createdDateTime).getTime() - new Date(contact2.createdDateTime).getTime()));
       },
     },
   ];
@@ -62,6 +64,8 @@ const ContactInfoComponent: React.FC<Props> = ({
           handleSearch={event => setSearchTerm(event.target.value)}
           onEditButtonClick={onEditButtonClick}
           sortOptions={sortOptions}
+          showCreateButton={false}
+          onUpdate={onUpdate}
           sortOrderChange={sortOrderChange}
         />
       </div>
@@ -72,7 +76,7 @@ const ContactInfoComponent: React.FC<Props> = ({
             <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
               <p>{index + 1}</p>
               <p>{contact.email}</p>
-              <p>{formatDMY(contact.sendData)}</p>
+              <p>{formatDMY(new Date(contact.createdDateTime))}</p>
             </div>
           </li>
         ))}

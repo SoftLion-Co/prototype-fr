@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./BlogInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import edit from "@/app/admin/images/control/edit.svg";
@@ -6,58 +6,58 @@ import bin from "@/app/admin/images/control/bin.svg";
 import Image from "next/image";
 import { SortMenuOption } from "../SortMenuComponent";
 import { formatDate } from "../../utils/formatDate";
+import { BlogData } from "../../dashboard/types";
 
-export interface BlogData {
-  number: number;
-  title: string;
-  data: string;
-  rating: number;
-  email?: string;
-  description?: string;
-  tell?: number;
-}
+
 
 interface Props {
-  users: BlogData[];
+  blogs: BlogData[];
   onEditButtonClick: (blog: BlogData | null) => void;
+  onUpdateBlogs: () => void;
 }
 
-const BlogInfoComponent: React.FC<Props> = ({ users, onEditButtonClick }) => {
+const BlogInfoComponent: React.FC<Props> = ({ blogs, onEditButtonClick, onUpdateBlogs }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredUsers, setfilteredUsers] = useState<BlogData[]>(users);
+  const [filteredBlogs, setfilteredBlogs] = useState<BlogData[]>(blogs);
+
+  useEffect(() => {
+    setfilteredBlogs(blogs)
+  }, [blogs])
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setfilteredUsers(users.filter((user) => user.title.toLowerCase().includes(event.target.value.toLowerCase())));
+    // setfilteredUsers(blogs.filter((blog) => blog.title.toLowerCase().includes(event.target.value.toLowerCase())));
   };
 
   const sortOptions: SortMenuOption[] = [
     {
       name: "Заголовок",
       action: () => {
-        setfilteredUsers(
-          [...filteredUsers].sort((blog1, blog2) => {
-            return blog1.title.toLowerCase().localeCompare(blog2.title.toLowerCase());
-          })
-        );
+        // setfilteredUsers(
+        //   [...filteredUsers].sort((blog1, blog2) => {
+        //     return blog1.title.toLowerCase().localeCompare(blog2.title.toLowerCase());
+        //   })
+        // );
       },
     },
     {
       name: "Рейтинг",
       action: () => {
-        setfilteredUsers([...filteredUsers].sort((blog1, blog2) => blog2.rating - blog1.rating));
+        // setfilteredBlogs([...filteredBlogs].sort((blog1, blog2) => blog2.rating - blog1.rating));
       },
     },
     {
       name: "Дата",
       action: () => {
-        setfilteredUsers([...filteredUsers].sort((blog1, blog2) => new Date(blog1.data).getTime() - new Date(blog2.data).getTime()));
+        setfilteredBlogs([...filteredBlogs].sort((blog1, blog2) => new Date(blog1.createdDateTime).getTime() - new Date(blog2.createdDateTime).getTime()));
       },
     },
   ];
 
   const sortOrderChange = () => {
-    setfilteredUsers([...filteredUsers].reverse());
+    setfilteredBlogs([...filteredBlogs].reverse());
   };
+
+
 
   return (
     <div className={s.user}>
@@ -69,21 +69,22 @@ const BlogInfoComponent: React.FC<Props> = ({ users, onEditButtonClick }) => {
           onEditButtonClick={onEditButtonClick}
           sortOptions={sortOptions}
           sortOrderChange={sortOrderChange}
+          onUpdate={onUpdateBlogs}
         />
       </div>
 
       <ul className={s.user__list}>
-        {filteredUsers.map((user, index) => (
-          <li className={s.user__list__item} key={user.number}>
+        {filteredBlogs.map((blog, index) => (
+          <li className={s.user__list__item} key={blog.id}>
             <div className={s.user__list__information}>
               <p>{index + 1}</p>
-              <p>{user.title}</p>
-              <p>{formatDate(user.data)}</p>
-              <p>{user.rating}</p>
+              <p>{blog.title}</p>
+              <p>{formatDate(blog.createdDateTime)}</p>
+              {/* <p>{blog.rating}</p> */} 
             </div>
             <div className={s.user__list__buttons}>
               <button type="button" className={s.user__list__button}>
-                <Image className={s.user__list__button__image} src={edit} alt="Edit" width={16} height={16} onClick={() => onEditButtonClick(user)}/>
+                <Image className={s.user__list__button__image} src={edit} alt="Edit" width={16} height={16} onClick={() => onEditButtonClick(blog)}/>
               </button>
               <button type="button" className={s.user__list__button}>
                 <Image className={s.user__list__button__image} src={bin} alt="Edit" width={16} height={16} />

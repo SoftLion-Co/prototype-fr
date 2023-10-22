@@ -3,7 +3,7 @@ import s from "./ContentEditor.module.scss";
 import classNames from "classnames";
 import FileInput from "../FileInputComponent";
 import { DetailsModal } from "../../modals/DetailsModal";
-import { BlogData } from "./BlogInfoComponent";
+import { BlogData } from "../../dashboard/types";
 
 interface ContentEditorProps {
   blog: BlogData | null;

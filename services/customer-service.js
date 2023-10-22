@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
+const baseUrl = "http://176.117.72.71:8921/api"; 
 
 class CustomerService {
 
@@ -6,7 +6,7 @@ class CustomerService {
 		const response = await fetch(`${baseUrl}/customer`);
 		const data = await response.json();
 		return data;
-	}
+	} 
 
 	async getCustomer(id) {
 		const response = await fetch(`${baseUrl}/customer/${id}`, {

@@ -8,17 +8,18 @@ import update from "@/app/admin/images/sort/update.svg";
 import addToList from "@/app/admin/images/sort/add-to-list.svg";
 import SortMenu, { SortMenuOption } from "./SortMenuComponent";
 import classNames from "classnames";
-import { BlogData } from "./blog/BlogInfoComponent";
+import {BlogData} from '../../types';
 
 interface SortingElementsProps {
   onSortOrderChange?: () => void; // Додайте проп
   onUpdate?: () => void;
   onAddToList: (blog: BlogData | null) => void;
   sortOptions: SortMenuOption[];
+  showCreateButton: boolean;
   sortOrderChange: () => void;
 }
 
-const SortingElements: React.FC<SortingElementsProps> = ({ sortOptions, sortOrderChange, onUpdate, onAddToList }) => {
+const SortingElements: React.FC<SortingElementsProps> = ({ showCreateButton, sortOptions, sortOrderChange, onUpdate, onAddToList }) => {
   const [showSortMenu, setShowSortMenu] = useState(false);
   const [sortOrderButtonDisabled, setSortOrderButtonDisabled] = useState(true);
 
@@ -27,7 +28,11 @@ const SortingElements: React.FC<SortingElementsProps> = ({ sortOptions, sortOrde
     setSortOrderButtonDisabled(false);
   };
 
-  const handleUpdateList = () => {};
+  const handleUpdateList = () => {
+    if(onUpdate){
+      onUpdate();
+    }
+  };
 
   const handleAddToList = () => {
     onAddToList(null);
@@ -52,10 +57,10 @@ const SortingElements: React.FC<SortingElementsProps> = ({ sortOptions, sortOrde
       <button className={s.sorting__button} type="button" onClick={handleUpdateList}>
         <Image src={update} alt="update" />
       </button>
-      <button className={s.sorting__button} type="button" onClick={handleAddToList}>
+      {showCreateButton && <button className={s.sorting__button} type="button" onClick={handleAddToList}>
         <Image src={addToList} alt="add to list" />
       </button>
-    </div>
+}    </div>
   );
 };
 

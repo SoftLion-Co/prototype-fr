@@ -27,13 +27,13 @@ export const ClientCard: FC<Props> = ({ client }) => {
           <div>
             <BiSolidIdCard />
             <p>
-              Ім’я: <span>{client.name}</span>
+              Ім’я: <span>{client.firstName} {client.lastName}</span>
             </p>
           </div>
           <div>
             <BsFillTelephoneFill />
             <p>
-              Номер телефону: <span>{client.tell}</span>
+              Номер телефону: <span>{client.phoneNumber}</span>
             </p>
           </div>
           <div>
@@ -42,31 +42,37 @@ export const ClientCard: FC<Props> = ({ client }) => {
               E-mail: <span>{client.email}</span>
             </p>
           </div>
-          <div>
+          {/* <div>
             <BiSolidKey />
             <p>
               Пароль: <span>{client.password}</span>
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className={classNames(s.card__info, s.card__second_info)}>
           <div>
             <FaListAlt />
             <p>
-              Кількість проектів: <span>{client.projectsCount}</span>
+              Кількість проектів: <span>{client.projects.length}</span>
             </p>
           </div>
           <div>
             <BsCalendar3 />
             <p>
-              Дата реєстрації: <span>{formatDMYT(new Date(client.registerDate))}</span>
+              Дата реєстрації: <span>{formatDMYT(new Date(client.createdDateTime))}</span>
             </p>
           </div>
-          <div>
+          {/* <div>
             <BiTimeFive />
             <p>
               Був в мережі: <span>{formatDMYT(new Date (client.wasOnline))}</span>
+            </p>
+          </div> */}
+           <div>
+            <BiTimeFive />
+            <p>
+              Оновлено: <span>{formatDMYT(new Date (client.updatedDateTime))}</span>
             </p>
           </div>
         </div>

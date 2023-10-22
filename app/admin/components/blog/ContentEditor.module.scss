@@ -8,8 +8,8 @@
     flex-direction: column;
     flex-shrink: 0;
     gap: 25px;
-    height: 589px;
-    overflow-y: scroll;
+    max-height: 589px;
+    overflow-y: auto;
     margin-bottom: 20px;
   }
 

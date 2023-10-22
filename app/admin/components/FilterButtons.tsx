@@ -18,13 +18,13 @@ const FilterContactControls: FC<FilterContactControlsProps> = ({ contacts, setFi
   const filterByVerification = (type: FilterType): void => {
     switch (type) {
       case FilterType.NEW:
-        setFilteredContact(contacts.filter((contact) => contact.verified === undefined));
+        setFilteredContact(contacts.filter((contact) => contact.orderType === null));
         break;
       case FilterType.VERIFIED:
-        setFilteredContact(contacts.filter((contact) => contact.verified));
+        setFilteredContact(contacts.filter((contact) => contact.orderType));
         break;
       case FilterType.DECLINED:
-        setFilteredContact(contacts.filter((contact) => contact.verified === false));
+        setFilteredContact(contacts.filter((contact) => contact.orderType === false));
         break;
     }
   };

@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:7296/api";
+const baseUrl = "http://176.117.72.71:8921/api";
 
 class OrderProjectService {
 
@@ -11,12 +11,18 @@ class OrderProjectService {
 	}
 
 	async changeTypeOrder(id, numberType) {
-		const response = await fetch(`${baseUrl}/order-project/${id}`, {
+		// const response = await fetch(`${baseUrl}/order-project/${id}`, {
+		// 	method: 'PUT',
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 		body: JSON.stringify(numberType)
+		// 	});
+		const response = await fetch(`${baseUrl}/order-project/change-type?id=${id}&typeNumber=${numberType}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
-			},
-				body: JSON.stringify(numberType)
+			}
 			});
 	
 			if (!response.ok) {

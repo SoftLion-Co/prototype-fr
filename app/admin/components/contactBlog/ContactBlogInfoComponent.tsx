@@ -9,10 +9,12 @@ interface Props {
   contacts: ContactBlogData[];
   onCardClick: (ContactData: ContactBlogData) => void;
   onEditButtonClick: () => void;
+  onUpdate: () => void;
 }
 
 const ContactBlogInfoComponent: React.FC<Props> = ({
   contacts,
+  onUpdate,
   onCardClick,
   onEditButtonClick,
 }) => {
@@ -24,8 +26,12 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
   };
 
   useEffect(() => {
+    setFilteredContacts(contacts);
+  }, [contacts])
+
+  useEffect(() => {
     setFilteredContacts(contacts.filter(contact =>
-      contact.description.toLowerCase().includes(searchTerm.toLowerCase())));
+      contact.shortDescription.toLowerCase().includes(searchTerm.toLowerCase())));
   }, [searchTerm]);
 
   const sortOptions: SortMenuOption[] = [
@@ -43,7 +49,7 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
       name: "Дата",
       action: (): void => {
         setFilteredContacts([...filteredContacts]
-          .sort((contact1, contact2) => new Date(contact1.data).getTime() - new Date(contact2.data).getTime()));
+          .sort((contact1, contact2) => new Date(contact1.createdDateTime).getTime() - new Date(contact2.createdDateTime).getTime()));
       },
     },
   ];
@@ -61,17 +67,19 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
           handleSearch={handleSearch}
           onEditButtonClick={onEditButtonClick}
           sortOptions={sortOptions}
+          showCreateButton={false}
+          onUpdate={onUpdate}
           sortOrderChange={sortOrderChange}
         />
       </div>
 
       <ul className={s.user__list}>
         {filteredContacts.map((contact, index) => (
-          <li className={s.user__list__item} key={contact.number}>
+          <li className={s.user__list__item} key={contact.id}>
             <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
               <p>{index + 1}</p>
-              <p>{contact.description}</p>
-              <p>{formatDMY(new Date(contact.data))}</p>
+              <p>{contact.shortDescription}</p>
+              <p>{formatDMY(new Date(contact.createdDateTime))}</p>
             </div>
           </li>
         ))}

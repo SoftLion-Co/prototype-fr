@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./ClientsInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 
@@ -12,6 +12,7 @@ interface Props {
   setSearchTerm: (term: string) => void;
   onCardClick: (ContactData: ClientData) => void;
   onEditButtonClick: () => void;
+  onUpdateClients: () => void;
 }
 
 const ClientsInfoComponent: React.FC<Props> = ({
@@ -20,6 +21,7 @@ const ClientsInfoComponent: React.FC<Props> = ({
   setSearchTerm,
   onCardClick,
   onEditButtonClick,
+  onUpdateClients,
 }) => {
   const { formatDMY } = useDateFormat();
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,13 +29,17 @@ const ClientsInfoComponent: React.FC<Props> = ({
   };
   const [filteredClients, setfilteredClients] = useState<ClientData[]>(clients);
 
+  useEffect(()=>{
+    setfilteredClients(clients);
+  }, [clients])
+
   const sortOptions: SortMenuOption[] = [
     {
       name: "Ім’я",
       action: () => {
         setfilteredClients(
           [...filteredClients].sort((client1, client2) => {
-            return client1.name.toLowerCase().localeCompare(client2.name.toLowerCase());
+            return client1.firstName.toLowerCase().localeCompare(client2.firstName.toLowerCase());
           })
         );
       },
@@ -42,7 +48,7 @@ const ClientsInfoComponent: React.FC<Props> = ({
     {
       name: "Дата",
       action: () => {
-        setfilteredClients([...filteredClients].sort((client1, client2) => new Date(client1.registerDate).getTime() - new Date(client2.registerDate).getTime()));
+        setfilteredClients([...filteredClients].sort((client1, client2) => new Date(client1.createdDateTime).getTime() - new Date(client2.createdDateTime).getTime()));
       },
     },
   ];
@@ -61,6 +67,7 @@ const ClientsInfoComponent: React.FC<Props> = ({
           onEditButtonClick={onEditButtonClick}
           sortOptions={sortOptions}
           sortOrderChange={sortOrderChange}
+          onUpdate={onUpdateClients}
         />
       </div>
 
@@ -69,8 +76,8 @@ const ClientsInfoComponent: React.FC<Props> = ({
           <li onClick={() => onCardClick(client)} className={s.user__list__item} key={client.id}>
             <div className={s.user__list__information}>
               <p>{index + 1}</p>
-              <p>{client.name}</p>
-              <p>{formatDMY(new Date(client.registerDate))}</p>
+              <p>{client.firstName} {client.lastName}</p>
+              <p>{formatDMY(new Date(client.createdDateTime))}</p>
             </div>
           </li>
         ))}

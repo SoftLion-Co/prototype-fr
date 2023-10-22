@@ -13,7 +13,7 @@
     display: grid;
     gap: 10px;
     max-height: 657px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     &__item {
       cursor: pointer;

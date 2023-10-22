@@ -12,8 +12,8 @@
   &__list {
     display: grid;
     gap: 10px;
-    height: 657px;
-    overflow-y: scroll;
+    max-height: 657px;
+    overflow-y: auto;
 
     &__item {
       display: flex;

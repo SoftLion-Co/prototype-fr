@@ -4,44 +4,26 @@ import FileInput from "../FileInputComponent";
 import s from "./NewProjectComponent.module.scss";
 import { ImImage } from "react-icons/im";
 import bin from "@/app/admin/images/control/bin.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./../Button";
 import classNames from "classnames";
+import countryService from "../../../../services/country-service";
 
 const NewProjectCard = () => {
-  const [imageCount, setImageCount] = useState(0);
   const [requirementsCount, setRequirementsCount] = useState(0);
   const [paragraphsCount, setParagraphsCount] = useState(0);
+  const [countries, setCountries] = useState<string[]>([]);
 
-  const handleAddImageInput = () => {
-    if (imageCount < 4) {
-      setImageCount(imageCount + 1);
-    }
-  };
+  useEffect(() => {
+    async function fetchCountries() {
+      const countries = await countryService.getAllCountries();
 
-  const handleDeleteImageInput = () => {
-    if (imageCount > 0) {
-      setImageCount(imageCount - 1);
+      setCountries(countries.result.map((country: any) => country.name));
+      console.log("countries", countries);
     }
-  };
 
-  const renderImageInput = () => {
-    const images = [];
-    for (let i = 0; i < imageCount; i++) {
-      images.push(
-        <div className={s.image_input__container}>
-          <FileInput className={s.image_input} placeholder="Для ілюстрації" />
-          <div className={s.image_input__controls}>
-            <ImImage className={s.icon} />
-            <button className={s.remove_button} type="button" onClick={handleDeleteImageInput}>
-              <Image className={s.remove_button__image} src={bin} alt="Edit" width={16} height={16} />
-            </button>
-          </div>
-        </div>
-      );
-    }
-    return images;
-  };
+    fetchCountries();
+  }, []);
 
   const handleAddRequirement = () => {
     if (requirementsCount < 4) {
@@ -59,7 +41,7 @@ const NewProjectCard = () => {
     const requirements = [];
     for (let i = 0; i < requirementsCount; i++) {
       requirements.push(
-        <div>
+        <div className={s.requirement__container}>
           <input className={s.input} type="text" placeholder="Вимоги"></input>
           <button className={s.remove_button} type="button" onClick={handleDeleteRequirement}>
             <Image className={s.user__list__button__image} src={bin} alt="Edit" width={16} height={16} />
@@ -82,11 +64,22 @@ const NewProjectCard = () => {
     }
   };
 
+  const createListOfYears = () => {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    let startYear = 2015;
+
+    while (startYear <= currentYear + 10) {
+      years.push(startYear++);
+    }
+    return years;
+  };
+
   const renderParagraphs = () => {
     const paragraphs = [];
     for (let i = 0; i < paragraphsCount; i++) {
       paragraphs.push(
-        <div>
+        <div key={i}>
           <input className={s.input} type="text" placeholder="Заголовок абзацу"></input>
           <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу"></textarea>
         </div>
@@ -104,20 +97,73 @@ const NewProjectCard = () => {
             <div className={s.image_inputs__container}>
               <div className={s.image_input__container}>
                 <FileInput className={s.image_input} placeholder="Для ілюстрації" />
-                <div className={s.image_input__controls}>
-                  <ImImage className={s.icon} />
-                </div>
+                <ImImage className={s.icon} />
               </div>
-
-              {renderImageInput()}
-            </div>
-            <div className={s.button__container}>
-              <Button text="Додати картинку" type="button" onClick={handleAddImageInput} />
+              <div className={s.image_input__container}>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <ImImage className={s.icon} />
+              </div>
+              <div className={s.image_input__container}>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <ImImage className={s.icon} />
+              </div>
+              <div className={s.image_input__container}>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <ImImage className={s.icon} />
+              </div>
+              <div className={s.image_input__container}>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <ImImage className={s.icon} />
+              </div>
             </div>
           </div>
           <div className={s.input__container}>
             <input className={s.input} type="text" placeholder="Для заголовку"></input>
             <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису"></textarea>
+          </div>
+          <div className={classNames(s.input__container, s.input__container_row)}>
+            <select className={classNames(s.input, s.select)} defaultValue="default">
+              <option className={classNames(s.select__option, s.hidden)} value="default">
+                Період
+              </option>
+              <option className={s.select__option}>1 Week</option>
+              <option className={s.select__option}>2 Weeks</option>
+              <option className={s.select__option}>3 Weeks</option>
+              <option className={s.select__option}>1 Month</option>
+              <option className={s.select__option}>2 Months</option>
+              <option className={s.select__option}>3 Months</option>
+              <option className={s.select__option}>4 Months</option>
+              <option className={s.select__option}>5 Months</option>
+              <option className={s.select__option}>6 Months</option>
+              <option className={s.select__option}>7 Months</option>
+              <option className={s.select__option}>8 Months</option>
+              <option className={s.select__option}>9 Months</option>
+              <option className={s.select__option}>10 Months</option>
+              <option className={s.select__option}>11 Months</option>
+              <option className={s.select__option}>1 Year</option>
+              <option className={s.select__option}>1.5 Year</option>
+              <option className={s.select__option}>2 Years</option>
+            </select>
+            <select className={classNames(s.input, s.select)} defaultValue="default">
+              <option className={classNames(s.select__option, s.hidden)} value="default">
+                Рік
+              </option>
+              {createListOfYears().map((year, index) => (
+                <option className={s.select__option} key={index}>
+                  {year}
+                </option>
+              ))}
+            </select>
+            <select className={classNames(s.input, s.select)} defaultValue="default">
+              <option className={classNames(s.select__option, s.hidden)} value="default">
+                Країна
+              </option>
+              {countries.map((countryName, index) => (
+                <option className={s.select__option} key={index}>
+                  {countryName}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
@@ -141,6 +187,14 @@ const NewProjectCard = () => {
                 <input className={s.input} type="text" placeholder="Заголовок абзацу"></input>
                 <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу"></textarea>
                 {renderParagraphs()}
+              </div>
+            </div>
+            <div className={s.solution__container}>
+              <p className={s.title_block}>The Result</p>
+              <div className={s.input__container}>
+                <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу"></textarea>
+                <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу"></textarea>
+                <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу"></textarea>
               </div>
             </div>
           </div>

@@ -1,20 +1,66 @@
 export interface ClientData {
   id: string;
-  name: string;
-  tell: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
   email: string;
-  password: string;
-  projectsCount: number;
-  registerDate: string | number;
-  wasOnline: Date;
+  projects: any[];
+  createdDateTime: string;
+  updatedDateTime: string;
 }
 
 export interface ContactData {
   id: string;
-  tell: string;
+  numberPhone: string;
   email: string;
-  description: string;
-  sendData: Date;
-  verified?: boolean;
+  shortDescription: string;
+  createdDateTime: string;
+  orderType?: boolean;
 }
 
+export interface BlogData {
+  svg: BlogSvg;
+  pictures: BlogPicture[];
+  paragraphs: BlogParagraph[];
+  author: BlogAuthor;
+  readingTime: string;
+  title: string;
+  description: string;
+  viewers: number;
+  id: string;
+  createdDateTime: string;
+  updatedDateTime: string;
+}
+
+interface BlogSvg {
+  url: string;
+  blogId: string;
+  id: string;
+  createdDateTime: string;
+  updatedDateTime: string;
+}
+
+interface BlogPicture extends BlogSvg {
+  projectId: string;
+}
+
+interface BlogParagraph {
+  title: string;
+  description: string;
+  blogId: string;
+  projectId: string;
+  id: string;
+  createdDateTime: string;
+  updatedDateTime: string;
+}
+
+interface BlogAuthor {
+  fullname: string;
+  employment: string;
+  avatar: string;
+  linkedIn: string;
+  description: string;
+  id: string;
+  createdDateTime: string;
+  updatedDateTime: string;
+}
