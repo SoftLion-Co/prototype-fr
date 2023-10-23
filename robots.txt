@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Host: https://softlion.co
+Sitemap: https://softlion.co/sitemap.xml
