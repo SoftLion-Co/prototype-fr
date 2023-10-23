@@ -6,7 +6,6 @@ import SidebarMenu from "@/components/personal-space/SidebarMenu";
 const PersonalLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div className={classNames(s.personalSpace_page, s.container)}>
-      <SidebarMenu />
       <>{children}</>
     </div>
   );

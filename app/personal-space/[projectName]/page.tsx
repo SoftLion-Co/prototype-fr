@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import s from "./page.module.scss";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import ProjectSection from "@/app/sections/user_project_page/ProjectSection";
-import { strict } from "assert";
+import SidebarMenu from "@/components/personal-space/SidebarMenu";
 
 interface SidebarMenuParams {
   projectName: string;
 }
 
-const SidebarMenu = ({ params }: { params: SidebarMenuParams }) => {
+const ProjectPersonal = ({ params }: { params: SidebarMenuParams }) => {
   const projectName = decodeURIComponent(params.projectName);
 
   const links = [{ title: projectName, href: "/#" }];
@@ -20,9 +19,14 @@ const SidebarMenu = ({ params }: { params: SidebarMenuParams }) => {
       <div className={s.infoNavigat}>
         <InfoNavigationComponent links={links} />
       </div>
-      <ProjectSection projectName={projectName} />
+      <div className={s.project}>
+        <SidebarMenu />
+        <div className={s.project__container}>
+          <ProjectSection projectName={projectName} />
+        </div>
+      </div>
     </>
   );
 };
 
-export default SidebarMenu;
+export default ProjectPersonal;

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 // import Link from "next/link";
-import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+// import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import s from "./SettingsSection.module.scss";
 
 type SettingsFormData = {
@@ -27,18 +27,19 @@ const SettingsSection: FC = () => {
     console.log(data);
   };
 
-  const links = [
-    { title: "Personal-space", href: "/#" },
-    { title: "Settings", href: "/#" },
-  ];
+  // const links = [
+  //   { title: "Personal-space", href: "/personal-space" },
+  //   { title: "Settings", href: "/#" },
+  // ];
 
   return (
     <>
-      <div className={s.infoNavigat}>
+      {/* <div className={s.infoNavigat}>
         <InfoNavigationComponent links={links} />
-      </div>
+      </div> */}
+
+      {/* <h2 className={s.settingsHeader}>Settings</h2> */}
       <section className={s.settings}>
-        <h2 className={s.settingsHeader}>Settings</h2>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <section className={s.formSection}>
             <h3>Personal Information</h3>
