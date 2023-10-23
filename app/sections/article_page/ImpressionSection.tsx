@@ -7,11 +7,13 @@ import classNames from "classnames";
 import BlogImpression from "./../../../images/BlogImpression.svg";
 import { useForm } from "react-hook-form";
 import React, { useState } from "react";
+import orderBlogService from "@/services/order-blog-service";
+import ratingService from "@/services/rating-service";
 
 interface FormData {
-  name: string;
+  username: string;
   email: string;
-  comment: string;
+  shortDescription: string;
 }
 
 const ImpressionSection = () => {
@@ -25,23 +27,31 @@ const ImpressionSection = () => {
     reset
   } = useForm<FormData>({
     defaultValues: {
-      name: '',
+      username: '',
       email: '',
-      comment: ''
+      shortDescription: ''
     }
   });
 
 
-  watch(({ name, email, comment }) => {
-    setSubmitDisabled(!name || !email || !comment);
+  watch(({ username, email, shortDescription }) => {
+    setSubmitDisabled(!username || !email || !shortDescription);
   });
 
   const onSubmit = (data: FormData): void => {
-    const { name, email, comment } = data;
+    const { username, email, shortDescription } = data;
 
-    console.log("Name: ", name, "Email: ", email, "Comment: ", comment);
+    console.log("Name: ", username, "Email: ", email, "Comment: ", shortDescription);
+	 console.log(data);
+	 orderBlogService.createOrderBlog(data);
     reset();
   };
+
+  const onRatingChange = (newValue:number):void => {
+	setValue(newValue);
+	console.log(newValue);
+	ratingService.createRating({ value: newValue }); 
+ };
 
   return (
     <section className={classNames(s.container, s.impression)}>
@@ -49,15 +59,15 @@ const ImpressionSection = () => {
       <div className={s.impression__container}>
         <div className={s.rating}>
           <p className={s.rating__text}>We are happy to know your opinion.</p>
-          <Rating size="lg" value={value} onChange={setValue} />
+          <Rating size="lg" value={value} onChange={onRatingChange} />
         </div>
 
         <div className={s.feedback}>
           <h3 className={s.feedback__title}>If u have any ideas this is a place where you can share with us.</h3>
           <div className={s.feedback__container}>
             <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-              <div className={classNames(s.form__input, { [s.error__input]: errors.name })}>
-                <input placeholder="Name" {...register("name")} />
+              <div className={classNames(s.form__input, { [s.error__input]: errors.username })}>
+                <input placeholder="Name" {...register("username")} />
               </div>
               <div className={classNames(s.form__input, { [s.error__input]: !submitDisabled && errors.email })}>
                 <input
@@ -68,8 +78,8 @@ const ImpressionSection = () => {
                 />
                 {!submitDisabled && errors.email && <p className={s.error}>{errors.email.message}</p>}
               </div>
-              <div className={classNames(s.form__textarea, { [s.error__input]: errors.comment })}>
-                <textarea placeholder="Your comment" {...register("comment")} />
+              <div className={classNames(s.form__textarea, { [s.error__input]: errors.shortDescription })}>
+                <textarea placeholder="Your comment" {...register("shortDescription")} />
               </div>
               <MainButtonComponent disabled={submitDisabled} type="submit">
                 SEND

@@ -17,10 +17,10 @@ const HeroSection: React.FC<Props> = ({ heroTech }) => {
     <section className={s.hero}>
       <div className={classNames(s.container, s.hero__container)}>
         <div className={s.hero__technologies}>
-          <HeadingComponent text="Technologies" />
+          <HeadingComponent text="Technologies" tag="h1"/>
         </div>
 
-        <h1 className={s.hero__heading}>{heroTech.titleTech}</h1>
+        <h2 className={s.hero__heading}>{heroTech.titleTech}</h2>
         <p className={s.hero__paragraph}>{heroTech.paragraph}</p>
         <div className={s.blur}>
           <div className={s.blur_item}></div>

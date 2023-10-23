@@ -1,4 +1,4 @@
-const baseUrl = "http://176.117.72.71:8921/api";
+import { baseUrl } from './apiConfig';
 
 class OrderProjectService {
 
@@ -35,6 +35,9 @@ class OrderProjectService {
 	async getOrderProject(id) {
 		const response = await fetch(`${baseUrl}/order-project/${id}`);
 		const data = await response.json();
+		if (!response.ok) {
+			throw new Error('Oops!');
+			}
 		return data;
 	}
 
@@ -57,26 +60,28 @@ class OrderProjectService {
 			body: JSON.stringify(orderProjectData)
 		});
 
-		if (!response.ok) {
+		if (response.ok) {
+			const responseData = await response.json();
+			return responseData;
+		} else {
 			throw new Error('Error creating orderProject');
 		}
-		console.log(await response.json())
 	}
 
-	async updateOrderProject(orderProjectData) {
-		const response = await fetch(`${baseUrl}/order-project`, {
-		method: 'PUT',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-			body: JSON.stringify(orderProjectData)
-		});
-
-		if (!response.ok) {
-			throw new Error('Error updating orderProject');
-		}
-		console.log(await response.json())
-	}
+	// async updateOrderProject(orderProjectData) {
+	// 	const response = await fetch(`${baseUrl}/order-project`, {
+	// 	method: 'PUT',
+	// 	headers: {
+	// 		'Content-Type': 'application/json'
+	// 	},
+	// 		body: JSON.stringify(orderProjectData)
+	// 	});
+	// 	console,log(orderProjectData);
+	// 	if (!response.ok) {
+	// 		throw new Error('Error updating orderProject');
+	// 	}
+	// 	console.log(await response.json())
+	// }
 
 }
 

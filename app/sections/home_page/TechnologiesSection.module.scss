@@ -2,69 +2,58 @@
 @import "./../styles/mixin";
 @import "../styles/container";
 
+.flip {
+  &_card {
+    perspective: 1000px;
+  }
+
+  .clicked &_card_inner {
+    transform: rotateY(180deg);
+  }
+
+  &_card_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  &_card:hover &_card_inner {
+    @include for-size(laptop) {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &_card_front,
+  &_card_back {
+    box-shadow: $technologies-card-shadow;
+    background: $technologies-card-backbround;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  &_card_back {
+    transform: rotateY(180deg);
+  }
+}
+
 .technologies {
   &__wrapper {
     position: relative;
   }
 
-  &__image_wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-
-    @include for-size(laptop) {
-      flex-direction: row;
-    }
-    /* ... */
-    z-index: 2;
-    transition: display 1s ease; /* Добавляем переход для свойства display */
-  }
-
-  &__image_wrapper.hovered &__text_ecommerce {
-    display: block;
-  }
-  &__image_wrapper.hovered &__image_uiux,
-  &__image_wrapper.hovered &__image_ecommerce,
-  &__image_wrapper.hovered &__image_seo,
-  &__image_wrapper.hovered &__image_api,
-  &__image_wrapper.hovered &__descriptionFotoUIUX,
-  &__image_wrapper.hovered &__description_photo,
-  &__image_wrapper.hovered &__description_photo,
-  &__image_wrapper.hovered &__descriptionFotoSeo {
-    display: none;
-  }
-  &__image_wrapper:hover &__text_ecommerce {
-    @include for-size(laptop) {
-      display: block;
-    }
-    @include for-size(desktop) {
-      display: block;
-    }
-  }
-  &__image_wrapper:hover &__image_uiux,
-  &__image_wrapper:hover &__image_ecommerce,
-  &__image_wrapper:hover &__image_seo,
-  &__image_wrapper:hover &__image_api,
-  &__image_wrapper:hover &__descriptionFotoUIUX,
-  &__image_wrapper:hover &__description_photo,
-  &__image_wrapper:hover &__description_photo,
-  &__image_wrapper:hover &__descriptionFotoSeo {
-    @include for-size(laptop) {
-      display: none;
-    }
-    @include for-size(desktop) {
-      display: none;
-    }
-  }
-
-  &__text_ecommerce {
-    display: none;
-  }
-
-  &__image_wrapper {
-    box-shadow: $technologies-card-shadow;
-    background: $technologies-card-backbround;
+  &__card_wrapper {
     border-radius: 15px;
 
     cursor: pointer;
@@ -102,10 +91,6 @@
       max-width: 22px;
       max-height: 22px;
     }
-
-    @include for-size(laptop) {
-      display: none;
-    }
   }
 
   &__icon_wrapper {
@@ -117,127 +102,17 @@
     }
   }
 
-  &__image_uiux {
-    margin-bottom: 8px;
-
-    width: 125px;
-    height: 118px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 110px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(laptop) {
-      width: 136px;
-      height: 129px;
-
-      margin-bottom: 18px;
-    }
-
-    @include for-size(desktop) {
-      width: 181px;
-      height: 165px;
-
-      margin-bottom: 20px;
-    }
-  }
-
-  &__image_ecommerce {
-    width: 125px;
-    height: 118px;
-
-    margin-bottom: 8px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 110px;
-    }
-
-    @include for-size(laptop) {
-      width: 136px;
-      height: 129px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(desktop) {
-      width: 181px;
-      height: 165px;
-
-      margin-bottom: 20px;
-    }
-  }
-
-  &__image_seo {
-    width: 125px;
-    height: 118px;
-
-    margin-bottom: 14px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 114px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(laptop) {
-      margin-bottom: 18px;
-
-      height: 129px;
-      width: 136px;
-    }
-
-    @include for-size(desktop) {
-      margin-bottom: 20px;
-
-      width: 181px;
-      height: 165px;
-    }
-  }
-
-  &__image_api {
-    margin-bottom: 9px;
-
-    width: 125px;
-    height: 118px;
-
-    @include for-size(tablet) {
-      width: 119px;
-      height: 110px;
-
-      margin-bottom: 10px;
-    }
-
-    @include for-size(laptop) {
-      margin-bottom: 18px;
-
-      height: 129px;
-      width: 136px;
-    }
-
-    @include for-size(desktop) {
-      margin-bottom: 20px;
-
-      width: 181px;
-      height: 165px;
-    }
-  }
-
-  &__header_wrapper {
+  &__cards {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__text_ecommerce {
+  &__text {
     text-align: center;
 
     font-size: 14px;
-    line-height: 17px;
+    line-height: 130%;
     letter-spacing: 0.6px;
     padding-right: 15px;
     padding-left: 15px;
@@ -245,24 +120,20 @@
     @include for-size(tablet) {
       padding-right: 18px;
     }
-
     @include for-size(laptop) {
       font-size: 16px;
-      line-height: 18px;
       letter-spacing: 0.7px;
     }
-
     @include for-size(desktop) {
       font-size: 20px;
-      line-height: 26px;
       letter-spacing: 0.8px;
     }
   }
 
   &__name_header {
-    margin-bottom: 47px;
+    margin-bottom: 45px;
     @include for-size(tablet) {
-      margin-bottom: 118px;
+      margin-bottom: 115px;
     }
 
     @include for-size(laptop) {
@@ -270,7 +141,7 @@
     }
 
     @include for-size(desktop) {
-      margin-bottom: 172px;
+      margin-bottom: 170px;
     }
   }
 
@@ -285,12 +156,8 @@
     }
 
     @include for-size(laptop) {
-      transition: transform 0.5s ease;
       width: 239px;
       justify-content: center;
-      &:hover {
-        transform: scale(1.05);
-      }
     }
 
     @include for-size(desktop) {
@@ -298,23 +165,43 @@
     }
   }
 
-  &__images_wrapper {
+  &__container_image {
+    height: 118px;
+    width: 125px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    @include for-size(tablet) {
+      height: 126px;
+      width: 132px;
+    }
+
+    @include for-size(laptop) {
+      height: 140px;
+      width: 146px;
+    }
+
+    @include for-size(desktop) {
+      height: 198px;
+      width: 188px;
+    }
+  }
+
+  &__cards_wrapper {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 
-    gap: 32px;
+    gap: 30px;
 
     @include for-size(tablet) {
-      gap: 46px;
+      gap: 50px 65px;
     }
 
     @include for-size(laptop) {
       flex-wrap: nowrap;
-      gap: 41px;
-    }
-
-    @include for-size(desktop) {
       gap: 40px;
     }
   }
@@ -325,22 +212,17 @@
     text-align: center;
 
     font-size: 20px;
-    line-height: 22px;
+    line-height: 130%;
     letter-spacing: 1px;
 
     @include for-size(tablet) {
-      line-height: 27px;
       letter-spacing: 2px;
     }
-
     @include for-size(laptop) {
       font-size: 22px;
-      line-height: 29px;
     }
-
     @include for-size(desktop) {
       font-size: 30px;
-      line-height: 39px;
       letter-spacing: 2.7px;
     }
   }

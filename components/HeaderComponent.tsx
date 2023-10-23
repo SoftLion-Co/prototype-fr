@@ -9,8 +9,6 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiFacebook } from "react-icons/fi";
-import { PiTelegramLogoDuotone } from "react-icons/pi";
-import { link } from "fs";
 
 const HeaderComponent = () => {
   const pathname = usePathname();
@@ -34,17 +32,39 @@ const HeaderComponent = () => {
       url: "https://www.facebook.com/people/SoftLion/100093384261914/",
       icon: <FiFacebook className={s.header_modal__container__icon} />,
     },
-    // {
-    //   url: "#",
-    //   icon: <PiTelegramLogoDuotone className={s.header_modal__container__icon} />,
-    // },
   ];
+
+  // Функція для закриття модального вікна
+  const closeMobileMenu = () => {
+    setModalOpen(false);
+  };
+
+  useEffect(() => {
+    // Функція, яка буде викликатися при зміні ширини екрану
+    const handleResize = () => {
+      // Перевірка, чи ширина екрану більша ніж 767.99px
+      if (window.innerWidth > 767.99) {
+        closeMobileMenu(); // Закрити модальне вікно
+      }
+    };
+
+    // Додати слухача події resize
+    window.addEventListener("resize", handleResize);
+
+    // Під час відключення компонента видалити слухача події
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
 
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
       setSelectedMenuItem(null);
+      setOpenSubMenuIndex(-1);
     } else {
       setSelectedMenuItem(index);
+      setOpenSubMenuIndex(index);
     }
   };
 
@@ -64,6 +84,7 @@ const HeaderComponent = () => {
     setOpenSubMenuIndex(-1);
     setArrowDirection1("down");
     setArrowDirection2("down");
+    setSelectedMenuItem(null);
   };
 
   const toggleSubMenu = (index: any) => {
@@ -114,7 +135,7 @@ const HeaderComponent = () => {
       <div className={s.container}>
         <div className={s.header}>
           <div>
-            <Link href="/">
+            <Link href="/" onClick={() => setModalOpen(false)}>
               <Image className={s.header__logo} src={Logo} alt="SoftLion" />
             </Link>
           </div>
@@ -261,9 +282,6 @@ const HeaderComponent = () => {
               </li>
             </ul>
           </nav>
-          {/* <Link href="/login" className={s.header__btn_login__text}>
-            <button className={s.header__btn_login}>Login</button>
-          </Link> */}
           <button className={s.header__btn_burger} onClick={handleButtonClick}>
             <div className={`${s.header__icon} ${isModalOpen ? s.open : ""}`}>
               <div className={s.header__icon__div}></div>
@@ -284,9 +302,9 @@ const HeaderComponent = () => {
                   <div className={classNames(s.header_modal__link_container)}>
                     <div
                       className={classNames(
+                        pathname === "/services" ? s.header__active : "",
                         s.header_modal__link,
                         s.header__line,
-                        pathname === "/services" ? s.header__active : "",
                         selectedMenuItem === 0 ? s.selected : ""
                       )}
                       onClick={() => {
@@ -551,7 +569,9 @@ const HeaderComponent = () => {
               </ul>
               <div className={s.header_modal__container}>
                 {social.map((item, index) => (
-                  <Link key={index} href={item.url} target="_blank">{item.icon}</Link>
+                  <Link key={index} href={item.url} target="_blank">
+                    {item.icon}
+                  </Link>
                 ))}
               </div>
             </div>

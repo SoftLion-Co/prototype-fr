@@ -5,51 +5,162 @@
 .hero {
   display: flex;
   flex-direction: column;
-  gap: 32px;
   width: -webkit-fill-available;
+  margin-top: 20px;
 
   @include for-size(tablet) {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
-    margin-top: 30px;
+    margin-top: 100px;
+    height: 270px;
   }
-
   @include for-size(laptop) {
-    margin-top: 40px;
+    margin-top: 120px;
+    height: 370px;
   }
   @include for-size(desktop) {
-    margin-top: 70px;
+    margin-top: 150px;
+    height: 460px;
+  }
+
+  &__container {
+    @include for-size(tablet) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__information {
+    @include for-size(tablet) {
+      margin-bottom: 70px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 105px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 125px;
+    }
+  }
+
+  &__title {
+    color: $hero-heading-color;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 130%;
+    max-width: 350px;
+    margin-bottom: 15px;
+
+    @include for-size(tablet) {
+      max-width: 350px;
+      margin-bottom: 14px;
+    }
+    @include for-size(laptop) {
+      font-size: 35px;
+      max-width: 530px;
+      margin-bottom: 25px;
+    }
+    @include for-size(desktop) {
+      font-size: 45px;
+      max-width: 615px;
+      margin-bottom: 30px;
+    }
+
+    &_word {
+      background: linear-gradient(45deg, #07bcf8, #04aee7, #003e85);
+      background-size: 200% 200%;
+      background-clip: text;
+      color: transparent;
+      animation: gradientAnimation 2s linear infinite;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    max-width: 300px;
+    margin-bottom: 40px;
+
+    @include for-size(tablet) {
+      margin-bottom: 0;
+      max-width: 350px;
+      letter-spacing: 0.5px;
+    }
+    @include for-size(laptop) {
+      max-width: 440px;
+      font-size: 16px;
+      letter-spacing: 0.6px;
+    }
+    @include for-size(desktop) {
+      max-width: 549px;
+      font-size: 18px;
+      letter-spacing: 0.7px;
+    }
   }
 
   &__logo {
-    display: none;
+    display: flex;
+    justify-content: center;
 
-    @include for-size(tablet) {
-      display: block;
-      max-width: 419px;
-      margin-top: -8px;
-      margin-left: -47px;
-    }
-    @include for-size(laptop) {
-      max-width: 615px;
-      margin-top: -7px;
-    }
-    @include for-size(desktop) {
-      max-width: 790px;
-      margin-top: -13px;
-      margin-left: 0;
+    &_container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
 
-    &_small {
+    &_mobile {
       display: block;
+      margin-bottom: 50px;
 
       @include for-size(tablet) {
         display: none;
       }
     }
-    animation: floatingAnimation 3s infinite ease-in-out;
+
+    &_desktop {
+      display: none;
+      @include for-size(tablet) {
+        position: relative;
+        display: block;
+        max-width: 370px;
+        margin-top: -8px;
+        margin-left: -47px;
+      }
+      @include for-size(laptop) {
+        max-width: 555px;
+        margin-top: -7px;
+      }
+      @include for-size(desktop) {
+        max-width: 700px;
+        margin-top: -13px;
+        margin-left: 0;
+      }
+      animation: floatingAnimation 3s infinite ease-in-out;
+    }
+
+    &_shadow {
+      @include for-size(phone) {
+        display: none;
+      }
+      @include for-size(tablet) {
+        position: relative;
+        width: 255px;
+        top: -25%;
+        left: -25%;
+        animation: Scale 3s infinite ease-in-out;
+      }
+      @include for-size(laptop) {
+        width: 375px;
+      }
+      @include for-size(desktop) {
+        width: 490px;
+      }
+    }
   }
+
   @keyframes floatingAnimation {
     0%,
     100% {
@@ -59,31 +170,14 @@
       transform: translateY(-20px);
     }
   }
-  &__name {
-    font-size: 26px;
-    max-width: 380px;
-    margin-bottom: 15px;
 
-    @include for-size(tablet) {
-      max-width: 321px;
-      margin-bottom: 13px;
+  @keyframes Scale {
+    0%,
+    100% {
+      transform: scale(1);
     }
-    @include for-size(laptop) {
-      font-size: 35px;
-      max-width: 530px;
-      margin-bottom: 25px;
-    }
-    @include for-size(desktop) {
-      font-size: 45px;
-      max-width: 613px;
-      margin-bottom: 30px;
-    }
-    &_comp {
-      background: linear-gradient(45deg, #00ffea, #0099ff, #1111ff);
-      background-size: 200% 200%;
-      background-clip: text;
-      color: transparent;
-      animation: gradientAnimation 2s linear infinite;
+    50% {
+      transform: scale(1.8);
     }
   }
 
@@ -99,71 +193,21 @@
     }
   }
 
-  &__wrapper_inf {
-    @include for-size(tablet) {
-      margin-bottom: 71px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 104px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 123px;
-    }
-  }
-  &__wrapper_btn_mob {
+  &__buttons {
     display: flex;
     justify-content: center;
+    gap: 35px;
 
-    gap: 36px;
-    margin-top: 41px;
     @include for-size(tablet) {
-      display: none;
-    }
-  }
-  &__wrapper_btn {
-    display: none;
-    @include for-size(tablet) {
-      display: flex;
-      gap: 39px;
+      justify-content: flex-start;
+      gap: 17px;
     }
     @include for-size(laptop) {
-      gap: 58px;
+      gap: 60px;
     }
     @include for-size(desktop) {
       gap: 75px;
     }
-  }
-  &__description {
-    font-size: 16px;
-    letter-spacing: 0.3px;
-    max-width: 349px;
-    @include for-size(tablet) {
-      max-width: 287px;
-      letter-spacing: 0.4px;
-    }
-    @include for-size(laptop) {
-      max-width: 440px;
-      font-size: 14px;
-      letter-spacing: 0.7px;
-    }
-    @include for-size(desktop) {
-      max-width: 549px;
-      font-size: 18px;
-    }
-  }
-  &__wrapper_second {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.our_form {
-  width: calc(100% - 40px);
-  @include for-size(tablet) {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
   }
 }
 
@@ -185,16 +229,16 @@
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/hero_blurL.png);
-      right: 550px;
-      bottom: 130px;
+      right: 590px;
+      bottom: 160px;
       width: 496px;
       height: 463px;
     }
 
     @include for-size(desktop) {
       background-image: url(../../../images/blur/hero_blurD.png);
-      right: 680px;
-      bottom: 180px;
+      right: 780px;
+      bottom: 190px;
       width: 631px;
       height: 589px;
     }

@@ -49,8 +49,10 @@ const ForgotPasswordSection = () => {
   return (
     <div className={classNames(s.container, s.section)}>
       <div className={s.wrapper}>
-        <h2 className={s.title}>Forgot password?</h2>
-        <p className={classNames(s.text, s.text__indent)}>We will send you a code to restore access to your account.</p>
+        <h1 className={s.title}>Forgot password?</h1>
+        <p className={classNames(s.text, s.text__indent)}>
+          We will send you a code to restore access to your account.
+        </p>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <EmailInput
             error={errors.email}
@@ -58,7 +60,11 @@ const ForgotPasswordSection = () => {
             register={register}
             showError={!submitDisabled}
           />
-          <MainButtonComponent type="submit" className={classNames(s.auth_button, s.button__indent)} disabled={submitDisabled}>
+          <MainButtonComponent
+            type="submit"
+            className={classNames(s.auth_button, s.button__indent)}
+            disabled={submitDisabled}
+          >
             Accept
           </MainButtonComponent>
         </form>

@@ -31,7 +31,7 @@ function useBlogsData() {
       id: 3,
       title: "Enhancing E-commerce",
       category: "E-commerce",
-      authorId: "PaulGraur",
+      authorId: "DimaKlapiychuk",
       readingTime: "14 min",
       publicationDate: "jul 13, 2023",
       imageSrc:
@@ -43,7 +43,7 @@ function useBlogsData() {
       id: 4,
       title: "SoftLion — Your Shopify Development Company",
       category: "Finance",
-      authorId: "PaulGraur",
+      authorId: "DimaKlapiychuk",
       readingTime: "12 min",
       publicationDate: "aug 14, 2023",
       imageSrc:
@@ -74,6 +74,30 @@ function useBlogsData() {
         "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/6-mastering-web-development/DrawKit-11.svg",
       tags: ["Technology", "Development", "UI/UX"],
       text: "Unlock the potential of frontend web development with insights into Bootstrap, Material-UI, and Tailwind CSS. This guide demystifies these frameworks, empowering you to craft captivating web experiences seamlessly.",
+    },
+    {
+      id: 7,
+      title: "Psychology Driving Web Engagement",
+      category: "UI/UX",
+      authorId: "TaniaHlushko",
+      readingTime: "19 min",
+      publicationDate: "oct 11, 2023",
+      imageSrc:
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/99731b2749810f691eb4e04bc86476ccb2f75139/images/blog/7-psychology-driving-web-engagement/drawkit-3.svg",
+      tags: ["UI/UX", "Technology", "Guides"],
+      text: "The article highlights the blend of psychology and web design, crucial for engaging user experiences and boosting conversions. Understanding perception, interaction, and consistency is key to crafting captivating websites.",
+    },
+    {
+      id: 8,
+      title: "Comprehensive Overview of React",
+      category: "React",
+      authorId: "YuriiMatvii",
+      readingTime: "16 min",
+      publicationDate: "oct 13, 2023",
+      imageSrc:
+        "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/1bdebe01ff06fdb7594784079455f5e889001d65/images/blog/8-comprehensive-overview-of-react/react.svg",
+      tags: ["React", "Technology", "Guides"],
+      text: "The article delves into how React streamlines web development at SoftLion, making scalable applications feasible through its component-based approach, a vital factor for successful projects.",
     },
   ];
 

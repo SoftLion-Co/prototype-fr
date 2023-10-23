@@ -1,5 +1,3 @@
-// "use client";
-
 import React from "react";
 import s from "./page.module.scss";
 import ResultSection from "@/app/sections/project_page/ResultSection";
@@ -9,8 +7,8 @@ import SolutionSection from "@/app/sections/project_page/SolutionSection";
 import BlogSection from "@/app/sections/home_page/BlogSection";
 import ProjectContactUs from "@/app/sections/project_page/ProjectContactUs";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import useDocumentTitle from "@/hooks/useDocumentTitle";
-import UseClientComponent from "@/hooks/useClientComponent";
+
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
 
 const response = {
   ProjectDescriptionSection: {
@@ -101,11 +99,18 @@ const links = [
 ];
 
 const Project = () => {
-  const title = response.ProjectDescriptionSection.title;
+  useGoogleAnalytics();
+
+  const metadata = {
+    title: response.ProjectDescriptionSection.title,
+  };
 
   return (
     <div>
-      <UseClientComponent title={title} />
+      <head>
+        <title>{metadata.title}</title>
+      </head>
+
       <InfoNavigationComponent links={links} />
       <div className={s.page}>
         <ProjectDescriptionSection data={response.ProjectDescriptionSection} />

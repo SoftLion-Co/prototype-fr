@@ -11,7 +11,7 @@ export default function NotFound() {
         <Image src={logo_monochrome} alt="SoftLion" height={600} width={600} />
       </div>
 
-      <p className={s.error__paragraph}>Lion's Roar 404: Page Not Found</p>
+      <h1 className={s.error__paragraph}>Lion's Roar 404: Page Not Found</h1>
       <Link href="/" className={s.error__link}>
         Return Home
       </Link>

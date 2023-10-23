@@ -48,12 +48,7 @@ const BlogsSection = () => {
     setScrollToTop(true);
   };
 
-  const {
-    filteredBlogsData,
-    totalPagesForSelectedCategory,
-    handleCategoryChange,
-    selectedCategory,
-  } = useBlogFilter({
+  const { filteredBlogsData, handleCategoryChange } = useBlogFilter({
     blogsData: getBlogsData(),
     blogsPerPage: blogsPerPage,
     setCurrentPage: handlePageChange,
@@ -94,10 +89,11 @@ const BlogsSection = () => {
     setSliderPosition
   );
 
-  const currentBlogs = filteredBlogsData.slice(
-    (currentPage - 1) * blogsPerPage,
-    currentPage * blogsPerPage
-  );
+  const allBlogs = filteredBlogsData.slice().reverse();
+  const startIndex = (currentPage - 1) * blogsPerPage;
+  const endIndex = Math.min(startIndex + blogsPerPage, allBlogs.length);
+
+  const currentBlogs = allBlogs.slice(startIndex, endIndex);
 
   const links = [{ title: "Blog", href: "/blogs" }];
 
@@ -108,7 +104,7 @@ const BlogsSection = () => {
       </div>
 
       <div className={s.blog__title}>
-        <ServiceHeadingComponent headingText="Blog" container={true} />
+        <ServiceHeadingComponent headingText="Blog" container={true} tag="h1" />
       </div>
 
       <div className={s.container}>
@@ -192,12 +188,16 @@ const BlogsSection = () => {
           </div>
         </div>
 
-        <div className={s.blog__cards}>
-          {currentBlogs.map((blog) => (
-            <div className={s.blog__card}>
-              <BlogExtendedCardComponent data={blog} />
-            </div>
-          ))}
+        <div className={s.blog__card}>
+          {currentBlogs.length > 0 ? (
+            currentBlogs.map((blog) => (
+              <div className={s.blog__cards}>
+                <BlogExtendedCardComponent data={blog} />
+              </div>
+            ))
+          ) : (
+            <p className={s.blog__nothing}>Nothing found for your request</p>
+          )}
         </div>
 
         <div className={s.pagination}>

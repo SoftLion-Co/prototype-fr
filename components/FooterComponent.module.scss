@@ -7,6 +7,8 @@
   margin-bottom: 30px;
 
   @include for-size(tablet) {
+    width: 100%;
+    margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 40px;
   }
@@ -31,6 +33,7 @@
       align-items: stretch;
       height: 139px;
     }
+
     @include for-size(laptop) {
       height: 205px;
     }
@@ -86,24 +89,14 @@
       }
     }
     &_name {
-      font-size: 12px;
-      letter-spacing: 0.4px;
       color: $blog-card-text-color;
+      transition: color 0.15s ease-in-out;
 
       display: flex;
       align-items: center;
 
-      @include for-size(tablet) {
-        font-size: 12px;
-        letter-spacing: 0.5px;
-      }
-      @include for-size(laptop) {
-        font-size: 15px;
-        letter-spacing: 0.8px;
-      }
-
-      @include for-size(desktop) {
-        font-size: 20px;
+      &:hover {
+        color: #308bb7;
       }
     }
   }
@@ -113,6 +106,7 @@
       font-size: 11.5px !important;
       @include for-size(tablet) {
       }
+
       @include for-size(laptop) {
         font-size: 15px !important;
       }
@@ -123,21 +117,11 @@
     }
   }
   &__email {
-    font-size: 11px;
-    letter-spacing: 0.3px;
-
+    transition: color 0.15s ease-in-out;
     color: $blog-card-text-color;
-    @include for-size(tablet) {
-      font-size: 12px;
-      letter-spacing: 0.4px;
-    }
-    @include for-size(laptop) {
-      font-size: 15px;
-      letter-spacing: 0.8px;
-    }
 
-    @include for-size(desktop) {
-      font-size: 20px;
+    &:hover {
+      color: #308bb7;
     }
   }
 
@@ -148,6 +132,7 @@
       width: 13px;
       height: 13px;
     }
+
     @include for-size(laptop) {
       width: 18px;
       height: 18px;
@@ -167,6 +152,7 @@
     @include for-size(tablet) {
       gap: 7px;
     }
+
     @include for-size(laptop) {
       gap: 11px;
     }
@@ -184,6 +170,7 @@
     @include for-size(tablet) {
       gap: 16px;
     }
+
     @include for-size(laptop) {
       gap: 23px;
     }
@@ -195,6 +182,11 @@
 
   &__link {
     color: $blog-card-text-color;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: #308bb7;
+    }
   }
 
   &__routs {
@@ -204,25 +196,17 @@
     @include for-size(tablet) {
       gap: 3px;
     }
+
     @include for-size(laptop) {
       gap: 5px;
     }
+
     &_name {
-      font-size: 12px;
-      letter-spacing: 0.4px;
       color: $blog-card-text-color;
+      transition: color 0.15s ease-in-out;
 
-      @include for-size(tablet) {
-        font-size: 12px;
-        letter-spacing: 0.5px;
-      }
-      @include for-size(laptop) {
-        font-size: 15px;
-        letter-spacing: 0.8px;
-      }
-
-      @include for-size(desktop) {
-        font-size: 20px;
+      &:hover {
+        color: #308bb7;
       }
     }
   }
@@ -234,6 +218,7 @@
       max-width: 63px;
       height: 13px;
     }
+
     @include for-size(laptop) {
       max-width: 92px;
       height: 18px;
@@ -244,44 +229,56 @@
       height: 24px;
     }
   }
-  &__copyright {
+
+  &__text {
     font-size: 12px;
     letter-spacing: 0.5px;
 
     @include for-size(tablet) {
-      font-size: 12px;
       letter-spacing: 0.4px;
-      max-width: 156px;
     }
+
     @include for-size(laptop) {
       font-size: 15px;
       letter-spacing: 0.7px;
-      max-width: 286px;
     }
 
     @include for-size(desktop) {
       font-size: 20px;
       letter-spacing: 0.8px;
+    }
+  }
+
+  &__copyright {
+    @include for-size(tablet) {
+      max-width: 156px;
+    }
+
+    @include for-size(laptop) {
+      max-width: 286px;
+    }
+
+    @include for-size(desktop) {
       max-width: 286px;
     }
   }
 }
 
 .blur {
-  position: absolute;
   pointer-events: none;
   height: 5px;
 
   &_item {
     position: relative;
     pointer-events: none;
+    margin: 0 auto;
 
     @include for-size(tablet) {
       background-image: url(../images/blur/footer_blurT.png);
       background-repeat: no-repeat;
       bottom: 50px;
-      width: 712.441px;
-      height: 203.328px;
+      width: 712px;
+      height: 203px;
     }
 
     @include for-size(laptop) {

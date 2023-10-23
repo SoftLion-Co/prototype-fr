@@ -32,7 +32,7 @@ const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
           <div className={s.author}>
             <div className={s.author__image}>
               <Image
-                className={s.image}
+                className={s.picture}
                 width={44}
                 height={44}
                 src={authorImg}

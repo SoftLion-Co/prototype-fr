@@ -9,20 +9,17 @@
   &__name {
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
-    line-height: 14px;
+    line-height: 130%;
     letter-spacing: 0.04em;
 
     @include for-size(tablet) {
       font-size: 14px;
-      line-height: 18px;
     }
     @include for-size(laptop) {
       font-size: 15px;
-      line-height: 19px;
     }
     @include for-size(desktop) {
       font-size: 20px;
-      line-height: 26px;
     }
   }
   &__img {
@@ -64,14 +61,14 @@
 
   &__occupation {
     font-size: 20px;
-    line-height: 26px;
+    line-height: 130%;
+    font-weight: 400;
+
     @include for-size(tablet) {
       font-size: 18px;
-      line-height: 23px;
     }
     @include for-size(tablet) {
       font-size: 25px;
-      line-height: 32px;
     }
   }
 }
@@ -90,11 +87,10 @@
   &__about {
     font-weight: 500;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 130%;
 
     @include for-size(desktop) {
       font-size: 25px;
-      line-height: 32px;
     }
   }
   &__line {
@@ -116,15 +112,13 @@
 
   &__description {
     font-size: 14px;
-    line-height: 130.49%;
+    line-height: 130%;
     letter-spacing: 0.5px;
     @include for-size(tablet) {
       font-size: 11px;
-      line-height: 14px;
     }
     @include for-size(tablet) {
       font-size: 16px;
-      line-height: 20px;
     }
   }
 }

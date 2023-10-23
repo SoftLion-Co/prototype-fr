@@ -76,16 +76,16 @@
   }
 
   &__logo {
-    width: 74px;
-    height: 15px;
+    width: 100px;
+    height: 25px;
 
     @include for-size(tablet) {
-      width: 62px;
-      height: 12px;
+      width: 100px;
+      height: 25px;
     }
     @include for-size(laptop) {
-      width: 92px;
-      height: 19px;
+      width: 100px;
+      height: px;
     }
     @include for-size(desktop) {
       width: 119px;
@@ -98,8 +98,6 @@
 
     @include for-size(tablet) {
       display: flex;
-      // margin-left: auto;
-      // margin-right: auto;
     }
     @include for-size(laptop) {
       gap: 42px;
@@ -145,11 +143,11 @@
     font-size: 20px;
     letter-spacing: 0.4px;
     color: black;
-    line-height: 26px;
+    line-height: 130%;
     position: relative;
 
     @include for-size(tablet) {
-      font-size: 12px;
+      font-size: 14px;
     }
     @include for-size(laptop) {
       font-size: 15px;
@@ -229,8 +227,7 @@
       font-size: 22px;
       letter-spacing: 0.4px;
       color: black;
-      line-height: 7px;
-      line-height: 26px;
+      line-height: 130%;
       @include for-size(tablet) {
         font-weight: 400;
         font-size: 12px;
@@ -321,8 +318,29 @@
   align-items: center;
   gap: 60px;
 
-  @include for-size(tablet) {
-    display: none;
+  &__line {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      background: $burger-menu-color;
+      bottom: -3px;
+      height: 2px;
+      transition: left 0.3s ease-out, right 0.3s ease-out;
+    }
+
+    &.selected::before {
+      left: 0;
+      right: 0;
+    }
+
+    &:active:before {
+      left: 0;
+      right: 0;
+    }
   }
 
   &__list {
@@ -356,7 +374,7 @@
     font-size: 22px;
     letter-spacing: 0.4px;
     color: black;
-    line-height: 26px;
+    line-height: 130%;
     position: relative;
   }
 

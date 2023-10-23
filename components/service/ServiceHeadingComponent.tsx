@@ -6,11 +6,13 @@ import classNames from "classnames";
 interface ServiceHeadingComponentProps {
   headingText: string;
   container?: boolean;
+  tag?: string;
 }
 
 const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({
   headingText,
   container = true,
+  tag,
 }) => {
   const headingClass = classNames(s.heading, {
     [s.container]: container === true, // Додаємо s.container, якщо container === true
@@ -19,7 +21,11 @@ const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({
   return (
     <div className={headingClass}>
       <div className={s.heading__component}>
-        <h2 className={s.heading__title}>{headingText}</h2>
+        {tag === "h1" ? (
+          <h1 className={s.heading__title}>{headingText}</h1>
+        ) : (
+          <h2 className={s.heading__title}>{headingText}</h2>
+        )}
         <Image src={Line} alt="Security line" className={s.heading__svg} />
       </div>
     </div>

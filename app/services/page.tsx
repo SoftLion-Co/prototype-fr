@@ -5,16 +5,20 @@ import CustomAppsSection from "../sections/service_page/CustomAppsSection";
 import DevelopmentSection from "../sections/service_page/DevelopmentSection";
 import SecuritySection from "../sections/service_page/SecuritySection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import UseClientComponent from "@/hooks/useClientComponent";
+
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
+
+export async function generateMetadata({}) {
+  return { title: "SoftLion | Services" };
+}
 
 const Services = () => {
-  const title = "Services";
+  useGoogleAnalytics();
 
   const links = [{ title: "Services", href: "#" }];
 
   return (
     <div>
-      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <div id="design">
         <DesignSection />

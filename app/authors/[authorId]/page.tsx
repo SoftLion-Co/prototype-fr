@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
@@ -9,10 +8,11 @@ import { usePathname, redirect } from "next/navigation";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
 import getBlogsData from "@/hooks/getBlogsData";
-import UseClientComponent from "@/hooks/useClientComponent";
+
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
 
 const Author = () => {
-  const title = "Author";
+  useGoogleAnalytics();
 
   const id = usePathname().split("/").reverse()[0];
   const authorData: { [key: string]: AuthorInterface } = authors;
@@ -26,7 +26,6 @@ const Author = () => {
 
   return (
     <div style={{ paddingBottom: "5%" }}>
-      <UseClientComponent title={title} />
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}
