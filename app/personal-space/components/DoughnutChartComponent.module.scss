@@ -1,0 +1,15 @@
+.wrapper {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  canvas {
+    background-color: #fff;
+  }
+  .title {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    pointer-events: none;
+  }
+}
