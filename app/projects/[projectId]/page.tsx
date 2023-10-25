@@ -70,17 +70,14 @@ const response = {
       {
         imageSrc:
           "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero(light).png?raw=true",
-        class: "photo_discover",
       },
       {
         imageSrc:
           "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-basket.png?raw=true",
-        class: "photo_about",
       },
       {
         imageSrc:
           "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-delivery.png?raw=true",
-        class: "photo_trevel",
       },
     ],
   },

@@ -12,7 +12,6 @@ interface SolutionSectionProps {
     }[];
     images: {
       imageSrc: string;
-      class: string;
     }[];
   };
 }
@@ -34,14 +33,16 @@ const SolutionSection: FC<SolutionSectionProps> = ({ data }) => {
             </li>
           ))}
         </ul>
-        <ul className={`${s.solution__photos} ${s.container}`}>
+        <div className={s.container}>
           <div className={s.blur}>
             <div className={s.blur_item}></div>
           </div>
+        </div>
+        <ul className={`${s.solution__photos} ${s.container}`}>
           {data.images
             .filter((info) => info.imageSrc)
             .map((info, index) => (
-              <li key={index} className={s[`solution__${info.class}`]}>
+              <li key={index} className={s[`solution__photo${index}`]}>
                 <Image
                   src={info.imageSrc}
                   className={s.solution__image}
