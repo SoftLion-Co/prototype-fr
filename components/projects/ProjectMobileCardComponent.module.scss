@@ -48,7 +48,8 @@
     width: 54%;
     display: flex;
     justify-content: space-between;
-    align-items:flex-end;
+    align-items:flex-start;
+    flex-direction: column;
   }
 
   &__subdesc{
@@ -66,3 +67,17 @@
   }
 }
  
+
+.tags {
+  font-size: 10px;
+  gap: 4px;
+  margin-bottom: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    padding: 0px 5px;
+    border: 1px solid rgb(220 151 151 / 30%);
+    background-color: rgb(255 255 255 / 100%);
+    border-radius: 100px;
+  }
+}
