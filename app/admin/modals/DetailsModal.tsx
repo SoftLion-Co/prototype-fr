@@ -3,8 +3,8 @@ import { Portal } from "@/app/portal";
 import s from "./DetailsModal.module.scss";
 import classNames from "classnames";
 import { RxCross2 } from "react-icons/rx";
-import { BlogData } from '../components/blog/BlogInfoComponent';
 import { formatDate } from "../utils/formatDate";
+import { BlogData } from "../dashboard/types";
 
 interface ModalProps {
   isOpen: boolean;

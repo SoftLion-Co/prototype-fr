@@ -30,6 +30,11 @@ const Clients = () => {
     getClients();
   }, [refreshClients]);
 
+  const handleClientDelete = (): void => {
+    
+  }
+
+
   return (
     <AdminLayout>
       <div className={s.contact}>
@@ -48,7 +53,7 @@ const Clients = () => {
       <div className={s.content_editor}>
         <MainPageHeading initialText="Клієнти" />
 
-        {client && <ClientCard client={client} />}
+        {client && <ClientCard client={client} onDelete={() => setClient(null)} />}
       </div>
     </AdminLayout>
   );

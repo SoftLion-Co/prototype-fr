@@ -11,14 +11,28 @@ import { ConfirmDeleteModal } from "../../modals/ConfirmDeleteModal";
 import { ClientData } from "../../dashboard/types";
 import classNames from "classnames";
 import { Button } from "../Button";
+import { useRouter } from "next/navigation";
+import customerService from "@/services/customer-service";
 
 interface Props {
   client: ClientData;
+  onDelete: () => void;
 }
 
-export const ClientCard: FC<Props> = ({ client }) => {
+export const ClientCard: FC<Props> = ({ client, onDelete }) => {
   const { formatDMYT } = useDateFormat();
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+ const router = useRouter();
+
+  const viewAuthorProjects = ():void => {
+    router.push(`/admin/dashboard/orderStatus?author=${client.id}`);
+  }
+
+const deleteCustomer = () => {
+  // customerService.deleteCustomer(client.id);
+  onDelete();
+
+}
 
   return (
     <>
@@ -42,19 +56,13 @@ export const ClientCard: FC<Props> = ({ client }) => {
               E-mail: <span>{client.email}</span>
             </p>
           </div>
-          {/* <div>
-            <BiSolidKey />
-            <p>
-              Пароль: <span>{client.password}</span>
-            </p>
-          </div> */}
         </div>
 
         <div className={classNames(s.card__info, s.card__second_info)}>
           <div>
             <FaListAlt />
             <p>
-              Кількість проектів: <span>{client.projects.length}</span>
+              Кількість проектів: <span>{client.projects?.length ?? 0}</span>
             </p>
           </div>
           <div>
@@ -63,12 +71,6 @@ export const ClientCard: FC<Props> = ({ client }) => {
               Дата реєстрації: <span>{formatDMYT(new Date(client.createdDateTime))}</span>
             </p>
           </div>
-          {/* <div>
-            <BiTimeFive />
-            <p>
-              Був в мережі: <span>{formatDMYT(new Date (client.wasOnline))}</span>
-            </p>
-          </div> */}
            <div>
             <BiTimeFive />
             <p>
@@ -77,14 +79,14 @@ export const ClientCard: FC<Props> = ({ client }) => {
           </div>
         </div>
 
-        <button onClick={() => {}} className={s.card__view_projects_btn} type="button">
+        <button onClick={viewAuthorProjects} className={s.card__view_projects_btn} disabled={!client.projects?.length} type="button">
           Переглянути проекти
         </button>
       </div>
 
       <div className={s.buttons_container}>
         <Button  text="Редагувати" />
-        <Button  text="Видалити" theme="delete" />
+        <Button onClick={deleteCustomer} text="Видалити" theme="delete" />
       </div>
 
       <ConfirmDeleteModal

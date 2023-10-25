@@ -8,9 +8,10 @@ import classNames from "classnames";
 import { Button } from "../Button";
 import { ContactData } from "../../dashboard/types";
 import orderProjectService from '../../../../services/order-project-service';
+import { ContactBlogData } from "../../dashboard/contactBlog/page";
 
 interface Props {
-  contact: ContactData;
+  contact: ContactData | ContactBlogData;
 }
 
 export const ContactCard: FC<Props> = ({ contact }) => {
@@ -29,12 +30,18 @@ export const ContactCard: FC<Props> = ({ contact }) => {
     <>
       <div className={s.card}>
         <div className={classNames(s.card__info, s.card__first_info)}>
-          <div>
+          {(contact as ContactData).numberPhone && <div>
             <BsFillTelephoneFill />
             <p>
-              Номер телефону: <span>{contact.numberPhone}</span>
+              Номер телефону: <span>{(contact as ContactData).numberPhone}</span>
             </p>
-          </div>
+          </div>}
+          {(contact as ContactBlogData).username && <div>
+            <BsFillTelephoneFill />
+            <p>
+              Ім'я: <span>{(contact as ContactBlogData).username}</span>
+            </p>
+          </div>}
           <div>
             <MdEmail />
             <p>
@@ -42,7 +49,6 @@ export const ContactCard: FC<Props> = ({ contact }) => {
             </p>
           </div>
           <div>
-            ################
             <p>
               Короткий опис: <span>{contact.shortDescription}</span>
             </p>
@@ -54,10 +60,6 @@ export const ContactCard: FC<Props> = ({ contact }) => {
             </p>
           </div>
         </div>
-
-        <button onClick={() => {}} className={s.card__view_projects_btn} type="button">
-          Переглянути проекти
-        </button>
       </div>
 
       <div className={s.buttons_container}>

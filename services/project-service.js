@@ -1,5 +1,5 @@
 import { baseUrl } from './apiConfig';
-
+ 
 class ProjectService {
 
 	async getAllProjects() {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./OrderStatusInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import { OrderStatusData } from "../../dashboard/orderStatus/page";
@@ -24,6 +24,11 @@ const OrderStatusInfoComponent: React.FC<Props> = ({
   const [filteredOrders, setFilteredOrders] = useState<OrderStatusData[]>(orders.filter(order =>
     order.description.toLowerCase().includes(searchTerm.toLowerCase())
   ));
+
+  useEffect(() => {
+  setFilteredOrders(orders)
+  }, [orders])
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };

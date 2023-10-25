@@ -29,7 +29,6 @@
     box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     resize: vertical;
-    margin-right: 20px;
 
     &:hover,
     &:focus {
@@ -90,6 +89,28 @@
 
     &_delete {
       background: linear-gradient(99deg, #edafaf 4.34%, #e28484 94.12%);
+    }
+  }
+}
+.select {
+  width: 100%;
+  background: rgba(175, 218, 237, 0.1);
+  border: 2px solid rgba(72, 138, 167, 0.3);
+  height: 40px;
+  border-radius: 15px;
+  padding: 0 20px;
+  box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+  color: #488aa775;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.7px;
+
+  &__option {
+    &.hidden {
+      display: none;
     }
   }
 }

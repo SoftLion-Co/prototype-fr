@@ -75,8 +75,8 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
 
       <ul className={s.user__list}>
         {filteredContacts.map((contact, index) => (
-          <li className={s.user__list__item} key={contact.id}>
-            <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
+          <li className={s.user__list__item} key={contact.id} onClick={() => onCardClick(contact)}>
+            <div className={s.user__list__information}>
               <p>{index + 1}</p>
               <p>{contact.shortDescription}</p>
               <p>{formatDMY(new Date(contact.createdDateTime))}</p>

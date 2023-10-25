@@ -32,6 +32,14 @@ class OrderProjectStatusService {
 		return data;
 	}
 
+	async getOrderProjectStatusByCustomerId(id) {
+		const response = await fetch(`${baseUrl}/order-project-status/customer/${id}`, {
+			method: 'GET'
+		});
+		const data = await response.json();
+		return data;
+	}
+	
 	async deleteOrderProjectStatus(id) {
 		const response = await fetch(`${baseUrl}/order-project-status/${id}`, {
 		method: 'DELETE'

@@ -9,6 +9,7 @@ import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
 import FilterContactControls from "../../components/FilterButtons";
 import orderBlogService from "../../../../services/order-blog-service";
+import { ContactCard } from "../../components/contact/ContactCard";
 
 export interface ContactBlogData {
   id: number;
@@ -24,6 +25,7 @@ const contactUs = () => {
   const [filteredContact, setFilteredContact] = useState<ContactBlogData[]>([]);
   const [orders, setOrders] = useState<ContactBlogData[]>([]);
   const [reload, setReload] = useState<boolean>(false);
+  const [activeContact, setActiveContact] = useState<ContactBlogData | null>(null);
 
   useEffect(() => {
     loadOrders();
@@ -46,7 +48,7 @@ const contactUs = () => {
       <div className={s.contact}>
         <ContactBlogInfoComponent
           contacts={filteredContact}
-          onCardClick={() => {}}
+          onCardClick={setActiveContact}
           onUpdate={() => setReload(!reload)}
           onEditButtonClick={handleEditButtonClick}
         />
@@ -62,6 +64,7 @@ const contactUs = () => {
 
       <div className={s.content_editor}>
         <MainPageHeading initialText="Заявки Blog" />
+        {activeContact && <ContactCard contact={activeContact}/>}
       </div>
     </AdminLayout>
   );

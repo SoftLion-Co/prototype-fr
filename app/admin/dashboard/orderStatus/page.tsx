@@ -8,6 +8,8 @@ import { IconType } from "@/app/admin/components/ItemCountDisplayComponent";
 import { AdminLayout } from "../AdminLayout";
 import MainPageHeading from "../../components/MainPageHeading";
 import { OrderCard } from "../../components/orderStatus/OrderStatusCard";
+import { useSearchParams } from "next/navigation";
+import orderProjectStatusService from "../../../../services/order-project-status-service";
 
 export interface OrderStatusData {
   number: number;
@@ -18,7 +20,7 @@ export interface OrderStatusData {
 }
 
 const OrderStatus = () => {
-  const users: OrderStatusData[] = [
+  const mockUsers: OrderStatusData[] = [
     {
       number: 2,
       data: "Fri Oct 06 2023 12:09:50 GMT+0300",
@@ -112,13 +114,30 @@ const OrderStatus = () => {
     },
   ];
 
+  const [users, setUsers] = useState<OrderStatusData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultCount, setSearchResultCount] = useState(0);
   const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
+  const serchParams = useSearchParams();
 
   const handleEditButtonClick = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
   };
+
+  useEffect(() => {
+    const getProjectByCustomerId = async () => {
+      const customerProjects = await orderProjectStatusService.getOrderProjectStatusByCustomerId(serchParams.get('author'));
+
+      setUsers(customerProjects.result);
+    }
+
+if (serchParams.get('author')){
+  getProjectByCustomerId();
+} 
+else {
+  setUsers(mockUsers)
+}
+  }, []);
 
   useEffect(() => {
     const count = users.filter(user =>
