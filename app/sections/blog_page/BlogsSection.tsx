@@ -95,7 +95,7 @@ const BlogsSection = () => {
 
   const currentBlogs = allBlogs.slice(startIndex, endIndex);
 
-  const links = [{ title: "Blog", href: "/blogs" }];
+  const links = [{ title: "Blog", href: "/blog" }];
 
   return (
     <section className={s.blog}>
