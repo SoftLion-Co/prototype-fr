@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Button } from "./Button";
 import s from "./FilterButtons.module.scss";
 
@@ -15,7 +15,10 @@ interface FilterContactControlsProps {
 }
 
 const FilterContactControls: FC<FilterContactControlsProps> = ({ contacts, setFilteredContact }) => {
+  const [activeFilter, setActiveFilter] = useState<FilterType | null>(null);
+
   const filterByVerification = (type: FilterType): void => {
+    setActiveFilter(type);
     switch (type) {
       case FilterType.NEW:
         setFilteredContact(contacts.filter((contact) => contact.orderType === null));
@@ -30,11 +33,14 @@ const FilterContactControls: FC<FilterContactControlsProps> = ({ contacts, setFi
   };
 
   return (
-    <div className={s.button__container}>
-      <Button onClick={() => filterByVerification(FilterType.NEW)} text="Нові заявки" />
-      <Button onClick={() => filterByVerification(FilterType.VERIFIED)} text="Прийняті заявки" />
-      <Button onClick={() => filterByVerification(FilterType.DECLINED)} text="Відхилені заявки" />
+    <div className={s.container}>
+      <div className={s.button__container}>
+        <Button onClick={() => filterByVerification(FilterType.NEW)}  className={activeFilter === FilterType.NEW ? s.active : "" } text="Нові заявки" />
+        <Button onClick={() => filterByVerification(FilterType.VERIFIED)} className={activeFilter === FilterType.VERIFIED ? s.active : "" } text="Прийняті заявки" />
+        <Button onClick={() => filterByVerification(FilterType.DECLINED)} className={activeFilter === FilterType.DECLINED ? s.active : "" } text="Відхилені заявки" />
+      </div>
     </div>
+
   );
 };
 

@@ -8,11 +8,19 @@ import { useEffect, useState } from "react";
 import { Button } from "./../Button";
 import classNames from "classnames";
 import countryService from "../../../../services/country-service";
+import ReactCountryFlag from "react-country-flag";
 
 const NewProjectCard = () => {
   const [requirementsCount, setRequirementsCount] = useState(0);
   const [paragraphsCount, setParagraphsCount] = useState(0);
   const [countries, setCountries] = useState<string[]>([]);
+  const [countryCode, setCountryCode] = useState<string>("");
+
+  const handleCountryCodeChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setCountryCode(event.target.value);
+  };
 
   useEffect(() => {
     async function fetchCountries() {
@@ -121,7 +129,9 @@ const NewProjectCard = () => {
             <input className={s.input} type="text" placeholder="Для заголовку"></input>
             <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису"></textarea>
           </div>
+          
           <div className={classNames(s.input__container, s.input__container_row)}>
+            <div >
             <select className={classNames(s.input, s.select)} defaultValue="default">
               <option className={classNames(s.select__option, s.hidden)} value="default">
                 Період
@@ -154,16 +164,32 @@ const NewProjectCard = () => {
                 </option>
               ))}
             </select>
-            <select className={classNames(s.input, s.select)} defaultValue="default">
-              <option className={classNames(s.select__option, s.hidden)} value="default">
-                Країна
-              </option>
-              {countries.map((countryName, index) => (
-                <option className={s.select__option} key={index}>
-                  {countryName}
-                </option>
-              ))}
-            </select>
+            </div>
+         <div>
+         <input className={s.input} type="text" placeholder="Країна" />
+            <div className={s.input__country}>
+            <input className={s.input}
+              type="text"
+              id="countryCode"
+              name="countryCode"
+              placeholder="Country Code alpha-2"
+              value={countryCode}
+              onChange={handleCountryCodeChange}
+            />
+            <ReactCountryFlag
+            className={s.icon_country}
+              countryCode={countryCode}
+              svg
+              style={{
+                width: "2em",
+                height: "1.5em",
+                borderRadius: "0.3em",
+              }}
+            />
+            </div>
+         </div>
+          
+           
           </div>
         </div>
 

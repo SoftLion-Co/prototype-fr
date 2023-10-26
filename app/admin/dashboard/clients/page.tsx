@@ -30,10 +30,6 @@ const Clients = () => {
     getClients();
   }, [refreshClients]);
 
-  const handleClientDelete = (): void => {
-    
-  }
-
 
   return (
     <AdminLayout>

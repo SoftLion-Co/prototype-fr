@@ -43,6 +43,13 @@ const contactUs = () => {
     setOrders(ordersResponse.result);
   }
 
+  const deletCardBlog = async () => {
+  //  await orderBlogService.deleteOrderBlog(activeContact?.id);
+    setActiveContact(null);
+    await loadOrders();
+
+  }
+
   return (
     <AdminLayout>
       <div className={s.contact}>
@@ -64,7 +71,7 @@ const contactUs = () => {
 
       <div className={s.content_editor}>
         <MainPageHeading initialText="Заявки Blog" />
-        {activeContact && <ContactCard contact={activeContact}/>}
+        {activeContact && <ContactCard deleteCard={deletCardBlog} contact={activeContact}/>}
       </div>
     </AdminLayout>
   );

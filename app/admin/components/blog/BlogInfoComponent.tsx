@@ -25,18 +25,18 @@ const BlogInfoComponent: React.FC<Props> = ({ blogs, onEditButtonClick, onUpdate
   }, [blogs])
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // setfilteredUsers(blogs.filter((blog) => blog.title.toLowerCase().includes(event.target.value.toLowerCase())));
+    setfilteredBlogs(blogs.filter((blog) => blog.title.toLowerCase().includes(event.target.value.toLowerCase())));
   };
 
   const sortOptions: SortMenuOption[] = [
     {
       name: "Заголовок",
       action: () => {
-        // setfilteredUsers(
-        //   [...filteredUsers].sort((blog1, blog2) => {
-        //     return blog1.title.toLowerCase().localeCompare(blog2.title.toLowerCase());
-        //   })
-        // );
+        setfilteredBlogs(
+          [...filteredBlogs].sort((blog1, blog2) => {
+            return blog1.title.toLowerCase().localeCompare(blog2.title.toLowerCase());
+          })
+        );
       },
     },
     {
@@ -72,8 +72,8 @@ const BlogInfoComponent: React.FC<Props> = ({ blogs, onEditButtonClick, onUpdate
           onUpdate={onUpdateBlogs}
         />
       </div>
-
-      <ul className={s.user__list}>
+<div className={s.list__container}>
+<ul className={s.user__list}>
         {filteredBlogs.map((blog, index) => (
           <li className={s.user__list__item} key={blog.id}>
             <div className={s.user__list__information}>
@@ -93,6 +93,8 @@ const BlogInfoComponent: React.FC<Props> = ({ blogs, onEditButtonClick, onUpdate
           </li>
         ))}
       </ul>
+</div>
+     
     </div>
   );
 };

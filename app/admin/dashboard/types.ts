@@ -54,7 +54,7 @@ interface BlogParagraph {
   updatedDateTime: string;
 }
 
-interface BlogAuthor {
+export interface BlogAuthor {
   fullname: string;
   employment: string;
   avatar: string;

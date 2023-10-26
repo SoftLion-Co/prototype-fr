@@ -12,8 +12,8 @@
   &__list {
     display: grid;
     gap: 10px;
-    height: 657px;
-    overflow-y: scroll;
+    max-height: 100%;
+    overflow-y: auto;
 
     &__item {
       display: flex;
@@ -69,4 +69,8 @@
       }
     }
   }
+}
+
+.list__container {
+  height: 540px;
 }

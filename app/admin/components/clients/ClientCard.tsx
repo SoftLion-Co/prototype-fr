@@ -6,13 +6,13 @@ import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill, BsCalendar3 } from "react-icons/bs";
 import { FaListAlt } from "react-icons/fa";
 import { useDateFormat } from "@/hooks/useDateFormat";
-import { ConfirmDeleteModal } from "../../modals/ConfirmDeleteModal";
 
 import { ClientData } from "../../dashboard/types";
 import classNames from "classnames";
 import { Button } from "../Button";
 import { useRouter } from "next/navigation";
 import customerService from "@/services/customer-service";
+import { Modal } from "../../modals/Modal";
 
 interface Props {
   client: ClientData;
@@ -22,17 +22,18 @@ interface Props {
 export const ClientCard: FC<Props> = ({ client, onDelete }) => {
   const { formatDMYT } = useDateFormat();
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
- const router = useRouter();
+  const router = useRouter();
 
-  const viewAuthorProjects = ():void => {
+  const viewAuthorProjects = (): void => {
     router.push(`/admin/dashboard/orderStatus?author=${client.id}`);
   }
 
-const deleteCustomer = () => {
-  // customerService.deleteCustomer(client.id);
-  onDelete();
+  const deleteCustomer = () => {
+    // customerService.deleteCustomer(client.id);
+    onDelete();
 
-}
+    setIsDeleteModalOpen(false);
+  }
 
   return (
     <>
@@ -71,10 +72,10 @@ const deleteCustomer = () => {
               Дата реєстрації: <span>{formatDMYT(new Date(client.createdDateTime))}</span>
             </p>
           </div>
-           <div>
+          <div>
             <BiTimeFive />
             <p>
-              Оновлено: <span>{formatDMYT(new Date (client.updatedDateTime))}</span>
+              Оновлено: <span>{formatDMYT(new Date(client.updatedDateTime))}</span>
             </p>
           </div>
         </div>
@@ -85,15 +86,23 @@ const deleteCustomer = () => {
       </div>
 
       <div className={s.buttons_container}>
-        <Button  text="Редагувати" />
-        <Button onClick={deleteCustomer} text="Видалити" theme="delete" />
+        <Button text="Редагувати" />
+        <Button onClick={() => setIsDeleteModalOpen(true)} text="Видалити" theme="delete" />
       </div>
 
-      <ConfirmDeleteModal
-        isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}
-        fnc={() => {}}
-      />
+      <Modal isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}> 
+            <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
+
+            <div className={s.modal__content__buttons}>
+              <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
+                Повернутись
+              </button>
+              <button className={s.button__modal} onClick={deleteCustomer} type="button">
+                Видалити
+              </button>
+          </div>
+        </Modal>
     </>
   );
 };

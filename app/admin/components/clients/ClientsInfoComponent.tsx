@@ -29,7 +29,7 @@ const ClientsInfoComponent: React.FC<Props> = ({
   };
   const [filteredClients, setfilteredClients] = useState<ClientData[]>(clients);
 
-  useEffect(()=>{
+  useEffect(() => {
     setfilteredClients(clients);
   }, [clients])
 
@@ -44,7 +44,7 @@ const ClientsInfoComponent: React.FC<Props> = ({
         );
       },
     },
-   
+
     {
       name: "Дата",
       action: () => {
@@ -70,18 +70,19 @@ const ClientsInfoComponent: React.FC<Props> = ({
           onUpdate={onUpdateClients}
         />
       </div>
-
-      <ul className={s.user__list}>
-        {filteredClients.map((client, index) => (
-          <li onClick={() => onCardClick(client)} className={s.user__list__item} key={client.id}>
-            <div className={s.user__list__information}>
-              <p>{index + 1}</p>
-              <p>{client.firstName} {client.lastName}</p>
-              <p>{formatDMY(new Date(client.createdDateTime))}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className={s.list__container}>
+        <ul className={s.user__list}>
+          {filteredClients.map((client, index) => (
+            <li onClick={() => onCardClick(client)} className={s.user__list__item} key={client.id}>
+              <div className={s.user__list__information}>
+                <p>{index + 1}</p>
+                <p>{client.firstName} {client.lastName}</p>
+                <p>{formatDMY(new Date(client.createdDateTime))}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

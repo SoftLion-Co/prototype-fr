@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./ProjectsInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import { ProjectData } from "../../dashboard/projects/page";
@@ -13,6 +13,7 @@ interface Props {
   onEditButtonClick: () => void;
 }
 
+
 const ProjectsInfoComponent: React.FC<Props> = ({
   projects,
   searchTerm,
@@ -25,6 +26,10 @@ const ProjectsInfoComponent: React.FC<Props> = ({
   const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>(projects.filter(project =>
     project.description.toLowerCase().includes(searchTerm.toLowerCase())
   ));
+
+  useEffect(() => {
+    setFilteredProjects(projects);
+  }, [projects])
 
   const sortOptions: SortMenuOption[] = [
     {
@@ -91,7 +96,7 @@ const ProjectsInfoComponent: React.FC<Props> = ({
 
       <ul className={s.user__list}>
         {filteredProjects.map((project, index) => (
-          <li className={s.user__list__item} key={project.number} onClick={() => onCardClick(project)}>
+          <li className={s.user__list__item} key={project.id} onClick={() => onCardClick(project)}>
             <div className={s.user__list__information}>
               <p>{index + 1}</p>
               <p>{project.title}</p>

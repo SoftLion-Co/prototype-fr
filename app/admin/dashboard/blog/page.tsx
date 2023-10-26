@@ -43,7 +43,7 @@ const Blogs = () => {
   }, [searchTerm, blogs]);
 
   const removeBlogs = () => {
-   blogService.deleteBlog();
+  //  blogService.deleteBlog(activeBlog!.id);
    setIsConfirmDeleteModalOpen(false)
   }
 

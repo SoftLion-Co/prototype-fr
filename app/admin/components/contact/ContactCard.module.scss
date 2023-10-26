@@ -1,8 +1,9 @@
 @import "@/styles/mixin";
 @import "@/styles/colors";
+@import "../../modals/Modal.module.scss";
 
 .card {
-  padding: 50px;
+  padding: 45px;
   margin: 50px;
   margin-top: 0;
   border: 1px solid $heading-blue-color;
@@ -33,7 +34,7 @@
   &__first_info {
     border-bottom: 1px solid $heading-blue-color;
     padding-bottom: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
   }
 
   &__second_info {

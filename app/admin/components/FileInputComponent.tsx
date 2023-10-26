@@ -1,15 +1,15 @@
-import { ChangeEvent, FC, useRef, useState } from "react";
+import { ChangeEvent, FC, useRef, useState, InputHTMLAttributes } from "react";
 import s from "./FileInput.module.scss";
 import classNames from "classnames";
 
-export interface FileInputProps {
+export interface FileInputProps extends InputHTMLAttributes<HTMLInputElement> {
   alloudFileTypes?: string;
   placeholder: string;
   fileUploaded?: (file: File) => void;
   className?: string;
 }
 
-const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", placeholder, fileUploaded, className }) => {
+const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", placeholder, fileUploaded, className, ...rest }) => {
   const myInput = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
 
@@ -32,7 +32,7 @@ const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", place
       ) : (
         <span className={s.input__text}>{placeholder}</span>
       )}
-      <input onChange={onFileLoad} ref={myInput} type="file" accept={alloudFileTypes} className={s.input} />
+      <input onChange={onFileLoad} ref={myInput} type="file" accept={alloudFileTypes} className={s.input} {...rest}/>
     </div>
   );
 };

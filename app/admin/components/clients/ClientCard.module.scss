@@ -1,5 +1,6 @@
 @import "@/styles/mixin";
 @import "@/styles/colors";
+@import "../../modals/Modal.module.scss";
 
 .card {
   padding: 50px;
@@ -48,6 +49,16 @@
     border: 0;
     font-size: 14px;
     color: $heading-blue-color;
+
+    &:disabled{
+      color: #97b9c9;
+      cursor: no-drop;
+
+      &::after{
+        background-color: #97b9c9;
+
+      }
+    }
 
     &::after {
       cursor: default;

@@ -35,6 +35,14 @@ const contactUs = () => {
     setIsContentEditorVisible(!isContentEditorVisible);
   };
 
+  const deletContactUsCard = async () => {
+    // await orderProjectService.deleteOrderProject(contact?.id);
+    setContact(null);
+    await loadOrders();
+
+
+  }
+
   return (
     <AdminLayout>
       <div className={s.contact}>
@@ -48,7 +56,7 @@ const contactUs = () => {
       <div className={s.content_editor}>
         <MainPageHeading initialText="Заявки Contact Us" />
 
-        {contact && <ContactCard contact={contact} />}
+        {contact && <ContactCard deleteCard={deletContactUsCard} contact={contact} />}
       </div>
     </AdminLayout>
   );

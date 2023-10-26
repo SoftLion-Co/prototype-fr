@@ -69,8 +69,8 @@ const ContactInfoComponent: React.FC<Props> = ({
           sortOrderChange={sortOrderChange}
         />
       </div>
-
-      <ul className={s.user__list}>
+<div className={s.list__container}>
+<ul className={s.user__list}>
         {filteredContacts.map((contact, index) => (
           <li onClick={() => onCardClick(contact)} className={s.user__list__item} key={contact.id}>
             <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
@@ -81,6 +81,7 @@ const ContactInfoComponent: React.FC<Props> = ({
           </li>
         ))}
       </ul>
+</div>
     </div>
   );
 };

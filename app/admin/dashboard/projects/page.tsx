@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import projectsService from '../../../../services/project-service';
 
 export interface ProjectData {
-  number: number;
+  id: string;
   title: string;
   description: string;
   date: string;
@@ -38,7 +38,7 @@ const projects = () => {
         console.error(`Error restrieving projects: ${e}`);
       }
     })();
-  })
+  }, []);
 
   const handleEditButtonClick = () => {
     router.push('/admin/dashboard/newProject')
@@ -72,7 +72,7 @@ const projects = () => {
 
       <div className={s.content_editor}>
         <MainPageHeading initialText="Проекти" />
-        {openProject && <ProjectCard project={openProject} />}
+        {openProject && <ProjectCard project={openProject} onDelete={() => setOpenProject(null)} />}
       </div>
     
     </AdminLayout>

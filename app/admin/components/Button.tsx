@@ -7,10 +7,10 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: "default" | "delete";
 }
 
-export const Button: FC<Props> = ({ text, theme = "default", ...restProps }) => {
+export const Button: FC<Props> = ({ text, theme = "default", className, ...restProps }) => {
   return (
     <button
-      className={classNames(s.button, theme === "delete" ? s.button__delete : "")}
+      className={classNames(s.button, className, theme === "delete" ? s.button__delete : "")}
       type="button"
       {...restProps}>
       {text}

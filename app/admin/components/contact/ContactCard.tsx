@@ -1,30 +1,49 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import s from "./ContactCard.module.scss";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill, BsCalendar3 } from "react-icons/bs";
 import { useDateFormat } from "@/hooks/useDateFormat";
-import { ConfirmDeleteModal } from "../../modals/ConfirmDeleteModal";
 import classNames from "classnames";
 import { Button } from "../Button";
 import { ContactData } from "../../dashboard/types";
 import orderProjectService from '../../../../services/order-project-service';
 import { ContactBlogData } from "../../dashboard/contactBlog/page";
+import { Modal } from "../../modals/Modal";
 
 interface Props {
   contact: ContactData | ContactBlogData;
+  deleteCard: () => void;
 }
 
-export const ContactCard: FC<Props> = ({ contact }) => {
+export const ContactCard: FC<Props> = ({ contact, deleteCard }) => {
   const { formatDMYT } = useDateFormat();
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [currentContact, setCurrentContact] = useState(contact);
+
+  useEffect(() => {
+    setCurrentContact(contact);
+  }, [contact])
 
   const approveContact = (): void => {
     orderProjectService.changeTypeOrder(contact.id, true);
-  }
+    setCurrentContact({
+      ...currentContact,
+      orderType: true
+    })
+  };
 
   const rejectContact = (): void => {
     orderProjectService.changeTypeOrder(contact.id, false);
+    setCurrentContact({
+      ...currentContact,
+      orderType: false
+    })
   }
+
+  const onDeleteCard = (): void => {
+    deleteCard();
+    setIsDeleteModalOpen(false);
+  };
 
   return (
     <>
@@ -60,20 +79,28 @@ export const ContactCard: FC<Props> = ({ contact }) => {
             </p>
           </div>
         </div>
+
+        <div className={s.buttons_container}>
+          {currentContact.orderType !== true && <Button text="Прийняти" onClick={approveContact} />}
+          {currentContact.orderType !== false && <Button text="Відхилити" onClick={rejectContact} />}
+          <Button onClick={() => setIsDeleteModalOpen(true)} text="Видалити" theme="delete" />
+        </div>
       </div>
 
-      <div className={s.buttons_container}>
-        <Button  text="Прийняти" onClick={approveContact}/>
-        <Button  text="Відхилити" onClick={rejectContact}/>
-        <Button text="Видалити" theme="delete" /> 
-        {/* fnc={() => setIsDeleteModalOpen(true)}  */}
-      </div>
 
-      <ConfirmDeleteModal
-        isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}
-        fnc={() => {}}
-      />
+      <Modal isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}> 
+            <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
+
+            <div className={s.modal__content__buttons}>
+              <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
+                Повернутись
+              </button>
+              <button className={s.button__modal} onClick={onDeleteCard} type="button">
+                Видалити
+              </button>
+          </div>
+        </Modal>
     </>
   );
 };
