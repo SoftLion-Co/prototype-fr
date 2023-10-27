@@ -3,6 +3,7 @@ import { Article } from "@/components/blog/BlogArticleComponent";
 import { SectionScrolIndicator } from "@/components/blog/BlogSectionScrolIndicatorComponent";
 import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link"
 
 interface ArticleSectionProps {
   response: {
@@ -11,6 +12,7 @@ interface ArticleSectionProps {
     articleimg: string;
     readTime: string;
     author: string;
+    authorId: string;
     articles: {
       id: string;
       title: string;
@@ -21,7 +23,7 @@ interface ArticleSectionProps {
 }
 
 const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
-  const { articleName, authorImg, articleimg, readTime, author, articles } =
+  const { articleName, authorImg, articleimg, readTime, author, authorId, articles } =
     response;
 
   return (
@@ -30,6 +32,7 @@ const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
         <h2 className={s.article__title}>{articleName}</h2>
         <div className={s.author__container}>
           <div className={s.author}>
+            <Link href={`/authors/${authorId}`} className={s.author}>
             <div className={s.author__image}>
               <Image
                 className={s.picture}
@@ -39,7 +42,7 @@ const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
                 alt={author}
               />
             </div>
-            <span className={s.author__text}>{author}</span>
+            <span className={s.author__text}>{author}</span></Link>
           </div>
           <span className={s.author__text}>Reading time: {readTime}</span>
         </div>

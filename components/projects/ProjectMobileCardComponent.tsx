@@ -12,6 +12,7 @@ interface ProjectData {
   year: string;
   author: string;
   description: string;
+  technology: string[];
 }
 
 const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
@@ -37,6 +38,13 @@ const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
             <p className={s.card__author}>{data.author}</p>
           </div>
           <div className={s.card__desc}>
+          <div className={s.tags}>
+            {data.technology.slice(0, 5).map((tech, index) => (
+              <p className={s.tags__item} key={index}>
+                {tech}
+              </p>
+            ))}
+          </div>
             <div className={s.card__subdesc}>
               <p>{data.description}</p>
             </div>

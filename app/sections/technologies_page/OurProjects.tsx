@@ -17,6 +17,7 @@ interface ProjectData {
   year: string;
   author: string;
   description: string;
+  technology: string[];
 }
 
 interface OurProjectsProps {

@@ -1,15 +1,15 @@
 {
-  "DimaKlapiychuk": {
-    "name": "Dima Klapiychuk",
-    "occupation": "COO",
-    "imgSrc": "https://media.licdn.com/dms/image/D4D03AQHAgP85JknqKA/profile-displayphoto-shrink_800_800/0/1686751374128?e=1698883200&v=beta&t=Ks5_aBaMfSvX5Obq1Xx-XhwMB6J4qD1M79q_M7coCUo",
-    "generalInfo": "I'm Dima Klapiychuk, an experienced IT professional deeply involved in outsourcing, staff augmentation, and consulting services. Currently serving as the COO of SoftLion, a rapidly advancing company specializing in ecommerce and blockchain technologies. At SoftLion, we are committed to innovation and strive for excellence. My expertise spans a wide range of technologies, including React, Vue, Angular, Node.js, Java, C#, and more. These skills enable me to stay at the forefront of the ever-evolving IT landscape. I'm dedicated to leading the team at SoftLion, propelling the company's growth, and positioning it as a highly promising entity in the ecommerce and blockchain domains. For a detailed overview of my work and SoftLion's achievements, feel free to visit our website, where you can explore my profile and learn more about the remarkable journey of SoftLion."
-  },
   "YuriiMatvii": {
     "name": "Yurii Matvii",
     "occupation": "CTO",
     "imgSrc": "https://media.licdn.com/dms/image/D4D03AQExYG63eDOhMA/profile-displayphoto-shrink_400_400/0/1687091718713?e=1698278400&v=beta&t=phbfafcOAP7SqTABmRKeFeAZ_2qGo-fY5gxP9o_GwPc",
-    "generalInfo": "I'm Matviy Yuri, an experienced IT professional with a robust background in outsourcing, outstaffing, and consulting services. With numerous years of industry expertise, I currently hold the position of Chief Technology Officer (CTO) at SoftLion, a leading company in the ecommerce and blockchain sectors. SoftLion stands out as a highly promising entity in these domains. In my role as CTO, I am deeply involved in harnessing an array of technologies to drive our projects forward. My proficiency spans across a spectrum of technologies including React, Vue, Angular, Node.js, Java, C#, and various databases. I've honed my skills over the years, not only in programming but also in effectively organizing and strategizing to ensure the optimal functioning and growth of our company. For more detailed insights about my journey and SoftLion's impactful ventures, feel free to explore our website. Your curiosity is always welcomed."
+    "generalInfo": "I'm Matvii Yurii, an experienced IT professional with a robust background in outsourcing, outstaffing, and consulting services. With numerous years of industry expertise, I currently hold the position of Chief Technology Officer (CTO) at SoftLion, a leading company in the ecommerce and blockchain sectors. SoftLion stands out as a highly promising entity in these domains. In my role as CTO, I am deeply involved in harnessing an array of technologies to drive our projects forward. My proficiency spans across a spectrum of technologies including React, Vue, Angular, Node.js, Java, C#, and various databases. I've honed my skills over the years, not only in programming but also in effectively organizing and strategizing to ensure the optimal functioning and growth of our company. For more detailed insights about my journey and SoftLion's impactful ventures, feel free to explore our website. Your curiosity is always welcomed."
+  },
+  "ViraLyzen": {
+    "name": "Vira Lyzen",
+    "occupation": "Head of Development",
+    "imgSrc": "https://media.licdn.com/dms/image/D4D03AQGnDWtRjuaD0w/profile-displayphoto-shrink_800_800/0/1692445988170?e=1703721600&v=beta&t=E7hLJJdEt0YxNrKu7wAsa2GYcdO82twQzv98Mn9QZaY",
+    "generalInfo": "I'm Vira Lyzen, an experienced IT professional deeply involved in outsourcing, staff augmentation, and consulting services. Currently serving as the Head of Development of SoftLion, a rapidly advancing company specializing in ecommerce and blockchain technologies. At SoftLion, we are committed to innovation and strive for excellence. My expertise spans a wide range of technologies, including C#, ASP.NET, and key technologies including HTML5/CSS3, Angular, RestAPI, JWT, OAuth 2.0, Entity Framework Core, and SQL Server. These skills enable me to stay at the forefront of the ever-evolving IT landscape. I'm dedicated to leading the developers team at SoftLion and positioning it as a highly promising entity in the ecommerce and blockchain domains."
   },
   "TaniaHlushko": {
     "name": "Tania Hlushko",
