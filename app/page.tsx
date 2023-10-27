@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import s from "./page.module.scss";
 import HeroSection from "./sections/home_page/HeroSection";
 import OurProjectsSection from "./sections/home_page/OurProjectsSection";
@@ -20,6 +21,14 @@ const Home = () => {
 
   return (
     <div className={s.home_page}>
+      <Head>
+        <title>
+          SoftLion - Your Trusted Partner in IT Services and Consulting. We
+          provide solutions for your business's effective growth, delivering the
+          best technological solutions and consultations.
+        </title>
+      </Head>
+
       <HeroSection />
       <TechnologiesSection />
       <OurServicesSection />
