@@ -34,6 +34,30 @@ const HeaderComponent = () => {
     },
   ];
 
+  // Функція для закриття модального вікна
+  const closeMobileMenu = () => {
+    setModalOpen(false);
+  };
+
+  useEffect(() => {
+    // Функція, яка буде викликатися при зміні ширини екрану
+    const handleResize = () => {
+      // Перевірка, чи ширина екрану більша ніж 767.99px
+      if (window.innerWidth > 767.99) {
+        closeMobileMenu(); // Закрити модальне вікно
+      }
+    };
+
+    // Додати слухача події resize
+    window.addEventListener("resize", handleResize);
+
+    // Під час відключення компонента видалити слухача події
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
       setSelectedMenuItem(null);

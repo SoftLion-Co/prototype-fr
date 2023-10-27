@@ -12,6 +12,7 @@ interface ProjectData {
   year: string;
   author: string;
   description: string;
+  technology: string[];
 }
 
 interface ProjectCardProps {
@@ -22,7 +23,17 @@ const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__info}>
-        <p className={s.card__customer}>{data.customer}</p>
+        {" "}
+        <div className={s.card__tags}>
+          <p className={s.card__customer}>{data.customer}</p>
+          <div className={s.tags}>
+            {data.technology.slice(0, 5).map((tech, index) => (
+              <p className={s.tags__item} key={index}>
+                {tech}
+              </p>
+            ))}
+          </div>
+        </div>
         <div className={s.card__subinfo}>
           <p className={s.card__year}>{data.year}</p>
           <p className={s.card__author}>{data.author}</p>

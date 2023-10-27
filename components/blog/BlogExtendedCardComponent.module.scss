@@ -91,30 +91,29 @@
   }
 
   &__text {
-    min-height: 110px;
-    line-height: 130%;
-    letter-spacing: 0.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    line-height: 1.25;
     font-size: 14px;
+    height: 120px;
 
     @include for-size(tablet) {
       width: 300px;
       font-size: 12px;
     }
-
     @include for-size(laptop) {
       width: 435px;
       height: 160px;
       font-size: 16px;
       letter-spacing: 0.6;
     }
-
     @include for-size(desktop) {
       width: 570px;
       height: 200px;
       font-size: 20px;
       letter-spacing: 0.8;
     }
-
     overflow: hidden;
     align-self: start;
     text-overflow: ellipsis;
@@ -159,17 +158,17 @@
 
   @include for-size(tablet) {
     width: 175px;
-    height: 120px;
+    min-height: 120px;
   }
 
   @include for-size(laptop) {
     width: 250px;
-    height: 180px;
+    min-height: 180px;
   }
 
   @include for-size(desktop) {
     width: 320px;
-    height: 240px;
+    min-height: 240px;
   }
 
   &__title {
