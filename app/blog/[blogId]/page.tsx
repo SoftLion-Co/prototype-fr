@@ -14,6 +14,7 @@ type BlogData = {
     articleimg: string;
     readTime: string;
     author: string;
+    authorId: string;
     articles: (
       | { id: string; title: string; description: string; image: string }
       | { id: string; title: string; description: string; image?: undefined }

@@ -158,17 +158,17 @@
 
   @include for-size(tablet) {
     width: 175px;
-    height: 120px;
+    min-height: 120px;
   }
 
   @include for-size(laptop) {
     width: 250px;
-    height: 180px;
+    min-height: 180px;
   }
 
   @include for-size(desktop) {
     width: 320px;
-    height: 240px;
+    min-height: 240px;
   }
 
   &__title {
