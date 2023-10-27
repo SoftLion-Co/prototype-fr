@@ -22,11 +22,10 @@ const Home = () => {
   return (
     <div className={s.home_page}>
       <Head>
-        <title>
-          SoftLion - Your Trusted Partner in IT Services and Consulting. We
-          provide solutions for your business's effective growth, delivering the
-          best technological solutions and consultations.
-        </title>
+        <meta
+          name="description"
+          content="SoftLion - Your Trusted Partner in IT Services and Consulting. We provide solutions for your business's effective growth, delivering the best technological solutions and consultations."
+        />
       </Head>
 
       <HeroSection />
