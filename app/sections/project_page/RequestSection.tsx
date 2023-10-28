@@ -5,10 +5,10 @@ import HeadingOurProjectComponent from "@/components/project/HeadingOurProjectCo
 import s from "./RequestSection.module.scss";
 import svg from "../../../images/project/request-list.svg";
 
-// Оголошуємо тип для об'єкта data
+
 interface RequestSectionData {
-  paragraph: string;
-  arrays: { id: number; text: string }[];
+  description: string;
+  list: string[];
 }
 
 interface RequestSectionProps {
@@ -16,7 +16,7 @@ interface RequestSectionProps {
 }
 
 const RequestSection: FC<RequestSectionProps> = ({ data }) => {
-  const { paragraph, arrays } = data;
+  const { description, list } = data;
 
   return (
     <section className={s.request}>
@@ -24,12 +24,12 @@ const RequestSection: FC<RequestSectionProps> = ({ data }) => {
         <HeadingOurProjectComponent title="01" text="Request" />
       </div>
       <div className={classNames(s.container, s.request__content)}>
-        <p className={s.request__text}>{paragraph}</p>
+        <p className={s.request__text}>{description}</p>
         <ul className={s.request__list}>
-          {arrays.map((item) => (
-            <li key={item.id} className={s.request__list_text}>
+          {list.map((item) => (
+            <li className={s.request__list_text}>
               <Image src={svg} alt="*" className={s.request__svg_img} />
-              {item.text}
+              {item}
             </li>
           ))}
         </ul>

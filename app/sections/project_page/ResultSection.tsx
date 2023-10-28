@@ -3,13 +3,15 @@ import HeadingOurProjectComponent from "../../../components/project/HeadingOurPr
 import Image from "next/image";
 import { FC } from "react";
 
-// Оголошуємо тип для об'єкта data
-
 interface ResultSectionProps {
-  data: string[];
+  paragraphs: string[],
+  imgUrl: string
 }
 
-const ResultSection: FC<ResultSectionProps> = ({ data }) => {
+const ResultSection:FC<{ data: ResultSectionProps }> = ({data,
+	 }) => {
+		const { paragraphs, imgUrl } = data;
+	 
   return (
     <section className={s.design}>
       <div className={s.design__heading}>
@@ -17,7 +19,7 @@ const ResultSection: FC<ResultSectionProps> = ({ data }) => {
       </div>
       <div className={`${s.container} ${s.design__wrapper}`}>
         <ul className={s.design__wrapper_texts}>
-          {data.map((item, index) => (
+          {paragraphs.map((item, index) => (
             <li className={s.design__wrapper_list} key={index}>
               <p className={s.design__wrapper_text}>{item}</p>
             </li>
@@ -33,9 +35,7 @@ const ResultSection: FC<ResultSectionProps> = ({ data }) => {
           <Image
             alt="Vectary-texture"
             className={s.design__container_photo}
-            src={
-              "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero-in-desktop.png?raw=true"
-            }
+            src={imgUrl}
             width={800}
             height={200}
           />

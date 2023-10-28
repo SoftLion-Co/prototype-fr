@@ -9,9 +9,52 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 import trendHero from "@/images/project/project-trend/trend-hero.png";
-import data from "@/data/projects/projects_data.json"
+import projectService from "@/services/project-service";
 
-const OurProjectsSection = () => {
+interface ProjectData {
+	id: number;
+	title: string;
+	description: string;
+	period: string;
+	dateYear: number;
+	country: {
+	  createdDateTime: string;
+	  name: string;
+	  id: string;
+	};
+	requestDescription: string;
+	requestList: string;
+	solutionDescription: string;
+	resultFirstParagraph: string;
+	resultSecondParagraph: string;
+	resultThirdParagraph: string;
+	pictures: {
+	  createdDateTime: string;
+	  url: string;
+	  id: string;
+	}[];
+	paragraphs: {
+	  createdDateTime: string;
+	  title: string;
+	  description: string;
+	  id: string;
+	}[];
+	technologies: {
+	  id: string;
+	  name: string;
+	  createdDateTime: string;
+	}[];
+	createdDateTime: string;
+	updatedDateTime: string;
+ }
+
+const OurProjectsSection = async() => {
+
+  const data : ProjectData[] = await projectService.getAllShortProjects();
+  data.forEach(project => {
+	project.pictures.sort((a, b) => new Date(a.createdDateTime).getTime() - new Date(b.createdDateTime).getTime());
+ });
+
   return (
     <section className={s.projects}>
       <ProjectHeadingComponent centered={false} />

@@ -3,21 +3,20 @@ import HeadingOurProjectComponent from "../../../components/project/HeadingOurPr
 import Image from "next/image";
 import { FC } from "react";
 
-// Оголошуємо тип для даних, які приходять в SolutionSection
 interface SolutionSectionProps {
   data: {
+	description:string;
     paragraphs: {
       title: string;
       description: string;
     }[];
-    images: {
-      imageSrc: string;
-      class: string;
-    }[];
+    images: string[];
   };
 }
 
 const SolutionSection: FC<SolutionSectionProps> = ({ data }) => {
+	
+
   return (
     <section className={s.solution}>
       <div className={s.solution__heading}>
@@ -39,11 +38,13 @@ const SolutionSection: FC<SolutionSectionProps> = ({ data }) => {
             <div className={s.blur_item}></div>
           </div>
           {data.images
-            .filter((info) => info.imageSrc)
+            .filter((info) => info)
             .map((info, index) => (
-              <li key={index} className={s[`solution__${info.class}`]}>
+              <li key={index} 
+				  className={s[`solution__photo${index}`]}
+				  >
                 <Image
-                  src={info.imageSrc}
+                  src={info}
                   className={s.solution__image}
                   alt="Project Photo"
                   layout="fill"

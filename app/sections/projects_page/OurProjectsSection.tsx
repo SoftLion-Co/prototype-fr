@@ -11,20 +11,48 @@ import DotImg from "@/images/project/request-list.svg";
 import Image from "next/image";
 import CountryFlag from "react-country-flag";
 import { Pagination } from "@mantine/core";
-import data from "@/data/projects/projects_data.json";
+import projectService from "@/services/project-service";
 
-const sampleData: Array<{
+interface ProjectData {
   id: number;
-  image: string;
   title: string;
-  customer: string;
-  year: string;
-  author: string;
   description: string;
-  technology: string[];
-  country: string;
-  countryCode: string;
-}> = data;
+  period: string;
+  dateYear: number;
+  country: {
+    createdDateTime: string;
+    name: string;
+    code: string;
+    id: string;
+  };
+  requestDescription: string;
+  requestList: string;
+  solutionDescription: string;
+  resultFirstParagraph: string;
+  resultSecondParagraph: string;
+  resultThirdParagraph: string;
+  pictures: {
+    createdDateTime: string;
+    updatedDateTime: string;
+    url: string;
+    id: string;
+  }[];
+  paragraphs: {
+    createdDateTime: string;
+    updatedDateTime: string;
+    title: string;
+    description: string;
+    id: string;
+  }[];
+  technologies: {
+    id: string;
+    name: string;
+    createdDateTime: string;
+    updatedDateTime: string;
+  }[];
+  createdDateTime: string;
+  updatedDateTime: string;
+}
 
 //* METHOD TO GET UNIFIED VALUES FROM sampleData AND MAKE UNIQUE ARRAYS
 const getUniqueFieldValues = (
@@ -33,21 +61,26 @@ const getUniqueFieldValues = (
   defaultValues: string[] = []
 ) => {
   const uniqueValues: string[] = [...defaultValues];
-
+  
   data.forEach((project) => {
+	console.log(project[field]);
     if (Array.isArray(project[field])) {
       project[field].forEach((tech: any) => {
-        if (!uniqueValues.includes(tech)) {
-          uniqueValues.push(tech);
+        if (!uniqueValues.includes(tech.name)) {
+          uniqueValues.push(tech.name);
         }
       });
-    } else if (typeof project[field] === 'string') {
-      if (!uniqueValues.includes(project[field])) {
-        uniqueValues.push(project[field]);
+    } else if (typeof project[field] == "object") {
+		console.log(project[field]);
+      if (!uniqueValues.some((country) => country === project[field].name)) {
+         console.log(project[field].name);
+			uniqueValues.push(project[field].name);
       }
     }
+	 console.log(project[field]);
   });
-
+  
+console.log("hi");
   return uniqueValues;
 };
 
@@ -61,16 +94,17 @@ const defaultTechnologies = [
   ".NET",
 ];
 
-const filterTechnologiesOptions = getUniqueFieldValues(
-  sampleData,
-  "technology",
-  defaultTechnologies
-);
-
-const filterCountriesOptions = getUniqueFieldValues(sampleData, "country");
-console.log(filterCountriesOptions);
-
 const OurProjectsSection = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await projectService.getAllProjects();
+      const sampleData = data.result;
+      setSampleData(sampleData);
+    };
+    fetchData();
+  }, []);
+  const [sampleData, setSampleData] = useState<ProjectData[]>([]);
+
   //* FILTER STATE
   const [isFilterOpened, setIsFilterOpened] = useState(false);
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>(
@@ -83,14 +117,27 @@ const OurProjectsSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  const filterTechnologiesOptions = getUniqueFieldValues(
+    sampleData,
+    "technologies",
+    defaultTechnologies
+  );
+
+  const filterCountriesOptions = getUniqueFieldValues(
+    sampleData,
+    "country.name"
+  );
+
   //* LOGIC FOR ADAPTIVE PAGINATION
   const filteredProjects = sampleData.filter(
     (project) =>
       (selectedTechnologies.length === 0 ||
-        selectedTechnologies.some((tech) => project.technology.includes(tech))) &&
+        selectedTechnologies.some((tech) =>
+          project.technologies.some((t) => t.name === tech)
+        )) &&
       (selectedCountries.length === 0 ||
-        selectedCountries.includes(project.country))
-  );  
+        selectedCountries.includes(project.country.name))
+  );
 
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
@@ -155,7 +202,7 @@ const OurProjectsSection = () => {
     }
   }, [currentPage]);
 
-  //* PAGINATION LOGIC FOR RESPONSE TO RESIZE
+  //* PAGINATION LOGIC FOR sampleData TO RESIZE
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 767.98) {
@@ -239,7 +286,7 @@ const OurProjectsSection = () => {
               >
                 {filterCountriesOptions.map((country: any, index: any) => {
                   const project = sampleData.find(
-                    (proj) => proj.country === country
+                    (proj) => proj.country.name === country
                   );
                   if (!project) return null;
                   return (
@@ -251,7 +298,7 @@ const OurProjectsSection = () => {
                       onClick={() => handleCountryClick(country)}
                     >
                       <CountryFlag
-                        countryCode={project.countryCode}
+                        countryCode={project.country.code}
                         svg
                         style={{
                           width: "1.5em",
@@ -259,7 +306,7 @@ const OurProjectsSection = () => {
                           borderRadius: "0.3em",
                         }}
                       />
-                      <span>{country}</span>
+                      <span>{country.name}</span>
                     </button>
                   );
                 })}

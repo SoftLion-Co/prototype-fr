@@ -32,53 +32,7 @@
     border-radius: 22px;
   }
 
-  &__photo_about {
-    position: relative;
-    z-index: 1;
-
-    box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
-
-    border-radius: 22px;
-
-    width: 100%;
-    height: 60%;
-    padding-bottom: 60%;
-
-    &:hover {
-      z-index: 2;
-    }
-
-    @include for-size(tablet) {
-      box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
-
-      width: 495px;
-      height: 365px;
-
-      margin-bottom: -99px;
-      padding-bottom: 0;
-      margin-right: auto;
-    }
-
-    @include for-size(laptop) {
-      box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
-
-      width: 760px;
-      height: 561px;
-
-      margin-bottom: -151px;
-    }
-
-    @include for-size(desktop) {
-      width: 961px;
-      height: 709px;
-
-      margin-bottom: -191px;
-
-      box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
-    }
-  }
-
-  &__photo_discover {
+  &__photo0 {
     position: relative;
     z-index: 1;
     border-radius: 22px;
@@ -125,7 +79,53 @@
     }
   }
 
-  &__photo_trevel {
+  &__photo1 {
+    position: relative;
+    z-index: 1;
+
+    box-shadow: 4px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+    border-radius: 22px;
+
+    width: 100%;
+    height: 60%;
+    padding-bottom: 60%;
+
+    &:hover {
+      z-index: 2;
+    }
+
+    @include for-size(tablet) {
+      box-shadow: 8px 5px 9px 0px rgba(0, 0, 0, 0.25);
+
+      width: 495px;
+      height: 365px;
+
+      margin-bottom: -99px;
+      padding-bottom: 0;
+      margin-right: auto;
+    }
+
+    @include for-size(laptop) {
+      box-shadow: 13px 7px 14px 0px rgba(0, 0, 0, 0.25);
+
+      width: 760px;
+      height: 561px;
+
+      margin-bottom: -151px;
+    }
+
+    @include for-size(desktop) {
+      width: 961px;
+      height: 709px;
+
+      margin-bottom: -191px;
+
+      box-shadow: 16px 9px 17px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__photo2 {
     position: relative;
     z-index: 1;
     border-radius: 22px;
