@@ -1,27 +1,44 @@
+@import "./../../styles/container_admin";
 @import "./../../styles/container";
 @import "./../../styles/mixin";
 
 .infoNavigat {
-  grid-column: 1 / span 2;
   div {
     padding-left: 0;
-    margin-top: 0;
-    @include for-size(laptop) {
-      padding-top: 10px;
-    }
-    @include for-size(desktop) {
-      padding-top: 0;
+  }
+}
+
+.personale__space {
+  .project {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 30px;
+    padding-bottom: 300px;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 81px;
     }
   }
 }
 
-.project {
+.personalLayout {
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  flex: 1;
+
   padding-bottom: 300px;
   &__container {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 81px;
+  }
+  @include for-size(tablet) {
+    flex-direction: column;
   }
 }

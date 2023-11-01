@@ -8,7 +8,7 @@ import s from "./page.module.scss";
 const PersonalS = () => {
   const links = [
     { title: "Personal-space", href: "/personal-space" },
-    { title: "Settings", href: "/#" },
+    { title: "Settings", href: "#" },
   ];
 
   return (

@@ -12,12 +12,8 @@ interface ProductList {
     development: boolean;
     security: boolean;
   };
-  selectedOrderStatus: {
-    design: boolean;
-    development: boolean;
-    security: boolean;
-  };
-  isButtonActive: {
+  isButtonActive?: boolean;
+  OrderProjectStatus: {
     design: boolean;
     development: boolean;
     security: boolean;
@@ -26,7 +22,7 @@ interface ProductList {
 
 const ProductListComponent: React.FC<ProductList> = ({
   categoryStates,
-  selectedOrderStatus,
+  OrderProjectStatus,
   isButtonActive,
 }) => {
   const dataList = useProductList();
@@ -42,25 +38,25 @@ const ProductListComponent: React.FC<ProductList> = ({
               const isVisible =
                 (project.title ===
                   "Creating sketches, defining the visual style, and designing the user interface." &&
-                  ((categoryStates.design && selectedOrderStatus.design) ||
+                  ((categoryStates.design && OrderProjectStatus.design) ||
                     (!categoryStates.design &&
                       !categoryStates.development &&
                       !categoryStates.security &&
-                      selectedOrderStatus.design))) ||
+                      OrderProjectStatus.design))) ||
                 (project.title ===
                   "Developing functionality, programming, and creating a database." &&
                   ((categoryStates.development &&
-                    selectedOrderStatus.development) ||
+                    OrderProjectStatus.development) ||
                     (!categoryStates.development &&
                       !categoryStates.design &&
                       !categoryStates.security &&
-                      selectedOrderStatus.development))) ||
+                      OrderProjectStatus.development))) ||
                 (project.title === "Implementing testing and bug fixing." &&
-                  ((categoryStates.security && selectedOrderStatus.security) ||
+                  ((categoryStates.security && OrderProjectStatus.security) ||
                     (!categoryStates.security &&
                       !categoryStates.design &&
                       !categoryStates.development &&
-                      selectedOrderStatus.security)));
+                      OrderProjectStatus.security)));
 
               return isVisible ? (
                 <li className={s.block__listItem} key={project.id}>

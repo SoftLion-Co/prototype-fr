@@ -12,7 +12,7 @@ interface SidebarMenuParams {
 const ProjectPersonal = ({ params }: { params: SidebarMenuParams }) => {
   const projectName = decodeURIComponent(params.projectName);
 
-  const links = [{ title: projectName, href: "/#" }];
+  const links = [{ title: projectName, href: "#" }];
 
   return (
     <>

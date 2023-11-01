@@ -1,14 +1,16 @@
+"use client";
 import HeaderComponent from "../components/HeaderComponent";
 import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";
 import s from "./layout.module.scss";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 export const metadata = {
   title: "SoftLion",
   description:
     "Embrace the Lion's Share Technological Advancements with SoftLion",
 };
-
+const queryClient = new QueryClient();
 export default function RootLayout({
   children,
 }: // session
@@ -24,9 +26,11 @@ export default function RootLayout({
       <body>
         <div className={s.main}>
           <HeaderComponent />
-          <div className={s.page} id="layout">
-            {children}
-          </div>
+          <QueryClientProvider client={queryClient}>
+            <div className={s.page} id="layout">
+              {children}
+            </div>
+          </QueryClientProvider>
           <FooterComponent />
         </div>
         <div id="modalRoot"></div>

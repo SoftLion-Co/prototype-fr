@@ -24,14 +24,110 @@ ChartJS.register(
 );
 import s from "./LineChartComponent.module.scss";
 
-const LineChartComponent = () => {
+interface LineChartProps {
+  OrderProjectStatus: {
+    design: boolean;
+    development: boolean;
+    security: boolean;
+    periodProgresses: PeriodProgress[];
+  };
+  categoryStates: {
+    design: boolean;
+    development: boolean;
+    security: boolean;
+  };
+}
+
+interface PeriodProgress {
+  design: number;
+  development: number;
+  security: number;
+  numberWeek: number;
+}
+
+// const LineChartComponent = () => {
+const LineChartComponent: React.FC<LineChartProps> = ({
+  OrderProjectStatus,
+  categoryStates,
+}) => {
+  const { periodProgresses } = OrderProjectStatus;
+  periodProgresses.sort((a, b) => a.numberWeek - b.numberWeek);
+  // console.log(periodProgresses);
+
+  const selectedStatus = {
+    design: OrderProjectStatus.design,
+    development: OrderProjectStatus.development,
+    security: OrderProjectStatus.security,
+  };
+
+  if (categoryStates.design) {
+    selectedStatus.design = OrderProjectStatus.design;
+    selectedStatus.development = !OrderProjectStatus.design;
+    selectedStatus.security = !OrderProjectStatus.design;
+  }
+  if (!categoryStates.security) {
+    selectedStatus.design;
+    selectedStatus.development;
+    selectedStatus.security;
+  }
+  if (categoryStates.development) {
+    selectedStatus.design = !OrderProjectStatus.development;
+    selectedStatus.development = OrderProjectStatus.development;
+    selectedStatus.security = !OrderProjectStatus.development;
+  }
+  if (categoryStates.security) {
+    selectedStatus.design = !OrderProjectStatus.security;
+    selectedStatus.development = !OrderProjectStatus.security;
+    selectedStatus.security = OrderProjectStatus.security;
+  }
+
+  // Створюємо labels
+  const labels = [
+    ...periodProgresses.map((_, index) =>
+      index === 0 ? "Week" : index.toString()
+    ),
+  ];
+
+  // Створюємо окремі набори даних для кожного типу
+  const designData = [...periodProgresses.map((progress) => progress.design)];
+  const developmentData = [
+    ...periodProgresses.map((progress) => progress.development),
+  ];
+  const securityData = [
+    ...periodProgresses.map((progress) => progress.security),
+  ];
+
+  const clampValue = (values: number[]) => {
+    return values.map((value) => Math.min(Math.max(value, 0), 100));
+  };
+
+  const clampedDesign = clampValue(designData);
+  const clampedDevelopment = clampValue(developmentData);
+  const clampedSecurity = clampValue(securityData);
+
+  // console.log("BIG DES = " + clampedDesign);
+  // console.log("BIG DEV = " + clampedDevelopment);
+  // console.log("BIG SECR = " + clampedSecurity);
+
+  const maxDataValue = Math.max(
+    ...clampedDesign,
+    ...clampedDevelopment,
+    ...clampedSecurity
+  );
+
+  const maxY = maxDataValue + 5 <= 105 ? maxDataValue + 5 : 105;
+  // console.log(labels);
+  // console.log(designData);
+  // console.log(developmentData);
+  // console.log(securityData);
+
   const data = () => {
     return {
-      labels: ["Week", "1", "2", "3", "4", "5"],
+      labels: labels,
       datasets: [
         {
           label: "design",
-          data: [0, 60, 22, 33],
+          data: selectedStatus.design ? clampedDesign : 0,
           fill: "start",
           backgroundColor: (context: ScriptableContext<"line">) => {
             const ctx = context.chart.ctx;
@@ -45,7 +141,7 @@ const LineChartComponent = () => {
         },
         {
           label: "development",
-          data: [0],
+          data: selectedStatus.development ? clampedDevelopment : 0,
           fill: "start",
           backgroundColor: (context: ScriptableContext<"line">) => {
             const ctx = context.chart.ctx;
@@ -59,7 +155,7 @@ const LineChartComponent = () => {
         },
         {
           label: "security",
-          data: [0],
+          data: selectedStatus.security ? clampedSecurity : 0,
           fill: "start",
           backgroundColor: (context: ScriptableContext<"line">) => {
             const ctx = context.chart.ctx;
@@ -83,12 +179,31 @@ const LineChartComponent = () => {
         grid: {
           display: true,
         },
+        ticks: {
+          font: {
+            size: 15,
+            weight: 600 as any,
+          },
+        },
+      },
+      y: {
+        max: maxY,
+        min: 0,
+        ticks: {
+          display: false,
+          beginAtZero: true,
+          maxTicksLimit: 5,
+          stepSize: 5,
+        },
       },
     },
     elements: {
       line: {
         tension: 0.3,
       },
+      // point: {
+      //   radius: 3,
+      // },
     },
     plugins: {
       filler: {
@@ -96,6 +211,15 @@ const LineChartComponent = () => {
       },
       legend: {
         display: false,
+      },
+      title: {
+        display: true,
+        text: "Progress",
+        align: "start" as const,
+        font: {
+          size: 14,
+          weight: 600 as any,
+        },
       },
     },
     interaction: {

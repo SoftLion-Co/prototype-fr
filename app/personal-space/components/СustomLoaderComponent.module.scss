@@ -1,0 +1,17 @@
+.loader__container {
+  width: 400px;
+  // height: 160px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes loader-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

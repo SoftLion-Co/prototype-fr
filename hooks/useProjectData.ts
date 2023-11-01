@@ -5,7 +5,7 @@ interface Project {
 
 function useProjectData() {
   const response: Project[] = [
-    { name: "Company Move", id: 1 },
+    { name: "Dior", id: 1 },
     { name: "Project Name FRANCHISE", id: 2 },
     { name: "Project Name Alaska", id: 3 },
     { name: "Project Name Simphone", id: 4 },

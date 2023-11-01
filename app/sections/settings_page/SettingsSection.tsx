@@ -1,10 +1,10 @@
 "use client";
 import classNames from "classnames";
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-// import Link from "next/link";
-// import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import s from "./SettingsSection.module.scss";
+import CustomerService from "./../../../services/customer-service";
+// import AuthService from "./../../../services/auth-service";
 
 type SettingsFormData = {
   personalName: string;
@@ -16,7 +16,53 @@ type SettingsFormData = {
   repeatNewPassword: string;
 };
 
+interface UserData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+}
+
 const SettingsSection: FC = () => {
+  // Стан для даних користувача
+  const [userData, setUserData] = useState<UserData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+  });
+
+  // Стан для редагованих даних користувача
+  const [editedUserData, setEditedUserData] = useState<UserData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+  });
+
+  // Стан для даних коду підтвердження
+  const [confirmationCode, setConfirmationCode] = useState("");
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        // Отримання даних користувачів
+        const customersData = await CustomerService.getAllCustomers();
+        setUserData(customersData.result[0]);
+
+        // Отримання даних користувача аутентифікації
+        // const codeData = await AuthService.sendCode(
+        //   customersData.result[0].email
+        // );
+        // console.log("Код підтвердження:", codeData);
+      } catch (error) {
+        console.error("Помилка при отриманні даних:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
+  console.log(userData);
   const {
     register,
     handleSubmit,
@@ -27,18 +73,8 @@ const SettingsSection: FC = () => {
     console.log(data);
   };
 
-  // const links = [
-  //   { title: "Personal-space", href: "/personal-space" },
-  //   { title: "Settings", href: "/#" },
-  // ];
-
   return (
     <>
-      {/* <div className={s.infoNavigat}>
-        <InfoNavigationComponent links={links} />
-      </div> */}
-
-      {/* <h2 className={s.settingsHeader}>Settings</h2> */}
       <section className={s.settings}>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <section className={s.formSection}>
@@ -49,6 +85,7 @@ const SettingsSection: FC = () => {
                 <input
                   placeholder="Name"
                   type="text"
+                  value={userData.firstName}
                   {...register("personalName")}
                 />
               </div>
@@ -57,6 +94,7 @@ const SettingsSection: FC = () => {
                 <input
                   placeholder="Surname"
                   type="text"
+                  value={userData.lastName}
                   {...register("personalSurname")}
                 />
               </div>
@@ -71,6 +109,7 @@ const SettingsSection: FC = () => {
                 <input
                   placeholder="Email"
                   type="email"
+                  value={userData.email}
                   {...register("contactEmail")}
                 />
               </div>
@@ -79,6 +118,7 @@ const SettingsSection: FC = () => {
                 <input
                   placeholder="Phone"
                   type="tel"
+                  value={userData.phoneNumber}
                   {...register("contactPhone")}
                 />
               </div>
@@ -94,11 +134,11 @@ const SettingsSection: FC = () => {
                 type="password"
                 {...register("newPassword")}
               />
-              <input
+              {/* <input
                 placeholder="Old password"
                 type="password"
                 {...register("oldPassword")}
-              />
+              /> */}
               <input
                 placeholder="Reapet new password"
                 type="password"

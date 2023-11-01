@@ -5,18 +5,12 @@
 .infoNavigat {
   div {
     padding-left: 0;
-    margin-top: 0;
-    @include for-size(laptop) {
-      padding-top: 10px;
-    }
-    @include for-size(desktop) {
-      padding-top: 0;
-    }
   }
 }
 
 .project {
   display: flex;
+  gap: 30px;
   padding-bottom: 300px;
 }
 .project__container {

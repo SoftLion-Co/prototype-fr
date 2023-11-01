@@ -6,48 +6,25 @@ import DoughnutChartComponent from "@/app/personal-space/components/DoughnutChar
 import LineChartComponent from "@/app/personal-space/components/LineChartComponent";
 
 import s from "./ProjectSection.module.scss";
-import ProductListComponent from "./../../personal-space/components/ProductListComponent";
+import { useOrderProjectStatus } from "@/hooks/useOrderProjectStatus";
+import ProductListComponent from "@/app/personal-space/components/ProductListComponent";
 import Design from "@/images/personale-space/label-icon-design.svg";
 import Development from "@/images/personale-space/label-icon-development.svg";
 import Security from "@/images/personale-space/label-icon-security.svg";
-// import OrderBlogService from "./../../../services/order-blog-service";
 
 interface ProjectSectionProps {
   projectName: string;
 }
 type Category = "design" | "development" | "security";
 
-interface ProjectData {
-  id: string;
-  title: string;
-  numberWeek: number;
-  design: number;
-  development: number;
-  security: number;
-}
 interface CategoryValues {
-  design: boolean;
-  development: boolean;
-  security: boolean;
-}
-interface OrderStatus {
-  id: string;
-  title: string;
-  projectStatus: number;
   design: boolean;
   development: boolean;
   security: boolean;
 }
 
 const ProjectSection = ({ projectName }: ProjectSectionProps) => {
-  // const handleSomeAction = async () => {
-  //   try {
-  //     const data = await OrderBlogService.getAllOrderBlogs();
-  //     console.log(data); // Результат від сервісу
-  //   } catch (error) {
-  //     console.error("Помилка", error);
-  //   }
-  // };
+  const { orderProjecData, isLoading, error } = useOrderProjectStatus();
 
   const imageList: Record<Category, string> = {
     design: Design,
@@ -62,103 +39,12 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
     security: false,
   });
 
-  console.log(categoryStates);
-
-  const orderStatus: { [key: string]: OrderStatus } = {
-    project1: {
-      id: "project1",
-      title: "Company Move",
-      projectStatus: 0,
-      design: true,
-      development: true,
-      security: true,
-    },
-    project2: {
-      id: "project2",
-      title: "Project Name FRANCHISE",
-      projectStatus: 0,
-      design: true,
-      development: true,
-      security: true,
-    },
-    project3: {
-      id: "project3",
-      title: "Project Name Alaska",
-      projectStatus: 0,
-      design: true,
-      development: true,
-      security: true,
-    },
-    project4: {
-      id: "project4",
-      title: "Project Name Simphone",
-      projectStatus: 0,
-      design: true,
-      development: true,
-      security: true,
-    },
-    project5: {
-      id: "project5",
-      title: "Project Name Shops",
-      projectStatus: 0,
-      design: true,
-      development: true,
-      security: true,
-    },
-  };
-
-  const dataProject: { [key: string]: ProjectData } = {
-    project1: {
-      id: "project1",
-      title: "Company Move",
-      numberWeek: 0,
-      design: 50,
-      development: 60,
-      security: 60,
-    },
-    project2: {
-      id: "project2",
-      title: "Project Name FRANCHISE",
-      numberWeek: 0,
-      design: 30,
-      development: 35,
-      security: 40,
-    },
-    project3: {
-      id: "project3",
-      title: "Project Name Alaska",
-      numberWeek: 0,
-      design: 49,
-      development: 60,
-      security: 71,
-    },
-    project4: {
-      id: "project4",
-      title: "Project Name Simphone",
-      numberWeek: 0,
-      design: 100,
-      development: 75,
-      security: 100,
-    },
-    project5: {
-      id: "project5",
-      title: "Project Name Shops",
-      numberWeek: 0,
-      design: 100,
-      development: 100,
-      security: 100,
-    },
-  };
-
-  const selectedProject = Object.values(dataProject).find(
+  const OrderProjectStatus = Object.values(orderProjecData).find(
     (project) => project.title === projectName
   );
 
-  const selectedOrderStatus = Object.values(orderStatus).find(
-    (project) => project.title === projectName
-  );
-
-  console.log(selectedOrderStatus);
+  // console.log("BACKEND");
+  // console.log(OrderProjectStatus?.periodProgresses);
 
   const handleCategoryClick = (category: keyof typeof categoryStates) => {
     setCategoryStates((prevState) => {
@@ -178,11 +64,18 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
   };
 
   const isButtonActive =
-    selectedOrderStatus &&
-    (selectedOrderStatus.design ||
-      selectedOrderStatus.development ||
-      selectedOrderStatus.security);
+    OrderProjectStatus &&
+    (OrderProjectStatus.design ||
+      OrderProjectStatus.development ||
+      OrderProjectStatus.security);
 
+  if (isLoading) {
+    return <></>;
+  }
+
+  if (error) {
+    return <div>Error loading data</div>;
+  }
   return (
     <>
       <h1 className={s.project__title}>{projectName}</h1>
@@ -193,7 +86,11 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
             <h2
               className={`${s.block__label} ${
                 categoryStates[category] ? "" : s.active
-              } ${selectedOrderStatus[category] ? "" : s.inactive}`}
+              } ${
+                OrderProjectStatus && OrderProjectStatus[category]
+                  ? ""
+                  : s.inactive
+              }`}
               onClick={() => handleCategoryClick(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -208,11 +105,13 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
             <>
               <h2 className={s.title}>General Information</h2>
               <div className={s.chart__сontainer}>
-                <LineChartComponent />
-                <DoughnutChartComponent
-                  selectedProject={selectedProject}
+                <LineChartComponent
+                  OrderProjectStatus={OrderProjectStatus}
                   categoryStates={categoryStates}
-                  selectedOrderStatus={selectedOrderStatus}
+                />
+                <DoughnutChartComponent
+                  OrderProjectStatus={OrderProjectStatus}
+                  categoryStates={categoryStates}
                 />
               </div>
             </>
@@ -222,8 +121,8 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
         </div>
         <ProductListComponent
           categoryStates={categoryStates}
-          selectedOrderStatus={selectedOrderStatus}
           isButtonActive={isButtonActive}
+          OrderProjectStatus={OrderProjectStatus}
         />
       </section>
     </>

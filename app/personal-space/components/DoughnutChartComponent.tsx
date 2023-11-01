@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Doughnut } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -7,54 +6,85 @@ import {
   Legend,
   ScriptableContext,
 } from "chart.js";
-import { ChartOptions } from "chart.js";
 import s from "./DoughnutChartComponent.module.scss";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface DoughnutChartProps {
-  selectedProject: {
-    design: number;
-    development: number;
-    security: number;
-  };
   categoryStates: {
     design: boolean;
     development: boolean;
     security: boolean;
   };
-  selectedOrderStatus: {
+  OrderProjectStatus: {
     design: boolean;
     development: boolean;
     security: boolean;
-    [key: string]: boolean;
+    periodProgresses: PeriodProgress[];
+    [key: string]: boolean | PeriodProgress[];
   };
+}
+interface PeriodProgress {
+  design: number;
+  development: number;
+  security: number;
 }
 
 const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
-  selectedProject,
   categoryStates,
-  selectedOrderStatus,
+  OrderProjectStatus,
 }) => {
-  // if (!selectedProject) {
-  //   return null;
-  // }
+  const progressesDesign = OrderProjectStatus.periodProgresses.reduce(
+    (acc, progress) => acc + (progress.design || 0),
+    0
+  );
+  const progressesDevelopment = OrderProjectStatus.periodProgresses.reduce(
+    (acc, progress) => acc + (progress.development || 0),
+    0
+  );
+  const progressesSecurity = OrderProjectStatus.periodProgresses.reduce(
+    (acc, progress) => acc + (progress.security || 0),
+    0
+  );
 
-  // const total = Math.round(
-  //   (selectedProject.design +
-  //     selectedProject.development +
-  //     selectedProject.security) /
-  //     3
-  // );
-  const trueSelectedOrderStatus = Object.keys(selectedOrderStatus).filter(
-    (key) => selectedOrderStatus[key] === true
-  ) as (keyof typeof selectedOrderStatus)[];
+  const clampValue = (value: number) => {
+    return Math.min(Math.max(value, 0), 100);
+  };
+
+  const clampedDesign = clampValue(progressesDesign);
+  const clampedDevelopment = clampValue(progressesDevelopment);
+  const clampedSecurity = clampValue(progressesSecurity);
+
+  // console.log("------------");
+  // console.log("selectedProj(des) :" + progressesDesign);
+  // console.log(`limitation Des (0 - 100) :${clampedDesign}`);
+  // console.log("selectedProj(dev) :" + progressesDevelopment);
+  // console.log(`limitation Dev (0 - 100) :${clampedDevelopment}`);
+  // console.log("selectedProj(secr) :" + progressesSecurity);
+  // console.log(`limitation Secr (0 - 100) :${clampedSecurity}`);
+
+  const trueSelectedOrderStatus = Object.keys(OrderProjectStatus).filter(
+    (key) => OrderProjectStatus[key] === true
+  );
 
   const total: number = Math.round(
-    trueSelectedOrderStatus.reduce(
-      (sum, key) => sum + selectedProject[key],
-      0
-    ) / 3
+    trueSelectedOrderStatus.reduce((sum, key) => {
+      let value;
+      switch (key) {
+        case "design":
+          value = clampedDesign;
+          break;
+        case "development":
+          value = clampedDevelopment;
+          break;
+        case "security":
+          value = clampedSecurity;
+          break;
+        default:
+          value = 0;
+      }
+      return sum + value;
+    }, 0) / 3
   );
 
   const activeCategory = categoryStates.design
@@ -65,36 +95,25 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
     ? "security"
     : 0;
 
-  const activePercentage =
-    activeCategory && selectedProject[activeCategory] > 0
-      ? selectedProject[activeCategory]
-      : 0;
+  const activePercentage = clampValue(
+    activeCategory
+      ? OrderProjectStatus.periodProgresses
+          .map((progress) => progress[activeCategory])
+          .reduce((acc, value) => acc + value, 0)
+      : 0
+  );
 
-  function fillArrayWithValues(
-    selectedProject: DoughnutChartProps["selectedProject"]
-  ): number[] {
-    if (
-      selectedProject.design < 0 ||
-      selectedProject.development < 0 ||
-      selectedProject.security < 0 ||
-      selectedProject.design > 100 ||
-      selectedProject.development > 100 ||
-      selectedProject.security > 100
-    ) {
-      console.error("Значення повинні бути в межах від 0 до 100.");
-      return [];
-    }
-
+  function fillArrayWithValues(): number[] {
     const selectedStatus = {
-      design: selectedOrderStatus.design,
-      development: selectedOrderStatus.development,
-      security: selectedOrderStatus.security,
+      design: OrderProjectStatus.design,
+      development: OrderProjectStatus.development,
+      security: OrderProjectStatus.security,
     };
 
     if (categoryStates.design) {
-      selectedStatus.design = selectedOrderStatus.design;
-      selectedStatus.development = !selectedOrderStatus.design;
-      selectedStatus.security = !selectedOrderStatus.design;
+      selectedStatus.design = OrderProjectStatus.design;
+      selectedStatus.development = !OrderProjectStatus.design;
+      selectedStatus.security = !OrderProjectStatus.design;
     }
     if (!categoryStates.security) {
       selectedStatus.design;
@@ -102,20 +121,19 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
       selectedStatus.security;
     }
     if (categoryStates.development) {
-      selectedStatus.design = !selectedOrderStatus.development;
-      selectedStatus.development = selectedOrderStatus.development;
-      selectedStatus.security = !selectedOrderStatus.development;
+      selectedStatus.design = !OrderProjectStatus.development;
+      selectedStatus.development = OrderProjectStatus.development;
+      selectedStatus.security = !OrderProjectStatus.development;
     }
     if (categoryStates.security) {
-      selectedStatus.design = !selectedOrderStatus.security;
-      selectedStatus.development = !selectedOrderStatus.security;
-      selectedStatus.security = selectedOrderStatus.security;
+      selectedStatus.design = !OrderProjectStatus.security;
+      selectedStatus.development = !OrderProjectStatus.security;
+      selectedStatus.security = OrderProjectStatus.security;
     }
-    console.log(selectedStatus);
 
-    const remainderDes = 100 - (selectedProject.design || 0);
-    const remainderDev = 100 - (selectedProject.development || 0);
-    const remainderSecr = 100 - (selectedProject.security || 0);
+    const remainderDes = 100 - (clampedDesign || 0);
+    const remainderDev = 100 - (clampedDevelopment || 0);
+    const remainderSecr = 100 - (clampedSecurity || 0);
 
     const designValue = selectedStatus.design
       ? selectedStatus.development || selectedStatus.security
@@ -132,21 +150,20 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
         ? 1
         : 0
       : 1 - 1;
-    console.log(securityValue);
     return [
-      selectedStatus.design ? selectedProject.design : 0,
+      selectedStatus.design ? clampedDesign : 0,
       selectedStatus.design ? remainderDes : 0,
       designValue,
-      selectedStatus.development ? selectedProject.development : 0,
+      selectedStatus.development ? clampedDevelopment : 0,
       selectedStatus.development ? remainderDev : 0,
       developmentValue,
-      selectedStatus.security ? selectedProject.security : 0,
+      selectedStatus.security ? clampedSecurity : 0,
       selectedStatus.security ? remainderSecr : 0,
       securityValue,
     ];
   }
 
-  const result = fillArrayWithValues(selectedProject);
+  const result = fillArrayWithValues();
 
   const dataDoughnut = {
     labels: [
@@ -193,11 +210,13 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
       },
     ],
   };
-
-  const doughnutOptions: ChartOptions = {
+  const doughnutOptions = {
     plugins: {
       legend: {
         display: false,
+      },
+      tooltip: {
+        enabled: false,
       },
     },
   };
