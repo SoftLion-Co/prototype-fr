@@ -3,64 +3,71 @@ import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
 import { PiArrowRightThin } from "react-icons/pi";
 import Link from "next/link";
+
 interface ProjectData {
-	id: number;
-	title: string;
-	description: string;
-	period: string;
-	dateYear: number;
-	country: {
-	  createdDateTime: string;
-	  name: string;
-	  id: string;
-	};
-	requestDescription: string;
-	requestList: string;
-	solutionDescription: string;
-	resultFirstParagraph: string;
-	resultSecondParagraph: string;
-	resultThirdParagraph: string;
-	pictures: {
-	  createdDateTime: string;
-	  url: string;
-	  id: string;
-	}[];
-	paragraphs: {
-	  createdDateTime: string;
-	  title: string;
-	  description: string;
-	  id: string;
-	}[];
-	technologies: {
-	  id: string;
-	  name: string;
-	  createdDateTime: string;
-	}[];
-	createdDateTime: string;
-	updatedDateTime: string;
- }
+  id: number;
+  title: string;
+  description: string;
+  period: string;
+  dateYear: number;
+  country: {
+    createdDateTime: string;
+    name: string;
+    code: string;
+    id: string;
+  };
+  requestDescription: string;
+  requestList: string;
+  solutionDescription: string;
+  resultFirstParagraph: string;
+  resultSecondParagraph: string;
+  resultThirdParagraph: string;
+  pictures: {
+    createdDateTime: string;
+    updatedDateTime: string;
+    position: number;
+    url: string;
+    id: string;
+  }[];
+  paragraphs: {
+    createdDateTime: string;
+    updatedDateTime: string;
+    title: string;
+    description: string;
+    position: number;
+    id: string;
+  }[];
+  technologies: {
+    id: string;
+    name: string;
+    createdDateTime: string;
+    updatedDateTime: string;
+  }[];
+  createdDateTime: string;
+  updatedDateTime: string;
+}
 
 interface ProjectCardProps {
   data: ProjectData;
 }
 
 const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
-	function trimString(input:string) {
-		if (input.length >= 80 && input.length <= 120) {
-		  return input;
-		}
-	 
-		let lastDotIndex = 80;
-		for (let i = 80 - 1; i <= 120; i++) {
-		  if (input[i] === '.') {
-			 lastDotIndex = i;
-			 break;
-		  }
-		}
-		const trimmedString = input.slice(0, lastDotIndex);
-		return trimmedString;
-	 }
-	  data.description = trimString(data.description);
+  function trimString(input: string) {
+    if (input.length >= 80 && input.length <= 120) {
+      return input;
+    }
+
+    let lastDotIndex = 80;
+    for (let i = 80 - 1; i <= 120; i++) {
+      if (input[i] === ".") {
+        lastDotIndex = i;
+        break;
+      }
+    }
+    const trimmedString = input.slice(0, lastDotIndex);
+    return trimmedString;
+  }
+  data.description = trimString(data.description);
   return (
     <div className={s.card}>
       <div className={s.card__info}>

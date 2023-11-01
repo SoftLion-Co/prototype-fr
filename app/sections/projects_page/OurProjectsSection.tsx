@@ -34,6 +34,7 @@ interface ProjectData {
   pictures: {
     createdDateTime: string;
     updatedDateTime: string;
+    position: number;
     url: string;
     id: string;
   }[];
@@ -42,6 +43,7 @@ interface ProjectData {
     updatedDateTime: string;
     title: string;
     description: string;
+    position: number;
     id: string;
   }[];
   technologies: {
@@ -61,9 +63,9 @@ const getUniqueFieldValues = (
   defaultValues: string[] = []
 ) => {
   const uniqueValues: string[] = [...defaultValues];
-  
+
   data.forEach((project) => {
-	console.log(project[field]);
+
     if (Array.isArray(project[field])) {
       project[field].forEach((tech: any) => {
         if (!uniqueValues.includes(tech.name)) {
@@ -71,16 +73,12 @@ const getUniqueFieldValues = (
         }
       });
     } else if (typeof project[field] == "object") {
-		console.log(project[field]);
       if (!uniqueValues.some((country) => country === project[field].name)) {
-         console.log(project[field].name);
-			uniqueValues.push(project[field].name);
+        uniqueValues.push(project[field].name);
       }
     }
-	 console.log(project[field]);
   });
-  
-console.log("hi");
+  console.log(uniqueValues);
   return uniqueValues;
 };
 
@@ -123,10 +121,9 @@ const OurProjectsSection = () => {
     defaultTechnologies
   );
 
-  const filterCountriesOptions = getUniqueFieldValues(
-    sampleData,
-    "country.name"
-  );
+  const filterCountriesOptions = getUniqueFieldValues(sampleData, "country");
+
+  console.log(filterCountriesOptions);
 
   //* LOGIC FOR ADAPTIVE PAGINATION
   const filteredProjects = sampleData.filter(
@@ -306,7 +303,7 @@ const OurProjectsSection = () => {
                           borderRadius: "0.3em",
                         }}
                       />
-                      <span>{country.name}</span>
+                      <span>{country}</span>
                     </button>
                   );
                 })}

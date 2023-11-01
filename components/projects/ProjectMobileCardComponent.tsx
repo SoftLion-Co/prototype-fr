@@ -2,45 +2,49 @@ import React from "react";
 import s from "./ProjectMobileCardComponent.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { PiArrowRightThin } from "react-icons/pi";
 
 interface ProjectData {
-  id: number;
-  title: string;
-  description: string;
-  period: string;
-  dateYear: number;
-  country: {
-    createdDateTime: string;
-    name: string;
-    code: string;
-    id: string;
-  };
-  requestDescription: string;
-  requestList: string;
-  solutionDescription: string;
-  resultFirstParagraph: string;
-  resultSecondParagraph: string;
-  resultThirdParagraph: string;
-  pictures: {
-    createdDateTime: string;
-    url: string;
-    id: string;
-  }[];
-  paragraphs: {
-    createdDateTime: string;
-    title: string;
-    description: string;
-    id: string;
-  }[];
-  technologies: {
-    id: string;
-    name: string;
-    createdDateTime: string;
-  }[];
-  createdDateTime: string;
-  updatedDateTime: string;
-}
+	id: number;
+	title: string;
+	description: string;
+	period: string;
+	dateYear: number;
+	country: {
+	  createdDateTime: string;
+	  name: string;
+	  code: string;
+	  id: string;
+	};
+	requestDescription: string;
+	requestList: string;
+	solutionDescription: string;
+	resultFirstParagraph: string;
+	resultSecondParagraph: string;
+	resultThirdParagraph: string;
+	pictures: {
+	  createdDateTime: string;
+	  updatedDateTime: string;
+	  position: number;
+	  url: string;
+	  id: string;
+	}[];
+	paragraphs: {
+	  createdDateTime: string;
+	  updatedDateTime: string;
+	  title: string;
+	  description: string;
+	  position: number;
+	  id: string;
+	}[];
+	technologies: {
+	  id: string;
+	  name: string;
+	  createdDateTime: string;
+	  updatedDateTime: string;
+	}[];
+	createdDateTime: string;
+	updatedDateTime: string;
+ }
 
 const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
   data,
