@@ -24,7 +24,12 @@ const Home = () => {
       <Head>
         <meta
           name="description"
-          content="SoftLion - Your Trusted Partner in IT Services and Consulting. We provide solutions for your business's effective growth, delivering the best technological solutions and consultations."
+          content="SoftLion - Your Trusted Partner in IT Services and Consulting. We provide web development, consulting, and technology solutions to drive your business growth."
+        />
+
+        <meta
+          name="keywords"
+          content="софтлайон, web-company, shopify, development, outsourcing, programming outsourcing"
         />
       </Head>
 
