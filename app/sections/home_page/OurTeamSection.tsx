@@ -53,14 +53,14 @@ const OurTeamSetcion = () => {
   //   const [response, setResponse] = useState<Props[]>([]);
 
   const response: Props[] = [
-    // {
-    //   id: "1",
-    //   name: "Pavlo Graur",
-    //   position: "CEO",
-    //   avatar:
-    //     "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_800_800/0/1697010844966?e=1702512000&v=beta&t=o1zowEeuAk2Y-eW6DL6IrIzkaOMJgeVbSD9uEHIY_lM",
-    //   linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
-    // },
+    {
+      id: "1",
+      name: "Pavlo Graur",
+      position: "CEO",
+      avatar:
+        "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_800_800/0/1697010844966?e=1702512000&v=beta&t=o1zowEeuAk2Y-eW6DL6IrIzkaOMJgeVbSD9uEHIY_lM",
+      linkedinUrl: "https://www.linkedin.com/in/paul-graur-07526a247/",
+    },
     {
       id: "2",
       name: "Yurii Matvii",
@@ -71,14 +71,6 @@ const OurTeamSetcion = () => {
     },
     {
       id: "3",
-      name: "Dima Klapiychuk",
-      position: "COO",
-      avatar:
-        "https://media.licdn.com/dms/image/D4D03AQHAgP85JknqKA/profile-displayphoto-shrink_800_800/0/1686751374128?e=1698883200&v=beta&t=Ks5_aBaMfSvX5Obq1Xx-XhwMB6J4qD1M79q_M7coCUo",
-      linkedinUrl: "https://www.linkedin.com/in/dima-klapiychuk-22a989268/",
-    },
-    {
-      id: "4",
       name: "Vira Lyzen",
       position: "Head Of Development",
       avatar:
@@ -86,14 +78,14 @@ const OurTeamSetcion = () => {
       linkedinUrl: "https://www.linkedin.com/in/vira-lyzen-a63ba1281/",
     },
     {
-      id: "5",
+      id: "4",
       name: "Tetiana Hlushko",
       position: "UI/UX Designer",
       avatar: AvatarTetiana,
       linkedinUrl: "",
     },
     {
-      id: "6",
+      id: "5",
       name: "Mykola Semenyuk",
       position: "Front-End Developer",
       avatar:
@@ -101,16 +93,16 @@ const OurTeamSetcion = () => {
       linkedinUrl: "https://www.linkedin.com/in/semx/",
     },
     {
-      id: "7",
+      id: "6",
       name: "Danyil Terentiev",
       position: "FullStack developer",
       avatar:
-        "https://media.licdn.com/dms/image/D4D35AQFZXHwrdofn8Q/profile-framedphoto-shrink_800_800/0/1676486269258?e=1697918400&v=beta&t=HLxoTLyaCd3Yl-D4jbL5NHSAidtYZ7F8nmwSn0zaie4",
+        "https://media.licdn.com/dms/image/D4D35AQFZXHwrdofn8Q/profile-framedphoto-shrink_800_800/0/1676486269258?e=1699444800&v=beta&t=yCcp531_0hNpePiAD0TLIxBIWkmNIr5q6EJz5wbEmlQ",
       linkedinUrl:
         "https://www.linkedin.com/in/%D0%B4%D0%B0%D0%BD%D0%B8%D1%97%D0%BB-%D1%82%D0%B5%D1%80%D0%B5%D0%BD%D1%82%D1%8C%D1%94%D0%B2-b69725203/",
     },
     {
-      id: "8",
+      id: "7",
       name: "Andriy Zhuvak",
       position: "Front-End Developer",
       avatar:
@@ -119,7 +111,7 @@ const OurTeamSetcion = () => {
         "https://www.linkedin.com/in/%D0%B0%D0%BD%D0%B4%D1%80%D1%96%D0%B9-%D0%B6%D1%83%D0%B2%D0%B0%D0%BA-12ba8727a/",
     },
     {
-      id: "9",
+      id: "8",
       name: "Yana Chepyk",
       position: "Front-End Developer",
       avatar:
@@ -127,22 +119,22 @@ const OurTeamSetcion = () => {
       linkedinUrl: "https://www.linkedin.com/in/yana-chepyk/",
     },
     {
-      id: "10",
+      id: "9",
       name: "Misha Zlupko",
       position: "Front-End Developer",
       avatar:
-        "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052466298?e=1697918400&v=beta&t=if6kBen9Y9YivrFhKUB-L2ZxAiO8itY5Hs7LLCAmadQ",
+        "https://media.licdn.com/dms/image/D4E35AQFRuJ82pNICZQ/profile-framedphoto-shrink_800_800/0/1679052466298?e=1699444800&v=beta&t=2wP8cgBP33wmqAeLKNH_lWd920XmxUI62qKzfvHXHks",
       linkedinUrl: "https://www.linkedin.com/in/misha-zlupko-150649269/",
     },
     {
-      id: "11",
+      id: "10",
       name: "Yan Zhabko",
       position: "Front-End Developer",
       avatar: AvatarYan,
       linkedinUrl: "https://www.linkedin.com/in/yan-zhabko-860b42165/",
     },
     {
-      id: "12",
+      id: "11",
       name: "Anastasiia Moskaliuk",
       position: "Front-End Developer",
       avatar:

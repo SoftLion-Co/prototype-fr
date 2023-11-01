@@ -29,7 +29,16 @@ const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
             width={16000}
             height={19000}
           />
-          <h3 className={s.card__title}>{data.title}</h3>
+          <div className={s.card__tags}>
+            <h3 className={s.card__title}>{data.title}</h3>
+            <div className={s.tags}>
+              {data.technology.slice(0, 5).map((tech, index) => (
+                <p className={s.tags__item} key={index}>
+                  {tech}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
         <div className={s.card__submain}>
           <div className={s.card__subinfo}>
@@ -38,13 +47,6 @@ const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
             <p className={s.card__author}>{data.author}</p>
           </div>
           <div className={s.card__desc}>
-          <div className={s.tags}>
-            {data.technology.slice(0, 5).map((tech, index) => (
-              <p className={s.tags__item} key={index}>
-                {tech}
-              </p>
-            ))}
-          </div>
             <div className={s.card__subdesc}>
               <p>{data.description}</p>
             </div>

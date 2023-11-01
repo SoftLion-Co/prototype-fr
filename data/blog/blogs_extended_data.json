@@ -86,12 +86,12 @@
   },
 
   "3": {
-    "authorImg": "https://media.licdn.com/dms/image/D4D03AQGnDWtRjuaD0w/profile-displayphoto-shrink_800_800/0/1692445989303?e=1698883200&v=beta&t=8y0QUHF6KuNjAFL46TCj8bzUFdc7ZjFJ_9Rs141LXjA",
+    "authorImg": "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_200_200/0/1697010844966?e=1704326400&v=beta&t=yWUkFXMMGUPrZ1aDCN9-qSjZVGaqS0MM8haJPf6u4EQ",
     "articleName": "Enhancing E-commerce",
     "articleimg": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/a43940d947b620b6dc16d0a2e6bbea3aed7e277d/images/blog/3-enhancing-ecommerce/DrawKit-3.svg",
     "readTime": "14 min",
-    "author": "Vira Lyzen",
-    "authorId": "ViraLyzen",
+    "author": "Paul Graur",
+    "authorId": "PaulGraur",
     "articles": [
       {
         "id": "1",
@@ -128,12 +128,12 @@
   },
 
   "4": {
-    "authorImg": "https://media.licdn.com/dms/image/D4D03AQGnDWtRjuaD0w/profile-displayphoto-shrink_800_800/0/1692445989303?e=1698883200&v=beta&t=8y0QUHF6KuNjAFL46TCj8bzUFdc7ZjFJ_9Rs141LXjA",
+    "authorImg": "https://media.licdn.com/dms/image/D4E03AQGCS4dmL8ZCLQ/profile-displayphoto-shrink_200_200/0/1697010844966?e=1704326400&v=beta&t=yWUkFXMMGUPrZ1aDCN9-qSjZVGaqS0MM8haJPf6u4EQ",
     "articleName": "SoftLion — Your Shopify Development Company",
     "articleimg": "https://softlion.blog/wp-content/uploads/2023/08/Shopify-SoftLion-1-1024x538.png",
     "readTime": "12 min",
-    "author": "Vira Lyzen",
-    "authorId": "ViraLyzen",
+    "author": "Paul Graur",
+    "authorId": "PaulGraur",
     "articles": [
       {
         "id": "1",
