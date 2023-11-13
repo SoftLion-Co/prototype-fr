@@ -7,13 +7,12 @@ import bin from "@/app/admin/images/control/bin.svg";
 import { useEffect, useState } from "react";
 import { Button } from "./../Button";
 import classNames from "classnames";
-import countryService from "../../../../services/country-service";
 import ReactCountryFlag from "react-country-flag";
 
 const NewProjectCard = () => {
   const [requirementsCount, setRequirementsCount] = useState(0);
   const [paragraphsCount, setParagraphsCount] = useState(0);
-  const [countries, setCountries] = useState<string[]>([]);
+  // const [countries, setCountries] = useState<string[]>([]);
   const [countryCode, setCountryCode] = useState<string>("");
 
   const handleCountryCodeChange = (
@@ -22,16 +21,16 @@ const NewProjectCard = () => {
     setCountryCode(event.target.value);
   };
 
-  useEffect(() => {
-    async function fetchCountries() {
-      const countries = await countryService.getAllCountries();
+  // useEffect(() => {
+  //   async function fetchCountries() {
+  //     const countries = await countryService.getAllCountries();
 
-      setCountries(countries.result.map((country: any) => country.name));
-      console.log("countries", countries);
-    }
+  //     setCountries(countries.result.map((country: any) => country.name));
+  //     console.log("countries", countries);
+  //   }
 
-    fetchCountries();
-  }, []);
+  //   fetchCountries();
+  // }, []);
 
   const handleAddRequirement = () => {
     if (requirementsCount < 4) {
@@ -77,7 +76,7 @@ const NewProjectCard = () => {
     const years = [];
     let startYear = 2015;
 
-    while (startYear <= currentYear + 10) {
+    while (startYear <= currentYear) {
       years.push(startYear++);
     }
     return years;
@@ -88,8 +87,8 @@ const NewProjectCard = () => {
     for (let i = 0; i < paragraphsCount; i++) {
       paragraphs.push(
         <div key={i}>
-          <input className={s.input} type="text" placeholder="Заголовок абзацу"></input>
-          <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу"></textarea>
+          <input className={s.input} type="text" placeholder="Заголовок абзацу" name={`paragraph_${i}_title`}></input>
+          <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису абзацу" name={`paragraph_${i}_description`}></textarea>
         </div>
       );
     }
@@ -97,42 +96,42 @@ const NewProjectCard = () => {
   };
 
   return (
-    <div className={s.new_project}>
+    <form className={s.new_project}>
       <h2 className={s.new_project__title}>Проекти</h2>
       <div className={s.new_project___container}>
         <div className={s.left_side__container}>
           <div className={s.image_block__container}>
             <div className={s.image_inputs__container}>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_0_img"/>
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_1_img"/>
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_2_img"/>
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" name="project_3_img" />
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації" />
+                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_4_img"/>
                 <ImImage className={s.icon} />
               </div>
             </div>
           </div>
           <div className={s.input__container}>
-            <input className={s.input} type="text" placeholder="Для заголовку"></input>
-            <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису"></textarea>
+            <input className={s.input} type="text" placeholder="Для заголовку" name="project_title"></input>
+            <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису" name="project_description"></textarea>
           </div>
           
           <div className={classNames(s.input__container, s.input__container_row)}>
             <div >
-            <select className={classNames(s.input, s.select)} defaultValue="default">
+            <select className={classNames(s.input, s.select)} defaultValue="default" name="period">
               <option className={classNames(s.select__option, s.hidden)} value="default">
                 Період
               </option>
@@ -154,7 +153,7 @@ const NewProjectCard = () => {
               <option className={s.select__option}>1.5 Year</option>
               <option className={s.select__option}>2 Years</option>
             </select>
-            <select className={classNames(s.input, s.select)} defaultValue="default">
+            <select className={classNames(s.input, s.select)} defaultValue="default" name="year">
               <option className={classNames(s.select__option, s.hidden)} value="default">
                 Рік
               </option>
@@ -231,9 +230,9 @@ const NewProjectCard = () => {
         </div>
       </div>
       <div className={s.button__container}>
-        <Button text="Додати проект" type="button" />
+        <Button text="Додати проект" type="submit" />
       </div>
-    </div>
+    </form>
   );
 };
 

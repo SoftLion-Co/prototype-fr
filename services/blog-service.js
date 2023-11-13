@@ -64,6 +64,26 @@ class BlogService {
 		console.log(await response.json())
 	}
 
+	async getUIBlogImagesById(id) {
+		const response = await fetch('/api/blog/10d1a540-cc83-45fe-b88c-b34983f4d32e');
+		const blogImages = await response.json();
+
+		return blogImages
+	}
+
+	async createUIBlogImages(body) {
+		const response = await fetch('/api/blog', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(body)
+		});
+
+		const json = await response.json();
+
+		return json;
+	}
 }
 
 export default new BlogService();

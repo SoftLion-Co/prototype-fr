@@ -31,7 +31,7 @@ const Blogs = () => {
 
   const getBlogs = async () => {
     const allBlogs = await blogService.getAllBlogs();
-    setBlogs(allBlogs.result);
+    setBlogs(allBlogs.result || []);
   };
   useEffect(() => {
     getBlogs();

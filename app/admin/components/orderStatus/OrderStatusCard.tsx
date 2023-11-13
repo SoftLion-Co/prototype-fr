@@ -74,6 +74,10 @@ export const OrderCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
                 <label className={s.status__text} htmlFor="process" >В процесі</label>
               </div>
               <div>
+                <input id="final" type="radio" name="status" value="final" onChange={handelStatusChang} checked={status === "final"} />
+                <label className={s.status__text} htmlFor="final">Завершиний</label>
+              </div>
+              <div>
                 <input id="suspended" type="radio" name="status" value="suspended" onChange={handelStatusChang} checked={status === "suspended"} />
                 <label className={s.status__text} htmlFor="suspended">Призупинений</label>
               </div>
@@ -81,10 +85,7 @@ export const OrderCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
                 <input id="canceled" type="radio" name="status" value="canceled" onChange={handelStatusChang} checked={status === "canceled"} />
                 <label className={s.status__text} htmlFor="canceled">Скасований</label>
               </div>
-              <div>
-                <input id="final" type="radio" name="status" value="final" onChange={handelStatusChang} checked={status === "final"} />
-                <label className={s.status__text} htmlFor="final">Завершиний</label>
-              </div>
+           
             </div>
           )}
         </div>

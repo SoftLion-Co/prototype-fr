@@ -13,12 +13,27 @@ interface ContentEditorProps {
   blog: BlogData | null;
 }
 
+function getParagraphImage(elements: HTMLFormControlsCollection, index: number): File {
+  // @ts-ignore
+  return elements[`paragraph_${index}_img`].files[0];
+}
+
+function getParagraphTitle(elements: HTMLFormControlsCollection, index: number): string {
+  // @ts-ignore
+  return elements[`paragraph_${index}_title`].value;
+}
+
+function getParagraphDescription(elements: HTMLFormControlsCollection, index: number): string {
+  // @ts-ignore
+  return elements[`paragraph_${index}_description`].value;
+}
+
 const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
   const [paragraphsCount, setParagraphsCount] = useState(1);
   const lastParagraphRef = useRef<HTMLTextAreaElement | null>(null);
   const [showDetailsModal, setShowDetailsModal] = useState<boolean>(false);
   const [authors, setAuthors] = useState<BlogAuthor[]>([]);
-
+  const [blogImages, setBlogImages] = useState<string[]>([]);
   useEffect(() => {
     async function fetchCountries() {
       const authors = await authorService.getAllAuthors();
@@ -53,48 +68,102 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
     console.log("Modal", showDetailsModal);
   };
 
-  const handleFormSubmit = (event: any): void => {
-    event.preventDefault();
+  const convertFileToBase64 = async (file: File): Promise<string> => {
+    return new Promise(res => {
+      const reader = new FileReader();
+    
+      reader.readAsDataURL(file); 
 
-    const {blog_img, blog_title, author_name: authorId } = event.target.elements;
-    // const author = authors.find(_author => _author.id === authorId.value);
+      reader.onloadend = function() {
+        res(this.result as string);
+      }
+    });
+  }
+
+  const handleFormSubmit = async (event: any): Promise<void> => {
+    event.preventDefault();
+    const { elements } = event.target;
+    const {blog_img, blog_title, author_name: authorId } = elements;
+    const blogImage = blog_img.files[0];
+    const blogTitle = blog_title.value;
+    const paragraphImage = event.target.elements[`paragraph_0_img`].files[0];
+    const paragraphTitle = event.target.elements[`paragraph_0_title`].value;
+    const paragraphDescription = event.target.elements[`paragraph_0_description`].value;
+
+    if (!blogImage || !blogTitle || !paragraphImage || !paragraphTitle || !paragraphDescription) {
+      console.error("All fields are required");
+      return;
+    }
+
     const blogId = crypto.randomUUID();
+    const projectId = crypto.randomUUID();
+
     const paragraphs = [];
     const pictures = [];
+    const paragraphImages = [];
 
     for (let i = 0; i < paragraphsCount; i++) {
+      const paragraphImageValue = getParagraphImage(elements, i);
+      const paragraphTitleValue = getParagraphTitle(elements, i);
+      const paragraphDescriptionValue = getParagraphDescription(elements, i);
+
       paragraphs.push({
-        title: event.target.elements[`paragraph_${i}_title`].value,
-        description: event.target.elements[`paragraph_${i}_description`].value,
+        title: paragraphTitleValue,
+        description: paragraphDescriptionValue,
         blogId,
-        projectId: "" // need to take somewhere project id
+        projectId
       });
 
       pictures.push({
-        url: "", // need to paste url to paragraph picture
-        projectId: "", // need to take somewhere project id
+        url: "asd",
+        projectId,
         blogId
       });
-    } 
+
+      if (paragraphImageValue) {
+        const paragraphImageBase64 = await convertFileToBase64(paragraphImageValue);
+        paragraphImages.push(paragraphImageBase64);
+      }
+    }
+
+
+    let blogImageString = "";
+
+    if (blogImage) {
+      blogImageString = await convertFileToBase64(blog_img.files[0]);
+    }
+
+    const uiBody = {
+      blogId,
+      blogImage: blogImageString,
+      paragraphImages
+    };
 
     const requestBody = {
       authorId: authorId.value,
       title: blog_title.value,
-      description: "", // there is no input for the description of the blog itself
+      description: "not empty", // there is no input for the description of the blog itself
       readingTime: 0, // take somewhere this parameter
       viewers: 0, // take somewhere this parameter
       svg: {
-        url: "", // need an blog_img url
+        url: "asd",
         blogId
       },
       paragraphs,
       pictures,
-      technologies: [], // somewhere take technologies 
+      technologies: [{name: 'js'}],
     };
 
-    blogService.createBlog(requestBody);
+    // Create UI blog images object
+    blogService.createUIBlogImages(uiBody);
 
-    console.log("On blog publish: ", requestBody); 
+    // Create blog object on backend API 
+    blogService.createBlog(requestBody);
+    
+    // Get blog images from UI API by blog id
+    // blogService.getUIBlogImagesById(blogId)
+
+    console.log('requestBody', requestBody);
   }
 
   const renderParagraphs = () => {
@@ -121,6 +190,7 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
 
   return (
     <>
+    {blogImages.map(src => <img src={src}/>)}
       <form className={s.input} onSubmit={handleFormSubmit}>
         <div className={s.input__scroll}>
           <div className={s.input__container}>
