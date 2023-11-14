@@ -26,7 +26,7 @@ const SidebarMenu: React.FC = () => {
     },
     status: ["InProgress", "Completed", "OnHold", "Canceled"],
   };
-  console.log(sidebarMenuData);
+  // console.log(sidebarMenuData);
 
   const currentURL =
     typeof window !== "undefined" ? window.location.pathname : "";
@@ -34,24 +34,31 @@ const SidebarMenu: React.FC = () => {
   return (
     <div className={s.sideBar}>
       <div className={s.block}>
-        <h1
-          className={`${s.block__title} ${
+        <Link
+          href={`/personal-space`}
+          className={`${s.block__link} ${
             currentURL !== "/personal-space/settings" ? s.actHome : ""
           }`}
         >
-          Projects
-        </h1>
+          <h1 className={s.block__title}>Projects</h1>
+        </Link>
         {/* <h1 className={s.block__title}>Projects</h1> */}
         <div className={s.block__scroll}>
           <ul className={s.block__list}>
             {sidebarMenuData?.map((project, index) => (
-              <li className={s.block__listItem} key={project.id}>
+              <li
+                className={s.block__listItem}
+                key={project.id}
+                data-custom-title={securityImages.status[project.projectStatus]}
+                // title={securityImages.status[project.projectStatus]}
+              >
                 <Image
                   src={
                     securityImages.img[
                       securityImages.status[project.projectStatus]
                     ]
                   }
+                  // title={securityImages.status[project.projectStatus]}
                   alt={securityImages.status[project.projectStatus]}
                   style={{
                     position: "absolute",

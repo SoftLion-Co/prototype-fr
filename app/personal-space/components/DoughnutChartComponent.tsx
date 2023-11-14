@@ -11,156 +11,88 @@ import s from "./DoughnutChartComponent.module.scss";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface DoughnutChartProps {
-  categoryStates: {
-    design: boolean;
-    development: boolean;
-    security: boolean;
-  };
+  categoryStates: Record<string, boolean>;
   OrderProjectStatus: {
-    design: boolean;
-    development: boolean;
-    security: boolean;
     periodProgresses: PeriodProgress[];
-    [key: string]: boolean | PeriodProgress[];
   };
 }
 interface PeriodProgress {
-  design: number;
-  development: number;
-  security: number;
+  service: Service;
+  numberWeek: number;
+  progress: number;
+}
+interface Service {
+  title: string;
+  description: string;
 }
 
 const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
   categoryStates,
   OrderProjectStatus,
 }) => {
-  const progressesDesign = OrderProjectStatus.periodProgresses.reduce(
-    (acc, progress) => acc + (progress.design || 0),
-    0
-  );
-  const progressesDevelopment = OrderProjectStatus.periodProgresses.reduce(
-    (acc, progress) => acc + (progress.development || 0),
-    0
-  );
-  const progressesSecurity = OrderProjectStatus.periodProgresses.reduce(
-    (acc, progress) => acc + (progress.security || 0),
-    0
-  );
-
   const clampValue = (value: number) => {
     return Math.min(Math.max(value, 0), 100);
   };
 
-  const clampedDesign = clampValue(progressesDesign);
-  const clampedDevelopment = clampValue(progressesDevelopment);
-  const clampedSecurity = clampValue(progressesSecurity);
+  const categoryProgress: Record<string, number> = {};
 
-  // console.log("------------");
-  // console.log("selectedProj(des) :" + progressesDesign);
-  // console.log(`limitation Des (0 - 100) :${clampedDesign}`);
-  // console.log("selectedProj(dev) :" + progressesDevelopment);
-  // console.log(`limitation Dev (0 - 100) :${clampedDevelopment}`);
-  // console.log("selectedProj(secr) :" + progressesSecurity);
-  // console.log(`limitation Secr (0 - 100) :${clampedSecurity}`);
-
-  const trueSelectedOrderStatus = Object.keys(OrderProjectStatus).filter(
-    (key) => OrderProjectStatus[key] === true
+  OrderProjectStatus.periodProgresses.sort((a, b) =>
+    a.service.title.localeCompare(b.service.title)
   );
 
-  const total: number = Math.round(
-    trueSelectedOrderStatus.reduce((sum, key) => {
-      let value;
-      switch (key) {
-        case "design":
-          value = clampedDesign;
-          break;
-        case "development":
-          value = clampedDevelopment;
-          break;
-        case "security":
-          value = clampedSecurity;
-          break;
-        default:
-          value = 0;
-      }
-      return sum + value;
-    }, 0) / 3
-  );
+  OrderProjectStatus.periodProgresses.forEach((progress) => {
+    const category = progress.service.title;
 
-  const activeCategory = categoryStates.design
-    ? "design"
-    : categoryStates.development
-    ? "development"
-    : categoryStates.security
-    ? "security"
-    : 0;
+    categoryProgress[category] = clampValue(
+      (categoryProgress[category] || 0) + (progress.progress || 0)
+    );
+  });
 
-  const activePercentage = clampValue(
-    activeCategory
-      ? OrderProjectStatus.periodProgresses
-          .map((progress) => progress[activeCategory])
-          .reduce((acc, value) => acc + value, 0)
-      : 0
+  console.log(categoryStates);
+  console.log(categoryProgress);
+
+  const totalPercentage = Math.round(
+    Object.values(categoryProgress).reduce((acc, val) => acc + val, 0) /
+      Object.keys(categoryProgress).length
   );
+  console.log(`totalPercentage: ${totalPercentage}%`);
+
+  const activeCategory = Object.keys(categoryStates).find(
+    (category) => categoryStates[category]
+  );
+  console.log(`activeCategory: ${activeCategory}`);
+
+  const activePercentage = activeCategory
+    ? categoryProgress[activeCategory]
+    : totalPercentage;
+  console.log(`activePercentage: ${activePercentage}%`);
 
   function fillArrayWithValues(): number[] {
-    const selectedStatus = {
-      design: OrderProjectStatus.design,
-      development: OrderProjectStatus.development,
-      security: OrderProjectStatus.security,
-    };
+    const categoryState = !Object.values(categoryStates).some((state) => state);
+    const percentages: Record<string, number> = {};
+    Object.keys(categoryProgress).forEach((category) => {
+      percentages[category] = categoryProgress[category] - 100;
+    });
+    const result: number[] = [];
+    Object.keys(percentages).forEach((category) => {
+      result.push(
+        categoryStates[category] || categoryState
+          ? categoryProgress[category]
+          : 0
+      );
+      result.push(
+        categoryStates[category] || categoryState ? percentages[category] : 0
+      );
+      result.push(
+        categoryStates[category]
+          ? 0
+          : !Object.values(categoryStates).some((state) => state)
+          ? 1
+          : 0
+      );
+    });
 
-    if (categoryStates.design) {
-      selectedStatus.design = OrderProjectStatus.design;
-      selectedStatus.development = !OrderProjectStatus.design;
-      selectedStatus.security = !OrderProjectStatus.design;
-    }
-    if (!categoryStates.security) {
-      selectedStatus.design;
-      selectedStatus.development;
-      selectedStatus.security;
-    }
-    if (categoryStates.development) {
-      selectedStatus.design = !OrderProjectStatus.development;
-      selectedStatus.development = OrderProjectStatus.development;
-      selectedStatus.security = !OrderProjectStatus.development;
-    }
-    if (categoryStates.security) {
-      selectedStatus.design = !OrderProjectStatus.security;
-      selectedStatus.development = !OrderProjectStatus.security;
-      selectedStatus.security = OrderProjectStatus.security;
-    }
-
-    const remainderDes = 100 - (clampedDesign || 0);
-    const remainderDev = 100 - (clampedDevelopment || 0);
-    const remainderSecr = 100 - (clampedSecurity || 0);
-
-    const designValue = selectedStatus.design
-      ? selectedStatus.development || selectedStatus.security
-        ? 1
-        : 0
-      : 1 - 1;
-    const developmentValue = selectedStatus.development
-      ? selectedStatus.design || selectedStatus.security
-        ? 1
-        : 0
-      : 1 - 1;
-    const securityValue = selectedStatus.security
-      ? selectedStatus.design || selectedStatus.development
-        ? 1
-        : 0
-      : 1 - 1;
-    return [
-      selectedStatus.design ? clampedDesign : 0,
-      selectedStatus.design ? remainderDes : 0,
-      designValue,
-      selectedStatus.development ? clampedDevelopment : 0,
-      selectedStatus.development ? remainderDev : 0,
-      developmentValue,
-      selectedStatus.security ? clampedSecurity : 0,
-      selectedStatus.security ? remainderSecr : 0,
-      securityValue,
-    ];
+    return result;
   }
 
   const result = fillArrayWithValues();
@@ -202,6 +134,18 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
           } else if (index === 7) {
             gradient.addColorStop(0, "#EDEDED");
             gradient.addColorStop(1, "#EDEDED");
+          } else if (index === 9) {
+            gradient.addColorStop(0.2, "#f4a78994");
+            gradient.addColorStop(1, "#3b8d61c4");
+          } else if (index === 10) {
+            gradient.addColorStop(0, "#EDEDED");
+            gradient.addColorStop(1, "#EDEDED");
+          } else if (index === 12) {
+            gradient.addColorStop(0.2, "#f4a78994");
+            gradient.addColorStop(1, "#83addf8f");
+          } else if (index === 13) {
+            gradient.addColorStop(0, "#EDEDED");
+            gradient.addColorStop(1, "#EDEDED");
           }
           return gradient;
         },
@@ -225,7 +169,7 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
     <div className={s.wrapper}>
       <Doughnut data={dataDoughnut} options={doughnutOptions} />
       <div className={s.title}>
-        <h1>{activeCategory ? `${activePercentage}%` : `${total}%`}</h1>
+        <h1>{`${activePercentage}%`}</h1>
       </div>
     </div>
   );

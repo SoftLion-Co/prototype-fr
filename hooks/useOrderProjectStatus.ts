@@ -23,23 +23,26 @@ export interface OrderProjectStatuse {
   customerId: string;
   title: string;
   projectStatus: number;
-  design: boolean;
-  development: boolean;
-  security: boolean;
   id: string;
   createdDateTime: string;
   updatedDateTime: any;
 }
 
 export interface PeriodProgress {
-  orderProjectStatusId: string;
+  service: Service;
   numberWeek: number;
-  design: number;
-  development: number;
-  security: number;
+  progress: number;
+  orderProjectStatusId: string;
   id: string;
   createdDateTime: string;
   updatedDateTime: any;
+}
+
+export interface Service {
+  title: string;
+  description: string;
+  id: string;
+  createdDateTime: string;
 }
 
 export function useOrderProjectStatus() {
@@ -57,7 +60,15 @@ export function useOrderProjectStatus() {
       }))
     : [];
 
-  const orderProjecData = data ? data.result[0].orderProjectStatuses : [];
+  // const orderProjecData = data ? data.result[0].orderProjectStatuses : [];
+  const orderProjecData = data
+    ? data.result[0].orderProjectStatuses.sort((a, b) => {
+        const titleComparison = a.title.localeCompare(b.title);
+        return titleComparison !== 0
+          ? titleComparison
+          : a.periodProgresses[0].numberWeek - b.periodProgresses[0].numberWeek;
+      })
+    : [];
 
   return { data, sidebarMenuData, orderProjecData, ...rest };
 }

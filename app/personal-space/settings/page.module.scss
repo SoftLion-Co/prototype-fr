@@ -11,6 +11,7 @@
   flex-direction: column;
   padding-bottom: 300px;
   gap: 30px;
+
   &__container {
     display: flex;
     flex: 1;
@@ -18,5 +19,12 @@
   }
   @include for-size(tablet) {
     flex-direction: row;
+  }
+  @include for-size(tablet) {
+    /* Змініть стилі для tablet тут */
+    flex-direction: row;
+    .sideBar {
+      display: none;
+    }
   }
 }
