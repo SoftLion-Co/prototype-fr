@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+
 import s from "./page.module.scss";
 import HeroSection from "./sections/home_page/HeroSection";
 import OurProjectsSection from "./sections/home_page/OurProjectsSection";
@@ -21,17 +21,7 @@ const Home = () => {
 
   return (
     <div className={s.home_page}>
-      <Head>
-        <meta
-          name="description"
-          content="SoftLion - Your Trusted Partner in IT Services and Consulting. We provide web development, consulting, and technology solutions to drive your business growth."
-        />
 
-        <meta
-          name="keywords"
-          content="софтлайон, web-company, shopify, development, outsourcing, programming outsourcing"
-        />
-      </Head>
 
       <HeroSection />
       <TechnologiesSection />
