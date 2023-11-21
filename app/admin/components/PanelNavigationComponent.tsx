@@ -6,7 +6,6 @@ import Link from "next/link";
 import classNames from "classnames";
 
 const PanelNavigationComponent = () => {
-  
 
   return (
     <div>

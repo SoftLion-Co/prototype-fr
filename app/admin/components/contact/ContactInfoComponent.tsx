@@ -18,7 +18,7 @@ const ContactInfoComponent: React.FC<Props> = ({
   onEditButtonClick,
   onUpdate
 }) => {
-  const {formatDMY} = useDateFormat();
+  const { formatDMY } = useDateFormat();
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [filteredContacts, setFilteredContacts] = useState<ContactData[]>(contacts);
 
@@ -69,19 +69,19 @@ const ContactInfoComponent: React.FC<Props> = ({
           sortOrderChange={sortOrderChange}
         />
       </div>
-<div className={s.list__container}>
-<ul className={s.user__list}>
-        {filteredContacts.map((contact, index) => (
-          <li onClick={() => onCardClick(contact)} className={s.user__list__item} key={contact.id}>
-            <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
-              <p>{index + 1}</p>
-              <p>{contact.email}</p>
-              <p>{formatDMY(new Date(contact.createdDateTime))}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-</div>
+      <div className={s.list__container}>
+        <ul className={s.user__list}>
+          {filteredContacts.map((contact, index) => (
+            <li onClick={() => onCardClick(contact)} className={s.user__list__item} key={contact.id}>
+              <div className={s.user__list__information} onClick={() => onCardClick(contact)}>
+                <p>{index + 1}</p>
+                <p>{contact.email}</p>
+                <p>{formatDMY(new Date(contact.createdDateTime))}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

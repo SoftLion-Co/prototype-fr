@@ -12,7 +12,6 @@ import ReactCountryFlag from "react-country-flag";
 const NewProjectCard = () => {
   const [requirementsCount, setRequirementsCount] = useState(0);
   const [paragraphsCount, setParagraphsCount] = useState(0);
-  // const [countries, setCountries] = useState<string[]>([]);
   const [countryCode, setCountryCode] = useState<string>("");
 
   const handleCountryCodeChange = (
@@ -20,17 +19,6 @@ const NewProjectCard = () => {
   ) => {
     setCountryCode(event.target.value);
   };
-
-  // useEffect(() => {
-  //   async function fetchCountries() {
-  //     const countries = await countryService.getAllCountries();
-
-  //     setCountries(countries.result.map((country: any) => country.name));
-  //     console.log("countries", countries);
-  //   }
-
-  //   fetchCountries();
-  // }, []);
 
   const handleAddRequirement = () => {
     if (requirementsCount < 4) {
@@ -103,15 +91,15 @@ const NewProjectCard = () => {
           <div className={s.image_block__container}>
             <div className={s.image_inputs__container}>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_0_img"/>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" name="project_0_img" />
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_1_img"/>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" name="project_1_img" />
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_2_img"/>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" name="project_2_img" />
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
@@ -119,7 +107,7 @@ const NewProjectCard = () => {
                 <ImImage className={s.icon} />
               </div>
               <div className={s.image_input__container}>
-                <FileInput className={s.image_input} placeholder="Для ілюстрації"  name="project_4_img"/>
+                <FileInput className={s.image_input} placeholder="Для ілюстрації" name="project_4_img" />
                 <ImImage className={s.icon} />
               </div>
             </div>
@@ -128,70 +116,67 @@ const NewProjectCard = () => {
             <input className={s.input} type="text" placeholder="Для заголовку" name="project_title"></input>
             <textarea className={classNames(s.input, s.textarea)} placeholder="Для опису" name="project_description"></textarea>
           </div>
-          
+
           <div className={classNames(s.input__container, s.input__container_row)}>
             <div >
-            <select className={classNames(s.input, s.select)} defaultValue="default" name="period">
-              <option className={classNames(s.select__option, s.hidden)} value="default">
-                Період
-              </option>
-              <option className={s.select__option}>1 Week</option>
-              <option className={s.select__option}>2 Weeks</option>
-              <option className={s.select__option}>3 Weeks</option>
-              <option className={s.select__option}>1 Month</option>
-              <option className={s.select__option}>2 Months</option>
-              <option className={s.select__option}>3 Months</option>
-              <option className={s.select__option}>4 Months</option>
-              <option className={s.select__option}>5 Months</option>
-              <option className={s.select__option}>6 Months</option>
-              <option className={s.select__option}>7 Months</option>
-              <option className={s.select__option}>8 Months</option>
-              <option className={s.select__option}>9 Months</option>
-              <option className={s.select__option}>10 Months</option>
-              <option className={s.select__option}>11 Months</option>
-              <option className={s.select__option}>1 Year</option>
-              <option className={s.select__option}>1.5 Year</option>
-              <option className={s.select__option}>2 Years</option>
-            </select>
-            <select className={classNames(s.input, s.select)} defaultValue="default" name="year">
-              <option className={classNames(s.select__option, s.hidden)} value="default">
-                Рік
-              </option>
-              {createListOfYears().map((year, index) => (
-                <option className={s.select__option} key={index}>
-                  {year}
+              <select className={classNames(s.input, s.select)} defaultValue="default" name="period">
+                <option className={classNames(s.select__option, s.hidden)} value="default">
+                  Період
                 </option>
-              ))}
-            </select>
+                <option className={s.select__option}>1 Week</option>
+                <option className={s.select__option}>2 Weeks</option>
+                <option className={s.select__option}>3 Weeks</option>
+                <option className={s.select__option}>1 Month</option>
+                <option className={s.select__option}>2 Months</option>
+                <option className={s.select__option}>3 Months</option>
+                <option className={s.select__option}>4 Months</option>
+                <option className={s.select__option}>5 Months</option>
+                <option className={s.select__option}>6 Months</option>
+                <option className={s.select__option}>7 Months</option>
+                <option className={s.select__option}>8 Months</option>
+                <option className={s.select__option}>9 Months</option>
+                <option className={s.select__option}>10 Months</option>
+                <option className={s.select__option}>11 Months</option>
+                <option className={s.select__option}>1 Year</option>
+                <option className={s.select__option}>1.5 Year</option>
+                <option className={s.select__option}>2 Years</option>
+              </select>
+              <select className={classNames(s.input, s.select)} defaultValue="default" name="year">
+                <option className={classNames(s.select__option, s.hidden)} value="default">
+                  Рік
+                </option>
+                {createListOfYears().map((year, index) => (
+                  <option className={s.select__option} key={index}>
+                    {year}
+                  </option>
+                ))}
+              </select>
             </div>
-         <div>
-         <input className={s.input} type="text" placeholder="Країна" />
-            <div className={s.input__country}>
-            <input className={s.input}
-              type="text"
-              id="countryCode"
-              name="countryCode"
-              placeholder="Country Code alpha-2"
-              value={countryCode}
-              onChange={handleCountryCodeChange}
-            />
-            <ReactCountryFlag
-            className={s.icon_country}
-              countryCode={countryCode}
-              svg
-              style={{
-                width: "2em",
-                height: "1.5em",
-                borderRadius: "0.3em",
-              }}
-            />
+            <div>
+              <input className={s.input} type="text" placeholder="Країна" />
+              <div className={s.input__country}>
+                <input className={s.input}
+                  type="text"
+                  id="countryCode"
+                  name="countryCode"
+                  placeholder="Country Code alpha-2"
+                  value={countryCode}
+                  onChange={handleCountryCodeChange}
+                />
+                <ReactCountryFlag
+                  className={s.icon_country}
+                  countryCode={countryCode}
+                  svg
+                  style={{
+                    width: "2em",
+                    height: "1.5em",
+                    borderRadius: "0.3em",
+                  }}
+                />
+              </div>
             </div>
-         </div>
-          
-           
           </div>
         </div>
-
         <div className={s.right_side__container}>
           <div className={s.right_side}>
             <div className={s.request__container}>

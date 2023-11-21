@@ -44,7 +44,7 @@ const contactUs = () => {
   }
 
   const deletCardBlog = async () => {
-  //  await orderBlogService.deleteOrderBlog(activeContact?.id);
+    //  await orderBlogService.deleteOrderBlog(activeContact?.id); //функціонал для видалення
     setActiveContact(null);
     await loadOrders();
 
@@ -71,7 +71,7 @@ const contactUs = () => {
 
       <div className={s.content_editor}>
         <MainPageHeading initialText="Заявки Blog" />
-        {activeContact && <ContactCard deleteCard={deletCardBlog} contact={activeContact}/>}
+        {activeContact && <ContactCard deleteCard={deletCardBlog} contact={activeContact} />}
       </div>
     </AdminLayout>
   );

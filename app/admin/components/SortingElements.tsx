@@ -8,7 +8,7 @@ import update from "@/app/admin/images/sort/update.svg";
 import addToList from "@/app/admin/images/sort/add-to-list.svg";
 import SortMenu, { SortMenuOption } from "./SortMenuComponent";
 import classNames from "classnames";
-import {BlogData} from '../../types';
+import { BlogData } from '../dashboard/types';
 
 interface SortingElementsProps {
   onSortOrderChange?: () => void; // Додайте проп
@@ -29,7 +29,7 @@ const SortingElements: React.FC<SortingElementsProps> = ({ showCreateButton, sor
   };
 
   const handleUpdateList = () => {
-    if(onUpdate){
+    if (onUpdate) {
       onUpdate();
     }
   };
@@ -60,7 +60,7 @@ const SortingElements: React.FC<SortingElementsProps> = ({ showCreateButton, sor
       {showCreateButton && <button className={s.sorting__button} type="button" onClick={handleAddToList}>
         <Image src={addToList} alt="add to list" />
       </button>
-}    </div>
+      }    </div>
   );
 };
 

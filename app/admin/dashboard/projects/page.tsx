@@ -74,7 +74,7 @@ const projects = () => {
         <MainPageHeading initialText="Проекти" />
         {openProject && <ProjectCard project={openProject} onDelete={() => setOpenProject(null)} />}
       </div>
-    
+
     </AdminLayout>
   );
 };

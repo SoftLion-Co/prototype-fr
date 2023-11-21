@@ -79,28 +79,25 @@ export const ContactCard: FC<Props> = ({ contact, deleteCard }) => {
             </p>
           </div>
         </div>
-
         <div className={s.buttons_container}>
           {currentContact.orderType !== true && <Button text="Прийняти" onClick={approveContact} />}
           {currentContact.orderType !== false && <Button text="Відхилити" onClick={rejectContact} />}
           <Button onClick={() => setIsDeleteModalOpen(true)} text="Видалити" theme="delete" />
         </div>
       </div>
-
-
       <Modal isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}> 
-            <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
+        onClose={() => setIsDeleteModalOpen(false)}>
+        <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
 
-            <div className={s.modal__content__buttons}>
-              <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
-                Повернутись
-              </button>
-              <button className={s.button__modal} onClick={onDeleteCard} type="button">
-                Видалити
-              </button>
-          </div>
-        </Modal>
+        <div className={s.modal__content__buttons}>
+          <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
+            Повернутись
+          </button>
+          <button className={s.button__modal} onClick={onDeleteCard} type="button">
+            Видалити
+          </button>
+        </div>
+      </Modal>
     </>
   );
 };

@@ -1,17 +1,18 @@
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 import s from "./OrderStatusCard.module.scss";
 import { Button } from "../Button";
 import classNames from "classnames";
 import { FaRegHandPointDown } from "react-icons/fa";
 import { Modal } from "../../modals/Modal";
 import { OrderStatusData } from "../../dashboard/orderStatus/page";
+import { Service } from './../../dashboard/types';
 
 interface ProjectCardProps {
   project: OrderStatusData;
   onDelete: (id: string) => void;
 }
 
-const detailsMockData: {week: number; design: number; development: number; protection: number}[] = [
+const detailsMockData: { week: number; design: number; development: number; protection: number }[] = [
   {
     week: 1,
     design: 10,
@@ -37,12 +38,16 @@ export const OrderCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
   const [status, setStatus] = useState('');
   const [showDetailsStatusModal, setShowDetailsStatusModal] = useState<boolean>(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
+  const [title, setTitle] = useState<string>("");
+
+  useEffect(() => {
+    setTitle(project.title);
+  },
+    [project])
 
   const handelClickButton = () => {
     setIsActiv(!isActiv);
   };
-
-  console.log(project)
 
   const handelStatusChang = (event: ChangeEvent<HTMLInputElement>): void => {
     setStatus(event.target.value)
@@ -60,7 +65,7 @@ export const OrderCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
   return (
     <>
       <form className={s.order}>
-        <input className={classNames(s.input__title, s.input)} type="text" placeholder="Для заголовку" />
+        <input className={classNames(s.input__title, s.input)} type="text" value={title} placeholder="Для заголовку" />
         <div className={s.order_status__container}>
           <button type="button" className={s.order__button} onClick={handelClickButton}>
             Статус
@@ -85,39 +90,33 @@ export const OrderCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
                 <input id="canceled" type="radio" name="status" value="canceled" onChange={handelStatusChang} checked={status === "canceled"} />
                 <label className={s.status__text} htmlFor="canceled">Скасований</label>
               </div>
-           
             </div>
           )}
         </div>
-
         <div className={s.progress}>
           <div className={s.input__container}>
             <label className={s.input__label}>Дизайн:</label>
             <input className={classNames(s.input, s.input__progress)} type="text" placeholder="%" />
           </div>
-
-          <div className={s.input__container}>
-            <label className={s.input__label}>Розробка:</label>
-            <input className={classNames(s.input, s.input__progress)} type="text" placeholder="%" />
-          </div>
-
-          <div className={s.input__container}>
-            <label className={s.input__label}>Захист:</label>
-            <input className={classNames(s.input, s.input__progress)} type="text" placeholder="%" />
+          <div className={s.select__container}>
+            <label className={s.input__label} htmlFor="services">Services:</label>
+            <select className={s.input} id="services"  >
+              <option>Test</option>
+              <option>Test-1</option>
+              <option>Test-2</option>
+              <option>Test-3</option>
+            </select>
           </div>
           <div className={s.button_details}>
             <Button onClick={handleDetailsStatusModal} type="button" text="Деталі" />
           </div>
         </div>
-
         <div className={s.chart__container}></div>
-
         <div className={s.buttons_container}>
           <Button type="submit" text="Опублікувати" />
-          <Button type="button" text="Видалити" theme="delete" onClick={() => setIsDeleteModalOpen(true)}/>
+          <Button type="button" text="Видалити" theme="delete" onClick={() => setIsDeleteModalOpen(true)} />
         </div>
       </form>
-
       <Modal onClose={() => setShowDetailsStatusModal(false)} isOpen={showDetailsStatusModal}>
         <table>
           <thead>
@@ -142,20 +141,19 @@ export const OrderCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
           </tbody>
         </table>
       </Modal>
-
       <Modal isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}> 
-            <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
+        onClose={() => setIsDeleteModalOpen(false)}>
+        <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
 
-            <div className={s.modal__content__buttons}>
-              <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
-                Повернутись
-              </button>
-              <button className={s.button__modal} onClick={onDeleteCard} type="button">
-                Видалити
-              </button>
-          </div>
-        </Modal>
+        <div className={s.modal__content__buttons}>
+          <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
+            Повернутись
+          </button>
+          <button className={s.button__modal} onClick={onDeleteCard} type="button">
+            Видалити
+          </button>
+        </div>
+      </Modal>
     </>
   );
 };

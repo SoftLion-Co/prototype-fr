@@ -10,6 +10,7 @@ import MainPageHeading from "../../components/MainPageHeading";
 import { OrderCard } from "../../components/orderStatus/OrderStatusCard";
 import { useSearchParams } from "next/navigation";
 import orderProjectStatusService from "../../../../services/order-project-status-service";
+import { NewOrderStatus } from "../../components/orderStatus/NewOrderStatus";
 
 export interface OrderStatusData {
   periodProgresses: string[];
@@ -28,18 +29,26 @@ const OrderStatus = () => {
   const [users, setUsers] = useState<OrderStatusData[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResultCount, setSearchResultCount] = useState(0);
-  const [isContentEditorVisible, setIsContentEditorVisible] = useState(false);
   const [activeProject, setActiveProject] = useState<OrderStatusData>();
+  const [isNewOrderStatusVisible, setIsNewOrderStatusVisible] = useState(false);
   const serchParams = useSearchParams();
 
   const handleEditButtonClick = (order: OrderStatusData): void => {
+    if (activeProject?.id === order?.id) {
+      setActiveProject(undefined);
+      return;
+    }
     setActiveProject(order);
-    setIsContentEditorVisible(!isContentEditorVisible);
+    setIsNewOrderStatusVisible(false);
   };
+  const handleNewOrderStatus = (): void => {
+    setIsNewOrderStatusVisible(!isNewOrderStatusVisible);
+    setActiveProject(undefined);
+  }
 
   const loadOrderStatuses = async (): Promise<void> => {
     const getProjectByCustomerId = async () => {
-      const customerProjects = await orderProjectStatusService.getOrderProjectStatusByCustomerId(serchParams.get('author'));
+      const customerProjects = await orderProjectStatusService.getOrderProjectStatusByCustomerId(serchParams?.get('author'));
 
       setUsers(customerProjects.result);
     }
@@ -50,13 +59,13 @@ const OrderStatus = () => {
       setUsers(statuses.result)
     }
 
-    if (serchParams.get('author')) {
+    if (serchParams?.get('author')) {
       getProjectByCustomerId();
     }
     else {
       getAllOrderProjectStatuses();
     }
-  } 
+  }
 
   useEffect(() => {
     loadOrderStatuses();
@@ -71,7 +80,6 @@ const OrderStatus = () => {
 
   const onDelete = async (id: string): Promise<void> => {
     // await orderProjectStatusService.deleteOrderProjectStatus(id);
-    setIsContentEditorVisible(false);
     setActiveProject(undefined);
   }
 
@@ -84,7 +92,7 @@ const OrderStatus = () => {
           onUpdate={loadOrderStatuses}
           setSearchTerm={setSearchTerm}
           onCardClick={handleEditButtonClick}
-          onEditButtonClick={handleEditButtonClick}
+          onEditButtonClick={handleNewOrderStatus}
         />
 
         <ItemCountDisplayComponent
@@ -97,7 +105,8 @@ const OrderStatus = () => {
 
       <div className={s.order_editor}>
         <MainPageHeading initialText="Статус замовлення" />
-        {isContentEditorVisible && <OrderCard project={(activeProject as OrderStatusData)} onDelete={onDelete}/>}
+        {activeProject && <OrderCard project={(activeProject as OrderStatusData)} onDelete={onDelete} />}
+        {isNewOrderStatusVisible && <NewOrderStatus />}
       </div>
     </AdminLayout>
   );

@@ -3,7 +3,6 @@
 @import "../../modals/Modal.module.scss";
 
 
-
 .input {
   background: rgba(175, 218, 237, 0.1);
   border: 2px solid rgba(72, 138, 167, 0.3);
@@ -32,32 +31,6 @@
       letter-spacing: 0.7px;
     }
   }
-
-  &__label {
-    color: rgba(72, 138, 167, 0.5);
-    font-size: 14px;
-    line-height: 130.49%;
-    letter-spacing: 0.56px;
-    margin-left: 12px;
-  }
-
-  &__progress {
-    font-size: 16px;
-    width: 100%;
-
-    &::placeholder {
-      color: rgba(72, 138, 167, 0.5);
-      font-size: 24px;
-      line-height: 130.49%;
-      letter-spacing: 0.96px;
-      text-align: right;
-    }
-  }
-
-  &__container {
-    flex: 1;
-  }
-
 }
 
 .order {
@@ -77,6 +50,7 @@
     gap: 10px;
     padding: 3px 5px;
     border-radius: 5px;
+    margin-bottom: 30px;
 
     &:hover {
       box-shadow: 2.5px 3.5px 8.5px 0px rgba(0, 0, 0, 0.15);
@@ -89,15 +63,16 @@
   background: rgba(255, 255, 255, 1);
   padding: 28px 30px;
   width: 100%;
+  max-height: 240px;
+  overflow-y: auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 28px;
-  margin-bottom: 61px;
-  margin-top: 18px;
   position: absolute;
   box-shadow: 3.5px 3.5px 8.5px 2px rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(72, 138, 167, 0.3);
+  z-index: 10;
 
   &__text {
     color: #488aa7;
@@ -105,20 +80,6 @@
     line-height: 130.49%;
     letter-spacing: 0.64px;
   }
-
-  &__info {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-}
-
-.progress {
-  display: flex;
-  gap: 24px;
-  width: 100%;
-  margin-bottom: 61px;
-  margin-top: 43px;
 }
 
 .buttons_container {
@@ -130,14 +91,6 @@
   padding-top: 45px;
 }
 
-.chart__container {
-  border: 2px solid rgb(40, 39, 39);
-  width: 100%;
-  height: 150px;
-  margin-bottom: 91px;
-  box-sizing: border-box;
-}
-
 .order_status__container {
   position: relative;
 }
@@ -147,10 +100,7 @@
   align-items: flex-end;
 }
 
-.select__container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  justify-content: center;
-  flex: 1;
+.service {
+  width: 100%;
+  position: relative;
 }

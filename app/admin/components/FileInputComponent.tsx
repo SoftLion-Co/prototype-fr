@@ -32,7 +32,7 @@ const FileInput: FC<FileInputProps> = ({ alloudFileTypes = "image/*,.pdf", place
       ) : (
         <span className={s.input__text}>{placeholder}</span>
       )}
-      <input onChange={onFileLoad} ref={myInput} type="file" accept={alloudFileTypes} className={s.input} {...rest}/>
+      <input onChange={onFileLoad} ref={myInput} type="file" accept={alloudFileTypes} className={s.input} {...rest} />
     </div>
   );
 };

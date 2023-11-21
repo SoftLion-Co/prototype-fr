@@ -43,8 +43,8 @@ const Blogs = () => {
   }, [searchTerm, blogs]);
 
   const removeBlogs = () => {
-  //  blogService.deleteBlog(activeBlog!.id);
-   setIsConfirmDeleteModalOpen(false)
+    //  blogService.deleteBlog(activeBlog!.id);
+    setIsConfirmDeleteModalOpen(false)
   }
 
   return (
@@ -64,11 +64,11 @@ const Blogs = () => {
         <div className={s.content_editor}>
           <MainPageHeading initialText="Blog" />
 
-          {isContentEditorVisible && <ContentEditor blog={activeBlog}/>}
+          {isContentEditorVisible && <ContentEditor blog={activeBlog} />}
         </div>
       </AdminLayout>
-<Modal onClose={() => setIsConfirmDeleteModalOpen(false)} isOpen={isConfirmDeleteModalOpen}>
-<div className={s.modal}>
+      <Modal onClose={() => setIsConfirmDeleteModalOpen(false)} isOpen={isConfirmDeleteModalOpen}>
+        <div className={s.modal}>
           <div className={s.modal__head}>
             <button onClick={() => setIsConfirmDeleteModalOpen(false)} type="button">
               <RxCross2 />
@@ -88,7 +88,7 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-</Modal>
+      </Modal>
     </>
   );
 };

@@ -9,7 +9,7 @@ interface ProjectCardProps {
   onDelete: () => void;
 }
 
-export const ProjectCard: FC<ProjectCardProps> = ({ project,  onDelete }) => {
+export const ProjectCard: FC<ProjectCardProps> = ({ project, onDelete }) => {
   const deleteProject = () => {
     // projectService.deleteProject(project.id);
     onDelete();
@@ -20,7 +20,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project,  onDelete }) => {
       <p className={s.project__descripcion}>{project.description}</p>
 
       <div className={s.buttons_container}>
-        <Button  text="Редагувати" />
+        <Button text="Редагувати" />
         <Button onClick={deleteProject} text="Видалити" theme="delete" />
       </div>
     </div>

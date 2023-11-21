@@ -91,18 +91,18 @@ export const ClientCard: FC<Props> = ({ client, onDelete }) => {
       </div>
 
       <Modal isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}> 
-            <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
+        onClose={() => setIsDeleteModalOpen(false)}>
+        <p className={s.modal__content__text}>Ви підтверджуєте видалення?</p>
 
-            <div className={s.modal__content__buttons}>
-              <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
-                Повернутись
-              </button>
-              <button className={s.button__modal} onClick={deleteCustomer} type="button">
-                Видалити
-              </button>
-          </div>
-        </Modal>
+        <div className={s.modal__content__buttons}>
+          <button className={s.button__modal} onClick={() => setIsDeleteModalOpen(false)} type="button">
+            Повернутись
+          </button>
+          <button className={s.button__modal} onClick={deleteCustomer} type="button">
+            Видалити
+          </button>
+        </div>
+      </Modal>
     </>
   );
 };

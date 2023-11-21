@@ -36,7 +36,7 @@ const contactUs = () => {
   };
 
   const deletContactUsCard = async () => {
-    // await orderProjectService.deleteOrderProject(contact?.id);
+    // await orderProjectService.deleteOrderProject(contact?.id); //функціонал для видалення
     setContact(null);
     await loadOrders();
 
@@ -47,9 +47,7 @@ const contactUs = () => {
     <AdminLayout>
       <div className={s.contact}>
         <ContactInfoComponent contacts={filteredContact} onUpdate={() => setReload(!reload)} onCardClick={setContact} onEditButtonClick={handleEditButtonClick} />
-
         <ItemCountDisplayComponent text="Кількість заявок" number={filteredContact.length} icon={IconType.People} />
-
         <FilterContactControls contacts={orders} setFilteredContact={setFilteredContact} />
       </div>
 

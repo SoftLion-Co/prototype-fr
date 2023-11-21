@@ -8,8 +8,6 @@ import { SortMenuOption } from "../SortMenuComponent";
 import { formatDate } from "../../utils/formatDate";
 import { BlogData } from "../../dashboard/types";
 
-
-
 interface Props {
   blogs: BlogData[];
   onEditButtonClick: (blog: BlogData | null) => void;
@@ -57,8 +55,6 @@ const BlogInfoComponent: React.FC<Props> = ({ blogs, onEditButtonClick, onUpdate
     setfilteredBlogs([...filteredBlogs].reverse());
   };
 
-
-
   return (
     <div className={s.user}>
       <div className={s.user__search}>
@@ -72,29 +68,29 @@ const BlogInfoComponent: React.FC<Props> = ({ blogs, onEditButtonClick, onUpdate
           onUpdate={onUpdateBlogs}
         />
       </div>
-<div className={s.list__container}>
-<ul className={s.user__list}>
-        {filteredBlogs.map((blog, index) => (
-          <li className={s.user__list__item} key={blog.id}>
-            <div className={s.user__list__information}>
-              <p>{index + 1}</p>
-              <p>{blog.title}</p>
-              <p>{formatDate(blog.createdDateTime)}</p>
-              {/* <p>{blog.rating}</p> */} 
-            </div>
-            <div className={s.user__list__buttons}>
-              <button type="button" className={s.user__list__button}>
-                <Image className={s.user__list__button__image} src={edit} alt="Edit" width={16} height={16} onClick={() => onEditButtonClick(blog)}/>
-              </button>
-              <button type="button" className={s.user__list__button}>
-                <Image className={s.user__list__button__image} src={bin} alt="Edit" width={16} height={16} />
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-</div>
-     
+      <div className={s.list__container}>
+        <ul className={s.user__list}>
+          {filteredBlogs.map((blog, index) => (
+            <li className={s.user__list__item} key={blog.id}>
+              <div className={s.user__list__information}>
+                <p>{index + 1}</p>
+                <p>{blog.title}</p>
+                <p>{formatDate(blog.createdDateTime)}</p>
+                {/* <p>{blog.rating}</p> */}
+              </div>
+              <div className={s.user__list__buttons}>
+                <button type="button" className={s.user__list__button}>
+                  <Image className={s.user__list__button__image} src={edit} alt="Edit" width={16} height={16} onClick={() => onEditButtonClick(blog)} />
+                </button>
+                <button type="button" className={s.user__list__button}>
+                  <Image className={s.user__list__button__image} src={bin} alt="Edit" width={16} height={16} />
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
     </div>
   );
 };

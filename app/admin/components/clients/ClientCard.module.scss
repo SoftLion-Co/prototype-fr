@@ -50,11 +50,11 @@
     font-size: 14px;
     color: $heading-blue-color;
 
-    &:disabled{
+    &:disabled {
       color: #97b9c9;
       cursor: no-drop;
 
-      &::after{
+      &::after {
         background-color: #97b9c9;
 
       }

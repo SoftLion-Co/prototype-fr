@@ -35,9 +35,9 @@ const FilterContactControls: FC<FilterContactControlsProps> = ({ contacts, setFi
   return (
     <div className={s.container}>
       <div className={s.button__container}>
-        <Button onClick={() => filterByVerification(FilterType.NEW)}  className={activeFilter === FilterType.NEW ? s.active : "" } text="Нові заявки" />
-        <Button onClick={() => filterByVerification(FilterType.VERIFIED)} className={activeFilter === FilterType.VERIFIED ? s.active : "" } text="Прийняті заявки" />
-        <Button onClick={() => filterByVerification(FilterType.DECLINED)} className={activeFilter === FilterType.DECLINED ? s.active : "" } text="Відхилені заявки" />
+        <Button onClick={() => filterByVerification(FilterType.NEW)} className={activeFilter === FilterType.NEW ? s.active : ""} text="Нові заявки" />
+        <Button onClick={() => filterByVerification(FilterType.VERIFIED)} className={activeFilter === FilterType.VERIFIED ? s.active : ""} text="Прийняті заявки" />
+        <Button onClick={() => filterByVerification(FilterType.DECLINED)} className={activeFilter === FilterType.DECLINED ? s.active : ""} text="Відхилені заявки" />
       </div>
     </div>
 

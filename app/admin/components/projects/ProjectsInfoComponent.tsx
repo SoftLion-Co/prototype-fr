@@ -13,16 +13,15 @@ interface Props {
   onEditButtonClick: () => void;
 }
 
-
 const ProjectsInfoComponent: React.FC<Props> = ({
   projects,
   searchTerm,
   setSearchTerm,
   onCardClick,
   onEditButtonClick,
- 
 }) => {
-  const {formatDMY} = useDateFormat();
+  
+  const { formatDMY } = useDateFormat();
   const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>(projects.filter(project =>
     project.description.toLowerCase().includes(searchTerm.toLowerCase())
   ));
@@ -78,8 +77,6 @@ const ProjectsInfoComponent: React.FC<Props> = ({
   const onSortChange = (): void => {
     setFilteredProjects([...filteredProjects].reverse());
   }
-
-
 
   return (
     <div className={s.user}>

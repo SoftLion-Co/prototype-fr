@@ -71,10 +71,10 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
   const convertFileToBase64 = async (file: File): Promise<string> => {
     return new Promise(res => {
       const reader = new FileReader();
-    
-      reader.readAsDataURL(file); 
 
-      reader.onloadend = function() {
+      reader.readAsDataURL(file);
+
+      reader.onloadend = function () {
         res(this.result as string);
       }
     });
@@ -83,7 +83,7 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
   const handleFormSubmit = async (event: any): Promise<void> => {
     event.preventDefault();
     const { elements } = event.target;
-    const {blog_img, blog_title, author_name: authorId } = elements;
+    const { blog_img, blog_title, author_name: authorId } = elements;
     const blogImage = blog_img.files[0];
     const blogTitle = blog_title.value;
     const paragraphImage = event.target.elements[`paragraph_0_img`].files[0];
@@ -114,18 +114,17 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
         projectId
       });
 
-      pictures.push({
-        url: "asd",
-        projectId,
-        blogId
-      });
-
       if (paragraphImageValue) {
         const paragraphImageBase64 = await convertFileToBase64(paragraphImageValue);
         paragraphImages.push(paragraphImageBase64);
+
+        pictures.push({
+          url: paragraphImageBase64,
+          projectId,
+          blogId
+        });
       }
     }
-
 
     let blogImageString = "";
 
@@ -138,6 +137,9 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
       blogImage: blogImageString,
       paragraphImages
     };
+    const formData = new FormData();
+
+    formData.append('url', blogImageString);
 
     const requestBody = {
       authorId: authorId.value,
@@ -146,20 +148,20 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
       readingTime: 0, // take somewhere this parameter
       viewers: 0, // take somewhere this parameter
       svg: {
-        url: "asd",
+        url: formData,
         blogId
       },
       paragraphs,
       pictures,
-      technologies: [{name: 'js'}],
+      technologies: [{ name: 'js' }],
     };
 
     // Create UI blog images object
-    blogService.createUIBlogImages(uiBody);
+    // blogService.createUIBlogImages(uiBody);
 
     // Create blog object on backend API 
     blogService.createBlog(requestBody);
-    
+
     // Get blog images from UI API by blog id
     // blogService.getUIBlogImagesById(blogId)
 
@@ -172,8 +174,8 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
       const isLastGroup = i + 3 >= paragraphsCount;
       paragraphs.push(
         <div className={s.input__container} key={i}>
-          <FileInput placeholder="Для картинки" name={`paragraph_${i}_img`}/>
-          <input className={s.input__entry} type="text" placeholder="Для заголовку абзацу" name={`paragraph_${i}_title`}/>
+          <FileInput placeholder="Для картинки" name={`paragraph_${i}_img`} />
+          <input className={s.input__entry} type="text" placeholder="Для заголовку абзацу" name={`paragraph_${i}_title`} />
           <textarea
             className={classNames(s.input__entry, s.input__entry_extended, {
               [s.lastParagraph]: isLastGroup,
@@ -190,12 +192,12 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
 
   return (
     <>
-    {blogImages.map(src => <img src={src}/>)}
+      {blogImages.map(src => <img src={src} />)}
       <form className={s.input} onSubmit={handleFormSubmit}>
         <div className={s.input__scroll}>
           <div className={s.input__container}>
-            <FileInput placeholder="Для ілюстрації" name="blog_img"/>
-            <input className={s.input__entry} type="text" placeholder="Для заголовку" name="blog_title"/>
+            <FileInput placeholder="Для ілюстрації" name="blog_img" />
+            <input className={s.input__entry} type="text" placeholder="Для заголовку" name="blog_title" />
           </div>
 
           <div className={s.input__container}>
@@ -209,9 +211,6 @@ const ContentEditor: FC<ContentEditorProps> = ({ blog }) => {
                 </option>
               ))}
             </select>
-
-            {/* <FileInput placeholder="Для фотографії автора" name="author_img"/>
-            <input className={s.input__entry} type="text" placeholder="Для посади автора" name="author_position"/> */}
           </div>
 
           {renderParagraphs()}

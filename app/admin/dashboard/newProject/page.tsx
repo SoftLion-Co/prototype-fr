@@ -4,7 +4,7 @@ import { AdminLayout } from "../AdminLayout"
 const newProject = () => {
     return (
         <AdminLayout>
-            <NewProjectCard/>
+            <NewProjectCard />
         </AdminLayout>
     )
 }

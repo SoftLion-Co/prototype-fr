@@ -64,3 +64,11 @@ export interface BlogAuthor {
   createdDateTime: string;
   updatedDateTime: string;
 }
+
+export interface Service {
+  title: string;
+  description: string;
+  id: string;
+  createdDateTime: string;
+  updatedDateTime: string;
+}

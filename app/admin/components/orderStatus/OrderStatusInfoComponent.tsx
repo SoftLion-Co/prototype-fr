@@ -22,7 +22,7 @@ const OrderStatusInfoComponent: React.FC<Props> = ({
   onCardClick,
   onEditButtonClick,
 }) => {
-  const {formatDMY} = useDateFormat();
+  const { formatDMY } = useDateFormat();
   const [filteredOrders, setFilteredOrders] = useState<OrderStatusData[]>(orders.filter(order =>
     order.title.toLowerCase().includes(searchTerm.toLowerCase())
   ));
@@ -73,18 +73,18 @@ const OrderStatusInfoComponent: React.FC<Props> = ({
         />
       </div>
 
-<div className={s.list__container}> 
-      <ul className={s.user__list}>
-        {filteredOrders.map((order, index) => (
-          <li className={s.user__list__item} key={order.id} onClick={() => onCardClick(order)}>
-            <div className={s.user__list__information}>
-              <p>{index + 1}</p>
-              <p>{order.title}</p>
-              <p>{formatDMY(new Date(order.createdDateTime))}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className={s.list__container}>
+        <ul className={s.user__list}>
+          {filteredOrders.map((order, index) => (
+            <li className={s.user__list__item} key={order.id} onClick={() => onCardClick(order)}>
+              <div className={s.user__list__information}>
+                <p>{index + 1}</p>
+                <p>{order.title}</p>
+                <p>{formatDMY(new Date(order.createdDateTime))}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
