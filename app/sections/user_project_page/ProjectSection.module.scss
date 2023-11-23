@@ -1,81 +1,154 @@
-@import "../../../styles/container";
 @import "../../../styles/mixin";
-@import "../../../styles/colors";
 
 .project {
-  &__title {
-    font-size: 30px;
-    line-height: 1.16;
-    font-weight: 500;
-    text-align: center;
-    text-transform: uppercase;
-    // margin-bottom: 81px;
-  }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
   &__section {
     display: flex;
     flex-direction: column;
     gap: 89px;
   }
-}
-.project__header {
-  .title {
-    text-align: center;
-    margin-top: 70px;
-    margin-bottom: 40px;
-    font-size: 28px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    cursor: pointer;
-    user-select: none;
+  @include for-size(tablet) {
+    gap: 82px;
+  }
+  @include for-size(laptop) {
+    gap: 85px;
+  }
+  @include for-size(desktop) {
+    gap: 110px;
   }
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  gap: 28px;
+  &__container {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+    align-items: center;
+  }
+  &__title {
+    font-size: 29px;
+    display: none;
+  }
+  &__info {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  @include for-size(tablet) {
+    gap: 74px;
+    &__container {
+      gap: 57px;
+    }
+    &__title {
+      display: block;
+    }
+    &__info {
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 25px;
+      font-weight: 400;
+    }
+  }
+
+  @include for-size(laptop) {
+    gap: 91px;
+    &__container {
+      gap: 59px;
+    }
+  }
+
+  @include for-size(desktop) {
+    gap: 95px;
+    &__container {
+      gap: 35px;
+    }
+    &__title {
+      font-size: 30px;
+    }
+  }
+}
+
+.activeInfo {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .section__container {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  // .title {
-  //   font-size: 28px;
-  //   font-weight: 400;
-  //   letter-spacing: 2px;
-  // }
+  gap: 25px;
   .chart__сontainer {
     display: flex;
-    gap: 30px;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 67px;
+    @include for-size(tablet) {
+      gap: 117px;
+    }
+    @include for-size(laptop) {
+      gap: 47px;
+      flex-direction: row;
+    }
+    @include for-size(desktop) {
+      gap: 32px;
+    }
   }
-}
-
-.block {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-  user-select: none;
-  &__item {
-    display: flex;
-    gap: 17px;
-  }
-  &__label {
-    cursor: pointer;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 1.3;
-  }
-}
-.active {
-  color: rgba(0, 0, 0, 0.5);
-}
-.inactive {
-  // cursor: not-allowed;
-  text-decoration: line-through;
-  pointer-events: none;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .error__message {
-  width: 100%;
-  margin: 150px 0;
   color: rgba(0, 0, 0, 0.7);
   text-align: center;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 2px;
+  @include for-size(tablet) {
+    font-size: 22px;
+  }
+  @include for-size(laptop) {
+    font-size: 24px;
+  }
+}
+
+$color-InProgress: #00a3cc;
+$color-Completed: #49e2a2;
+$color-OnHold: #ffa500;
+$color-Canceled: #ff0000;
+
+.vectorTile {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 9px;
+    height: 9px;
+  }
+  .statusText {
+    color: #308bb7;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    &[data-custom-title="In Progress"] {
+      color: $color-InProgress;
+    }
+    &[data-custom-title="Completed"] {
+      color: $color-Completed;
+    }
+    &[data-custom-title="On Hold"] {
+      color: $color-OnHold;
+    }
+    &[data-custom-title="Canceled"] {
+      color: $color-Canceled;
+    }
+  }
+  @include for-size(tablet) {
+    display: none;
+  }
 }

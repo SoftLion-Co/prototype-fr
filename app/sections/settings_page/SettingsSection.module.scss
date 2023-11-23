@@ -1,56 +1,10 @@
-@import "./../../../styles/container";
+// @import "./../../../styles/container";
 @import "../../../styles/mixin";
 @import "../../../styles/colors";
 
-// .infoNavigat {
-//   grid-column: 1 / span 2;
-//   grid-row: 1;
-//   div {
-//     padding-left: 0;
-//     margin-top: 0;
-//     @include for-size(laptop) {
-//       padding-top: 10px;
-//     }
-//     @include for-size(desktop) {
-//       padding-top: 0;
-//     }
-//   }
-// }
-
-// .settings {
-
-//   .settingsHeader {
-//     text-align: center;
-//     font-weight: 500;
-//     font-size: 17px;
-//     margin-bottom: 64px;
-//     margin-top: 10px;
-//   }
-//   @include for-size(tablet) {
-
-//     width: 72%;
-//     .settingsHeader {
-//       font-size: 25px;
-//       line-height: 0.9;
-//       margin-bottom: 93px;
-//       margin-top: 0;
-//     }
-//   }
-//   @include for-size(laptop) {
-//     width: 68%;
-//     .settingsHeader {
-//       margin-bottom: 90px;
-//       line-height: 1.16;
-//       font-size: 30px;
-//     }
-//   }
-//   @include for-size(desktop) {
-//     .settingsHeader {
-//       margin-bottom: 74px;
-//     }
-//   }
-// }
-
+.settings {
+  flex: 1;
+}
 .form {
   display: flex;
   flex-direction: column;

@@ -1,10 +1,5 @@
 import s from "./ProductListComponent.module.scss";
-import Image from "next/image";
-
-import Vector from "@/images/personale-space/label-icon-vector.svg";
-// import Design from "@/images/personale-space/label-icon-design.svg";
-// import Development from "@/images/personale-space/label-icon-development.svg";
-// import Security from "@/images/personale-space/label-icon-security.svg";
+import DynamicGradientSVG from "@/app/personal-space/components/DynamicGradientSVG";
 
 interface ProductList {
   categoryStates: Record<string, boolean>;
@@ -13,12 +8,14 @@ interface ProductList {
     description: string;
   }[];
   isButtonActive?: boolean;
+  allColors?: { gradient1: string; gradient2: string }[];
 }
 
 const ProductListComponent: React.FC<ProductList> = ({
   categoryStates,
   uniqueService,
   isButtonActive,
+  allColors,
 }) => {
   return (
     <>
@@ -33,12 +30,12 @@ const ProductListComponent: React.FC<ProductList> = ({
 
               return isVisible ? (
                 <li className={s.block__listItem} key={index}>
-                  <Image
-                    width={24}
-                    height={23}
-                    src={Vector}
-                    alt={project.title}
-                  />
+                  <div className={s.block__icon}>
+                    <DynamicGradientSVG
+                      index={index}
+                      categoryColors={allColors ? allColors[index] : undefined}
+                    />
+                  </div>
                   <h3>{project.description}</h3>
                 </li>
               ) : null;

@@ -1,7 +1,9 @@
+@import "../../../styles/mixin";
+
 .wrapper {
-  width: 320px;
-  height: 320px;
   position: relative;
+  width: 156px;
+  height: 157px;
   canvas {
     background-color: #fff;
   }
@@ -11,5 +13,15 @@
     transform: translate(-50%, -50%);
     position: absolute;
     pointer-events: none;
+  }
+  @include for-size(tablet) {
+    width: 223px;
+    height: 224px;
+  }
+  @include for-size(laptop) {
+  }
+  @include for-size(desktop) {
+    width: 320px;
+    height: 320px;
   }
 }

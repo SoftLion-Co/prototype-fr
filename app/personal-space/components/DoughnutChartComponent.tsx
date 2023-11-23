@@ -30,17 +30,18 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
   categoryStates,
   OrderProjectStatus,
 }) => {
+  const { periodProgresses } = OrderProjectStatus;
   const clampValue = (value: number) => {
     return Math.min(Math.max(value, 0), 100);
   };
 
   const categoryProgress: Record<string, number> = {};
 
-  OrderProjectStatus.periodProgresses.sort((a, b) =>
+  periodProgresses.sort((a, b) =>
     a.service.title.localeCompare(b.service.title)
   );
 
-  OrderProjectStatus.periodProgresses.forEach((progress) => {
+  periodProgresses.forEach((progress) => {
     const category = progress.service.title;
 
     categoryProgress[category] = clampValue(
@@ -48,24 +49,24 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
     );
   });
 
-  console.log(categoryStates);
-  console.log(categoryProgress);
+  // console.log(categoryStates);
+  // console.log(categoryProgress);
 
   const totalPercentage = Math.round(
     Object.values(categoryProgress).reduce((acc, val) => acc + val, 0) /
       Object.keys(categoryProgress).length
   );
-  console.log(`totalPercentage: ${totalPercentage}%`);
+  // console.log(`totalPercentage: ${totalPercentage}%`);
 
   const activeCategory = Object.keys(categoryStates).find(
     (category) => categoryStates[category]
   );
-  console.log(`activeCategory: ${activeCategory}`);
+  // console.log(`activeCategory: ${activeCategory}`);
 
   const activePercentage = activeCategory
     ? categoryProgress[activeCategory]
     : totalPercentage;
-  console.log(`activePercentage: ${activePercentage}%`);
+  // console.log(`activePercentage: ${activePercentage}%`);
 
   function fillArrayWithValues(): number[] {
     const categoryState = !Object.values(categoryStates).some((state) => state);
@@ -116,37 +117,62 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
           const index = context.dataIndex;
           const ctx = context.chart.ctx;
           const gradient = ctx.createLinearGradient(0, 50, 300, 110);
-          if (index === 0) {
-            gradient.addColorStop(0.4, "#f7cdf5a6");
-            gradient.addColorStop(1, "#f4a78994");
-          } else if (index === 1) {
-            gradient.addColorStop(0, "#EDEDED");
-            gradient.addColorStop(1, "#EDEDED");
-          } else if (index === 3) {
-            gradient.addColorStop(0.4, "#83addf8f");
-            gradient.addColorStop(1, "#308bb7b3");
-          } else if (index === 4) {
-            gradient.addColorStop(0, "#EDEDED");
-            gradient.addColorStop(1, "#EDEDED");
-          } else if (index === 6) {
-            gradient.addColorStop(0.2, "#13eb9080");
-            gradient.addColorStop(1, "#3b8d61c4");
-          } else if (index === 7) {
-            gradient.addColorStop(0, "#EDEDED");
-            gradient.addColorStop(1, "#EDEDED");
-          } else if (index === 9) {
-            gradient.addColorStop(0.2, "#f4a78994");
-            gradient.addColorStop(1, "#3b8d61c4");
-          } else if (index === 10) {
-            gradient.addColorStop(0, "#EDEDED");
-            gradient.addColorStop(1, "#EDEDED");
-          } else if (index === 12) {
-            gradient.addColorStop(0.2, "#f4a78994");
-            gradient.addColorStop(1, "#83addf8f");
-          } else if (index === 13) {
-            gradient.addColorStop(0, "#EDEDED");
-            gradient.addColorStop(1, "#EDEDED");
+          switch (index) {
+            case 0:
+              gradient.addColorStop(0.4, "#f7cdf5a6");
+              gradient.addColorStop(1, "#F4A789");
+              break;
+            case 1:
+            case 4:
+            case 7:
+            case 10:
+            case 13:
+            case 16:
+            case 19:
+            case 22:
+            case 25:
+            case 28:
+              gradient.addColorStop(0, "#EDEDED");
+              gradient.addColorStop(1, "#EDEDED");
+              break;
+            case 3:
+              gradient.addColorStop(0.4, "#83addf8f");
+              gradient.addColorStop(1, "#3089b5b3");
+              break;
+            case 6:
+              gradient.addColorStop(0.2, "#13eb9080");
+              gradient.addColorStop(1, "#3b8d61c4");
+              break;
+            case 9:
+              gradient.addColorStop(0.2, "#fff493db");
+              gradient.addColorStop(1, "#FFD600");
+              break;
+            case 12:
+              gradient.addColorStop(0.2, "#d1090575");
+              gradient.addColorStop(1, "#E51818");
+              break;
+            case 15:
+              gradient.addColorStop(0.2, "#a154d175");
+              gradient.addColorStop(1, "#5F1F75");
+              break;
+            case 18:
+              gradient.addColorStop(0.2, "#4d3fed75");
+              gradient.addColorStop(1, "#3721BD");
+              break;
+            case 21:
+              gradient.addColorStop(0.2, "#7B1608");
+              gradient.addColorStop(1, "#b01d00d4");
+              break;
+            case 24:
+              gradient.addColorStop(0.2, "#46cf3aab");
+              gradient.addColorStop(1, "#2A9E5F");
+              break;
+            case 27:
+              gradient.addColorStop(0.2, "#f65a93ab");
+              gradient.addColorStop(1, "#E238B2");
+              break;
           }
+
           return gradient;
         },
         borderWidth: 0,

@@ -12,18 +12,20 @@ const PersonalS = () => {
   ];
 
   return (
-    <>
+    <div className={s.wrapper}>
       <div className={s.infoNavigat}>
         <InfoNavigationComponent links={links} />
       </div>
-      <div className={s.settings}>
-        <SidebarMenu />
-        <div className={s.settings__container}>
-          <MainHeaderComponents />
+      <div className={s.section}>
+        <MainHeaderComponents />
+        <div className={s.section__settings}>
+          <div className={s.section__sidebar}>
+            <SidebarMenu />
+          </div>
           <SettingsSection />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

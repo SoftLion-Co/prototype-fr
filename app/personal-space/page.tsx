@@ -1,42 +1,41 @@
 "use client";
-import React from "react";
-import s from "./page.module.scss";
+import React, { useEffect } from "react";
+// import s from "./page.module.scss";
+import { redirect } from "next/navigation";
 
-import InfoNavigationComponent from "@/components/InfoNavigationComponent";
-import ProjectSection from "@/app/sections/user_project_page/ProjectSection";
+import { useOrderProjectData } from "@/hooks/useOrderProjectData";
 import СustomLoaderComponent from "./components/СustomLoaderComponent";
-import SidebarMenu from "@/components/personal-space/SidebarMenu";
-import { useOrderProjectStatus } from "@/hooks/useOrderProjectStatus";
 
 const PersonalSpace: React.FC = () => {
-  const { orderProjecData, isLoading, error } = useOrderProjectStatus();
+  const { orderProjecData, isLoading, error } = useOrderProjectData();
+  const projectName = orderProjecData?.[0]?.title;
+  useEffect(() => {
+    if (projectName !== undefined && projectName !== null) {
+      redirect(`/personal-space/${projectName}`);
+    }
+  }, [projectName]);
 
   if (isLoading) {
     return <СustomLoaderComponent />;
   }
 
   if (error) {
-    return <div>Error loading data</div>;
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: 400,
+          display: "flex",
+          fontSize: 20,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Error loading data
+      </div>
+    );
   }
-
-  const projectName = orderProjecData?.[0]?.title;
-  const links = [{ title: projectName, href: "#" }];
-
-  console.log(orderProjecData);
-
-  return (
-    <div className={s.personale__space}>
-      <div className={s.infoNavigat}>
-        <InfoNavigationComponent links={links} />
-      </div>
-      <div className={s.project}>
-        <SidebarMenu />
-        <div className={s.project__container}>
-          <ProjectSection projectName={projectName} />
-        </div>
-      </div>
-    </div>
-  );
+  return null;
 };
 
 export default PersonalSpace;

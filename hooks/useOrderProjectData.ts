@@ -1,5 +1,5 @@
 import { useQuery, QueryKey } from "react-query";
-import CustomerService from "./../services/customer-service";
+import CustomerService from "../services/customer-service";
 
 export interface OrderProjectDataResponse {
   result: Result[];
@@ -45,7 +45,7 @@ export interface Service {
   createdDateTime: string;
 }
 
-export function useOrderProjectStatus() {
+export function useOrderProjectData() {
   const queryKey: QueryKey = "orderProjectStatus";
   const { data, ...rest } = useQuery<OrderProjectDataResponse>(
     queryKey,
@@ -60,15 +60,7 @@ export function useOrderProjectStatus() {
       }))
     : [];
 
-  // const orderProjecData = data ? data.result[0].orderProjectStatuses : [];
-  const orderProjecData = data
-    ? data.result[0].orderProjectStatuses.sort((a, b) => {
-        const titleComparison = a.title.localeCompare(b.title);
-        return titleComparison !== 0
-          ? titleComparison
-          : a.periodProgresses[0].numberWeek - b.periodProgresses[0].numberWeek;
-      })
-    : [];
+  const orderProjecData = data ? data.result[0].orderProjectStatuses : [];
 
   return { data, sidebarMenuData, orderProjecData, ...rest };
 }

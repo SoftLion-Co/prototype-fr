@@ -1,236 +1,241 @@
-// import { Line } from "react-chartjs-2";
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Legend,
-//   Filler,
-//   ScriptableContext,
-// } from "chart.js";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+  ScriptableContext,
+} from "chart.js";
 
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Legend,
-//   Filler
-// );
-// import s from "./LineChartComponent.module.scss";
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
+import s from "./LineChartComponent.module.scss";
 
-// interface LineChartProps {
-//   OrderProjectStatus: {
-//     design: boolean;
-//     development: boolean;
-//     security: boolean;
-//     periodProgresses: PeriodProgress[];
-//   };
-//   categoryStates: {
-//     design: boolean;
-//     development: boolean;
-//     security: boolean;
-//   };
-// }
+interface LineChartProps {
+  categoryStates: Record<string, boolean>;
+  OrderProjectStatus: {
+    periodProgresses: PeriodProgress[];
+  };
+}
 
-// interface PeriodProgress {
-//   design: number;
-//   development: number;
-//   security: number;
-//   numberWeek: number;
-// }
+interface PeriodProgress {
+  service: Service;
+  numberWeek: number;
+  progress: number;
+}
+interface Service {
+  title: string;
+  description: string;
+}
+interface CategoryProgress {
+  [key: string]: number[];
+}
 
-// // const LineChartComponent = () => {
-// const LineChartComponent: React.FC<LineChartProps> = ({
-//   OrderProjectStatus,
-//   categoryStates,
-// }) => {
-//   const { periodProgresses } = OrderProjectStatus;
-//   periodProgresses.sort((a, b) => a.numberWeek - b.numberWeek);
-//   // console.log(periodProgresses);
+const LineChartComponent: React.FC<LineChartProps> = ({
+  OrderProjectStatus,
+  categoryStates,
+}) => {
+  const { periodProgresses } = OrderProjectStatus;
+  periodProgresses.sort((a, b) => a.numberWeek - b.numberWeek);
+  // console.log(periodProgresses);
 
-//   const selectedStatus = {
-//     design: OrderProjectStatus.design,
-//     development: OrderProjectStatus.development,
-//     security: OrderProjectStatus.security,
-//   };
+  const labels = Array.from(
+    new Set(periodProgresses.map((week) => week.numberWeek))
+  )
+    .map((weekNumber, index) => (index === 0 ? "Week" : weekNumber.toString()))
+    .slice(0, -1);
+  // console.log(labels);
 
-//   if (categoryStates.design) {
-//     selectedStatus.design = OrderProjectStatus.design;
-//     selectedStatus.development = !OrderProjectStatus.design;
-//     selectedStatus.security = !OrderProjectStatus.design;
-//   }
-//   if (!categoryStates.security) {
-//     selectedStatus.design;
-//     selectedStatus.development;
-//     selectedStatus.security;
-//   }
-//   if (categoryStates.development) {
-//     selectedStatus.design = !OrderProjectStatus.development;
-//     selectedStatus.development = OrderProjectStatus.development;
-//     selectedStatus.security = !OrderProjectStatus.development;
-//   }
-//   if (categoryStates.security) {
-//     selectedStatus.design = !OrderProjectStatus.security;
-//     selectedStatus.development = !OrderProjectStatus.security;
-//     selectedStatus.security = OrderProjectStatus.security;
-//   }
+  const clampValue = (value: number) => {
+    return Math.min(Math.max(value, 0), 100);
+  };
 
-//   // Створюємо labels
-//   const labels = [
-//     ...periodProgresses.map((_, index) =>
-//       index === 0 ? "Week" : index.toString()
-//     ),
-//   ];
+  const categoryProgress: Record<string, number[]> = {};
 
-//   // Створюємо окремі набори даних для кожного типу
-//   const designData = [...periodProgresses.map((progress) => progress.design)];
-//   const developmentData = [
-//     ...periodProgresses.map((progress) => progress.development),
-//   ];
-//   const securityData = [
-//     ...periodProgresses.map((progress) => progress.security),
-//   ];
+  periodProgresses.sort((a, b) =>
+    a.service.title.localeCompare(b.service.title)
+  );
 
-//   const clampValue = (values: number[]) => {
-//     return values.map((value) => Math.min(Math.max(value, 0), 100));
-//   };
+  periodProgresses.forEach((progress) => {
+    const category = progress.service.title;
+    if (!categoryProgress[category]) {
+      categoryProgress[category] = [];
+    }
+    categoryProgress[category].push(clampValue(progress.progress || 0));
+  });
+  // console.log(categoryProgress);
 
-//   const clampedDesign = clampValue(designData);
-//   const clampedDevelopment = clampValue(developmentData);
-//   const clampedSecurity = clampValue(securityData);
+  const maxDataValue = Math.max(...Object.values(categoryProgress).flat());
+  const maxY = maxDataValue + 5 <= 105 ? maxDataValue + 5 : 105;
+  // console.log(`maxY: ${maxY}`);
 
-//   // console.log("BIG DES = " + clampedDesign);
-//   // console.log("BIG DEV = " + clampedDevelopment);
-//   // console.log("BIG SECR = " + clampedSecurity);
+  const generateChartData = (categoryProgress: CategoryProgress) => {
+    const labels = [];
+    const data = [];
+    const categoryState = !Object.values(categoryStates).some((state) => state);
+    for (const category in categoryProgress) {
+      labels.push(category);
+      data.push(
+        categoryStates[category] || categoryState
+          ? categoryProgress[category]
+          : 0
+      );
+    }
 
-//   const maxDataValue = Math.max(
-//     ...clampedDesign,
-//     ...clampedDevelopment,
-//     ...clampedSecurity
-//   );
+    return { labels, data };
+  };
 
-//   const maxY = maxDataValue + 5 <= 105 ? maxDataValue + 5 : 105;
-//   // console.log(labels);
-//   // console.log(designData);
-//   // console.log(developmentData);
-//   // console.log(securityData);
+  const chartData = generateChartData(categoryProgress);
+  const dataline = {
+    labels: labels,
+    datasets: chartData.data.map((dataArr, index) => ({
+      label: chartData.labels[index],
+      data: dataArr,
+      fill: "start",
+      backgroundColor: (context: ScriptableContext<"line">) => {
+        const ctx = context.chart.ctx;
 
-//   const data = () => {
-//     return {
-//       labels: labels,
-//       datasets: [
-//         {
-//           label: "design",
-//           data: selectedStatus.design ? clampedDesign : 0,
-//           fill: "start",
-//           backgroundColor: (context: ScriptableContext<"line">) => {
-//             const ctx = context.chart.ctx;
-//             const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-//             gradient.addColorStop(0, "#ef8a66ab");
-//             gradient.addColorStop(1, "#ef8a66ab");
-//             return gradient;
-//           },
-//           borderColor: "#febd9dbf",
-//           borderWidth: 0,
-//         },
-//         {
-//           label: "development",
-//           data: selectedStatus.development ? clampedDevelopment : 0,
-//           fill: "start",
-//           backgroundColor: (context: ScriptableContext<"line">) => {
-//             const ctx = context.chart.ctx;
-//             const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-//             gradient.addColorStop(0, "#83addfc9");
-//             gradient.addColorStop(1, "#c3dcf8b8");
-//             return gradient;
-//           },
-//           borderColor: "#C3DCF8",
-//           borderWidth: 0,
-//         },
-//         {
-//           label: "security",
-//           data: selectedStatus.security ? clampedSecurity : 0,
-//           fill: "start",
-//           backgroundColor: (context: ScriptableContext<"line">) => {
-//             const ctx = context.chart.ctx;
-//             const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-//             gradient.addColorStop(0.15, "#1fd1878a");
-//             gradient.addColorStop(1, "#34966d59");
-//             return gradient;
-//           },
-//           borderColor: "#1fd18778",
-//           borderWidth: 0,
-//         },
-//       ],
-//     };
-//   };
+        const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+        switch (index) {
+          case 0:
+            gradient.addColorStop(0.2, "#ef8a66ab");
+            gradient.addColorStop(1, "#ef8a66ab");
+            break;
+          case 1:
+            gradient.addColorStop(0, "#83addfc9");
+            gradient.addColorStop(1, "#c3dcf8b8");
+            break;
+          case 2:
+            gradient.addColorStop(0.2, "#13eb9080");
+            gradient.addColorStop(1, "#3b8d61c4");
+            break;
+          case 3:
+            gradient.addColorStop(0.2, "#fff493bf");
+            gradient.addColorStop(1, "#FFD600");
+            break;
+          case 4:
+            gradient.addColorStop(0.2, "#d1090569");
+            gradient.addColorStop(1, "#e5181894");
+            break;
+          case 5:
+            gradient.addColorStop(0.2, "#a154d175");
+            gradient.addColorStop(1, "#5F1F75");
+            break;
+          case 6:
+            gradient.addColorStop(0.2, "#4d3fed75");
+            gradient.addColorStop(1, "#3721BD");
+            break;
+          case 7:
+            gradient.addColorStop(0.2, "#7B1608");
+            gradient.addColorStop(1, "#b01d00d4");
+            break;
+          case 8:
+            gradient.addColorStop(0.2, "#46cf3aab");
+            gradient.addColorStop(1, "#2A9E5F");
+            break;
+          case 9:
+            gradient.addColorStop(0.2, "#f65a93ab");
+            gradient.addColorStop(1, "#E238B2");
+            break;
+          default:
+            // const randomColor1 = `#${Math.floor(Math.random() * 16777215)
+            //   .toString(16)
+            //   .padStart(6, "0")}`;
+            // const randomColor2 = `#${Math.floor(Math.random() * 16777215)
+            //   .toString(16)
+            //   .padStart(6, "0")}`;
+            const opacity = 0.14;
+            const color = `rgba(${Math.floor(
+              Math.random() * 256
+            )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+              Math.random() * 256
+            )}, ${opacity})`;
+            gradient.addColorStop(0.2, color);
+            gradient.addColorStop(1, color);
+            break;
+        }
 
-//   const options = {
-//     maintainAspectRatio: false,
-//     responsive: true,
-//     scales: {
-//       x: {
-//         grid: {
-//           display: true,
-//         },
-//         ticks: {
-//           font: {
-//             size: 15,
-//             weight: 600 as any,
-//           },
-//         },
-//       },
-//       y: {
-//         max: maxY,
-//         min: 0,
-//         ticks: {
-//           display: false,
-//           beginAtZero: true,
-//           maxTicksLimit: 5,
-//           stepSize: 5,
-//         },
-//       },
-//     },
-//     elements: {
-//       line: {
-//         tension: 0.3,
-//       },
-//       // point: {
-//       //   radius: 3,
-//       // },
-//     },
-//     plugins: {
-//       filler: {
-//         propagate: false,
-//       },
-//       legend: {
-//         display: false,
-//       },
-//       title: {
-//         display: true,
-//         text: "Progress",
-//         align: "start" as const,
-//         font: {
-//           size: 14,
-//           weight: 600 as any,
-//         },
-//       },
-//     },
-//     interaction: {
-//       intersect: true,
-//     },
-//   };
+        return gradient;
+      },
+      // borderColor: ["#febd9dbf", "black", "#3b8d61c4"],
+      borderWidth: 0,
+    })),
+  };
 
-//   return (
-//     <div className={s.lineChart__сontainer}>
-//       <Line data={data()} options={options} />
-//     </div>
-//   );
-// };
-// export default LineChartComponent;
+  const options = {
+    maintainAspectRatio: false,
+    responsive: true,
+    scales: {
+      x: {
+        grid: {
+          display: true,
+        },
+        ticks: {
+          font: {
+            size: 15,
+            weight: 600 as any,
+          },
+        },
+      },
+      y: {
+        max: maxY,
+        min: 0,
+        ticks: {
+          display: false,
+          beginAtZero: true,
+          maxTicksLimit: 5,
+          stepSize: 5,
+        },
+      },
+    },
+    elements: {
+      line: {
+        tension: 0.3,
+      },
+      // point: {
+      //   radius: 3,
+      // },
+    },
+    plugins: {
+      filler: {
+        propagate: false,
+      },
+      legend: {
+        display: false,
+      },
+      title: {
+        display: true,
+        text: "Progress",
+        align: "start" as const,
+        font: {
+          size: 14,
+          weight: 600 as any,
+        },
+      },
+    },
+    interaction: {
+      intersect: true,
+    },
+  };
+  return (
+    <div className={s.lineChart__сontainer}>
+      <div className={s.lineChart}>
+        <Line data={dataline} options={options} />
+      </div>
+    </div>
+  );
+};
+export default LineChartComponent;

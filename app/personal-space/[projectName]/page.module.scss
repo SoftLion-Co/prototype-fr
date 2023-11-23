@@ -1,21 +1,66 @@
 @import "../../../styles/container";
 @import "../../../styles/mixin";
-@import "../../../styles/colors";
 
-.infoNavigat {
-  div {
-    padding-left: 0;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 175px;
+  @include for-size(tablet) {
+    gap: 18px;
+    padding-bottom: 206px;
+  }
+  @include for-size(laptop) {
+    padding-bottom: 280px;
+  }
+  @include for-size(desktop) {
+    gap: 3px;
+    padding-bottom: 293px;
   }
 }
 
-.project {
-  display: flex;
-  gap: 30px;
-  padding-bottom: 300px;
+.infoNavigat {
+  display: none;
+  @include for-size(tablet) {
+    display: block;
+    div {
+      padding-left: 0;
+    }
+  }
 }
-.project__container {
+
+.section {
+  width: auto;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 81px;
+  gap: 30px;
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-top: 26px;
+  }
+  @include for-size(tablet) {
+    // width: min-content;
+    flex-direction: row;
+    &__sidebar {
+      width: 154px;
+      margin-top: 240px;
+    }
+  }
+
+  @include for-size(laptop) {
+    &__sidebar {
+      width: 242px;
+      margin-top: 234px;
+    }
+  }
+
+  @include for-size(desktop) {
+    &__sidebar {
+      width: 260px;
+      margin-top: 215px;
+    }
+  }
 }

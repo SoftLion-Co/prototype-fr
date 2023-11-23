@@ -1,3 +1,22 @@
+@import "../../../styles/mixin";
+
 .lineChart__сontainer {
-  flex: 1;
+  width: 296px;
+  height: 114px;
+  .lineChart {
+    width: inherit;
+    height: inherit;
+  }
+  @include for-size(tablet) {
+    width: 640px;
+    height: 245px;
+  }
+  @include for-size(laptop) {
+    width: 602px;
+    height: 180px;
+  }
+  @include for-size(desktop) {
+    width: 800px;
+    height: 240px;
+  }
 }

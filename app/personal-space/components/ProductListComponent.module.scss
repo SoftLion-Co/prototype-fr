@@ -1,3 +1,5 @@
+@import "../../../styles/mixin";
+
 .product__list {
   display: flex;
   flex-direction: column;
@@ -5,22 +7,43 @@
   h2 {
     font-size: 25px;
     font-weight: 400;
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+    }
   }
   ul {
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    gap: 34px;
     li {
       display: flex;
       flex-direction: row;
       gap: 22px;
       h3 {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 400;
-        letter-spacing: 0.8px;
       }
     }
+    @include for-size(tablet) {
+      gap: 17px;
+      li {
+        h3 {
+          letter-spacing: 0.8px;
+          font-size: 20px;
+        }
+      }
+    }
+    @include for-size(laptop) {
+      gap: 40px;
+    }
   }
+}
+
+.block__icon {
+  width: 24px;
+  height: 23px;
+  flex: none;
 }
 .hidden {
   background-color: aqua;

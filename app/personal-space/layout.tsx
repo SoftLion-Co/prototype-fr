@@ -4,9 +4,7 @@ import classNames from "classnames";
 
 const PersonalLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div
-      className={classNames(s.personalLayout, s.container, s.container_admin)}
-    >
+    <div className={classNames(s.personalLayout, s.container)}>
       <>{children}</>
     </div>
   );

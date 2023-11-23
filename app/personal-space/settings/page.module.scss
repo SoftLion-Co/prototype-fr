@@ -1,30 +1,68 @@
-@import "./../../../styles/container";
+// @import "./../../../styles/container";
 @import "../../../styles/mixin";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 246px;
+  @include for-size(tablet) {
+    gap: 40px;
+    padding-bottom: 271px;
+  }
+  @include for-size(laptop) {
+    gap: 67px;
+    padding-bottom: 395px;
+  }
+  @include for-size(desktop) {
+    gap: 60px;
+    padding-bottom: 266px;
+  }
+}
 
 .infoNavigat {
   div {
     padding-left: 0;
   }
 }
-.settings {
+
+.section {
   display: flex;
   flex-direction: column;
-  padding-bottom: 300px;
-  gap: 30px;
-
-  &__container {
+  gap: 64px;
+  &__sidebar {
+    display: none;
+    width: 154px;
+  }
+  &__settings {
     display: flex;
-    flex: 1;
-    flex-direction: column;
   }
+
   @include for-size(tablet) {
-    flex-direction: row;
+    gap: 93px;
+    &__settings {
+      gap: 57px;
+    }
+    &__sidebar {
+      display: block;
+      width: 154px;
+    }
   }
-  @include for-size(tablet) {
-    /* Змініть стилі для tablet тут */
-    flex-direction: row;
-    .sideBar {
-      display: none;
+
+  @include for-size(laptop) {
+    gap: 86px;
+    &__sidebar {
+      width: 300px;
+    }
+    &__settings {
+      gap: 87px;
+    }
+  }
+
+  @include for-size(desktop) {
+    gap: 111px;
+    &__settings {
+      gap: 197px;
     }
   }
 }
