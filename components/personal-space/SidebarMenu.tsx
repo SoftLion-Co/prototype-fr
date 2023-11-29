@@ -22,7 +22,10 @@ const SidebarMenu: React.FC = () => {
         <Link
           href={`/personal-space`}
           className={`${s.sideBar__link} ${
-            currentURL !== "/personal-space/settings" ? s.actHome : ""
+            currentURL !== "/personal-space/settings" &&
+            currentURL !== "/personal-space/#"
+              ? s.actHome
+              : ""
           }`}
         >
           <h1 className={s.title}>Projects</h1>
@@ -31,11 +34,7 @@ const SidebarMenu: React.FC = () => {
       <div className={s.block}>
         <ul className={s.block__list}>
           {sidebarMenuData?.map((project, index) => (
-            <li
-              className={s.block__listItem}
-              key={project.id}
-              data-custom-title={statusProject.status[project.projectStatus]}
-            >
+            <div className={s.block__inner} key={project.title}>
               <div
                 className={`${s.vectorTile} ${
                   currentURL === `/personal-space/${project.title}` ||
@@ -46,18 +45,24 @@ const SidebarMenu: React.FC = () => {
               >
                 <CustomVectorSVG projectStatus={project.projectStatus} />
               </div>
-              <Link
-                href={`/personal-space/${project.title}`}
-                className={`${s.sideBar__link} ${
-                  currentURL === `/personal-space/${project.title}` ||
-                  (currentURL === "/personal-space" && index === 0)
-                    ? ""
-                    : s.active
-                }`}
+              <li
+                className={s.block__listItem}
+                key={project.id}
+                data-custom-title={statusProject.status[project.projectStatus]}
               >
-                <h2 className={s.title}>{project.title}</h2>
-              </Link>
-            </li>
+                <Link
+                  href={`/personal-space/${project.title}`}
+                  className={`${s.sideBar__link} ${
+                    currentURL === `/personal-space/${project.title}` ||
+                    (currentURL === "/personal-space" && index === 0)
+                      ? ""
+                      : s.active
+                  }`}
+                >
+                  <h2 className={s.title}>{project.title}</h2>
+                </Link>
+              </li>
+            </div>
           ))}
         </ul>
 
@@ -72,12 +77,9 @@ const SidebarMenu: React.FC = () => {
           </Link>
           <Link
             href={`/personal-space/#`}
-            className={s.sideBar__link}
-            // className={`${s.sideBar__link}
-            // ${
-            //   currentURL === "/personal-space/#" ? s.actHome : ""
-            // }
-            // `}
+            className={`${s.sideBar__link}
+            ${currentURL === "/personal-space/#" ? s.actHome : ""}
+            `}
           >
             <h1 className={s.title}>Privat Information</h1>
           </Link>

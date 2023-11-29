@@ -1,4 +1,5 @@
 import { Line } from "react-chartjs-2";
+import { useMediaQuery } from "react-responsive";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -50,14 +51,12 @@ const LineChartComponent: React.FC<LineChartProps> = ({
 }) => {
   const { periodProgresses } = OrderProjectStatus;
   periodProgresses.sort((a, b) => a.numberWeek - b.numberWeek);
-  // console.log(periodProgresses);
 
   const labels = Array.from(
     new Set(periodProgresses.map((week) => week.numberWeek))
   )
     .map((weekNumber, index) => (index === 0 ? "Week" : weekNumber.toString()))
     .slice(0, -1);
-  // console.log(labels);
 
   const clampValue = (value: number) => {
     return Math.min(Math.max(value, 0), 100);
@@ -76,11 +75,9 @@ const LineChartComponent: React.FC<LineChartProps> = ({
     }
     categoryProgress[category].push(clampValue(progress.progress || 0));
   });
-  // console.log(categoryProgress);
 
   const maxDataValue = Math.max(...Object.values(categoryProgress).flat());
   const maxY = maxDataValue + 5 <= 105 ? maxDataValue + 5 : 105;
-  // console.log(`maxY: ${maxY}`);
 
   const generateChartData = (categoryProgress: CategoryProgress) => {
     const labels = [];
@@ -97,6 +94,7 @@ const LineChartComponent: React.FC<LineChartProps> = ({
 
     return { labels, data };
   };
+  const isMobile = useMediaQuery({ maxWidth: 767.98 });
 
   const chartData = generateChartData(categoryProgress);
   const dataline = {
@@ -151,12 +149,6 @@ const LineChartComponent: React.FC<LineChartProps> = ({
             gradient.addColorStop(1, "#E238B2");
             break;
           default:
-            // const randomColor1 = `#${Math.floor(Math.random() * 16777215)
-            //   .toString(16)
-            //   .padStart(6, "0")}`;
-            // const randomColor2 = `#${Math.floor(Math.random() * 16777215)
-            //   .toString(16)
-            //   .padStart(6, "0")}`;
             const opacity = 0.14;
             const color = `rgba(${Math.floor(
               Math.random() * 256
@@ -170,7 +162,6 @@ const LineChartComponent: React.FC<LineChartProps> = ({
 
         return gradient;
       },
-      // borderColor: ["#febd9dbf", "black", "#3b8d61c4"],
       borderWidth: 0,
     })),
   };
@@ -185,8 +176,8 @@ const LineChartComponent: React.FC<LineChartProps> = ({
         },
         ticks: {
           font: {
-            size: 15,
-            weight: 600 as any,
+            size: isMobile ? 10 : 14,
+            weight: 400 as any,
           },
         },
       },
@@ -205,9 +196,6 @@ const LineChartComponent: React.FC<LineChartProps> = ({
       line: {
         tension: 0.3,
       },
-      // point: {
-      //   radius: 3,
-      // },
     },
     plugins: {
       filler: {
@@ -221,8 +209,17 @@ const LineChartComponent: React.FC<LineChartProps> = ({
         text: "Progress",
         align: "start" as const,
         font: {
-          size: 14,
-          weight: 600 as any,
+          size: isMobile ? 10 : 14,
+          weight: 400 as any,
+        },
+      },
+      tooltip: {
+        titleFont: {
+          size: isMobile ? 5 : 14,
+        },
+
+        bodyFont: {
+          size: isMobile ? 4 : 10,
         },
       },
     },
@@ -230,6 +227,7 @@ const LineChartComponent: React.FC<LineChartProps> = ({
       intersect: true,
     },
   };
+
   return (
     <div className={s.lineChart__сontainer}>
       <div className={s.lineChart}>

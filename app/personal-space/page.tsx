@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-// import s from "./page.module.scss";
 import { redirect } from "next/navigation";
 
 import { useOrderProjectData } from "@/hooks/useOrderProjectData";

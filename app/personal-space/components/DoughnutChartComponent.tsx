@@ -49,24 +49,18 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
     );
   });
 
-  // console.log(categoryStates);
-  // console.log(categoryProgress);
-
   const totalPercentage = Math.round(
     Object.values(categoryProgress).reduce((acc, val) => acc + val, 0) /
       Object.keys(categoryProgress).length
   );
-  // console.log(`totalPercentage: ${totalPercentage}%`);
 
   const activeCategory = Object.keys(categoryStates).find(
     (category) => categoryStates[category]
   );
-  // console.log(`activeCategory: ${activeCategory}`);
 
   const activePercentage = activeCategory
     ? categoryProgress[activeCategory]
     : totalPercentage;
-  // console.log(`activePercentage: ${activePercentage}%`);
 
   function fillArrayWithValues(): number[] {
     const categoryState = !Object.values(categoryStates).some((state) => state);
@@ -99,17 +93,7 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
   const result = fillArrayWithValues();
 
   const dataDoughnut = {
-    labels: [
-      "design",
-      "empty",
-      "",
-      "development",
-      "empty",
-      "",
-      "security",
-      "empty",
-      "",
-    ],
+    // labels: [],
     datasets: [
       {
         data: result,
@@ -194,8 +178,8 @@ const DoughnutChartComponent: React.FC<DoughnutChartProps> = ({
   return (
     <div className={s.wrapper}>
       <Doughnut data={dataDoughnut} options={doughnutOptions} />
-      <div className={s.title}>
-        <h1>{`${activePercentage}%`}</h1>
+      <div className={s.block}>
+        <h1 className={s.block__title}>{`${activePercentage}%`}</h1>
       </div>
     </div>
   );

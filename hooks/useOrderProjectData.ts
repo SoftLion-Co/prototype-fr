@@ -53,11 +53,18 @@ export function useOrderProjectData() {
   );
 
   const sidebarMenuData = data
-    ? data.result[0].orderProjectStatuses.map((item) => ({
-        id: item.id,
-        title: item.title,
-        projectStatus: item.projectStatus,
-      }))
+    ? data.result[0].orderProjectStatuses
+        .map((item) => ({
+          id: item.id,
+          title: item.title,
+          projectStatus: item.projectStatus,
+          createdDateTime: item.createdDateTime,
+        }))
+        .sort((a, b) => {
+          const dateA = new Date(a.createdDateTime);
+          const dateB = new Date(b.createdDateTime);
+          return dateA.getTime() - dateB.getTime();
+        })
     : [];
 
   const orderProjecData = data ? data.result[0].orderProjectStatuses : [];

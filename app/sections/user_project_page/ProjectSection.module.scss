@@ -34,13 +34,14 @@
     align-items: center;
   }
   &__title {
+    text-transform: uppercase;
     font-size: 29px;
     display: none;
   }
   &__info {
     font-size: 16px;
-    font-weight: 500;
-    color: #000000;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
 
@@ -55,7 +56,6 @@
     &__info {
       color: rgba(0, 0, 0, 0.7);
       font-size: 25px;
-      font-weight: 400;
     }
   }
 
@@ -74,12 +74,15 @@
     &__title {
       font-size: 30px;
     }
+    &__info {
+      color: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
 .activeInfo {
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  color: #000;
 }
 
 .section__container {

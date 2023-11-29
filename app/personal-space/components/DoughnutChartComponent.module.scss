@@ -7,21 +7,39 @@
   canvas {
     background-color: #fff;
   }
-  .title {
+  .block {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     pointer-events: none;
+    &__title {
+      font-size: 15px;
+      font-weight: 400;
+      color: #000;
+      letter-spacing: 1.35px;
+    }
   }
   @include for-size(tablet) {
     width: 223px;
     height: 224px;
+    .block {
+      &__title {
+        font-size: 22px;
+        letter-spacing: 1.9px;
+      }
+    }
   }
   @include for-size(laptop) {
   }
   @include for-size(desktop) {
     width: 320px;
     height: 320px;
+    .block {
+      &__title {
+        font-size: 30px;
+        letter-spacing: 2.7px;
+      }
+    }
   }
 }

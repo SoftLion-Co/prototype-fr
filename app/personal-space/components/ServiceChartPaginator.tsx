@@ -35,7 +35,7 @@ const ServiceChartPaginator: FC<ServiceChartPaginatorProps> = ({
             </div>
             <h2
               className={`${s.block__label} ${
-                categoryStates[array.category.title] ? "" : s.active
+                categoryStates[array.category.title] ? s.active : ""
               }`}
               onClick={() => handleCategoryClick(array.category.title)}
             >

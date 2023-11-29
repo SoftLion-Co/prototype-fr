@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import DoughnutChartComponent from "@/app/personal-space/components/DoughnutChartComponent";
@@ -24,6 +24,7 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
   const OrderProjectStatus = Object.values(orderProjecData).find(
     (project) => project.title === projectName
   );
+
   const [isGeneralInformationActive, setIsGeneralInformationActive] =
     useState(true);
   const uniqueService =
@@ -68,10 +69,6 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
 
   const isMobile = useMediaQuery({ maxWidth: 767.98 });
   const categoriesPerPage = isMobile ? 8 : 4;
-  // const categoriesPerPage = window.matchMedia("(max-width: 767.98px)").matches
-  //   ? 8
-  //   : 4;
-  // const categoriesPerPage = 8;
 
   const currentCategoriesPage = showNext
     ? uniqueService.slice(categoriesPerPage).map((category, index) => ({
@@ -97,7 +94,7 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
           {isButtonActive ? (
             <h2
               className={`${s.header__info} ${
-                isGeneralInformationActive ? "" : s.activeInfo
+                isGeneralInformationActive ? s.activeInfo : ""
               }`}
               onClick={handleGeneralInformationClick}
             >
