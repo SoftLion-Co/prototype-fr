@@ -3,7 +3,7 @@ import s from "./СustomLoaderComponent.module.scss";
 
 const CustomLoader = () => {
   return (
-    <div className={s.loader__container}>
+    <div className={s.loader}>
       <svg
         aria-labelledby="loading_44_aria"
         role="img"

@@ -1,8 +1,9 @@
-.loader__container {
-  width: 400px;
-  // height: 160px;
+.loader {
+  flex: 1;
   background-color: #fff;
   display: flex;
+  padding-top: 150px;
+  padding-bottom: 150px;
   justify-content: center;
   align-items: center;
 }

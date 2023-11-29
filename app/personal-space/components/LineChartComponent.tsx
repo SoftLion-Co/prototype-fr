@@ -221,6 +221,12 @@ const LineChartComponent: React.FC<LineChartProps> = ({
         bodyFont: {
           size: isMobile ? 4 : 10,
         },
+        padding: {
+          top: isMobile ? 4 : 6,
+          left: isMobile ? 3 : 6,
+          bottom: isMobile ? 4 : 6,
+          right: isMobile ? 2 : 6,
+        },
       },
     },
     interaction: {

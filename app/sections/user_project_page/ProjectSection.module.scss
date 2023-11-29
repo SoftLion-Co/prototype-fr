@@ -92,7 +92,6 @@
   .chart__сontainer {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
     gap: 67px;
     @include for-size(tablet) {
       gap: 117px;
