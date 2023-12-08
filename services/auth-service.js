@@ -1,4 +1,4 @@
-import { baseUrl } from './apiConfig';
+import { baseUrl } from "./apiConfig";
 
 class AuthService {
   async signUp(signUpModel) {
@@ -46,8 +46,8 @@ class AuthService {
     if (!response.ok) {
       throw new Error("Error ");
     }
-	const data = await response.json();
-	return data.result;
+    const data = await response.json();
+    return data.result;
   }
 
   async changePassword(model) {
@@ -62,9 +62,8 @@ class AuthService {
     if (!response.ok) {
       throw new Error("Error ");
     }
-	const data = await response.json();
-	return data.result;
+    const data = await response.json();
+    return data.result;
   }
-  
 }
 export default new AuthService();

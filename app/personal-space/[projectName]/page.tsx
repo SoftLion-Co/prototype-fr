@@ -1,10 +1,12 @@
 "use client";
-import s from "./page.module.scss";
+
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import ProjectSection from "@/app/sections/user_project_page/ProjectSection";
 import SidebarMenu from "@/components/personal-space/SidebarMenu";
-import { useOrderProjectData } from "@/hooks/useOrderProjectData";
 import СustomLoaderComponent from "@/app/personal-space/components/СustomLoaderComponent";
+
+import { useOrderProjectData } from "@/hooks/useOrderProjectData";
+import s from "./page.module.scss";
 
 interface SidebarMenuParams {
   projectName: string;

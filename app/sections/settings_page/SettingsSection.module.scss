@@ -38,9 +38,9 @@
     letter-spacing: 0.35px;
     line-height: 1.3;
   }
+
   input {
     font-size: 15px;
-    display: flex;
     border: none;
     outline: none;
     padding: 11px 0 11px 17px;
@@ -66,6 +66,36 @@
     width: auto;
     display: flex;
     flex-direction: column;
+    .password {
+      display: flex;
+      position: relative;
+      border: none;
+
+      &__icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $navigation-dark;
+        cursor: pointer;
+
+        @include for-size(tablet) {
+          width: 18px;
+          height: 18px;
+        }
+
+        @include for-size(laptop) {
+          width: 22px;
+          height: 22px;
+        }
+        @include for-size(desktop) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
   }
   @include for-size(tablet) {
     gap: 15px 0;
@@ -108,7 +138,7 @@
     }
     input {
       border-radius: 5px;
-      padding: 19px 0 18px 30px;
+      padding: 19px 0px 18px 30px;
       border-bottom: 1px solid $placeholder-bottom;
       &::placeholder {
         font-size: 15px;
@@ -132,6 +162,9 @@
     display: flex;
     flex-direction: column;
     gap: 10px 0;
+    input {
+      width: 100%;
+    }
     label {
       margin-bottom: 0;
     }
@@ -163,6 +196,9 @@
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.461px;
+    &[disabled] {
+      cursor: not-allowed;
+    }
     @include for-size(tablet) {
       width: 167px;
       height: 65px;
@@ -187,5 +223,50 @@
   @include for-size(laptop) {
     align-self: auto;
     margin-top: 0;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: red;
+}
+.invalid {
+  border-color: $error-color !important;
+}
+
+.offvalid {
+  border-color: $placeholder-bottom;
+}
+
+.customInput {
+  width: 100%;
+  padding-left: 45px !important;
+}
+
+.btn-flag {
+  border: none !important;
+  background-color: transparent !important;
+  div {
+    background-color: transparent !important;
+  }
+}
+
+.error__message {
+  font-size: 10px;
+  color: $error-color;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+
+  @include for-size(tablet) {
+    padding-bottom: 5px;
+    font-size: 12px;
+  }
+
+  @include for-size(laptop) {
+    font-size: 15px;
   }
 }

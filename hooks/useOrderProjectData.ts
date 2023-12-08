@@ -2,7 +2,7 @@ import { useQuery, QueryKey } from "react-query";
 import CustomerService from "../services/customer-service";
 
 export interface OrderProjectDataResponse {
-  result: Result[];
+  result: Result;
   statusCode: number;
   errors: any;
 }
@@ -45,15 +45,25 @@ export interface Service {
   createdDateTime: string;
 }
 
+export interface SettingsData {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  createdDateTime: string;
+}
+
 export function useOrderProjectData() {
   const queryKey: QueryKey = "orderProjectStatus";
+
   const { data, ...rest } = useQuery<OrderProjectDataResponse>(
     queryKey,
-    CustomerService.getAllCustomers
+    CustomerService.getCustomer
   );
 
   const sidebarMenuData = data
-    ? data.result[0].orderProjectStatuses
+    ? data.result.orderProjectStatuses
         .map((item) => ({
           id: item.id,
           title: item.title,
@@ -67,7 +77,18 @@ export function useOrderProjectData() {
         })
     : [];
 
-  const orderProjecData = data ? data.result[0].orderProjectStatuses : [];
+  const orderProjecData = data ? data.result.orderProjectStatuses : [];
 
-  return { data, sidebarMenuData, orderProjecData, ...rest };
+  const settingsData: SettingsData | undefined = data
+    ? {
+        id: data.result.id,
+        firstName: data.result.firstName,
+        lastName: data.result.lastName,
+        email: data.result.email,
+        phoneNumber: data.result.phoneNumber,
+        createdDateTime: data.result.createdDateTime,
+      }
+    : undefined;
+
+  return { data, sidebarMenuData, settingsData, orderProjecData, ...rest };
 }

@@ -1,12 +1,17 @@
 "use client";
 import React, { useEffect } from "react";
 import { redirect } from "next/navigation";
-
 import { useOrderProjectData } from "@/hooks/useOrderProjectData";
+
+import InfoNavigationComponent from "@/components/InfoNavigationComponent";
+import SidebarMenu from "@/components/personal-space/SidebarMenu";
 import СustomLoaderComponent from "./components/СustomLoaderComponent";
+
+import s from "./page.module.scss";
 
 const PersonalSpace: React.FC = () => {
   const { orderProjecData, isLoading, error } = useOrderProjectData();
+  const links = [{ title: "Personal-space", href: "#" }];
   const projectName = orderProjecData?.[0]?.title;
   useEffect(() => {
     if (projectName !== undefined && projectName !== null) {
@@ -34,7 +39,21 @@ const PersonalSpace: React.FC = () => {
       </div>
     );
   }
-  return null;
+  return (
+    <div className={s.wrapper}>
+      <div className={s.infoNavigat}>
+        <InfoNavigationComponent links={links} />
+      </div>
+      <div className={s.section}>
+        <div className={s.section__sidebar}>
+          <SidebarMenu />
+        </div>
+        <div className={s.section__header}>
+          <h1>Нажаль Ви нищеброд , не замовили ні один проєкт :=( </h1>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PersonalSpace;

@@ -7,11 +7,12 @@
   gap: 24px;
   padding-bottom: 175px;
   @include for-size(tablet) {
-    gap: 18px;
+    gap: 9px;
     padding-bottom: 206px;
   }
   @include for-size(laptop) {
     padding-bottom: 280px;
+    gap: 0;
   }
   @include for-size(desktop) {
     gap: 3px;

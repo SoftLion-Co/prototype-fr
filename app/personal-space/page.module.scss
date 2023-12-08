@@ -1,4 +1,78 @@
 @import "../../styles/container";
+@import "../../styles/mixin";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 175px;
+  @include for-size(tablet) {
+    gap: 18px;
+    padding-bottom: 206px;
+  }
+  @include for-size(laptop) {
+    padding-bottom: 280px;
+  }
+  @include for-size(desktop) {
+    gap: 3px;
+    padding-bottom: 293px;
+  }
+}
+
+.infoNavigat {
+  display: none;
+  @include for-size(tablet) {
+    display: block;
+    div {
+      padding-left: 0;
+    }
+  }
+  @include for-size(desktop) {
+    div {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+.section {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-top: 26px;
+  }
+  &__header {
+    align-self: center;
+    padding: 0 60px;
+  }
+  @include for-size(tablet) {
+    // width: min-content;
+    flex-direction: row;
+    &__sidebar {
+      width: 154px;
+      margin-top: 240px;
+    }
+  }
+
+  @include for-size(laptop) {
+    &__sidebar {
+      width: 242px;
+      margin-top: 234px;
+    }
+  }
+
+  @include for-size(desktop) {
+    &__sidebar {
+      width: 260px;
+      margin-top: 215px;
+    }
+  }
+}
 
 .personalLayout {
   width: 100%;

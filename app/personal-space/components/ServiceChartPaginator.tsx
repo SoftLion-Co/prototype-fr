@@ -39,8 +39,9 @@ const ServiceChartPaginator: FC<ServiceChartPaginatorProps> = ({
               }`}
               onClick={() => handleCategoryClick(array.category.title)}
             >
-              {array.category.title.charAt(0).toUpperCase() +
-                array.category.title.slice(1)}
+              {/* {array.category.title.charAt(0).toUpperCase() +
+                array.category.title.slice(1)} */}
+              {array.category.title}
             </h2>
           </div>
         ))}
