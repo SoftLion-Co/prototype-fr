@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import s from "./ServiceSecurityCardComponent.module.scss";
 import Image from "next/image";
 import Security from "../../images/security.svg";
@@ -8,9 +9,11 @@ interface ServiceSecurityCardComponentProps {
   data?: { description: string; title: string };
 }
 
-const ServiceSecurityCardComponent: React.FC<
-  ServiceSecurityCardComponentProps
-> = ({ title, description, data }) => {
+const ServiceSecurityCardComponent: FC<ServiceSecurityCardComponentProps> = ({
+  title,
+  description,
+  data,
+}) => {
   const cardTitle = title || (data && data.title);
   const cardDescription = description || (data && data.description);
 

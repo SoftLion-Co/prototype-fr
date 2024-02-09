@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./ClientsInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 
@@ -13,7 +13,7 @@ interface Props {
   onEditButtonClick: () => void;
 }
 
-const ClientsInfoComponent: React.FC<Props> = ({
+const ClientsInfoComponent: FC<Props> = ({
   clients,
   searchTerm,
   setSearchTerm,
@@ -38,7 +38,11 @@ const ClientsInfoComponent: React.FC<Props> = ({
 
       <ul className={s.user__list}>
         {clients.map((client, index) => (
-          <li onClick={() => onCardClick(client)} className={s.user__list__item} key={client.id}>
+          <li
+            onClick={() => onCardClick(client)}
+            className={s.user__list__item}
+            key={client.id}
+          >
             <div className={s.user__list__information}>
               <p>{index + 1}</p>
               <p>{client.name}</p>

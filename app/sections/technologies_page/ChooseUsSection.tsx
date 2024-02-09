@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import Image from "next/image";
 import SvgImage1 from "../../../images/technologies/choose-us/ChooseUs1.svg";
@@ -9,12 +9,10 @@ import HeadingComponent from "@/components/technologies/HeadingComponent";
 import s from "./ChooseUsSection.module.scss";
 
 interface ChooseUsSectionProps {
-  chooseUsSection: string[]; // Визначте тип для властивості
+  chooseUsSection: string[];
 }
 
-const ChooseUsSection: React.FC<ChooseUsSectionProps> = ({
-  chooseUsSection,
-}) => {
+const ChooseUsSection: FC<ChooseUsSectionProps> = ({ chooseUsSection }) => {
   const svgImages = [SvgImage1, SvgImage2, SvgImage3];
 
   return (

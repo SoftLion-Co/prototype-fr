@@ -1,29 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import s from "./FormComponent.module.scss";
 import Link from "next/link";
-import axios from "axios";
-import orderProjectService from "./../services/order-project-service"; 
+import orderProjectService from "./../services/order-project-service";
 
 interface FormProps {
   title: string;
 }
 
 interface FormData {
-	numberPhone: string;
-	email: string;
-	shortDescription: string;
+  numberPhone: string;
+  email: string;
+  shortDescription: string;
 }
 
-const FormComponent: React.FC<FormProps> = ({ title }) => {
+const FormComponent: FC<FormProps> = ({ title }) => {
   const [numberPhone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(true);
-  
+
   const {
     handleSubmit,
     register,
@@ -32,20 +31,20 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
     watch,
   } = useForm<FormData>({
     defaultValues: {
-		numberPhone: "",
+      numberPhone: "",
       email: "",
       shortDescription: "",
     },
   });
 
+  const [textareaHeight, setTextareaHeight] = useState("auto");
 
-  const [textareaHeight, setTextareaHeight] = useState('auto');
-
- 
-  const adjustTextareaHeight = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const adjustTextareaHeight = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const textarea = event.target;
-    textarea.style.height = 'auto';
-    textarea.style.height = `${textarea.scrollHeight}px`; 
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
     setTextareaHeight(textarea.style.height);
   };
   const watchEmail = watch("email");
@@ -57,21 +56,20 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
         console.log("Please fill in all required fields");
         return;
       }
-  
+
       const formData = {
         numberPhone: "+" + numberPhone,
         email: data.email,
         shortDescription: data.shortDescription,
       };
       await orderProjectService.createOrderProject(formData);
-  
+
       setIsFormSubmitted(true);
       reset();
       setPhone("");
-      
     } catch (error) {
       console.error("Error submitting form:", error);
-  
+
       reset();
       setPhone("");
     }
@@ -138,25 +136,27 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
             dropdownClass={s["drop"]}
             containerClass={s["container-input"]}
           />
-          {errors.numberPhone && <p className={s.error}>{errors.numberPhone.message}</p>}
+          {errors.numberPhone && (
+            <p className={s.error}>{errors.numberPhone.message}</p>
+          )}
         </div>
         <div className={s.form__input}>
-      <textarea
-        placeholder='Short describe your idea'
-        cols={3}
-        rows={1}
-        draggable={false}
-        className={s.form__area}
-        style={{ height: textareaHeight }}
-        onInput={adjustTextareaHeight}
-        {...register('shortDescription', {
-          required: 'Description is required',
-        })}
-      ></textarea>
-      {errors.shortDescription && (
-        <p className={s.error}>{errors.shortDescription.message}</p>
-      )}
-    </div>
+          <textarea
+            placeholder="Short describe your idea"
+            cols={3}
+            rows={1}
+            draggable={false}
+            className={s.form__area}
+            style={{ height: textareaHeight }}
+            onInput={adjustTextareaHeight}
+            {...register("shortDescription", {
+              required: "Description is required",
+            })}
+          ></textarea>
+          {errors.shortDescription && (
+            <p className={s.error}>{errors.shortDescription.message}</p>
+          )}
+        </div>
       </div>
       <button
         type="submit"
@@ -170,8 +170,8 @@ const FormComponent: React.FC<FormProps> = ({ title }) => {
       <p className={s.form__text}>
         By clicking on this button I agree to the{" "}
         <Link href="/privacy-policy" className={s.form__text_link}>
-        processing of personal data
-      </Link>
+          processing of personal data
+        </Link>
       </p>
     </form>
   );

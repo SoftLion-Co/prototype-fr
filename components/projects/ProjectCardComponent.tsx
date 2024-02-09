@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
 import { PiArrowRightThin } from "react-icons/pi";
@@ -19,7 +19,7 @@ interface ProjectCardProps {
   data: ProjectData;
 }
 
-const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
+const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__info}>

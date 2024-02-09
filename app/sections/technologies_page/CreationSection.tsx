@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import ProcessCard from "@/components/technologies/ProcessesCardComponent";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import s from "../technologies_page/CreationSection.module.scss";
@@ -10,10 +10,7 @@ interface Props {
   titleTech: string;
 }
 
-const CreationSection: React.FC<Props> = ({
-  creationCard,
-  titleTech,
-}: Props) => {
+const CreationSection: FC<Props> = ({ creationCard, titleTech }: Props) => {
   return (
     <section>
       <div className={s.heading}>

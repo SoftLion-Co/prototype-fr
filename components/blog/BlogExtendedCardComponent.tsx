@@ -1,14 +1,13 @@
+import React, { FC } from "react";
+import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
 import { BlogInterface } from "./BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
-import Image from "next/image";
 
-const BlogExtendedCardComponent: React.FC<{ data: BlogInterface }> = ({
-  data,
-}) => {
+const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
   const {
     id,
     category,
