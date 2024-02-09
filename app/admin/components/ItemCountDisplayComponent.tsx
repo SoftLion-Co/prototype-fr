@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./ItemCountDisplayComponent.module.scss";
 import Image from "next/image";
 
@@ -21,7 +21,7 @@ interface ItemCountDisplayProps {
   searchResultCount?: number;
 }
 
-const ItemCountDisplayComponent: React.FC<ItemCountDisplayProps> = ({
+const ItemCountDisplayComponent: FC<ItemCountDisplayProps> = ({
   text,
   number,
   icon: iconString,

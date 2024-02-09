@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./SearchInputComponent.module.scss";
 
 import SortingElements from "@/app/admin/components/SortingElements";
@@ -7,14 +7,14 @@ interface SearchInputProps {
   placeholderText: string;
   searchTerm: string;
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onEditButtonClick: () => void; // Додайте проп
+  onEditButtonClick: () => void;
 }
 
-const SearchInputComponent: React.FC<SearchInputProps> = ({
+const SearchInputComponent: FC<SearchInputProps> = ({
   placeholderText,
   searchTerm,
   handleSearch,
-  onEditButtonClick, // Включіть проп
+  onEditButtonClick,
 }) => {
   return (
     <div className={s.search}>
