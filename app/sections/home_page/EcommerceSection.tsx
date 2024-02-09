@@ -21,7 +21,7 @@ const EcommerceSection = () => {
     {
       title: "Development",
       paragraph:
-        "Web development and web applications offer a range of benefits to businesses and individuals. For businesses, web applications can provide a cost-effective way to reach a global audience, improve operational efficiency, and reduce costs. They can also help businesses to improve customer service, increase sales, and gain a competitive advantage.",
+        "Web development and web applications offer myriad benefits to businesses. They provide a cost-effective way to reach a global audience, improve efficiency, and enhance customer service, ultimately leading to increased sales and a competitive advantage. At SoftLion, we excel in crafting innovative digital solutions, from responsive websites to dynamic e-commerce platforms. Partner with us to redefine the digital landscape.",
       image: Development,
       vector: Vector,
     },
