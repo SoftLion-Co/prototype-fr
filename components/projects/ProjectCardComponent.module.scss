@@ -98,7 +98,7 @@
     }
   }
 
-  &__tags{
+  &__tags {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -229,11 +229,14 @@
   flex-wrap: wrap;
   &__item {
     padding: 0px 5px;
+    border-radius: 100px;
+    border: 1px solid rgb(220 151 151 / 30%);
+    background-color: rgb(255 255 255 / 100%);
+    @include for-size(tablet) {
+      border-color: rgba(115, 200, 180, 30%);
+    }
     @include for-size(laptop) {
       padding: 0px 10px;
     }
-    border: 1px solid rgb(220 151 151 / 30%);
-    background-color: rgb(255 255 255 / 100%);
-    border-radius: 100px;
   }
 }

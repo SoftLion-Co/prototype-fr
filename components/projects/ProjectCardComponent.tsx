@@ -23,9 +23,8 @@ const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
   return (
     <div className={s.card}>
       <div className={s.card__info}>
-        {" "}
         <div className={s.card__tags}>
-          <p className={s.card__customer}>{data.customer}</p>
+          <p className={s.card__customer}>Customer: {data.customer}</p>
           <div className={s.tags}>
             {data.technology.slice(0, 5).map((tech, index) => (
               <p className={s.tags__item} key={index}>
@@ -35,8 +34,8 @@ const ProjectCardComponent: React.FC<ProjectCardProps> = ({ data }) => {
           </div>
         </div>
         <div className={s.card__subinfo}>
-          <p className={s.card__year}>{data.year}</p>
-          <p className={s.card__author}>{data.author}</p>
+          <p className={s.card__year}>Year: {data.year}</p>
+          <p className={s.card__author}>Author: {data.author}</p>
         </div>
       </div>
       <Image
