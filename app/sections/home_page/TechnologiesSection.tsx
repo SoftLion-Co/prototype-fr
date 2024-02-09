@@ -1,15 +1,17 @@
 "use client";
 
-import s from "./TechnologiesSection.module.scss";
-import React, { useState } from "react";
-import classNames from "classnames";
 import Image from "next/image";
+import classNames from "classnames";
+import React, { useState } from "react";
+import s from "./TechnologiesSection.module.scss";
+
 import UIUX from "../../../images/technologies/UI-UX.svg";
 import Ecommerce from "../../../images/technologies/Ecommerce.svg";
 import SEO from "../../../images/technologies/SEO.svg";
-import API from "../../../images/technologies/API.svg";
-import { BiExpandAlt } from "react-icons/bi";
+import Studio from "../../../images/technologies/Studio.svg";
+
 import HeadingComponent from "../../../components/HeadingComponent";
+import { BiExpandAlt } from "react-icons/bi";
 
 interface Technology {
   id: number;
@@ -39,18 +41,18 @@ const TechnologiesSection = () => {
     },
     {
       id: 3,
-      imgSrc: SEO,
-      imgAlt: "SEO",
+      imgSrc: Studio,
+      imgAlt: "Web-Studio",
       description:
-        "SEO optimization is a critical tool for businesses that want to be found online. By optimizing their websites for relevant keywords, businesses can improve their chances of ranking high in search results and attracting more visitors.",
+        "SoftLion - your partner in web development. We create captivating landing pages to enhance your online presence and conversion. Trust your business to SoftLion professionals and impress the world with your unique style!",
       isOpen: false,
     },
     {
       id: 4,
-      imgSrc: API,
-      imgAlt: "API",
+      imgSrc: SEO,
+      imgAlt: "SEO",
       description:
-        "APIs, or application programming interfaces, are a way for software applications to communicate with each other. They allow applications to share data and functionality, which can enhance functionality and integration.",
+        "SEO optimization is a critical tool for businesses that want to be found online. By optimizing their websites for relevant keywords, businesses can improve their chances of ranking high in search results and attracting more visitors.",
       isOpen: false,
     },
   ]);
@@ -69,6 +71,7 @@ const TechnologiesSection = () => {
         <div className={s.technologies__name_header}>
           <HeadingComponent text="Technologies" />
         </div>
+
         <div className={s.technologies__cards}>
           <div className={s.technologies__cards_wrapper}>
             {technologiesData.map((tech) => (
@@ -92,7 +95,11 @@ const TechnologiesSection = () => {
                       <BiExpandAlt className={s.technologies__icon_open} />
                     </div>
                     <div className={s.technologies__container_image}>
-                      <Image src={tech.imgSrc} alt={tech.imgSrc} />
+                      <Image
+                        className={s.technologies__image}
+                        src={tech.imgSrc}
+                        alt={tech.imgSrc}
+                      />
                     </div>
                     <p className={s.technologies__description_photo}>
                       {tech.imgAlt}
