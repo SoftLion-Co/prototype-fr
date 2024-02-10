@@ -3,20 +3,20 @@
 @import "./../../../styles/container";
 
 .impression {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 70px;
+  margin-bottom: 105px;
+
   @include for-size(tablet) {
-    margin-bottom: 84px;
+    margin-bottom: 155;
   }
-
   @include for-size(laptop) {
-    margin-bottom: 102px;
+    margin-bottom: 240px;
   }
-
   @include for-size(desktop) {
-    margin-bottom: 242px;
+    margin-bottom: 300px;
   }
 
   &__container {
@@ -46,14 +46,12 @@
       padding-bottom: 19px;
       margin-bottom: 48px;
     }
-
     @include for-size(laptop) {
       font-size: 30px;
       letter-spacing: 2px;
       padding-bottom: 27px;
       margin-bottom: 58px;
     }
-
     @include for-size(desktop) {
       font-size: 40px;
       letter-spacing: 2.6px;
@@ -84,7 +82,6 @@
       letter-spacing: 0.4px;
       margin-bottom: 14px;
     }
-
     @include for-size(laptop) {
       font-size: 20px;
       font-weight: 400;
@@ -112,7 +109,6 @@
       letter-spacing: 1.4px;
       margin-bottom: 31px;
     }
-
     @include for-size(laptop) {
       width: 382px;
       font-size: 24px;
@@ -120,7 +116,6 @@
       letter-spacing: 2.2px;
       margin-bottom: 35px;
     }
-
     @include for-size(desktop) {
       width: 476px;
       font-size: 30px;
@@ -136,11 +131,9 @@
     @include for-size(tablet) {
       gap: 34px;
     }
-
     @include for-size(laptop) {
       gap: 52px;
     }
-
     @include for-size(desktop) {
       gap: 64px;
     }
@@ -154,11 +147,9 @@
   @include for-size(tablet) {
     max-width: 200px;
   }
-
   @include for-size(laptop) {
     max-width: 250px;
   }
-
   @include for-size(desktop) {
     max-width: 300px;
   }
@@ -169,7 +160,6 @@
     @include for-size(laptop) {
       margin-bottom: 9px;
     }
-
     @include for-size(desktop) {
       margin-bottom: 11px;
     }
@@ -193,11 +183,9 @@
         letter-spacing: 0.6px;
         padding: 10px 16px;
       }
-
       @include for-size(laptop) {
         padding: 15px 25px;
       }
-
       @include for-size(desktop) {
         padding: 19px 30px;
       }
@@ -220,14 +208,13 @@
 
   &__textarea {
     margin-bottom: 8px;
+
     @include for-size(tablet) {
       margin-bottom: 20px;
     }
-
     @include for-size(laptop) {
       margin-bottom: 30px;
     }
-
     @include for-size(desktop) {
       margin-bottom: 37px;
     }
@@ -252,11 +239,9 @@
         letter-spacing: 0.6px;
         padding: 10px 16px;
       }
-
       @include for-size(laptop) {
         padding: 15px 25px;
       }
-
       @include for-size(desktop) {
         padding: 19px 30px;
       }
@@ -282,11 +267,11 @@
   font-size: 10px;
   color: $error-color;
   border-radius: 4px;
+
   @include for-size(tablet) {
     padding-bottom: 5px;
     font-size: 12px;
   }
-
   @include for-size(laptop) {
     font-size: 15px;
   }
@@ -306,12 +291,10 @@
     width: 125px;
     margin-top: -55px;
   }
-
   @include for-size(laptop) {
     width: 176px;
     margin-top: -89px;
   }
-
   @include for-size(desktop) {
     width: 220px;
     margin-top: -130px;

@@ -1,6 +1,6 @@
 "use client";
-import ProjectMobileCardComponent from "@/components/projects/ProjectMobileCardComponent";
 import s from "./OurProjectsSection.module.scss";
+import ProjectMobileCardComponent from "@/components/projects/ProjectMobileCardComponent";
 import ProjectHeadingComponent from "@/components/projects/ProjectHeadingComponent";
 import classNames from "classnames";
 import ProjectCardComponent from "@/components/projects/ProjectCardComponent";
@@ -41,7 +41,7 @@ const getUniqueFieldValues = (
           uniqueValues.push(tech);
         }
       });
-    } else if (typeof project[field] === 'string') {
+    } else if (typeof project[field] === "string") {
       if (!uniqueValues.includes(project[field])) {
         uniqueValues.push(project[field]);
       }
@@ -87,10 +87,12 @@ const OurProjectsSection = () => {
   const filteredProjects = sampleData.filter(
     (project) =>
       (selectedTechnologies.length === 0 ||
-        selectedTechnologies.some((tech) => project.technology.includes(tech))) &&
+        selectedTechnologies.some((tech) =>
+          project.technology.includes(tech)
+        )) &&
       (selectedCountries.length === 0 ||
         selectedCountries.includes(project.country))
-  );  
+  );
 
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 

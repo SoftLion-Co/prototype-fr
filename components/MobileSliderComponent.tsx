@@ -20,11 +20,13 @@ interface MobileSliderComponentProps {
     linkedinUrl?: string;
   }>;
   SlideComponent: FC<{ data: any }>;
+  className?: string;
 }
 
 const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
   data,
   SlideComponent,
+  className,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -37,6 +39,7 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
       withControls={false}
       loop={true}
       slideSize="clamp(250px,90vw,480px)"
+      className={className}
       styles={{
         viewport: {
           height: "70%",
