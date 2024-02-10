@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import s from "./BlogsSection.module.scss";
 import classNames from "classnames";
-import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import BlogFilterButton from "@/components/blog/BlogFilterButton";
@@ -95,14 +94,10 @@ const BlogsSection = () => {
 
   const currentBlogs = allBlogs.slice(startIndex, endIndex);
 
-  const links = [{ title: "Blog", href: "/blog" }];
 
   return (
     <section className={s.blog}>
-      <div>
-        <InfoNavigationComponent links={links} />
-      </div>
-
+      
       <div className={s.blog__title}>
         <ServiceHeadingComponent headingText="Blog" container={true} tag="h1" />
       </div>

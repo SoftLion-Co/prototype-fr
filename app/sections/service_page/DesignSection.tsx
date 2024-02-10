@@ -1,3 +1,5 @@
+import React, { FC } from "react";
+import classNames from "classnames";
 import s from "./DesignSection.module.scss";
 import Interactive from "../../../images/services/design/interactive-refinement.svg";
 import Reserch from "../../../images/services/design/research-and-planning.svg";
@@ -9,13 +11,14 @@ import BigButtonComponent from "../../../components/service/BigButtonComponent";
 import ServiceDesignCardComponent from "../../../components/service/ServiceDesignCardComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 
-const DesignSection = () => {
+const DesignSection: FC<{ anchorID: string }> = () => {
   interface DesignInfoItem {
     alt: string;
     title: string;
     imageSrc: string;
     description: string;
     id: number;
+    anchorID?: string;
   }
 
   const DesignInfo: DesignInfoItem[] = [
@@ -70,7 +73,7 @@ const DesignSection = () => {
   ];
 
   return (
-    <section className={`${s.container} ${s.design}`}>
+    <section className={classNames(s.container, s.design)}>
       <div className={s.design__heading}>
         <ServiceHeadingComponent
           headingText={"Desing"}

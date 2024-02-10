@@ -103,7 +103,7 @@ const Project = () => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <head>
         <title>{metadata.title}</title>
       </head>
@@ -117,7 +117,7 @@ const Project = () => {
         <BlogSection />
         <ProjectContactUs />
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

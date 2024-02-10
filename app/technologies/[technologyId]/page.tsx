@@ -119,7 +119,7 @@ const Technology = ({ params }: { params: any }) => {
 
   //створити інтерфейс за json'oм для data ()
   return (
-    <div>
+    <React.Fragment>
       <head>
         <title>{metadata.title}</title>
       </head>
@@ -141,13 +141,14 @@ const Technology = ({ params }: { params: any }) => {
           developmentSection={data.developmentSection}
         />
         <StagesSection stagesSection={data.stagesSection} />
+
         {/* <ReviewsSection reviewsSection={data.reviewsSection} /> */}
         {/* <OurProjects
           data={data.projectsSection}
           titleTech={data.heroSection.titleTech}
         /> */}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

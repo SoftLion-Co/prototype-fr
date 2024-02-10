@@ -25,21 +25,22 @@
 
   &__container {
     @include for-size(tablet) {
-      width: 100%;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
     }
   }
 
-  &__information {
+  &__details {
+    margin-bottom: 40px;
+
     @include for-size(tablet) {
       margin-bottom: 70px;
     }
     @include for-size(laptop) {
-      margin-bottom: 105px;
+      margin-bottom: 110px;
     }
     @include for-size(desktop) {
-      margin-bottom: 125px;
+      margin-bottom: 130px;
     }
   }
 
@@ -82,11 +83,10 @@
     line-height: 130%;
     letter-spacing: 0.6px;
     max-width: 300px;
-    margin-bottom: 40px;
 
     @include for-size(tablet) {
-      margin-bottom: 0;
       max-width: 350px;
+      margin-bottom: 0;
       letter-spacing: 0.5px;
     }
     @include for-size(laptop) {
@@ -95,7 +95,7 @@
       letter-spacing: 0.6px;
     }
     @include for-size(desktop) {
-      max-width: 549px;
+      max-width: 550px;
       font-size: 18px;
       letter-spacing: 0.7px;
     }
@@ -112,7 +112,6 @@
     }
 
     &_mobile {
-      display: block;
       margin-bottom: 50px;
 
       @include for-size(tablet) {
