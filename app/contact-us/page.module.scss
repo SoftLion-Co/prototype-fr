@@ -3,24 +3,18 @@
 .contact_page {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 673px);
- margin-top: 200px;
- margin-bottom: 200px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 
   @include for-size(tablet) {
-   
     min-height: calc(100vh - 580px);
   }
 
   @include for-size(laptop) {
-    
-
     min-height: calc(100vh - 648px);
   }
 
   @include for-size(desktop) {
-    
-
     min-height: calc(100vh - 735px);
   }
 }
