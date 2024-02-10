@@ -27,10 +27,10 @@
 
     @include for-size(tablet) {
       display: flex;
-      gap: 220px;
+      gap: 180px;
     }
     @include for-size(laptop) {
-      gap: 310px;
+      gap: 300px;
     }
     @include for-size(desktop) {
       gap: 420px;
@@ -93,15 +93,15 @@
 
     @include for-size(tablet) {
       text-align: left;
-      max-width: 156px;
+      max-width: 180px;
     }
 
     @include for-size(laptop) {
-      max-width: 286px;
+      max-width: 214px;
     }
 
     @include for-size(desktop) {
-      max-width: 286px;
+      max-width: 270px;
     }
   }
 
@@ -112,6 +112,7 @@
     gap: 28px;
 
     @include for-size(tablet) {
+      gap: 0;
       justify-content: space-between;
     }
   }
