@@ -86,8 +86,8 @@ const FormComponent: FC<FormProps> = ({ title }) => {
       noValidate
     >
       <h2 className={s.form__title}>{title}</h2>
-      <span className={s.form__line}></span>
       <div className={s.form__container}>
+        <span className={s.form__line}></span>
         <div className={s.form__input}>
           <input
             type="email"

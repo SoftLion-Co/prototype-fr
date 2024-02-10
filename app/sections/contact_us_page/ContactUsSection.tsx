@@ -11,7 +11,7 @@ interface Attributes {
 const ContactUsSection: FC<Attributes> = ({ className }) => {
   return (
     <section className={classNames(className)}>
-      <div className={classNames(s.container, s.our_form)}>
+      <div className={classNames(s.container, s.our__form)}>
         <div className={s.heading}>
           <div className={s.heading__title}>
             <HeadingComponent text="Contact Us" tag="h1" />

@@ -10,15 +10,16 @@
 
   @include for-size(tablet) {
     align-items: flex-end;
-    margin-top: -39px;
+    margin-top: -40px;
   }
 
   @include for-size(laptop) {
-    margin-top: -25px;
+    margin-top: -26px;
   }
 
   &__title {
     margin-bottom: 14px;
+
     @include for-size(tablet) {
       margin-bottom: 22px;
     }
@@ -45,13 +46,11 @@
       text-align: left;
       letter-spacing: 0.4px;
     }
-
     @include for-size(laptop) {
       width: 380px;
       font-size: 16px;
       letter-spacing: 0.6px;
     }
-
     @include for-size(desktop) {
       width: 514px;
       font-size: 20px;
@@ -60,7 +59,7 @@
   }
 }
 
-.our_form {
+.our__form {
   display: flex;
   flex-direction: column;
 

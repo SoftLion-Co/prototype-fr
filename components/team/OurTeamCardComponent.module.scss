@@ -145,20 +145,6 @@
       }
     }
   }
-
-  &:not(.active) {
-    @include for-size(tablet) {
-      margin-top: 19px;
-    }
-
-    @include for-size(laptop) {
-      margin-top: 35px;
-    }
-
-    @include for-size(desktop) {
-      margin-top: 44px;
-    }
-  }
 }
 
 .member__linkedin {

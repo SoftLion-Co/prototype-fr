@@ -1,7 +1,7 @@
 "use client";
 
-import HeadingComponent from "@/components/HeadingComponent";
 import s from "./OurTeamStatic.module.scss";
+import HeadingComponent from "@/components/HeadingComponent";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 
 import MobileSliderComponent from "@/components/MobileSliderComponent";
@@ -53,9 +53,8 @@ const OurTeamSetcion = () => {
   ];
 
   return (
-    <section className={s.team}>
+    <section>
       <div className={s.container}>
-        <div className={s.team__title}></div>
         <HeadingComponent customClass={s.team__title} text="Our team" />
         <div className={s.team__container}>
           {response.map((member) => (
@@ -63,9 +62,12 @@ const OurTeamSetcion = () => {
           ))}
         </div>
       </div>
-      <div className={s.mobile__slider}>
-        <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
-      </div>
+
+      <MobileSliderComponent
+        className={s.mobile__slider}
+        data={response}
+        SlideComponent={OurTeamCard}
+      />
     </section>
   );
 };

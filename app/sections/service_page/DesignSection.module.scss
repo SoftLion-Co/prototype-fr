@@ -6,20 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 60px;
 
   @include for-size(tablet) {
     justify-content: center;
     align-items: start;
-    margin-bottom: 70px;
-  }
-
-  @include for-size(laptop) {
-    margin-bottom: 130px;
-  }
-
-  @include for-size(desktop) {
-    margin-bottom: 200px;
   }
 
   &__heading {

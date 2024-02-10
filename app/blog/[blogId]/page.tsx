@@ -56,7 +56,7 @@ const Blog = ({ params }: { params: BlogParams }) => {
       <InfoNavigationComponent links={links} />
       <ArticleSection response={response} />
       <InformationSection />
-      <OurTeamSection />
+      {/* <OurTeamSection /> */}
     </React.Fragment>
   );
 };
