@@ -2,38 +2,43 @@
 @import "./../styles/mixin";
 
 .button {
-  padding: 8px 18px;
-  border-radius: 7px;
-  border: none;
-  font-size: 12px;
+  padding: 8px 20px;
+  border-radius: 8px;
   letter-spacing: 0.2px;
-  line-height: 151%;
+  line-height: 150%;
+  border: none;
 
   @include for-size(tablet) {
-    padding: 9px 23px;
-    border-radius: 7px;
+    padding: 9px 24px;
   }
-
   @include for-size(laptop) {
-    padding: 15px 25px;
+    padding: 15px 32px;
     border-radius: 12px;
   }
-
   @include for-size(desktop) {
-    font-size: 15px;
     padding: 19px 40px;
+    font-size: 16px;
     border-radius: 15px;
+  }
+
+  &__text {
+    font-size: 14px;
+
+    @include for-size(laptop) {
+      font-size: 16px;
+    }
+    @include for-size(desktop) {
+      font-size: 20px;
+    }
   }
 
   &.blueButton {
     background: $button-blue-background;
     color: black;
     box-shadow: $button-white-shadow;
-    transition: box-shadow 0.3s ease-in-out;;
-    &:hover{
-
-    box-shadow: $button-blue-shadow;
-
+    transition: box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: $button-blue-shadow;
     }
     &:disabled {
       background: $button-blue-disabled;
@@ -47,7 +52,7 @@
     box-shadow: $button-white-shadow;
     transition: all 0.3s ease-in-out;
 
-    &:hover{
+    &:hover {
       background: #afdaed;
     }
   }
