@@ -12,13 +12,13 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130.49%;
+  line-height: 130%;
   letter-spacing: 0.8px;
 
   @include for-size(laptop) {
     width: 210px;
     padding: 22px 25px 22px 28px;
-    border-radius: 13.172px;
+    border-radius: 13px;
     font-size: 17px;
     letter-spacing: 0.703px;
   }
@@ -32,6 +32,6 @@
   }
 }
 
-.link{
+.link {
   color: #000;
 }

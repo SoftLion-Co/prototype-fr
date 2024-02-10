@@ -34,15 +34,19 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
   ));
 
   return (
-    <div className={classNames(s.container, s.custom_breadcrumbs)}>
-      {items.map((item, index) => (
-        <Fragment key={index}>
-          {index > 0 && (
-            <span className={s.custom_breadcrumbs__separator}>{separator}</span>
-          )}
-          {item}
-        </Fragment>
-      ))}
+    <div className={s.custom_breadcrumbs}>
+      <div className={s.container}>
+        {items.map((item, index) => (
+          <Fragment key={index}>
+            {index > 0 && (
+              <span className={s.custom_breadcrumbs__separator}>
+                {separator}
+              </span>
+            )}
+            {item}
+          </Fragment>
+        ))}
+      </div>
     </div>
   );
 };
