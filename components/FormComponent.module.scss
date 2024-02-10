@@ -106,7 +106,7 @@
 
   &__field {
     &:nth-child(2) {
-      padding-left: 42px;
+      padding-left: 36px;
     }
 
     padding: 0;
@@ -384,15 +384,9 @@
   color: red;
 }
 
-.container-input {
+.container__input {
   min-width: 100%;
   background-color: transparent;
-}
-
-.search {
-  padding-left: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .buttonC {
@@ -401,6 +395,11 @@
   padding-right: 0;
   border: none !important;
   bottom: 12px !important;
+  background-color: transparent !important;
+}
+
+.buttonC div {
+  padding: 0 !important;
   background-color: transparent !important;
 }
 
@@ -440,4 +439,12 @@
   @include for-size(desktop) {
     font-size: 16px;
   }
+}
+
+.drop li {
+  background-color: #f0e6f0 !important;
+}
+
+.drop div {
+  padding: 0 !important;
 }
