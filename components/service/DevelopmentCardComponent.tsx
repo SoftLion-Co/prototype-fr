@@ -1,6 +1,6 @@
-import s from "./DevelopmentCardComponent.module.scss";
-import React, { FC, ReactNode, ComponentProps } from "react";
+import React, { FC } from "react";
 import Image from "next/image";
+import s from "./DevelopmentCardComponent.module.scss";
 
 interface DevelopmentCardComponentProps {
   path?: any;
@@ -15,14 +15,13 @@ const DevelopmentCardComponent: FC<DevelopmentCardComponentProps> = ({
   title,
   items,
   num,
-leftAligned,
-  
+  leftAligned,
 }) => {
   return (
     <div className={s.develop}>
       <div className={s.develop__title}>{title}</div>
       <div className={s.develop__box}>
-        {leftAligned? (
+        {leftAligned ? (
           <>
             <Image className={s.develop__pic} src={path} alt="development" />
             <ul className={s.develop__list}>

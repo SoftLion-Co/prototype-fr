@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import BlogRolledCardComponent from "./BlogRolledCardComponent";
 import BlogExtendedCardComponent from "./BlogExtendedCardComponent";
 import s from "./BlogDesktopComponent.module.scss";
@@ -8,9 +8,7 @@ import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
 import { BlogInterface } from "./BlogInteface";
 
-const BlogDesktopComponent: React.FC<{ blogs: BlogInterface[] }> = ({
-  blogs,
-}) => {
+const BlogDesktopComponent: FC<{ blogs: BlogInterface[] }> = ({ blogs }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 

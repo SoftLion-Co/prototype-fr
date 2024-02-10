@@ -165,13 +165,19 @@
     }
   }
 
+  &__image {
+    width: 90%;
+    height: 90%;
+  }
+
   &__container_image {
+    display: flex;
+    justify-content: center;
+
     height: 118px;
     width: 125px;
-
+    width: 100%;
     margin-bottom: 10px;
-
-    display: flex;
 
     @include for-size(tablet) {
       height: 126px;

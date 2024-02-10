@@ -19,9 +19,9 @@ const CustomAppsSection = () => {
       </div>
       <div className={s.custom__cards}>
         <CustomAppsCardComponent
-          title="Apps"
+          title="Web-Studio"
           path={pic}
-          text="App development is the process of creating software applications for mobile and desktop devices. It involves designing, developing, testing, and deploying apps that meet the needs of users. App developers use a variety of programming languages and tools to create apps for different platforms, such as iOS, Android, and Windows. App development is a complex and challenging process, but it is also very rewarding. By creating innovative and user-friendly apps, app developers can make a real difference in the lives of people around the world."
+          text="In the realm of digital innovation, app development is fundamental, shaping our interactions on mobile and desktop platforms. This process involves crafting software applications to meet diverse user needs. SoftLion excels not only in app development but also offers a range of web solutions. From mobile apps to responsive websites, we specialize in creating captivating digital experiences. Partner with us to realize your ideas and make a lasting impact online."
           arrow={false}
         />
         <CustomAppsCardComponent

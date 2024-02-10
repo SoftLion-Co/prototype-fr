@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "@/components/blog/BlogFilterButton.module.scss";
 import classNames from "classnames";
 
@@ -10,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-const BlogFilterButton: React.FC<Props> = ({
+const BlogFilterButton: FC<Props> = ({
   text,
   activeFilter,
   onClick,

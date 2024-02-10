@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./SmallServiceCardComponent.module.scss";
 import Image from "next/image";
 
@@ -12,7 +12,7 @@ interface SmallServiceCardComponentProps {
   background: string;
 }
 
-const SmallServiceCardComponent: React.FC<SmallServiceCardComponentProps> = ({
+const SmallServiceCardComponent: FC<SmallServiceCardComponentProps> = ({
   title,
   paragraph,
   image,
@@ -37,7 +37,7 @@ const SmallServiceCardComponent: React.FC<SmallServiceCardComponentProps> = ({
         />
         <h2 className={s.service__heading}>{title}</h2>
       </div>
-      
+
       <Image
         className={s.service__vector}
         src={vector}

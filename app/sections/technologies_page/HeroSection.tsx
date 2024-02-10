@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./HeroSection.module.scss";
 import classNames from "classnames";
 import HeadingComponent from "@/components/HeadingComponent";
@@ -12,12 +12,12 @@ interface Props {
   heroTech: HeroTech;
 }
 
-const HeroSection: React.FC<Props> = ({ heroTech }) => {
+const HeroSection: FC<Props> = ({ heroTech }) => {
   return (
     <section className={s.hero}>
       <div className={classNames(s.container, s.hero__container)}>
         <div className={s.hero__technologies}>
-          <HeadingComponent text="Technologies" tag="h1"/>
+          <HeadingComponent text="Technologies" tag="h1" />
         </div>
 
         <h2 className={s.hero__heading}>{heroTech.titleTech}</h2>

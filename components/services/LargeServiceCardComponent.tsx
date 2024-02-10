@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./LargeServiceCardComponent.module.scss";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ interface LargeServiceCardComponentProps {
   isActive: boolean;
 }
 
-const LargeServiceCardComponent: React.FC<LargeServiceCardComponentProps> = ({
+const LargeServiceCardComponent: FC<LargeServiceCardComponentProps> = ({
   title,
   paragraph,
   image,

@@ -1,7 +1,7 @@
-'use client'
+"use client";
 // ContactUs.tsx
 // ContactUs.tsx
-import React, {useState, useEffect} from "react";
+import React, { FC, useState, useEffect } from "react";
 import s from "./FormContact.module.scss";
 import Image from "next/image";
 import email from "../images/applications/mail.svg";
@@ -23,21 +23,23 @@ interface ContactUsProps {
   ContactData: ContactData;
 }
 
-const ContactUs: React.FC<ContactUsProps> = ({ ContactData }) => {
+const ContactUs: FC<ContactUsProps> = ({ ContactData }) => {
   // Встановлюємо початкове значення description
   const [description, setDescription] = useState(ContactData.description);
 
   // Використовуємо useEffect для оновлення description при зміні ContactData
   useEffect(() => {
     setDescription(ContactData.description);
-  }, [ContactData]);;
+  }, [ContactData]);
   return (
     <div>
       <div className={s.form}>
         <div className={s.form_content}>
           <div className={s.form_phone}>
             <Image src={phone} alt="phone" />
-            <p className={s.form_phone_text}>Номер телефону: {ContactData.tell}</p>
+            <p className={s.form_phone_text}>
+              Номер телефону: {ContactData.tell}
+            </p>
           </div>
           <div className={s.form_email}>
             <Image src={email} alt="email" />
@@ -48,18 +50,20 @@ const ContactUs: React.FC<ContactUsProps> = ({ ContactData }) => {
             <p className={s.form_description_text}>Короткий опис: </p>
           </div>
           <textarea
-          className={s.form_description__text}
-          name="Area"
-          id=""
-          cols={30}
-          rows={10}
-          value={description}
-        >
-          {description}
-        </textarea>
-        <div className={s.form_data}>
-          <Image src={time} alt="data" />
-          <p className={s.form_data__text}>Дата відправлення: {ContactData.data}</p>
+            className={s.form_description__text}
+            name="Area"
+            id=""
+            cols={30}
+            rows={10}
+            value={description}
+          >
+            {description}
+          </textarea>
+          <div className={s.form_data}>
+            <Image src={time} alt="data" />
+            <p className={s.form_data__text}>
+              Дата відправлення: {ContactData.data}
+            </p>
           </div>
         </div>
         <span className={s.line}></span>
@@ -73,4 +77,3 @@ const ContactUs: React.FC<ContactUsProps> = ({ ContactData }) => {
 };
 
 export default ContactUs;
-
