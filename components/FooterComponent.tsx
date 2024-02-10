@@ -7,6 +7,7 @@ import { FiLinkedin, FiFacebook } from "react-icons/fi";
 import MainButtonComponent from "./MainButtonComponent";
 import Logo from "./../images/logo.svg";
 import classNames from "classnames";
+
 const FooterComponent = () => {
   const routes: { path: string; label: string }[] = [
     { path: "/services", label: "Services" },

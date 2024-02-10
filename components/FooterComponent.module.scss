@@ -114,6 +114,7 @@
     @include for-size(tablet) {
       gap: 0;
       justify-content: space-between;
+      align-items: flex-start;
     }
   }
 
@@ -140,7 +141,7 @@
 
     @include for-size(tablet) {
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
