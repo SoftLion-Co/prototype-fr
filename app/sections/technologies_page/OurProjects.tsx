@@ -1,9 +1,9 @@
 "use client";
 
+import React, { FC } from "react";
 import s from "./OurProjects.module.scss";
 import ProjectMobileCardComponent from "./../../../components/projects/ProjectMobileCardComponent";
 import ProjectCardComponent from "./../../../components/projects/ProjectCardComponent";
-import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
@@ -25,7 +25,7 @@ interface OurProjectsProps {
   titleTech: string;
 }
 
-const OurProjects: React.FC<OurProjectsProps> = ({ data, titleTech }) => {
+const OurProjects: FC<OurProjectsProps> = ({ data, titleTech }) => {
   return (
     <section className={s.projects}>
       <div className={s.projects__heading}>

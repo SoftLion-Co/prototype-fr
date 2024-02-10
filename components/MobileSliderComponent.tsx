@@ -1,8 +1,8 @@
 "use client";
 
 import React, { FC, useState } from "react";
-import { Carousel } from "@mantine/carousel";
 import s from "./MobileSliderComponent.module.scss";
+import { Carousel } from "@mantine/carousel";
 import { StaticImageData } from "next/image";
 
 interface MobileSliderComponentProps {
@@ -19,7 +19,7 @@ interface MobileSliderComponentProps {
     position?: string;
     linkedinUrl?: string;
   }>;
-  SlideComponent: React.FC<{ data: any }>; // Пропс для передачі компоненти слайда
+  SlideComponent: FC<{ data: any }>;
 }
 
 const MobileSliderComponent: FC<MobileSliderComponentProps> = ({

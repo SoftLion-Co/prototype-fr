@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { FC } from "react";
 import SmallServiceCardComponent from "./SmallServiceCardComponent";
 import LargeServiceCardComponent from "./LargeServiceCardComponent";
 import s from "./ServiceCardsComponent.module.scss";
@@ -17,7 +17,7 @@ interface ServiceCardsProps {
   cardData: CardData[];
 }
 
-const ServiceCardsComponent: React.FC<ServiceCardsProps> = ({ cardData }) => {
+const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
   const { centerCardData, leftCardData, rightCardData, handleSmallCardClick } =
     useSwitchingCardsService(cardData);
 

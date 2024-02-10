@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import s from "./HeadingOurProjectComponent.module.scss";
 import classNames from "classnames";
 import Image from "next/image";
@@ -8,7 +9,7 @@ interface HeadingOurProjectComponentProps {
   text: string;
 }
 
-const HeadingOurProjectComponent: React.FC<HeadingOurProjectComponentProps> = ({
+const HeadingOurProjectComponent: FC<HeadingOurProjectComponentProps> = ({
   title,
   text,
 }) => {

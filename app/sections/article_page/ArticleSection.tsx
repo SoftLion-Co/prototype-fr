@@ -1,9 +1,10 @@
+import React, { FC } from "react";
 import s from "./ArticleSection.module.scss";
 import { Article } from "@/components/blog/BlogArticleComponent";
 import { SectionScrolIndicator } from "@/components/blog/BlogSectionScrolIndicatorComponent";
 import classNames from "classnames";
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
 
 interface ArticleSectionProps {
   response: {
@@ -22,9 +23,16 @@ interface ArticleSectionProps {
   };
 }
 
-const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
-  const { articleName, authorImg, articleimg, readTime, author, authorId, articles } =
-    response;
+const ArticleSection: FC<ArticleSectionProps> = ({ response }) => {
+  const {
+    articleName,
+    authorImg,
+    articleimg,
+    readTime,
+    author,
+    authorId,
+    articles,
+  } = response;
 
   return (
     <section className={classNames(s.container, s.article)}>
@@ -33,16 +41,17 @@ const ArticleSection: React.FC<ArticleSectionProps> = ({ response }) => {
         <div className={s.author__container}>
           <div className={s.author}>
             <Link href={`/authors/${authorId}`} className={s.author}>
-            <div className={s.author__image}>
-              <Image
-                className={s.picture}
-                width={44}
-                height={44}
-                src={authorImg}
-                alt={author}
-              />
-            </div>
-            <span className={s.author__text}>{author}</span></Link>
+              <div className={s.author__image}>
+                <Image
+                  className={s.picture}
+                  width={44}
+                  height={44}
+                  src={authorImg}
+                  alt={author}
+                />
+              </div>
+              <span className={s.author__text}>{author}</span>
+            </Link>
           </div>
           <span className={s.author__text}>Reading time: {readTime}</span>
         </div>

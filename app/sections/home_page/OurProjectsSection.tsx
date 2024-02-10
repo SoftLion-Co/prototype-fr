@@ -8,8 +8,7 @@ import React from "react";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
-import trendHero from "@/images/project/project-trend/trend-hero.png";
-import data from "@/data/projects/projects_data.json"
+import data from "@/data/projects/projects_data.json";
 
 const OurProjectsSection = () => {
   return (

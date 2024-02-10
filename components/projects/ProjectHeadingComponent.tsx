@@ -1,13 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import s from "./ProjectHeadingComponent.module.scss";
 import HeadingComponent from "./../HeadingComponent";
 
-interface ProjectHeadingInterface {
-  centered: boolean;
-}
-
-const ProjectHeadingComponent: React.FC<{ centered: boolean }> = ({
+const ProjectHeadingComponent: FC<{ centered: boolean }> = ({
   centered = false,
 }) => {
   return (

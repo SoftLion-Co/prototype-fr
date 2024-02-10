@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "@/components/blog/BlogPaginationButton.module.scss";
 import classNames from "classnames";
 
@@ -10,7 +10,7 @@ interface Props {
   className?: string;
 }
 
-const BlogPaginationButton: React.FC<Props> = ({
+const BlogPaginationButton: FC<Props> = ({
   text,
   activePagination,
   onClick,

@@ -33,7 +33,7 @@ const MainButtonComponent: FC<MainButtonComponentProps> = ({
             className={buttonClass}
             {...rest}
           >
-            <>{children}</>
+            <p className={s.button__text}>{children}</p>
           </button>
         </Link>
       ) : (
@@ -42,7 +42,7 @@ const MainButtonComponent: FC<MainButtonComponentProps> = ({
           className={buttonClass}
           {...rest}
         >
-          <>{children}</>
+          <p className={s.button__text}>{children}</p>
         </button>
       )}
     </>

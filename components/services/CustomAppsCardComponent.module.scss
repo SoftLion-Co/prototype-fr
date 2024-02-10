@@ -87,7 +87,6 @@
     letter-spacing: 0.5px;
     color: black;
     line-height: 130%;
-    margin-top: 28px;
     text-align: center;
 
     @include for-size(tablet) {
@@ -104,6 +103,7 @@
       letter-spacing: 0.8px;
       font-size: 20px;
       width: 480px;
+      min-height: 320px;
     }
   }
 }

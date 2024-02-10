@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import s from "./BlogInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 import edit from "@/app/admin/images/control/edit.svg";
@@ -20,14 +20,14 @@ interface Props {
   onEditButtonClick: () => void;
 }
 
-const BlogInfoComponent: React.FC<Props> = ({ users, onEditButtonClick }) => {
+const BlogInfoComponent: FC<Props> = ({ users, onEditButtonClick }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredUsers = users.filter(user =>
+  const filteredUsers = users.filter((user) =>
     user.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -43,7 +43,7 @@ const BlogInfoComponent: React.FC<Props> = ({ users, onEditButtonClick }) => {
       </div>
 
       <ul className={s.user__list}>
-        {filteredUsers.map(user => (
+        {filteredUsers.map((user) => (
           <li className={s.user__list__item} key={user.number}>
             <div className={s.user__list__information}>
               <p>{user.number}</p>

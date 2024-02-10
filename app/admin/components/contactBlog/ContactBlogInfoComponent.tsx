@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./ContactBlogInfoComponent.module.scss";
 import SearchInputComponent from "@/app/admin/components/SearchInputComponent";
 
@@ -18,7 +18,7 @@ interface Props {
   onEditButtonClick: () => void;
 }
 
-const ContactBlogInfoComponent: React.FC<Props> = ({
+const ContactBlogInfoComponent: FC<Props> = ({
   users,
   searchTerm,
   setSearchTerm,
@@ -29,7 +29,7 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
     setSearchTerm(event.target.value);
   };
 
-  const filteredUsers = users.filter(user =>
+  const filteredUsers = users.filter((user) =>
     user.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -45,9 +45,12 @@ const ContactBlogInfoComponent: React.FC<Props> = ({
       </div>
 
       <ul className={s.user__list}>
-        {filteredUsers.map(user => (
+        {filteredUsers.map((user) => (
           <li className={s.user__list__item} key={user.number}>
-            <div className={s.user__list__information} onClick={() => onCardClick(user)}>
+            <div
+              className={s.user__list__information}
+              onClick={() => onCardClick(user)}
+            >
               <p>{user.number}</p>
               <p>{user.description}</p>
               <p>{user.data}</p>

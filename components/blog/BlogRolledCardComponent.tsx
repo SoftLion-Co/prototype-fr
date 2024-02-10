@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./BlogRolledCardComponent.module.scss";
 import Image from "next/image";
 
@@ -7,7 +7,7 @@ interface BlogRolledCardProps {
   title: string;
 }
 
-const BlogRolledCardComponent: React.FC<BlogRolledCardProps> = (data) => {
+const BlogRolledCardComponent: FC<BlogRolledCardProps> = (data) => {
   const { imageSrc, title } = data;
   return (
     <div className={s.card}>

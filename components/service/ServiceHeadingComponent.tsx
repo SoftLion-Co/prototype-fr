@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import s from "./ServiceHeadingComponent.module.scss";
 import Image from "next/image";
 import Line from "../../images/project/line-component.svg";
@@ -9,13 +10,13 @@ interface ServiceHeadingComponentProps {
   tag?: string;
 }
 
-const ServiceHeadingComponent: React.FC<ServiceHeadingComponentProps> = ({
+const ServiceHeadingComponent: FC<ServiceHeadingComponentProps> = ({
   headingText,
   container = true,
   tag,
 }) => {
   const headingClass = classNames(s.heading, {
-    [s.container]: container === true, // Додаємо s.container, якщо container === true
+    [s.container]: container === true,
   });
 
   return (

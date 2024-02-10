@@ -1,8 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import s from "./ProjectMobileCardComponent.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { PiArrowRightThin } from "react-icons/pi";
 
 interface ProjectData {
   id: number;
@@ -15,9 +14,7 @@ interface ProjectData {
   technology: string[];
 }
 
-const ProjectMobileCardComponent: React.FC<{ data: ProjectData }> = ({
-  data,
-}) => {
+const ProjectMobileCardComponent: FC<{ data: ProjectData }> = ({ data }) => {
   return (
     <div className={s.card}>
       <Link href={`/projects/${data.id}`} className={s.card__link}>
