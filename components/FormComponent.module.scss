@@ -136,8 +136,8 @@
     font-family: Open Sans;
     color: #858585;
     font-size: 12px;
-    line-height: 154%;
-    letter-spacing: 0.19px;
+    line-height: 150%;
+    letter-spacing: 0.2px;
     padding-bottom: 3px;
     resize: none;
     max-height: 400px;
@@ -145,19 +145,19 @@
     @include for-size(tablet) {
       width: 195px;
       font-size: 12px;
-      letter-spacing: 0.25px;
+      letter-spacing: 0.3px;
     }
 
     @include for-size(laptop) {
       width: 284px;
       font-size: 12px;
-      letter-spacing: 0.36px;
+      letter-spacing: 0.4px;
     }
 
     @include for-size(desktop) {
       width: 372px;
       font-size: 16px;
-      letter-spacing: 0.48px;
+      letter-spacing: 0.5px;
     }
 
     &:focus {
@@ -176,23 +176,22 @@
       color: #858585;
       font-size: 12px;
       line-height: 155%;
-      letter-spacing: 0.19px;
+      letter-spacing: 0.2px;
 
       @include for-size(tablet) {
         top: 1px;
         color: #858585;
         font-size: 12px;
-        letter-spacing: 0.38px;
+        letter-spacing: 0.4px;
       }
       @include for-size(laptop) {
         top: 5px;
         font-size: 14px;
-        letter-spacing: 0.36px;
       }
       @include for-size(desktop) {
         top: 10px;
         font-size: 16px;
-        letter-spacing: 0.48px;
+        letter-spacing: 0.5px;
       }
     }
 
@@ -210,19 +209,19 @@
     margin-bottom: 50px;
 
     @include for-size(tablet) {
-      letter-spacing: 1.42px;
+      letter-spacing: 1.5px;
       margin-bottom: 40px;
     }
     @include for-size(laptop) {
       font-size: 23px;
       letter-spacing: 2.1px;
-      margin-bottom: 59px;
+      margin-bottom: 60px;
     }
     @include for-size(desktop) {
       font-size: 30px;
       font-weight: 400;
       letter-spacing: 2.7px;
-      margin-bottom: 77px;
+      margin-bottom: 80px;
     }
   }
 
@@ -318,7 +317,7 @@
 
       font-size: 11px;
       line-height: 140%;
-      letter-spacing: 0.155px;
+      letter-spacing: 0.15px;
 
       @include for-size(tablet) {
         font-size: 10px;
@@ -330,7 +329,7 @@
       }
       @include for-size(desktop) {
         font-size: 14px;
-        letter-spacing: 0.39px;
+        letter-spacing: 0.4px;
       }
     }
   }
