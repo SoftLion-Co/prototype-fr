@@ -14,10 +14,10 @@ const Projects = () => {
   const links = [{ title: "Projects", href: "/projects" }];
 
   return (
-    <div>
+    <React.Fragment>
       <InfoNavigationComponent links={links} />
       <OurProjectsSection />
-    </div>
+    </React.Fragment>
   );
 };
 

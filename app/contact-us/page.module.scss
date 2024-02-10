@@ -1,20 +1,23 @@
 @import "../styles/mixin";
 
 .contact_page {
+  width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 40px;
-  margin-bottom: 60px;
+  margin-top: 60px;
 
   @include for-size(tablet) {
-    min-height: calc(100vh - 580px);
+    min-height: calc(100vh - 740px);
+    margin-top: 100px;
   }
 
   @include for-size(laptop) {
-    min-height: calc(100vh - 648px);
+    margin-top: 120px;
+    min-height: calc(100vh - 580px);
   }
 
   @include for-size(desktop) {
-    min-height: calc(100vh - 735px);
+    margin-top: 160px;
+    min-height: calc(100vh - 460px);
   }
 }

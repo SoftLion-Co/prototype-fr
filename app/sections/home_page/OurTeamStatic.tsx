@@ -2,15 +2,12 @@
 
 import HeadingComponent from "@/components/HeadingComponent";
 import s from "./OurTeamStatic.module.scss";
-import classNames from "classnames";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
-import { Carousel, Embla } from "@mantine/carousel";
-import { useState } from "react";
+
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import Image, { StaticImageData } from "next/image";
 
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
-import AvatarYan from "./../../../images/avatar/Yan.jpeg";
 
 const OurTeamSetcion = () => {
   interface Props {
@@ -56,12 +53,12 @@ const OurTeamSetcion = () => {
   ];
 
   return (
-    <div className={s.team}>
+    <section className={s.team}>
       <div className={s.container}>
         <div className={s.team__title}></div>
         <HeadingComponent customClass={s.team__title} text="Our team" />
         <div className={s.team__container}>
-          {response.map((member, index) => (
+          {response.map((member) => (
             <OurTeamCard data={member} isActive={false} />
           ))}
         </div>
@@ -69,7 +66,7 @@ const OurTeamSetcion = () => {
       <div className={s.mobile__slider}>
         <MobileSliderComponent data={response} SlideComponent={OurTeamCard} />
       </div>
-    </div>
+    </section>
   );
 };
 

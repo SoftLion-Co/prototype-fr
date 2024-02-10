@@ -3,22 +3,18 @@
 @import "./../styles/container";
 
 .projects {
-  margin-top: 42px;
   margin-bottom: 105px;
 
   @include for-size(tablet) {
-    margin-top: 70px;
     margin-bottom: 155px;
   }
 
   @include for-size(laptop) {
-    margin-top: 100px;
-    margin-bottom: 250px;
+    margin-bottom: 240px;
   }
 
   @include for-size(desktop) {
-    margin-top: 150px;
-    margin-bottom: 380px;
+    margin-bottom: 300px;
   }
 
   &__cards_desktop {

@@ -1,5 +1,4 @@
 import React from "react";
-import s from "./page.module.scss";
 import DesignSection from "../sections/service_page/DesignSection";
 import CustomAppsSection from "../sections/service_page/CustomAppsSection";
 import DevelopmentSection from "../sections/service_page/DevelopmentSection";
@@ -18,21 +17,13 @@ const Services = () => {
   const links = [{ title: "Services", href: "#" }];
 
   return (
-    <div>
+    <React.Fragment>
       <InfoNavigationComponent links={links} />
-      <div id="design">
-        <DesignSection />
-      </div>
-      <div id="development">
-        <DevelopmentSection />
-      </div>
-      <div id="apps">
-        <CustomAppsSection />
-      </div>
-      <div id="security">
-        <SecuritySection />
-      </div>
-    </div>
+      <DesignSection anchorID="design" />
+      <DevelopmentSection anchorID="development" />
+      <CustomAppsSection anchorID="apps" />
+      <SecuritySection anchorID="security" />
+    </React.Fragment>
   );
 };
 

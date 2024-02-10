@@ -10,11 +10,11 @@ export async function generateMetadata({}) {
 
 const ContactUs = () => {
   useGoogleAnalytics();
-  
+
   return (
-    <div className={s.contact_page}>
-      <ContactUsSection />
-    </div>
+    <React.Fragment>
+      <ContactUsSection className={s.contact_page} />
+    </React.Fragment>
   );
 };
 
