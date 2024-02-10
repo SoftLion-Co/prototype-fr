@@ -27,6 +27,7 @@
     @include for-size(tablet) {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -121,6 +122,7 @@
 
     &_desktop {
       display: none;
+
       @include for-size(tablet) {
         position: relative;
         display: block;
@@ -130,11 +132,11 @@
       }
       @include for-size(laptop) {
         max-width: 555px;
-        margin-top: -7px;
+        margin-top: 10px;
       }
       @include for-size(desktop) {
         max-width: 700px;
-        margin-top: -13px;
+        margin-top: 16px;
         margin-left: 0;
       }
       animation: floatingAnimation 3s infinite ease-in-out;
@@ -225,7 +227,6 @@
       width: 385px;
       height: 360px;
     }
-
     @include for-size(laptop) {
       background-image: url(../../../images/blur/hero_blurL.png);
       right: 590px;
@@ -233,7 +234,6 @@
       width: 496px;
       height: 463px;
     }
-
     @include for-size(desktop) {
       background-image: url(../../../images/blur/hero_blurD.png);
       right: 780px;

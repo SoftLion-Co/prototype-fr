@@ -1,6 +1,5 @@
 import s from "./HeroSection.module.scss";
 import Image from "next/image";
-import heroLogo from "./../../../images/hero-logo.svg";
 import heroLogoMobile from "./../../../images/hero-mobile.svg";
 import heroShadow from "@/images/hero-shadow.svg";
 import MainButtonComponent from "./../../../components/MainButtonComponent";
