@@ -1,4 +1,5 @@
 "use client";
+import React, { FC } from "react";
 import s from "./DevelopmentSection.module.scss";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
@@ -54,9 +55,13 @@ const cardsData = [
   },
 ];
 
-const DevelopmentSection = () => {
+interface AnchorID {
+  anchorID: string;
+}
+
+const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
   return (
-    <section className={classNames(s.container, s.develop)}>
+    <section id={anchorID} className={classNames(s.container, s.develop)}>
       <div className={s.develop__heading}>
         <ServiceHeadingComponent
           headingText={" Development"}

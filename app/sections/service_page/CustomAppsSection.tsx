@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import s from "./CustomAppsSection.module.scss";
 import CustomAppsCardComponent from "@/components/services/CustomAppsCardComponent";
 import pic from "../../../images/services/custom-apps/Apps.svg";
@@ -5,9 +6,13 @@ import pic2 from "../../../images/services/custom-apps/CustomAppDevelopment.svg"
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 
-const CustomAppsSection = () => {
+interface AnchorID {
+  anchorID: string;
+}
+
+const CustomAppsSection: FC<AnchorID> = ({ anchorID }) => {
   return (
-    <section className={classNames(s.container, s.custom)}>
+    <section id={anchorID} className={classNames(s.container, s.custom)}>
       <div className={s.custom__title}>
         <ServiceHeadingComponent
           headingText={"Custom Apps"}

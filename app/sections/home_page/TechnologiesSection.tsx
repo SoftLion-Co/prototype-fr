@@ -72,48 +72,46 @@ const TechnologiesSection = () => {
           <HeadingComponent text="Technologies" />
         </div>
 
-        <div className={s.technologies__cards}>
-          <div className={s.technologies__cards_wrapper}>
-            {technologiesData.map((tech) => (
+        <div className={s.technologies__cards_wrapper}>
+          {technologiesData.map((tech) => (
+            <div
+              key={tech.id}
+              className={classNames(
+                s.technologies__card_wrapper,
+                tech.isOpen ? s.clicked : "",
+                s.flip_card
+              )}
+              onClick={() => toggleIsOpen(tech.id)}
+            >
               <div
-                key={tech.id}
                 className={classNames(
-                  s.technologies__card_wrapper,
-                  tech.isOpen ? s.clicked : "",
-                  s.flip_card
+                  s.flip_card_inner,
+                  s.technologies__card_container
                 )}
-                onClick={() => toggleIsOpen(tech.id)}
               >
-                <div
-                  className={classNames(
-                    s.flip_card_inner,
-                    s.technologies__card_container
-                  )}
-                >
-                  <div className={s.flip_card_front}>
-                    <div className={s.technologies__icon_wrapper}>
-                      <BiExpandAlt className={s.technologies__icon_open} />
-                    </div>
-                    <div className={s.technologies__container_image}>
-                      <Image
-                        className={s.technologies__image}
-                        src={tech.imgSrc}
-                        alt={tech.imgSrc}
-                      />
-                    </div>
-                    <p className={s.technologies__description_photo}>
-                      {tech.imgAlt}
-                    </p>
+                <div className={s.flip_card_front}>
+                  <div className={s.technologies__icon_wrapper}>
+                    <BiExpandAlt className={s.technologies__icon_open} />
                   </div>
-                  <div className={s.flip_card_back}>
-                    <p className={s.technologies__text}>{tech.description}</p>
+                  <div className={s.technologies__container_image}>
+                    <Image
+                      className={s.technologies__image}
+                      src={tech.imgSrc}
+                      alt={tech.imgSrc}
+                    />
                   </div>
+                  <p className={s.technologies__description_photo}>
+                    {tech.imgAlt}
+                  </p>
+                </div>
+                <div className={s.flip_card_back}>
+                  <p className={s.technologies__text}>{tech.description}</p>
                 </div>
               </div>
-            ))}
-            <div className={s.blur}>
-              <div className={s.blur_item}></div>
             </div>
+          ))}
+          <div className={s.blur}>
+            <div className={s.blur_item}></div>
           </div>
         </div>
       </div>

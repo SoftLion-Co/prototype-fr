@@ -57,7 +57,6 @@ const HeaderComponent = () => {
     };
   }, []);
 
-
   const handleMenuItemClick = (index: any) => {
     if (selectedMenuItem === index) {
       setSelectedMenuItem(null);
@@ -550,22 +549,6 @@ const HeaderComponent = () => {
                     <p>Contact Us</p>
                   </Link>
                 </li>
-                {/* <li className={s.header_modal__item}>
-                  <div
-                    className={classNames(
-                      s.header__btn_login,
-                      s.header_modal__btn_hidden
-                    )}
-                  >
-                    <Link
-                      href="/login"
-                      className={s.header__btn_login__text}
-                      onClick={handleButtonClick}
-                    >
-                      Login
-                    </Link>
-                  </div>
-                </li> */}
               </ul>
               <div className={s.header_modal__container}>
                 {social.map((item, index) => (

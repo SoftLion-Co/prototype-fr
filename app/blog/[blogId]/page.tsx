@@ -1,7 +1,7 @@
 import React from "react";
+import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import InformationSection from "@/app/sections/article_page/ImpressionSection";
 import ArticleSection from "@/app/sections/article_page/ArticleSection";
-import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import OurTeamSection from "@/app/sections/home_page/OurTeamSection";
 import blogsData from "@/data/blog/blogs_extended_data.json";
 
@@ -48,7 +48,7 @@ const Blog = ({ params }: { params: BlogParams }) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <head>
         <title>{metadata.title}</title>
       </head>
@@ -57,7 +57,7 @@ const Blog = ({ params }: { params: BlogParams }) => {
       <ArticleSection response={response} />
       <InformationSection />
       <OurTeamSection />
-    </div>
+    </React.Fragment>
   );
 };
 

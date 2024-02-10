@@ -3,6 +3,7 @@ import "./../styles/main.scss";
 import FooterComponent from "@/components/FooterComponent";
 import s from "./layout.module.scss";
 import Head from "next/head";
+import classNames from "classnames";
 export const metadata = {
   title: "SoftLion",
   description:
@@ -35,13 +36,11 @@ export default function RootLayout({
       </Head>
 
       <body>
-        <div className={s.main}>
-          <HeaderComponent />
-          <div className={s.page} id="layout">
-            {children}
-          </div>
-          <FooterComponent />
-        </div>
+        <HeaderComponent />
+        <main className={classNames(s.page, s.main)} id="layout">
+          {children}
+        </main>
+        <FooterComponent />
         <div id="modalRoot"></div>
       </body>
     </html>

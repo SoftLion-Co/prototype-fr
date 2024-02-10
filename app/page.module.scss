@@ -13,11 +13,11 @@
 
   @include for-size(laptop) {
     gap: 120px;
-    margin-bottom: 250px;
+    margin-bottom: 240px;
   }
 
   @include for-size(desktop) {
     gap: 150px;
-    margin-bottom: 380px;
+    margin-bottom: 300px;
   }
 }

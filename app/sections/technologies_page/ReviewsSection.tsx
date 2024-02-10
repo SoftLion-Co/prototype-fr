@@ -35,7 +35,7 @@ const ReviewsSection: FC<Props> = ({ reviewsSection }) => {
       let newIndex;
 
       if (
-        index === currentIndex + 1 ||
+        index === currentIndex + 2 ||
         (currentIndex === numSlides - 1 && index === 0)
       ) {
         newIndex = (currentIndex + 1) % numSlides;

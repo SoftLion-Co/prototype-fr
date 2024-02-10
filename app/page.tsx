@@ -21,8 +21,6 @@ const Home = () => {
 
   return (
     <div className={s.home_page}>
-
-
       <HeroSection />
       <TechnologiesSection />
       <OurServicesSection />

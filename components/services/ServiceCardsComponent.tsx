@@ -1,9 +1,10 @@
 "use client";
 
 import React, { FC } from "react";
+import classNames from "classnames";
+import s from "./ServiceCardsComponent.module.scss";
 import SmallServiceCardComponent from "./SmallServiceCardComponent";
 import LargeServiceCardComponent from "./LargeServiceCardComponent";
-import s from "./ServiceCardsComponent.module.scss";
 import useSwitchingCardsService from "@/hooks/useSwitchingCardsService";
 
 interface CardData {
@@ -23,7 +24,7 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
 
   return (
     <div className={s.service}>
-      <div className={`${s.service__card} ${s.service__card_left}`}>
+      <div className={classNames(s.service__card, s.service__card_left)}>
         <SmallServiceCardComponent
           title={leftCardData.title}
           paragraph={leftCardData.paragraph}
@@ -52,7 +53,7 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
           isActive={true}
         />
       </div>
-      <div className={`${s.service__card} ${s.service__card_right}`}>
+      <div className={classNames(s.service__card, s.service__card_right)}>
         <SmallServiceCardComponent
           title={rightCardData.title}
           paragraph={rightCardData.paragraph}
