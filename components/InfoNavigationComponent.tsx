@@ -34,7 +34,7 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
   ));
 
   return (
-    <div className={s.custom_breadcrumbs}>
+    <section className={s.custom_breadcrumbs}>
       <div className={s.container}>
         {items.map((item, index) => (
           <Fragment key={index}>
@@ -47,7 +47,7 @@ const InfoNavigationComponent = ({ links }: InfoNavigationComponentProps) => {
           </Fragment>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

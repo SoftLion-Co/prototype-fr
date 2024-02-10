@@ -1,23 +1,15 @@
-@import "../styles/mixin";
+@import "./../styles/mixin";
 
-.home_page {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
+.main__contactUs {
   margin-bottom: 105px;
 
   @include for-size(tablet) {
-    gap: 80px;
     margin-bottom: 155px;
   }
-
   @include for-size(laptop) {
-    gap: 120px;
     margin-bottom: 240px;
   }
-
   @include for-size(desktop) {
-    gap: 150px;
     margin-bottom: 300px;
   }
 }

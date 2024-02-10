@@ -3,15 +3,20 @@
 .page {
   display: flex;
   flex-direction: column;
+  gap: 100px;
   flex-grow: 1;
   margin-top: 80px;
 
   @include for-size(tablet) {
     margin-top: 60px;
+    gap: 80px;
   }
-
+  @include for-size(laptop) {
+    gap: 120px;
+  }
   @include for-size(desktop) {
     margin-top: 70px;
+    gap: 150px;
   }
 }
 

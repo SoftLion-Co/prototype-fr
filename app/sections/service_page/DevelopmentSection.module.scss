@@ -3,19 +3,7 @@
 @import "../styles/mixin";
 
 .develop {
-  margin-bottom: 60px;
-
-  @include for-size(tablet) {
-    margin-bottom: 70px;
-  }
-
-  @include for-size(laptop) {
-    margin-bottom: 130px;
-  }
-
-  @include for-size(desktop) {
-    margin-bottom: 200px;
-  }
+  width: 100%;
 
   &__heading {
     margin-bottom: 40px;
