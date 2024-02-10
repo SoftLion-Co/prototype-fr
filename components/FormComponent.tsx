@@ -1,11 +1,11 @@
 "use client";
 
 import React, { FC, useState, useEffect } from "react";
+import s from "./FormComponent.module.scss";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import s from "./FormComponent.module.scss";
-import Link from "next/link";
 import orderProjectService from "./../services/order-project-service";
 
 interface FormProps {
@@ -115,26 +115,26 @@ const FormComponent: FC<FormProps> = ({ title }) => {
             }}
             enableSearch
             disableSearchIcon
-            inputClass={s.phoneInput}
             country={"us"}
             value={numberPhone}
             onChange={(numberPhone: string) => setPhone(numberPhone)}
-            buttonClass={s["buttonC"]}
-            searchClass={s["search"]}
+            buttonClass={s.buttonC}
+            searchClass={s.search}
+            dropdownClass={s.drop}
+            containerClass={s.container__input}
+            dropdownStyle={{
+              borderRadius: "8px",
+            }}
             searchStyle={{
+              backgroundColor: "#F0E6F0",
+              textTransform: "capitalize",
               border: "none",
-              borderRadius: "0px",
-              borderBottom: "1px solid #ccc",
               fontSize: "14px",
-              paddingLeft: "5px",
               marginLeft: "0",
               width: "100%",
-              paddingBottom: "6px",
-              paddingTop: "6px",
+              padding: "6px 0",
               height: "20px",
             }}
-            dropdownClass={s["drop"]}
-            containerClass={s["container-input"]}
           />
           {errors.numberPhone && (
             <p className={s.error}>{errors.numberPhone.message}</p>
