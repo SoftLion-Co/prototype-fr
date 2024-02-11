@@ -4,7 +4,8 @@
 
 .privacy {
   &___date {
-    margin-bottom: 62px;
+    margin-bottom: 60px;
+
     @include for-size(desktop) {
       margin-bottom: 111px;
     }
@@ -65,7 +66,6 @@
     @include for-size(desktop) {
       font-size: 25px;
       margin-bottom: 90px;
-      
     }
     &___color {
       color: rgb(48, 139, 183);

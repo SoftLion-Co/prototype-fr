@@ -1,23 +1,37 @@
 @import "../../../styles/mixin";
 @import "../../../styles/container";
 
-.container {
+.security {
   margin-bottom: 100px;
 
   @include for-size(tablet) {
     margin-bottom: 140px;
   }
+
   @include for-size(laptop) {
     margin-bottom: 240px;
   }
+
   @include for-size(desktop) {
     margin-bottom: 300px;
   }
-}
 
-.security {
+  &__heading {
+    margin-bottom: 30px;
+
+    @include for-size(tablet) {
+      margin-bottom: 40px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 60px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 80px;
+    }
+  }
+
   &__slider {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
 
     @include for-size(tablet) {
       display: none;
@@ -34,10 +48,12 @@
       row-gap: 60px;
       margin-bottom: 40px;
     }
+
     @include for-size(laptop) {
       row-gap: 80px;
       margin-bottom: 60px;
     }
+
     @include for-size(desktop) {
       row-gap: 100px;
       margin-bottom: 80px;
