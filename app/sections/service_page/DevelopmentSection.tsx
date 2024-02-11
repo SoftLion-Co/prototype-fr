@@ -61,39 +61,41 @@ interface AnchorID {
 
 const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
   return (
-    <section id={anchorID} className={classNames(s.container, s.develop)}>
-      <ServiceHeadingComponent
-        className={s.develop__heading}
-        headingText={" Development"}
-      />
-      <div className={s.develop__mob}>
-        {cardsData.map((data) => (
-          <DevelopmentCardMobileComponent
-            key={data.num}
-            num={data.num}
-            title={data.title}
-            items={data.items}
-            path={data.path}
-          />
-        ))}
-      </div>
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
-      <div className={s.develop__desktop}>
-        {cardsData.map((data) => (
-          <DevelopmentCardComponent
-            key={data.num}
-            num={data.num}
-            title={data.title}
-            items={data.items}
-            path={data.path}
-            leftAligned={data.leftAligned}
-          />
-        ))}
-      </div>
-      <div className={s.blure}>
-        <div className={s.blure_item}></div>
+    <section id={anchorID} className={classNames(s.develop)}>
+      <div className={s.container}>
+        <ServiceHeadingComponent
+          className={s.develop__heading}
+          headingText={" Development"}
+        />
+        <div className={s.develop__mob}>
+          {cardsData.map((data) => (
+            <DevelopmentCardMobileComponent
+              key={data.num}
+              num={data.num}
+              title={data.title}
+              items={data.items}
+              path={data.path}
+            />
+          ))}
+        </div>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
+        <div className={s.develop__desktop}>
+          {cardsData.map((data) => (
+            <DevelopmentCardComponent
+              key={data.num}
+              num={data.num}
+              title={data.title}
+              items={data.items}
+              path={data.path}
+              leftAligned={data.leftAligned}
+            />
+          ))}
+        </div>
+        <div className={s.blure}>
+          <div className={s.blure_item}></div>
+        </div>
       </div>
     </section>
   );

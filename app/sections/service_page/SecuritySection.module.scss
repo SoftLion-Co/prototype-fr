@@ -7,11 +7,9 @@
   @include for-size(tablet) {
     margin-bottom: 140px;
   }
-
   @include for-size(laptop) {
     margin-bottom: 240px;
   }
-
   @include for-size(desktop) {
     margin-bottom: 300px;
   }
@@ -31,7 +29,7 @@
   }
 
   &__slider {
-    margin-bottom: 36px;
+    margin-bottom: 40px;
 
     @include for-size(tablet) {
       display: none;
