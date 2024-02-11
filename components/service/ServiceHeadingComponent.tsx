@@ -6,29 +6,23 @@ import classNames from "classnames";
 
 interface ServiceHeadingComponentProps {
   headingText: string;
-  container?: boolean;
   tag?: string;
+  className?: string;
 }
 
 const ServiceHeadingComponent: FC<ServiceHeadingComponentProps> = ({
   headingText,
-  container = true,
   tag,
+  className,
 }) => {
-  const headingClass = classNames(s.heading, {
-    [s.container]: container === true,
-  });
-
   return (
-    <div className={headingClass}>
-      <div className={s.heading__component}>
-        {tag === "h1" ? (
-          <h1 className={s.heading__title}>{headingText}</h1>
-        ) : (
-          <h2 className={s.heading__title}>{headingText}</h2>
-        )}
-        <Image src={Line} alt="Security line" className={s.heading__svg} />
-      </div>
+    <div className={classNames(s.heading, className)}>
+      {tag === "h1" ? (
+        <h1 className={s.heading__title}>{headingText}</h1>
+      ) : (
+        <h2 className={s.heading__title}>{headingText}</h2>
+      )}
+      <Image src={Line} alt="Security line" className={s.heading__svg} />
     </div>
   );
 };

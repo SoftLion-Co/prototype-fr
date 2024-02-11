@@ -125,29 +125,27 @@ const Technology = ({ params }: { params: any }) => {
       </head>
 
       <InfoNavigationComponent links={links} />
-      <div className={s.page}>
-        <HeroSection heroTech={data.heroSection} />
-        <CreationSection
-          creationCard={data.creationSection}
-          titleTech={data.heroSection.titleTech}
-        />
-        <AdvantagesSection
-          paragraphs={data.advantagesSection}
-          titleTech={data.heroSection.titleTech}
-        />
-        <ChooseUsSection chooseUsSection={data.chooseUsSection} />
-        <DevelopmentSection
-          titleTech={data.heroSection.titleTech}
-          developmentSection={data.developmentSection}
-        />
-        <StagesSection stagesSection={data.stagesSection} />
+      <HeroSection heroTech={data.heroSection} />
+      <CreationSection
+        creationCard={data.creationSection}
+        titleTech={data.heroSection.titleTech}
+      />
+      <AdvantagesSection
+        paragraphs={data.advantagesSection}
+        titleTech={data.heroSection.titleTech}
+      />
+      <ChooseUsSection chooseUsSection={data.chooseUsSection} />
+      <DevelopmentSection
+        titleTech={data.heroSection.titleTech}
+        developmentSection={data.developmentSection}
+      />
+      <StagesSection stagesSection={data.stagesSection} />
 
-        {/* <ReviewsSection reviewsSection={data.reviewsSection} /> */}
-        {/* <OurProjects
+      {/* <ReviewsSection reviewsSection={data.reviewsSection} /> */}
+      {/* <OurProjects
           data={data.projectsSection}
           titleTech={data.heroSection.titleTech}
         /> */}
-      </div>
     </React.Fragment>
   );
 };

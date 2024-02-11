@@ -62,12 +62,10 @@ interface AnchorID {
 const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
   return (
     <section id={anchorID} className={classNames(s.container, s.develop)}>
-      <div className={s.develop__heading}>
-        <ServiceHeadingComponent
-          headingText={" Development"}
-          container={false}
-        />
-      </div>
+      <ServiceHeadingComponent
+        className={s.develop__heading}
+        headingText={" Development"}
+      />
       <div className={s.develop__mob}>
         {cardsData.map((data) => (
           <DevelopmentCardMobileComponent

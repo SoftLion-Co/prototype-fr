@@ -55,7 +55,7 @@ const OurTeamSetcion = () => {
   return (
     <section>
       <div className={s.container}>
-        <HeadingComponent customClass={s.team__title} text="Our team" />
+        <HeadingComponent className={s.team__title} text="Our team" />
         <div className={s.team__container}>
           {response.map((member) => (
             <OurTeamCard data={member} isActive={false} />

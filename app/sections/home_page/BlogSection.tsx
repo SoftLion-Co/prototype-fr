@@ -16,7 +16,8 @@ const blogs: BlogInterface[] = getBlogsData();
 const HomeBlog: FC = () => {
   return (
     <section>
-      <div className={s.blog__heading}><HeadingComponent text="Blog"></HeadingComponent></div>
+      <HeadingComponent className={s.blog__heading} text="Blog" />
+
       <div className={s.blogContainer}>
         <div
           className={classNames(
@@ -32,13 +33,13 @@ const HomeBlog: FC = () => {
             SlideComponent={BlogExtendedCardComponent}
           />
         </div>
+
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
       </div>
-      <div className={s.container}>
-        <SeeMoreButtonComponent path="blog" />
-      </div>
+
+      <SeeMoreButtonComponent className={s.container} path="blog" />
     </section>
   );
 };

@@ -94,18 +94,15 @@ const BlogsSection = () => {
 
   const currentBlogs = allBlogs.slice(startIndex, endIndex);
 
-
   return (
     <section className={s.blog}>
-      
-      <div className={s.blog__title}>
-        <ServiceHeadingComponent headingText="Blog" container={true} tag="h1" />
-      </div>
-
       <div className={s.container}>
+        <ServiceHeadingComponent headingText="Blog" tag="h1" />
+
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
+
         <div className={s.blog__filter}>
           <div
             className={classNames(

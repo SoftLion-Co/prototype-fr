@@ -6,6 +6,7 @@
   display: grid;
   row-gap: 40px;
   margin-bottom: 10%;
+  justify-items: center;
 
   @include for-size(tablet) {
     display: flex;

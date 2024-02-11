@@ -109,14 +109,12 @@ const Project = () => {
       </head>
 
       <InfoNavigationComponent links={links} />
-      <div className={s.page}>
-        <ProjectDescriptionSection data={response.ProjectDescriptionSection} />
-        <RequestSection data={response.RequestSection} />
-        <SolutionSection data={response.SolutionSection} />
-        <ResultSection data={response.ResultSection} />
-        <BlogSection />
-        <ProjectContactUs />
-      </div>
+      <ProjectDescriptionSection data={response.ProjectDescriptionSection} />
+      <RequestSection data={response.RequestSection} />
+      <SolutionSection data={response.SolutionSection} />
+      <ResultSection data={response.ResultSection} />
+      <BlogSection />
+      <ProjectContactUs className={s.project__contactUs}/>
     </React.Fragment>
   );
 };

@@ -4,23 +4,21 @@ import React, { FC } from "react";
 
 interface HeadingComponentProps {
   text: string;
-  customClass?: string;
+  className?: string;
   tag?: string;
 }
 
 const HeadingComponent: FC<HeadingComponentProps> = ({
   text,
-  customClass = "",
+  className,
   tag,
 }) => {
-  const className = classNames(s.heading_container, customClass);
-
   return (
-    <div className={className}>
+    <div className={classNames(s.heading__container, className)}>
       {tag === "h1" ? (
-        <h1 className={s.heading}>{text}</h1>
+        <h1 className={classNames(s.heading)}>{text}</h1>
       ) : (
-        <h2 className={s.heading}>{text}</h2>
+        <h2 className={classNames(s.heading)}>{text}</h2>
       )}
     </div>
   );

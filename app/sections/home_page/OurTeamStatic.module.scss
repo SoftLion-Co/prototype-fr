@@ -14,20 +14,18 @@
 
   &__title {
     box-sizing: border-box;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     width: 100%;
 
     @include for-size(tablet) {
       text-align: left;
-      margin-bottom: 47px;
+      margin-bottom: 60px;
     }
-
     @include for-size(laptop) {
-      margin-bottom: 76px;
+      margin-bottom: 80px;
     }
-
     @include for-size(desktop) {
-      margin-bottom: 99px;
+      margin-bottom: 100px;
     }
   }
 }

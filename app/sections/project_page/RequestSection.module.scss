@@ -2,19 +2,6 @@
 @import "../../../styles/container";
 
 .request {
-  &__heading {
-    margin-bottom: 30px;
-    @include for-size(tablet) {
-      margin-bottom: 41px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 63px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 76px;
-    }
-  }
-
   &__content {
     display: flex;
     flex-direction: column;

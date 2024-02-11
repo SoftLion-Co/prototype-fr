@@ -33,7 +33,6 @@
     border-radius: 15px;
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,15 +48,9 @@
 }
 
 .technologies {
-  &__wrapper {
-    position: relative;
-  }
-
   &__card_wrapper {
     border-radius: 15px;
-
     cursor: pointer;
-
     max-width: 224px;
     height: 210px;
 
@@ -65,13 +58,11 @@
       max-width: 216px;
       height: 208px;
     }
-
     @include for-size(laptop) {
       max-width: 239px;
       height: 229px;
       display: flex;
     }
-
     @include for-size(desktop) {
       max-width: 320px;
       height: 307px;
@@ -124,36 +115,19 @@
     }
   }
 
-  &__name_header {
-    margin-bottom: 45px;
-    @include for-size(tablet) {
-      margin-bottom: 115px;
-    }
-
-    @include for-size(laptop) {
-      margin-bottom: 135px;
-    }
-
-    @include for-size(desktop) {
-      margin-bottom: 170px;
-    }
-  }
-
-  &__card_container {
+  &__cards {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: 224px;
+
     @include for-size(tablet) {
       width: 216px;
     }
-
     @include for-size(laptop) {
       width: 239px;
       justify-content: center;
     }
-
     @include for-size(desktop) {
       width: 320px;
     }
@@ -164,7 +138,7 @@
     height: 90%;
   }
 
-  &__container_image {
+  &__images {
     display: flex;
     justify-content: center;
 
@@ -177,12 +151,10 @@
       height: 126px;
       width: 132px;
     }
-
     @include for-size(laptop) {
       height: 140px;
       width: 146px;
     }
-
     @include for-size(desktop) {
       height: 198px;
       width: 188px;
@@ -199,7 +171,6 @@
     @include for-size(tablet) {
       gap: 50px 65px;
     }
-
     @include for-size(laptop) {
       flex-wrap: nowrap;
       gap: 40px;

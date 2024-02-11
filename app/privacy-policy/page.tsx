@@ -14,10 +14,10 @@ const PrivacyPolicy = () => {
   const links = [{ title: " Privacy Policy", href: "#" }];
 
   return (
-    <div>
+    <React.Fragment>
       <InfoNavigationComponent links={links} />
       <PrivacyPolicySection />
-    </div>
+    </React.Fragment>
   );
 };
 

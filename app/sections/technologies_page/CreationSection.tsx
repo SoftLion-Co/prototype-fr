@@ -13,12 +13,10 @@ interface Props {
 const CreationSection: FC<Props> = ({ creationCard, titleTech }: Props) => {
   return (
     <section>
-      <div className={s.heading}>
-        <HeadingComponent
-          text={`What we can create with ${titleTech}`}
-          color="yellow"
-        />
-      </div>
+      <HeadingComponent
+        text={`What we can create with ${titleTech}`}
+        color="yellow"
+      />
 
       <div className={s.mobile}>
         <MobileSliderComponent

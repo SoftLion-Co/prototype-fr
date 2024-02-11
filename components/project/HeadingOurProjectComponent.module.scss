@@ -2,6 +2,18 @@
 @import "../styles/container";
 
 .heading {
+  margin-bottom: 30px;
+
+  @include for-size(tablet) {
+    margin-bottom: 40px;
+  }
+  @include for-size(laptop) {
+    margin-bottom: 60px;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 80px;
+  }
+
   &__title {
     max-width: 44px;
     color: rgba(0, 0, 0, 0.64);
@@ -44,9 +56,9 @@
       stroke-width: 2.2px;
     }
 
-    @include for-size(desktop){
-        width: 522px;
-        stroke-width: 2.6px;
+    @include for-size(desktop) {
+      width: 522px;
+      stroke-width: 2.6px;
     }
   }
 

@@ -3,10 +3,10 @@
 @import "./../../../styles/container";
 
 .blog {
-  margin-bottom: 105px;
+  margin-bottom: 100px;
 
   @include for-size(tablet) {
-    margin-bottom: 155px;
+    margin-bottom: 140px;
   }
   @include for-size(laptop) {
     margin-bottom: 240px;
@@ -18,13 +18,13 @@
   &__hero {
     display: flex;
     flex-direction: column;
-    margin-bottom: 68px;
+    margin-bottom: 60px;
 
     @include for-size(tablet) {
-      margin-bottom: 86px;
+      margin-bottom: 80px;
     }
     @include for-size(laptop) {
-      margin-bottom: 130px;
+      margin-bottom: 120px;
     }
     @include for-size(desktop) {
       margin-bottom: 140px;
@@ -32,7 +32,8 @@
   }
 
   &__title {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+
     @include for-size(tablet) {
       margin-bottom: 40px;
     }
