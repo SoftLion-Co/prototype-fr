@@ -156,7 +156,6 @@ const OurTeamSetcion = () => {
   };
 
   const firstFourTeamMembers = response.slice(0, 5);
-
   const teamMembers = isOnHomePage ? firstFourTeamMembers : response;
 
   return (
