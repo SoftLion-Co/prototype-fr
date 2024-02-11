@@ -1,10 +1,16 @@
-import Link from "next/link";
+import React, { FC } from "react";
+import classNames from "classnames";
 import s from "./BigButtonComponent.module.scss";
+import Link from "next/link";
 
-const BigButtonComponent = () => {
+interface Atribute {
+  className?: string;
+}
+
+const BigButtonComponent: FC<Atribute> = ({ className }) => {
   return (
-    <button className={s.big__button}>
-      <Link href={"/contact-us"} className={s.link} >
+    <button className={classNames(s.big__button, className)}>
+      <Link href={"/contact-us"} className={s.link}>
         Book Consultation
       </Link>
     </button>

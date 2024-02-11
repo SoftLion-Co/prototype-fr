@@ -1,10 +1,10 @@
 @import "./../styles/mixin";
 
 .main__contactUs {
-  margin-bottom: 105px;
+  margin-bottom: 100px;
 
   @include for-size(tablet) {
-    margin-bottom: 155px;
+    margin-bottom: 140px;
   }
   @include for-size(laptop) {
     margin-bottom: 240px;

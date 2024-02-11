@@ -13,29 +13,40 @@
   padding-left: 10px;
   border-bottom: 1px solid $heading-blue-color;
 
-  &_container{
+  &__container {
     text-align: center;
+    margin-bottom: 60px;
+
+    @include for-size(tablet) {
+      margin-bottom: 80px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 120px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 140px;
+    }
   }
 
   @include for-size(tablet) {
     font-size: 33px;
-    letter-spacing: 2.6px; 
-    padding-right: 15px; 
+    letter-spacing: 2.6px;
+    padding-right: 15px;
     padding-left: 15px;
     border-bottom: 2px solid $heading-blue-color;
   }
 
   @include for-size(laptop) {
     font-size: 48px;
-    letter-spacing: 2.634px; 
-    padding-right: 15px; 
+    letter-spacing: 2.634px;
+    padding-right: 15px;
     padding-left: 15px;
   }
 
   @include for-size(desktop) {
     font-size: 63px;
     letter-spacing: 3.84px;
-    padding-right: 20px; 
+    padding-right: 20px;
     padding-left: 20px;
     border-bottom: 3px solid $heading-blue-color;
   }

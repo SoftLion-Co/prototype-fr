@@ -3,6 +3,10 @@
 @import "./../styles/container";
 
 .heading {
+  &__container {
+    margin-bottom: 8%;
+  }
+
   &__title {
     font-size: 19px;
     letter-spacing: 0.6px;

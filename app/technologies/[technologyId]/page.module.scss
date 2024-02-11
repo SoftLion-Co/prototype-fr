@@ -4,18 +4,16 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  margin-bottom: 105px;
+  margin-bottom: 100px;
 
   @include for-size(tablet) {
     gap: 80px;
-    margin-bottom: 155px;
+    margin-bottom: 140px;
   }
-
   @include for-size(laptop) {
     gap: 120px;
     margin-bottom: 240px;
   }
-
   @include for-size(desktop) {
     gap: 150px;
     margin-bottom: 300px;

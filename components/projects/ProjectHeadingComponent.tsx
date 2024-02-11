@@ -12,9 +12,11 @@ const ProjectHeadingComponent: FC<{ centered: boolean }> = ({
         [s.heading___centered]: centered,
       })}
     >
-      <div className={s.heading__title}>
-        <HeadingComponent text="Our Projects" tag="h1" />
-      </div>
+      <HeadingComponent
+        className={s.heading__title}
+        text="Our Projects"
+        tag="h1"
+      />
       <p
         className={classNames(s.heading__text, {
           [s.heading__text___centered]: centered,

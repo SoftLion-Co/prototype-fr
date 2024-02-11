@@ -17,9 +17,8 @@ const ChooseUsSection: FC<ChooseUsSectionProps> = ({ chooseUsSection }) => {
 
   return (
     <section className={s.our__chose}>
-      <div className={s.heading}>
-        <HeadingComponent text="Why you should choose us" color="blue" />
-      </div>
+      <HeadingComponent text="Why you should choose us" color="blue" />
+      
       <div className={s.container}>
         {chooseUsSection.map((item: string, index: number) => (
           <div

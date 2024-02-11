@@ -37,17 +37,12 @@ const getImageForStage = (index: number) => {
 const StagesSection = (props: Props) => {
   return (
     <section>
-      <div className={s.stages__heading}>
-        <HeadingComponent
-          color="green"
-          text={`Process and stages of development`}
-        />
-      </div>
+      <HeadingComponent
+        color="green"
+        text={`Process and stages of development`}
+      />
 
       <div className={classNames(s.stages, s.container)}>
-        {/* <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div> */}
         {props.stagesSection.map((item, index) => (
           <div key={index} className={s.stages__card}>
             <Image
@@ -62,10 +57,8 @@ const StagesSection = (props: Props) => {
             <p className={s.stages__paragraph}>{item.paragraph}</p>
           </div>
         ))}
-      </div>
 
-      <div className={s.stages__button}>
-        <BigButtonComponent />
+        <BigButtonComponent className={s.stages__button} />
       </div>
     </section>
   );

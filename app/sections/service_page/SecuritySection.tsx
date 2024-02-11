@@ -49,10 +49,8 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
   const isEven = securityCardsData.length % 2 === 0;
 
   return (
-    <section id={anchorID} className={s.security}>
-      <div className={s.security__heading}>
-        <ServiceHeadingComponent headingText="Security" />
-      </div>
+    <section id={anchorID} className={classNames(s.container, s.security)}>
+      <ServiceHeadingComponent headingText="Security" />
 
       <div className={s.security__slider}>
         <MobileSliderComponent
@@ -61,7 +59,7 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
         />
       </div>
 
-      <div className={classNames(s.container, s.security__container)}>
+      <div className={s.security__container}>
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>

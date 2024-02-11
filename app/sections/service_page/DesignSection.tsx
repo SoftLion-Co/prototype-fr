@@ -74,13 +74,12 @@ const DesignSection: FC<{ anchorID: string }> = () => {
 
   return (
     <section className={classNames(s.container, s.design)}>
-      <div className={s.design__heading}>
-        <ServiceHeadingComponent
-          headingText={"Desing"}
-          container={false}
-          tag="h1"
-        />
-      </div>
+      <ServiceHeadingComponent
+        className={s.develop__heading}
+        headingText={"Desing"}
+        tag="h1"
+      />
+
       <ul className={s.design__list}>
         {DesignInfo.map((info) => (
           <ServiceDesignCardComponent key={info.id} {...info} />

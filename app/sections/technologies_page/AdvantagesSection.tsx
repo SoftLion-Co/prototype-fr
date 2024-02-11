@@ -35,58 +35,56 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
 
   return (
     <section>
-  <div className={s.advantages__heading}>
-        <HeadingComponent
-          color="purple"
-          text={`Advantages of using ${titleTech}`}
-        />
-      </div>
-    <div className={s.advantages}>
-      
+      <HeadingComponent
+        color="purple"
+        text={`Advantages of using ${titleTech}`}
+      />
 
-      <div className={s.advantages__cards_mobile}>
-        <MobileSliderComponent
-          data={slideData}
-          SlideComponent={AdvantagesCardComponent}
-        />
+      <div className={s.advantages}>
+        <div className={s.advantages__cards_mobile}>
+          <MobileSliderComponent
+            data={slideData}
+            SlideComponent={AdvantagesCardComponent}
+          />
+        </div>
+        <div className={classNames(s.container, s.advantages__cards_desktop)}>
+          <Carousel
+            getEmblaApi={setEmbla}
+            classNames={{ control: s.custom__control }}
+            onSlideChange={(index) => setCurrentSlide(index)}
+            previousControlIcon={
+              <Image
+                className={classNames(s.arrow, s.arrow__left)}
+                src={ArrowLeft}
+                alt="<"
+              />
+            }
+            nextControlIcon={
+              <Image
+                className={classNames(s.arrow, s.arrow__right)}
+                src={ArrowRight}
+                alt=">"
+              />
+            }
+            slideSize="33.333%"
+            align="center"
+            loop
+            slidesToScroll={1}
+          >
+            {slideData.map((slide, index) => (
+              <Carousel.Slide
+                key={slide.id}
+                onClick={() => setActiveSlide(index)}
+              >
+                <div className={s.slide}>
+                  <AdvantagesCardComponent data={slide} />
+                </div>
+              </Carousel.Slide>
+            ))}
+          </Carousel>
+        </div>
       </div>
-      <div className={classNames(s.container, s.advantages__cards_desktop)}>
-        <Carousel
-          getEmblaApi={setEmbla}
-          classNames={{ control: s.custom__control }}
-          onSlideChange={(index) => setCurrentSlide(index)}
-          previousControlIcon={
-            <Image
-              className={classNames(s.arrow, s.arrow__left)}
-              src={ArrowLeft}
-              alt="<"
-            />
-          }
-          nextControlIcon={
-            <Image
-              className={classNames(s.arrow, s.arrow__right)}
-              src={ArrowRight}
-              alt=">"
-            />
-          }
-          slideSize="33.333%"
-          align="center"
-          loop
-          slidesToScroll={1}
-        >
-          {slideData.map((slide, index) => (
-            <Carousel.Slide
-              key={slide.id}
-              onClick={() => setActiveSlide(index)}
-            >
-              <div className={s.slide}>
-                <AdvantagesCardComponent data={slide} />
-              </div>
-            </Carousel.Slide>
-          ))}
-        </Carousel>
-      </div>
-    </div></section>
+    </section>
   );
 };
 

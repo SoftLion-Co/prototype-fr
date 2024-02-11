@@ -17,15 +17,16 @@
     color: $main-green-color;
   }
   &__container {
-    margin-bottom: 68px;
+    margin-bottom: 60px;
+
     @include for-size(tablet) {
-      margin-bottom: 45px;
+      margin-bottom: 80px;
     }
     @include for-size(laptop) {
-      margin-bottom: 145px;
+      margin-bottom: 120px;
     }
     @include for-size(desktop) {
-      margin-bottom: 190px;
+      margin-bottom: 140px;
     }
   }
 

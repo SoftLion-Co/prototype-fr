@@ -38,12 +38,10 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
 
   return (
     <section>
-      <div className={s.development__heading}>
-        <HeadingComponent
-          color="orange"
-          text={`Our development services for ${titleTech} include`}
-        />
-      </div>
+      <HeadingComponent
+        color="orange"
+        text={`Our development services for ${titleTech} include`}
+      />
 
       <div className={classNames(s.development__cards, s.container)}>
         {developmentSection.map((item, index) => {

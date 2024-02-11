@@ -21,9 +21,10 @@
   }
 
   &__title {
-    margin-bottom: 14px;
+    margin-bottom: 20px;
+
     @include for-size(tablet) {
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     @include for-size(laptop) {
       margin-bottom: 30px;
@@ -46,13 +47,11 @@
       max-width: 290px;
       letter-spacing: 0.6px;
     }
-
     @include for-size(laptop) {
       font-size: 16px;
       max-width: 420px;
       letter-spacing: 0.7px;
     }
-
     @include for-size(desktop) {
       font-size: 20px;
       max-width: 540px;
@@ -70,12 +69,10 @@
         text-align: left;
         width: 300px;
       }
-
       @include for-size(laptop) {
         max-width: none;
         width: 425px;
       }
-
       @include for-size(desktop) {
         width: 540px;
       }
@@ -91,11 +88,9 @@
     @include for-size(tablet) {
       margin-bottom: 70px;
     }
-
     @include for-size(laptop) {
       margin-bottom: 90px;
     }
-
     @include for-size(desktop) {
       margin-bottom: 110px;
     }

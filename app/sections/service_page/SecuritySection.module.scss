@@ -2,28 +2,16 @@
 @import "../../../styles/container";
 
 .security {
-  margin-bottom: 105px;
+  margin-bottom: 100px;
 
   @include for-size(tablet) {
-    margin-bottom: 155px;
+    margin-bottom: 140px;
   }
-
   @include for-size(laptop) {
     margin-bottom: 240px;
   }
-
   @include for-size(desktop) {
     margin-bottom: 300px;
-  }
-
-  &__heading {
-    margin-bottom: 40px;
-    @include for-size(laptop) {
-      margin-bottom: 60px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 80px;
-    }
   }
 
   &__slider {
@@ -41,21 +29,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      row-gap: 55px;
-      margin-top: 84px;
-      margin-bottom: 29px;
+      row-gap: 60px;
+      margin-bottom: 40px;
     }
-
     @include for-size(laptop) {
-      row-gap: 82px;
-      margin-top: 67px;
-      margin-bottom: 53px;
+      row-gap: 80px;
+      margin-bottom: 60px;
     }
-
     @include for-size(desktop) {
-      row-gap: 107px;
-      margin-top: 87px;
-      margin-bottom: 63px;
+      row-gap: 100px;
+      margin-bottom: 80px;
     }
   }
 

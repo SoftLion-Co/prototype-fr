@@ -7,14 +7,16 @@ import Line from "../../images/project/line-component.svg";
 interface HeadingOurProjectComponentProps {
   title: string;
   text: string;
+  className?: string;
 }
 
 const HeadingOurProjectComponent: FC<HeadingOurProjectComponentProps> = ({
   title,
   text,
+  className,
 }) => {
   return (
-    <div className={classNames(s.container, s.heading)}>
+    <div className={classNames(s.container, s.heading, className)}>
       <p className={s.heading__title}>{title}</p>
       <Image src={Line} alt="" className={s.heading__svg} />
       <h2 className={s.heading__text}>{text}</h2>

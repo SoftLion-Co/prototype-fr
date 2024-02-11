@@ -13,12 +13,11 @@ interface AnchorID {
 const CustomAppsSection: FC<AnchorID> = ({ anchorID }) => {
   return (
     <section id={anchorID} className={classNames(s.container, s.custom)}>
-      <div className={s.custom__title}>
-        <ServiceHeadingComponent
-          headingText={"Custom Apps"}
-          container={false}
-        />
-      </div>
+      <ServiceHeadingComponent
+        className={s.custom__title}
+        headingText={"Custom Apps"}
+      />
+      
       <div className={s.custom__cards}>
         <div className={s.custom__card}>
           <CustomAppsCardComponent

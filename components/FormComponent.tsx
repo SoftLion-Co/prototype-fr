@@ -85,7 +85,7 @@ const FormComponent: FC<FormProps> = ({ title }) => {
       onSubmit={handleSubmit(handleFormSubmit)}
       noValidate
     >
-      <h2 className={s.form__title}>{title}</h2>
+      <h3 className={s.form__title}>{title}</h3>
       <div className={s.form__container}>
         <span className={s.form__line}></span>
         <div className={s.form__input}>
@@ -169,7 +169,7 @@ const FormComponent: FC<FormProps> = ({ title }) => {
       </button>
       <p className={s.form__text}>
         By clicking on this button I agree to the{" "}
-        <Link href="/privacy-policy" className={s.form__text_link}>
+        <Link href="/privacy-policy" className={s.form__link}>
           processing of personal data
         </Link>
       </p>

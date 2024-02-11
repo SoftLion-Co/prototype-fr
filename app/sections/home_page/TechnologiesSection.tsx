@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import s from "./TechnologiesSection.module.scss";
 
 import UIUX from "../../../images/technologies/UI-UX.svg";
@@ -10,8 +10,8 @@ import Ecommerce from "../../../images/technologies/Ecommerce.svg";
 import SEO from "../../../images/technologies/SEO.svg";
 import Studio from "../../../images/technologies/Studio.svg";
 
-import HeadingComponent from "../../../components/HeadingComponent";
 import { BiExpandAlt } from "react-icons/bi";
+import HeadingComponent from "../../../components/HeadingComponent";
 
 interface Technology {
   id: number;
@@ -57,62 +57,56 @@ const TechnologiesSection = () => {
     },
   ]);
 
-  const toggleIsOpen = (id: number) => {
+  const toggleIsOpen = useCallback((id: number) => {
     setTechnologiesData((prevData) =>
       prevData.map((tech) =>
         tech.id === id ? { ...tech, isOpen: !tech.isOpen } : tech
       )
     );
-  };
+  }, []);
 
   return (
     <section className={classNames(s.container, s.technologies)}>
-      <div className={s.technologies__wrapper}>
-        <div className={s.technologies__name_header}>
-          <HeadingComponent text="Technologies" />
-        </div>
+      <HeadingComponent text="Technologies" />
 
-        <div className={s.technologies__cards_wrapper}>
-          {technologiesData.map((tech) => (
+      <div className={s.technologies__cards_wrapper}>
+        {technologiesData.map((tech) => (
+          <div
+            key={tech.id}
+            className={classNames(
+              s.technologies__card_wrapper,
+              tech.isOpen ? s.clicked : "",
+              s.flip_card
+            )}
+            onClick={() => toggleIsOpen(tech.id)}
+          >
             <div
-              key={tech.id}
-              className={classNames(
-                s.technologies__card_wrapper,
-                tech.isOpen ? s.clicked : "",
-                s.flip_card
-              )}
-              onClick={() => toggleIsOpen(tech.id)}
+              className={classNames(s.flip_card_inner, s.technologies__cards)}
             >
-              <div
-                className={classNames(
-                  s.flip_card_inner,
-                  s.technologies__card_container
-                )}
-              >
-                <div className={s.flip_card_front}>
-                  <div className={s.technologies__icon_wrapper}>
-                    <BiExpandAlt className={s.technologies__icon_open} />
-                  </div>
-                  <div className={s.technologies__container_image}>
-                    <Image
-                      className={s.technologies__image}
-                      src={tech.imgSrc}
-                      alt={tech.imgSrc}
-                    />
-                  </div>
-                  <p className={s.technologies__description_photo}>
-                    {tech.imgAlt}
-                  </p>
+              <div className={s.flip_card_front}>
+                <div className={s.technologies__icon_wrapper}>
+                  <BiExpandAlt className={s.technologies__icon_open} />
                 </div>
-                <div className={s.flip_card_back}>
-                  <p className={s.technologies__text}>{tech.description}</p>
+                <div className={s.technologies__images}>
+                  <Image
+                    className={s.technologies__image}
+                    src={tech.imgSrc}
+                    alt={tech.imgSrc}
+                  />
                 </div>
+                <p className={s.technologies__description_photo}>
+                  {tech.imgAlt}
+                </p>
+              </div>
+              <div className={s.flip_card_back}>
+                <p className={s.technologies__text}>{tech.description}</p>
               </div>
             </div>
-          ))}
-          <div className={s.blur}>
-            <div className={s.blur_item}></div>
           </div>
+        ))}
+
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
         </div>
       </div>
     </section>

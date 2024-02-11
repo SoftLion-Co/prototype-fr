@@ -2,65 +2,63 @@
 @import "../../styles/container";
 
 .heading {
-  &__component {
+  margin-bottom: 30px;
+
+  @include for-size(tablet) {
+    margin-bottom: 40px;
+  }
+  @include for-size(laptop) {
+    margin-bottom: 60px;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 80px;
+  }
+
+  &__title {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 210px;
-
-    @include for-size(tablet) {
-      max-width: 350px;
-    }
-
-    @include for-size(laptop) {
-      max-width: 520px;
-    }
-
-    @include for-size(desktop) {
-      max-width: 680px;
-    }
-  }
-
-  &__title {
     color: rgba(0, 0, 0, 0.7);
-    font-size: 23px;
-    font-style: normal;
+    font-size: 24px;
     font-weight: 400;
     line-height: 130%;
     letter-spacing: 1.4px;
 
     @include for-size(tablet) {
-      font-size: 33px;
+      max-width: 350px;
+      font-size: 34px;
       letter-spacing: 2px;
     }
-
     @include for-size(laptop) {
-      font-size: 49px;
+      max-width: 520px;
+      font-size: 50px;
       letter-spacing: 2.9px;
     }
-
     @include for-size(desktop) {
+      max-width: 680px;
       font-size: 64px;
       letter-spacing: 3.8px;
     }
   }
 
   &__svg {
-    width: 100%;
+    max-width: 210px;
     flex-shrink: 0;
     stroke-width: 0.9px;
     stroke: rgba(0, 0, 0, 0.5);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
     @include for-size(tablet) {
+      max-width: 350px;
       stroke-width: 1.5px;
     }
-
     @include for-size(laptop) {
+      max-width: 520px;
       stroke-width: 2.3px;
     }
-
     @include for-size(desktop) {
+      max-width: 680px;
       stroke-width: 3px;
     }
   }
