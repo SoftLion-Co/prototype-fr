@@ -1,4 +1,5 @@
 @import "./../styles/mixin";
+@import "./../styles/colors";
 
 .arrow {
   height: 42px;
@@ -29,6 +30,7 @@
       display: flex;
     }
   }
+
   &__card_extended {
     overflow: visible;
     display: flex;
@@ -52,7 +54,7 @@
       padding: 0 120px 0 0;
     }
     @include for-size(desktop) {
-      padding: 0 147px 0 0;
+      padding: 0 146px 0 0;
     }
   }
   &__card_right {
@@ -63,18 +65,18 @@
       padding: 0 0 0 120px;
     }
     @include for-size(desktop) {
-      padding: 0 0 0 147px;
+      padding: 0 0 0 148px;
     }
   }
   &__card_default {
     @include for-size(tablet) {
-      padding: 0 39px 0 39px;
+      padding: 0 40px 0 40px;
     }
     @include for-size(laptop) {
       padding: 0 60px 0 60px;
     }
     @include for-size(desktop) {
-      padding: 0 73.5px 0 73.5px;
+      padding: 0 74px 0 74px;
     }
   }
 }

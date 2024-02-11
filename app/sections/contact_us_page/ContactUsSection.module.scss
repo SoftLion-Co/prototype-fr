@@ -17,22 +17,8 @@
     margin-top: -26px;
   }
 
-  &__title {
-    margin-bottom: 20px;
-
-    @include for-size(tablet) {
-      margin-bottom: 24px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 30px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 40px;
-    }
-  }
-
   &__text {
-    color: #000;
+    color: $black-default;
     text-align: center;
     line-height: 130%;
     font-weight: 400;

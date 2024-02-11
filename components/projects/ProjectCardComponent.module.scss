@@ -16,7 +16,7 @@
   &__arrowIcon {
     width: 50px;
     height: 50px;
-    color: black;
+    color: $black-default;
 
     @include for-size(tablet) {
       transition: transform 0.3s ease-in-out;
@@ -46,7 +46,7 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0 0.9rem 4rem rgba(0, 0, 0, 0.17);
+    box-shadow: 0 0.9rem 4rem rgba(0, 0, 0, 0.2);
     transform: scale(1.03);
   }
 

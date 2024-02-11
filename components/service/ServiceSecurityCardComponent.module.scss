@@ -101,25 +101,25 @@
   }
 
   &__title {
-    color: #000;
+    color: $black-default;
     text-align: center;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-    letter-spacing: 1.26px;
+    letter-spacing: 1.3px;
     max-width: 200px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       padding-top: 3px;
-      letter-spacing: 1.391px;
+      letter-spacing: 1.4px;
       max-width: 167px;
     }
 
     @include for-size(laptop) {
-      font-size: 23px;
-      letter-spacing: 2.079px;
+      font-size: 24px;
+      letter-spacing: 2px;
       max-width: 250px;
     }
 
@@ -132,16 +132,15 @@
 
   &__text {
     max-width: 307px;
-    color: #000;
+    color: $black-default;
     text-align: center;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 130%;
 
     @include for-size(tablet) {
       max-width: 238px;
-      font-size: 14px;
+      font-size: 16px;
     }
     @include for-size(laptop) {
       min-width: 356px;
