@@ -156,13 +156,12 @@ const OurTeamSetcion = () => {
   };
 
   const firstFourTeamMembers = response.slice(0, 5);
-
   const teamMembers = isOnHomePage ? firstFourTeamMembers : response;
 
   return (
     <div className={s.team}>
       <div className={s.container}>
-        <HeadingComponent customClass={s.team__title} text="Our team" />
+        <HeadingComponent text="Our team" />
         <div className={s.desctop__slider}>
           <Carousel
             getEmblaApi={setEmbla}
