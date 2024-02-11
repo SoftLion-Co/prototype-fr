@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useCallback, useMemo } from "react";
 import s from "./FormComponent.module.scss";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -21,7 +21,6 @@ interface FormData {
 const FormComponent: FC<FormProps> = ({ title }) => {
   const [numberPhone, setPhone] = useState("");
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [submitDisabled, setSubmitDisabled] = useState(true);
 
   const {
     handleSubmit,
@@ -37,47 +36,48 @@ const FormComponent: FC<FormProps> = ({ title }) => {
     },
   });
 
-  const [textareaHeight, setTextareaHeight] = useState("auto");
+  const watchFields = watch();
 
-  const adjustTextareaHeight = (
-    event: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    const textarea = event.target;
-    textarea.style.height = "auto";
-    textarea.style.height = `${textarea.scrollHeight}px`;
-    setTextareaHeight(textarea.style.height);
-  };
-  const watchEmail = watch("email");
-  const watchDescription = watch("shortDescription");
+  const submitDisabled = useMemo(() => {
+    const { email, shortDescription } = watchFields;
+    return !email || !numberPhone || !shortDescription;
+  }, [watchFields, numberPhone]);
 
-  const handleFormSubmit = async (data: FormData) => {
-    try {
-      if (!data.email || !numberPhone || !data.shortDescription) {
-        console.log("Please fill in all required fields");
-        return;
+  const handleFormSubmit = useCallback(
+    async (data: FormData) => {
+      try {
+        if (!data.email || !numberPhone || !data.shortDescription) {
+          console.log("Please fill in all required fields");
+          return;
+        }
+
+        const formData = {
+          numberPhone: "+" + numberPhone,
+          email: data.email,
+          shortDescription: data.shortDescription,
+        };
+        await orderProjectService.createOrderProject(formData);
+
+        setIsFormSubmitted(true);
+        reset();
+        setPhone("");
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        reset();
+        setPhone("");
       }
+    },
+    [numberPhone, reset]
+  );
 
-      const formData = {
-        numberPhone: "+" + numberPhone,
-        email: data.email,
-        shortDescription: data.shortDescription,
-      };
-      await orderProjectService.createOrderProject(formData);
-
-      setIsFormSubmitted(true);
-      reset();
-      setPhone("");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-
-      reset();
-      setPhone("");
-    }
-  };
-
-  useEffect(() => {
-    setSubmitDisabled(!watchEmail || !numberPhone || !watchDescription);
-  }, [watchEmail, numberPhone, watchDescription]);
+  const adjustTextareaHeight = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      const textarea = event.target;
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    },
+    []
+  );
 
   return (
     <form
@@ -147,7 +147,6 @@ const FormComponent: FC<FormProps> = ({ title }) => {
             rows={1}
             draggable={false}
             className={s.form__area}
-            style={{ height: textareaHeight }}
             onInput={adjustTextareaHeight}
             {...register("shortDescription", {
               required: "Description is required",
