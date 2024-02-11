@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, useCallback, useMemo } from "react";
 import classNames from "classnames";
 import s from "./ServiceCardsComponent.module.scss";
 import SmallServiceCardComponent from "./SmallServiceCardComponent";
@@ -10,8 +10,8 @@ import useSwitchingCardsService from "@/hooks/useSwitchingCardsService";
 interface CardData {
   title: string;
   paragraph: string;
-  image: any;
-  vector: any;
+  image: string;
+  vector: string;
 }
 
 interface ServiceCardsProps {
@@ -22,6 +22,31 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
   const { centerCardData, leftCardData, rightCardData, handleSmallCardClick } =
     useSwitchingCardsService(cardData);
 
+  const handleLeftCardClick = useCallback(() => {
+    handleSmallCardClick(
+      leftCardData.title,
+      leftCardData.paragraph,
+      leftCardData.image
+    );
+  }, [leftCardData, handleSmallCardClick]);
+
+  const handleRightCardClick = useCallback(() => {
+    handleSmallCardClick(
+      rightCardData.title,
+      rightCardData.paragraph,
+      rightCardData.image
+    );
+  }, [rightCardData, handleSmallCardClick]);
+
+  const isLeftCardActive = useMemo(
+    () => leftCardData === centerCardData,
+    [leftCardData, centerCardData]
+  );
+  const isRightCardActive = useMemo(
+    () => rightCardData === centerCardData,
+    [rightCardData, centerCardData]
+  );
+
   return (
     <div className={s.service}>
       <div className={classNames(s.service__card, s.service__card_left)}>
@@ -30,18 +55,10 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
           paragraph={leftCardData.paragraph}
           image={leftCardData.image}
           vector={leftCardData.vector}
-          onClick={() =>
-            handleSmallCardClick(
-              leftCardData.title,
-              leftCardData.paragraph,
-              leftCardData.image
-            )
-          }
-          isActive={leftCardData === centerCardData}
+          onClick={handleLeftCardClick}
+          isActive={isLeftCardActive}
           background={
-            leftCardData === centerCardData
-              ? "var(--active-card-bg)"
-              : "var(--left-card-bg)"
+            isLeftCardActive ? "var(--active-card-bg)" : "var(--left-card-bg)"
           }
         />
       </div>
@@ -59,29 +76,21 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
           paragraph={rightCardData.paragraph}
           image={rightCardData.image}
           vector={rightCardData.vector}
-          onClick={() =>
-            handleSmallCardClick(
-              rightCardData.title,
-              rightCardData.paragraph,
-              rightCardData.image
-            )
-          }
-          isActive={rightCardData === centerCardData}
+          onClick={handleRightCardClick}
+          isActive={isRightCardActive}
           background={
-            rightCardData === centerCardData
-              ? "var(--active-card-bg)"
-              : "var(--right-card-bg)"
+            isRightCardActive ? "var(--active-card-bg)" : "var(--right-card-bg)"
           }
         />
       </div>
       <div className={s.service__mobile}>
-        {cardData.map((card: CardData, index: number) => (
+        {cardData.map((card, index) => (
           <div key={index} className={s.service__card_mobile}>
             <LargeServiceCardComponent
               title={card.title}
               paragraph={card.paragraph}
               image={card.image}
-              isActive={true}
+              isActive={card === centerCardData}
             />
           </div>
         ))}
