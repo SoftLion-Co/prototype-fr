@@ -9,14 +9,12 @@ import classNames from "classnames";
 const CustomAppsSection = () => {
   return (
     <div className={classNames(s.container, s.custom)}>
-      <div className={s.custom__title}>
-        <TitleServicesComponent
-          num="02"
-          text="Custom Apps"
-          position="right"
-          color="purple"
-        />
-      </div>
+      <TitleServicesComponent
+        num="02"
+        text="Custom Apps"
+        position="right"
+        color="purple"
+      />
       <div className={s.custom__cards}>
         <CustomAppsCardComponent
           title="Web-Studio"
