@@ -16,12 +16,14 @@ const HeroSection: FC<Props> = ({ heroTech }) => {
   return (
     <section className={s.hero}>
       <div className={classNames(s.container, s.hero__container)}>
-        <div className={s.hero__technologies}>
-          <HeadingComponent text="Technologies" tag="h1" />
-        </div>
-
+        <HeadingComponent
+          className={s.hero__technologies}
+          text="Technologies"
+          tag="h1"
+        />
         <h2 className={s.hero__heading}>{heroTech.titleTech}</h2>
         <p className={s.hero__paragraph}>{heroTech.paragraph}</p>
+
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>

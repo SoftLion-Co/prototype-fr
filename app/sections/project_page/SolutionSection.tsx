@@ -19,9 +19,8 @@ interface SolutionSectionProps {
 const SolutionSection: FC<SolutionSectionProps> = ({ data }) => {
   return (
     <section className={s.solution}>
-      <div className={s.solution__heading}>
-        <HeadingOurProjectComponent title="02" text="Solution" />
-      </div>
+      <HeadingOurProjectComponent title="02" text="Solution" />
+      
       <div className={s.solution__lists}>
         <ul className={`${s.solution__list} ${s.container}`}>
           {data.paragraphs.map((info, index) => (

@@ -12,9 +12,14 @@ interface HeadingComponentProps {
     | "turquoise"
     | "pink";
   text: string;
+  className?: string;
 }
 
-const HeadingComponent: FC<HeadingComponentProps> = ({ color = "", text }) => {
+const HeadingComponent: FC<HeadingComponentProps> = ({
+  color = "",
+  text,
+  className,
+}) => {
   const headingColor = classNames(s.heading, {
     [s[color + "Text"]]: color !== "",
   });
@@ -22,7 +27,7 @@ const HeadingComponent: FC<HeadingComponentProps> = ({ color = "", text }) => {
   const headingTitle = classNames(s.heading__title);
 
   return (
-    <div className={classNames(headingColor, s.container)}>
+    <div className={classNames(headingColor, s.container, s.heading__container, className)}>
       <h2 className={headingTitle}>{text}</h2>
       <div className={s.heading__border}></div>
     </div>

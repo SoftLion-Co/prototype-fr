@@ -13,9 +13,11 @@ const ContactUsSection: FC<Attributes> = ({ className }) => {
     <section className={classNames(className)}>
       <div className={classNames(s.container, s.our__form)}>
         <div className={s.heading}>
-          <div className={s.heading__title}>
-            <HeadingComponent text="Contact Us" tag="h1" />
-          </div>
+          <HeadingComponent
+            className={s.heading__title}
+            text="Contact Us"
+            tag="h1"
+          />
           <p className={s.heading__text}>
             Submit your request now, and we will get in touch with you to
             discuss the details and develop a customized solution. Together, we

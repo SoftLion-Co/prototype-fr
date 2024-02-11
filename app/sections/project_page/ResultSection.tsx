@@ -12,9 +12,8 @@ interface ResultSectionProps {
 const ResultSection: FC<ResultSectionProps> = ({ data }) => {
   return (
     <section className={s.design}>
-      <div className={s.design__heading}>
-        <HeadingOurProjectComponent title="03" text="The Result" />
-      </div>
+      <HeadingOurProjectComponent title="03" text="The Result" />
+      
       <div className={`${s.container} ${s.design__wrapper}`}>
         <ul className={s.design__wrapper_texts}>
           {data.map((item, index) => (

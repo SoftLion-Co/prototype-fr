@@ -14,7 +14,13 @@ export const SectionScrolIndicator: FC<SectionScrolIndicator> = ({ items }) => {
     <ul className={s.navigation__list}>
       {items.map((item) => (
         <li key={item.id}>
-          <a className={classNames(s.navigation__link, activeItem === item.id ? s.active : "")} href={`#${item.id}`}>
+          <a
+            className={classNames(
+              s.navigation__link,
+              activeItem === item.id ? s.active : ""
+            )}
+            href={`#${item.id}`}
+          >
             {item.title}
           </a>
         </li>

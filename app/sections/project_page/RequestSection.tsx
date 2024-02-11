@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import classNames from "classnames";
+import s from "./RequestSection.module.scss";
 import Image from "next/image";
 import HeadingOurProjectComponent from "@/components/project/HeadingOurProjectComponent";
-import s from "./RequestSection.module.scss";
 import svg from "../../../images/project/request-list.svg";
 
 // Оголошуємо тип для об'єкта data
@@ -20,9 +20,8 @@ const RequestSection: FC<RequestSectionProps> = ({ data }) => {
 
   return (
     <section className={s.request}>
-      <div className={s.request__heading}>
-        <HeadingOurProjectComponent title="01" text="Request" />
-      </div>
+      <HeadingOurProjectComponent title="01" text="Request" />
+
       <div className={classNames(s.container, s.request__content)}>
         <p className={s.request__text}>{paragraph}</p>
         <ul className={s.request__list}>
