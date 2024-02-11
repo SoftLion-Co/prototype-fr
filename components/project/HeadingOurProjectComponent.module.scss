@@ -16,7 +16,7 @@
 
   &__title {
     max-width: 44px;
-    color: rgba(0, 0, 0, 0.64);
+    color: rgba(0, 0, 0, 0.6);
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
@@ -72,13 +72,13 @@
     margin-left: 40px;
 
     @include for-size(tablet) {
-      font-size: 37px;
+      font-size: 38px;
       letter-spacing: 2.2px;
       margin-left: 70px;
     }
 
     @include for-size(laptop) {
-      font-size: 55px;
+      font-size: 56px;
       letter-spacing: 3.3px;
       margin-left: 90px;
     }

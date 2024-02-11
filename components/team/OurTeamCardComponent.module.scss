@@ -99,7 +99,7 @@
 
   &.active {
     @include for-size(tablet) {
-      gap: 11px;
+      gap: 12px;
     }
 
     @include for-size(laptop) {
@@ -107,7 +107,7 @@
     }
 
     @include for-size(desktop) {
-      gap: 23px;
+      gap: 24px;
     }
 
     .member__avatar {

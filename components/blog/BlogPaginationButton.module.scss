@@ -27,10 +27,11 @@
 
 .activePagination {
   background: $button-blue-form;
-  color: #ffffff;
+  color: $white-default;
   border-radius: 5px;
   width: 30px;
   height: 30px;
+
   @include for-size(tablet) {
     width: 32px;
     height: 32px;
