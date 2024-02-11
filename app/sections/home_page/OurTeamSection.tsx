@@ -162,7 +162,7 @@ const OurTeamSetcion = () => {
   return (
     <div className={s.team}>
       <div className={s.container}>
-        <HeadingComponent customClass={s.team__title} text="Our team" />
+        <HeadingComponent text="Our team" />
         <div className={s.desctop__slider}>
           <Carousel
             getEmblaApi={setEmbla}
