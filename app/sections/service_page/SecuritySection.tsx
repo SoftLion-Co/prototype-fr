@@ -1,16 +1,11 @@
 "use client";
 
-import React, { FC } from "react";
 import s from "./SecuritySection.module.scss";
 import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCardComponent";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 import BigButtonComponent from "../../../components/service/BigButtonComponent";
-
-interface AnchorID {
-  anchorID: string;
-}
 
 const securityCardsData = [
   {
@@ -45,12 +40,15 @@ const securityCardsData = [
   },
 ];
 
-const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
+const SecuritySection = () => {
   const isEven = securityCardsData.length % 2 === 0;
 
   return (
-    <section id={anchorID} className={classNames(s.container, s.security)}>
-      <ServiceHeadingComponent headingText="Security" />
+    <section className={s.security}>
+      <ServiceHeadingComponent
+        className={classNames(s.container, s.security__heading)}
+        headingText="Security"
+      />
 
       <div className={s.security__slider}>
         <MobileSliderComponent
@@ -59,7 +57,7 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
         />
       </div>
 
-      <div className={s.security__container}>
+      <div className={classNames(s.container, s.security__container)}>
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
