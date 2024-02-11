@@ -2,7 +2,6 @@ import React from "react";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import InformationSection from "@/app/sections/article_page/ImpressionSection";
 import ArticleSection from "@/app/sections/article_page/ArticleSection";
-import OurTeamSection from "@/app/sections/home_page/OurTeamSection";
 import blogsData from "@/data/blog/blogs_extended_data.json";
 
 import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
@@ -56,7 +55,6 @@ const Blog = ({ params }: { params: BlogParams }) => {
       <InfoNavigationComponent links={links} />
       <ArticleSection response={response} />
       <InformationSection />
-      {/* <OurTeamSection /> */}
     </React.Fragment>
   );
 };

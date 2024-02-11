@@ -1,7 +1,7 @@
 @import "../../../styles/mixin";
 @import "../../../styles/container";
 
-.security {
+.container {
   margin-bottom: 100px;
 
   @include for-size(tablet) {
@@ -13,9 +13,11 @@
   @include for-size(desktop) {
     margin-bottom: 300px;
   }
+}
 
+.security {
   &__slider {
-    margin-bottom: 36px;
+    margin-bottom: 40px;
 
     @include for-size(tablet) {
       display: none;

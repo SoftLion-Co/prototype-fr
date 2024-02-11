@@ -49,37 +49,39 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
   const isEven = securityCardsData.length % 2 === 0;
 
   return (
-    <section id={anchorID} className={classNames(s.container, s.security)}>
-      <ServiceHeadingComponent headingText="Security" />
+    <section id={anchorID}>
+      <div className={s.container}>
+        <ServiceHeadingComponent headingText="Security" />
 
-      <div className={s.security__slider}>
-        <MobileSliderComponent
-          data={securityCardsData}
-          SlideComponent={ServiceSecurityCardComponent}
-        />
-      </div>
-
-      <div className={s.security__container}>
-        <div className={s.blur}>
-          <div className={s.blur_item}></div>
+        <div className={classNames(s.security__slider)}>
+          <MobileSliderComponent
+            data={securityCardsData}
+            SlideComponent={ServiceSecurityCardComponent}
+          />
         </div>
-        {securityCardsData.map((card, index) => (
-          <div
-            key={card.id}
-            className={classNames(s.security__card, {
-              [s.centre]: !isEven && index === securityCardsData.length - 1,
-            })}
-          >
-            <ServiceSecurityCardComponent
-              title={card.title}
-              description={card.description}
-            />
-          </div>
-        ))}
-      </div>
 
-      <div className={classNames(s.container, s.security__button)}>
-        <BigButtonComponent />
+        <div className={s.security__container}>
+          <div className={s.blur}>
+            <div className={s.blur_item}></div>
+          </div>
+          {securityCardsData.map((card, index) => (
+            <div
+              key={card.id}
+              className={classNames(s.security__card, {
+                [s.centre]: !isEven && index === securityCardsData.length - 1,
+              })}
+            >
+              <ServiceSecurityCardComponent
+                title={card.title}
+                description={card.description}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className={s.security__button}>
+          <BigButtonComponent />
+        </div>
       </div>
     </section>
   );
