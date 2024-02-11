@@ -1,11 +1,16 @@
 "use client";
 
+import React, { FC } from "react";
 import s from "./SecuritySection.module.scss";
 import ServiceSecurityCardComponent from "@/components/service/ServiceSecurityCardComponent";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 import BigButtonComponent from "../../../components/service/BigButtonComponent";
+
+interface AnchorID {
+  anchorID: string;
+}
 
 const securityCardsData = [
   {
@@ -40,11 +45,11 @@ const securityCardsData = [
   },
 ];
 
-const SecuritySection = () => {
+const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
   const isEven = securityCardsData.length % 2 === 0;
 
   return (
-    <section className={s.security}>
+    <section id={anchorID} className={s.security}>
       <ServiceHeadingComponent
         className={classNames(s.container, s.security__heading)}
         headingText="Security"
