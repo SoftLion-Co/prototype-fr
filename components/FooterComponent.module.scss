@@ -177,17 +177,9 @@
   }
 
   &__icon {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
 
-    @include for-size(tablet) {
-      width: 14px;
-      height: 14px;
-    }
-    @include for-size(laptop) {
-      width: 18px;
-      height: 18px;
-    }
     @include for-size(desktop) {
       width: 24px;
       height: 24px;
@@ -197,16 +189,16 @@
   &__icons {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 12px;
 
     @include for-size(tablet) {
-      gap: 8px;
+      gap: 14px;
     }
     @include for-size(laptop) {
-      gap: 12px;
+      gap: 16px;
     }
     @include for-size(desktop) {
-      gap: 14px;
+      gap: 18px;
     }
   }
 
