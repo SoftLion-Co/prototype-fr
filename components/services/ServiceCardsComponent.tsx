@@ -84,13 +84,13 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
         />
       </div>
       <div className={s.service__mobile}>
-        {cardData.map((card, index) => (
+        {cardData.map((card: CardData, index: number) => (
           <div key={index} className={s.service__card_mobile}>
             <LargeServiceCardComponent
               title={card.title}
               paragraph={card.paragraph}
               image={card.image}
-              isActive={card === centerCardData}
+              isActive={true}
             />
           </div>
         ))}

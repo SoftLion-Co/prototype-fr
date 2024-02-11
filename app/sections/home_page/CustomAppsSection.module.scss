@@ -6,7 +6,7 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 37px;
+    gap: 40px;
 
     @include for-size(tablet) {
       flex-direction: row;
@@ -18,8 +18,6 @@
       }
     }
     @include for-size(laptop) {
-      gap: 39px;
-
       & > :first-child {
         margin-top: 170px;
       }

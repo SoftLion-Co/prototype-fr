@@ -14,6 +14,8 @@
   border-radius: 6px;
   height: 100%;
 
+  gap: 20px;
+
   @include for-size(tablet) {
     width: 348px;
     padding: 20px;
@@ -24,18 +26,13 @@
     width: 519px;
     border-radius: 12px;
     padding: 40px 75px 40px 75px;
+    gap: 30px;
   }
   @include for-size(desktop) {
     width: 680px;
     border-radius: 15px;
     padding: 90px 64px 80px 64px;
-  }
-
-  &__wrap {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 40px;
   }
 
   &__pic {
@@ -61,7 +58,7 @@
   }
 
   &__title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.6px;
     color: black;
@@ -69,15 +66,13 @@
     text-align: center;
 
     @include for-size(tablet) {
-      margin-bottom: 18px;
+      font-size: 22px;
     }
     @include for-size(laptop) {
-      margin-bottom: 32px;
       font-size: 30px;
     }
     @include for-size(desktop) {
       font-size: 40px;
-      margin-bottom: 40px;
     }
   }
 
