@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import s from "./OurTeamCardComponent.module.scss";
 import { FC } from "react";
@@ -25,29 +26,43 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
   return (
     <div className={memberClassName}>
       <div className={s.member__avatar}>
-        <Image
-          className={s.member_avatar_img}
-          width={800}
-          height={600}
-          src={data.avatar}
-          alt={data.name + data.id}
-        />
+        <Link
+          href={
+            data.linkedinUrl === ""
+              ? "https://www.linkedin.com/company/softlion"
+              : data.linkedinUrl
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            className={s.member_avatar_img}
+            width={800}
+            height={600}
+            src={data.avatar}
+            alt={data.name + data.id}
+          />
+        </Link>
       </div>
       <div className={s.member__information}>
         <p className={s.member__name}>{data.name}</p>
         {isActive || isOnHomePage ? (
           <>
             <p className={s.member__position}>{data.position}</p>
-            <a
+            <Link
               className={s.member__linkedin}
-              href={data.linkedinUrl === "" ? "https://www.linkedin.com/company/softlion" : data.linkedinUrl}
+              href={
+                data.linkedinUrl === ""
+                  ? "https://www.linkedin.com/company/softlion"
+                  : data.linkedinUrl
+              }
               target="_blank"
               rel="noopener noreferrer"
             >
               <FiLinkedin className={s.linkedin__icon} />
-            </a>
+            </Link>
           </>
-        ): null}
+        ) : null}
       </div>
     </div>
   );
