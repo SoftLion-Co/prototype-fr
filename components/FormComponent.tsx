@@ -20,7 +20,6 @@ interface FormData {
 
 const FormComponent: FC<FormProps> = ({ title }) => {
   const [numberPhone, setPhone] = useState("");
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const {
     handleSubmit,
@@ -58,7 +57,6 @@ const FormComponent: FC<FormProps> = ({ title }) => {
         };
         await orderProjectService.createOrderProject(formData);
 
-        setIsFormSubmitted(true);
         reset();
         setPhone("");
       } catch (error) {

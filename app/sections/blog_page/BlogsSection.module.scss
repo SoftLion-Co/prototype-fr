@@ -86,7 +86,7 @@
 
   &__nothing {
     margin: 0 auto;
-    color: rgba(0, 0, 0, 0.7);
+    color: $service-heading-color;
     font-size: 14px;
     letter-spacing: 1.6px;
     font-weight: 400;
@@ -200,7 +200,7 @@
   &_indicator {
     cursor: pointer;
     border: none;
-    color: #a7caf0;
+    color: $sky-default;
     background-color: transparent;
     transition: background-color 5s ease;
     opacity: 0.3;
@@ -217,7 +217,7 @@
     }
 
     &:hover {
-      color: #a7caf0;
+      color: $sky-default;
     }
   }
   .visible {
