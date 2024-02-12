@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 
 interface Blog {
   id: string | number;
   title: string;
-  category?:string;
+  category?: string;
   readingTime: string;
   author?: string;
   authorId: string;
-  authorIconSrc?: string; 
+  authorIconSrc?: string;
   text: string;
   imageSrc: string;
   tags: string[];
@@ -19,22 +19,33 @@ interface UseBlogFilterProps {
   setCurrentPage: (page: number) => void;
 }
 
-const useBlogFilter = (props: UseBlogFilterProps) => {
-  const { blogsData, blogsPerPage, setCurrentPage } = props;
+const useBlogFilter = ({
+  blogsData,
+  blogsPerPage,
+  setCurrentPage,
+}: UseBlogFilterProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filteredBlogsData = selectedCategory
-    ? blogsData.filter((blog) => blog.category === selectedCategory)
-    : blogsData;
+  const handleCategoryChange = useCallback(
+    (category: string | null): void => {
+      setSelectedCategory(category);
+      setCurrentPage(1);
+    },
+    [setCurrentPage]
+  );
 
-  const totalPagesForSelectedCategory = selectedCategory
-    ? Math.max(1, Math.ceil(filteredBlogsData.length / blogsPerPage))
-    : Math.ceil(blogsData.length / blogsPerPage);
+  const filteredBlogsData = useMemo(
+    () =>
+      selectedCategory
+        ? blogsData.filter((blog) => blog.category === selectedCategory)
+        : blogsData,
+    [blogsData, selectedCategory]
+  );
 
-  const handleCategoryChange = (category: string | null): void => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
+  const totalPagesForSelectedCategory = useMemo(
+    () => Math.max(1, Math.ceil(filteredBlogsData.length / blogsPerPage)),
+    [filteredBlogsData.length, blogsPerPage]
+  );
 
   return {
     selectedCategory,
