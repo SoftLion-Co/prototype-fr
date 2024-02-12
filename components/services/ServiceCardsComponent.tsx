@@ -16,9 +16,13 @@ interface CardData {
 
 interface ServiceCardsProps {
   cardData: CardData[];
+  className?: string;
 }
 
-const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
+const ServiceCardsComponent: FC<ServiceCardsProps> = ({
+  cardData,
+  className,
+}) => {
   const { centerCardData, leftCardData, rightCardData, handleSmallCardClick } =
     useSwitchingCardsService(cardData);
 
@@ -48,7 +52,7 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
   );
 
   return (
-    <div className={s.service}>
+    <div className={classNames(s.service, className)}>
       <div className={classNames(s.service__card, s.service__card_left)}>
         <SmallServiceCardComponent
           title={leftCardData.title}
@@ -85,14 +89,14 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({ cardData }) => {
       </div>
       <div className={s.service__mobile}>
         {cardData.map((card: CardData, index: number) => (
-          <div key={index} className={s.service__card_mobile}>
-            <LargeServiceCardComponent
-              title={card.title}
-              paragraph={card.paragraph}
-              image={card.image}
-              isActive={true}
-            />
-          </div>
+          <LargeServiceCardComponent
+            className={s.service__card_mobile}
+            key={index}
+            title={card.title}
+            paragraph={card.paragraph}
+            image={card.image}
+            isActive={true}
+          />
         ))}
       </div>
     </div>

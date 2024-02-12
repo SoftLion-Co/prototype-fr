@@ -2,11 +2,10 @@
 @import "../styles/colors";
 
 .big__button {
-  width: 170px;
   padding: 18px 22px;
   border-radius: 10px;
-  background: $button-blue-background;
   border: none;
+  background: $button-blue-background;
   box-shadow: $button-white-shadow;
 
   font-size: 12px;
@@ -15,14 +14,12 @@
   letter-spacing: 0.8px;
 
   @include for-size(laptop) {
-    width: 210px;
     padding: 22px 28px;
     border-radius: 13px;
     font-size: 17px;
     letter-spacing: 0.7px;
   }
   @include for-size(desktop) {
-    width: 240px;
     padding: 26px 32px;
     border-radius: 15px;
     font-size: 20px;

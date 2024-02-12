@@ -45,7 +45,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
         </Link>
       </div>
       <div className={s.member__information}>
-        <p className={s.member__name}>{data.name}</p>
+        <h4 className={s.member__name}>{data.name}</h4>
         {isActive || isOnHomePage ? (
           <>
             <p className={s.member__position}>{data.position}</p>

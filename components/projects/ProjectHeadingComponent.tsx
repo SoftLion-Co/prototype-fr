@@ -15,7 +15,7 @@ const ProjectHeadingComponent: FC<{ centered: boolean }> = ({
       <HeadingComponent
         className={s.heading__title}
         text="Our Projects"
-        tag="h1"
+        tag="h2"
       />
       <p
         className={classNames(s.heading__text, {

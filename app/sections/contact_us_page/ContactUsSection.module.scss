@@ -20,27 +20,18 @@
   &__text {
     color: $black-default;
     text-align: center;
-    line-height: 130%;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.5px;
     max-width: 80%;
 
     @include for-size(tablet) {
+      text-align: left;
       max-width: none;
       width: 290px;
-      text-align: left;
-      letter-spacing: 0.4px;
     }
     @include for-size(laptop) {
       width: 380px;
-      font-size: 16px;
-      letter-spacing: 0.6px;
     }
     @include for-size(desktop) {
       width: 514px;
-      font-size: 20px;
-      letter-spacing: 0.8px;
     }
   }
 }

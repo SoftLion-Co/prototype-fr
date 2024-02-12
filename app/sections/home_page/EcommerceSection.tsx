@@ -35,7 +35,7 @@ const EcommerceSection = () => {
   ];
 
   return (
-    <section className={s.container}>
+    <div className={s.container}>
       <TitleServicesComponent
         position="left"
         num={"01"}
@@ -47,7 +47,7 @@ const EcommerceSection = () => {
       <div className={s.blur}>
         <div className={s.blur_item}></div>
       </div>
-    </section>
+    </div>
   );
 };
 

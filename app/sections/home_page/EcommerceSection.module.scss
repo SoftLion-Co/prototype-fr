@@ -2,33 +2,33 @@
 @import "./../styles/mixin";
 
 .blur {
-    position: absolute;
-  
-    &_item {
-      position: relative;
-        pointer-events: none;
+  position: absolute;
 
-      @include for-size(tablet) {
-        background-image: url(../../../images/blur/custom_blurL.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        bottom: 650px;
-        width: 733px;
-        height: 638px;
-      }
-  
-      @include for-size(laptop) {
-        background-image: url(../../../images/blur/custom_blurL.png);
-        width: 819px;
-        height: 572px;
-        bottom: 700px;
-      }
-  
-      @include for-size(desktop) {
-        background-image: url(../../../images/blur/custom_blurD.png);
-        bottom: 900px;
-        width: 1065px;
-        height: 744px;
-      }
+  &_item {
+    position: relative;
+    pointer-events: none;
+
+    @include for-size(tablet) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 740px;
+      height: 640px;
+      bottom: 580px;
+    }
+
+    @include for-size(laptop) {
+      background-image: url(../../../images/blur/custom_blurL.png);
+      width: 820px;
+      height: 570px;
+      bottom: 700px;
+    }
+
+    @include for-size(desktop) {
+      background-image: url(../../../images/blur/custom_blurD.png);
+      width: 1070px;
+      height: 750px;
+      bottom: 900px;
     }
   }
+}

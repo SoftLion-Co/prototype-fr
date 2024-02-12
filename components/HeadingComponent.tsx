@@ -4,23 +4,23 @@ import React, { FC } from "react";
 
 interface HeadingComponentProps {
   text: string;
-  className?: string;
   tag?: string;
+  className?: string;
 }
 
 const HeadingComponent: FC<HeadingComponentProps> = ({
   text,
-  className,
   tag,
+  className,
 }) => {
   return (
-    <div className={classNames(s.heading__container, className)}>
+    <React.Fragment>
       {tag === "h1" ? (
-        <h1 className={classNames(s.heading)}>{text}</h1>
+        <h1 className={classNames(s.heading, className)}>{text}</h1>
       ) : (
-        <h2 className={classNames(s.heading)}>{text}</h2>
+        <h2 className={classNames(s.heading, className)}>{text}</h2>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

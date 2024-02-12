@@ -5,7 +5,7 @@ import HeadingComponent from "@/components/HeadingComponent";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
 
@@ -55,7 +55,10 @@ const OurTeamSetcion = () => {
   return (
     <section>
       <div className={s.container}>
-        <HeadingComponent className={s.team__title} text="Our team" />
+        <div className={s.team__title}>
+          <HeadingComponent text="Our team" />
+        </div>
+
         <div className={s.team__container}>
           {response.map((member) => (
             <OurTeamCard data={member} isActive={false} />

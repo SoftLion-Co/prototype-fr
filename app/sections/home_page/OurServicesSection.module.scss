@@ -4,17 +4,17 @@
 
 .services {
   display: grid;
-  gap: 30px;
+  gap: 40px;
 
   @include for-size(tablet) {
-    gap: 50px;
-  }
-
-  @include for-size(laptop) {
     gap: 60px;
   }
 
-  @include for-size(desktop) {
+  @include for-size(laptop) {
     gap: 80px;
+  }
+
+  @include for-size(desktop) {
+    gap: 100px;
   }
 }
