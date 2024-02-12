@@ -8,7 +8,6 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  height: 270px;
   border-radius: 5px;
   padding: 0px 16px 0px 17px;
   background: linear-gradient(
@@ -20,7 +19,6 @@
 
   @include for-size(tablet) {
     width: 280px;
-    height: 180px;
     padding: 51px 35px 52px;
     justify-content: center;
     border-radius: 8px;
@@ -37,12 +35,10 @@
     min-width: 378px;
     padding: 84px 72px 85px 72px;
     border-radius: 12px;
-    height: 223px;
   }
 
   @include for-size(desktop) {
     min-width: 492px;
-    height: 290px;
     padding: 110px 94px 111px 94px;
     border-radius: 15px;
   }

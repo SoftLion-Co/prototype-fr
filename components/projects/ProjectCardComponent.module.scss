@@ -14,22 +14,22 @@
   transition: all 0.3s ease-in-out;
 
   &__arrowIcon {
-    width: 50px;
-    height: 50px;
     color: $black-default;
+    width: 40px;
+    height: 40px;
 
     @include for-size(tablet) {
       transition: transform 0.3s ease-in-out;
     }
 
     @include for-size(laptop) {
-      width: 72px;
-      height: 72px;
+      width: 68px;
+      height: 68px;
     }
 
     @include for-size(desktop) {
-      width: 94px;
-      height: 94px;
+      width: 90px;
+      height: 90px;
     }
 
     animation: arrowAnimation 1s infinite alternate;
@@ -51,22 +51,23 @@
   }
 
   @include for-size(laptop) {
-    padding: 21px 15px;
+    padding: 22px 16px;
     gap: 56px;
     border-radius: 12px;
   }
 
   @include for-size(desktop) {
-    padding: 28px 21px;
-    gap: 73px;
+    padding: 28px 22px;
+    gap: 74px;
     border-radius: 15px;
   }
 
   &__image {
-    width: 357px;
+    width: 360px;
     height: 200px;
     border-radius: 8px;
     box-shadow: 2px 17px 18px -2px rgba(0, 0, 0, 0.15);
+
     @include for-size(laptop) {
       width: 528px;
       height: 296px;
@@ -81,19 +82,15 @@
   }
 
   &__info {
-    height: 171px;
-    font-size: 12px;
+    height: 170px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     @include for-size(laptop) {
-      font-size: 15px;
       height: 254px;
     }
-
     @include for-size(desktop) {
-      font-size: 20px;
       height: 328px;
     }
   }
@@ -111,11 +108,28 @@
       max-width: 171px;
       max-height: 200px;
     }
-
     @include for-size(desktop) {
       gap: 24px;
       max-width: 221px;
       max-height: 300px;
+    }
+  }
+
+  &__description,
+  &__text {
+    color: $hero-heading-color;
+
+    @include for-size(tablet) {
+      font-size: 14px;
+      letter-spacing: 0.6px;
+    }
+    @include for-size(laptop) {
+      font-size: 16px;
+      letter-spacing: 0.8px;
+    }
+    @include for-size(desktop) {
+      font-size: 18px;
+      letter-spacing: 1px;
     }
   }
 
@@ -145,7 +159,7 @@
     }
   }
 
-  &__text {
+  &__content {
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -176,67 +190,48 @@
   }
 
   &__title {
-    margin-top: 19px;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 1.4px;
-    line-height: 130%;
+    margin-top: 20px;
 
     @include for-size(laptop) {
-      margin-top: 20px;
-      font-size: 23px;
-      letter-spacing: 2.1px;
+      margin-top: 24px;
     }
-
     @include for-size(desktop) {
       margin-top: 30px;
-      font-size: 30px;
-      letter-spacing: 2.7px;
-    }
-  }
-
-  &__desc {
-    font-size: 12px;
-    letter-spacing: 0.4px;
-
-    @include for-size(laptop) {
-      font-size: 15px;
-      letter-spacing: 0.6px;
-    }
-
-    @include for-size(desktop) {
-      font-size: 20px;
-      letter-spacing: 0.8px;
     }
   }
 }
 
 .tags {
-  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 4px;
   margin-bottom: 3%;
 
   @include for-size(laptop) {
-    font-size: 13px;
     gap: 6px;
   }
   @include for-size(desktop) {
-    font-size: 18px;
-    gap: 9px;
+    gap: 10px;
   }
 
-  display: flex;
-  flex-wrap: wrap;
   &__item {
-    padding: 0px 5px;
+    color: $gray-default;
+    padding: 0px 6px;
     border-radius: 100px;
     border: 1px solid rgb(220 151 151 / 30%);
     background-color: rgb(255 255 255 / 100%);
+
     @include for-size(tablet) {
       border-color: rgba(115, 200, 180, 30%);
+      font-size: 12px;
     }
     @include for-size(laptop) {
       padding: 0px 10px;
+      font-size: 16px;
+    }
+    @include for-size(desktop) {
+      padding: 0px 12px;
+      font-size: 18px;
     }
   }
 }

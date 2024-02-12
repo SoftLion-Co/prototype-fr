@@ -4,11 +4,10 @@ import TitleServicesComponent from "@/components/services/TitleServicesComponent
 import pic from "../../../images/services/custom-apps/Apps.svg";
 import pic2 from "../../../images/services/custom-apps/CustomAppDevelopment.svg";
 import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
-import classNames from "classnames";
 
 const CustomAppsSection = () => {
   return (
-    <div className={classNames(s.container, s.custom)}>
+    <div className={s.container}>
       <TitleServicesComponent
         num="02"
         text="Custom Apps"
@@ -29,12 +28,12 @@ const CustomAppsSection = () => {
           arrow={false}
         />
       </div>
+
       <div className={s.blur}>
         <div className={s.blur_item}></div>
       </div>
-      <div className={s.custom__more}>
-        <SeeMoreButtonComponent path="services" />
-      </div>
+
+      <SeeMoreButtonComponent path="services" />
     </div>
   );
 };

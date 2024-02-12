@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 import s from "./LargeServiceCardComponent.module.scss";
 import Image from "next/image";
 
@@ -7,6 +8,7 @@ interface LargeServiceCardComponentProps {
   paragraph: string;
   image: string;
   isActive: boolean;
+  className?: string;
 }
 
 const LargeServiceCardComponent: FC<LargeServiceCardComponentProps> = ({
@@ -14,9 +16,10 @@ const LargeServiceCardComponent: FC<LargeServiceCardComponentProps> = ({
   paragraph,
   image,
   isActive,
+  className,
 }) => {
   return (
-    <div className={s.service__container}>
+    <div className={classNames(s.service__container, className)}>
       <Image
         className={s.service__image}
         src={image}

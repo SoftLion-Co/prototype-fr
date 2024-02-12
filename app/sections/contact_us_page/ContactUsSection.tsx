@@ -16,7 +16,7 @@ const ContactUsSection: FC<Attributes> = ({ className }) => {
           <HeadingComponent
             className={s.heading__title}
             text="Contact Us"
-            tag="h1"
+            tag="h2"
           />
           <p className={s.heading__text}>
             Submit your request now, and we will get in touch with you to

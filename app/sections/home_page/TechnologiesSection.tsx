@@ -66,48 +66,48 @@ const TechnologiesSection = () => {
   }, []);
 
   return (
-    <section className={classNames(s.container, s.technologies)}>
-      <HeadingComponent text="Technologies" />
-
-      <div className={s.technologies__cards_wrapper}>
-        {technologiesData.map((tech) => (
-          <div
-            key={tech.id}
-            className={classNames(
-              s.technologies__card_wrapper,
-              tech.isOpen ? s.clicked : "",
-              s.flip_card
-            )}
-            onClick={() => toggleIsOpen(tech.id)}
-          >
+    <section>
+      <div className={s.container}>
+        <HeadingComponent text="Technologies" />
+        <div className={classNames(s.technologies__cards_wrapper)}>
+          {technologiesData.map((tech) => (
             <div
-              className={classNames(s.flip_card_inner, s.technologies__cards)}
+              key={tech.id}
+              className={classNames(
+                s.technologies__card_wrapper,
+                tech.isOpen ? s.clicked : "",
+                s.flip_card
+              )}
+              onClick={() => toggleIsOpen(tech.id)}
             >
-              <div className={s.flip_card_front}>
-                <div className={s.technologies__icon_wrapper}>
-                  <BiExpandAlt className={s.technologies__icon_open} />
+              <div
+                className={classNames(s.flip_card_inner, s.technologies__cards)}
+              >
+                <div className={s.flip_card_front}>
+                  <div className={s.technologies__icon_wrapper}>
+                    <BiExpandAlt className={s.technologies__icon_open} />
+                  </div>
+                  <div className={s.technologies__images}>
+                    <Image
+                      className={s.technologies__image}
+                      src={tech.imgSrc}
+                      alt={tech.imgSrc}
+                    />
+                  </div>
+                  <h3 className={s.technologies__description_photo}>
+                    {tech.imgAlt}
+                  </h3>
                 </div>
-                <div className={s.technologies__images}>
-                  <Image
-                    className={s.technologies__image}
-                    src={tech.imgSrc}
-                    alt={tech.imgSrc}
-                  />
+                <div className={s.flip_card_back}>
+                  <p className={s.technologies__text}>{tech.description}</p>
                 </div>
-                <p className={s.technologies__description_photo}>
-                  {tech.imgAlt}
-                </p>
-              </div>
-              <div className={s.flip_card_back}>
-                <p className={s.technologies__text}>{tech.description}</p>
               </div>
             </div>
-          </div>
-        ))}
-
-        <div className={s.blur}>
-          <div className={s.blur_item}></div>
+          ))}
         </div>
+      </div>
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
       </div>
     </section>
   );

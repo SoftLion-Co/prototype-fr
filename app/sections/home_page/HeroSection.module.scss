@@ -7,98 +7,66 @@
   flex-direction: column;
   width: -webkit-fill-available;
   margin-top: 20px;
+  position: relative;
 
   @include for-size(tablet) {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 100px;
-    height: 270px;
+    margin-top: 60px;
   }
   @include for-size(laptop) {
-    margin-top: 120px;
-    height: 370px;
+    margin-top: 100px;
   }
   @include for-size(desktop) {
-    margin-top: 150px;
-    height: 460px;
+    margin-top: 120px;
   }
 
-  &__container {
-    @include for-size(tablet) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
-  &__details {
-    margin-bottom: 40px;
-
-    @include for-size(tablet) {
-      margin-bottom: 70px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 110px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 130px;
-    }
+  &__word {
+    background: linear-gradient(45deg, #07bcf8, #04aee7, #003e85);
+    background-size: 200% 200%;
+    background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 1.5s linear infinite;
   }
 
   &__title {
-    color: $hero-heading-color;
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 130%;
     max-width: 350px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 
     @include for-size(tablet) {
-      max-width: 350px;
-      margin-bottom: 14px;
+      max-width: 360px;
+      margin-bottom: 20px;
     }
     @include for-size(laptop) {
-      font-size: 35px;
-      max-width: 530px;
-      margin-bottom: 25px;
+      max-width: 460px;
+      margin-bottom: 26px;
     }
     @include for-size(desktop) {
-      font-size: 45px;
       max-width: 615px;
       margin-bottom: 30px;
-    }
-
-    &_word {
-      background: linear-gradient(45deg, #07bcf8, #04aee7, #003e85);
-      background-size: 200% 200%;
-      background-clip: text;
-      color: transparent;
-      animation: gradientAnimation 2s linear infinite;
     }
   }
 
   &__description {
-    font-size: 14px;
-    letter-spacing: 0.3px;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.6px;
-    max-width: 300px;
+    max-width: 320px;
+    margin-bottom: 40px;
 
     @include for-size(tablet) {
-      max-width: 350px;
-      margin-bottom: 0;
-      letter-spacing: 0.5px;
+      max-width: 360px;
+      margin-bottom: 50px;
     }
     @include for-size(laptop) {
-      max-width: 440px;
-      font-size: 16px;
-      letter-spacing: 0.6px;
+      max-width: 460px;
+      margin-bottom: 80px;
     }
     @include for-size(desktop) {
       max-width: 550px;
-      font-size: 18px;
-      letter-spacing: 0.7px;
+      margin-bottom: 100px;
     }
   }
 
@@ -127,16 +95,14 @@
         position: relative;
         display: block;
         max-width: 370px;
-        margin-top: -8px;
-        margin-left: -47px;
+        margin-top: 20px;
+        margin-left: -50px;
       }
       @include for-size(laptop) {
         max-width: 555px;
-        margin-top: 10px;
       }
       @include for-size(desktop) {
         max-width: 700px;
-        margin-top: 16px;
         margin-left: 0;
       }
       animation: floatingAnimation 3s infinite ease-in-out;
@@ -147,10 +113,10 @@
         display: none;
       }
       @include for-size(tablet) {
-        position: relative;
+        position: absolute;
         width: 255px;
-        top: -25%;
-        left: -25%;
+        top: 70%;
+        left: 55%;
         animation: Scale 3s infinite ease-in-out;
       }
       @include for-size(laptop) {
@@ -197,17 +163,17 @@
   &__buttons {
     display: flex;
     justify-content: center;
-    gap: 35px;
+    gap: 20px;
 
     @include for-size(tablet) {
       justify-content: flex-start;
-      gap: 17px;
+      gap: 34px;
     }
     @include for-size(laptop) {
       gap: 60px;
     }
     @include for-size(desktop) {
-      gap: 75px;
+      gap: 80px;
     }
   }
 }

@@ -18,6 +18,7 @@ const HeroSection: FC<Props> = ({ heroTech }) => {
       <div className={classNames(s.container, s.hero__container)}>
         <HeadingComponent
           className={s.hero__technologies}
+          textSize={s.hero__title}
           text="Technologies"
           tag="h1"
         />

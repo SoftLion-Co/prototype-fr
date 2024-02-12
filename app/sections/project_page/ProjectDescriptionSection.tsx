@@ -23,9 +23,11 @@ const ProjectDescriptionSection: FC<{ data: ProjectDescriptionData }> = ({
           <div className={s.article}>
             <h1 className={s.article__title}>{title}</h1>
             <p className={s.article__description}>{description}</p>
-            <p className={s.article__time}>Time development: {time}</p>
-            <p className={s.article__year}>Year: {year}</p>
-            <p className={s.article__location}>Location: {location}</p>
+            <div className={s.article__info}>
+              <p className={s.article__text}>Time development: {time}</p>
+              <p className={s.article__text}>Year: {year}</p>
+              <p className={s.article__text}>Location: {location}</p>
+            </div>
           </div>
           <Image
             className={s.article__image}

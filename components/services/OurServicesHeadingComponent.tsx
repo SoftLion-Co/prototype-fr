@@ -6,7 +6,7 @@ const OurServicesHeadingComponent = () => {
   return (
     <div className={classNames(s.heading, s.container)}>
       <HeadingComponent className={s.heading__title} text="Our Services" />
-      
+
       <p className={s.heading__text}>
         We offer comprehensive custom software development services, from
         requirements analysis and interface design to programming, testing, and
