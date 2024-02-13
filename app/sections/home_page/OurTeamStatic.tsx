@@ -1,14 +1,14 @@
 "use client";
 
+import classNames from "classnames";
 import s from "./OurTeamStatic.module.scss";
+import { StaticImageData } from "next/image";
 import HeadingComponent from "@/components/HeadingComponent";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 
+import MotionWrapper from "@/hooks/MotionWrapper";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-import { StaticImageData } from "next/image";
-
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
-import classNames from "classnames";
 
 const OurTeamSetcion = () => {
   interface Props {
@@ -55,14 +55,18 @@ const OurTeamSetcion = () => {
 
   return (
     <section className={s.team}>
-      <div className={classNames(s.container, s.team__content)}>
+      <MotionWrapper
+        initial
+        viewport
+        className={classNames(s.container, s.team__content)}
+      >
         <HeadingComponent className={s.team__title} text="Our team" />
-        <div className={s.team__container}>
+        <MotionWrapper variants className={s.team__container}>
           {response.map((member) => (
             <OurTeamCard data={member} isActive={false} />
           ))}
-        </div>
-      </div>
+        </MotionWrapper>
+      </MotionWrapper>
 
       <MobileSliderComponent
         className={s.mobile__slider}

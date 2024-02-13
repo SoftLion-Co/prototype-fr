@@ -8,12 +8,21 @@ import ArrowRight from "../../images/navigation/arrow-right.svg";
 import Image from "next/image";
 import { BlogInterface } from "./BlogInteface";
 
+import MotionWrapper from "@/hooks/MotionWrapper";
+
 const BlogDesktopComponent: FC<{ blogs: BlogInterface[] }> = ({ blogs }) => {
   const [embla, setEmbla] = useState<Embla | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className={s.slider}>
+    <MotionWrapper
+      tag="div"
+      initial
+      viewport
+      variants
+      custom={1.5}
+      className={s.slider}
+    >
       <Carousel
         getEmblaApi={setEmbla}
         loop
@@ -109,7 +118,7 @@ const BlogDesktopComponent: FC<{ blogs: BlogInterface[] }> = ({ blogs }) => {
           </>
         ))}
       </Carousel>
-    </div>
+    </MotionWrapper>
   );
 };
 

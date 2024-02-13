@@ -12,6 +12,7 @@ import Studio from "../../../images/technologies/Studio.svg";
 
 import { BiExpandAlt } from "react-icons/bi";
 import HeadingComponent from "../../../components/HeadingComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface Technology {
   id: number;
@@ -69,7 +70,12 @@ const TechnologiesSection = () => {
     <section className={s.technologies}>
       <div className={s.container}>
         <HeadingComponent text="Technologies" />
-        <div className={classNames(s.technologies__cards_wrapper)}>
+        <MotionWrapper
+          initial
+          viewport
+          variants
+          className={classNames(s.technologies__cards_wrapper)}
+        >
           {technologiesData.map((tech) => (
             <div
               key={tech.id}
@@ -104,7 +110,7 @@ const TechnologiesSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </MotionWrapper>
       </div>
       <div className={s.blur}>
         <div className={s.blur_item}></div>

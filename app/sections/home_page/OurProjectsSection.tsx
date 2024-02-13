@@ -10,23 +10,40 @@ import classNames from "classnames";
 import SeeMoreButtonComponent from "./../../../components/SeeMoreButtonComponent";
 import data from "@/data/projects/projects_data.json";
 
+import MotionWrapper from "@/hooks/MotionWrapper";
+
 const OurProjectsSection = () => {
   return (
     <section className={s.projects}>
       <ProjectHeadingComponent centered={false} />
-      <div className={s.projects__mobile_slider}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={1.5}
+        className={s.projects__mobile_slider}
+      >
         <MobileSliderComponent
           data={data}
           SlideComponent={ProjectMobileCardComponent}
         />
         <SeeMoreButtonComponent path="projects" />
-      </div>
-      <div className={classNames(s.container, s.projects__desktop_wrapper)}>
+      </MotionWrapper>
+
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={1.5}
+        className={classNames(s.container, s.projects__desktop_wrapper)}
+      >
         {data.map((project) => (
           <ProjectCardComponent key={project.id} data={project} />
         ))}
         <SeeMoreButtonComponent path="projects" />
-      </div>
+      </MotionWrapper>
     </section>
   );
 };

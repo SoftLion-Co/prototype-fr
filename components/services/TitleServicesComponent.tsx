@@ -1,6 +1,7 @@
 import s from "./TitleServicesComponent.module.scss";
 import React, { FC } from "react";
 import classNames from "classnames";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface TitleServicesComponentProps {
   num: string;
@@ -29,10 +30,16 @@ const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
   });
 
   return (
-    <div className={classNames(headingClass, s.title__container)}>
+    <MotionWrapper
+      tag="div"
+      initial
+      variants
+      custom={1}
+      className={classNames(headingClass, s.title__container)}
+    >
       <h1 className={buttonClass}>{num}</h1>
       <h2 className={s.title__text}>{text}</h2>
-    </div>
+    </MotionWrapper>
   );
 };
 

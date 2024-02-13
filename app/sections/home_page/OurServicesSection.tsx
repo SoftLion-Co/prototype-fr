@@ -3,15 +3,16 @@ import EcommerceSection from "./EcommerceSection";
 import CustomAppsSection from "./CustomAppsSection";
 import WorkWithCustomersSection from "./WorkWithCustomersSection";
 import OurServicesHeadingComponent from "@/components/services/OurServicesHeadingComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const OurServicesSection = () => {
   return (
-    <section className={s.services}>
+    <MotionWrapper tag="section" className={s.services}>
       <OurServicesHeadingComponent />
       <EcommerceSection />
       <CustomAppsSection />
       <WorkWithCustomersSection />
-    </section>
+    </MotionWrapper>
   );
 };
 

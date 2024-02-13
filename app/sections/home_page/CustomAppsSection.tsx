@@ -4,6 +4,7 @@ import TitleServicesComponent from "@/components/services/TitleServicesComponent
 import pic from "../../../images/services/custom-apps/Apps.svg";
 import pic2 from "../../../images/services/custom-apps/CustomAppDevelopment.svg";
 import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const CustomAppsSection = () => {
   return (
@@ -14,7 +15,14 @@ const CustomAppsSection = () => {
         position="right"
         color="purple"
       />
-      <div className={s.custom__cards}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={1.5}
+        className={s.custom__cards}
+      >
         <CustomAppsCardComponent
           title="Web-Studio"
           path={pic}
@@ -27,7 +35,7 @@ const CustomAppsSection = () => {
           text="App development is the process of creating software applications for mobile and desktop devices. It begins with gathering requirements and analyzing user needs to ensure that the app meets the needs of its target audience. Developers then create the user interface design and develop the software architecture, which is the blueprint for how the app will work. Once the architecture is in place, developers proceed to programming, using various programming languages and frameworks to implement the app's functionality."
           arrow={false}
         />
-      </div>
+      </MotionWrapper>
 
       <div className={s.blur}>
         <div className={s.blur_item}></div>
