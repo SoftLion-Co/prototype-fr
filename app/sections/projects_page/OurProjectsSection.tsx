@@ -12,6 +12,7 @@ import Image from "next/image";
 import CountryFlag from "react-country-flag";
 import { Pagination } from "@mantine/core";
 import data from "@/data/projects/projects_data.json";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const sampleData: Array<{
   id: number;
@@ -178,7 +179,16 @@ const OurProjectsSection = () => {
   return (
     <section className={classNames(s.container, s.projects)}>
       <ProjectHeadingComponent centered={true} />
-      <div className={s.filter} ref={topRef}>
+
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={1.5}
+        className={s.filter}
+        ref={topRef}
+      >
         <button
           onClick={toggleFilter}
           className={
@@ -194,7 +204,7 @@ const OurProjectsSection = () => {
             })}
           />
         </button>
-      </div>
+      </MotionWrapper>
       {isFilterOpened && (
         <div className={s.filter__opened}>
           <div className={s.filter__filters}>
@@ -276,7 +286,14 @@ const OurProjectsSection = () => {
         </div>
       )}
 
-      <div className={s.projects__cards_mobile}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={1.5}
+        className={s.projects__cards_mobile}
+      >
         {filteredProjects.length === 0 ? (
           <p className={s.projects__nothing}>
             No projects found for the selected filter.
@@ -286,8 +303,16 @@ const OurProjectsSection = () => {
             <ProjectMobileCardComponent key={project.id} data={project} />
           ))
         )}
-      </div>
-      <div className={s.projects__cards_desktop}>
+      </MotionWrapper>
+
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={1.5}
+        className={s.projects__cards_desktop}
+      >
         {filteredProjects.length === 0 ? (
           <p className={s.projects__nothing}>
             No projects found for the selected filter.
@@ -297,27 +322,29 @@ const OurProjectsSection = () => {
             <ProjectCardComponent key={project.id} data={project} />
           ))
         )}
-      </div>
+      </MotionWrapper>
 
-      <Pagination
-        className={s.pagination}
-        total={totalPages}
-        value={currentPage}
-        onChange={(page) => setCurrentPage(page)}
-        siblings={1}
-        size={paginationSize}
-        styles={(theme) => ({
-          control: {
-            "&[data-active]": {
-              backgroundImage: theme.fn.gradient({
-                from: "#308bb7",
-                to: "#7ec2e4",
-              }),
-              border: 0,
+      <MotionWrapper initial viewport variants custom={1}>
+        <Pagination
+          className={s.pagination}
+          total={totalPages}
+          value={currentPage}
+          onChange={(page) => setCurrentPage(page)}
+          siblings={1}
+          size={paginationSize}
+          styles={(theme) => ({
+            control: {
+              "&[data-active]": {
+                backgroundImage: theme.fn.gradient({
+                  from: "#308bb7",
+                  to: "#7ec2e4",
+                }),
+                border: 0,
+              },
             },
-          },
-        })}
-      />
+          })}
+        />
+      </MotionWrapper>
     </section>
   );
 };
