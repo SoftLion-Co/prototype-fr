@@ -4,6 +4,8 @@
 
 .container {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .custom_breadcrumbs {
@@ -38,9 +40,20 @@
   &__link {
     color: $navigation-dark;
     text-decoration: none;
+    font-size: 12px;
 
     &:hover {
       color: $navigation-light;
+    }
+
+    @include for-size(tablet) {
+      font-size: 12px;
+    }
+    @include for-size(laptop) {
+      font-size: 14px;
+    }
+    @include for-size(laptop) {
+      font-size: 16px;
     }
   }
 

@@ -24,7 +24,7 @@ const HeroSection = () => {
           tag={"p"}
           className={s.hero__description}
           variants
-          custom={2}
+          custom={1.7}
         >
           Our company provides an individual approach for each client to turn
           your ideas into reality.
@@ -35,7 +35,7 @@ const HeroSection = () => {
             tag={"div"}
             className={s.hero__buttons}
             variants
-            custom={2.5}
+            custom={2}
           >
             <MainButtonComponent color="white" path="services">
               OUR SERVICES
@@ -49,7 +49,7 @@ const HeroSection = () => {
           <MotionWrapper
             tag={"div"}
             variants
-            custom={2.5}
+            custom={2}
             className={s.hero__logo}
           >
             <Image
@@ -61,7 +61,12 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className={s.hero__logo_container}>
+      <MotionWrapper
+        tag={"div"}
+        variants
+        custom={2}
+        className={s.hero__logo_container}
+      >
         <Image
           className={s.hero__logo_desktop}
           src={heroLogoMobile}
@@ -75,7 +80,7 @@ const HeroSection = () => {
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
-      </div>
+      </MotionWrapper>
     </MotionWrapper>
   );
 };
