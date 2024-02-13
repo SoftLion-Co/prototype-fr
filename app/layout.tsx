@@ -1,9 +1,11 @@
-import HeaderComponent from "../components/HeaderComponent";
-import "./../styles/main.scss";
-import FooterComponent from "@/components/FooterComponent";
-import s from "./layout.module.scss";
 import Head from "next/head";
+import "./../styles/main.scss";
 import classNames from "classnames";
+import s from "./layout.module.scss";
+
+import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "@/components/FooterComponent";
+
 export const metadata = {
   title: "SoftLion",
   description:
@@ -12,9 +14,7 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: // session
-{
-  // session: Session;
+}: {
   children: React.ReactNode;
 }) {
   return (

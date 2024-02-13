@@ -10,11 +10,6 @@
 
   @include for-size(tablet) {
     align-items: flex-end;
-    margin-top: -40px;
-  }
-
-  @include for-size(laptop) {
-    margin-top: -26px;
   }
 
   &__text {

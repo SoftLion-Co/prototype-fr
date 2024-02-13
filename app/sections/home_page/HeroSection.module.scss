@@ -40,15 +40,15 @@
 
     @include for-size(tablet) {
       max-width: 360px;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
     @include for-size(laptop) {
       max-width: 460px;
-      margin-bottom: 26px;
+      margin-bottom: 34px;
     }
     @include for-size(desktop) {
       max-width: 615px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
   }
 
@@ -58,15 +58,15 @@
 
     @include for-size(tablet) {
       max-width: 360px;
-      margin-bottom: 50px;
+      margin-bottom: 68px;
     }
     @include for-size(laptop) {
       max-width: 460px;
-      margin-bottom: 80px;
+      margin-bottom: 100px;
     }
     @include for-size(desktop) {
       max-width: 550px;
-      margin-bottom: 100px;
+      margin-bottom: 120px;
     }
   }
 

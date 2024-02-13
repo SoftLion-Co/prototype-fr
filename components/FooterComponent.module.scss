@@ -3,8 +3,16 @@
 @import "../styles/mixin";
 
 .footer {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  @include for-size(phone) {
+    padding: 40px 0;
+    background: linear-gradient(
+      90deg,
+      rgba(175, 218, 237, 0.14) 0%,
+      rgba(190, 244, 205, 0.34) 20%,
+      rgba(243, 182, 241, 0.1) 100%
+    );
+    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+  }
 
   @include for-size(tablet) {
     width: 100%;

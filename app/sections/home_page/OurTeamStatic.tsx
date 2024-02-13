@@ -8,6 +8,7 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import { StaticImageData } from "next/image";
 
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
+import classNames from "classnames";
 
 const OurTeamSetcion = () => {
   interface Props {
@@ -53,12 +54,9 @@ const OurTeamSetcion = () => {
   ];
 
   return (
-    <section>
-      <div className={s.container}>
-        <div className={s.team__title}>
-          <HeadingComponent text="Our team" />
-        </div>
-
+    <section className={s.team}>
+      <div className={classNames(s.container, s.team__content)}>
+        <HeadingComponent className={s.team__title} text="Our team" />
         <div className={s.team__container}>
           {response.map((member) => (
             <OurTeamCard data={member} isActive={false} />
