@@ -5,6 +5,7 @@ import { FC } from "react";
 import classNames from "classnames";
 import { FiLinkedin } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface TeamsProps {
   data: {
@@ -24,7 +25,14 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
   const memberClassName = isActive ? classNames(s.member, s.active) : s.member;
 
   return (
-    <div className={memberClassName}>
+    <MotionWrapper
+      tag="div"
+      initial
+      viewport
+      variants
+      custom={1.5}
+      className={memberClassName}
+    >
       <div className={s.member__avatar}>
         <Link
           href={
@@ -64,7 +72,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
           </>
         ) : null}
       </div>
-    </div>
+    </MotionWrapper>
   );
 };
 

@@ -73,6 +73,7 @@ p {
     letter-spacing: 0.6px;
   }
   @include for-size(laptop) {
+    line-height: 150%;
     font-size: 18px;
     letter-spacing: 0.8px;
   }
@@ -92,6 +93,7 @@ h1 {
     font-size: 24px;
   }
   @include for-size(laptop) {
+    line-height: 150%;
     font-size: 34px;
   }
   @include for-size(desktop) {
@@ -110,6 +112,7 @@ h2 {
     letter-spacing: 2.6px;
   }
   @include for-size(laptop) {
+    line-height: 150%;
     font-size: 48px;
     letter-spacing: 2.8px;
   }
@@ -130,6 +133,7 @@ h3 {
     letter-spacing: 1.4px;
   }
   @include for-size(laptop) {
+    line-height: 150%;
     font-size: 24px;
     letter-spacing: 2.2px;
   }
@@ -150,6 +154,7 @@ h4 {
     letter-spacing: 0.6px;
   }
   @include for-size(laptop) {
+    line-height: 150%;
     font-size: 20px;
     letter-spacing: 0.8px;
   }

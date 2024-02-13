@@ -10,6 +10,7 @@ import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardCompone
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import getBlogsData from "@/hooks/getBlogsData";
 import { FC } from "react";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const blogs: BlogInterface[] = getBlogsData();
 
@@ -29,12 +30,18 @@ const HomeBlog: FC = () => {
         >
           <BlogDesktopComponent blogs={blogs} />
         </div>
-        <div className={s.blogContainer__mobileSlider}>
+        <MotionWrapper
+          initial
+          viewport
+          variants
+          custom={1.5}
+          className={s.blogContainer__mobileSlider}
+        >
           <MobileSliderComponent
             data={blogs}
             SlideComponent={BlogExtendedCardComponent}
           />
-        </div>
+        </MotionWrapper>
 
         <div className={s.blur}>
           <div className={s.blur_item}></div>

@@ -6,6 +6,7 @@ import s from "./ServiceCardsComponent.module.scss";
 import SmallServiceCardComponent from "./SmallServiceCardComponent";
 import LargeServiceCardComponent from "./LargeServiceCardComponent";
 import useSwitchingCardsService from "@/hooks/useSwitchingCardsService";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface CardData {
   title: string;
@@ -52,7 +53,14 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({
   );
 
   return (
-    <div className={classNames(s.service, className)}>
+    <MotionWrapper
+      tag="p"
+      initial
+      viewport
+      variants
+      custom={1.5}
+      className={classNames(s.service, className)}
+    >
       <div className={classNames(s.service__card, s.service__card_left)}>
         <SmallServiceCardComponent
           title={leftCardData.title}
@@ -99,7 +107,7 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({
           />
         ))}
       </div>
-    </div>
+    </MotionWrapper>
   );
 };
 

@@ -3,6 +3,7 @@ import classNames from "classnames";
 import s from "./ContactUsSection.module.scss";
 import FormComponent from "../../../components/FormComponent";
 import HeadingComponent from "../../../components/HeadingComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface Attributes {
   className?: string;
@@ -18,14 +19,23 @@ const ContactUsSection: FC<Attributes> = ({ className }) => {
             text="Contact Us"
             tag="h2"
           />
-          <p className={s.heading__text}>
+          <MotionWrapper
+            tag="p"
+            initial
+            viewport
+            variants
+            custom={1.5}
+            className={s.heading__text}
+          >
             Submit your request now, and we will get in touch with you to
             discuss the details and develop a customized solution. Together, we
             can create a powerful tool for your business and ensure your success
             in the e-commerce world.
-          </p>
+          </MotionWrapper>
         </div>
+
         <FormComponent title="Book consultation" />
+
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>

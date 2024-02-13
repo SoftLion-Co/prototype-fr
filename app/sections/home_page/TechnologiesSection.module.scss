@@ -54,6 +54,17 @@
 }
 
 .technologies {
+  @include for-size(phone) {
+    padding: 40px 0;
+    box-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.1);
+    background: radial-gradient(
+      150% 140% at 0% 0%,
+      rgba(19, 235, 144, 0.1) 0%,
+      rgba(246, 205, 245, 0.2) 30%,
+      rgba(175, 218, 237, 0.3) 100%
+    );
+  }
+
   &__card_wrapper {
     border-radius: 15px;
     cursor: pointer;
