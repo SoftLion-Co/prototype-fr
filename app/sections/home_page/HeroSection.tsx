@@ -20,12 +20,6 @@ const HeroSection = () => {
           <span className={s.hero__word}>SoftLion</span>
         </MotionWrapper>
 
-        {/* <h1 className={s.hero__title}>
-          Embrace the <span className={s.hero__word}>Lion's</span> Share
-          Technological Advancements with{" "}
-          <span className={s.hero__word}>SoftLion</span>
-        </h1> */}
-
         <MotionWrapper
           tag={"p"}
           className={s.hero__description}
@@ -52,13 +46,18 @@ const HeroSection = () => {
             </MainButtonComponent>
           </MotionWrapper>
 
-          <div className={s.hero__logo}>
+          <MotionWrapper
+            tag={"div"}
+            variants
+            custom={2.5}
+            className={s.hero__logo}
+          >
             <Image
               className={s.hero__logo_mobile}
               src={heroLogoMobile}
               alt="SoftLion"
             />
-          </div>
+          </MotionWrapper>
         </div>
       </div>
 
