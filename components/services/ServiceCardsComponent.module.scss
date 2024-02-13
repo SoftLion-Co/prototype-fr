@@ -9,14 +9,17 @@
     gap: 20px;
   }
   @include for-size(laptop) {
-    gap: 40px;
+    gap: 28px;
+  }
+  @include for-size(desktop) {
+    gap: 32px;
   }
 
   &__mobile {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 
     @include for-size(tablet) {
       display: none;

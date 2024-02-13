@@ -40,27 +40,24 @@
   flex-direction: column;
   align-items: center;
 
-  height: 100%;
-  border-radius: 6px;
+  border-radius: 24px;
   padding: 24px 30px;
 
   background: $contact-us-form-background;
   box-shadow: $box-shadow-default;
 
   @include for-size(tablet) {
-    max-width: none;
-    border-radius: 8px;
-    margin-left: 0;
-    margin-right: 0;
+    border-radius: 26px;
     padding: 30px 60px;
+    max-width: none;
   }
   @include for-size(laptop) {
-    border-radius: 12px;
+    border-radius: 28px;
     padding: 40px 100px;
   }
   @include for-size(desktop) {
-    border-radius: 15px;
-    padding: 50px 150px;
+    border-radius: 32px;
+    padding: 40px 140px;
   }
 
   &__container {

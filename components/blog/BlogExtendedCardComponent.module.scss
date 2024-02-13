@@ -11,30 +11,22 @@
     rgba(242, 212, 239, 0.23) 50%,
     rgba(168, 225, 250, 0.0322) 100%
   );
-  font-weight: 400;
-  letter-spacing: 0.04em;
 
-  border-radius: 6px;
-  font-size: 12px;
-  line-height: 14px;
-  padding: 15px 10px;
+  border-radius: 24px;
+  padding: 20px;
   box-shadow: 6px 15px 9px 0px rgba(0, 0, 0, 0.15);
 
   @include for-size(tablet) {
-    border-radius: 8px;
-    font-size: 11px;
-    line-height: 130%;
+    border-radius: 26px;
     box-shadow: 8.4px 21px 13.1px 0px #00000025;
   }
   @include for-size(laptop) {
-    border-radius: 12px;
-    font-size: 15px;
-    padding: 15px;
+    border-radius: 28px;
+    padding: 30px;
   }
   @include for-size(desktop) {
-    border-radius: 15px;
-    font-size: 20px;
-    padding: 20px;
+    border-radius: 32px;
+    padding: 40px;
   }
 
   &__arrowIcon {
@@ -77,45 +69,33 @@
   }
 
   &__line {
+    background-color: $gray-default;
+    width: 112.5%;
     height: 1px;
     margin-bottom: 4%;
+
     @include for-size(laptop) {
-      height: 1.5px;
-    }
-    @include for-size(desktop) {
       height: 2px;
     }
-    width: 100%;
-    background-color: $gray-default;
   }
 
   &__text {
     display: -webkit-box;
     -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
-    line-height: 1.25;
-    font-size: 14px;
-    height: 120px;
-
-    @include for-size(tablet) {
-      width: 300px;
-      font-size: 12px;
-    }
-    @include for-size(laptop) {
-      width: 435px;
-      height: 160px;
-      font-size: 16px;
-      letter-spacing: 0.6;
-    }
-    @include for-size(desktop) {
-      width: 570px;
-      height: 200px;
-      font-size: 20px;
-      letter-spacing: 0.8;
-    }
     overflow: hidden;
     align-self: start;
     text-overflow: ellipsis;
+
+    @include for-size(tablet) {
+      width: 270px;
+    }
+    @include for-size(laptop) {
+      width: 400px;
+    }
+    @include for-size(desktop) {
+      width: 520px;
+    }
   }
 
   &__arrow {
@@ -125,49 +105,48 @@
 }
 
 .image {
-  width: 45%;
   object-fit: contain;
   height: fit-content;
-  aspect-ratio: 1.3;
-  margin-right: 7px;
+  margin-right: 6px;
 
+  @include for-size(phone) {
+    max-width: 45%;
+    min-width: 45%;
+    height: 150px;
+  }
   @include for-size(tablet) {
-    width: 150px;
-    height: 120px;
+    max-width: 150px;
+    min-width: 150px;
+    height: 150px;
     margin-right: 10px;
   }
-
   @include for-size(laptop) {
     width: 220px;
-    height: 180px;
+    height: 220px;
     margin-right: 15px;
   }
-
   @include for-size(desktop) {
-    width: 300px;
-    height: 240px;
+    width: 280px;
+    height: 280px;
     margin-right: 20px;
   }
 }
 
 .info {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
 
   @include for-size(tablet) {
     width: 175px;
-    min-height: 120px;
   }
 
   @include for-size(laptop) {
     width: 250px;
-    min-height: 180px;
   }
 
   @include for-size(desktop) {
     width: 320px;
-    min-height: 240px;
   }
 
   &__title {
@@ -212,28 +191,19 @@
     }
   }
 
-  &__text {
+  &__readingTime {
     color: $gray-default;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0.4px;
+    font-size: 10px;
 
     @include for-size(tablet) {
       font-size: 12px;
-      letter-spacing: 0.6px;
     }
     @include for-size(laptop) {
       font-size: 16px;
-      letter-spacing: 0.8px;
     }
     @include for-size(desktop) {
       font-size: 18px;
-      letter-spacing: 1px;
     }
-  }
-  &__readingTime {
-    color: $gray-default;
   }
 
   &__box {
@@ -247,6 +217,7 @@
   display: flex;
   align-items: end;
   font-size: 14px;
+  gap: 10px;
 
   &__container {
     display: flex;
@@ -259,15 +230,17 @@
   flex-wrap: wrap;
   font-size: 10px;
   gap: 4px;
-  margin-bottom: 3%;
+  margin-bottom: 16px;
 
   @include for-size(laptop) {
     font-size: 12px;
-    gap: 6px;
+    gap: 8px;
+    margin-bottom: 20px;
   }
   @include for-size(desktop) {
+    margin-bottom: 28px;
     font-size: 14px;
-    gap: 9px;
+    gap: 10px;
   }
 
   &__item {

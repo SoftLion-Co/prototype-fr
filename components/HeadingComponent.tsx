@@ -22,7 +22,7 @@ const HeadingComponent: FC<HeadingComponentProps> = ({
           initial
           viewport
           variants
-          custom={1}
+          custom={1.5}
           className={classNames(s.heading, className)}
         >
           {text}
@@ -33,7 +33,7 @@ const HeadingComponent: FC<HeadingComponentProps> = ({
           initial
           viewport
           variants
-          custom={1}
+          custom={1.5}
           className={classNames(s.heading, className)}
         >
           {text}

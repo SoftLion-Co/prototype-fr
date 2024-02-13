@@ -1,8 +1,9 @@
 import React, { FC } from "react";
-import s from "./ServiceHeadingComponent.module.scss";
 import Image from "next/image";
-import Line from "../../images/project/line-component.svg";
 import classNames from "classnames";
+import s from "./ServiceHeadingComponent.module.scss";
+import Line from "../../images/project/line-component.svg";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface ServiceHeadingComponentProps {
   headingText: string;
@@ -16,14 +17,20 @@ const ServiceHeadingComponent: FC<ServiceHeadingComponentProps> = ({
   className,
 }) => {
   return (
-    <div className={classNames(s.heading, className)}>
+    <MotionWrapper
+      initial
+      viewport
+      variants
+      custom={1.5}
+      className={classNames(s.heading, className)}
+    >
       {tag === "h1" ? (
         <h1 className={s.heading__title}>{headingText}</h1>
       ) : (
         <h2 className={s.heading__title}>{headingText}</h2>
       )}
       <Image src={Line} alt="Security line" className={s.heading__svg} />
-    </div>
+    </MotionWrapper>
   );
 };
 

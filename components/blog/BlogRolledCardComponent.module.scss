@@ -3,41 +3,34 @@
 
 .card {
   cursor: pointer;
-  @include for-size(tablet) {
-    width: 168px;
-    height: 207px;
-    border-radius: 8px;
-    box-shadow: 4.7px 6.3px 4.7px 0px #00000025;
-
-    font-size: 12px;
-    line-height: 130%;
-  }
-  @include for-size(laptop) {
-    width: 240px;
-    height: 303px;
-    border-radius: 12px;
-    box-shadow: 6.9px 9.2px 6.9px 0px #00000025;
-
-    font-size: 19px;
-  }
-  @include for-size(desktop) {
-    width: 320px;
-    height: 393px;
-    border-radius: 15px;
-    box-shadow: 9px 12px 9px 0px #00000025;
-
-    font-size: 25px;
-  }
-
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(
-    115.15deg,
+    115deg,
     rgba(247, 205, 245, 0.23) -20.67%,
     rgba(242, 212, 239, 0.23) 48.71%,
     rgba(168, 225, 250, 0.0322) 99.46%
   );
+
+  @include for-size(tablet) {
+    width: 168px;
+    height: 207px;
+    border-radius: 26px;
+    box-shadow: 4.7px 6.3px 4.7px 0px #00000025;
+  }
+  @include for-size(laptop) {
+    width: 240px;
+    height: 303px;
+    border-radius: 28px;
+    box-shadow: 6.9px 9.2px 6.9px 0px #00000025;
+  }
+  @include for-size(desktop) {
+    width: 320px;
+    height: 393px;
+    border-radius: 32px;
+    box-shadow: 9px 12px 9px 0px #00000025;
+  }
 
   &__box {
     @include for-size(tablet) {
@@ -78,8 +71,6 @@
   }
 
   &__paragraph {
-    font-weight: 400;
-    letter-spacing: 0.09em;
     text-align: center;
     padding: 3%;
     padding-top: 5%;

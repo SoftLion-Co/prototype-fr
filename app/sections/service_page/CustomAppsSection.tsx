@@ -5,6 +5,7 @@ import pic from "../../../images/services/custom-apps/Apps.svg";
 import pic2 from "../../../images/services/custom-apps/CustomAppDevelopment.svg";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface AnchorID {
   anchorID: string;
@@ -17,8 +18,15 @@ const CustomAppsSection: FC<AnchorID> = ({ anchorID }) => {
         className={s.custom__title}
         headingText={"Custom Apps"}
       />
-      
-      <div className={s.custom__cards}>
+
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={s.custom__cards}
+      >
         <div className={s.custom__card}>
           <CustomAppsCardComponent
             title="Web-Studio"
@@ -40,7 +48,7 @@ const CustomAppsSection: FC<AnchorID> = ({ anchorID }) => {
             arrow={false}
           />
         </div>
-      </div>
+      </MotionWrapper>
     </section>
   );
 };

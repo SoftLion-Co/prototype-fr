@@ -7,6 +7,7 @@ import SvgImage3 from "../../../images/technologies/choose-us/ChooseUs3.svg";
 import BigButtonComponent from "@/components/service/BigButtonComponent";
 import HeadingComponent from "@/components/technologies/HeadingComponent";
 import s from "./ChooseUsSection.module.scss";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface ChooseUsSectionProps {
   chooseUsSection: string[];
@@ -18,8 +19,14 @@ const ChooseUsSection: FC<ChooseUsSectionProps> = ({ chooseUsSection }) => {
   return (
     <section className={s.our__chose}>
       <HeadingComponent text="Why you should choose us" color="blue" />
-      
-      <div className={s.container}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={s.container}
+      >
         {chooseUsSection.map((item: string, index: number) => (
           <div
             className={classNames(s.card, {
@@ -40,7 +47,7 @@ const ChooseUsSection: FC<ChooseUsSectionProps> = ({ chooseUsSection }) => {
             {index === chooseUsSection.length - 1 && <BigButtonComponent />}
           </div>
         ))}
-      </div>
+      </MotionWrapper>
     </section>
   );
 };

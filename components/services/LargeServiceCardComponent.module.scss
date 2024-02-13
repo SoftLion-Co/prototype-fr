@@ -13,24 +13,25 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: 24px;
     padding: 40px 20px;
     user-select: none;
 
     @include for-size(tablet) {
       box-shadow: $services-slider-center-card-shadow;
-      margin-bottom: 0;
       padding: 22px 42px 30px 42px;
+      border-radius: 26px;
+      margin-bottom: 0;
       height: 360px;
     }
     @include for-size(laptop) {
-      border-radius: 12px;
+      border-radius: 28px;
       padding: 44px 70px;
       height: 480px;
     }
     @include for-size(desktop) {
-      border-radius: 15px;
       padding: 80px 100px 60px 100px;
+      border-radius: 32px;
       min-height: 560px;
     }
 

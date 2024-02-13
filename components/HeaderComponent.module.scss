@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 19px 0;
+  padding: 22px 0;
 
   &__line {
     &::before {
@@ -111,13 +111,13 @@
     @include for-size(tablet) {
       display: flex;
       align-items: center;
-      gap: 31px;
+      gap: 30px;
     }
     @include for-size(laptop) {
       gap: 42px;
     }
     @include for-size(desktop) {
-      gap: 53px;
+      gap: 54px;
     }
   }
 
@@ -128,10 +128,10 @@
 
   &__sub_menu > &__item {
     @include for-size(tablet) {
-      padding-bottom: 5px;
+      padding-bottom: 6px;
     }
     @include for-size(desktop) {
-      padding-bottom: 15px;
+      padding-bottom: 16px;
     }
   }
 
@@ -150,7 +150,7 @@
       font-size: 14px;
     }
     @include for-size(laptop) {
-      font-size: 15px;
+      font-size: 16px;
     }
     @include for-size(desktop) {
       font-size: 18px;
@@ -162,9 +162,9 @@
       display: none;
       position: absolute;
       background-color: $white-default;
-      box-shadow: 0 12px 37px #2c2d501a;
-      border-radius: 8px;
-      padding: 5px 18px;
+      box-shadow: 0 16px 42px #2c2d501a;
+      border-radius: 12px;
+      padding: 6px 18px;
       width: 100px;
       top: 30px;
       left: 0;
@@ -198,49 +198,37 @@
     }
   }
 
+  &__text {
+    font-size: 18px;
+  }
+
   &__btn_login {
     background: $button-blue-background;
     color: $black-default;
-    padding: 5.5px 13px;
+    padding: 6px 14px;
     border-radius: 6px;
     border: none;
     margin-left: 21px;
     display: none;
+
     @include for-size(tablet) {
       display: block;
-      padding: 5.5px 13px;
+      padding: 6px 14px;
       border-radius: 8px;
       margin-left: 0px;
     }
     @include for-size(laptop) {
       display: block;
-      padding: 8px 19px;
+      padding: 8px 20px;
       border-radius: 12px;
     }
     @include for-size(desktop) {
       display: block;
-      padding: 11px 25px;
+      padding: 12px 26px;
       border-radius: 15px;
     }
-
-    &__text {
-      font-size: 22px;
-      letter-spacing: 0.4px;
-      color: $black-default;
-      line-height: 130%;
-      @include for-size(tablet) {
-        font-weight: 400;
-        font-size: 12px;
-      }
-
-      @include for-size(laptop) {
-        font-size: 15px;
-      }
-      @include for-size(desktop) {
-        font-size: 20px;
-      }
-    }
   }
+
   &__btn_burger {
     background-color: transparent;
     margin-left: auto;

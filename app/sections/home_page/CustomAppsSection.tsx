@@ -20,7 +20,7 @@ const CustomAppsSection = () => {
         initial
         viewport
         variants
-        custom={1.5}
+        custom={2}
         className={s.custom__cards}
       >
         <CustomAppsCardComponent

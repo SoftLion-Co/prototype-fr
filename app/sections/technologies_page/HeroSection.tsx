@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import s from "./HeroSection.module.scss";
 import classNames from "classnames";
 import HeadingComponent from "@/components/HeadingComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface HeroTech {
   titleTech: string;
@@ -21,8 +22,28 @@ const HeroSection: FC<Props> = ({ heroTech }) => {
           text="Technologies"
           tag="h1"
         />
-        <h2 className={s.hero__heading}>{heroTech.titleTech}</h2>
-        <p className={s.hero__paragraph}>{heroTech.paragraph}</p>
+
+        <MotionWrapper
+          tag={"h2"}
+          initial
+          viewport
+          variants
+          custom={1.8}
+          className={s.hero__heading}
+        >
+          {heroTech.titleTech}
+        </MotionWrapper>
+
+        <MotionWrapper
+          tag={"p"}
+          initial
+          viewport
+          variants
+          custom={2.2}
+          className={s.hero__paragraph}
+        >
+          {heroTech.paragraph}
+        </MotionWrapper>
 
         <div className={s.blur}>
           <div className={s.blur_item}></div>

@@ -20,7 +20,7 @@ const BlogDesktopComponent: FC<{ blogs: BlogInterface[] }> = ({ blogs }) => {
       initial
       viewport
       variants
-      custom={1.5}
+      custom={2}
       className={s.slider}
     >
       <Carousel

@@ -310,7 +310,7 @@ const HeaderComponent = () => {
                         toggleSubMenu(0), handleArrowClick1();
                       }}
                     >
-                      <p>Services</p>
+                      <p className={s.header__text}>Services</p>
                       {arrowDirection1 === "down" ? (
                         <MdKeyboardArrowDown
                           className={s.header_modal__icon}
@@ -339,7 +339,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Design</p>
+                          <p className={s.header__text}>Design</p>
                         </Link>
                       </li>
                       <li
@@ -353,7 +353,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Development</p>
+                          <p className={s.header__text}>Development</p>
                         </Link>
                       </li>
                       <li
@@ -367,7 +367,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Apps</p>
+                          <p className={s.header__text}>Apps</p>
                         </Link>
                       </li>
                       <li
@@ -381,7 +381,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Security</p>
+                          <p className={s.header__text}>Security</p>
                         </Link>
                       </li>
                     </ul>
@@ -397,7 +397,7 @@ const HeaderComponent = () => {
                     )}
                     onClick={handleButtonClick}
                   >
-                    <p>Our Projects</p>
+                    <p className={s.header__text}>Our Projects</p>
                   </Link>
                 </li>
                 <li
@@ -418,7 +418,7 @@ const HeaderComponent = () => {
                         toggleSubMenu(1), handleArrowClick2();
                       }}
                     >
-                      <p>Technologies</p>
+                      <p className={s.header__text}>Technologies</p>
                       {arrowDirection2 === "down" ? (
                         <MdKeyboardArrowDown
                           className={s.header_modal__icon}
@@ -447,7 +447,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>.NET</p>
+                          <p className={s.header__text}>.NET</p>
                         </Link>
                       </li>
                       <li
@@ -461,7 +461,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Java</p>
+                          <p className={s.header__text}>Java</p>
                         </Link>
                       </li>
                       <li
@@ -475,7 +475,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Node.js</p>
+                          <p className={s.header__text}>Node.js</p>
                         </Link>
                       </li>
                       <li
@@ -489,7 +489,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>React.js</p>
+                          <p className={s.header__text}>React.js</p>
                         </Link>
                       </li>
                       <li
@@ -503,7 +503,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Angular</p>
+                          <p className={s.header__text}>Angular</p>
                         </Link>
                       </li>
                       <li
@@ -517,7 +517,7 @@ const HeaderComponent = () => {
                           className={s.header_modal__link}
                           onClick={handleButtonClick}
                         >
-                          <p>Vue.js</p>
+                          <p className={s.header__text}>Vue.js</p>
                         </Link>
                       </li>
                     </ul>
@@ -533,7 +533,7 @@ const HeaderComponent = () => {
                     )}
                     onClick={handleButtonClick}
                   >
-                    <p>Blog</p>
+                    <p className={s.header__text}>Blog</p>
                   </Link>
                 </li>
                 <li className={s.header_modal__item}>
@@ -546,7 +546,7 @@ const HeaderComponent = () => {
                     )}
                     onClick={handleButtonClick}
                   >
-                    <p>Contact Us</p>
+                    <p className={s.header__text}>Contact Us</p>
                   </Link>
                 </li>
               </ul>
