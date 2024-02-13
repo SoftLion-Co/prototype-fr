@@ -5,16 +5,16 @@
   display: none;
 
   @include for-size(tablet) {
-    display: flex;
-    justify-content: center;
-    column-gap: 23px;
-    row-gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 40px 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
-
   @include for-size(laptop) {
-    column-gap: 43px;
-    row-gap: 45px;
+    gap: 50px 28px;
+  }
+  @include for-size(desktop) {
+    gap: 60px 32px;
   }
 }
 
@@ -29,11 +29,10 @@
   margin-bottom: 7%;
 }
 
-
 .blur {
   position: absolute;
   pointer-events: none;
-  
+
   &_item {
     position: relative;
     pointer-events: none;

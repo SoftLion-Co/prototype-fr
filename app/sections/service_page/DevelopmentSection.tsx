@@ -9,6 +9,7 @@ import pic3 from "../../../images/services/development/testing-and-debuging.svg"
 import pic4 from "../../../images/services/development/deployment-and-maintenance.svg";
 import DevelopmentCardComponent from "@/components/service/DevelopmentCardComponent";
 import DevelopmentCardMobileComponent from "@/components/service/DevelopmentCardMobileComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const cardsData = [
   {
@@ -67,7 +68,14 @@ const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
           className={s.develop__heading}
           headingText={" Development"}
         />
-        <div className={s.develop__mob}>
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2}
+          className={s.develop__mob}
+        >
           {cardsData.map((data) => (
             <DevelopmentCardMobileComponent
               key={data.num}
@@ -77,11 +85,18 @@ const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
               path={data.path}
             />
           ))}
-        </div>
+        </MotionWrapper>
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
-        <div className={s.develop__desktop}>
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2}
+          className={s.develop__desktop}
+        >
           {cardsData.map((data) => (
             <DevelopmentCardComponent
               key={data.num}
@@ -92,7 +107,7 @@ const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
               leftAligned={data.leftAligned}
             />
           ))}
-        </div>
+        </MotionWrapper>
         <div className={s.blure}>
           <div className={s.blure_item}></div>
         </div>

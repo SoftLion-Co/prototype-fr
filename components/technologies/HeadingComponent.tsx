@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 import s from "./HeadingComponent.module.scss";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface HeadingComponentProps {
   color?:
@@ -27,10 +28,22 @@ const HeadingComponent: FC<HeadingComponentProps> = ({
   const headingTitle = classNames(s.heading__title);
 
   return (
-    <div className={classNames(headingColor, s.container, s.heading__container, className)}>
+    <MotionWrapper
+      tag="div"
+      initial
+      viewport
+      variants
+      custom={1.5}
+      className={classNames(
+        headingColor,
+        s.container,
+        s.heading__container,
+        className
+      )}
+    >
       <h2 className={headingTitle}>{text}</h2>
       <div className={s.heading__border}></div>
-    </div>
+    </MotionWrapper>
   );
 };
 

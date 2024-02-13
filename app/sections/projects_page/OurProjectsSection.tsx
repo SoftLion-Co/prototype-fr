@@ -324,27 +324,25 @@ const OurProjectsSection = () => {
         )}
       </MotionWrapper>
 
-      <MotionWrapper initial viewport variants custom={1}>
-        <Pagination
-          className={s.pagination}
-          total={totalPages}
-          value={currentPage}
-          onChange={(page) => setCurrentPage(page)}
-          siblings={1}
-          size={paginationSize}
-          styles={(theme) => ({
-            control: {
-              "&[data-active]": {
-                backgroundImage: theme.fn.gradient({
-                  from: "#308bb7",
-                  to: "#7ec2e4",
-                }),
-                border: 0,
-              },
+      <Pagination
+        className={s.pagination}
+        total={totalPages}
+        value={currentPage}
+        onChange={(page) => setCurrentPage(page)}
+        siblings={1}
+        size={paginationSize}
+        styles={(theme) => ({
+          control: {
+            "&[data-active]": {
+              backgroundImage: theme.fn.gradient({
+                from: "#308bb7",
+                to: "#7ec2e4",
+              }),
+              border: 0,
             },
-          })}
-        />
-      </MotionWrapper>
+          },
+        })}
+      />
     </section>
   );
 };

@@ -7,6 +7,7 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 import BigButtonComponent from "../../../components/service/BigButtonComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface AnchorID {
   anchorID: string;
@@ -46,8 +47,6 @@ const securityCardsData = [
 ];
 
 const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
-  const isEven = securityCardsData.length % 2 === 0;
-
   return (
     <section id={anchorID} className={s.security}>
       <ServiceHeadingComponent
@@ -55,31 +54,40 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
         headingText="Security"
       />
 
-      <div className={s.security__slider}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={s.security__slider}
+      >
         <MobileSliderComponent
           data={securityCardsData}
           SlideComponent={ServiceSecurityCardComponent}
         />
+      </MotionWrapper>
+
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
       </div>
 
-      <div className={classNames(s.container, s.security__container)}>
-        <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
-        {securityCardsData.map((card, index) => (
-          <div
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={classNames(s.container, s.security__container)}
+      >
+        {securityCardsData.map((card) => (
+          <ServiceSecurityCardComponent
             key={card.id}
-            className={classNames(s.security__card, {
-              [s.centre]: !isEven && index === securityCardsData.length - 1,
-            })}
-          >
-            <ServiceSecurityCardComponent
-              title={card.title}
-              description={card.description}
-            />
-          </div>
+            title={card.title}
+            description={card.description}
+          />
         ))}
-      </div>
+      </MotionWrapper>
 
       <div className={classNames(s.container, s.security__button)}>
         <BigButtonComponent />

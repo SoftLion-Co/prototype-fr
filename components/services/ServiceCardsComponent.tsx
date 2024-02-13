@@ -54,11 +54,11 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({
 
   return (
     <MotionWrapper
-      tag="p"
+      tag="div"
       initial
       viewport
       variants
-      custom={1.5}
+      custom={2}
       className={classNames(s.service, className)}
     >
       <div className={classNames(s.service__card, s.service__card_left)}>

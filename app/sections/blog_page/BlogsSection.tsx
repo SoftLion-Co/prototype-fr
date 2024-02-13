@@ -1,24 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FC, useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import s from "./BlogsSection.module.scss";
-import classNames from "classnames";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
 import BlogFilterButton from "@/components/blog/BlogFilterButton";
-import BlogPaginationButton from "@/components/blog/BlogPaginationButton";
 import useBlogPagination from "@/hooks/useBlogPagination";
 import useScrollToTop from "@/hooks/useScrollToTop";
 import useBlogFilter from "@/hooks/useBlogFilter";
-import useResponsiveItemsToShow from "@/hooks/useResponsiveItemsToShow";
-import { useSwipeForFilter } from "@/hooks/useSwipeForFilter";
-import useSwitchingCategoriesCarousel from "@/hooks/useSwitchingCategoriesCarousel";
-import { BlogInterface } from "@/components/blog/BlogInteface";
 import getBlogsData from "@/hooks/getBlogsData";
+import MotionWrapper from "@/hooks/MotionWrapper";
+import { Pagination } from "@mantine/core";
+import { Carousel, Embla } from "@mantine/carousel";
+import Arrow from "@/images/navigation/arrow.svg";
+
+interface ArrowProps {
+  className: string;
+}
 
 const BlogsSection = () => {
-  const blogs: BlogInterface[] = getBlogsData();
-
   const categories = [
     "All articles",
     "Technology",
@@ -53,46 +54,75 @@ const BlogsSection = () => {
     setCurrentPage: handlePageChange,
   });
 
-  const {
-    currentPage,
-    totalPages,
-    getPageNumbersToShow,
-    showPreviousButton,
-    showNextButton,
-    setCurrentPage,
-  } = useBlogPagination({
+  const { currentPage, totalPages, setCurrentPage } = useBlogPagination({
     totalItems: filteredBlogsData?.length || 0,
     itemsPerPage: blogsPerPage,
   });
-
-  const itemsToShow = useResponsiveItemsToShow();
-
-  const {
-    visibleCategories,
-    animateCarousel,
-    slideDirection,
-    setAnimateCarousel,
-    setSlideDirection,
-    sliderPosition,
-    setSliderPosition,
-    handleCategoryIndicatorClick,
-  } = useSwitchingCategoriesCarousel(
-    categories.map((category) => ({ name: category })),
-    itemsToShow
-  );
-
-  const { sliderRef, handleTouchStart, handleTouchEndX } = useSwipeForFilter(
-    categories.length,
-    itemsToShow,
-    sliderPosition,
-    setSliderPosition
-  );
 
   const allBlogs = filteredBlogsData.slice().reverse();
   const startIndex = (currentPage - 1) * blogsPerPage;
   const endIndex = Math.min(startIndex + blogsPerPage, allBlogs.length);
 
   const currentBlogs = allBlogs.slice(startIndex, endIndex);
+
+  const [embla] = useState<Embla | null>(null);
+
+  const handleScroll = useCallback(() => {
+    if (!embla) return;
+  }, [embla]);
+
+  useEffect(() => {
+    if (embla) {
+      embla.on("scroll", handleScroll);
+      handleScroll();
+    }
+  }, [embla]);
+
+  const [paginationSize, setPaginationSize] = useState("xs");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 767.98) {
+        setPaginationSize("xs");
+      } else {
+        setPaginationSize("md");
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const NextArrow: FC<ArrowProps> = ({ className }) => {
+    return (
+      <div className={className}>
+        <Image
+          style={{ transform: "rotate(180deg)" }}
+          src={Arrow}
+          alt="Next slide"
+          className={s.button__arrow}
+          width={28}
+        />
+      </div>
+    );
+  };
+
+  const PrevArrow: FC<ArrowProps> = ({ className }) => {
+    return (
+      <div className={className}>
+        <Image
+          src={Arrow}
+          alt="Previous slide"
+          className={s.button__arrow}
+          width={28}
+        />
+      </div>
+    );
+  };
 
   return (
     <section className={s.blog}>
@@ -103,188 +133,85 @@ const BlogsSection = () => {
           <div className={s.blur_item}></div>
         </div>
 
-        <div className={s.blog__filter}>
-          <div
-            className={classNames(
-              s.blog__filter_carousel,
-              animateCarousel && s.animate,
-              slideDirection === "left" && s.slideLeft,
-              slideDirection === "right" && s.slideRight
-            )}
-            ref={sliderRef}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEndX}
-            onAnimationEnd={() => {
-              setAnimateCarousel(false);
-              setSlideDirection(null);
+        <MotionWrapper tag="div" initial viewport variants custom={2}>
+          <Carousel
+            slideSize="100%"
+            align="start"
+            slideGap="5xl"
+            loop
+            dragFree
+            withControls
+            controlsOffset="xs"
+            previousControlIcon={<NextArrow className={s.button__next} />}
+            nextControlIcon={<PrevArrow className={s.button__prev} />}
+            withIndicators={false}
+            classNames={{
+              container: s.button__container,
+              control: s.button__control,
+              controls: s.button__controls,
             }}
           >
-            {visibleCategories.map((category, index) => (
+            {categories.map((category, index) => (
               <BlogFilterButton
                 key={index}
-                text={category.name}
+                text={category}
+                className={s.button}
                 activeFilter={
-                  activeCategory === category.name ||
-                  (category.name === "All articles" && activeCategory === null)
+                  activeCategory === category ||
+                  (category === "All articles" && activeCategory === null)
                 }
                 onClick={() => {
                   setActiveCategory(
-                    category.name === "All articles" ? null : category.name
+                    category === "All articles" ? null : category
                   );
                   handleCategoryChange(
-                    category.name === "All articles" ? null : category.name
+                    category === "All articles" ? null : category
                   );
                 }}
-                className={classNames(
-                  s.blogFilterButton,
-                  activeCategory === category.name ? s.activeFilter : "",
-                  animateCarousel && activeCategory !== category.name
-                    ? s.animate
-                    : "",
-                  slideDirection === "left" && activeCategory !== category.name
-                    ? s.slideLeft
-                    : "",
-                  slideDirection === "right" && activeCategory !== category.name
-                    ? s.slideRight
-                    : ""
-                )}
               />
             ))}
-          </div>
+          </Carousel>
+        </MotionWrapper>
 
-          <div className={s.blog__filter_controls}>
-            {categories
-              .slice(0, Math.ceil(categories.length / itemsToShow))
-              .map((_, pageIndex) => (
-                <button
-                  key={pageIndex}
-                  className={classNames(s.blog__filter_indicator, {
-                    [s.visible]:
-                      pageIndex === Math.floor(sliderPosition / itemsToShow),
-                    [s.animated]: activeCategory !== null,
-                    [s.active]:
-                      pageIndex === Math.floor(sliderPosition / itemsToShow) &&
-                      activeCategory !== null,
-                  })}
-                  onClick={() => {
-                    if (
-                      pageIndex !== Math.floor(sliderPosition / itemsToShow)
-                    ) {
-                      handleCategoryIndicatorClick(pageIndex);
-                    }
-                  }}
-                >
-                  ●
-                </button>
-              ))}
-          </div>
-        </div>
-
-        <div className={s.blog__card}>
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2.5}
+          className={s.blog__card}
+        >
           {currentBlogs.length > 0 ? (
             currentBlogs.map((blog) => (
-              <div className={s.blog__cards}>
-                <BlogExtendedCardComponent data={blog} />
-              </div>
+              <BlogExtendedCardComponent data={blog} />
             ))
           ) : (
-            <p className={s.blog__nothing}>Nothing found for your request</p>
+            <h3 className={s.blog__nothing}>Nothing found for your request</h3>
           )}
-        </div>
+        </MotionWrapper>
 
-        <div className={s.pagination}>
-          {totalPages > 5 && (
-            <>
-              {showPreviousButton() && currentPage > 1 && (
-                <BlogPaginationButton
-                  key="previous"
-                  text="⇐"
-                  activePagination={false}
-                  onClick={() => handlePageChange(currentPage - 1)}
-                />
-              )}
-
-              {currentPage > 1 && (
-                <>
-                  {currentPage >= 4 && (
-                    <BlogPaginationButton
-                      key={1}
-                      text="1"
-                      activePagination={1 === currentPage}
-                      onClick={() => handlePageChange(1)}
-                      className={classNames(s.activePagination)}
-                    />
-                  )}
-                  {currentPage > 3 && (
-                    <BlogPaginationButton
-                      key="ellipsis-start"
-                      text="…"
-                      activePagination={false}
-                      onClick={() => handlePageChange(currentPage - 7)}
-                    />
-                  )}
-                </>
-              )}
-
-              {getPageNumbersToShow().map((pageNumber) => (
-                <BlogPaginationButton
-                  key={pageNumber}
-                  text={String(pageNumber)}
-                  activePagination={pageNumber === currentPage}
-                  onClick={() => handlePageChange(pageNumber)}
-                  className={classNames(s.activePagination)}
-                />
-              ))}
-
-              {currentPage < totalPages - 1 && (
-                <>
-                  {currentPage <= totalPages - 4 && (
-                    <BlogPaginationButton
-                      key="ellipsis-end"
-                      text="…"
-                      activePagination={false}
-                      onClick={() => handlePageChange(currentPage + 2)}
-                    />
-                  )}
-                  {currentPage <= totalPages - 3 && (
-                    <BlogPaginationButton
-                      key={totalPages}
-                      text={String(totalPages)}
-                      activePagination={totalPages === currentPage}
-                      onClick={() => handlePageChange(totalPages)}
-                      className={classNames(s.activePagination)}
-                    />
-                  )}
-                </>
-              )}
-              {showNextButton() && currentPage < totalPages && (
-                <BlogPaginationButton
-                  key="next"
-                  text="⇒"
-                  activePagination={false}
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                />
-              )}
-            </>
-          )}
-
-          {totalPages <= 5 && (
-            <>
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-                (pageNumber) => (
-                  <BlogPaginationButton
-                    key={pageNumber}
-                    text={String(pageNumber)}
-                    activePagination={pageNumber === currentPage}
-                    onClick={() => handlePageChange(pageNumber)}
-                    className={classNames(s.activePagination)}
-                  />
-                )
-              )}
-            </>
-          )}
-        </div>
+        <Pagination
+          className={s.pagination}
+          total={totalPages}
+          value={currentPage}
+          onChange={(page: any) => {
+            setCurrentPage(page);
+            setScrollToTop(true);
+          }}
+          siblings={1}
+          size={paginationSize}
+          styles={(theme: any) => ({
+            control: {
+              "&[data-active]": {
+                backgroundImage: theme.fn.gradient({
+                  from: "#F2D4EF",
+                  to: "#F2D5F1",
+                }),
+                border: 0,
+              },
+            },
+          })}
+        />
       </div>
     </section>
   );

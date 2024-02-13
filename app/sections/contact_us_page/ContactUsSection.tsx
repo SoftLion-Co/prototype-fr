@@ -24,7 +24,7 @@ const ContactUsSection: FC<Attributes> = ({ className }) => {
             initial
             viewport
             variants
-            custom={1.5}
+            custom={2}
             className={s.heading__text}
           >
             Submit your request now, and we will get in touch with you to

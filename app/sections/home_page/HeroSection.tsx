@@ -24,7 +24,7 @@ const HeroSection = () => {
           tag={"p"}
           className={s.hero__description}
           variants
-          custom={1.7}
+          custom={1.5}
         >
           Our company provides an individual approach for each client to turn
           your ideas into reality.
@@ -64,7 +64,7 @@ const HeroSection = () => {
       <MotionWrapper
         tag={"div"}
         variants
-        custom={2}
+        custom={1.5}
         className={s.hero__logo_container}
       >
         <Image

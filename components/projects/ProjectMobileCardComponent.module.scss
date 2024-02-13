@@ -4,7 +4,7 @@
 .card {
   background: $our-projects-card-mobile-background;
   box-shadow: $our-projects-card-mobile-shadow;
-  border-radius: 6px;
+  border-radius: 24px;
 
   &__main {
     display: flex;
@@ -24,7 +24,7 @@
   &__image {
     max-width: 46.8%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 16px;
   }
 
   &__submain {
