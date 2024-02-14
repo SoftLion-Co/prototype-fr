@@ -399,6 +399,7 @@ const PrivacyPolicySection = () => {
             can find their contact details at{" "}
             <Link
               className={s.link__color}
+              target="_blank"
               href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.html"
             >
               Europa.eu
@@ -407,6 +408,7 @@ const PrivacyPolicySection = () => {
             for the data protection authorities at{" "}
             <Link
               className={s.link__color}
+              target="_blank"
               href="https://www.edoeb.admin.ch/edoeb/en/home.html"
             >
               Edoeb
@@ -428,6 +430,7 @@ const PrivacyPolicySection = () => {
             interest-based advertising, visit{" "}
             <Link
               className={s.link__color}
+              target="_blank"
               href="http://www.aboutads.info/choices/"
             >
               Aboutads
