@@ -131,435 +131,433 @@ const HeaderComponent = () => {
         [s.header_visible]: isHeaderVisible,
       })}
     >
-      <div className={s.container}>
-        <div className={s.header}>
-          <div>
-            <Link href="/" onClick={() => setModalOpen(false)}>
-              <Image className={s.header__logo} src={Logo} alt="SoftLion" />
-            </Link>
-          </div>
-          <nav className={s.header__navigation}>
-            <ul className={s.header__list}>
-              <li
-                className={classNames(
-                  pathname === "/services" ? s.header__active : "",
-                  s.header__item,
-                  s.header__line
-                )}
-              >
-                <Link href="/services" className={s.header__link}>
-                  Services
-                </Link>
-                <ul className={s.header__sub_menu}>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/services#design"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Design
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/services#development"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Development
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/services#apps"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Apps
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/services#security"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Security
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li
-                className={classNames(
-                  pathname === "/projects" ? s.header__active : "",
-                  s.header__item,
-                  s.header__line
-                )}
-              >
-                <Link href="/projects" className={classNames(s.header__link)}>
-                  Our Projects
-                </Link>
-              </li>
-              <li
-                className={classNames(
-                  pathname.startsWith("/technologies") ? s.header__active : "",
-                  s.header__item,
-                  s.header__line
-                )}
-              >
-                <Link href="" className={classNames(s.header__link)}>
-                  Technologies
-                </Link>
-                <ul className={s.header__sub_menu}>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/technologies/net"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      .NET
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/technologies/java"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Java
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/technologies/node"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Node.js
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/technologies/react"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      React.js
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/technologies/angular"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Angular
-                    </Link>
-                  </li>
-                  <li className={s.header__item}>
-                    <Link
-                      href="/technologies/vue"
-                      className={classNames(s.header__link, s.header__line)}
-                    >
-                      Vue.js
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-              <li
-                className={classNames(
-                  pathname === "/blog" ? s.header__active : "",
-                  s.header__item,
-                  s.header__line
-                )}
-              >
-                <Link href="/blog" className={s.header__link}>
-                  Blog
-                </Link>
-              </li>
-              <li
-                className={classNames(
-                  pathname === "/contact-us" ? s.header__active : "",
-                  s.header__item,
-                  s.header__line
-                )}
-              >
-                <Link href="/contact-us" className={s.header__link}>
-                  Contact Us
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <button className={s.header__btn_burger} onClick={handleButtonClick}>
-            <div className={`${s.header__icon} ${isModalOpen ? s.open : ""}`}>
-              <div className={s.header__icon__div}></div>
-              <div className={s.header__icon__div}></div>
-              <div className={s.header__icon__div}></div>
-              <div className={s.header__icon__div}></div>
-            </div>
-          </button>
-
-          {/* MOBILE MENU */}
-          {isModalOpen && (
-            <div className={s.header_modal}>
-              <ul className={s.header_modal__list}>
-                <li
-                  className={s.header_modal__item}
-                  onClick={() => handleMenuItemClick(0)}
-                >
-                  <div className={classNames(s.header_modal__link_container)}>
-                    <div
-                      className={classNames(
-                        pathname === "/services" ? s.header__active : "",
-                        s.header_modal__link,
-                        s.header__line,
-                        selectedMenuItem === 0 ? s.selected : ""
-                      )}
-                      onClick={() => {
-                        toggleSubMenu(0), handleArrowClick1();
-                      }}
-                    >
-                      <p className={s.header__text}>Services</p>
-                      {arrowDirection1 === "down" ? (
-                        <MdKeyboardArrowDown
-                          className={s.header_modal__icon}
-                          width="22px"
-                          height="22px"
-                        />
-                      ) : (
-                        <MdKeyboardArrowUp
-                          className={s.header_modal__icon}
-                          width="22px"
-                          height="22px"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  {openSubMenuIndex === 0 && (
-                    <ul className={s.header_modal__sub_menu}>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/services#design"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Design</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/services#development"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Development</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/services#apps"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Apps</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/services#security"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Security</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  )}
-                </li>
-                <li className={s.header_modal__item}>
+      <div className={s.header}>
+        <div>
+          <Link href="/" onClick={() => setModalOpen(false)}>
+            <Image className={s.header__logo} src={Logo} alt="SoftLion" />
+          </Link>
+        </div>
+        <nav className={s.header__navigation}>
+          <ul className={s.header__list}>
+            <li
+              className={classNames(
+                pathname === "/services" ? s.header__active : "",
+                s.header__item,
+                s.header__line
+              )}
+            >
+              <Link href="/services" className={s.header__link}>
+                Services
+              </Link>
+              <ul className={s.header__sub_menu}>
+                <li className={s.header__item}>
                   <Link
-                    href="/projects"
-                    className={classNames(
-                      pathname === "/projects" ? s.header__active : "",
-                      s.header_modal__link,
-                      s.header__line
-                    )}
-                    onClick={handleButtonClick}
+                    href="/services#design"
+                    className={classNames(s.header__link, s.header__line)}
                   >
-                    <p className={s.header__text}>Our Projects</p>
+                    Design
                   </Link>
                 </li>
-                <li
-                  className={s.header_modal__item}
-                  onClick={() => handleMenuItemClick(1)}
-                >
-                  <div className={s.header_modal__link_container}>
-                    <div
-                      className={classNames(
-                        pathname.startsWith("/technologies")
-                          ? s.header__active
-                          : "",
-                        s.header_modal__link,
-                        s.header__line,
-                        selectedMenuItem === 1 ? s.selected : ""
-                      )}
-                      onClick={() => {
-                        toggleSubMenu(1), handleArrowClick2();
-                      }}
-                    >
-                      <p className={s.header__text}>Technologies</p>
-                      {arrowDirection2 === "down" ? (
-                        <MdKeyboardArrowDown
-                          className={s.header_modal__icon}
-                          width="22px"
-                          height="22px"
-                        />
-                      ) : (
-                        <MdKeyboardArrowUp
-                          className={s.header_modal__icon}
-                          width="22px"
-                          height="22px"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  {openSubMenuIndex === 1 && (
-                    <ul className={s.header_modal__sub_menu}>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/technologies/net"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>.NET</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/technologies/java"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Java</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/technologies/node"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Node.js</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/technologies/react"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>React.js</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/technologies/angular"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Angular</p>
-                        </Link>
-                      </li>
-                      <li
-                        className={classNames(
-                          s.header_modal__item,
-                          s.header__line
-                        )}
-                      >
-                        <Link
-                          href="/technologies/vue"
-                          className={s.header_modal__link}
-                          onClick={handleButtonClick}
-                        >
-                          <p className={s.header__text}>Vue.js</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  )}
-                </li>
-                <li className={s.header_modal__item}>
+                <li className={s.header__item}>
                   <Link
-                    href="/blog"
-                    className={classNames(
-                      pathname === "/blog" ? s.header__active : "",
-                      s.header_modal__link,
-                      s.header__line
-                    )}
-                    onClick={handleButtonClick}
+                    href="/services#development"
+                    className={classNames(s.header__link, s.header__line)}
                   >
-                    <p className={s.header__text}>Blog</p>
+                    Development
                   </Link>
                 </li>
-                <li className={s.header_modal__item}>
+                <li className={s.header__item}>
                   <Link
-                    href="/contact-us"
-                    className={classNames(
-                      pathname === "/contact-us" ? s.header__active : "",
-                      s.header_modal__link,
-                      s.header__line
-                    )}
-                    onClick={handleButtonClick}
+                    href="/services#apps"
+                    className={classNames(s.header__link, s.header__line)}
                   >
-                    <p className={s.header__text}>Contact Us</p>
+                    Apps
+                  </Link>
+                </li>
+                <li className={s.header__item}>
+                  <Link
+                    href="/services#security"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    Security
                   </Link>
                 </li>
               </ul>
-              <div className={s.header_modal__container}>
-                {social.map((item, index) => (
-                  <Link key={index} href={item.url} target="_blank">
-                    {item.icon}
+            </li>
+            <li
+              className={classNames(
+                pathname === "/projects" ? s.header__active : "",
+                s.header__item,
+                s.header__line
+              )}
+            >
+              <Link href="/projects" className={classNames(s.header__link)}>
+                Our Projects
+              </Link>
+            </li>
+            <li
+              className={classNames(
+                pathname.startsWith("/technologies") ? s.header__active : "",
+                s.header__item,
+                s.header__line
+              )}
+            >
+              <Link href="" className={classNames(s.header__link)}>
+                Technologies
+              </Link>
+              <ul className={s.header__sub_menu}>
+                <li className={s.header__item}>
+                  <Link
+                    href="/technologies/net"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    .NET
                   </Link>
-                ))}
-              </div>
+                </li>
+                <li className={s.header__item}>
+                  <Link
+                    href="/technologies/java"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    Java
+                  </Link>
+                </li>
+                <li className={s.header__item}>
+                  <Link
+                    href="/technologies/node"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    Node.js
+                  </Link>
+                </li>
+                <li className={s.header__item}>
+                  <Link
+                    href="/technologies/react"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    React.js
+                  </Link>
+                </li>
+                <li className={s.header__item}>
+                  <Link
+                    href="/technologies/angular"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    Angular
+                  </Link>
+                </li>
+                <li className={s.header__item}>
+                  <Link
+                    href="/technologies/vue"
+                    className={classNames(s.header__link, s.header__line)}
+                  >
+                    Vue.js
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={classNames(
+                pathname === "/blog" ? s.header__active : "",
+                s.header__item,
+                s.header__line
+              )}
+            >
+              <Link href="/blog" className={s.header__link}>
+                Blog
+              </Link>
+            </li>
+            <li
+              className={classNames(
+                pathname === "/contact-us" ? s.header__active : "",
+                s.header__item,
+                s.header__line
+              )}
+            >
+              <Link href="/contact-us" className={s.header__link}>
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <button className={s.header__btn_burger} onClick={handleButtonClick}>
+          <div className={`${s.header__icon} ${isModalOpen ? s.open : ""}`}>
+            <div className={s.header__icon__div}></div>
+            <div className={s.header__icon__div}></div>
+            <div className={s.header__icon__div}></div>
+            <div className={s.header__icon__div}></div>
+          </div>
+        </button>
+
+        {/* MOBILE MENU */}
+        {isModalOpen && (
+          <div className={s.header_modal}>
+            <ul className={s.header_modal__list}>
+              <li
+                className={s.header_modal__item}
+                onClick={() => handleMenuItemClick(0)}
+              >
+                <div className={classNames(s.header_modal__link_container)}>
+                  <div
+                    className={classNames(
+                      pathname === "/services" ? s.header__active : "",
+                      s.header_modal__link,
+                      s.header__line,
+                      selectedMenuItem === 0 ? s.selected : ""
+                    )}
+                    onClick={() => {
+                      toggleSubMenu(0), handleArrowClick1();
+                    }}
+                  >
+                    <p className={s.header__text}>Services</p>
+                    {arrowDirection1 === "down" ? (
+                      <MdKeyboardArrowDown
+                        className={s.header_modal__icon}
+                        width="22px"
+                        height="22px"
+                      />
+                    ) : (
+                      <MdKeyboardArrowUp
+                        className={s.header_modal__icon}
+                        width="22px"
+                        height="22px"
+                      />
+                    )}
+                  </div>
+                </div>
+                {openSubMenuIndex === 0 && (
+                  <ul className={s.header_modal__sub_menu}>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/services#design"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Design</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/services#development"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Development</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/services#apps"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Apps</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/services#security"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Security</p>
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li className={s.header_modal__item}>
+                <Link
+                  href="/projects"
+                  className={classNames(
+                    pathname === "/projects" ? s.header__active : "",
+                    s.header_modal__link,
+                    s.header__line
+                  )}
+                  onClick={handleButtonClick}
+                >
+                  <p className={s.header__text}>Our Projects</p>
+                </Link>
+              </li>
+              <li
+                className={s.header_modal__item}
+                onClick={() => handleMenuItemClick(1)}
+              >
+                <div className={s.header_modal__link_container}>
+                  <div
+                    className={classNames(
+                      pathname.startsWith("/technologies")
+                        ? s.header__active
+                        : "",
+                      s.header_modal__link,
+                      s.header__line,
+                      selectedMenuItem === 1 ? s.selected : ""
+                    )}
+                    onClick={() => {
+                      toggleSubMenu(1), handleArrowClick2();
+                    }}
+                  >
+                    <p className={s.header__text}>Technologies</p>
+                    {arrowDirection2 === "down" ? (
+                      <MdKeyboardArrowDown
+                        className={s.header_modal__icon}
+                        width="22px"
+                        height="22px"
+                      />
+                    ) : (
+                      <MdKeyboardArrowUp
+                        className={s.header_modal__icon}
+                        width="22px"
+                        height="22px"
+                      />
+                    )}
+                  </div>
+                </div>
+                {openSubMenuIndex === 1 && (
+                  <ul className={s.header_modal__sub_menu}>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/technologies/net"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>.NET</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/technologies/java"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Java</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/technologies/node"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Node.js</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/technologies/react"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>React.js</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/technologies/angular"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Angular</p>
+                      </Link>
+                    </li>
+                    <li
+                      className={classNames(
+                        s.header_modal__item,
+                        s.header__line
+                      )}
+                    >
+                      <Link
+                        href="/technologies/vue"
+                        className={s.header_modal__link}
+                        onClick={handleButtonClick}
+                      >
+                        <p className={s.header__text}>Vue.js</p>
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li className={s.header_modal__item}>
+                <Link
+                  href="/blog"
+                  className={classNames(
+                    pathname === "/blog" ? s.header__active : "",
+                    s.header_modal__link,
+                    s.header__line
+                  )}
+                  onClick={handleButtonClick}
+                >
+                  <p className={s.header__text}>Blog</p>
+                </Link>
+              </li>
+              <li className={s.header_modal__item}>
+                <Link
+                  href="/contact-us"
+                  className={classNames(
+                    pathname === "/contact-us" ? s.header__active : "",
+                    s.header_modal__link,
+                    s.header__line
+                  )}
+                  onClick={handleButtonClick}
+                >
+                  <p className={s.header__text}>Contact Us</p>
+                </Link>
+              </li>
+            </ul>
+            <div className={s.header_modal__container}>
+              {social.map((item, index) => (
+                <Link key={index} href={item.url} target="_blank">
+                  {item.icon}
+                </Link>
+              ))}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </header>
   );
