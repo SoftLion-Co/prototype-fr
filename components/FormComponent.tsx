@@ -3,6 +3,7 @@
 import React, { FC, useState, useCallback, useMemo } from "react";
 import s from "./FormComponent.module.scss";
 import Link from "next/link";
+import classNames from "classnames";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -161,9 +162,10 @@ const FormComponent: FC<FormProps> = ({ title }) => {
         </div>
         <button
           type="submit"
-          className={`${s.form__button} ${
+          className={classNames(
+            s.form__button,
             submitDisabled ? s.disabledButton : ""
-          }`}
+          )}
           disabled={submitDisabled}
         >
           Book Consultation
