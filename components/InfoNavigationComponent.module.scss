@@ -9,27 +9,24 @@
 }
 
 .custom_breadcrumbs {
-  display: flex;
-  align-items: center;
-  margin-top: 25px;
+  margin-top: 40px;
   font-weight: 700;
   font-size: 12px;
   line-height: 130%;
-  letter-spacing: 0.26px;
+  letter-spacing: 0.3px;
 
   @include for-size(tablet) {
-    letter-spacing: 0.52px;
-    margin-top: 40px;
-  }
-
-  @include for-size(laptop) {
-    font-size: 13px;
+    letter-spacing: 0.5px;
     margin-top: 60px;
+  }
+  @include for-size(laptop) {
+    font-size: 14px;
+    margin-top: 80px;
   }
 
   &__home {
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
 
     @include for-size(laptop) {
       width: 20px;
@@ -38,13 +35,10 @@
   }
 
   &__link {
+    transition: color 0.3s ease-in-out;
     color: $navigation-dark;
     text-decoration: none;
     font-size: 12px;
-
-    &:hover {
-      color: $navigation-light;
-    }
 
     @include for-size(tablet) {
       font-size: 12px;
@@ -54,6 +48,10 @@
     }
     @include for-size(laptop) {
       font-size: 16px;
+    }
+
+    &:hover {
+      color: $navigation-light;
     }
   }
 
