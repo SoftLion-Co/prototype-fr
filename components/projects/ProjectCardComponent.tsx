@@ -22,7 +22,7 @@ interface ProjectCardProps {
 
 const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
   return (
-    <div className={s.card}>
+    <Link href={`/projects/${data.id}`} className={s.card}>
       <div className={s.card__info}>
         <div className={s.card__tags}>
           <p className={classNames(s.card__text, s.card__customer)}>
@@ -57,11 +57,9 @@ const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
           <h3 className={s.card__title}>{data.title}</h3>
           <p className={s.card__description}>{data.description}</p>
         </div>
-        <Link href={`/projects/${data.id}`}>
-          <PiArrowRightThin className={s.card__arrowIcon} />
-        </Link>
+        <PiArrowRightThin className={s.card__arrowIcon} />
       </div>
-    </div>
+    </Link>
   );
 };
 
