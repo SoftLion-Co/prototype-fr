@@ -10,19 +10,19 @@
   }
 
   &__text {
-    max-width: 300px;
+    width: 90%;
     margin-bottom: 20px;
 
     @include for-size(tablet) {
-      max-width: 460px;
+      width: 70%;
       margin-bottom: 40px;
     }
     @include for-size(laptop) {
-      min-width: 600px;
+      width: 65%;
       margin-bottom: 60px;
     }
     @include for-size(desktop) {
-      min-width: 680px;
+      width: 70%;
       margin-bottom: 80px;
     }
   }
@@ -30,18 +30,22 @@
   &__list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 8px;
     list-style: none;
-    max-width: 260px;
+    width: 80%;
 
     @include for-size(tablet) {
-      width: 400px;
+      gap: 14px;
+      width: 70%;
     }
     @include for-size(laptop) {
-      width: 540px;
+      gap: 20px;
+      width: 60%;
     }
     @include for-size(desktop) {
-      width: 600px;
+      gap: 22px;
+      width: 70%;
     }
   }
 
@@ -52,19 +56,16 @@
 
     display: flex;
     align-items: flex-start;
-    width: 100%;
+    width: 80%;
 
     @include for-size(tablet) {
-      width: 100%;
-      margin-bottom: 16px;
+      // width: 380px;
     }
     @include for-size(laptop) {
-      width: 100%;
-      margin-bottom: 20px;
+      // width: 100%;
     }
     @include for-size(desktop) {
-      width: 100%;
-      margin-bottom: 22px;
+      // width: 100%;
     }
   }
 

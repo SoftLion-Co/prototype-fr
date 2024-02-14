@@ -22,43 +22,40 @@
 
       @include for-size(tablet) {
         gap: 46px;
-
         width: 400px;
       }
       @include for-size(laptop) {
         gap: 66px;
-
         width: 628px;
       }
 
       @include for-size(desktop) {
         gap: 83px;
-
         width: 767px;
       }
     }
 
     &_list {
       @include for-size(tablet) {
-        max-width: 297px;
+        max-width: 300px;
       }
       @include for-size(laptop) {
-        max-width: 452px;
+        max-width: 460px;
       }
       @include for-size(desktop) {
-        max-width: 547px;
+        max-width: 560px;
       }
 
       &:nth-child(2) {
         @include for-size(tablet) {
           margin-left: auto;
-          max-width: 219px;
+          max-width: 240px;
         }
         @include for-size(laptop) {
-          max-width: 333px;
+          max-width: 400px;
         }
         @include for-size(desktop) {
-          max-width: 403px;
+          max-width: 460px;
         }
       }
     }
