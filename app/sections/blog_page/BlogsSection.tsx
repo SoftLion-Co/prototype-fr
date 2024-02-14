@@ -137,7 +137,6 @@ const BlogsSection = () => {
           <Carousel
             slideSize="100%"
             align="start"
-            slideGap="5xl"
             loop
             dragFree
             withControls

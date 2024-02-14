@@ -69,7 +69,10 @@ const TechnologiesSection = () => {
   return (
     <section className={s.technologies}>
       <div className={s.container}>
-        <HeadingComponent text="Technologies" />
+        <HeadingComponent
+          className={s.technologies__title}
+          text="Technologies"
+        />
         <MotionWrapper
           initial
           viewport
