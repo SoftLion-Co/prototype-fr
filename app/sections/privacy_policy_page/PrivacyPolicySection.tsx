@@ -1,15 +1,18 @@
 import s from "./PrivacyPolicySection.module.scss";
+import Link from "next/link";
 import classNames from "classnames";
 
 const PrivacyPolicySection = () => {
   return (
     <section className={classNames(s.container, s.privacy)}>
-      <p className={classNames(s.privacy___bold, s.privacy___date)}>
+      <p className={classNames(s.privacy__bold, s.privacy__date)}>
         Last update September 18, 2023
       </p>
-      <h1 className={s.privacy__title}>SUMMARY OF THE KEY POINTS</h1>
+      <h1 className={classNames(s.privacy__primary)}>
+        SUMMARY OF THE KEY POINTS
+      </h1>
       <p className={s.privacy__text}>
-        <span className={s.privacy___bold}>In Short:</span> This summary
+        <span className={s.privacy__bold}>In Short:</span> This summary
         highlights important points from our privacy notice, which applies to
         SoftLion. For more detailed information on any of these topics, please
         click the corresponding link or use our table of contents to find the
@@ -66,88 +69,74 @@ const PrivacyPolicySection = () => {
           please click here to read our full privacy notice.
         </li>
       </ul>
-      <h2 className={s.privacy__title}>TABLE OF CONTENTS:</h2>
-      <ul
-        className={classNames(
-          s.privacy__list,
-          s.privacy__list___tab,
-          s.privacy__list___color
-        )}
-      >
-        <li className={s.privacy__item}>
-          <a href="#item1" className={s.privacy__title___color}>
-            {" "}
-            WHAT TYPE OF INFORMATION IS COLLECTED BY SOFTLION?{" "}
-          </a>
+      <h2 className={s.privacy__secondary}>TABLE OF CONTENTS:</h2>
+      <ul className={classNames(s.privacy__list, s.privacy__list___tab)}>
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item1" className={s.link__color}>
+            WHAT TYPE OF INFORMATION IS COLLECTED BY SOFTLION?
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item2" className={s.privacy__title___color}>
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item2" className={s.link__color}>
             WHAT IS THE METHOD OF PROCESSING YOUR INFORMATION?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item3" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item3" className={s.link__color}>
             WHEN AND TO WITH IS YOUR PERSONAL INFORMATION SHARED?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item4" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item4" className={s.link__color}>
             IS THE USAGE OF COOKIES AND OTHER TRACKING TECHNOLOGIES IMPLEMENTED?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item5" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item5" className={s.link__color}>
             WHAT IS THE DURATION OF INFORMATION RETENTION?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item6" className={s.privacy__title___color}>
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item6" className={s.link__color}>
             WHAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
             INFORMATION?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item7" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item7" className={s.link__color}>
             IS INFORMATION COLLECTED FROM MINORS?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item8" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item8" className={s.link__color}>
             WHAT ARE YOUR RIGHTS REGARDING PRIVACY?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item9" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item9" className={s.link__color}>
             CONTROLS REGARDING “DO-NOT-TRACK FEATURES”
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item10" className={s.privacy__title___color}>
-            {" "}
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item10" className={s.link__color}>
             ARE UPDATES MADE TO THIS NOTICE?
-          </a>
+          </Link>
         </li>
-        <li className={s.privacy__item}>
-          <a href="#item11" className={s.privacy__title___color}>
+        <li className={classNames(s.privacy__item, s.item__custom)}>
+          <Link href="#item11" className={s.link__color}>
             WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?
-          </a>
+          </Link>
         </li>
       </ul>
       {/* =========== 1 ========== */}
       <ol className={s.privacy__list}>
         <li>
-          <h2 id="item1" className={s.privacy__title}>
+          <h2 id="item1" className={s.privacy__secondary}>
             1. WHAT TYPE OF INFORMATION IS COLLECTED BY SOFTLION?
           </h2>
-          <h3 className={s.privacy__title}>
+          <h4 className={s.privacy__title}>
             Personal information voluntarily provided to SoftLion
-          </h3>
+          </h4>
           <p className={s.privacy__text}>
             SoftLion collects personal information that users voluntarily
             provide when expressing interest in obtaining information about
@@ -167,7 +156,7 @@ const PrivacyPolicySection = () => {
             ensure that all personal information provided is true, complete, and
             accurate and notify SoftLion of any changes.
           </p>
-          <h3 className={s.privacy__title}>
+          <h3 className={s.privacy__secondary}>
             Automatically collected information
           </h3>
           <p className={s.privacy__text}>
@@ -215,11 +204,11 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 2 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item2" className={s.privacy__title}>
+          <h2 id="item2" className={s.privacy__secondary}>
             2. WHAT IS THE METHOD OF PROCESSING YOUR INFORMATION?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> To summarize, we
+            <span className={s.privacy__bold}>In Short:</span> To summarize, we
             use your personal information for various purposes including
             providing and improving our Services, communication with you,
             ensuring the security of our Services, preventing fraud, and
@@ -270,12 +259,11 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 3 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item3" className={s.privacy__title}>
-            {" "}
+          <h2 id="item3" className={s.privacy__secondary}>
             3. WHEN AND TO WITH IS YOUR PERSONAL INFORMATION SHARED?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> SoftLion may
+            <span className={s.privacy__bold}>In Short:</span> SoftLion may
             share information in specific situations described in this section
             and/or with the following categories of third parties. Vendors,
             Consultants, and Other Third-Party Service Providers. SoftLion may
@@ -295,7 +283,7 @@ const PrivacyPolicySection = () => {
           <ul className={classNames(s.privacy__list, s.privacy__list___tab)}>
             <li className={s.privacy__item}>Sales & Marketing Tools</li>
           </ul>
-          <h3 className={s.privacy__title}>
+          <h3 className={s.privacy__secondary}>
             SoftLion may also need to share your personal information in the
             following situations:
           </h3>
@@ -310,12 +298,12 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 4 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item4" className={s.privacy__title}>
+          <h2 id="item4" className={s.privacy__secondary}>
             4. IS THE USAGE OF COOKIES AND OTHER TRACKING TECHNOLOGIES
             IMPLEMENTED?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> SoftLion may use
+            <span className={s.privacy__bold}>In Short:</span> SoftLion may use
             cookies and other tracking technologies to collect and store your
             information. SoftLion may use cookies, web beacons, and pixels to
             access or store information. For specific details on how we use
@@ -325,11 +313,11 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 5 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item5" className={s.privacy__title}>
+          <h2 id="item5" className={s.privacy__secondary}>
             5. WHAT IS THE DURATION OF INFORMATION RETENTION?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> SoftLion retains
+            <span className={s.privacy__bold}>In Short:</span> SoftLion retains
             your personal information only as long as it is needed to achieve
             the purposes described in this privacy notice unless the law
             requires or allows for a longer retention period. We will retain
@@ -347,12 +335,12 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 6 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item6" className={s.privacy__title}>
+          <h2 id="item6" className={s.privacy__secondary}>
             6. HAT ARE THE MEASURES TAKEN TO ENSURE THE SAFETY OF YOUR
             INFORMATION?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> SoftLion has
+            <span className={s.privacy__bold}>In Short:</span> SoftLion has
             implemented security measures to protect personal information, but
             no electronic transmission or storage can be completely secure.
             Therefore, there is a risk of unauthorized access or modification of
@@ -372,11 +360,11 @@ const PrivacyPolicySection = () => {
         </li>
         {/* =========== 7 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item7" className={s.privacy__title}>
+          <h2 id="item7" className={s.privacy__secondary}>
             7. IS INFORMATION COLLECTED FROM MINORS?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> Our company does
+            <span className={s.privacy__bold}>In Short:</span> Our company does
             not intently gather information or promote to individuals who are
             under the age of 18. We do not intentionally collect data or market
             to individuals under the age of 18. By utilizing our Services, you
@@ -387,41 +375,80 @@ const PrivacyPolicySection = () => {
             will deactivate the account and take appropriate measures to
             promptly delete such data from our records. If you become aware that
             we may have collected data from a person under the age of 18, please
-            contact us at office.softlion@gmail.com.
+            contact us at{" "}
+            <Link
+              className={s.link__color}
+              href="mailto:office.softlion@gmail.com"
+            >
+              office.softlion@gmail.com
+            </Link>
+            .
           </p>
         </li>
         {/* =========== 8 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item8" className={s.privacy__title}>
+          <h2 id="item8" className={s.privacy__secondary}>
             8. WHAT ARE YOUR RIGHTS REGARDING PRIVACY?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> You can review,
+            <span className={s.privacy__bold}>In Short:</span> You can review,
             modify or terminate your account at any point in time. If you are
             based in the EEA or UK and believe that we are processing your
             personal information unlawfully, you have the right to file a
             complaint with your local data protection supervisory authority. You
-            can find their contact details at
-            https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.
-            If you are based in Switzerland, you can find the contact details
-            for the data protection authorities at
-            https://www.edoeb.admin.ch/edoeb/en/home.html. If we are relying on
-            your consent to process your personal information, you can withdraw
-            your consent at any time by contacting us at
-            office.softlion@gmail.com. However, this will not affect the
-            lawfulness of the processing conducted before withdrawal or any
-            processing based on lawful grounds other than consent. Most web
-            browsers accept cookies by default, but you can choose to reject or
-            remove them, which may affect certain features or services of our
-            Services. To opt out of interest-based advertising, visit
-            http://www.aboutads.info/choices/. If you have any questions or
-            comments about your privacy rights, please email us at
-            office.softlion@gmail.com.
+            can find their contact details at{" "}
+            <Link
+              className={s.link__color}
+              target="_blank"
+              href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.html"
+            >
+              Europa.eu
+            </Link>
+            . If you are based in Switzerland, you can find the contact details
+            for the data protection authorities at{" "}
+            <Link
+              className={s.link__color}
+              target="_blank"
+              href="https://www.edoeb.admin.ch/edoeb/en/home.html"
+            >
+              Edoeb
+            </Link>
+            . If we are relying on your consent to process your personal
+            information, you can withdraw your consent at any time by contacting
+            us at{" "}
+            <Link
+              className={s.link__color}
+              href="mailto:office.softlion@gmail.com"
+            >
+              office.softlion@gmail.com
+            </Link>
+            . However, this will not affect the lawfulness of the processing
+            conducted before withdrawal or any processing based on lawful
+            grounds other than consent. Most web browsers accept cookies by
+            default, but you can choose to reject or remove them, which may
+            affect certain features or services of our Services. To opt out of
+            interest-based advertising, visit{" "}
+            <Link
+              className={s.link__color}
+              target="_blank"
+              href="http://www.aboutads.info/choices/"
+            >
+              Aboutads
+            </Link>
+            . If you have any questions or comments about your privacy rights,
+            please email us at{" "}
+            <Link
+              className={s.link__color}
+              href="mailto:office.softlion@gmail.com"
+            >
+              office.softlion@gmail.com
+            </Link>
+            .
           </p>
         </li>
         {/* =========== 9 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item9" className={s.privacy__title}>
+          <h2 id="item9" className={s.privacy__secondary}>
             9. CONTROLS REGARDING “DO-NOT-TRACK FEATURES”
           </h2>
           <p className={s.privacy__text}>
@@ -432,43 +459,50 @@ const PrivacyPolicySection = () => {
             signals, so we currently do not respond to them. If a standard is
             established in the future that we must follow, we will let you know
             in an updated version of this privacy notice. If you have any
-            questions or concerns, you can contact us at
-            office.softlion@gmail.com.
+            questions or concerns, you can contact us at{" "}
+            <Link
+              className={s.link__color}
+              href="mailto:office.softlion@gmail.com"
+            >
+              office.softlion@gmail.com
+            </Link>
+            .
           </p>
         </li>
         {/* =========== 10 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item10" className={s.privacy__title}>
+          <h2 id="item10" className={s.privacy__secondary}>
             10. ARE UPDATES MADE TO THIS NOTICE?
           </h2>
           <p className={s.privacy__text}>
-            <span className={s.privacy___bold}>In Short:</span> Yes, they are.
-            We will make updates to this notice as needed to ensure our
-            compliance with applicable laws. We reserve the right to update this
-            privacy notice periodically, and the revised version will be
-            effective upon its availability, which will be indicated by an
-            updated "Revised" date. In case of any significant changes to this
-            privacy notice, we may notify you either through a prominent posting
-            of the changes or by sending a direct notification. We encourage you
-            to review this privacy notice frequently to stay informed about how
-            SoftLion is protecting your information.
+            <span className={s.privacy__bold}>In Short:</span> Yes, they are. We
+            will make updates to this notice as needed to ensure our compliance
+            with applicable laws. We reserve the right to update this privacy
+            notice periodically, and the revised version will be effective upon
+            its availability, which will be indicated by an updated "Revised"
+            date. In case of any significant changes to this privacy notice, we
+            may notify you either through a prominent posting of the changes or
+            by sending a direct notification. We encourage you to review this
+            privacy notice frequently to stay informed about how SoftLion is
+            protecting your information.
           </p>
         </li>
         {/* =========== 11 ========== */}
         <li className={s.privacy__item___num}>
-          <h2 id="item11" className={s.privacy__title}>
+          <h2 id="item11" className={s.privacy__secondary}>
             11. WHAT ARE THE WAYS TO CONTACT US REGARDING THIS NOTICE?
           </h2>
           <p className={s.privacy__text}>
             If you have some questions or comments about your privacy rights,
-            you may email us at office.softlion@gmail.com.
+            you may email us at{" "}
+            <Link
+              className={s.link__color}
+              href="mailto:office.softlion@gmail.com"
+            >
+              office.softlion@gmail.com
+            </Link>
+            .
           </p>
-
-          {/* <address className={s.privacy___no_italic}>
-            <p>SoftLion</p>
-            <p>Chernivtsi, Chernivetska 58000</p>
-            <p>Ukraine</p>
-          </address> */}
         </li>
       </ol>
     </section>

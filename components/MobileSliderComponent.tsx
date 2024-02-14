@@ -39,6 +39,7 @@ const MobileSliderComponent: FC<MobileSliderComponentProps> = ({
       withControls={false}
       loop={true}
       slideSize="clamp(250px,90vw,480px)"
+      classNames={{slide: s.mobile__slide}}
       className={className}
       styles={{
         viewport: {

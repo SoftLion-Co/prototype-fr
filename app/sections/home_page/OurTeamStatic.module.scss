@@ -3,6 +3,34 @@
 @import "./../../../styles/mixin";
 
 .team {
+  padding: 40px 0;
+  background: linear-gradient(
+    90deg,
+    rgba(175, 218, 237, 0.14) 0%,
+    rgba(190, 244, 205, 0.34) 20%,
+    rgba(243, 182, 241, 0.1) 100%
+  );
+  box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.15);
+
+  @include for-size(tablet) {
+    background: radial-gradient(
+      115% 135% at 100% 100%,
+      rgba(160, 24, 155, 0) 0%,
+      rgba(160, 24, 155, 0.1) 50%,
+      rgba(133, 0, 127, 0.05) 100%
+    );
+  }
+  @include for-size(laptop) {
+    padding: 60px 0;
+  }
+
+  &__content {
+    @include for-size(phone) {
+      display: grid;
+      justify-items: center;
+    }
+  }
+
   &__container {
     justify-content: space-between;
     display: none;
@@ -13,12 +41,11 @@
   }
 
   &__title {
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     margin-bottom: 40px;
-    width: 100%;
 
     @include for-size(tablet) {
-      text-align: left;
       margin-bottom: 60px;
     }
     @include for-size(laptop) {

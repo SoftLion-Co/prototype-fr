@@ -7,10 +7,10 @@
   border: none;
   position: relative;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: calc(19.6 / 16);
   padding: 3px 3px;
+  white-space: nowrap;
 
   @include for-size(tablet) {
     font-size: 14px;
@@ -27,5 +27,5 @@
 }
 
 .activeFilter {
-  color: #000000;
+  color: $black-default;
 }

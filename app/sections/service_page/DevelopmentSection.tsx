@@ -9,6 +9,7 @@ import pic3 from "../../../images/services/development/testing-and-debuging.svg"
 import pic4 from "../../../images/services/development/deployment-and-maintenance.svg";
 import DevelopmentCardComponent from "@/components/service/DevelopmentCardComponent";
 import DevelopmentCardMobileComponent from "@/components/service/DevelopmentCardMobileComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const cardsData = [
   {
@@ -61,39 +62,55 @@ interface AnchorID {
 
 const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
   return (
-    <section id={anchorID} className={classNames(s.container, s.develop)}>
-      <ServiceHeadingComponent
-        className={s.develop__heading}
-        headingText={" Development"}
-      />
-      <div className={s.develop__mob}>
-        {cardsData.map((data) => (
-          <DevelopmentCardMobileComponent
-            key={data.num}
-            num={data.num}
-            title={data.title}
-            items={data.items}
-            path={data.path}
-          />
-        ))}
-      </div>
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
-      <div className={s.develop__desktop}>
-        {cardsData.map((data) => (
-          <DevelopmentCardComponent
-            key={data.num}
-            num={data.num}
-            title={data.title}
-            items={data.items}
-            path={data.path}
-            leftAligned={data.leftAligned}
-          />
-        ))}
-      </div>
-      <div className={s.blure}>
-        <div className={s.blure_item}></div>
+    <section id={anchorID} className={classNames(s.develop)}>
+      <div className={s.container}>
+        <ServiceHeadingComponent
+          className={s.develop__heading}
+          headingText={" Development"}
+        />
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2}
+          className={s.develop__mob}
+        >
+          {cardsData.map((data) => (
+            <DevelopmentCardMobileComponent
+              key={data.num}
+              num={data.num}
+              title={data.title}
+              items={data.items}
+              path={data.path}
+            />
+          ))}
+        </MotionWrapper>
+        <div className={s.blur}>
+          <div className={s.blur_item}></div>
+        </div>
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2}
+          className={s.develop__desktop}
+        >
+          {cardsData.map((data) => (
+            <DevelopmentCardComponent
+              key={data.num}
+              num={data.num}
+              title={data.title}
+              items={data.items}
+              path={data.path}
+              leftAligned={data.leftAligned}
+            />
+          ))}
+        </MotionWrapper>
+        <div className={s.blure}>
+          <div className={s.blure_item}></div>
+        </div>
       </div>
     </section>
   );

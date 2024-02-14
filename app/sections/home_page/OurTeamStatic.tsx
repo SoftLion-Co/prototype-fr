@@ -1,12 +1,13 @@
 "use client";
 
+import classNames from "classnames";
 import s from "./OurTeamStatic.module.scss";
+import { StaticImageData } from "next/image";
 import HeadingComponent from "@/components/HeadingComponent";
 import OurTeamCard from "@/components/team/OurTeamCardComponent";
 
+import MotionWrapper from "@/hooks/MotionWrapper";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
-import Image, { StaticImageData } from "next/image";
-
 import AvatarTetiana from "./../../../images/avatar/Tetiana.jpg";
 
 const OurTeamSetcion = () => {
@@ -53,15 +54,20 @@ const OurTeamSetcion = () => {
   ];
 
   return (
-    <section>
-      <div className={s.container}>
+    <section className={s.team}>
+      <MotionWrapper
+        initial
+        viewport
+        custom={2}
+        className={classNames(s.container, s.team__content)}
+      >
         <HeadingComponent className={s.team__title} text="Our team" />
-        <div className={s.team__container}>
+        <MotionWrapper variants className={s.team__container}>
           {response.map((member) => (
             <OurTeamCard data={member} isActive={false} />
           ))}
-        </div>
-      </div>
+        </MotionWrapper>
+      </MotionWrapper>
 
       <MobileSliderComponent
         className={s.mobile__slider}

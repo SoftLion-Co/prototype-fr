@@ -9,6 +9,7 @@ import ArrowLeft from "../../../images/navigation/arrow-left.svg";
 import ArrowRight from "../../../images/navigation/arrow-right.svg";
 import classNames from "classnames";
 import HeadingComponent from "@/components/technologies/HeadingComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface AdvantagesSectionProps {
   paragraphs: string[];
@@ -41,13 +42,28 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
       />
 
       <div className={s.advantages}>
-        <div className={s.advantages__cards_mobile}>
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2}
+          className={s.advantages__cards_mobile}
+        >
           <MobileSliderComponent
             data={slideData}
             SlideComponent={AdvantagesCardComponent}
           />
-        </div>
-        <div className={classNames(s.container, s.advantages__cards_desktop)}>
+        </MotionWrapper>
+
+        <MotionWrapper
+          tag="div"
+          initial
+          viewport
+          variants
+          custom={2}
+          className={classNames(s.container, s.advantages__cards_desktop)}
+        >
           <Carousel
             getEmblaApi={setEmbla}
             classNames={{ control: s.custom__control }}
@@ -82,7 +98,7 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
               </Carousel.Slide>
             ))}
           </Carousel>
-        </div>
+        </MotionWrapper>
       </div>
     </section>
   );

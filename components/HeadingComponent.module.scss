@@ -3,51 +3,27 @@
 
 .heading {
   color: $heading-blue-color;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: 400;
-  line-height: 130%;
-
+  width: max-content;
   display: inline-block;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-bottom: 1px solid $heading-blue-color;
+  padding: 0 12px 2px 14px;
+  border-bottom: 1.5px solid $heading-blue-color;
 
-  &__container {
-    text-align: center;
-    margin-bottom: 60px;
-
-    @include for-size(tablet) {
-      margin-bottom: 80px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 120px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 140px;
-    }
-  }
+  text-align: center;
+  margin-bottom: 20px;
 
   @include for-size(tablet) {
-    font-size: 33px;
-    letter-spacing: 2.6px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0 14px 6px 14px;
     border-bottom: 2px solid $heading-blue-color;
+    margin-bottom: 40px;
   }
-
   @include for-size(laptop) {
-    font-size: 48px;
-    letter-spacing: 2.634px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0 16px 8px 16px;
+    border-bottom: 2.5px solid $heading-blue-color;
+    margin-bottom: 50px;
   }
-
   @include for-size(desktop) {
-    font-size: 63px;
-    letter-spacing: 3.84px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 0 20px 10px 20px;
     border-bottom: 3px solid $heading-blue-color;
+    margin-bottom: 60px;
   }
 }

@@ -1,6 +1,13 @@
 @import "../../../styles/mixin";
 @import "../../../styles/container";
 
+.blog {
+  &__heading {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .blogContainer {
   display: flex;
   justify-content: center;
@@ -20,16 +27,6 @@
     display: none;
     @include for-size(tablet) {
       display: block;
-    }
-  }
-}
-
-.blog {
-  &__heading {
-    margin-bottom: 20px;
-
-    @include for-size(tablet) {
-      margin-bottom: 0;
     }
   }
 }

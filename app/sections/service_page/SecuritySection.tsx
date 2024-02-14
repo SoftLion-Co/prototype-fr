@@ -7,6 +7,7 @@ import MobileSliderComponent from "@/components/MobileSliderComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
 import classNames from "classnames";
 import BigButtonComponent from "../../../components/service/BigButtonComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface AnchorID {
   anchorID: string;
@@ -17,28 +18,22 @@ const securityCardsData = [
     id: 1,
     title: "Discovery Stage",
     description:
-      "We prioritize customer data protection when developing applications and websites. We use advanced encryption technologies to safeguard personal data and other sensitive information.",
+      "During the Discovery Stage, we prioritize customer data protection in application and website development. Using advanced encryption technologies, we ensure the confidentiality of personal data. Additionally, we conduct thorough risk assessments to identify and mitigate vulnerabilities, guaranteeing secure data throughout development.",
   },
   {
     id: 2,
-    title: "Protection",
+    title: "Protection and Security Measures",
     description:
-      "We begin the development process by understanding the client's needs and requirements. This involves conducting research, gathering information, and analyzing the client's business goals.",
+      "We start development by deeply understanding client needs, requirements, and business goals through thorough research. Simultaneously, we implement strong security measures to protect customer data, including defense against hacking, vulnerability mitigation, abuse prevention, regular updates, and security audits for ongoing protection.",
   },
   {
     id: 3,
-    title: "Security Measures",
-    description:
-      "We implement a variety of security measures to ensure the highest level of customer data protection. This includes protection against hacking attacks, software vulnerability protection, and abuse prevention. We also regularly update systems and perform security audits.",
-  },
-  {
-    id: 4,
     title: "Use of Secure Data Transmission",
     description:
       "We use secure data transmission protocols, such as HTTPS, to encrypt and protect information transmitted between users and the application or website. This helps prevent interception of information during transmission.",
   },
   {
-    id: 5,
+    id: 4,
     title: "Reliable Servers and Hosting Providers",
     description:
       "We partner with trusted server and hosting providers to ensure a high level of data protection and system reliability. This helps minimize the risk of data loss or damage.",
@@ -46,37 +41,47 @@ const securityCardsData = [
 ];
 
 const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
-  const isEven = securityCardsData.length % 2 === 0;
-
   return (
-    <section id={anchorID} className={classNames(s.container, s.security)}>
-      <ServiceHeadingComponent headingText="Security" />
+    <section id={anchorID} className={s.security}>
+      <ServiceHeadingComponent
+        className={classNames(s.container, s.security__heading)}
+        headingText="Security"
+      />
 
-      <div className={s.security__slider}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={s.security__slider}
+      >
         <MobileSliderComponent
           data={securityCardsData}
           SlideComponent={ServiceSecurityCardComponent}
         />
+      </MotionWrapper>
+
+      <div className={s.blur}>
+        <div className={s.blur_item}></div>
       </div>
 
-      <div className={s.security__container}>
-        <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
-        {securityCardsData.map((card, index) => (
-          <div
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={classNames(s.container, s.security__container)}
+      >
+        {securityCardsData.map((card) => (
+          <ServiceSecurityCardComponent
             key={card.id}
-            className={classNames(s.security__card, {
-              [s.centre]: !isEven && index === securityCardsData.length - 1,
-            })}
-          >
-            <ServiceSecurityCardComponent
-              title={card.title}
-              description={card.description}
-            />
-          </div>
+            title={card.title}
+            description={card.description}
+          />
         ))}
-      </div>
+      </MotionWrapper>
 
       <div className={classNames(s.container, s.security__button)}>
         <BigButtonComponent />

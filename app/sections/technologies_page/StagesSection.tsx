@@ -10,6 +10,8 @@ import Development3 from "@/images/technologies/development/Development3.svg";
 import Development4 from "@/images/technologies/development/Development4.svg";
 
 import BigButtonComponent from "@/components/service/BigButtonComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
+
 interface StagesItem {
   title: string;
   paragraph: string;
@@ -36,13 +38,20 @@ const getImageForStage = (index: number) => {
 
 const StagesSection = (props: Props) => {
   return (
-    <section>
+    <section className={s.stages__container}>
       <HeadingComponent
         color="green"
         text={`Process and stages of development`}
       />
 
-      <div className={classNames(s.stages, s.container)}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={classNames(s.stages, s.container)}
+      >
         {props.stagesSection.map((item, index) => (
           <div key={index} className={s.stages__card}>
             <Image
@@ -52,13 +61,15 @@ const StagesSection = (props: Props) => {
               width={75}
             />
 
-            <h2 className={s.stages__title}>{item.title}</h2>
+            <h3 className={s.stages__title}>{item.title}</h3>
 
             <p className={s.stages__paragraph}>{item.paragraph}</p>
           </div>
         ))}
+      </MotionWrapper>
 
-        <BigButtonComponent className={s.stages__button} />
+      <div className={s.stages__button}>
+        <BigButtonComponent />
       </div>
     </section>
   );

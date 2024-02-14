@@ -3,6 +3,7 @@ import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
 import { PiArrowRightThin } from "react-icons/pi";
 import Link from "next/link";
+import classNames from "classnames";
 
 interface ProjectData {
   id: number;
@@ -21,10 +22,12 @@ interface ProjectCardProps {
 
 const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
   return (
-    <div className={s.card}>
+    <Link href={`/projects/${data.id}`} className={s.card}>
       <div className={s.card__info}>
         <div className={s.card__tags}>
-          <p className={s.card__customer}>Customer: {data.customer}</p>
+          <p className={classNames(s.card__text, s.card__customer)}>
+            Customer: {data.customer}
+          </p>
           <div className={s.tags}>
             {data.technology.slice(0, 5).map((tech, index) => (
               <p className={s.tags__item} key={index}>
@@ -34,8 +37,12 @@ const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
           </div>
         </div>
         <div className={s.card__subinfo}>
-          <p className={s.card__year}>Year: {data.year}</p>
-          <p className={s.card__author}>Author: {data.author}</p>
+          <p className={classNames(s.card__text, s.card__year)}>
+            Year: {data.year}
+          </p>
+          <p className={classNames(s.card__text, s.card__author)}>
+            Author: {data.author}
+          </p>
         </div>
       </div>
       <Image
@@ -45,16 +52,14 @@ const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
         width={16000}
         height={19000}
       />
-      <div className={s.card__text}>
+      <div className={s.card__content}>
         <div className={s.card__subtext}>
-          <h4 className={s.card__title}>{data.title}</h4>
-          <p className={s.card__desc}>{data.description}</p>
+          <h3 className={s.card__title}>{data.title}</h3>
+          <p className={s.card__description}>{data.description}</p>
         </div>
-        <Link href={`/projects/${data.id}`}>
-          <PiArrowRightThin className={s.card__arrowIcon} />
-        </Link>
+        <PiArrowRightThin className={s.card__arrowIcon} />
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -2,15 +2,20 @@
 @import "./../../../styles/mixin";
 @import "./../../../styles/container";
 
+.container {
+  @include for-size(tablet) {
+    width: 100%;
+  }
+}
+
 .impression {
-  width: 100%;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 105px;
+  margin-bottom: 100px;
 
   @include for-size(tablet) {
-    margin-bottom: 155;
+    margin-bottom: 140px;
   }
   @include for-size(laptop) {
     margin-bottom: 240px;
@@ -126,16 +131,16 @@
 
   &__container {
     display: flex;
-    gap: 28px;
+    gap: 50px;
 
     @include for-size(tablet) {
-      gap: 34px;
+      gap: 40px;
     }
     @include for-size(laptop) {
-      gap: 52px;
+      gap: 50px;
     }
     @include for-size(desktop) {
-      gap: 64px;
+      gap: 60px;
     }
   }
 }

@@ -2,86 +2,90 @@
 @import "./../styles/mixin";
 
 .card {
-    background: $our-projects-card-mobile-background;
-    box-shadow: $our-projects-card-mobile-shadow;
-    border-radius: 6px;
-  
-    &__main {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 21px 15px 10px 7px; 
-      border-bottom: 1px solid rgba(0, 0, 0, 0.43);
-    }
-  
-    &__title {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 130%;
-      letter-spacing: 1.1px;
-    }
-  
-    &__image {
-      max-width: 46.8%; 
-      height: auto;
-      border-radius: 5px;
-    }
+  background: $our-projects-card-mobile-background;
+  box-shadow: $our-projects-card-mobile-shadow;
+  border-radius: 24px;
 
-  &__submain{
-    padding: 19px 9px 25px 9px;
+  &__main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 21px 15px 10px 7px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 1.1px;
+  }
+
+  &__image {
+    max-width: 46.8%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  &__submain {
+    padding: 20px 10px 24px 10px;
     font-size: 12px;
     display: flex;
-    gap: 13px;
+    gap: 14px;
     align-items: start;
   }
 
-  &__subinfo{
+  &__subinfo {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 49%;
-    
   }
 
-  &__desc{
+  &__desc {
     width: 54%;
     display: flex;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items: flex-start;
     flex-direction: column;
   }
 
-  &__subdesc{
+  &__subdesc {
     width: 85%;
   }
 
-  &__arrow_icon{
+  &__arrow_icon {
     width: 20px;
     height: 20px;
-    color: black;
+    color: $black-default;
   }
 
-  &__link{
-    color: black;
+  &__link {
+    color: $black-default;
   }
 
-  &__tags{
+  &__tags {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 }
- 
 
 .tags {
   max-width: 150px;
-  font-size: 10px;
   gap: 4px;
   margin-bottom: 3%;
   display: flex;
   flex-wrap: wrap;
+
   &__item {
-    padding: 0px 5px;
+    color: $gray-default;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.4px;
+
+    padding: 0px 6px;
     border: 1px solid rgb(220 151 151 / 30%);
     background-color: rgb(255 255 255 / 100%);
     border-radius: 100px;

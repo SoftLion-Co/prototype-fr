@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 
 interface UseBlogPaginationProps {
   totalItems: number;
@@ -22,15 +22,35 @@ const useBlogPagination = ({
   itemsPerPage,
 }: UseBlogPaginationProps): UseBlogPaginationResult => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const totalPagesToShow = Math.min(5, totalPages);
 
-  const handlePageChange = (page: number) => {
+  const totalPages = useMemo(
+    () => Math.ceil(totalItems / itemsPerPage),
+    [totalItems, itemsPerPage]
+  );
+
+  const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
-  };
+  }, []);
 
-  const getPageNumbersToShow = () => {
+  const handleFirstPage = useCallback(() => {
+    setCurrentPage(1);
+  }, []);
+
+  const handleLastPage = useCallback(() => {
+    setCurrentPage(totalPages);
+  }, [totalPages]);
+
+  const showPreviousButton = useCallback(() => {
+    return currentPage > 1;
+  }, [currentPage]);
+
+  const showNextButton = useCallback(() => {
+    return currentPage < totalPages;
+  }, [currentPage, totalPages]);
+
+  const getPageNumbersToShow = useCallback(() => {
     const visiblePages = [];
+    const totalPagesToShow = Math.min(5, totalPages);
 
     let startIndex = currentPage - Math.floor(totalPagesToShow / 2);
     let endIndex = currentPage + Math.floor(totalPagesToShow / 2);
@@ -50,23 +70,7 @@ const useBlogPagination = ({
     }
 
     return visiblePages;
-  };
-
-  const handleFirstPage = () => {
-    setCurrentPage(1);
-  };
-
-  const handleLastPage = () => {
-    setCurrentPage(totalPages);
-  };
-
-  const showPreviousButton = () => {
-    return true;
-  };
-
-  const showNextButton = () => {
-    return true;
-  };
+  }, [currentPage, totalPages]);
 
   return {
     currentPage,

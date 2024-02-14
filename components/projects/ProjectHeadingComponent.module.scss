@@ -3,59 +3,42 @@
 
 .heading {
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @include for-size(tablet) {
-    max-width: 497px;
+    max-width: 500px;
   }
   @include for-size(laptop) {
+    max-width: 550px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
-    max-width: 549px;
   }
   @include for-size(desktop) {
-    max-width: 717px;
+    max-width: 720px;
   }
 
   &__title {
     margin-bottom: 20px;
-
-    @include for-size(tablet) {
-      margin-bottom: 24px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 30px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 40px;
-    }
   }
 
   &__text {
     max-width: 80%;
     margin: 0 auto;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.5px;
 
     @include for-size(tablet) {
       text-align: left;
       margin: 0;
-      max-width: 290px;
-      letter-spacing: 0.6px;
+      max-width: 360px;
     }
     @include for-size(laptop) {
-      font-size: 16px;
-      max-width: 420px;
-      letter-spacing: 0.7px;
+      max-width: 440px;
     }
     @include for-size(desktop) {
-      font-size: 20px;
       max-width: 540px;
-      letter-spacing: 0.8px;
     }
 
     &___centered {
@@ -67,11 +50,11 @@
 
       @include for-size(tablet) {
         text-align: left;
-        width: 300px;
+        width: 360px;
       }
       @include for-size(laptop) {
         max-width: none;
-        width: 425px;
+        width: 440px;
       }
       @include for-size(desktop) {
         width: 540px;

@@ -2,6 +2,12 @@
 @import "./../styles/mixin";
 @import "../styles/container";
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .flip {
   &_card {
     perspective: 1000px;
@@ -30,7 +36,7 @@
   &_card_back {
     box-shadow: $technologies-card-shadow;
     background: $technologies-card-backbround;
-    border-radius: 15px;
+    border-radius: 24px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -40,6 +46,16 @@
     position: absolute;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+
+    @include for-size(tablet) {
+      border-radius: 26px;
+    }
+    @include for-size(laptop) {
+      border-radius: 28px;
+    }
+    @include for-size(desktop) {
+      border-radius: 32px;
+    }
   }
 
   &_card_back {
@@ -48,35 +64,67 @@
 }
 
 .technologies {
-  &__card_wrapper {
-    border-radius: 15px;
-    cursor: pointer;
-    max-width: 224px;
-    height: 210px;
+  &__title {
+    margin-bottom: 40px;
 
     @include for-size(tablet) {
-      max-width: 216px;
-      height: 208px;
+      margin-bottom: 60px;
     }
     @include for-size(laptop) {
-      max-width: 239px;
-      height: 229px;
+      margin-bottom: 80px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__card_wrapper {
+    border-radius: 16px;
+    cursor: pointer;
+    max-width: 240px;
+    height: 220px;
+
+    @include for-size(tablet) {
+      max-width: 260px;
+      height: 250px;
+    }
+    @include for-size(laptop) {
+      max-width: 260px;
+      height: 290px;
       display: flex;
     }
     @include for-size(desktop) {
       max-width: 320px;
-      height: 307px;
+      height: 310px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+
+    @include for-size(tablet) {
+      width: 260px;
+    }
+    @include for-size(laptop) {
+      width: 250px;
+      justify-content: center;
+    }
+    @include for-size(desktop) {
+      width: 320px;
     }
   }
 
   &__icon_open {
     display: flex;
     fill: rgba(0, 0, 0, 0.6);
-    max-width: 19px;
-    max-height: 19px;
+    max-width: 20px;
+    max-height: 20px;
 
-    padding-top: 7px;
-    padding-right: 7px;
+    padding-top: 8px;
+    padding-right: 8px;
 
     @include for-size(tablet) {
       max-width: 22px;
@@ -88,6 +136,7 @@
     position: absolute;
     top: 6px;
     right: 6px;
+
     @include for-size(laptop) {
       display: none;
     }
@@ -95,41 +144,16 @@
 
   &__text {
     text-align: center;
-
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.6px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 0 14px;
 
     @include for-size(tablet) {
-      padding-right: 18px;
+      padding: 0 16px;
     }
     @include for-size(laptop) {
-      font-size: 16px;
-      letter-spacing: 0.7px;
+      padding: 0 18px;
     }
     @include for-size(desktop) {
-      font-size: 20px;
-      letter-spacing: 0.8px;
-    }
-  }
-
-  &__cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 224px;
-
-    @include for-size(tablet) {
-      width: 216px;
-    }
-    @include for-size(laptop) {
-      width: 239px;
-      justify-content: center;
-    }
-    @include for-size(desktop) {
-      width: 320px;
+      padding: 0 20px;
     }
   }
 
@@ -142,8 +166,8 @@
     display: flex;
     justify-content: center;
 
-    height: 118px;
-    width: 125px;
+    height: 122px;
+    width: 130px;
     width: 100%;
     margin-bottom: 10px;
 
@@ -156,46 +180,31 @@
       width: 146px;
     }
     @include for-size(desktop) {
-      height: 198px;
-      width: 188px;
+      height: 200px;
+      width: 190px;
     }
   }
 
   &__cards_wrapper {
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
     gap: 30px;
 
     @include for-size(tablet) {
-      gap: 50px 65px;
+      gap: 60px;
     }
     @include for-size(laptop) {
       flex-wrap: nowrap;
-      gap: 40px;
+      justify-content: space-between;
+      gap: 0;
     }
   }
 
   &__description_photo {
     color: $heading-blue-color;
-
     text-align: center;
-
-    font-size: 20px;
-    line-height: 130%;
-    letter-spacing: 1px;
-
-    @include for-size(tablet) {
-      letter-spacing: 2px;
-    }
-    @include for-size(laptop) {
-      font-size: 22px;
-    }
-    @include for-size(desktop) {
-      font-size: 30px;
-      letter-spacing: 2.7px;
-    }
   }
 }
 
@@ -210,23 +219,23 @@
     @include for-size(tablet) {
       background-image: url(../../../images/blur/techno_blurT.png);
       background-repeat: no-repeat;
-      bottom: 200px;
-      width: 733px;
-      height: 638px;
+      width: 730px;
+      height: 640px;
+      bottom: 560px;
     }
 
     @include for-size(laptop) {
       background-image: url(../../../images/blur/techno_blurL.png);
-      width: 1058px;
-      height: 633px;
-      bottom: 200px;
+      width: 1060px;
+      height: 630px;
+      bottom: 420px;
     }
 
     @include for-size(desktop) {
       background-image: url(../../../images/blur/techno_blurL.png);
-      width: 1387px;
-      height: 802px;
-      bottom: 100px;
+      width: 1390px;
+      height: 800px;
+      bottom: 460px;
     }
   }
 }

@@ -13,25 +13,26 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-radius: 8px;
-    padding: 40px 20px 40px 20px;
+    border-radius: 24px;
+    padding: 40px 20px;
     user-select: none;
 
     @include for-size(tablet) {
       box-shadow: $services-slider-center-card-shadow;
-      margin-bottom: 0;
       padding: 22px 42px 30px 42px;
-      height: 348px;
+      border-radius: 26px;
+      margin-bottom: 0;
+      height: 360px;
     }
     @include for-size(laptop) {
-      border-radius: 12px;
-      padding: 44px 70px 44px 70px;
-      height: 462px;
+      border-radius: 28px;
+      padding: 44px 70px;
+      height: 480px;
     }
     @include for-size(desktop) {
-      border-radius: 15px;
-      padding: 84px 100px 60px 100px;
-      height: 576px;
+      padding: 80px 100px 60px 100px;
+      border-radius: 32px;
+      min-height: 560px;
     }
 
     @media (min-width: 768px) {
@@ -43,23 +44,23 @@
 
   &__image {
     margin-bottom: 16px;
-    width: 56px;
-    height: 55px;
+    width: 64px;
+    height: 64px;
 
     @include for-size(tablet) {
-      margin-bottom: 23px;
-      width: 75px;
+      margin-bottom: 24px;
+      width: 74px;
       height: 74px;
     }
     @include for-size(laptop) {
       margin-bottom: 32px;
-      width: 109px;
-      height: 107px;
+      width: 110px;
+      height: 110px;
     }
     @include for-size(desktop) {
-      margin-bottom: 22px;
-      width: 143px;
-      height: 141px;
+      margin-bottom: 40px;
+      width: 144px;
+      height: 144px;
     }
   }
 

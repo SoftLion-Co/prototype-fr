@@ -8,12 +8,13 @@
   }
 
   &__title {
-    font-size: 19px;
+    font-size: 22px;
     letter-spacing: 0.6px;
     font-weight: 400;
     line-height: 130%;
     margin-bottom: 1.5%;
     margin-left: 1.5%;
+
     @include for-size(tablet) {
       font-size: 30px;
       letter-spacing: 0.9px;
@@ -33,24 +34,24 @@
   }
 
   &.yellowText {
-    color: #f7ad2b;
+    color: $heading-component-yellow;
   }
   &.purpleText {
-    color: #c336da;
+    color: $heading-component-purple;
   }
   &.blueText {
-    color: #84c6e2;
+    color: $heading-component-blue;
   }
   &.orangeText {
-    color: #ef8a66;
+    color: $heading-component-orange;
   }
   &.greenText {
-    color: #2c953d;
+    color: $heading-component-green;
   }
   &.turquoiseText {
-    color: #4bbac2;
+    color: $heading-component-turquoise;
   }
   &.pinkText {
-    color: #ff79a0;
+    color: $heading-component-pink;
   }
 }

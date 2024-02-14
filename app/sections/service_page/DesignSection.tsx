@@ -10,6 +10,7 @@ import Wireframing from "../../../images/services/design/wireframing.svg";
 import BigButtonComponent from "../../../components/service/BigButtonComponent";
 import ServiceDesignCardComponent from "../../../components/service/ServiceDesignCardComponent";
 import ServiceHeadingComponent from "@/components/service/ServiceHeadingComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const DesignSection: FC<{ anchorID: string }> = () => {
   interface DesignInfoItem {
@@ -80,11 +81,17 @@ const DesignSection: FC<{ anchorID: string }> = () => {
         tag="h1"
       />
 
-      <ul className={s.design__list}>
+      <MotionWrapper
+        initial
+        viewport
+        variants
+        custom={2}
+        className={s.design__list}
+      >
         {DesignInfo.map((info) => (
           <ServiceDesignCardComponent key={info.id} {...info} />
         ))}
-      </ul>
+      </MotionWrapper>
       <div className={s.blur}>
         <div className={s.blur_item}></div>
       </div>

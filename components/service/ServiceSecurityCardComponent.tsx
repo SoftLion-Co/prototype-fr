@@ -19,18 +19,16 @@ const ServiceSecurityCardComponent: FC<ServiceSecurityCardComponentProps> = ({
 
   return (
     <div className={s.security}>
-      <div className={s.main__block}>
-        <div className={s.security__head}>
-          <Image
-            src={Security}
-            alt="Security Cards"
-            className={s.security__img}
-          />
-          <div>
-            <h3 className={s.security__title}>{cardTitle}</h3>
-          </div>
-        </div>
+      <div className={s.security__header}>
+        <Image
+          src={Security}
+          alt="Security Cards"
+          className={s.security__img}
+        />
+
+        <h3 className={s.security__title}>{cardTitle}</h3>
       </div>
+
       <p className={s.security__text}>{cardDescription}</p>
     </div>
   );

@@ -6,16 +6,26 @@
   &__photos {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
-    gap: 30px;
     @include for-size(tablet) {
       gap: 0px;
     }
   }
 
   &__image {
-    border-radius: 22px;
+    border-radius: 24px;
     object-fit: cover;
+
+    @include for-size(tablet) {
+      gap: 26px;
+    }
+    @include for-size(laptop) {
+      gap: 28px;
+    }
+    @include for-size(desktop) {
+      gap: 32px;
+    }
   }
 
   &__photo0 {
@@ -212,27 +222,20 @@
   }
 
   &__text {
-    margin-left: 39px;
+    margin-left: 40px;
     max-width: 280px;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.5px;
 
     @include for-size(tablet) {
-      max-width: 370px;
-      margin-left: 190px;
+      max-width: 480px;
+      margin-left: 200px;
     }
     @include for-size(laptop) {
-      font-size: 18px;
-      letter-spacing: 0.7px;
-      max-width: 592px;
-      margin-left: 281px;
+      max-width: 660px;
+      margin-left: 280px;
     }
     @include for-size(desktop) {
-      font-size: 20px;
-      letter-spacing: 0.8px;
-      max-width: 660px;
-      margin-left: 324px;
+      max-width: 720px;
+      margin-left: 320px;
     }
   }
 }

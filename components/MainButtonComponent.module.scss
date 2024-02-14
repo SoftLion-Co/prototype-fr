@@ -3,22 +3,21 @@
 
 .button {
   padding: 8px 20px;
-  border-radius: 8px;
-  letter-spacing: 0.2px;
-  line-height: 150%;
+  border-radius: 24px;
   border: none;
 
   @include for-size(tablet) {
-    padding: 9px 24px;
+    padding: 10px 24px;
+    border-radius: 26px;
   }
   @include for-size(laptop) {
-    padding: 15px 32px;
-    border-radius: 12px;
+    padding: 16px 32px;
+    border-radius: 28px;
   }
   @include for-size(desktop) {
-    padding: 19px 40px;
-    font-size: 16px;
-    border-radius: 15px;
+    padding: 20px 44px;
+    font-size: 32px;
+    border-radius: 38px;
   }
 
   &__text {
@@ -34,7 +33,7 @@
 
   &.blueButton {
     background: $button-blue-background;
-    color: black;
+    color: $black-default;
     box-shadow: $button-white-shadow;
     transition: box-shadow 0.3s ease-in-out;
     &:hover {
@@ -48,17 +47,17 @@
 
   &.whiteButton {
     background: $button-white-background;
-    color: black;
+    color: $black-default;
     box-shadow: $button-white-shadow;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background: #afdaed;
+      background: $background-blue-default;
     }
   }
 
   &.darkBlueButton {
     background: $button-dark-blue-background;
-    color: white;
+    color: $white-default;
   }
 }

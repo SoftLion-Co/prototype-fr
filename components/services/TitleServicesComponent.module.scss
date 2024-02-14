@@ -4,7 +4,7 @@
 .title {
   display: inline-flex;
   flex-direction: column;
-
+  width: max-content;
   &__blue {
     color: $heading-blue-color;
   }
@@ -16,6 +16,7 @@
   &__green {
     color: $main-green-color;
   }
+
   &__container {
     margin-bottom: 60px;
 
@@ -31,33 +32,31 @@
   }
 
   &__num {
+    color: $heading-blue-color;
     font-size: 50px;
     letter-spacing: 0.05px;
     font-weight: 400;
     line-height: 130%;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid $placeholder-color;
 
     @include for-size(tablet) {
-      font-size: 67px;
+      font-size: 68px;
       letter-spacing: 0.5px;
 
       padding-right: 32px;
       padding-left: 186px;
     }
-
     @include for-size(laptop) {
-      font-size: 115px;
+      font-size: 116px;
       letter-spacing: 0.5px;
 
       padding-right: 60px;
       padding-left: 300px;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+      border-bottom: 2px solid $placeholder-color;
     }
-
     @include for-size(desktop) {
       font-size: 150px;
-      letter-spacing: 3.84px;
+      letter-spacing: 4px;
 
       padding-right: 70px;
       padding-left: 390px;
@@ -65,55 +64,38 @@
   }
 
   &__text {
+    color: $heading-blue-color;
     text-align: center;
-    font-size: 22px;
-    letter-spacing: 0.6px;
-    font-weight: 400;
-    line-height: 130%;
-
-    @include for-size(tablet) {
-      font-size: 29px;
-    }
-    @include for-size(laptop) {
-      font-size: 49px;
-    }
-    @include for-size(desktop) {
-      font-size: 64px;
-    }
   }
 }
 
 .right {
-  padding-right: 168px;
+  padding-right: 170px;
   padding-left: 1px;
 
   @include for-size(tablet) {
     padding-right: 0px;
-    padding-left: 196px;
+    padding-left: 200px;
   }
-
   @include for-size(laptop) {
-    padding-right: 0px;
-    padding-left: 388px;
+    padding-left: 390px;
   }
-
   @include for-size(desktop) {
-    padding-right: 0px;
     padding-left: 500px;
   }
 }
 
 .left {
-  padding-right: 168px;
+  padding-right: 170px;
   padding-left: 1px;
 
   @include for-size(tablet) {
-    padding-right: 196px;
+    padding-right: 200px;
     padding-left: 1px;
   }
 
   @include for-size(laptop) {
-    padding-right: 388px;
+    padding-right: 390px;
     padding-left: 0px;
   }
 

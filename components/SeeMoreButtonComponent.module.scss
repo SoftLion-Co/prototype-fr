@@ -1,11 +1,12 @@
 @import "./../styles/mixin";
+@import "./../styles/colors";
 
 .button {
   display: flex;
   flex-direction: row-reverse;
 
   &__text {
-    color: black;
+    color: $black-default;
     font-family: Besley Medium;
     font-size: 19px;
     letter-spacing: 0.5px;

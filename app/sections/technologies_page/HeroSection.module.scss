@@ -11,6 +11,28 @@
 
   &__technologies {
     margin-bottom: 10%;
+    font-weight: 400;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 2px;
+
+    @include for-size(tablet) {
+      font-size: 44px;
+      font-weight: 400;
+      letter-spacing: 2.6px;
+    }
+    @include for-size(laptop) {
+      font-size: 48px;
+      letter-spacing: 2.8px;
+    }
+    @include for-size(desktop) {
+      font-size: 64px;
+      letter-spacing: 4px;
+    }
   }
 
   &__heading {

@@ -10,13 +10,16 @@ import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardCompone
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import getBlogsData from "@/hooks/getBlogsData";
 import { FC } from "react";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const blogs: BlogInterface[] = getBlogsData();
 
 const HomeBlog: FC = () => {
   return (
     <section>
-      <HeadingComponent className={s.blog__heading} text="Blog" />
+      <div className={classNames(s.container, s.blog__heading)}>
+        <HeadingComponent text="Blog" />
+      </div>
 
       <div className={s.blogContainer}>
         <div
@@ -27,18 +30,23 @@ const HomeBlog: FC = () => {
         >
           <BlogDesktopComponent blogs={blogs} />
         </div>
-        <div className={s.blogContainer__mobileSlider}>
+        <MotionWrapper
+          initial
+          viewport
+          variants
+          custom={2}
+          className={s.blogContainer__mobileSlider}
+        >
           <MobileSliderComponent
             data={blogs}
             SlideComponent={BlogExtendedCardComponent}
           />
-        </div>
+        </MotionWrapper>
 
         <div className={s.blur}>
           <div className={s.blur_item}></div>
         </div>
       </div>
-
       <SeeMoreButtonComponent className={s.container} path="blog" />
     </section>
   );

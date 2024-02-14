@@ -34,10 +34,10 @@
     margin-bottom: 20px;
 
     @include for-size(laptop) {
-      margin-bottom: 27px;
+      margin-bottom: 30px;
     }
     @include for-size(desktop) {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
     }
   }
 
@@ -65,7 +65,7 @@
 
     @include for-size(tablet) {
       width: 54px;
-      height: 61px;
+      height: 62px;
     }
     @include for-size(laptop) {
       width: 82px;
@@ -73,18 +73,18 @@
     }
     @include for-size(desktop) {
       width: 106px;
-      height: 119px;
+      height: 120px;
     }
   }
 
   &__descriptionResearch {
     font-size: 18px;
     line-height: 130%;
-    letter-spacing: 1.44px;
+    letter-spacing: 1.5px;
     margin-left: 6px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 1.4px;
       margin-left: 7px;
     }
@@ -103,16 +103,16 @@
   &__descriptionUser {
     font-size: 18px;
     line-height: 130%;
-    letter-spacing: 1.44px;
+    letter-spacing: 1.5px;
     margin-left: 3px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 1.4px;
       margin-left: 3px;
     }
     @include for-size(laptop) {
-      font-size: 23px;
+      font-size: 24px;
       letter-spacing: 2px;
       margin-left: 5px;
     }
@@ -126,16 +126,16 @@
   &__descriptionVisual {
     font-size: 18px;
     line-height: 130%;
-    letter-spacing: 1.44px;
+    letter-spacing: 1.5px;
     margin-left: 10px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 1.4px;
       margin-left: 11px;
     }
     @include for-size(laptop) {
-      font-size: 23px;
+      font-size: 24px;
       letter-spacing: 2px;
       margin-left: 18px;
     }
@@ -149,16 +149,16 @@
   &__descriptionIterative {
     font-size: 18px;
     line-height: 130%;
-    letter-spacing: 1.44px;
+    letter-spacing: 1.5px;
     margin-left: 5px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 1.4px;
       margin-left: 6px;
     }
     @include for-size(laptop) {
-      font-size: 23px;
+      font-size: 24px;
       letter-spacing: 2px;
       margin-left: 9px;
     }
@@ -172,16 +172,16 @@
   &__descriptionResponsive {
     font-size: 18px;
     line-height: 130%;
-    letter-spacing: 1.44px;
+    letter-spacing: 1.5px;
     margin-left: 21px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 1.4px;
       margin-left: 24px;
     }
     @include for-size(laptop) {
-      font-size: 23px;
+      font-size: 24px;
       letter-spacing: 2px;
       margin-left: 36px;
     }
@@ -195,16 +195,16 @@
   &__descriptionWireframing {
     font-size: 18px;
     line-height: 130%;
-    letter-spacing: 1.44px;
+    letter-spacing: 1.5px;
     margin-left: 19px;
 
     @include for-size(tablet) {
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 1.4px;
       margin-left: 13px;
     }
     @include for-size(laptop) {
-      font-size: 23px;
+      font-size: 24px;
       letter-spacing: 2px;
       margin-left: 32px;
     }

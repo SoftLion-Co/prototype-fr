@@ -9,6 +9,8 @@ import Development from "@/images/services/ecommerce/Development.svg";
 import Security from "@/images/services/ecommerce/Security.svg";
 import Vector from "@/images/services/ecommerce/Vector.svg";
 
+import MotionWrapper from "@/hooks/MotionWrapper";
+
 const EcommerceSection = () => {
   const cardComponent = [
     {
@@ -35,7 +37,7 @@ const EcommerceSection = () => {
   ];
 
   return (
-    <section className={s.container}>
+    <MotionWrapper className={s.container}>
       <TitleServicesComponent
         position="left"
         num={"01"}
@@ -47,7 +49,7 @@ const EcommerceSection = () => {
       <div className={s.blur}>
         <div className={s.blur_item}></div>
       </div>
-    </section>
+    </MotionWrapper>
   );
 };
 

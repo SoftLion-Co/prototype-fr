@@ -5,6 +5,7 @@ import s from "./DevelopmentSection.module.scss";
 import classNames from "classnames";
 import HeadingComponent from "@/components/technologies/HeadingComponent";
 import BigButtonComponent from "@/components/service/BigButtonComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface DevelopmentItem {
   number: string;
@@ -43,7 +44,14 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
         text={`Our development services for ${titleTech} include`}
       />
 
-      <div className={classNames(s.development__cards, s.container)}>
+      <MotionWrapper
+        tag="div"
+        initial
+        viewport
+        variants
+        custom={2}
+        className={classNames(s.development__cards, s.container)}
+      >
         {developmentSection.map((item, index) => {
           const developmentItem = (
             <div className={s.development__item}>
@@ -96,7 +104,8 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
             </div>
           );
         })}
-      </div>
+      </MotionWrapper>
+
       <div className={s.development__button}>
         <BigButtonComponent />
       </div>

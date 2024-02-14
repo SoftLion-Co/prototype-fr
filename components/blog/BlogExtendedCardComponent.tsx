@@ -6,6 +6,7 @@ import { PiArrowRightThin } from "react-icons/pi";
 import { BlogInterface } from "./BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
+import classNames from "classnames";
 
 const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
   const {
@@ -45,14 +46,20 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
             </Link>
 
             <Link href={`/authors/${authorId}`}>
-              <p className={s.info__author__name}>{author.name}</p>
+              <p className={classNames(s.info__text, s.info__author__name)}>
+                {author.name}
+              </p>
             </Link>
           </div>
 
           <div className={s.info__box}>
-            <p className={s.info__readingTime}>{readingTime} read</p>
+            <p className={classNames(s.info__text, s.info__readingTime)}>
+              {readingTime} read
+            </p>
 
-            <p className={s.info__readingTime}>{publicationDate}</p>
+            <p className={classNames(s.info__text, s.info__readingTime)}>
+              {publicationDate}
+            </p>
           </div>
         </div>
       </div>
@@ -61,7 +68,7 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
         <div className={s.article__container}>
           <div className={s.tags}>
             {tags?.map((tag, index) => (
-              <p className={s.tags__item} key={index}>
+              <p className={classNames(s.info__text, s.tags__item)} key={index}>
                 {tag}
               </p>
             ))}

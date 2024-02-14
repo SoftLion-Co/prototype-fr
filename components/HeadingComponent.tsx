@@ -1,26 +1,45 @@
+import React, { FC } from "react";
 import classNames from "classnames";
 import s from "./HeadingComponent.module.scss";
-import React, { FC } from "react";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface HeadingComponentProps {
   text: string;
-  className?: string;
   tag?: string;
+  className?: string;
 }
 
 const HeadingComponent: FC<HeadingComponentProps> = ({
   text,
-  className,
   tag,
+  className,
 }) => {
   return (
-    <div className={classNames(s.heading__container, className)}>
+    <React.Fragment>
       {tag === "h1" ? (
-        <h1 className={classNames(s.heading)}>{text}</h1>
+        <MotionWrapper
+          tag="h1"
+          initial
+          viewport
+          variants
+          custom={1.5}
+          className={classNames(s.heading, className)}
+        >
+          {text}
+        </MotionWrapper>
       ) : (
-        <h2 className={classNames(s.heading)}>{text}</h2>
+        <MotionWrapper
+          tag="h2"
+          initial
+          viewport
+          variants
+          custom={1.5}
+          className={classNames(s.heading, className)}
+        >
+          {text}
+        </MotionWrapper>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -1,9 +1,11 @@
+import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import s from "./OurTeamCardComponent.module.scss";
 import { FC } from "react";
 import classNames from "classnames";
 import { FiLinkedin } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface TeamsProps {
   data: {
@@ -23,33 +25,54 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
   const memberClassName = isActive ? classNames(s.member, s.active) : s.member;
 
   return (
-    <div className={memberClassName}>
+    <MotionWrapper
+      tag="div"
+      initial
+      viewport
+      variants
+      custom={1.5}
+      className={memberClassName}
+    >
       <div className={s.member__avatar}>
-        <Image
-          className={s.member_avatar_img}
-          width={800}
-          height={600}
-          src={data.avatar}
-          alt={data.name + data.id}
-        />
+        <Link
+          href={
+            data.linkedinUrl === ""
+              ? "https://www.linkedin.com/company/softlion"
+              : data.linkedinUrl
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            className={s.member_avatar_img}
+            width={800}
+            height={600}
+            src={data.avatar}
+            alt={data.name + data.id}
+          />
+        </Link>
       </div>
       <div className={s.member__information}>
-        <p className={s.member__name}>{data.name}</p>
+        <h4 className={s.member__name}>{data.name}</h4>
         {isActive || isOnHomePage ? (
           <>
             <p className={s.member__position}>{data.position}</p>
-            <a
+            <Link
               className={s.member__linkedin}
-              href={data.linkedinUrl === "" ? "https://www.linkedin.com/company/softlion" : data.linkedinUrl}
+              href={
+                data.linkedinUrl === ""
+                  ? "https://www.linkedin.com/company/softlion"
+                  : data.linkedinUrl
+              }
               target="_blank"
               rel="noopener noreferrer"
             >
               <FiLinkedin className={s.linkedin__icon} />
-            </a>
+            </Link>
           </>
-        ): null}
+        ) : null}
       </div>
-    </div>
+    </MotionWrapper>
   );
 };
 

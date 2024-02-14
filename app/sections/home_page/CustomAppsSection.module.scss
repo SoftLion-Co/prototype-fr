@@ -6,19 +6,20 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 37px;
+    gap: 20px;
 
     @include for-size(tablet) {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
+      gap: 20px;
 
       & > :first-child {
         margin-top: 111px;
       }
     }
     @include for-size(laptop) {
-      gap: 39px;
+      gap: 28px;
 
       & > :first-child {
         margin-top: 170px;
@@ -26,6 +27,8 @@
     }
 
     @include for-size(desktop) {
+      gap: 32px;
+
       & > :first-child {
         margin-top: 225px;
       }

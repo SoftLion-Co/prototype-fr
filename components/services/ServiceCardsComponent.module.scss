@@ -4,21 +4,23 @@
 .service {
   display: flex;
   justify-content: center;
+
   @include for-size(tablet) {
-    gap: 21px;
+    gap: 20px;
   }
   @include for-size(laptop) {
-    gap: 40px;
+    gap: 28px;
   }
   @include for-size(desktop) {
-    gap: 40px;
+    gap: 32px;
   }
 
   &__mobile {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+
     @include for-size(tablet) {
       display: none;
     }
@@ -44,15 +46,15 @@
   &__card_left {
     --left-card-bg: linear-gradient(
       134deg,
-      rgba(243, 223, 183, 0.58) 0%,
-      rgba(246, 243, 170, 0.11) 100%
+      rgba(243, 223, 183, 0.6) 0%,
+      rgba(246, 243, 170, 0.1) 100%
     );
   }
   &__card_right {
     --right-card-bg: linear-gradient(
       135deg,
-      rgba(242, 212, 239, 0.39) 0%,
-      rgba(242, 213, 241, 0.26) 100%
+      rgba(242, 212, 239, 0.4) 0%,
+      rgba(242, 213, 241, 0.3) 100%
     );
   }
 }
