@@ -34,7 +34,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 0;
+  padding: 14px 0;
+
+  @include for-size(tablet) {
+    padding: 16px 0;
+  }
+  @include for-size(laptop) {
+    padding: 20px 0;
+  }
+  @include for-size(desktop) {
+    padding: 24px 0;
+  }
 
   &__line {
     &::before {
@@ -77,19 +87,15 @@
 
   &__logo {
     width: 100px;
-    height: 25px;
 
     @include for-size(tablet) {
       width: 100px;
-      height: 25px;
     }
     @include for-size(laptop) {
-      width: 100px;
-      height: px;
+      width: 120px;
     }
     @include for-size(desktop) {
-      width: 119px;
-      height: 24px;
+      width: 140px;
     }
   }
 
