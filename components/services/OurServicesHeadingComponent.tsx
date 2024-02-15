@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import s from "./OurServicesHeadingComponent.module.scss";
 import HeadingComponent from "./../HeadingComponent";
-import classNames from "classnames";
 import MotionWrapper from "@/hooks/MotionWrapper";
 
 const OurServicesHeadingComponent = () => {
@@ -24,9 +24,11 @@ const OurServicesHeadingComponent = () => {
         unique needs of our clients.
       </MotionWrapper>
 
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
+      <MotionWrapper initial viewport variants custom={2} className={s.blur}>
+        <div className={s.blur_item1}></div>
+        <div className={s.blur_item2}></div>
+        <div className={s.blur_item3}></div>
+      </MotionWrapper>
     </MotionWrapper>
   );
 };

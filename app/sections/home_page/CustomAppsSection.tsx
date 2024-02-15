@@ -37,10 +37,6 @@ const CustomAppsSection = () => {
         />
       </MotionWrapper>
 
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
-
       <SeeMoreButtonComponent path="services" />
     </div>
   );

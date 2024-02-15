@@ -18,16 +18,16 @@
   }
 
   &__container {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 
     @include for-size(tablet) {
-      margin-bottom: 80px;
+      margin-bottom: 50px;
     }
     @include for-size(laptop) {
-      margin-bottom: 120px;
+      margin-bottom: 80px;
     }
     @include for-size(desktop) {
-      margin-bottom: 140px;
+      margin-bottom: 100px;
     }
   }
 
