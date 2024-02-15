@@ -3,9 +3,10 @@
 @import "../styles/mixin";
 
 .footer {
-  padding: 0 14px 14px 14px;
-
   @include for-size(tablet) {
+    padding: 0 14px 14px 14px;
+  }
+  @include for-size(laptop) {
     padding: 0 24px 24px 24px;
   }
 
