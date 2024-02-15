@@ -1,12 +1,12 @@
 "use client";
+import classNames from "classnames";
 import s from "./FooterComponent.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "./../images/logo.svg";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiLinkedin, FiFacebook } from "react-icons/fi";
 import MainButtonComponent from "./MainButtonComponent";
-import Logo from "./../images/logo.svg";
-import classNames from "classnames";
 
 const FooterComponent = () => {
   const routes: { path: string; label: string }[] = [
@@ -34,9 +34,6 @@ const FooterComponent = () => {
   return (
     <footer id="footer" className={s.footer}>
       <div className={s.footer__contents}>
-        {/* <div className={classNames(s.blur, s.container)}>
-          <div className={s.blur_item}></div>
-        </div> */}
         <div className={classNames(s.footer__block)}>
           <div className={s.footer__container}>
             <div className={s.footer__brand}>
