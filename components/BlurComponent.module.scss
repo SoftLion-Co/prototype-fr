@@ -1,0 +1,107 @@
+@import "@/styles/mixin";
+
+.blur {
+  position: absolute;
+  width: 100%;
+
+  &_item1,
+  &_item2,
+  &_item3 {
+    position: relative;
+    pointer-events: none;
+    // filter: blur(100px);
+    opacity: 0.2;
+  }
+
+  &_item1 {
+    @include for-size(tablet) {
+      border-radius: 50%;
+      background-image: linear-gradient(
+        180deg,
+        #76bdd3 0,
+        #76bdd3 33.33%,
+        #76bdd3 50%,
+        #76bdd3 66.66%,
+        #76bdd3 100%
+      );
+      right: 500px;
+      bottom: 100px;
+      width: 100%;
+      height: 100%;
+    }
+    // @include for-size(laptop) {
+    //   right: 590px;
+    //   bottom: 160px;
+    //   width: 496px;
+    //   height: 463px;
+    // }
+    // @include for-size(desktop) {
+    //   right: 780px;
+    //   bottom: 160px;
+    //   width: 631px;
+    //   height: 589px;
+    // }
+  }
+
+  &_item2 {
+    @include for-size(tablet) {
+      border-radius: 50%;
+      background-image: radial-gradient(
+        circle at 50% -20.71%,
+        #a0189b 0,
+        #a0189b 33.33%,
+        #a0189b 50%,
+        #a0189b 66.66%,
+        #a0189b 100%
+      );
+      right: 400px;
+      top: -340px;
+      width: 100%;
+      height: 100%;
+    }
+    // @include for-size(laptop) {
+    //   border-radius: 50%;
+    //   right: 590px;
+    //   bottom: 160px;
+    //   width: 496px;
+    //   height: 463px;
+    // }
+    // @include for-size(desktop) {
+    //   right: 780px;
+    //   bottom: 190px;
+    //   width: 631px;
+    //   height: 589px;
+    // }
+  }
+
+  &_item3 {
+    @include for-size(tablet) {
+      border-radius: 150%;
+      background-image: radial-gradient(
+        circle at 50% -20.71%,
+        #13eb90 0,
+        #13eb90 33.33%,
+        #13eb90 50%,
+        #13eb90 50%,
+        #13eb90 66.66%,
+        #13eb90 100%
+      );
+      right: 400px;
+      bottom: 100px;
+      width: 100%;
+      height: 100%;
+    }
+    // @include for-size(laptop) {
+    //   right: 590px;
+    //   bottom: 160px;
+    //   width: 496px;
+    //   height: 463px;
+    // }
+    // @include for-size(desktop) {
+    //   right: 380px;
+    //   bottom: 930px;
+    //   width: 631px;
+    //   height: 589px;
+    // }
+  }
+}

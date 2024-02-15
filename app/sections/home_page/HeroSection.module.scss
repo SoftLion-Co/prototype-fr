@@ -113,17 +113,28 @@
         display: none;
       }
       @include for-size(tablet) {
+        border-radius: 100%;
+        filter: blur(30px);
+        rotate: 20deg;
+        opacity: 0.5;
+        background-image: linear-gradient(180deg, #005a70 0, #000000 100%);
+
         position: absolute;
-        width: 255px;
-        top: 70%;
-        left: 55%;
+        height: 30px;
+        width: 160px;
+        top: 78%;
+        left: 62%;
         animation: Scale 3s infinite ease-in-out;
       }
       @include for-size(laptop) {
-        width: 375px;
+        filter: blur(30px);
+        height: 30px;
+        width: 220px;
       }
       @include for-size(desktop) {
-        width: 490px;
+        filter: blur(40px);
+        height: 40px;
+        width: 260px;
       }
     }
   }
@@ -141,10 +152,10 @@
   @keyframes Scale {
     0%,
     100% {
-      transform: scale(1);
+      transform: scale(0.8);
     }
     50% {
-      transform: scale(1.8);
+      transform: scale(1.5);
     }
   }
 
@@ -181,121 +192,99 @@
 .blur {
   position: absolute;
 
-  &_item1 {
-    position: relative;
-    pointer-events: none;
-    filter: blur(100px);
-    opacity: 0.2;
-    @include for-size(tablet) {
-      border-radius: 50%;
-      background-image: linear-gradient(
-        180deg,
-        #76bdd3 0,
-        #76bdd3 16.67%,
-        #76bdd3 33.33%,
-        #76bdd3 50%,
-        #76bdd3 66.67%,
-        #76bdd3 83.33%,
-        #76bdd3 100%
-      );
-      right: 500px;
-      bottom: 100px;
-      width: 385px;
-      height: 360px;
-    }
-    @include for-size(laptop) {
-      right: 590px;
-      bottom: 160px;
-      width: 496px;
-      height: 463px;
-    }
-    @include for-size(desktop) {
-      right: 780px;
-      bottom: 160px;
-      width: 631px;
-      height: 589px;
-    }
-  }
-
-  &_item2 {
-    position: relative;
-    pointer-events: none;
-    filter: blur(100px);
-    opacity: 0.2;
-    @include for-size(tablet) {
-      border-radius: 50%;
-      background-image: radial-gradient(
-        circle at 50% -20.71%,
-        #a0189b 0,
-        #a0189b 25%,
-        #a0189b 50%,
-        #a0189b 75%,
-        #a0189b 100%
-      );
-      right: 400px;
-      top: -340px;
-      width: 385px;
-      height: 360px;
-    }
-    @include for-size(laptop) {
-      border-radius: 50%;
-      right: 590px;
-      bottom: 160px;
-      width: 496px;
-      height: 463px;
-    }
-    @include for-size(desktop) {
-      right: 780px;
-      bottom: 190px;
-      width: 631px;
-      height: 589px;
-    }
-  }
-
+  &_item1,
+  &_item2,
   &_item3 {
     position: relative;
     pointer-events: none;
     filter: blur(100px);
-    opacity: 0.2;
+    opacity: 0.3;
 
+    @include for-size(laptop) {
+      opacity: 0.2;
+    }
+  }
+
+  &_item1,
+  &_item2,
+  &_item3 {
+    @include for-size(tablet) {
+      width: 200px;
+      height: 160px;
+    }
+    @include for-size(laptop) {
+      width: 320px;
+      height: 240px;
+    }
+    @include for-size(desktop) {
+      width: 400px;
+      height: 320px;
+    }
+  }
+
+  &_item1 {
+    @include for-size(tablet) {
+      border-radius: 100%;
+      background-image: linear-gradient(180deg, #36bde6 0, #36bde6 100%);
+      height: 240px;
+      right: 480px;
+      bottom: 80px;
+    }
+    @include for-size(laptop) {
+      height: 280px;
+      right: 700px;
+      bottom: 120px;
+    }
+    @include for-size(desktop) {
+      height: 420px;
+      right: 840px;
+      bottom: 160px;
+    }
+  }
+
+  &_item2 {
     @include for-size(tablet) {
       border-radius: 50%;
       background-image: radial-gradient(
-        circle at 50% -20.71%,
-        #13eb90 0,
-        #13eb90 6.25%,
-        #13eb90 12.5%,
-        #13eb90 18.75%,
-        #13eb90 25%,
-        #13eb90 31.25%,
-        #13eb90 37.5%,
-        #13eb90 43.75%,
-        #13eb90 50%,
-        #13eb90 56.25%,
-        #13eb90 62.5%,
-        #13eb90 68.75%,
-        #13eb90 75%,
-        #13eb90 81.25%,
-        #13eb90 87.5%,
-        #13eb90 93.75%,
-        #13eb90 100%
+        circle at 50% -20%,
+        #b61ab1 0,
+        #b61ab1 100%
       );
-      right: 400px;
-      bottom: 100px;
-      width: 385px;
-      height: 360px;
+      right: 480px;
+      top: -180px;
     }
     @include for-size(laptop) {
-      right: 590px;
-      bottom: 160px;
-      width: 496px;
-      height: 463px;
+      opacity: 0.3;
+      right: 700px;
+      bottom: 60px;
     }
     @include for-size(desktop) {
-      right: 380px;
-      bottom: 930px;
-      width: 631px;
-      height: 589px;
+      right: 840px;
+      top: -340px;
+    }
+  }
+
+  &_item3 {
+    @include for-size(tablet) {
+      border-radius: 75%;
+      background-image: radial-gradient(
+        circle at 50% -20%,
+        #13eb90 0,
+        #13eb90 100%
+      );
+      width: 280px;
+      right: 370px;
+      bottom: 340px;
+    }
+    @include for-size(laptop) {
+      width: 420px;
+      right: 530px;
+      bottom: 420px;
+    }
+    @include for-size(desktop) {
+      width: 600px;
+      right: 600px;
+      bottom: 660px;
     }
   }
 }
