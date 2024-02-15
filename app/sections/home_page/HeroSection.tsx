@@ -78,7 +78,9 @@ const HeroSection = () => {
         <Image className={s.hero__logo_shadow} src={heroShadow} alt="shadow" />
 
         <div className={s.blur}>
-          <div className={s.blur_item}></div>
+          <div className={s.blur_item1}></div>
+          <div className={s.blur_item2}></div>
+          <div className={s.blur_item3}></div>
         </div>
       </MotionWrapper>
     </MotionWrapper>
