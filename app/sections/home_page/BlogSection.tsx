@@ -1,16 +1,16 @@
 "use client";
 
+import React, { FC } from "react";
+import classNames from "classnames";
+import s from "./BlogSection.module.scss";
+import { BlogInterface } from "@/components/blog/BlogInteface";
+import HeadingComponent from "@/components/HeadingComponent";
 import MobileSliderComponent from "@/components/MobileSliderComponent";
 import BlogDesktopComponent from "@/components/blog/BlogDesktopComponent";
-import s from "./BlogSection.module.scss";
-import classNames from "classnames";
-import HeadingComponent from "@/components/HeadingComponent";
-import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
-import { BlogInterface } from "@/components/blog/BlogInteface";
-import getBlogsData from "@/hooks/getBlogsData";
-import { FC } from "react";
+import SeeMoreButtonComponent from "@/components/SeeMoreButtonComponent";
 import MotionWrapper from "@/hooks/MotionWrapper";
+import getBlogsData from "@/hooks/getBlogsData";
 
 const blogs: BlogInterface[] = getBlogsData();
 

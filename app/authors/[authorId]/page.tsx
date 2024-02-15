@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import OurTeamSetcion from "@/app/sections/home_page/OurTeamSection";
 import InfoNavigationComponent from "@/components/InfoNavigationComponent";
 import AuthorBlogs from "@/app/sections/author_page/AuthorBlogs";
 import AuthorSection from "@/app/sections/author_page/AuthorSection";
@@ -25,7 +24,7 @@ const Author = () => {
   const blogs = blogData.filter((item) => item.authorId === id);
 
   return (
-    <div style={{ paddingBottom: "5%" }}>
+    <React.Fragment>
       <InfoNavigationComponent links={links} />
       <AuthorSection
         name={author.name}
@@ -34,8 +33,7 @@ const Author = () => {
         description={author.generalInfo}
       />
       <AuthorBlogs articles={blogs}></AuthorBlogs>
-      <OurTeamSetcion />
-    </div>
+    </React.Fragment>
   );
 };
 

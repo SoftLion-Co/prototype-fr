@@ -130,12 +130,6 @@
   @include for-size(tablet) {
     color: $heading-blue-color;
   }
-
-  @include for-size(laptop) {
-  }
-
-  @include for-size(desktop) {
-  }
 }
 
 .member_avatar_img {
