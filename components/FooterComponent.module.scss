@@ -24,7 +24,7 @@
     }
 
     @include for-size(tablet) {
-      padding: 40px 20px;
+      padding: 40px 16px;
       border-radius: 16px;
       box-shadow: 2px -2px 8px -2px rgba(0, 0, 0, 0.1),
         0 6px 10px rgba(0, 0, 0, 0.1), 0 1px 18px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,7 @@
       padding: 40px;
     }
     @include for-size(desktop) {
-      padding: 60px;
+      padding: 60px 80px;
     }
   }
 
