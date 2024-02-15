@@ -49,8 +49,8 @@ const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
         className={s.card__image}
         src={data.image}
         alt="Project Image"
-        width={16000}
-        height={19000}
+        width={2200}
+        height={1400}
       />
       <div className={s.card__content}>
         <div className={s.card__subtext}>
