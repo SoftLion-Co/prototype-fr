@@ -116,9 +116,6 @@ const TechnologiesSection = () => {
           ))}
         </MotionWrapper>
       </div>
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
     </section>
   );
 };

@@ -207,35 +207,3 @@
     text-align: center;
   }
 }
-
-.blur {
-  position: absolute;
-  pointer-events: none;
-
-  &_item {
-    position: relative;
-    pointer-events: none;
-
-    @include for-size(tablet) {
-      background-image: url(../../../images/blur/techno_blurT.png);
-      background-repeat: no-repeat;
-      width: 730px;
-      height: 640px;
-      bottom: 560px;
-    }
-
-    @include for-size(laptop) {
-      background-image: url(../../../images/blur/techno_blurL.png);
-      width: 1060px;
-      height: 630px;
-      bottom: 420px;
-    }
-
-    @include for-size(desktop) {
-      background-image: url(../../../images/blur/techno_blurL.png);
-      width: 1390px;
-      height: 800px;
-      bottom: 460px;
-    }
-  }
-}

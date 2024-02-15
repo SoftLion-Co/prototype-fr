@@ -46,9 +46,6 @@ const EcommerceSection = () => {
       />
 
       <ServiceCardsComponent cardData={cardComponent} />
-      <div className={st.blur}>
-        <div className={st.blur_item}></div>
-      </div>
     </div>
   );
 };

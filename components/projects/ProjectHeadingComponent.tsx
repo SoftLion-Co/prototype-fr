@@ -33,9 +33,12 @@ const ProjectHeadingComponent: FC<{ centered: boolean }> = ({
         open to your feedback. To get a better understanding of our work, please
         take a look at our portfolio of previous projects.
       </MotionWrapper>
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
+
+      <MotionWrapper initial viewport variants custom={1.5} className={s.blur}>
+        <div className={s.blur_item1}></div>
+        <div className={s.blur_item2}></div>
+        <div className={s.blur_item3}></div>
+      </MotionWrapper>
     </div>
   );
 };
