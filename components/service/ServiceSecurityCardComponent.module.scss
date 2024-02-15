@@ -59,7 +59,7 @@
     display: flex;
     align-items: flex-start;
     position: relative;
-    right: 16px;
+    right: 10px;
 
     @include for-size(tablet) {
       right: 20px;
@@ -67,10 +67,24 @@
     @include for-size(laptop) {
       right: 30px;
     }
+    @include for-size(desktop) {
+      right: 36px;
+    }
   }
 
   &__title {
     text-align: center;
+    width: 200px;
+
+    @include for-size(tablet) {
+      width: 280px;
+    }
+    @include for-size(laptop) {
+      width: 300px;
+    }
+    @include for-size(desktop) {
+      width: 360px;
+    }
   }
 
   &__text {
