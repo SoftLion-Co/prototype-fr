@@ -3,41 +3,25 @@ import classNames from "classnames";
 import s from "./HeroSection.module.scss";
 
 import heroLogoMobile from "@/images/hero-mobile.svg";
-
 import MainButtonComponent from "@/components/MainButtonComponent";
-import MotionWrapper from "@/hooks/MotionWrapper";
 
 const HeroSection = () => {
   return (
-    <MotionWrapper
-      tag={"section"}
-      className={classNames(s.container, s.hero)}
-      initial
-    >
+    <section className={classNames(s.container, s.hero)}>
       <div className={s.hero__container}>
-        <MotionWrapper tag={"h1"} className={s.hero__title} variants custom={1}>
+        <h1 className={s.hero__title}>
           Embrace the <span className={s.hero__word}>Lion's</span> Share
           Technological Advancements with{" "}
           <span className={s.hero__word}>SoftLion</span>
-        </MotionWrapper>
+        </h1>
 
-        <MotionWrapper
-          tag={"p"}
-          className={s.hero__description}
-          variants
-          custom={1.5}
-        >
+        <p className={s.hero__description}>
           Our company provides an individual approach for each client to turn
           your ideas into reality.
-        </MotionWrapper>
+        </p>
 
         <div className={s.hero__content}>
-          <MotionWrapper
-            tag={"div"}
-            className={s.hero__buttons}
-            variants
-            custom={2}
-          >
+          <div className={s.hero__buttons}>
             <MainButtonComponent color="white" path="services">
               OUR SERVICES
             </MainButtonComponent>
@@ -45,29 +29,19 @@ const HeroSection = () => {
             <MainButtonComponent color="white" path="projects">
               OUR PROJECTS
             </MainButtonComponent>
-          </MotionWrapper>
+          </div>
 
-          <MotionWrapper
-            tag={"div"}
-            variants
-            custom={2}
-            className={s.hero__logo}
-          >
+          <div className={s.hero__logo}>
             <Image
               className={s.hero__logo_mobile}
               src={heroLogoMobile}
               alt="SoftLion"
             />
-          </MotionWrapper>
+          </div>
         </div>
       </div>
 
-      <MotionWrapper
-        tag={"div"}
-        variants
-        custom={1.5}
-        className={s.hero__logo_container}
-      >
+      <div className={s.hero__logo_container}>
         <div className={s.hero__logo_shadow}></div>
         <Image
           className={s.hero__logo_desktop}
@@ -82,8 +56,8 @@ const HeroSection = () => {
           <div className={s.blur_item2}></div>
           <div className={s.blur_item3}></div>
         </div>
-      </MotionWrapper>
-    </MotionWrapper>
+      </div>
+    </section>
   );
 };
 
