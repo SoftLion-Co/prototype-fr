@@ -166,6 +166,7 @@ const BlogsSection = () => {
                   handleCategoryChange(
                     category === "All articles" ? null : category
                   );
+                  setScrollToTop(false);
                 }}
               />
             ))}
@@ -181,11 +182,15 @@ const BlogsSection = () => {
           className={s.blog__card}
         >
           {currentBlogs.length > 0 ? (
-            currentBlogs.map((blog) => (
-              <BlogExtendedCardComponent data={blog} />
+            currentBlogs.map((blog, index) => (
+              <BlogExtendedCardComponent key={index} data={blog} />
             ))
           ) : (
-            <h3 className={s.blog__nothing}>Nothing found for your request</h3>
+            <div style={{ display: "flex" }}>
+              <h3 className={s.blog__nothing}>
+                Nothing found for your request
+              </h3>
+            </div>
           )}
         </MotionWrapper>
 

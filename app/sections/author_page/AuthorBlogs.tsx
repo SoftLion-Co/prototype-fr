@@ -4,6 +4,7 @@ import React, { FC, useEffect, useState } from "react";
 import { BlogInterface } from "@/components/blog/BlogInteface";
 import { Pagination } from "@mantine/core";
 import BlogExtendedCardComponent from "@/components/blog/BlogExtendedCardComponent";
+
 import s from "./AuthorBlogs.module.scss";
 
 const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
@@ -30,7 +31,7 @@ const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
   }, []);
 
   return (
-    <div className={s.container}>
+    <section className={s.container}>
       <div id="articles" className={s.articles}>
         {articles
           .slice(perPage * (activePage - 1), perPage * activePage)
@@ -76,7 +77,7 @@ const AuthorBlogs: FC<{ articles: BlogInterface[] }> = ({ articles }) => {
           })}
         />
       ) : null}
-    </div>
+    </section>
   );
 };
 

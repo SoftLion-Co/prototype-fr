@@ -33,7 +33,7 @@ const AuthorPage: FC<AuthorPageProps> = ({
           </div>
           <h1 className={s.info__occupation}>{occupation}</h1>
         </div>
-        <p className={s.page__about}>About me</p>
+        <h4 className={s.page__about}>About me</h4>
         <Image src={Line} alt="" className={s.page__line} />
         <p className={s.page__description}>{description}</p>
       </div>
