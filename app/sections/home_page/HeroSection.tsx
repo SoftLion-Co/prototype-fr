@@ -1,9 +1,12 @@
-import s from "./HeroSection.module.scss";
 import Image from "next/image";
-import heroLogoMobile from "./../../../images/hero-mobile.svg";
-import heroShadow from "@/images/hero-shadow.svg";
-import MainButtonComponent from "./../../../components/MainButtonComponent";
 import classNames from "classnames";
+import s from "./HeroSection.module.scss";
+
+import heroLogoMobile from "@/images/hero-mobile.svg";
+import heroShadow from "@/images/hero-shadow.svg";
+
+import MainButtonComponent from "@/components/MainButtonComponent";
+import BlurComponent from "@/components/BlurComponent";
 import MotionWrapper from "@/hooks/MotionWrapper";
 
 const HeroSection = () => {
@@ -67,6 +70,7 @@ const HeroSection = () => {
         custom={1.5}
         className={s.hero__logo_container}
       >
+        <div className={s.hero__logo_shadow}></div>
         <Image
           className={s.hero__logo_desktop}
           src={heroLogoMobile}
@@ -75,7 +79,7 @@ const HeroSection = () => {
           height={554}
         />
 
-        <Image className={s.hero__logo_shadow} src={heroShadow} alt="shadow" />
+        {/* <Image className={s.hero__logo_shadow} src={heroShadow} alt="shadow" /> */}
 
         <div className={s.blur}>
           <div className={s.blur_item1}></div>
