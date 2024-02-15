@@ -42,10 +42,6 @@ const HomeBlog: FC = () => {
             SlideComponent={BlogExtendedCardComponent}
           />
         </MotionWrapper>
-
-        <div className={s.blur}>
-          <div className={s.blur_item}></div>
-        </div>
       </div>
       <SeeMoreButtonComponent className={s.container} path="blog" />
     </section>

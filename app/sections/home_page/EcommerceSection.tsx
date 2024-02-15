@@ -46,9 +46,6 @@ const EcommerceSection = () => {
       />
       <ServiceCardsComponent cardData={cardComponent} />
       <SeeMoreButtonComponent path="services" />
-      <div className={s.blur}>
-        <div className={s.blur_item}></div>
-      </div>
     </MotionWrapper>
   );
 };
