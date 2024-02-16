@@ -31,11 +31,9 @@
       }
     }
   }
-  @include for-size(laptop) {
-  }
   @include for-size(desktop) {
-    width: 320px;
-    height: 320px;
+    width: 313px;
+    height: 314px;
     .block {
       &__title {
         font-size: 30px;

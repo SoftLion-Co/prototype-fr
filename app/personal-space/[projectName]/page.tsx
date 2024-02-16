@@ -27,9 +27,7 @@ const ProjectPersonal = ({ params }: { params: SidebarMenuParams }) => {
       </div>
 
       <div className={s.section}>
-        <div className={s.section__sidebar}>
-          <SidebarMenu />
-        </div>
+        <SidebarMenu className={s.section__sidebar} />
         <ProjectSection projectName={projectName} />
       </div>
     </div>

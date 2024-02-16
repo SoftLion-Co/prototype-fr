@@ -49,7 +49,7 @@ const PersonalSpace: React.FC = () => {
           <SidebarMenu />
         </div>
         <div className={s.section__header}>
-          <h1>Нажаль Ви нищеброд , не замовили ні один проєкт :=( </h1>
+          <h1>Sorry, but you don't have any orders for the project :=( </h1>
         </div>
       </div>
     </div>

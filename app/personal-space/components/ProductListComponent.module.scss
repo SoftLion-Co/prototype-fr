@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   gap: 53px;
+  @include for-size(laptop) {
+    // padding-left: 38px;
+  }
+  @include for-size(desktop) {
+    max-width: 813px;
+    // padding-left: 99px;
+  }
   h2 {
     font-size: 25px;
     font-weight: 400;

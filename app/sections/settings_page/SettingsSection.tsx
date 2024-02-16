@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import PhoneInput from "react-phone-input-2";
 
@@ -32,13 +32,17 @@ const SettingsSection: React.FC = () => {
     patternError: "",
   });
 
+  const [surNameError, setSurNameError] = useState({
+    firstName: "",
+    lastName: "",
+  });
+
   const [focusedField, setFocusedField] = useState(false);
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [isShown, setIsShown] = useState(false);
   const [isShownRepeat, setIsShownRepeat] = useState(false);
 
-  const [passwordError, setPasswordError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   useEffect(() => {
     if (settingsData) {
@@ -54,6 +58,21 @@ const SettingsSection: React.FC = () => {
   }, []);
 
   const handleInputChange = (fieldName: string, value: string) => {
+    if (fieldName === "firstName" || fieldName === "lastName") {
+      const isValidCharLength = value.length >= 2;
+      if (!isValidCharLength) {
+        setSurNameError((prevErrors) => ({
+          ...prevErrors,
+          [fieldName]: "Please enter more than 2 characters",
+        }));
+      } else {
+        setSurNameError((prevErrors) => ({
+          ...prevErrors,
+          [fieldName]: "",
+        }));
+      }
+    }
+
     if (fieldName === "email") {
       const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
       const isValidEmail = emailPattern.test(value);
@@ -77,24 +96,45 @@ const SettingsSection: React.FC = () => {
     }));
   };
 
+  // const [isMatch, setIsMatch] = useState(true);
+
+  const isMatchRef = useRef(false);
+
   useEffect(() => {
     const { newPassword, repeatNewPassword } = passwords;
+
     const minLengthError =
       newPassword.length < 8
         ? "Password should be at least 8 characters long"
         : "";
+
     const patternError = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(
       newPassword
     )
       ? ""
       : "Password should include at least one lowercase letter, one uppercase letter, and one digit";
-
     setPasswordValidation({ minLengthError, patternError });
 
-    if (newPassword && repeatNewPassword && newPassword !== repeatNewPassword) {
-      setPasswordError("Passwords do not match");
+    // if (newPassword && repeatNewPassword && newPassword !== repeatNewPassword) {
+    //   setPasswordError("Passwords do not match");
+    // } else {
+    //   setPasswordError("");
+    // }
+    if (newPassword.length >= repeatNewPassword.length) {
+      isMatchRef.current = true;
+      for (let i = 0; i < repeatNewPassword.length; i++) {
+        if (newPassword[i] !== repeatNewPassword[i]) {
+          isMatchRef.current = false;
+          break;
+        }
+      }
+      if (!isMatchRef.current) {
+        setPasswordError("Passwords do not match");
+      } else {
+        setPasswordError("");
+      }
     } else {
-      setPasswordError("");
+      setPasswordError("Passwords do not match");
     }
   }, [passwords]);
 
@@ -105,17 +145,9 @@ const SettingsSection: React.FC = () => {
       const { newPassword } = passwords;
       await CustomerService.updateCustomer(userData);
       await AuthService.changePassword({ email, password: newPassword });
-      console.log("Дані успішно оновлено!");
     } catch (error) {
       console.error("Помилка при оновленні даних:", error);
     }
-  };
-
-  const validatePassword = (password: string) => {
-    const isValid =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password) &&
-      password.length >= 8;
-    setIsPasswordValid(isValid);
   };
 
   const togglePassword = () => {
@@ -125,21 +157,27 @@ const SettingsSection: React.FC = () => {
   const toggleRepeatPassword = () => {
     setIsShownRepeat((isShownRepeat) => !isShownRepeat);
   };
+
   const hasErrors = () => {
     return (
+      !!surNameError.firstName ||
+      !!surNameError.lastName ||
       !!emailError ||
-      !!passwordError ||
+      (!!passwordError && passwords.newPassword.trim().length > 0) ||
+      (!!passwordValidation.patternError &&
+        passwords.newPassword.trim().length > 0) ||
       (!!passwords.newPassword &&
         !!passwords.repeatNewPassword &&
         passwords.newPassword !== passwords.repeatNewPassword) ||
-      (!!passwords.newPassword && !isPasswordValid)
+      (!passwords.newPassword && !!passwords.repeatNewPassword) ||
+      (!!passwords.newPassword && !passwords.repeatNewPassword)
     );
   };
 
   return (
     <section className={s.settings}>
       <form className={s.form} onSubmit={handleSubmit}>
-        <section className={s.formSection}>
+        <div className={s.formSection}>
           <h3>Personal Information</h3>
           <div className={s.formInput}>
             <div className={s.formRow}>
@@ -148,8 +186,14 @@ const SettingsSection: React.FC = () => {
                 placeholder="Name"
                 type="text"
                 value={userData.firstName}
+                className={classNames({
+                  [s.invalid]: surNameError.firstName,
+                })}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
               />
+              {surNameError.firstName && (
+                <p className={s.error__message}>{surNameError.firstName}</p>
+              )}
             </div>
             <div className={s.formRow}>
               <label>Change surname</label>
@@ -157,13 +201,19 @@ const SettingsSection: React.FC = () => {
                 placeholder="Surname"
                 type="text"
                 value={userData.lastName}
+                className={classNames({
+                  [s.invalid]: surNameError.lastName,
+                })}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
               />
+              {surNameError.lastName && (
+                <p className={s.error__message}>{surNameError.lastName}</p>
+              )}
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className={s.formSection}>
+        <div className={s.formSection}>
           <h3>Contacts</h3>
           <div className={s.formInput}>
             <div className={s.formRow}>
@@ -183,8 +233,8 @@ const SettingsSection: React.FC = () => {
               <label>Change phone</label>
               <PhoneInput
                 inputProps={{
+                  name: "phone",
                   required: true,
-                  name: "phoneNumber",
                   className: s.customInput,
                 }}
                 value={userData.phoneNumber}
@@ -197,9 +247,9 @@ const SettingsSection: React.FC = () => {
               />
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className={classNames(s.formSection, s.security)}>
+        <div className={classNames(s.formSection, s.security)}>
           <h3>Security</h3>
           <div className={s.formRow}>
             <label>New password</label>
@@ -211,16 +261,39 @@ const SettingsSection: React.FC = () => {
                 onChange={(e) =>
                   handlePasswordChange("newPassword", e.target.value)
                 }
-                onFocus={() => setFocusedField(true)}
+                onFocus={() => {
+                  if (
+                    ((passwords.newPassword.length > 0 &&
+                      passwordValidation.minLengthError) ||
+                      (passwords.newPassword.length >= 8 &&
+                        passwordValidation.patternError)) &&
+                    !focusedField
+                  ) {
+                    setFocusedField(false);
+                    console.log("1");
+                  } else {
+                    setFocusedField(true);
+                    console.log("2");
+                  }
+                }}
                 onBlur={() => {
                   setFocusedField(false);
-                  validatePassword(passwords.newPassword);
                 }}
-                className={
-                  !focusedField && passwords.newPassword && !isPasswordValid
-                    ? s.invalid
-                    : ""
-                }
+                // className={classNames({
+                //   [s.invalid]:
+                //     ((passwordValidation.minLengthError ||
+                //       passwordValidation.patternError) &&
+                //       passwords.newPassword.trim().length > 0 &&
+                //       focusedField) ||
+                //     passwords.newPassword !== passwords.repeatNewPassword,
+                // })}
+                className={classNames({
+                  [s.invalid]:
+                    (passwordValidation.minLengthError ||
+                      passwordValidation.patternError) &&
+                    passwords.newPassword.trim().length > 0 &&
+                    !focusedField,
+                })}
               />
               {isShown ? (
                 <BsEyeSlash
@@ -231,19 +304,19 @@ const SettingsSection: React.FC = () => {
                 <BsEye className={s.password__icon} onClick={togglePassword} />
               )}
             </div>
-            {(passwordValidation.minLengthError ||
-              passwordValidation.patternError) &&
-              focusedField && (
-                <div className={s.error__message}>
-                  {passwordValidation.minLengthError && (
-                    <span>{passwordValidation.minLengthError}</span>
-                  )}
-                  {passwordValidation.patternError &&
-                    !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(
-                      passwords.newPassword
-                    ) && <span>{passwordValidation.patternError}</span>}
-                </div>
-              )}
+            <div className={s.error__message}>
+              {passwords.newPassword.length > 0 &&
+                !focusedField &&
+                passwordValidation.minLengthError && (
+                  <span>{passwordValidation.minLengthError}</span>
+                )}
+
+              {!focusedField &&
+                passwords.newPassword.length >= 8 &&
+                passwordValidation.patternError && (
+                  <span>{passwordValidation.patternError}</span>
+                )}
+            </div>
 
             <div className={s.password}>
               <input
@@ -253,18 +326,20 @@ const SettingsSection: React.FC = () => {
                 onChange={(e) =>
                   handlePasswordChange("repeatNewPassword", e.target.value)
                 }
-                onFocus={() => setFocusedField(true)}
                 onBlur={() => {
-                  setFocusedField(false);
-                  validatePassword(passwords.repeatNewPassword);
+                  if (
+                    passwords.newPassword !== passwords.repeatNewPassword &&
+                    isMatchRef.current
+                  ) {
+                    setPasswordError("Passwords do not match");
+                  }
                 }}
-                className={
-                  !focusedField &&
-                  passwords.repeatNewPassword &&
-                  !isPasswordValid
-                    ? s.invalid
-                    : ""
-                }
+                className={classNames({
+                  [s.invalid]:
+                    passwordError ||
+                    (passwords.newPassword !== passwords.repeatNewPassword &&
+                      !isMatchRef.current),
+                })}
               />
               {isShownRepeat ? (
                 <BsEyeSlash
@@ -282,7 +357,7 @@ const SettingsSection: React.FC = () => {
               <span className={s.error__message}>{passwordError}</span>
             )}
           </div>
-        </section>
+        </div>
         <div className={s.formBtn}>
           <button type="submit" disabled={hasErrors()}>
             Save changes

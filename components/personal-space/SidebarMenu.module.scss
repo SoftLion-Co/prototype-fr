@@ -99,6 +99,9 @@
       margin-left: -22px;
       gap: 40px 0;
     }
+    @include for-size(desktop) {
+      // width: 251px;
+    }
   }
 
   &__inner {
@@ -226,6 +229,12 @@
       }
     }
     @include for-size(laptop) {
+      .title {
+        font-size: 23px;
+        letter-spacing: 2px;
+      }
+    }
+    @include for-size(desktop) {
       .title {
         font-size: 25px;
         letter-spacing: 2.26px;

@@ -149,14 +149,14 @@ const LineChartComponent: React.FC<LineChartProps> = ({
             gradient.addColorStop(1, "#E238B2");
             break;
           default:
-            const opacity = 0.14;
-            const color = `rgba(${Math.floor(
-              Math.random() * 256
-            )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
-              Math.random() * 256
-            )}, ${opacity})`;
-            gradient.addColorStop(0.2, color);
-            gradient.addColorStop(1, color);
+            // const opacity = 0.14;
+            // const color = `rgba(${Math.floor(
+            //   Math.random() * 256
+            // )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+            //   Math.random() * 256
+            // )}, ${opacity})`;
+            gradient.addColorStop(0.2, "#eddddc");
+            gradient.addColorStop(1, "#b9a5a4");
             break;
         }
 

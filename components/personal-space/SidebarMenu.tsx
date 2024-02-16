@@ -5,8 +5,11 @@ import СustomLoaderComponent from "@/app/personal-space/components/СustomLoade
 import { useOrderProjectData } from "@/hooks/useOrderProjectData";
 import { statusProject } from "@/app/personal-space/components/useDynamicComponents";
 import CustomVectorSVG from "@/app/personal-space/components/CustomVectorSVG";
-
-const SidebarMenu: React.FC = () => {
+import classNames from "classnames";
+interface props {
+  className?: string;
+}
+const SidebarMenu: React.FC<props> = ({ className }) => {
   const { sidebarMenuData, isLoading } = useOrderProjectData();
 
   if (isLoading) {
@@ -17,7 +20,7 @@ const SidebarMenu: React.FC = () => {
     typeof window !== "undefined" ? window.location.pathname : "";
 
   return (
-    <div className={s.sideBar}>
+    <div className={classNames(s.sideBar, className)}>
       <div className={s.sideBar__header}>
         <Link
           href={`/personal-space`}
@@ -81,7 +84,7 @@ const SidebarMenu: React.FC = () => {
             ${currentURL === "/personal-space/#" ? s.actHome : ""}
             `}
           >
-            <h1 className={s.title}>Privat Information</h1>
+            <h1 className={s.title}>Private information</h1>
           </Link>
         </div>
       </div>

@@ -1,4 +1,3 @@
-// @import "./../../../styles/container";
 @import "../../../styles/mixin";
 
 .wrapper {
@@ -41,7 +40,7 @@
   @include for-size(tablet) {
     gap: 93px;
     &__settings {
-      gap: 57px;
+      gap: 56px;
     }
     &__sidebar {
       display: block;
@@ -52,17 +51,17 @@
   @include for-size(laptop) {
     gap: 86px;
     &__sidebar {
-      width: 300px;
+      width: 261px;
     }
     &__settings {
-      gap: 87px;
+      gap: 125px;
     }
   }
 
   @include for-size(desktop) {
     gap: 111px;
     &__settings {
-      gap: 197px;
+      gap: 235px;
     }
   }
 }

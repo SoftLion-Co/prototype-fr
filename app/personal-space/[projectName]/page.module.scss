@@ -43,8 +43,8 @@
     margin-top: 26px;
   }
   @include for-size(tablet) {
-    // width: min-content;
     flex-direction: row;
+    gap: 0;
     &__sidebar {
       width: 154px;
       margin-top: 240px;
@@ -53,14 +53,14 @@
 
   @include for-size(laptop) {
     &__sidebar {
-      width: 242px;
+      width: 234px;
       margin-top: 234px;
     }
   }
 
   @include for-size(desktop) {
     &__sidebar {
-      width: 260px;
+      width: 257px;
       margin-top: 215px;
     }
   }

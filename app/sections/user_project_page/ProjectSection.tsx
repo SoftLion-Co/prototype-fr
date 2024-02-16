@@ -85,9 +85,49 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
   const handlePageToggle = () => {
     setShowNext((prevState) => !prevState);
   };
-
+  const projectSection = (
+    <section className={s.project__section}>
+      <div className={s.section__container}>
+        {isButtonActive ? (
+          <>
+            <div className={s.vectorTile}>
+              <CustomVectorSVG
+                projectStatus={OrderProjectStatus.projectStatus}
+              />
+              <h3
+                className={s.statusText}
+                data-custom-title={
+                  statusProject.status[OrderProjectStatus.projectStatus]
+                }
+              >
+                {statusProject.status[OrderProjectStatus.projectStatus]}
+              </h3>
+            </div>
+            <div className={s.chart__сontainer}>
+              <LineChartComponent
+                OrderProjectStatus={OrderProjectStatus}
+                categoryStates={categoryStates}
+              />
+              <DoughnutChartComponent
+                OrderProjectStatus={OrderProjectStatus}
+                categoryStates={categoryStates}
+              />
+            </div>
+          </>
+        ) : (
+          <h2 className={s.error__message}>Nothing found for your request</h2>
+        )}
+      </div>
+      <ProductListComponent
+        categoryStates={categoryStates}
+        isButtonActive={isButtonActive}
+        uniqueService={uniqueService}
+        allColors={colorList}
+      />
+    </section>
+  );
   return (
-    <div className={s.project}>
+    <section className={s.project}>
       <div className={s.header}>
         <div className={s.header__container}>
           <h1 className={s.header__title}>{projectName}</h1>
@@ -111,52 +151,10 @@ const ProjectSection = ({ projectName }: ProjectSectionProps) => {
           handlePageToggle={handlePageToggle}
         />
       </div>
-      <div className={s.project__sectio}>
-        <div>
-          <section className={s.project__section}>
-            <div className={s.section__container}>
-              {isButtonActive ? (
-                <>
-                  <div className={s.vectorTile}>
-                    <CustomVectorSVG
-                      projectStatus={OrderProjectStatus.projectStatus}
-                    />
-                    <h3
-                      className={s.statusText}
-                      data-custom-title={
-                        statusProject.status[OrderProjectStatus.projectStatus]
-                      }
-                    >
-                      {statusProject.status[OrderProjectStatus.projectStatus]}
-                    </h3>
-                  </div>
-                  <div className={s.chart__сontainer}>
-                    <LineChartComponent
-                      OrderProjectStatus={OrderProjectStatus}
-                      categoryStates={categoryStates}
-                    />
-                    <DoughnutChartComponent
-                      OrderProjectStatus={OrderProjectStatus}
-                      categoryStates={categoryStates}
-                    />
-                  </div>
-                </>
-              ) : (
-                <h2 className={s.error__message}>
-                  Nothing found for your request
-                </h2>
-              )}
-            </div>
-            <ProductListComponent
-              categoryStates={categoryStates}
-              isButtonActive={isButtonActive}
-              uniqueService={uniqueService}
-              allColors={colorList}
-            />
-          </section>
-        </div>
+      <div className={s.project__section}>
+        <div>{projectSection}</div>
       </div>
-    </div>
+    </section>
   );
 };
 
