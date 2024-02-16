@@ -22,7 +22,7 @@ const BlogRolledCardComponent: FC<BlogRolledCardProps> = (data) => {
       </div>
 
       <div className={s.card__line}></div>
-      <h2 className={s.card__title}>{title}</h2>
+      <h3 className={s.card__title}>{title}</h3>
     </div>
   );
 };

@@ -37,7 +37,7 @@ const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
       custom={1.5}
       className={classNames(headingClass, s.title__container)}
     >
-      <h1 className={buttonClass}>{num}</h1>
+      <span className={buttonClass}>{num}</span>
       <h2 className={s.title__text}>{text}</h2>
     </MotionWrapper>
   );

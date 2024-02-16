@@ -33,7 +33,7 @@
 
   &__num {
     color: $heading-blue-color;
-    font-size: 50px;
+    font-size: 54px;
     letter-spacing: 0.05px;
     font-weight: 400;
     line-height: 130%;
@@ -66,6 +66,17 @@
   &__text {
     color: $heading-blue-color;
     text-align: center;
+    font-size: 28px;
+
+    @include for-size(tablet) {
+      font-size: 36px;
+    }
+    @include for-size(laptop) {
+      font-size: 48px;
+    }
+    @include for-size(desktop) {
+      font-size: 64px;
+    }
   }
 }
 

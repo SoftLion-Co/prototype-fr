@@ -153,20 +153,20 @@
 
   &__title {
     color: $hero-heading-color;
-    font-size: 14px;
-    line-height: 130%;
-    font-weight: 400;
-    margin-bottom: 15%;
+    margin-bottom: 14%;
+    // font-size: 14px;
+    // line-height: 130%;
+    // font-weight: 400;
 
-    @include for-size(tablet) {
-      font-size: 16px;
-    }
-    @include for-size(laptop) {
-      font-size: 18px;
-    }
-    @include for-size(desktop) {
-      font-size: 20px;
-    }
+    // @include for-size(tablet) {
+    //   font-size: 16px;
+    // }
+    // @include for-size(laptop) {
+    //   font-size: 18px;
+    // }
+    // @include for-size(desktop) {
+    //   font-size: 20px;
+    // }
   }
 
   &__author {
