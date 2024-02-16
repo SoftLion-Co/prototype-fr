@@ -98,16 +98,9 @@ const links = [
 const Project = () => {
   useGoogleAnalytics();
 
-  const metadata = {
-    title: response.ProjectDescriptionSection.title,
-  };
 
   return (
     <React.Fragment>
-      <head>
-        <title>{metadata.title}</title>
-      </head>
-
       <InfoNavigationComponent links={links} />
       <ProjectDescriptionSection data={response.ProjectDescriptionSection} />
       <RequestSection data={response.RequestSection} />

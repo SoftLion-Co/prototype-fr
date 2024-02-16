@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import s from "./page.module.scss";
 
 import data_java from "@/data/technologies/data_java.json";
 import data_react from "@/data/technologies/data_react.json";
@@ -72,9 +71,8 @@ const Technology = ({ params }: { params: any }) => {
 
   const technology = params.technologyId;
 
-  //знайти потрібний json за id (switch case)
   const getData = (): Data | null => {
-    let data: Data | null = null; // Initialize data with null
+    let data: Data | null = null;
     switch (technology) {
       case "java":
         data = data_java;
@@ -117,13 +115,8 @@ const Technology = ({ params }: { params: any }) => {
     title: data.heroSection.titleTech,
   };
 
-  //створити інтерфейс за json'oм для data ()
   return (
     <React.Fragment>
-      <head>
-        <title>{metadata.title}</title>
-      </head>
-
       <InfoNavigationComponent links={links} />
       <HeroSection heroTech={data.heroSection} />
       <CreationSection
@@ -140,12 +133,6 @@ const Technology = ({ params }: { params: any }) => {
         developmentSection={data.developmentSection}
       />
       <StagesSection stagesSection={data.stagesSection} />
-
-      {/* <ReviewsSection reviewsSection={data.reviewsSection} /> */}
-      {/* <OurProjects
-          data={data.projectsSection}
-          titleTech={data.heroSection.titleTech}
-        /> */}
     </React.Fragment>
   );
 };

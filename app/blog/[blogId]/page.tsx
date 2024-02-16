@@ -42,16 +42,8 @@ const Blog = ({ params }: { params: BlogParams }) => {
     { title: response.articleName, href: "#" },
   ];
 
-  const metadata = {
-    title: response.articleName,
-  };
-
   return (
     <React.Fragment>
-      <head>
-        <title>{metadata.title}</title>
-      </head>
-
       <InfoNavigationComponent links={links} />
       <ArticleSection response={response} />
       <InformationSection />
