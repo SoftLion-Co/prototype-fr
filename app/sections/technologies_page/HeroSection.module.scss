@@ -73,33 +73,101 @@
 
 .blur {
   position: absolute;
-  pointer-events: none;
+  z-index: -1;
 
-  &_item {
+  &_item1,
+  &_item2,
+  &_item3 {
     position: relative;
     pointer-events: none;
-
-    @include for-size(tablet) {
-      background-image: url(../../../images/blur/service_blurT.png);
-      background-repeat: no-repeat;
-      bottom: 30px;
-      width: 324px;
-      height: 283px;
-    }
+    filter: blur(100px);
+    opacity: 0.3;
 
     @include for-size(laptop) {
-      background-image: url(../../../images/blur/service_blurL.png);
-      background-repeat: no-repeat;
-      width: 450px;
-      height: 390px;
-      bottom: 50px;
+      opacity: 0.2;
     }
+  }
 
+  &_item1,
+  &_item2,
+  &_item3 {
+    @include for-size(tablet) {
+      width: 200px;
+      height: 160px;
+    }
+    @include for-size(laptop) {
+      width: 320px;
+      height: 240px;
+    }
     @include for-size(desktop) {
-      background-image: url(../../../images/blur/service_blurD.png);
-      background-repeat: no-repeat;
-      width: 588px;
-      height: 513px;
+      width: 400px;
+      height: 320px;
+    }
+  }
+
+  &_item1 {
+    @include for-size(tablet) {
+      border-radius: 100%;
+      background-image: linear-gradient(180deg, #36bde6 0, #36bde6 100%);
+      height: 240px;
+      right: -80px;
+      bottom: 80px;
+    }
+    @include for-size(laptop) {
+      height: 280px;
+      right: -100px;
+      bottom: 120px;
+    }
+    @include for-size(desktop) {
+      height: 420px;
+      right: -200px;
+      bottom: 160px;
+    }
+  }
+
+  &_item2 {
+    @include for-size(tablet) {
+      border-radius: 50%;
+      background-image: radial-gradient(
+        circle at 50% -20%,
+        #b61ab1 0,
+        #f33fed 100%
+      );
+      right: 40px;
+      top: -180px;
+    }
+    @include for-size(laptop) {
+      opacity: 0.3;
+      right: 100px;
+      bottom: 60px;
+    }
+    @include for-size(desktop) {
+      right: 20px;
+      top: -240px;
+    }
+  }
+
+  &_item3 {
+    @include for-size(tablet) {
+      border-radius: 75%;
+      background-image: radial-gradient(
+        circle at 50% -20%,
+        #13eb90 0,
+        #13eb90 100%
+      );
+      width: 280px;
+      right: -160px;
+      bottom: 200px;
+    }
+    @include for-size(laptop) {
+      width: 420px;
+      right: -180px;
+      bottom: 420px;
+    }
+    @include for-size(desktop) {
+      width: 800px;
+      right: -320px;
+      bottom: 600px;
     }
   }
 }
