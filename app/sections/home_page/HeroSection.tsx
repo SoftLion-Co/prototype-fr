@@ -47,8 +47,8 @@ const HeroSection = () => {
           className={s.hero__logo_desktop}
           src={heroLogoMobile}
           alt="SoftLion"
-          width={800}
-          height={554}
+          width={700}
+          height={400}
         />
 
         <div className={s.blur}>

@@ -72,11 +72,11 @@ const BlogDesktopComponent: FC<{ blogs: BlogInterface[] }> = ({ blogs }) => {
         }}
         align="center"
       >
-        {blogs.map((item, index) => (
-          <>
+        {blogs.reverse().map((item, index) => (
+          <div key={index}>
             {currentSlide === index ? (
               <div className={s.slider__card_extended}>
-                <Carousel.Slide key={index}>
+                <Carousel.Slide>
                   <BlogExtendedCardComponent data={item} />
                 </Carousel.Slide>
               </div>
@@ -115,7 +115,7 @@ const BlogDesktopComponent: FC<{ blogs: BlogInterface[] }> = ({ blogs }) => {
                 </Carousel.Slide>
               </div>
             )}
-          </>
+          </div>
         ))}
       </Carousel>
     </MotionWrapper>

@@ -64,7 +64,7 @@ const OurTeamSetcion = () => {
         <HeadingComponent className={s.team__title} text="Our team" />
         <MotionWrapper variants className={s.team__container}>
           {response.map((member) => (
-            <OurTeamCard data={member} isActive={false} />
+            <OurTeamCard key={member.id} data={member} isActive={false} />
           ))}
         </MotionWrapper>
       </MotionWrapper>
