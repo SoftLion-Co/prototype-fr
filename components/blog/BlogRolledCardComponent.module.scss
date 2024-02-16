@@ -15,7 +15,7 @@
 
   @include for-size(tablet) {
     width: 168px;
-    height: 207px;
+    height: 220px;
     border-radius: 26px;
     box-shadow: 4.7px 6.3px 4.7px 0px #00000025;
   }
@@ -87,10 +87,10 @@
       font-size: 16px;
     }
     @include for-size(laptop) {
-      font-size: 18px;
+      font-size: 20px;
     }
     @include for-size(desktop) {
-      font-size: 20px;
+      font-size: 24px;
     }
   }
 }

@@ -33,7 +33,7 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
           alt="Softlon image"
         />
         <div className={s.info}>
-          <h2 className={s.info__title}>{title}</h2>
+          <h3 className={s.info__title}>{title}</h3>
           <div className={s.info__author}>
             <Link href={`/authors/${authorId}`}>
               <Image
