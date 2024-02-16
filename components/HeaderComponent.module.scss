@@ -11,6 +11,10 @@
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   padding: 14px 14px 0 14px;
 
+  @include for-size(laptop) {
+    padding: 14px 24px 0 24px;
+  }
+
   &.header_hidden {
     transform: translateY(-100%);
     opacity: 0;
