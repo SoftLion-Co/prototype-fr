@@ -186,7 +186,6 @@
   }
 
   &__cards_wrapper {
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -198,7 +197,6 @@
     @include for-size(laptop) {
       flex-wrap: nowrap;
       justify-content: space-between;
-      gap: 0;
     }
   }
 
