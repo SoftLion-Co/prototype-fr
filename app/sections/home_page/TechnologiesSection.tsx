@@ -67,7 +67,7 @@ const TechnologiesSection = () => {
   }, []);
 
   return (
-    <section className={s.container} style={{ width: "100%" }}>
+    <section className={s.container}>
       <HeadingComponent className={s.technologies__title} text="Technologies" />
       <MotionWrapper
         initial

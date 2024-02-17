@@ -36,7 +36,7 @@ const EcommerceSection = () => {
   ];
 
   return (
-    <div className={s.container}>
+    <React.Fragment>
       <TitleServicesComponent
         position="left"
         num={"03"}
@@ -46,7 +46,7 @@ const EcommerceSection = () => {
       />
 
       <ServiceCardsComponent cardData={cardComponent} />
-    </div>
+    </React.Fragment>
   );
 };
 

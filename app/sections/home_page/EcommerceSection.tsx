@@ -37,7 +37,7 @@ const EcommerceSection = () => {
   ];
 
   return (
-    <MotionWrapper className={s.container}>
+    <React.Fragment>
       <TitleServicesComponent
         position="left"
         num={"01"}
@@ -46,7 +46,7 @@ const EcommerceSection = () => {
       />
       <ServiceCardsComponent cardData={cardComponent} />
       <SeeMoreButtonComponent path="services" />
-    </MotionWrapper>
+    </React.Fragment>
   );
 };
 
