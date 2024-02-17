@@ -67,55 +67,50 @@ const TechnologiesSection = () => {
   }, []);
 
   return (
-    <section className={s.technologies}>
-      <div className={s.container}>
-        <HeadingComponent
-          className={s.technologies__title}
-          text="Technologies"
-        />
-        <MotionWrapper
-          initial
-          viewport
-          variants
-          custom={2}
-          className={classNames(s.technologies__cards_wrapper)}
-        >
-          {technologiesData.map((tech) => (
+    <section className={s.container} style={{ width: "100%" }}>
+      <HeadingComponent className={s.technologies__title} text="Technologies" />
+      <MotionWrapper
+        initial
+        viewport
+        variants
+        custom={2}
+        className={classNames(s.technologies__cards_wrapper)}
+      >
+        {technologiesData.map((tech) => (
+          <div
+            key={tech.id}
+            className={classNames(
+              s.technologies__card_wrapper,
+              tech.isOpen ? s.clicked : "",
+              s.flip_card
+            )}
+            onClick={() => toggleIsOpen(tech.id)}
+          >
             <div
-              key={tech.id}
-              className={classNames(
-                s.technologies__card_wrapper,
-                tech.isOpen ? s.clicked : "",
-                s.flip_card
-              )}
-              onClick={() => toggleIsOpen(tech.id)}
+              className={classNames(s.flip_card_inner, s.technologies__cards)}
             >
-              <div
-                className={classNames(s.flip_card_inner, s.technologies__cards)}
-              >
-                <div className={s.flip_card_front}>
-                  <div className={s.technologies__icon_wrapper}>
-                    <BiExpandAlt className={s.technologies__icon_open} />
-                  </div>
-                  <div className={s.technologies__images}>
-                    <Image
-                      className={s.technologies__image}
-                      src={tech.imgSrc}
-                      alt={tech.imgSrc}
-                    />
-                  </div>
-                  <h3 className={s.technologies__description_photo}>
-                    {tech.imgAlt}
-                  </h3>
+              <div className={s.flip_card_front}>
+                <div className={s.technologies__icon_wrapper}>
+                  <BiExpandAlt className={s.technologies__icon_open} />
                 </div>
-                <div className={s.flip_card_back}>
-                  <p className={s.technologies__text}>{tech.description}</p>
+                <div className={s.technologies__images}>
+                  <Image
+                    className={s.technologies__image}
+                    src={tech.imgSrc}
+                    alt={tech.imgSrc}
+                  />
                 </div>
+                <h3 className={s.technologies__description_photo}>
+                  {tech.imgAlt}
+                </h3>
+              </div>
+              <div className={s.flip_card_back}>
+                <p className={s.technologies__text}>{tech.description}</p>
               </div>
             </div>
-          ))}
-        </MotionWrapper>
-      </div>
+          </div>
+        ))}
+      </MotionWrapper>
     </section>
   );
 };
