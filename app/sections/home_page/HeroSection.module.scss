@@ -109,6 +109,9 @@
     }
 
     &_shadow {
+      user-select: none;
+      pointer-events: none;
+
       @include for-size(phone) {
         display: none;
       }
@@ -190,6 +193,8 @@
 }
 
 .blur {
+  user-select: none;
+  pointer-events: none;
   position: absolute;
   z-index: -1;
 

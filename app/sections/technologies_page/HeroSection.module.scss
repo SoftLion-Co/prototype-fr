@@ -73,6 +73,8 @@
 
 .blur {
   position: absolute;
+  user-select: none;
+  pointer-events: none;
   z-index: -1;
 
   &_item1,

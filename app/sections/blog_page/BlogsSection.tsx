@@ -130,7 +130,9 @@ const BlogsSection = () => {
         <ServiceHeadingComponent headingText="Blog" tag="h1" />
 
         <div className={s.blur}>
-          <div className={s.blur_item}></div>
+          <div className={s.blur_item1}></div>
+          <div className={s.blur_item2}></div>
+          <div className={s.blur_item3}></div>
         </div>
 
         <MotionWrapper tag="div" initial viewport variants custom={2}>
