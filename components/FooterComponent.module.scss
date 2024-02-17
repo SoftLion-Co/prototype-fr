@@ -197,10 +197,20 @@
   &__icon {
     width: 22px;
     height: 22px;
+    transition: filter 0.15s ease-in-out;
 
+    @include for-size(laptop) {
+      width: 26px;
+      height: 26px;
+    }
     @include for-size(desktop) {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
+    }
+
+    &:hover {
+      filter: invert(46%) sepia(77%) saturate(422%) hue-rotate(155deg)
+        brightness(90%) contrast(91%);
     }
   }
 
