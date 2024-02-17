@@ -9,7 +9,7 @@ import MotionWrapper from "@/hooks/MotionWrapper";
 
 const CustomAppsSection = () => {
   return (
-    <React.Fragment>
+    <div>
       <TitleServicesComponent
         num="02"
         text="Custom Apps"
@@ -39,7 +39,7 @@ const CustomAppsSection = () => {
       </MotionWrapper>
 
       <SeeMoreButtonComponent path="services" />
-    </React.Fragment>
+    </div>
   );
 };
 
