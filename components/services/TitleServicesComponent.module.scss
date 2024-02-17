@@ -5,6 +5,18 @@
   display: inline-flex;
   flex-direction: column;
   width: max-content;
+  margin-bottom: 40px;
+
+  @include for-size(tablet) {
+    margin-bottom: 60px;
+  }
+  @include for-size(laptop) {
+    margin-bottom: 80px;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 100px;
+  }
+
   &__blue {
     color: $heading-blue-color;
   }
@@ -15,20 +27,6 @@
 
   &__green {
     color: $main-green-color;
-  }
-
-  &__container {
-    margin-bottom: 40px;
-
-    @include for-size(tablet) {
-      margin-bottom: 50px;
-    }
-    @include for-size(laptop) {
-      margin-bottom: 80px;
-    }
-    @include for-size(desktop) {
-      margin-bottom: 100px;
-    }
   }
 
   &__num {
