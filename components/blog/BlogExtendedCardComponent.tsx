@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
+import Arrow from "@/images/navigation/arrow-default.svg";
 import { PiArrowRightThin } from "react-icons/pi";
 import { BlogInterface } from "./BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
@@ -22,6 +23,7 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
   } = data;
   const authorsData: { [key: string]: AuthorInterface } = authors;
   const author = authorsData[authorId];
+
   return (
     <div className={s.card}>
       <div className={s.card__container}>
@@ -63,7 +65,9 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
           </div>
         </div>
       </div>
+
       <div className={s.card__line}></div>
+
       <div className={s.article}>
         <div className={s.article__container}>
           <div className={s.tags}>
@@ -77,11 +81,7 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
         </div>
 
         <Link href={`/blog/${id}`}>
-          <PiArrowRightThin
-            className={s.card__arrowIcon}
-            color="black"
-            size="2.5em"
-          />
+          <Image src={Arrow} alt="Arrow" className={s.card__arrowIcon} />
         </Link>
       </div>
     </div>

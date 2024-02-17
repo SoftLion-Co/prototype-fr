@@ -7,7 +7,7 @@ import MotionWrapper from "@/hooks/MotionWrapper";
 
 const OurServicesSection = () => {
   return (
-    <MotionWrapper tag="section" className={s.services}>
+    <MotionWrapper tag="section" className={s.container}>
       <OurServicesHeadingComponent />
       <EcommerceSection />
       <CustomAppsSection />

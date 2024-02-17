@@ -1,3 +1,4 @@
+import React from "react";
 import s from "./CustomAppsSection.module.scss";
 import CustomAppsCardComponent from "@/components/services/CustomAppsCardComponent";
 import TitleServicesComponent from "@/components/services/TitleServicesComponent";
@@ -8,7 +9,7 @@ import MotionWrapper from "@/hooks/MotionWrapper";
 
 const CustomAppsSection = () => {
   return (
-    <div className={s.container}>
+    <React.Fragment>
       <TitleServicesComponent
         num="02"
         text="Custom Apps"
@@ -38,7 +39,7 @@ const CustomAppsSection = () => {
       </MotionWrapper>
 
       <SeeMoreButtonComponent path="services" />
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -41,7 +41,7 @@ const SmallServiceCardComponent: FC<SmallServiceCardComponentProps> = ({
       <Image
         className={s.service__vector}
         src={vector}
-        alt={vector}
+        alt="Click me"
         width={100}
         height={100}
       />
