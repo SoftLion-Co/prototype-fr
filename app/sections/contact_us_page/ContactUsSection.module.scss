@@ -45,6 +45,8 @@
 }
 
 .blur {
+  user-select: none;
+  pointer-events: none;
   position: absolute;
   z-index: -1;
 

@@ -81,9 +81,11 @@
 }
 
 .blur {
+  user-select: none;
+  pointer-events: none;
   position: absolute;
   z-index: -1;
-  
+
   &_item1,
   &_item2,
   &_item3 {
