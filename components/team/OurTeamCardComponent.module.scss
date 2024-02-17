@@ -125,10 +125,9 @@
 }
 
 .member__linkedin {
-  color: $blog-card-text-color;
-
   @include for-size(tablet) {
-    color: $heading-blue-color;
+    filter: invert(46%) sepia(77%) saturate(422%) hue-rotate(155deg)
+      brightness(90%) contrast(91%);
   }
 }
 

@@ -4,9 +4,12 @@ import s from "./FooterComponent.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "./../images/logo.svg";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { FiLinkedin, FiFacebook } from "react-icons/fi";
+
 import MainButtonComponent from "./MainButtonComponent";
+
+import Instagram from "@/images/social-lincs/icon-instagram.svg";
+import Facebook from "@/images/social-lincs/icon-facebook.svg";
+import Linkedin from "@/images/social-lincs/icon-linkedin.svg";
 
 const FooterComponent = () => {
   const routes: { path: string; label: string }[] = [
@@ -18,16 +21,18 @@ const FooterComponent = () => {
   ];
   const socialLinks: { url: string; icon: JSX.Element }[] = [
     {
-      url: "https://www.linkedin.com/company/softlion/",
-      icon: <FiLinkedin className={s.footer__icon} />,
-    },
-    {
       url: "https://instagram.com/softlion_co/",
-      icon: <AiOutlineInstagram className={s.footer__icon} />,
+      icon: (
+        <Image src={Instagram} alt="Instagram" className={s.footer__icon} />
+      ),
     },
     {
       url: "https://www.facebook.com/people/SoftLion/100093384261914/",
-      icon: <FiFacebook className={s.footer__icon} />,
+      icon: <Image src={Facebook} alt="Facebook" className={s.footer__icon} />,
+    },
+    {
+      url: "https://www.linkedin.com/company/softlion/",
+      icon: <Image src={Linkedin} alt="Linkedin" className={s.footer__icon} />,
     },
   ];
 

@@ -1,9 +1,9 @@
+import { FC } from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import s from "./OurTeamCardComponent.module.scss";
-import { FC } from "react";
 import classNames from "classnames";
-import { FiLinkedin } from "react-icons/fi";
+import Linkedin from "@/images/social-lincs/icon-linkedin.svg";
 import { usePathname } from "next/navigation";
 import MotionWrapper from "@/hooks/MotionWrapper";
 
@@ -67,7 +67,11 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FiLinkedin className={s.linkedin__icon} />
+              <Image
+                src={Linkedin}
+                alt="Linkedin"
+                className={s.linkedin__icon}
+              />
             </Link>
           </>
         ) : null}
