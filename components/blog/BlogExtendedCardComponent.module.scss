@@ -87,9 +87,6 @@
     align-self: start;
     text-overflow: ellipsis;
 
-    @include for-size(tablet) {
-      width: 290px;
-    }
     @include for-size(laptop) {
       width: 420px;
     }
@@ -200,13 +197,15 @@
 .article {
   display: flex;
   align-items: end;
+  flex-direction: column;
   font-size: 14px;
-  gap: 10px;
+  gap: 18px;
 
   @include for-size(tablet) {
     gap: 12px;
   }
   @include for-size(laptop) {
+    flex-direction: row;
     gap: 18px;
   }
   @include for-size(desktop) {
