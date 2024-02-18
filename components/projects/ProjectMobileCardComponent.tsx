@@ -23,8 +23,8 @@ const ProjectMobileCardComponent: FC<{ data: ProjectData }> = ({ data }) => {
             className={s.card__image}
             src={data.image}
             alt="Project Image"
-            width={16000}
-            height={19000}
+            width={215}
+            height={110}
           />
           <div className={s.card__tags}>
             <h3 className={s.card__title}>{data.title}</h3>
@@ -39,16 +39,14 @@ const ProjectMobileCardComponent: FC<{ data: ProjectData }> = ({ data }) => {
         </div>
         <div className={s.card__submain}>
           <div className={s.card__subinfo}>
-            <p className={s.card__customer}>{data.customer}</p>
-            <p className={s.card__year}>{data.year}</p>
-            <p className={s.card__author}>{data.author}</p>
+            <p>{data.customer}</p>
+            <p>{data.year}</p>
+            <p>{data.author}</p>
           </div>
-          <div className={s.card__desc}>
-            <div className={s.card__subdesc}>
-              <p>{data.description}</p>
-            </div>
+          <div className={s.card__subdesc}>
+            <p className={s.card__text}>{data.description}</p>
           </div>
-        </div>{" "}
+        </div>
       </Link>
     </div>
   );

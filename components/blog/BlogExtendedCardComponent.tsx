@@ -29,8 +29,8 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
       <div className={s.card__container}>
         <Image
           className={s.image}
-          height={300}
-          width={300}
+          height={150}
+          width={150}
           src={imageSrc}
           alt="Softlon image"
         />

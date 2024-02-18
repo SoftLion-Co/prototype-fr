@@ -9,8 +9,8 @@
   &__main {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 21px 15px 10px 7px;
+    gap: 14px;
+    padding: 20px 8px 10px 8px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   }
 
@@ -22,7 +22,7 @@
   }
 
   &__image {
-    max-width: 46.8%;
+    max-width: 47%;
     height: auto;
     border-radius: 16px;
   }
@@ -38,12 +38,12 @@
   &__subinfo {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 49%;
+    gap: 8px;
+    width: 50%;
   }
 
   &__desc {
-    width: 54%;
+    width: 55%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -51,7 +51,7 @@
   }
 
   &__subdesc {
-    width: 85%;
+    width: 55%;
   }
 
   &__arrow_icon {
