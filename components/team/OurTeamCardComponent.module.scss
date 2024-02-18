@@ -125,9 +125,13 @@
 }
 
 .member__linkedin {
-  @include for-size(tablet) {
-    filter: invert(46%) sepia(77%) saturate(422%) hue-rotate(155deg)
-      brightness(90%) contrast(91%);
+  transition: filter 0.3s ease-in-out;
+
+  &:hover {
+    @include for-size(tablet) {
+      filter: invert(46%) sepia(77%) saturate(422%) hue-rotate(155deg)
+        brightness(90%) contrast(91%);
+    }
   }
 }
 

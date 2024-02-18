@@ -45,6 +45,8 @@ ol {
 
 img {
   display: block;
+  user-select: none;
+  pointer-events: none;
   max-width: 100%;
   height: auto;
 }
