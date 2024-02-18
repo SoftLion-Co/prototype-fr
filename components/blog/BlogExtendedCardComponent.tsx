@@ -3,7 +3,6 @@ import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
 import Arrow from "@/images/navigation/arrow-default.svg";
-import { PiArrowRightThin } from "react-icons/pi";
 import { BlogInterface } from "./BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
@@ -29,8 +28,8 @@ const BlogExtendedCardComponent: FC<{ data: BlogInterface }> = ({ data }) => {
       <div className={s.card__container}>
         <Image
           className={s.image}
-          height={300}
-          width={300}
+          height={150}
+          width={150}
           src={imageSrc}
           alt="Softlon image"
         />

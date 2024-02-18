@@ -45,8 +45,8 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
         >
           <Image
             className={s.member_avatar_img}
-            width={800}
-            height={600}
+            width={400}
+            height={300}
             src={data.avatar}
             alt={data.name + data.id}
           />
