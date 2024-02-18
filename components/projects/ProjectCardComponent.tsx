@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import s from "./ProjectCardComponent.module.scss";
 import Image from "next/image";
-import { PiArrowRightThin } from "react-icons/pi";
+import s from "./ProjectCardComponent.module.scss";
+import Arrow from "@/images/navigation/arrow-default.svg";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -57,7 +57,8 @@ const ProjectCardComponent: FC<ProjectCardProps> = ({ data }) => {
           <h3 className={s.card__title}>{data.title}</h3>
           <p className={s.card__description}>{data.description}</p>
         </div>
-        <PiArrowRightThin className={s.card__arrowIcon} />
+
+        <Image src={Arrow} alt="Arrow" className={s.card__arrowIcon} />
       </div>
     </Link>
   );
