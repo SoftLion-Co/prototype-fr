@@ -3,7 +3,6 @@ import Image from "next/image";
 import s from "./BlogExtendedCardComponent.module.scss";
 import Link from "next/link";
 import Arrow from "@/images/navigation/arrow-default.svg";
-import { PiArrowRightThin } from "react-icons/pi";
 import { BlogInterface } from "./BlogInteface";
 import { AuthorInterface } from "@/app/sections/author_page/AuthorInteface";
 import authors from "@/data/blog/authors_data.json";
