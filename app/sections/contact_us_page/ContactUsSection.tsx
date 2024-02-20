@@ -13,6 +13,8 @@ const ContactUsSection: FC<Attributes> = ({ className }) => {
   return (
     <section className={classNames(className)}>
       <div className={classNames(s.container, s.our__form)}>
+        <FormComponent title="Book consultation" />
+
         <div className={s.heading}>
           <HeadingComponent
             className={s.heading__title}
@@ -34,13 +36,11 @@ const ContactUsSection: FC<Attributes> = ({ className }) => {
           </MotionWrapper>
         </div>
 
-        <FormComponent title="Book consultation" />
-
-        <MotionWrapper initial viewport variants custom={2} className={s.blur}>
+        {/* <MotionWrapper initial viewport variants custom={2} className={s.blur}>
           <div className={s.blur_item1}></div>
           <div className={s.blur_item2}></div>
           <div className={s.blur_item3}></div>
-        </MotionWrapper>
+        </MotionWrapper> */}
       </div>
     </section>
   );
