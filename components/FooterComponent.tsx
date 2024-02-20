@@ -103,7 +103,7 @@ const FooterComponent = () => {
               </div>
               <div className={s.footer__btn}>
                 <MainButtonComponent
-                  color="dark-blue"
+                  color="blue"
                   path="contact-us"
                   className={s.footer__btn_text}
                 >

@@ -110,7 +110,7 @@ const FormComponent: FC<FormProps> = ({ title }) => {
             <PhoneInput
               inputProps={{
                 required: true,
-                name: "numberPhone",
+                name: "Number Phone",
                 className: `${s.form__field} ${s.phoneInput} ${
                   errors.numberPhone ? s.invalidField : ""
                 }`,
