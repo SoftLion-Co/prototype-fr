@@ -64,14 +64,14 @@
     @include for-size(desktop) {
       gap: 10px;
     }
+  }
 
-    .member__name,
-    .member__position {
-      color: $blog-card-text-color;
+  .member__name,
+  .member__position {
+    color: $blog-card-text-color;
 
-      @include for-size(tablet) {
-        text-align: center;
-      }
+    @include for-size(tablet) {
+      text-align: center;
     }
   }
 
