@@ -37,7 +37,7 @@ export default function RootLayout({
 
       <body>
         <HeaderComponent />
-        <main className={classNames(s.page, s.main)} id="layout">
+        <main className={s.page} id="layout">
           {children}
         </main>
         <FooterComponent />
