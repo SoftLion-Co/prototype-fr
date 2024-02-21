@@ -53,7 +53,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
         </Link>
       </div>
       <div className={s.member__information}>
-        <h3 className={s.member__name}>{data.name}</h3>
+        <h4 className={s.member__name}>{data.name}</h4>
         {isActive || isOnHomePage ? (
           <>
             <p className={s.member__position}>{data.position}</p>
@@ -71,6 +71,8 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
                 src={Linkedin}
                 alt="Linkedin"
                 className={s.linkedin__icon}
+                width={24}
+                height={24}
               />
             </Link>
           </>

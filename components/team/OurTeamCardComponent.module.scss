@@ -48,6 +48,32 @@
       width: 200px;
       height: 200px;
     }
+
+    &_img {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover .member__avatar_img {
+      transform: scale(1.1) translateY(8px);
+    }
+  }
+
+  &__linkedin {
+    width: 16px;
+    height: 16px;
+
+    @include for-size(tablet) {
+      width: 18px;
+      height: 18px;
+    }
+    @include for-size(laptop) {
+      width: 22px;
+      height: 22px;
+    }
+    @include for-size(desktop) {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__information {
@@ -64,14 +90,14 @@
     @include for-size(desktop) {
       gap: 10px;
     }
-  }
 
-  .member__name,
-  .member__position {
-    color: $blog-card-text-color;
+    .member__name,
+    .member__position {
+      color: $blog-card-text-color;
 
-    @include for-size(tablet) {
-      text-align: center;
+      @include for-size(tablet) {
+        text-align: center;
+      }
     }
   }
 
@@ -103,58 +129,14 @@
 
     .member__position {
       color: $blog-card-text-color;
-      font-size: 12px;
       font-weight: 400;
-      line-height: 130%;
-      letter-spacing: 0.4px;
-
-      @include for-size(tablet) {
-        font-size: 14px;
-        letter-spacing: 0.6px;
-      }
-      @include for-size(laptop) {
-        font-size: 16px;
-        letter-spacing: 0.8px;
-      }
-      @include for-size(desktop) {
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
     }
   }
 }
 
 .member__linkedin {
-  transition: filter 0.3s ease-in-out;
-  width: 18px;
-  height: 18px;
-
   @include for-size(tablet) {
-    width: 22px;
-    height: 22px;
-  }
-  @include for-size(laptop) {
-    width: 26px;
-    height: 26px;
-  }
-  @include for-size(desktop) {
-    width: 28px;
-    height: 28px;
-  }
-
-  &:hover {
-    @include for-size(tablet) {
-      filter: invert(46%) sepia(77%) saturate(422%) hue-rotate(155deg)
-        brightness(90%) contrast(91%);
-    }
-  }
-}
-
-.member__avatar_img {
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.4) translateY(8px);
+    filter: invert(46%) sepia(77%) saturate(422%) hue-rotate(155deg)
+      brightness(90%) contrast(91%);
   }
 }
