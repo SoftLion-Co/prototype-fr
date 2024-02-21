@@ -6,19 +6,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: calc(100vh - 360px);
+  gap: 24px;
   min-height: 300px;
+  margin: 40px 0;
 
-  @include for-size(tablet){
-    height: calc(100vh - 330px);
+  @include for-size(tablet) {
+    margin: 60px 0;
   }
-
-  @include for-size(laptop){
-    height: calc(100vh - 430px);
+  @include for-size(laptop) {
+    margin: 80px 0;
   }
-
-  @include for-size(desktop){
-    height: calc(100vh - 550px);
+  @include for-size(desktop) {
+    margin: 100px 0;
   }
 
   &__paragraph {
