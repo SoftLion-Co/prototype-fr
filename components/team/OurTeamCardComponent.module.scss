@@ -150,11 +150,11 @@
   }
 }
 
-.member_avatar_img {
+.member__avatar_img {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.1) translateY(8px);
+    transform: scale(1.4) translateY(8px);
   }
 }

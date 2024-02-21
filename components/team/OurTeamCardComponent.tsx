@@ -44,16 +44,16 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
           rel="noopener noreferrer"
         >
           <Image
-            className={s.member_avatar_img}
-            width={400}
-            height={300}
+            className={s.member__avatar_img}
+            width={800}
+            height={600}
             src={data.avatar}
             alt={data.name + data.id}
           />
         </Link>
       </div>
       <div className={s.member__information}>
-        <h4 className={s.member__name}>{data.name}</h4>
+        <h3 className={s.member__name}>{data.name}</h3>
         {isActive || isOnHomePage ? (
           <>
             <p className={s.member__position}>{data.position}</p>
