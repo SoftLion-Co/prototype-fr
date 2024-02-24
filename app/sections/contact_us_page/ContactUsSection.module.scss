@@ -34,12 +34,12 @@
 
 .our__form {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: column-reverse;
+  
   @include for-size(tablet) {
     display: flex;
     width: 100%;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
   }
 }

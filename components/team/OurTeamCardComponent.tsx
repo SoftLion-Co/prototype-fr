@@ -44,9 +44,9 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
           rel="noopener noreferrer"
         >
           <Image
-            className={s.member_avatar_img}
-            width={400}
-            height={300}
+            className={s.member__avatar_img}
+            width={800}
+            height={600}
             src={data.avatar}
             alt={data.name + data.id}
           />
@@ -71,6 +71,8 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
                 src={Linkedin}
                 alt="Linkedin"
                 className={s.linkedin__icon}
+                width={24}
+                height={24}
               />
             </Link>
           </>
