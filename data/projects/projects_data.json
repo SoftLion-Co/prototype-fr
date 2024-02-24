@@ -7,8 +7,20 @@
     "year": "2023",
     "author": "SoftLion",
     "description": "In this project, we developed the design, implemented it, and provide further support",
-    "technology": [".NET", "TS", "React.js"],
+    "technology": [".NET", "TS", "React.js", "Next.js"],
     "country": "Germany",
     "countryCode": "DE"
+  },
+  {
+    "id": 2,
+    "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/main/images/project/project-clb/CLB-1.webp",
+    "title": "Commodities & Logistics Brokers",
+    "customer": "Commodities & Logistics Brokers",
+    "year": "2024",
+    "author": "SoftLion",
+    "description": "In this project, we developed the design, implemented it, and provide further support",
+    "technology": ["WP", "PHP", "TS", "React.js", "Next.js"],
+    "country": "Spain",
+    "countryCode": "ES"
   }
 ]

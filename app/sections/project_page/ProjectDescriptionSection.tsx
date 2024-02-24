@@ -31,8 +31,8 @@ const ProjectDescriptionSection: FC<{ data: ProjectDescriptionData }> = ({
           </div>
           <Image
             className={s.article__image}
-            height={300}
-            width={500}
+            height={900}
+            width={1500}
             src={imgSrc}
             alt={title}
           />
