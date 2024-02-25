@@ -79,7 +79,7 @@
       "time": "2 month",
       "year": 2024,
       "location": "Spain",
-      "imgSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-1.webp"
+      "imgSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-1.png?raw=true"
     },
     "RequestSection": {
       "paragraph": "Properly formulating a request plays a crucial role in the project development process. It is a key step that allows us to understand your needs, requirements, and expectations. When you provide detailed descriptions of your goals and desired outcomes, it provides us with the necessary information for successful website or application development",
@@ -123,13 +123,13 @@
       ],
       "images": [
         {
-          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-1.webp"
+          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-3.png?raw=true"
         },
         {
-          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-2.webp"
+          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-2.png?raw=true"
         },
         {
-          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-4.webp"
+          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-4.png?raw=true"
         }
       ]
     },
