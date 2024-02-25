@@ -15,7 +15,7 @@
   @include for-size(laptop) {
     max-width: 550px;
     margin: 0 auto;
-    align-items: flex-end;
+    align-items: end;
   }
   @include for-size(desktop) {
     max-width: 720px;

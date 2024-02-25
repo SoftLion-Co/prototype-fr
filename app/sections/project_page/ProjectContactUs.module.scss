@@ -13,7 +13,7 @@
   justify-content: center;
 
   @include for-size(tablet) {
-    justify-content: flex-start;
+    justify-content: start;
   }
 }
 

@@ -17,7 +17,7 @@
     align-items: center;
 
     @include for-size(tablet) {
-      align-items: flex-start;
+      align-items: start;
       max-width: 310px;
     }
     @include for-size(laptop) {
