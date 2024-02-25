@@ -6,7 +6,7 @@ import Image from "next/image";
 
 interface ResultSectionProps {
   data: string[];
-  images: string[]; // Add images prop here
+  images: string[];
 }
 
 const ResultSection: FC<ResultSectionProps> = ({ data, images }) => {
