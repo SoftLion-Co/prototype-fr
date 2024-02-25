@@ -5,8 +5,8 @@
       "description": "Trend is a contemporary sports goods marketplace, designed to offer a convenient and exciting shopping experience. We've created this online store to consolidate a wide range of sporting goods and provide a straightforward, efficient way to shop for renowned sports brands.",
       "time": "5 month",
       "year": 2023,
-      "location": "Europe",
-      "imgSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true"
+      "location": "Germany",
+      "imgSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-trend/trend-hero(light).webp"
     },
     "RequestSection": {
       "paragraph": "Properly formulating a request plays a crucial role in the project development process. It is a key step that allows us to understand your needs, requirements, and expectations. When you provide detailed descriptions of your goals and desired outcomes, it provides us with the necessary information for successful website or application development",
@@ -75,30 +75,30 @@
   "2": {
     "ProjectDescriptionSection": {
       "title": "CLB",
-      "description": "Trend is a contemporary sports goods marketplace, designed to offer a convenient and exciting shopping experience. We've created this online store to consolidate a wide range of sporting goods and provide a straightforward, efficient way to shop for renowned sports brands.",
+      "description": "Commodities & Logistics Brokers, a global leader in agricultural commodities, offers optimized supply and distribution of high-quality products worldwide, prioritizing seamless transactions and customer satisfaction.",
       "time": "2 month",
       "year": 2024,
       "location": "Spain",
-      "imgSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-1.png?raw=true"
+      "imgSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-1.webp"
     },
     "RequestSection": {
       "paragraph": "Properly formulating a request plays a crucial role in the project development process. It is a key step that allows us to understand your needs, requirements, and expectations. When you provide detailed descriptions of your goals and desired outcomes, it provides us with the necessary information for successful website or application development",
       "arrays": [
         {
           "id": 1,
-          "text": "Inconsistent mobile display, causing inconvenience for users accessing the website from different devices."
+          "text": "Inconsistent display on mobile devices, which makes it difficult for users to connect a website from different devices."
         },
         {
           "id": 2,
-          "text": "Lack of insights into user behavior and site performance due to the absence of analytics and tracking tools."
+          "text": "A variety of analytics and support tools that would allow us to collect information about the behavior of clients and the productivity of the site."
         },
         {
           "id": 3,
-          "text": "Difficulty in booking services that require reservations, leading to a loss of potential revenue."
+          "text": "There are options for armored services that will require a reservation before losing potential income."
         },
         {
           "id": 4,
-          "text": "Limited customer support and after-sales service, resulting in dissatisfaction and reduced customer loyalty."
+          "text": "Customer support and service after sales are limited, which leads to dissatisfaction and a change in customer loyalty."
         }
       ]
     },
@@ -106,37 +106,37 @@
       "paragraphs": [
         {
           "title": "Mobile Compatibility",
-          "description": "To address mobile display issues, we have implemented responsive design practices. This ensures that our website adapts seamlessly to various devices, providing a consistent and user-friendly experience for all visitors."
+          "description": "We've employed responsive design techniques to tackle mobile display issues. This guarantees that our site adjusts seamlessly to various devices, delivering a uniform and intuitive experience for all users."
         },
         {
           "title": "Analytics and Tracking",
-          "description": "We have integrated robust analytics and tracking tools, such as Google Analytics, to gather valuable insights into user behavior, website visits, and conversions. This data-driven approach enables us to make informed decisions for further website improvements and marketing strategies."
+          "description": "Our implementation of robust analytics tools, such as Google Analytics, allows us to collect valuable data on user behavior, site visits, and conversions. This data-driven approach empowers us to make informed decisions for ongoing website enhancements and marketing strategies."
         },
         {
-          "title": "Convenient Online Booking System",
-          "description": "To simplify the booking process for services requiring reservations, we have developed a user-friendly online booking system. Customers can easily schedule appointments and reserve services with just a few clicks, enhancing their overall shopping experience."
+          "title": "Convenient Online Browsing System",
+          "description": "Convenient Online Crop Browsing System: We have introduced a user-friendly online Crop Browsing System to simplify the service review process. Customers can easily view and book services with just a few clicks, enhancing the overall browsing experience."
         },
         {
           "title": "Support and After-Sales Service",
-          "description": "We've established a dedicated customer support system that includes live chat support, email ticketing systems, and a responsive customer support team. This ensures quick and efficient resolution of customer inquiries and concerns, fostering reliable cooperation and increasing customer satisfaction."
+          "description": "We've established a dedicated customer support infrastructure, including live chat, email ticketing, and a responsive support team. This ensures swift and effective resolution of customer queries and issues, fostering trust and bolstering customer satisfaction."
         }
       ],
       "images": [
         {
-          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-3.png?raw=true"
+          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-3.webp"
         },
         {
-          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-2.png?raw=true"
+          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-2.webp"
         },
         {
-          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-clb/CLB-4.png?raw=true"
+          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/test/images/project/project-clb/CLB-4.webp"
         }
       ]
     },
     "ResultSection": [
-      "Users now experience a consistent and user-friendly shopping experience across various devices, increasing accessibility and satisfaction. Valuable insights from analytics and tracking tools enable data-driven decision-making, leading to better marketing strategies and website enhancements.",
+      "Users now experience a consistent and convenient crop tracking process across devices, increasing accessibility and satisfaction. Valuable insights from analytics and tracking tools allow you to make data-driven decisions that lead to better marketing strategies and website improvements.",
 
-      "The convenient online booking system has streamlined the reservation process, contributing to increased revenue and customer satisfaction. Our dedicated customer support system has fostered reliable cooperation and higher customer satisfaction.",
+      "A convenient system for online selection of agricultural crops by country has simplified the booking process, contributing to increased revenues and customer satisfaction. Our dedicated customer support system has contributed to reliable cooperation and increased customer satisfaction.",
 
       "Fast page loading times ensure a more enjoyable and efficient browsing experience for our users, enhancing overall website performance. We're also enhancing our SEO optimization practices to boost the visibility of our marketplace in search engines and generate more organic traffic."
     ],
