@@ -29,6 +29,7 @@ interface ProjectData {
     images: { imageSrc: string }[];
   };
   ResultSection: string[];
+  ResultImage: string[];
 }
 
 type ResponseData = {
@@ -53,7 +54,10 @@ const Project = ({ params }: { params: any }) => {
       <ProjectDescriptionSection data={projectData.ProjectDescriptionSection} />
       <RequestSection data={projectData.RequestSection} />
       <SolutionSection data={projectData.SolutionSection} />
-      <ResultSection data={projectData.ResultSection} />
+      <ResultSection
+        data={projectData.ResultSection}
+        images={projectData.ResultImage}
+      />
       <BlogSection />
       <ProjectContactUs className={s.project__contactUs} />
     </React.Fragment>

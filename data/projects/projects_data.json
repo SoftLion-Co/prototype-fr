@@ -2,7 +2,7 @@
   {
     "id": 1,
     "image": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero.png?raw=true",
-    "title": "Trend company",
+    "title": "Trend Company",
     "customer": "Trend",
     "year": "2023",
     "author": "SoftLion",
@@ -15,7 +15,7 @@
     "id": 2,
     "image": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/main/images/project/project-clb/CLB-1.webp",
     "title": "Commodities & Logistics Brokers",
-    "customer": "Commodities & Logistics Brokers",
+    "customer": "CLB",
     "year": "2024",
     "author": "SoftLion",
     "description": "In this project, we developed the design, implemented it, and provide further support",
