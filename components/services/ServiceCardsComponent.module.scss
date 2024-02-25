@@ -27,7 +27,7 @@
   }
 
   &__card_left {
-    align-self: flex-start;
+    align-self: start;
     margin-top: auto;
   }
 
@@ -39,7 +39,7 @@
   }
 
   &__card_right {
-    align-self: flex-end;
+    align-self: end;
     margin-bottom: auto;
   }
 

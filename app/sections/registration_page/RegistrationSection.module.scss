@@ -91,7 +91,7 @@
   gap: 10px;
 
   @include for-size(tablet) {
-    align-items: flex-start;
+    align-items: start;
     gap: 9px;
   }
 

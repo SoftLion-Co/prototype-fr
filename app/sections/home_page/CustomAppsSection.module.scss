@@ -11,7 +11,7 @@
     @include for-size(tablet) {
       flex-direction: row;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: start;
       gap: 20px;
 
       & > :first-child {

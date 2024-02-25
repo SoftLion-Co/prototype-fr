@@ -61,7 +61,7 @@
     justify-content: center;
 
     @include for-size(tablet) {
-      justify-content: flex-end;
+      justify-content: end;
     }
   }
 }

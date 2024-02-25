@@ -70,7 +70,7 @@
 
     @include for-size(tablet) {
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: end;
       min-height: 140px;
       margin-top: -20px;
     }
