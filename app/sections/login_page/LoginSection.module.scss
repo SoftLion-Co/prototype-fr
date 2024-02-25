@@ -11,7 +11,7 @@
   margin-bottom: 32px;
 
   @include for-size(tablet) {
-    align-items: flex-start;
+    align-items: start;
     margin-bottom: 43px;
     gap: 20px;
   }

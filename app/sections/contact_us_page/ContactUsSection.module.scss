@@ -9,7 +9,7 @@
   margin-bottom: 40px;
 
   @include for-size(tablet) {
-    align-items: flex-end;
+    align-items: end;
     margin-bottom: 0;
   }
 

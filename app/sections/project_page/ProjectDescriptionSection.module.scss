@@ -90,7 +90,7 @@
     box-shadow: 3.7px 2px 4px 0px #00000040;
 
     @include for-size(tablet) {
-      align-self: flex-end;
+      align-self: end;
       width: 410px;
       height: 240px;
       border-radius: 26px;
