@@ -19,20 +19,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </head>
-
       <Head>
         <meta
           name="description"
           content="SoftLion - Your Trusted Partner in IT Services and Consulting. We provide web development, consulting, and technology solutions to drive your business growth."
         />
-
         <meta
           name="keywords"
           content="софтлайон, web-company, shopify, development, outsourcing, programming outsourcing"
         />
+        <meta name="robots" content="nosnippet" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>{metadata.title}</title>
       </Head>
 
       <body>
