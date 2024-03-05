@@ -1,6 +1,5 @@
 import Head from "next/head";
 import "./../styles/main.scss";
-import classNames from "classnames";
 import s from "./layout.module.scss";
 
 import HeaderComponent from "../components/HeaderComponent";
@@ -8,6 +7,7 @@ import FooterComponent from "@/components/FooterComponent";
 
 export const metadata = {
   title: "SoftLion",
+
   description:
     "Embrace the Lion's Share Technological Advancements with SoftLion",
 };
@@ -28,7 +28,7 @@ export default function RootLayout({
           name="keywords"
           content="софтлайон, web-company, shopify, development, outsourcing, programming outsourcing"
         />
-        <meta name="robots" content="nosnippet" />
+        <meta name="robots" content="noimageindex" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>{metadata.title}</title>
       </Head>
