@@ -1,13 +1,11 @@
-import Head from "next/head";
+import React from "react";
+import HeaderComponent from "../components/HeaderComponent";
+import FooterComponent from "@/components/FooterComponent";
 import "./../styles/main.scss";
 import s from "./layout.module.scss";
 
-import HeaderComponent from "../components/HeaderComponent";
-import FooterComponent from "@/components/FooterComponent";
-
 export const metadata = {
   title: "SoftLion",
-
   description:
     "Embrace the Lion's Share Technological Advancements with SoftLion",
 };
@@ -19,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta name="description" content={metadata.description} />
         <meta
           name="keywords"
@@ -28,7 +26,7 @@ export default function RootLayout({
         <meta name="robots" content="noimageindex" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>{metadata.title}</title>
-      </Head>
+      </head>
 
       <body>
         <HeaderComponent />
