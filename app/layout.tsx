@@ -20,14 +20,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <meta name="description" content={metadata.description} />
+        <title>{metadata.title}</title>
+        <meta
+          name="description"
+          content="Embrace the Lion's Share Technological Advancements with SoftLion"
+          key="desc"
+        />
         <meta
           name="keywords"
           content="софтлайон, web-company, shopify, development, outsourcing, programming outsourcing"
         />
-        <meta name="robots" content="noimageindex" />
+        <meta property="og:title" content="SoftLion - E-commerce" />
+        <meta
+          property="og:description"
+          content="Embrace the Lion's Share Technological Advancements with SoftLion"
+        />
+        <meta property="og:image" content="noimageindex" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <title>{metadata.title}</title>
       </Head>
 
       <body>
