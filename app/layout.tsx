@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet";
+
 import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "@/components/FooterComponent";
 import "./../styles/main.scss";
@@ -17,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      {/* <Helmet>
         <meta name="description" content={metadata.description} />
         <meta
           name="keywords"
@@ -26,7 +28,17 @@ export default function RootLayout({
         <meta name="robots" content="noimageindex" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <title>{metadata.title}</title>
-      </head>
+      </Helmet> */}
+
+      <Helmet>
+        <meta name="description" content={metadata.description} />
+        <meta
+          property="og:description"
+          content="Embrace the Lion's Share Technological Advancements with SoftLion"
+        />
+        <meta property="og:image" content="" />
+        <meta name="robots" content="noimageindex" />
+      </Helmet>
 
       <body>
         <HeaderComponent />
