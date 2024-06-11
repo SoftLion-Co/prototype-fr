@@ -24,7 +24,7 @@ const Home = () => {
       <OurServicesSection />
       <OurProjectsSection />
       <BlogSection />
-      <OurTeamStatic />
+      {/* <OurTeamStatic /> */}
       <ContactUsSection className={s.main__contactUs} />
     </React.Fragment>
   );
