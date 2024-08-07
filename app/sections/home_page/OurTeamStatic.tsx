@@ -58,7 +58,7 @@ const OurTeamSetcion = () => {
       <MotionWrapper
         initial
         viewport
-        custom={2}
+        custom={0.5}
         className={classNames(s.container, s.team__content)}
       >
         <HeadingComponent className={s.team__title} text="Our team" />

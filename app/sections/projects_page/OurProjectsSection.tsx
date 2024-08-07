@@ -185,7 +185,7 @@ const OurProjectsSection = () => {
         initial
         viewport
         variants
-        custom={1.5}
+        custom={0.5}
         className={s.filter}
         ref={topRef}
       >
@@ -291,7 +291,7 @@ const OurProjectsSection = () => {
         initial
         viewport
         variants
-        custom={1.5}
+        custom={0.5}
         className={s.projects__cards_mobile}
       >
         {filteredProjects.length === 0 ? (
@@ -310,7 +310,7 @@ const OurProjectsSection = () => {
         initial
         viewport
         variants
-        custom={1.5}
+        custom={0.5}
         className={s.projects__cards_desktop}
       >
         {filteredProjects.length === 0 ? (

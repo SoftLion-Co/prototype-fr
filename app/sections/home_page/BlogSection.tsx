@@ -34,7 +34,7 @@ const HomeBlog: FC = () => {
           initial
           viewport
           variants
-          custom={2}
+          custom={0.5}
           className={s.blogContainer__mobileSlider}
         >
           <MobileSliderComponent

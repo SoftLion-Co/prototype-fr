@@ -28,7 +28,7 @@ const HeroSection: FC<Props> = ({ heroTech }) => {
           initial
           viewport
           variants
-          custom={1.8}
+          custom={0.5}
           className={s.hero__heading}
         >
           {heroTech.titleTech}
@@ -39,13 +39,13 @@ const HeroSection: FC<Props> = ({ heroTech }) => {
           initial
           viewport
           variants
-          custom={2.2}
+          custom={0.5}
           className={s.hero__paragraph}
         >
           {heroTech.paragraph}
         </MotionWrapper>
 
-        <MotionWrapper initial viewport variants custom={2} className={s.blur}>
+        <MotionWrapper initial viewport variants custom={0.5} className={s.blur}>
           <div className={s.blur_item1}></div>
           <div className={s.blur_item2}></div>
           <div className={s.blur_item3}></div>

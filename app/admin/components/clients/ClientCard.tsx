@@ -71,14 +71,22 @@ export const ClientCard: FC<Props> = ({ client }) => {
           </div>
         </div>
 
-        <button onClick={() => {}} className={s.card__view_projects_btn} type="button">
+        <button
+          onClick={() => {}}
+          className={s.card__view_projects_btn}
+          type="button"
+        >
           Переглянути проекти
         </button>
       </div>
 
       <div className={s.buttons_container}>
         <Button fnc={() => {}} text="Редагувати" />
-        <Button fnc={() => setIsDeleteModalOpen(true)} text="Видалити" theme="delete" />
+        <Button
+          fnc={() => setIsDeleteModalOpen(true)}
+          text="Видалити"
+          theme="delete"
+        />
       </div>
 
       <ConfirmDeleteModal

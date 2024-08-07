@@ -53,7 +53,7 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.security__slider}
       >
         <MobileSliderComponent
@@ -71,7 +71,7 @@ const SecuritySection: FC<AnchorID> = ({ anchorID }) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={classNames(s.container, s.security__container)}
       >
         {securityCardsData.map((card) => (

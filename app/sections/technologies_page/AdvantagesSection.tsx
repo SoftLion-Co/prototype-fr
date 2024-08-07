@@ -47,7 +47,7 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
           initial
           viewport
           variants
-          custom={2}
+          custom={0.5}
           className={s.advantages__cards_mobile}
         >
           <MobileSliderComponent
@@ -61,7 +61,7 @@ const AdvantagesSection: FC<AdvantagesSectionProps> = ({
           initial
           viewport
           variants
-          custom={2}
+          custom={0.5}
           className={classNames(s.container, s.advantages__cards_desktop)}
         >
           <Carousel

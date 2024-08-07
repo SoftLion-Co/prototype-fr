@@ -49,7 +49,7 @@ const DevelopmentSection: FC<Props> = ({ titleTech, developmentSection }) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={classNames(s.development__cards, s.container)}
       >
         {developmentSection.map((item, index) => {

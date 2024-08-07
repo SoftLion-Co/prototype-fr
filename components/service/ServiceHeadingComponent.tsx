@@ -21,7 +21,7 @@ const ServiceHeadingComponent: FC<ServiceHeadingComponentProps> = ({
       initial
       viewport
       variants
-      custom={1.5}
+      custom={0.5}
       className={classNames(s.heading, className)}
     >
       {tag === "h1" ? (

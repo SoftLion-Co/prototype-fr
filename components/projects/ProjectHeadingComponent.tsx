@@ -24,7 +24,7 @@ const ProjectHeadingComponent: FC<{ centered: boolean }> = ({
         initial
         viewport
         variants
-        custom={1.5}
+        custom={0.5}
         className={classNames(s.heading__text, {
           [s.heading__text___centered]: centered,
         })}
@@ -34,7 +34,7 @@ const ProjectHeadingComponent: FC<{ centered: boolean }> = ({
         take a look at our portfolio of previous projects.
       </MotionWrapper>
 
-      <MotionWrapper initial viewport variants custom={1.5} className={s.blur}>
+      <MotionWrapper initial viewport variants custom={0.5} className={s.blur}>
         <div className={s.blur_item1}></div>
         <div className={s.blur_item2}></div>
         <div className={s.blur_item3}></div>

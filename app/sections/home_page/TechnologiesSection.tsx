@@ -73,7 +73,7 @@ const TechnologiesSection = () => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={classNames(s.technologies__cards_wrapper)}
       >
         {technologiesData.map((tech) => (

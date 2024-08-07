@@ -50,13 +50,13 @@
       ],
       "images": [
         {
-          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-hero(light).png?raw=true"
+          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/main/images/project/project-trend/trend-hero.webp"
         },
         {
-          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-basket.png?raw=true"
+          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/main/images/project/project-trend/trend-basket.webp"
         },
         {
-          "imageSrc": "https://github.com/SoftLion-Co/prototype-fr/blob/test/images/project/project-trend/trend-delivery.png?raw=true"
+          "imageSrc": "https://raw.githubusercontent.com/SoftLion-Co/prototype-fr/main/images/project/project-trend/trend-delivery.webp"
         }
       ]
     },

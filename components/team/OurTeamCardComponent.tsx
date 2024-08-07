@@ -30,7 +30,7 @@ const OurTeamCard: FC<TeamsProps> = ({ data, isActive = true }) => {
       initial
       viewport
       variants
-      custom={1.5}
+      custom={0.5}
       className={memberClassName}
     >
       <div className={s.member__avatar}>

@@ -49,7 +49,7 @@ const StagesSection = (props: Props) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={classNames(s.stages, s.container)}
       >
         {props.stagesSection.map((item, index) => (

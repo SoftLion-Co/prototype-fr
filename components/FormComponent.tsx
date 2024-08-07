@@ -80,7 +80,7 @@ const FormComponent: FC<FormProps> = ({ title }) => {
   );
 
   return (
-    <MotionWrapper tag="div" initial viewport variants custom={1.5}>
+    <MotionWrapper tag="div" initial viewport variants custom={0.5}>
       <form
         className={s.form}
         onSubmit={handleSubmit(handleFormSubmit)}

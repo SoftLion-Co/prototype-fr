@@ -19,7 +19,7 @@ const SeeMoreButtonComponent: FC<SeeMoreButtonComponentProps> = ({
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.button__background}
       >
         <Link href={`/${path}`}>

@@ -15,7 +15,7 @@ const BigButtonComponent: FC<Atribute> = ({ className }) => {
       initial
       viewport
       variants
-      custom={2}
+      custom={0.5}
       className={classNames(s.big__button, className)}
     >
       <Link href={"/contact-us"} className={s.link}>

@@ -24,7 +24,7 @@ const ChooseUsSection: FC<ChooseUsSectionProps> = ({ chooseUsSection }) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.container}
       >
         {chooseUsSection.map((item: string, index: number) => (

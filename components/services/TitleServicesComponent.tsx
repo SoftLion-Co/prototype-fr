@@ -34,7 +34,7 @@ const TitleServicesComponent: FC<TitleServicesComponentProps> = ({
       tag="div"
       initial
       variants
-      custom={1.5}
+      custom={0.5}
       className={classNames(headingClass, s.title__container)}
     >
       <span className={buttonClass}>{num}</span>

@@ -73,7 +73,7 @@ const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
           initial
           viewport
           variants
-          custom={2}
+          custom={0.5}
           className={s.develop__mob}
         >
           {cardsData.map((data) => (
@@ -94,7 +94,7 @@ const DevelopmentSection: FC<AnchorID> = ({ anchorID }) => {
           initial
           viewport
           variants
-          custom={2}
+          custom={0.5}
           className={s.develop__desktop}
         >
           {cardsData.map((data) => (

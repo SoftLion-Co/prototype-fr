@@ -180,7 +180,7 @@ const BlogsSection = () => {
           initial
           viewport
           variants
-          custom={2.5}
+          custom={0.5}
           className={s.blog__card}
         >
           {currentBlogs.length > 0 ? (

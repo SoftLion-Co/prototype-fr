@@ -13,7 +13,7 @@ const OurServicesHeadingComponent = () => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.heading__text}
       >
         We offer comprehensive custom software development services, from

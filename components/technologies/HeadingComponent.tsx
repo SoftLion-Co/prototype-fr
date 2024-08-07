@@ -33,7 +33,7 @@ const HeadingComponent: FC<HeadingComponentProps> = ({
       initial
       viewport
       variants
-      custom={1.5}
+      custom={0.5}
       className={classNames(
         headingColor,
         s.container,

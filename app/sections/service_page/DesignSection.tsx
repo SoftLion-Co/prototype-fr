@@ -85,7 +85,7 @@ const DesignSection: FC<{ anchorID: string }> = () => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.design__list}
       >
         {DesignInfo.map((info) => (

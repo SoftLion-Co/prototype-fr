@@ -58,7 +58,7 @@ const ServiceCardsComponent: FC<ServiceCardsProps> = ({
       initial
       viewport
       variants
-      custom={2}
+      custom={0.5}
       className={classNames(s.service, className)}
     >
       <div className={classNames(s.service__card, s.service__card_left)}>

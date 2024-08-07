@@ -24,7 +24,7 @@ const CreationSection: FC<Props> = ({ creationCard, titleTech }: Props) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.mobile}
       >
         <MobileSliderComponent
@@ -38,7 +38,7 @@ const CreationSection: FC<Props> = ({ creationCard, titleTech }: Props) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={classNames(s.our__card, s.container)}
       >
         {creationCard.map((item, index) => (

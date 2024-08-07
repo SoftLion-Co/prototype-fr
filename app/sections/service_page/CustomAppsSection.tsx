@@ -24,7 +24,7 @@ const CustomAppsSection: FC<AnchorID> = ({ anchorID }) => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.custom__cards}
       >
         <div className={s.custom__card}>

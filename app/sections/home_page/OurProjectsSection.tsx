@@ -21,7 +21,7 @@ const OurProjectsSection = () => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={s.projects__mobile_slider}
       >
         <MobileSliderComponent
@@ -36,7 +36,7 @@ const OurProjectsSection = () => {
         initial
         viewport
         variants
-        custom={2}
+        custom={0.5}
         className={classNames(s.container, s.projects__desktop_wrapper)}
       >
         {data.map((project) => (
