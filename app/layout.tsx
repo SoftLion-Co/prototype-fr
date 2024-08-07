@@ -5,6 +5,8 @@ import s from "./layout.module.scss";
 import HeaderComponent from "../components/HeaderComponent";
 import FooterComponent from "@/components/FooterComponent";
 
+import useGoogleAnalytics from "@/hooks/useGoogleAnalytics";
+
 export const metadata = {
   title: "SoftLion",
 
@@ -17,6 +19,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  useGoogleAnalytics();
+
   return (
     <html lang="en">
       <Head>
